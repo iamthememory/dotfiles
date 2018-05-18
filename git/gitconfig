@@ -1,0 +1,51 @@
+[credential]
+	helper = /usr/bin/git-credential-libsecret
+
+[user]
+	name = Alex Corkwell
+	email = i.am.the.memory@gmail.com
+	signingkey = 0xD226B54765D868B7
+
+[core]
+	editor = /usr/bin/vim
+	abbrev = 12
+	excludesfile = ~/.gitignore
+
+[gpg]
+	program = /usr/bin/gpg2
+
+[color]
+	ui = true
+
+[push]
+	default = simple
+	gpgsign = if-asked
+
+[merge]
+	ff = false
+	tool = vimdiff2
+
+[pull]
+	ff = only
+
+[commit]
+	gpgsign = true
+
+[alias]
+	logg = log --date-order --graph --stat
+	loggs = log --date-order --graph --stat --show-signature
+	logga = log --date-order --all --graph --stat
+	loggas = log --date-order --all --graph --stat --show-signature
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
+	sign-rebase = "!GIT_SEQUENCE_EDITOR='sed -i -re s/^pick/e/' sh -c 'git rebase -i $1 && while git rebase --continue; do git commit --amend --sign --no-edit; done' -"
+	signoff-rebase = "!GIT_SEQUENCE_EDITOR='sed -i -re s/^pick/e/' sh -c 'git rebase -i $1 && while git rebase --continue; do git commit --amend --signoff --no-edit; done' -"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+
+
+[include]
+	path = ~/.gitconfig.local
