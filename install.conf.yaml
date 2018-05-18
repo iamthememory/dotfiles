@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+  
+- clean:
+    - '~'
+
+- shell:
+    - 
+      - install -d -m 750 ~/.local/bin
+      - Creating ~/.local/bin
+  
+- link:
+    ~/.dotfiles: ''
+    ~/bin: ~/.local/bin
