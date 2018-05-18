@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Source environment variables.
+
+if [ -d ~/.env.d ]
+then
+  for file in ~/.env.d/* ~/.env.local
+  do
+    [ -f "$file" ] && [ -r "$file ] && . "$file"
+  done
+fi
+unset file
