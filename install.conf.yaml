@@ -21,6 +21,14 @@
     ~/Documents: ~/src
 
 
+# Useful scripts.
+
+- link:
+    ~/.local/bin/:
+      path: scripts/bin/*
+      glob: true
+
+
 # Git config.
 
 - link:
