@@ -23,6 +23,9 @@
     ~/bin: ~/.local/bin
     ~/Documents: ~/src
     ~/.env: base/env
+    ~/.env.d:
+      glob: true
+      path: base/env.d/*
 
 
 # Useful scripts.
