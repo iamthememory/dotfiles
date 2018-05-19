@@ -38,7 +38,6 @@ export TEXMFHOME="${HOME}/texmf"
 
 
 # Tie arrays to the PATH-like, colon-separated variables.
-typeset -T GEM_PATH gem_path
 typeset -T GOPATH gopath
 typeset -T LS_COLORS ls_colors
 
@@ -68,11 +67,6 @@ then
   path+=("/usr/share/fslint/fslint")
 fi
 
-# Ccache
-if [ -d "/usr/lib/ccache/bin" ]
-then
-  path=("/usr/lib/ccache/bin" "$path[@]")
-fi
 
 
 
@@ -93,19 +87,11 @@ fi
 
 
 # Force the variables tied to arrays to have unique elements.
-typeset -U gem_path
 typeset -U gopath
 typeset -U ls_colors
 typeset -U path
 
-export GEM_PATH
 
-# CCache location
-if [ -d "/var/cache/ccache/${USER}" ]
-then
-  export CCACHE_DIR="/var/cache/ccache/${USER}"
-fi
-export USE_CCACHE=1
 export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 
 export R_LIBS_USER="${HOME}/.rlibs/x86_64-pc-linux-gnu-library/3.4"

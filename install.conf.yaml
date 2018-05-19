@@ -122,3 +122,13 @@
     ~/.env.d:
       glob: true
       path: vim/env.d/*
+
+
+# ccache config.
+
+- link:
+    ~/.ccache: /var/cache/ccache/${USER}
+    ~/.ccache/ccache.conf: ccache/ccache.conf
+    ~/.env.d:
+      glob: true
+      path: ccache/env.d/*
