@@ -124,15 +124,19 @@
       - Cloning or updating antigen
 
 - link:
-    ~/.zshrc: zsh/zshrc
+    ~/.config/liquidpromptrc: zsh/config/liquidpromptrc
     ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
     ~/.zshenv.d:
       glob: true
       path: zsh/zshenv.d/*
+    ~/.zshrc.d:
+      glob: true
+      path: zsh/zshrc.d/*
 
 - clean:
-    - ~/.zshrc.d
     - ~/.zshenv.d
+    - ~/.zshrc.d
 
 
 # Git config.
