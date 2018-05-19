@@ -78,6 +78,11 @@
       glob: true
       path: python/env.d/*
 
+- shell:
+    -
+      - pip3 install --user --upgrade bumpversion diceware
+      - Installing a few useful utilities
+
 
 # Ruby config.
 
