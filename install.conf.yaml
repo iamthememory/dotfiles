@@ -97,6 +97,19 @@
       path: ruby/env.d/*
 
 
+# Go config.
+
+- shell:
+    -
+      - install -d -m 750 ~/.local/go/bin
+      - Creating ~/.local/go/bin
+
+- link:
+    ~/.env.d:
+      glob: true
+      path: go/env.d/*
+
+
 # ZSH.
 
 - shell:

@@ -38,15 +38,10 @@ export TEXMFHOME="${HOME}/texmf"
 
 
 # Tie arrays to the PATH-like, colon-separated variables.
-typeset -T GOPATH gopath
 typeset -T LS_COLORS ls_colors
 
 
 
-# Set the GOPATH.
-
-
-gopath=("${HOME}/.local/go")
 
 
 # Set the LS_COLORS.
@@ -58,8 +53,6 @@ ls_colors+=("*.green=04;32")
 # Set the PATH.
 
 
-# Go binaries.
-path=("${HOME}/.local/go/bin" "$path[@]")
 
 # FSlint utilities.
 if [ -d "/usr/share/fslint/fslint" ]
@@ -87,7 +80,6 @@ fi
 
 
 # Force the variables tied to arrays to have unique elements.
-typeset -U gopath
 typeset -U ls_colors
 typeset -U path
 
