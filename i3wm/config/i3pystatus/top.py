@@ -4,7 +4,6 @@ from i3pystatus import Status
 from i3pystatus.weather import weathercom
 from subprocess import check_output
 from i3pystatus.utils import gpu
-from gpu_usage import GPUUsage
 
 status = Status(logfile='$HOME/.config/i3pystatus/log')
 
@@ -123,8 +122,8 @@ if dogpu:
                     divisor=1024,
                     hints={'separator': False})
 
-    status.register(GPUUsage,
-                    format='GPU: {gpu_usage:02d}%',
+    status.register('gpu_usage',
+                    format='GPU: {usage:02d}%',
                     hints={'separator': False})
 
 # CPU
