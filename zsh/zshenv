@@ -50,18 +50,10 @@ export TEXMFHOME="${HOME}/texmf"
 
 
 # Tie arrays to the PATH-like, colon-separated variables.
-typeset -T CLASSPATH classpath
 typeset -T GEM_PATH gem_path
 typeset -T GOPATH gopath
 typeset -T LS_COLORS ls_colors
 
-# Set the CLASSPATH.
-
-
-if [ -e "/usr/share/junit/lib/junit.jar" ]
-then
-  classpath+=("/usr/share/junit/lib/junit.jar")
-fi
 
 
 # Set the GOPATH.
@@ -123,7 +115,6 @@ fi
 
 
 # Force the variables tied to arrays to have unique elements.
-typeset -U classpath
 typeset -U gem_path
 typeset -U gopath
 typeset -U ls_colors
