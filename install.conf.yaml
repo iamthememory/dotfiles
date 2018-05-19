@@ -219,6 +219,20 @@
       path: ccache/env.d/*
 
 
+# gdb config.
+
+- shell:
+    -
+      - >-
+        ~/.local/bin/git-clone-idempotent
+        https://github.com/hugsy/gef.git
+        ~/.gef
+      - Cloning or updating GEF
+
+- link:
+    ~/.gdbinit: gdb/gdbinit
+
+
 # st config.
 
 - shell:
