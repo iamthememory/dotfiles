@@ -45,6 +45,9 @@
     -
       - install -d -m 750 ~/.zshenv.d
       - Creating ~/.zshenv.d
+    -
+      - ~/.local/bin/git-clone-idempotent https://github.com/zsh-users/antigen.git ~/.antigenrepo
+      - Cloning or updating antigen
 
 - link:
     ~/.zshrc: zsh/zshrc

@@ -35,12 +35,7 @@ alias ls='ls --color=auto'
 alias cp='cp --reflink=auto'
 
 # Load antigen.
-if [ ! -e ~/.homesick/repos/antigen/antigen.zsh ]
-then
-  # We need to clone antigen.
-  git clone https://github.com/zsh-users/antigen.git ~/.homesick/repos/antigen
-fi
-source ~/.homesick/repos/antigen/antigen.zsh
+source ~/.antigenrepo/antigen.zsh
 
 export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD=true
