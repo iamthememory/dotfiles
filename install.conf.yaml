@@ -3,7 +3,7 @@
       relink: true
       create: true
       force: true
-  
+
 - clean:
     - '~'
 
@@ -11,13 +11,13 @@
 # Basic config.
 
 - shell:
-    - 
+    -
       - install -d -m 750 ~/.local/bin
       - Creating ~/.local/bin
     -
       - install -d -m 750 ~/.env.d
       - Creating ~/.env.d
-  
+
 - link:
     ~/.dotfiles: ''
     ~/bin: ~/.local/bin
@@ -34,6 +34,21 @@
     ~/.local/bin/:
       path: scripts/bin/*
       glob: true
+
+
+# ZSH.
+
+- shell:
+    -
+      - install -d -m 750 ~/.zshrc.d
+      - Creating ~/.zshrc.d
+    -
+      - install -d -m 750 ~/.zshenv.d
+      - Creating ~/.zshenv.d
+
+- link:
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
 
 
 # Git config.

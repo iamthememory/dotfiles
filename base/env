@@ -2,11 +2,19 @@
 
 # Source environment variables.
 
+
+# Read our directory variables.
 if [ -d ~/.env.d ]
 then
-  for file in ~/.env.d/* ~/.env.local
+  for file in ~/.env.d/*
   do
-    [ -f "$file" ] && [ -r "$file ] && . "$file"
+    [ -f "$file" ] && [ -r "$file" ] && . "$file"
   done
 fi
 unset file
+
+# Read local overrides.
+if [ -f ~/.env.local ] && [ -r ~/.env.local ]
+then
+  . ~/.env.local
+fi
