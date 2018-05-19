@@ -55,9 +55,6 @@ typeset -T GEM_PATH gem_path
 typeset -T GOPATH gopath
 typeset -T LS_COLORS ls_colors
 
-# Note that PATH and MANPATH already have tied arrays by default.
-
-
 # Set the CLASSPATH.
 
 
@@ -94,12 +91,6 @@ then
   gem_path+=("${GEM_HOME}")
   path=("$(ruby -e 'print Gem.bindir')" "$path[@]")
 fi
-
-# Add general system directories (just in case).
-for d in /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
-do
-  path+=("$d")
-done
 
 # FSlint utilities.
 if [ -d "/usr/share/fslint/fslint" ]
