@@ -17,11 +17,6 @@ mkdir -p "${HOME}/"texmf >/dev/null 2>&1
 
 # Environment variables.
 
-# Use vim as the default editor.
-if command -v vim >/dev/null 2>&1
-then
-  export EDITOR="$(which vim)"
-fi
 
 # Use color in less.
 export LESSCOLOR="yes"

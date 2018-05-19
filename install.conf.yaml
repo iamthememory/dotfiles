@@ -97,3 +97,11 @@
 - link:
     ~/.gitconfig: git/gitconfig
     ~/.gitignore: git/gitignore
+
+
+# Vim config.
+
+- link:
+    ~/.env.d:
+      glob: true
+      path: vim/env.d/*
