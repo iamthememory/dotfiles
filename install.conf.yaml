@@ -145,8 +145,8 @@
 # Git config.
 
 - link:
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore: git/gitignore
+    ~/.config/git/config: git/config/git/config
+    ~/.config/git/ignore: git/config/git/ignore
 
 
 # Vim config.

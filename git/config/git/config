@@ -9,7 +9,7 @@
 [core]
 	editor = /usr/bin/vim
 	abbrev = 12
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 
 [gpg]
 	program = /usr/bin/gpg2
