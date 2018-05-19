@@ -228,3 +228,18 @@
     ~/.config/i3pystatus:
       glob: true
       path: i3wm/config/i3pystatus/*.py
+
+- shell:
+    -
+      - >-
+        pip3 install --user --upgrade
+        git+https://github.com/enkore/i3pystatus.git
+        GeoIP
+        basiciw
+        colour
+        dbus-python
+        netifaces
+        psutil
+        requests
+        speedtest-cli
+      - Installing i3pystatus and optional module requirements
