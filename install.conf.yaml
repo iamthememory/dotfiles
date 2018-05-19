@@ -150,6 +150,19 @@
       path: vim/env.d/*
 
 
+# TeX config.
+
+- shell:
+    -
+      - install -d -m 750 ~/texmf
+      - Creating a local TeX directory
+
+- link:
+    ~/.env.d:
+      glob: true
+      path: tex/env.d/*
+
+
 # ccache config.
 
 - link:
