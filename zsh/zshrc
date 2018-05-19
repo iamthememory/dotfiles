@@ -27,13 +27,6 @@ setopt kshglob
 setopt pushdtohome
 setopt nullglob
 
-# Aliases.
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
-alias grep='grep --colour=auto'
-alias ls='ls --color=auto'
-alias cp='cp --reflink=auto'
-
 # Load antigen.
 source ~/.antigenrepo/antigen.zsh
 
