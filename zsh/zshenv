@@ -45,29 +45,6 @@ fi
 # Local TeX packages.
 export TEXMFHOME="${HOME}/texmf"
 
-# Use 32-bit wine.
-#export WINEARCH="win32"
-
-# Use i3 as the window manager (if it exists).
-#if [ -e "/etc/X11/Sessions/i3wm" ]
-#then
-#  export XSESSION="i3wm"
-#fi
-
-# Proxy git through tor (if possible).
-if [ -e "${HOME}/.local/bin/tor-socks-proxy.sh" ]
-then
-  export GIT_PROXY_COMMAND="${HOME}/.local/bin/tor-socks-proxy.sh"
-fi
-
-# Load the ssh and gpg agent variables from keychain.
-#if [ -e "${HOME}/.keychain/load-keychain" ]
-#then
-#  [ -z "${HOSTNAME}" ] && HOSTNAME="$(uname -n)"
-#  [ -f "${HOME}/.keychain/${HOSTNAME}-sh" ] && source "${HOME}/.keychain/${HOSTNAME}-sh"
-#  [ -f "${HOME}/.keychain/${HOSTNAME}-sh-gpg" ] && source "${HOME}/.keychain/${HOSTNAME}-sh-gpg"
-#fi
-
 
 # Set the PATH-like variables.
 
@@ -102,19 +79,6 @@ gopath=("${HOME}/.local/go")
 ls_colors+=("*.green=04;32")
 
 
-# Set the MANPATH.
-
-
-# Add local manpages.
-for mandir in "${HOME}/.local/"{share/,}"man"
-do
-  if [ -d "${mandir}" ]
-  then
-    manpath=("${mandir}" "$manpath[@]")
-  fi
-done
-
-
 # Set the PATH.
 
 
@@ -130,9 +94,6 @@ then
   gem_path+=("${GEM_HOME}")
   path=("$(ruby -e 'print Gem.bindir')" "$path[@]")
 fi
-
-# Local programs and scripts.
-path=("${HOME}/.local/bin" "$path[@]")
 
 # Add general system directories (just in case).
 for d in /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
@@ -175,7 +136,6 @@ typeset -U classpath
 typeset -U gem_path
 typeset -U gopath
 typeset -U ls_colors
-typeset -U manpath
 typeset -U path
 
 export GEM_PATH

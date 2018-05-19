@@ -12,18 +12,26 @@
 
 - shell:
     -
-      - install -d -m 750 ~/.local/bin
-      - Creating ~/.local/bin
+      - install -d -m 750 ~/.config
+      - Creating ~/.config
     -
       - install -d -m 750 ~/.env.d
       - Creating ~/.env.d
     -
-      - install -d -m 750 ~/.config
-      - Creating ~/.config
+      - install -d -m 750 ~/.local/bin
+      - Creating ~/.local/bin
+    -
+      - install -d -m 750 ~/.local/lib64
+      - Creating ~/.local/lib64
+    -
+      - install -d -m 750 ~/.local/share/man
+      - Creating ~/.local/share/man
 
 - link:
     ~/.dotfiles: ''
     ~/bin: ~/.local/bin
+    ~/.local/man: ~/.local/share/man
+    ~/.local/lib: ~/.local/lib64
     ~/Documents: ~/src
     ~/.env: base/env
     ~/.env.d:
