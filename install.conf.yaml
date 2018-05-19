@@ -17,6 +17,9 @@
     -
       - install -d -m 750 ~/.env.d
       - Creating ~/.env.d
+    -
+      - install -d -m 750 ~/.config
+      - Creating ~/.config
 
 - link:
     ~/.dotfiles: ''
@@ -27,6 +30,10 @@
       glob: true
       path: base/env.d/*
 
+- clean:
+    - ~/.config
+    - ~/.env.d
+
 
 # Useful scripts.
 
@@ -34,6 +41,9 @@
     ~/.local/bin/:
       path: scripts/bin/*
       glob: true
+
+- clean:
+    - ~/.local/bin
 
 
 # ZSH.
@@ -55,6 +65,10 @@
     ~/.zshenv.d:
       glob: true
       path: zsh/zshenv.d/*
+
+- clean:
+    - ~/.zshrc.d
+    - ~/.zshenv.d
 
 
 # Git config.
