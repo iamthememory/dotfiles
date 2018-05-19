@@ -128,7 +128,10 @@
       - install -d -m 750 ~/.zshenv.d
       - Creating ~/.zshenv.d
     -
-      - ~/.local/bin/git-clone-idempotent https://github.com/zsh-users/antigen.git ~/.antigenrepo
+      - >-
+        ~/.local/bin/git-clone-idempotent
+        https://github.com/zsh-users/antigen.git
+        ~/.antigenrepo
       - Cloning or updating antigen
 
 - link:
@@ -170,11 +173,27 @@
 
 - shell:
     -
-      - ~/.local/bin/git-clone-idempotent https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+      - >-
+        ~/.local/bin/git-clone-idempotent
+        https://github.com/VundleVim/Vundle.vim.git
+        ~/.vim/bundle/Vundle.vim
       - Cloning or updating Vundle
     -
       - vim +PluginInstall +qall
       - Installing Vundle plugins
+
+
+# Tmux config.
+
+- link:
+      ~/.tmux.conf: tmux/tmux.conf
+
+- shell:
+    -
+      - >-
+        ~/.local/bin/git-clone-idempotent
+        https://github.com/tmux-plugins/tmp.git
+        ~/.tmux/plugins/tpm
 
 
 # TeX config.
