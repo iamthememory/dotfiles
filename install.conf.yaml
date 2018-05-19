@@ -67,6 +67,15 @@
       path: perl/env.d/*
 
 
+# Python config.
+
+- link:
+    ~/.pythonrc.py: python/pythonrc.py
+    ~/.env.d:
+      glob: true
+      path: python/env.d/*
+
+
 # ZSH.
 
 - shell:

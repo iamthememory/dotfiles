@@ -24,9 +24,6 @@ export LESSCOLOR="yes"
 # Connect to system qemu libvirtd by default.
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-# The interactive Python startup file.
-export PYTHONSTARTUP="${HOME}/.pythonrc.py"
-
 # Use st as the terminal.
 if command -v st >/dev/null 2>&1
 then
