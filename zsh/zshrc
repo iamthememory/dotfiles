@@ -1,15 +1,5 @@
 # This file is sourced by zsh only for interactive shells.
 
-
-# The system-wide zsh profile on many systems will overwrite our PATH for login
-# shells.
-# Re-source our local environment just in case.
-# (We don't add duplicates in it anyway.)
-if [ -f ~/.env ] && [ -r ~/.env ]
-then
-  . ~/.env
-fi
-
 # On Arch, tell which package a missing command is in.
 if [ -e "/usr/share/doc/pkgfile/command-not-found.zsh" ]
 then
@@ -75,13 +65,20 @@ antigen bundle lukechilds/zsh-nvm
 antigen bundle lukechilds/zsh-better-npm-completion
 antigen apply
 
+
+# The system-wide zsh profile on many systems will overwrite our PATH for login
+# shells.
+# Additionally, oh-my-zsh plays with our history settings, so we need to reload
+# them.
+if [ -f ~/.zshenv ] && [ -r ~/.zshenv ]
+then
+  . ~/.zshenv
+fi
+
+# Antigen 
+
 unsetopt autopushd
 
-# Save pretty much all command history.
-export EXTENDED_HISTORY=1
-export HISTSIZE=1000000
-export SAVEHIST=1000000
-export SHARE_HISTORY=1
 
 # Change CTRL-U to clear the line before the cursor, not the entire line.
 # This is more consistent with shells like bash.

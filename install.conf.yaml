@@ -49,6 +49,9 @@
 - link:
     ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
+    ~/.zshenv.d:
+      glob: true
+      path: zsh/zshenv.d/*
 
 
 # Git config.
