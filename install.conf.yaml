@@ -218,3 +218,13 @@
 - link:
     ~/.config/mpv/config: mpv/config/mpv/config
     ~/.config/mpv/input.conf: mpv/config/mpv/input.conf
+
+
+# i3wm config.
+
+- link:
+    ~/.xprofile: i3wm/xprofile
+    ~/.config/i3/config: i3wm/config/i3/config
+    ~/.config/i3pystatus:
+      glob: true
+      path: i3wm/config/i3pystatus/*.py

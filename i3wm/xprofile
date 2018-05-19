@@ -1,0 +1,91 @@
+#!/bin/sh
+
+
+# Load our basic environment.
+if [ -f ~/.env ] && [ -r ~/.env ]
+then
+  . ~/.env
+fi
+
+
+
+
+MPD_HOST="${HOME}/.config/mpd/socket"
+export MPD_HOST
+
+
+eval $(gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg)
+export SSH_AUTH_SOCK
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -drx
+
+# Dim after 10 minutes, lock 10 minutes later.
+xset s 600 1200
+
+# Auto-lock.
+xss-lock -n /home/iamthememory/.local/bin/dim-screen.sh -l -- /home/iamthememory/.local/bin/transfer-sleep-lock-i3lock.sh &
+
+# Turn on numlock.
+numlockx on
+
+# Set middle-button emulation.
+for input in $(xinput --list | grep 'Logitech' | sed -r 's/.*\tid=([0-9]+)[^0-9].*$/\1/')
+do
+  xinput --set-prop "$input" "libinput Middle Emulation Enabled" 1
+done
+
+# Turn off touchpad.
+xinput disable 'pointer:SynPS/2 Synaptics TouchPad'
+
+# Activate Compose key.
+setxkbmap -model evdev -layout us -option compose:lwin
+
+# Swap caps lock and escape.
+xmodmap ~/.config/speedswapper
+
+# Hide mouse when idle.
+unclutter --fork
+
+# NetworkManager applet.
+nm-applet &
+
+# Blueman applet.
+blueman-applet &
+
+# Printer applet.
+system-config-printer-applet &
+
+
+# Keychain.
+export SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
+
+# Skype.
+skypeforlinux &
+
+xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'
+
+run_keybase &
+
+
+
+
+
+# Read our modular config.
+if [ -d ~/.xprofile.d ]
+then
+  for file in ~/.xprofile.d/*
+  do
+    [ -f "$file" ] && [ -r "$file" ] && . "$file"
+  done
+fi
+unset file
+
+
+# Read local overrides.
+if [ -f ~/.xprofile.local ] && [ -r ~/.xprofile.local ]
+then
+  . ~/.xprofile.local
+fi
