@@ -11,8 +11,8 @@ fi
 
 
 
-# Create local perl and TeX directories.
-mkdir -p "${HOME}/"{perl5,texmf} >/dev/null 2>&1
+# Create local TeX directories.
+mkdir -p "${HOME}/"texmf >/dev/null 2>&1
 
 
 # Environment variables.
@@ -32,10 +32,6 @@ export LESSCOLOR="yes"
 
 # Connect to system qemu libvirtd by default.
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-
-# Set local perl package install options.
-export PERL_MB_OPT="--install_base \"${HOME}/perl5\""
-export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
 
 # The interactive Python startup file.
 export PYTHONSTARTUP="${HOME}/.pythonrc.py"
@@ -81,8 +77,6 @@ typeset -T CLASSPATH classpath
 typeset -T GEM_PATH gem_path
 typeset -T GOPATH gopath
 typeset -T LS_COLORS ls_colors
-typeset -T PERL5LIB perl5lib
-typeset -T PERL_LOCAL_LIB_ROOT perl_local_lib_root
 
 # Note that PATH and MANPATH already have tied arrays by default.
 
@@ -127,8 +121,6 @@ done
 # Go binaries.
 path=("${HOME}/.local/go/bin" "$path[@]")
 
-# Local perl packages.
-path=("${HOME}/perl5/bin" "$path[@]")
 
 # Add any ruby gems to the PATH.
 if command -v ruby >/dev/null 2>&1
@@ -161,10 +153,6 @@ then
 fi
 
 
-# Set the PERL5LIB.
-
-
-perl5lib=("${HOME}/perl5/lib/perl5" "$perl5lib[@]")
 
 
 # TeX Live perl stuff.
@@ -180,10 +168,6 @@ then
 fi
 
 
-# Set the PERL_LOCAL_LIB_ROOT.
-
-
-perl_local_lib_root=("${HOME}/perl5" "$perl_local_lib_root[@]")
 
 
 # Force the variables tied to arrays to have unique elements.
@@ -193,11 +177,8 @@ typeset -U gopath
 typeset -U ls_colors
 typeset -U manpath
 typeset -U path
-typeset -U perl5lib
-typeset -U perl_local_lib_root
 
 export GEM_PATH
-export PERL5LIB
 
 # CCache location
 if [ -d "/var/cache/ccache/${USER}" ]

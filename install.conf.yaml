@@ -46,6 +46,19 @@
     - ~/.local/bin
 
 
+# Perl config.
+
+- shell:
+    -
+      - ./perl/setup-local.sh
+      - Setting up a local Perl 5 directory
+
+- link:
+    ~/.env.d:
+      glob: true
+      path: perl/env.d/*
+
+
 # ZSH.
 
 - shell:
