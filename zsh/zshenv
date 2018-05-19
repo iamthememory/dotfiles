@@ -13,7 +13,7 @@ fi
 # Read our modular config.
 if [ -d ~/.zshenv.d ]
 then
-  for file in ~/.zshenv.d/*
+  for file in ~/.zshenv.d/*.zshenv
   do
     [ -f "$file" ] && [ -r "$file" ] && . "$file"
   done

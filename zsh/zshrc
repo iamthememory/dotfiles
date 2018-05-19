@@ -4,7 +4,7 @@
 # Read our modular config.
 if [ -d ~/.zshrc.d ]
 then
-  for file in ~/.zshrc.d/*
+  for file in ~/.zshrc.d/*.zshrc
   do
     [ -f "$file" ] && [ -r "$file" ] && . "$file"
   done
