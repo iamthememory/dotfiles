@@ -157,9 +157,24 @@
 # Vim config.
 
 - link:
+    ~/.vimrc: vim/vimrc
     ~/.env.d:
       glob: true
       path: vim/env.d/*
+    ~/.vim/ftdetect:
+      glob: true
+      path: vim/vim/ftdetect/*.vim
+    ~/.vim/ftplugin:
+      glob: true
+      path: vim/vim/ftplugin/*.vim
+
+- shell:
+    -
+      - ~/.local/bin/git-clone-idempotent https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+      - Cloning or updating Vundle
+    -
+      - vim +PluginInstall +qall
+      - Installing Vundle plugins
 
 
 # TeX config.
