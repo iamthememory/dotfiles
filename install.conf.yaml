@@ -258,6 +258,7 @@
 
 - link:
     ~/.xprofile: i3wm/xprofile
+    ~/.config/speedswapper: i3wm/config/speedswapper
     ~/.config/i3/config: i3wm/config/i3/config
     ~/.config/i3pystatus:
       glob: true
