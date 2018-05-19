@@ -192,7 +192,7 @@
     -
       - >-
         ~/.local/bin/git-clone-idempotent
-        https://github.com/tmux-plugins/tmp.git
+        https://github.com/tmux-plugins/tpm.git
         ~/.tmux/plugins/tpm
 
 
