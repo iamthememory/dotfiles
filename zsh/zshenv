@@ -18,8 +18,6 @@ mkdir -p "${HOME}/"texmf >/dev/null 2>&1
 # Environment variables.
 
 
-# Use color in less.
-export LESSCOLOR="yes"
 
 # Connect to system qemu libvirtd by default.
 export LIBVIRT_DEFAULT_URI="qemu:///system"
@@ -36,18 +34,6 @@ export TEXMFHOME="${HOME}/texmf"
 
 # Set the PATH-like variables.
 
-
-# Tie arrays to the PATH-like, colon-separated variables.
-typeset -T LS_COLORS ls_colors
-
-
-
-
-
-# Set the LS_COLORS.
-
-
-ls_colors+=("*.green=04;32")
 
 
 # Set the PATH.
@@ -80,7 +66,6 @@ fi
 
 
 # Force the variables tied to arrays to have unique elements.
-typeset -U ls_colors
 typeset -U path
 
 
