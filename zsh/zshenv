@@ -62,16 +62,6 @@ ls_colors+=("*.green=04;32")
 # Go binaries.
 path=("${HOME}/.local/go/bin" "$path[@]")
 
-
-# Add any ruby gems to the PATH.
-if command -v ruby >/dev/null 2>&1
-then
-  GEM_PATH="$(unset GEM_PATH; unset GEM_HOME; gem env gempath)${GEM_PATH:+:${GEM_PATH}}"
-  export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
-  gem_path+=("${GEM_HOME}")
-  path=("$(ruby -e 'print Gem.bindir')" "$path[@]")
-fi
-
 # FSlint utilities.
 if [ -d "/usr/share/fslint/fslint" ]
 then

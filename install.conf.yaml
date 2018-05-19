@@ -76,6 +76,14 @@
       path: python/env.d/*
 
 
+# Ruby config.
+
+- link:
+    ~/.env.d:
+      glob: true
+      path: ruby/env.d/*
+
+
 # ZSH.
 
 - shell:
