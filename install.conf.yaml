@@ -34,6 +34,9 @@
     ~/.local/lib: ~/.local/lib64
     ~/Documents: ~/src
     ~/.env: base/env
+    ~/.config:
+      glob: true
+      path: base/config/*
     ~/.env.d:
       glob: true
       path: base/env.d/*
