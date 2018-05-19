@@ -191,3 +191,18 @@
     ~/.env.d:
       glob: true
       path: st/env.d/*
+
+
+# MPD config.
+
+- shell:
+    -
+      - install -d -m 750 ~/.config/mpd/playlists
+      - Creating ~/.config/mpd/playlists
+    -
+      - install -d -m 750 ~/.lyrics
+      - Creating ~/.lyrics
+
+- link:
+    ~/.config/mpd/mpd.conf: mpd/config/mpd/mpd.conf
+    ~/.config/ncmpcpp/config: mpd/config/ncmpcpp/config
