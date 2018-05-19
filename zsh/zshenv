@@ -10,24 +10,6 @@ then
 fi
 
 
-
-
-
-
-
-# Use st as the terminal.
-if command -v st >/dev/null 2>&1
-then
-  export TERMINAL="st"
-fi
-
-
-
-
-
-
-
-
 # Read our modular config.
 if [ -d ~/.zshenv.d ]
 then
@@ -37,6 +19,7 @@ then
   done
 fi
 unset file
+
 
 # Read local overrides.
 if [ -f ~/.zshenv.local ] && [ -r ~/.zshenv.local ]

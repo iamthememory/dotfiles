@@ -171,3 +171,16 @@
     ~/.env.d:
       glob: true
       path: ccache/env.d/*
+
+
+# st config.
+
+- shell:
+    -
+      - ./st/build-st.sh
+      - Building and installing st
+
+- link:
+    ~/.env.d:
+      glob: true
+      path: st/env.d/*
