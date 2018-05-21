@@ -171,6 +171,10 @@
       glob: true
       path: vim/vim/ftplugin/*.vim
 
+- clean:
+    - ~/.vim/ftdetect
+    - ~/.vim/ftplugin
+
 - shell:
     -
       - >-
@@ -277,6 +281,9 @@
     ~/.config/i3pystatus:
       glob: true
       path: i3wm/config/i3pystatus/*.py
+
+- clean:
+    - ~/.config/i3pystatus
 
 - shell:
     -
