@@ -183,8 +183,8 @@
         ~/.vim/bundle/Vundle.vim
       - Cloning or updating Vundle
     -
-      - vim +PluginInstall +qall
-      - Installing Vundle plugins
+      - vim +PluginInstall! +qall
+      - Installing or updating Vundle plugins
 
 
 # Tmux config.
