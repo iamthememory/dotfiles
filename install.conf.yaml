@@ -170,6 +170,16 @@
     ~/.ackrc: ack/ackrc
 
 
+# GPG config.
+- link:
+    ~/.gnupg/dirmngr.conf: gnupg/gnupg/dirmngr.conf
+    ~/.gnupg/gpg-agent.conf: gnupg/gnupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf: gnupg/gnupg/gpg.conf
+    ~/.gnupg/sks-keyservers.netCA.pem: gnupg/gnupg/sks-keyservers.netCA.pem
+    ~/.gnupg/sks-keyservers.netCA.pem.asc:
+      gnupg/gnupg/sks-keyservers.netCA.pem.asc
+
+
 # Vim config.
 
 - link:
@@ -207,7 +217,7 @@
 # Tmux config.
 
 - link:
-      ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf: tmux/tmux.conf
 
 - shell:
     -
@@ -220,7 +230,7 @@
 # Nethack config.
 
 - link:
-      ~/.nethackrc: nethack/nethackrc
+    ~/.nethackrc: nethack/nethackrc
 
 - shell:
     -
