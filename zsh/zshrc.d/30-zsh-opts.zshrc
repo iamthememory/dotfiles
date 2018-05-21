@@ -3,8 +3,8 @@
 # Just type a directory to cd into it.
 setopt autocd
 
-# Enable spelling correction.
-setopt correctall
+# Enable spelling correction for commands.
+setopt correct
 
 # Use extended globs.
 setopt extendedglob
