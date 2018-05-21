@@ -217,6 +217,17 @@
         ~/.tmux/plugins/tpm
 
 
+# Nethack config.
+
+- link:
+      ~/.nethackrc: nethack/nethackrc
+
+- shell:
+    -
+      - install -d -m 750 ~/.nethacklogs
+      - Creating ~/.nethacklogs
+
+
 # TeX config.
 
 - shell:
