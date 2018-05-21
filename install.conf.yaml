@@ -263,6 +263,9 @@
 - link:
     ~/.config/mpd/mpd.conf: mpd/config/mpd/mpd.conf
     ~/.config/ncmpcpp/config: mpd/config/ncmpcpp/config
+    ~/.env.d:
+      glob: true
+      path: mpd/env.d/*
 
 
 # MPV config.
