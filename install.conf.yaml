@@ -182,10 +182,14 @@
     ~/.vim/ftplugin:
       glob: true
       path: vim/vim/ftplugin/*.vim
+    ~/.vim/syntax:
+      glob: true
+      path: vim/vim/syntax/*.vim
 
 - clean:
     - ~/.vim/ftdetect
     - ~/.vim/ftplugin
+    - ~/.vim/syntax
 
 - shell:
     -
