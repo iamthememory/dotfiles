@@ -163,6 +163,12 @@
     ~/.ctags: ctags/ctags
 
 
+# Ack config.
+
+- link:
+    ~/.ackrc: ack/ackrc
+
+
 # Vim config.
 
 - link:
