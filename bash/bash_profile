@@ -1,0 +1,10 @@
+#
+# ~/.bash_profile
+#
+
+if [ -f ~/.env ] && [ -r ~/.env ]
+then
+  . ~/.env
+fi
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

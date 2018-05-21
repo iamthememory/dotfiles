@@ -313,6 +313,14 @@
     ~/.config/mpv/input.conf: mpv/config/mpv/input.conf
 
 
+# Bash config.
+
+- link:
+    ~/.bashrc: bash/bashrc
+    ~/.bash_logout: bash/bash_logout
+    ~/.bash_profile: bash/bash_profile
+
+
 # i3wm config.
 
 - link:
