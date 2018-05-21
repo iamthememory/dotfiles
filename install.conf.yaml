@@ -157,6 +157,12 @@
     ~/.config/git/ignore: git/config/git/ignore
 
 
+# Ctags config.
+
+- link:
+    ~/.ctags: ctags/ctags
+
+
 # Vim config.
 
 - link:
