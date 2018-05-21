@@ -154,6 +154,7 @@
 
 - link:
     ~/.config/git/config: git/config/git/config
+    ~/.config/git/gitk: git/config/git/gitk
     ~/.config/git/ignore: git/config/git/ignore
 
 
