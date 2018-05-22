@@ -334,10 +334,10 @@ install -d -o root -g music -m u=rwx,g=rwxs,o= /data/music
 setfacl -m 'd:u::rwx' /data/music
 setfacl -m 'd:g::rwx' /data/music
 setfacl -m 'd:o::---' /data/music
-ln -fsv /data/downloads /home/"$uname"/Music
+ln -fsv /data/music /home/"$uname"/Music
 
 install -d -o root -g src -m u=rwx,g=rwxs,o= /data/src
 setfacl -m 'd:u::rwx' /data/src
 setfacl -m 'd:g::rwx' /data/src
 setfacl -m 'd:o::---' /data/src
-ln -fsv /data/downloads /home/"$uname"/src
+ln -fsv /data/src /home/"$uname"/src
