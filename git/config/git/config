@@ -4,15 +4,11 @@
 [user]
 	name = Alex Corkwell
 	email = i.am.the.memory@gmail.com
-	signingkey = 0xD226B54765D868B7
 
 [core]
 	editor = /usr/bin/vim
 	abbrev = 12
 	excludesfile = ~/.config/git/ignore
-
-[gpg]
-	program = /usr/bin/gpg2
 
 [color]
 	ui = true
@@ -48,4 +44,4 @@
 
 
 [include]
-	path = ~/.gitconfig.local
+	path = ~/.config/git/config.local
