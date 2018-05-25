@@ -5,5 +5,5 @@
 PATH="$("${HOME}/.local/bin/munge.sh" "${PATH}" "${HOME}/.local/bin")"
 export PATH
 
-MANPATH="$(munge.sh "${MANPATH}" "${HOME}/.local/share/man")"
+MANPATH="$(munge.sh "$(manpath -q)" "${HOME}/.local/share/man")"
 export MANPATH
