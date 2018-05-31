@@ -171,6 +171,12 @@
 
 
 # GPG config.
+
+- shell:
+    -
+      - install -d -m 700 ~/.gnupg
+      - Creating gpg directory
+
 - link:
     ~/.gnupg/dirmngr.conf: gnupg/gnupg/dirmngr.conf
     ~/.gnupg/gpg-agent.conf: gnupg/gnupg/gpg-agent.conf
