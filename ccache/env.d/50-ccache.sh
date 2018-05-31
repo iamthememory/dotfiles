@@ -6,6 +6,10 @@ if [ -d "/usr/lib/ccache/bin" ]
 then
   PATH="$(munge.sh "$PATH" /usr/lib/ccache/bin)"
   export PATH
+elif [ -d "/usr/lib/ccache" ]
+then 
+  PATH="$(munge.sh "$PATH" /usr/lib/ccache)"
+  export PATH
 fi
 
 CCACHE_DIR="${HOME}/.ccache"
