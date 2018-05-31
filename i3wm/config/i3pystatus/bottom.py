@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
 
 from i3pystatus import Status
 from i3pystatus.weather import weathercom
