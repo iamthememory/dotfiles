@@ -163,6 +163,8 @@ apt install \
   libglib2.0-dev \
   libiw-dev \
   libnss-mdns \
+  libx11-dev \
+  libxft-dev \
   lightdm \
   lightdm-gtk-greeter \
   lightdm-gtk-greeter-settings \
