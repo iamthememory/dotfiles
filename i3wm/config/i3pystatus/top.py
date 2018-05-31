@@ -50,13 +50,22 @@ status = Status(logfile='$HOME/.config/i3pystatus/log')
 #                latency_threshold=100,
 #                host='8.8.8.8')
 
+# Google.
+status.register('ping',
+                format='{ping:5.1f} ms',
+                color='#00FF00',
+                latency_threshold=150,
+                interval=15,
+                host='8.8.8.8')
+
 # The FFXIV Chaos lobby.
 status.register('ping',
                 format='{ping:5.1f} ms',
                 color='#00FF00',
                 latency_threshold=150,
                 interval=15,
-                host='195.82.50.9')
+                host='195.82.50.9',
+                hints={'separator': False})
 
 status.register('external_ip',
                 format='→ {ip}',
