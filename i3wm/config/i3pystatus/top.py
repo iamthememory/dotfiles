@@ -5,6 +5,7 @@ from i3pystatus import Status
 from i3pystatus.weather import weathercom
 from subprocess import check_output
 from i3pystatus.utils import gpu
+from multiprocessing import cpu_count
 
 status = Status(logfile='$HOME/.config/i3pystatus/log')
 
@@ -144,7 +145,10 @@ status.register('temp',
 status.register('cpu_usage',
                 hints={'separator': False})
 
-cpubarformat = ''.join('{usage_bar_cpu' + str(n) + '}' for n in range(8))
+cpubarformat = ''.join(
+    '{usage_bar_cpu' + str(n) + '}' for n in range(cpu_count())
+)
+
 status.register('cpu_usage_bar',
                 format=('CPU: ' + cpubarformat),
                 bar_type='vertical',
