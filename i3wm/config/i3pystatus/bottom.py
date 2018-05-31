@@ -5,6 +5,8 @@ from i3pystatus import Status
 from i3pystatus.weather import weathercom
 from subprocess import check_output
 from os.path import expanduser, exists
+import subprocess
+import re
 
 status = Status(logfile='$HOME/.config/i3pystatus/log')
 
@@ -30,34 +32,42 @@ status.register('uptime',
 
 # Disk
 
-status.register('disk',
-                format='s: {avail:.0f} GiB',
-                critical_limit=100,
-                color='#00ff00',
-                path='/spool')
+# Get our zpools.
+zdata = subprocess.check_output(
+    args=[
+        'zfs',
+        'list',
+        '-H',
+        '-p',
+        '-d', '0',
+        '-o', 'name,mountpoint',
+    ]
+).decode().splitlines()
 
-status.register('disk',
-                format='r: {avail:.0f} GiB',
-                critical_limit=200,
-                color='#00ff00',
-                path='/rpool',
-                hints={'separator': False})
+pools = sorted({
+    re.sub(r'^(.+)pool$', '\g<1>', d[0]): d[1]
+    for s in zdata
+    for d in [s.split('\t')]
+}.items())
 
-status.register('disk',
-                format='e: {avail:.0f} GiB',
-                critical_limit=100,
-                color='#00ff00',
-                mounted_only=True,
-                path='/epool',
-                hints={'separator': False})
+if len(pools) > 0:
+    p = pools.pop(0)
+    status.register('disk',
+                    format=p[0] + ': {avail:.0f} GiB',
+                    critical_limit=40,
+                    color='#00ff00',
+                    mounted_only=True,
+                    path=p[1])
 
-status.register('disk',
-                format='b: {avail:.0f} GiB',
-                critical_limit=1000,
-                color='#00ff00',
-                mounted_only=True,
-                path='/bpool',
-                hints={'separator': False})
+for p in pools:
+    status.register('disk',
+                    format=p[0] + ': {avail:.0f} GiB',
+                    critical_limit=40,
+                    color='#00ff00',
+                    mounted_only=True,
+                    path=p[1],
+                    hints={'separator': False}
+    )
 
 ## GROUPEND
 
