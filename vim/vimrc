@@ -22,6 +22,12 @@ Plugin 'tpope/vim-sensible'
 Plugin 'airblade/vim-gitgutter'
 set updatetime=100
 
+" vim-airline (Nice shiny statuslines).
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 " Recover (diff swapfiles when recovering buffers).
 Plugin 'chrisbra/Recover.vim'
 
