@@ -281,6 +281,17 @@
     ~/.gdbinit: gdb/gdbinit
 
 
+# Fonts.
+
+- shell:
+    -
+      - install -d -m 750 ~/.local/share/fonts
+      - Creating local font directory
+    -
+      - ~/dotfiles/fonts/powerline/install.sh
+      - Installing powerline fonts
+
+
 # st config.
 
 - shell:

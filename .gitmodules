@@ -4,3 +4,6 @@
 [submodule "st/repo"]
 	path = st/repo
 	url = https://git.suckless.org/st
+[submodule "powerline/fonts"]
+	path = fonts/powerline
+	url = https://github.com/powerline/fonts.git
