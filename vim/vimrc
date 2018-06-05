@@ -77,6 +77,11 @@ Plugin 'VST'
 " nerdtree-git-plugin (git support for nerdtree).
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" vim-devicons (extra icons for other plugins).
+" This must be the last plugin.
+Plugin 'ryanoasis/vim-devicons'
+set encoding=UTF-8
+
 
 " All Vundle plugins must be before this line.
 call vundle#end()
