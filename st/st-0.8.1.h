@@ -7,7 +7,7 @@
  *
  * Powerline has a typo in the font name for Liberation Mono.
  */
-static char *font = "Literation Mono Powerline:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Literation Mono Nerd Font:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*

@@ -24,7 +24,7 @@
 #font pango:DejaVu Sans Mono 6
 
 # The powerline font has a typo in the font name.
-font pango:Literation Mono Powerline 6
+font pango:Literation Mono Nerd Font 6
 # Before i3 v4.8, we used to recommend this one as the default:
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and

@@ -290,6 +290,9 @@
     -
       - ~/dotfiles/fonts/powerline/install.sh
       - Installing powerline fonts
+    -
+      - ~/dotfiles/fonts/nerd-fonts/install.sh
+      - Installing nerd fonts
 
 
 # st config.
