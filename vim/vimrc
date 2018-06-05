@@ -77,6 +77,9 @@ Plugin 'VST'
 " nerdtree-git-plugin (git support for nerdtree).
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+" vim-nerdtree-syntax-highlight (extra colors for nerdtree).
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " vim-devicons (extra icons for other plugins).
 " This must be the last plugin.
 Plugin 'ryanoasis/vim-devicons'
