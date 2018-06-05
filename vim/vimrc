@@ -98,22 +98,6 @@ set foldlevel=2
 " Show line numbers by default.
 set number
 
-" Statusline.
-if has('statusline')
-	set laststatus=2
-	set statusline=%< " Left align
-	set statusline+=%f\  " Filename
-	set statusline+=%w " Preview window flag (if applicable)
-	set statusline+=%h " Help buffer flag (if applicable)
-	set statusline+=%m " Modified flag
-	set statusline+=%r " Readonly flag (if applicable)
-	set statusline+=%{fugitive#statusline()}\  " Fugitive (current git branch)
-	set statusline+=%y\  " File type
-	set statusline+=%= "Right align
-	set statusline+=%-14.(%l,%c%V%)\ %p%% " Current file position
-endif
-
-
 " Behavior.
 
 " Case insensitive search if all lowercase.
