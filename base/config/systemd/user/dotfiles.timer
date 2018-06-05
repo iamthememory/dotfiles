@@ -1,0 +1,9 @@
+[Unit]
+Description=Update dotfiles
+
+[Timer]
+OnUnitActiveSec=6h
+Unit=dotfiles.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Update dotfiles
+
+[Service]
+Type=oneshot
+ExecStart=%h/dotfiles/update

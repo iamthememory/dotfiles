@@ -26,6 +26,9 @@
     -
       - install -d -m 750 ~/.local/share/man
       - Creating ~/.local/share/man
+    -
+      - install -d -m 750 ~/.config/systemd/user
+      - Creating ~/.config/systemd/user
 
 - link:
     ~/.dotfiles: ''
@@ -34,16 +37,27 @@
     ~/.local/lib: ~/.local/lib64
     ~/Documents: ~/src
     ~/.env: base/env
-    ~/.config:
+    ~/.config/user-dirs.dirs: base/config/user-dirs.dirs
+    ~/.config/user-dirs.locale: base/config/user-dirs.locale
+    ~/.config/systemd/user:
       glob: true
-      path: base/config/*
+      path: base/config/systemd/user/*
     ~/.env.d:
       glob: true
       path: base/env.d/*
 
+- shell:
+    -
+      - systemctl --user daemon-reload
+      - Reloading systemd user service files
+    -
+      - systemctl --user enable dotfiles.timer
+      - Installing dotfiles update timer
+
 - clean:
     - ~/.config
     - ~/.env.d
+    - ~/.config/systemd/user
 
 
 # Useful scripts.
