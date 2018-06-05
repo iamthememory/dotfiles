@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+cd ~/dotfiles
+
+git fetch
+
+# This little bit from <https://stackoverflow.com/a/3278427>.
+UPSTREAM=${1:-'@{u}'}
+LOCAL=$(git rev-parse @)
+REMOTE=$(git rev-parse "$UPSTREAM")
+BASE=$(git merge-base @ "$UPSTREAM")
+
+if [ $LOCAL = $REMOTE ]; then
+  echo "Up to date"
+elif [ $LOCAL = $BASE ]; then
+  # Need to pull.
+  echo "Pulling..."
+  git merge --ff-only "$REMOTE"
+  git submodule sync
+  git submodule update
+  ./install
+elif [ $REMOTE = $BASE ]; then
+  # Need to push.
+  echo "Need to push"
+else
+  # Need to merge!
+  echo "Need to merge manually!"
+fi
