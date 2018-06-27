@@ -14,5 +14,6 @@ antigen bundle web-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle nojhan/liquidprompt
 antigen bundle lukechilds/zsh-better-npm-completion
+antigen bundle spwhitt/nix-zsh-completions
 
 # vim: ft=zsh

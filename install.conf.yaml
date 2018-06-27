@@ -71,6 +71,17 @@
     - ~/.local/bin
 
 
+# Nix.
+
+- link:
+    ~/.nixpkgs/config.nix: nix/nixpkgs/config.nix
+
+- shell:
+    -
+      - nix-env -r -i -A nixpkgs.base
+      - Installing nix packages
+
+
 # Perl config.
 
 - shell:
