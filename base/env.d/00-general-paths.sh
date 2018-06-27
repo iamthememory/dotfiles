@@ -7,5 +7,6 @@ for bindir in /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin
 do
   PATH="$("${HOME}/.local/bin/munge.sh" "${PATH}" "${bindir}")"
 done
+unset bindir
 
 export PATH
