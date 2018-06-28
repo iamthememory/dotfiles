@@ -78,7 +78,7 @@
 
 - shell:
     -
-      - nix-env -r -i -A nixpkgs.base
+      - nix-env -r -i -A nixpkgs.gui-full
       - Installing nix packages
 
 - link:
