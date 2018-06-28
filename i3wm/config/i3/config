@@ -190,7 +190,7 @@ bar {
 	tray_output none
 	workspace_buttons no
 	binding_mode_indicator no
-	status_command python3 ~/.config/i3pystatus/top.py
+	status_command i3pystatus -c ~/.config/i3pystatus/top.py
 	colors {
 		background #000000
 		statusline #ffffff
@@ -206,7 +206,7 @@ bar {
 bar {
 	position bottom
 	id bar-bottom
-	status_command python3 ~/.config/i3pystatus/bottom.py
+	status_command i3pystatus -c ~/.config/i3pystatus/bottom.py
 	colors {
 		background #000000
 		statusline #ffffff

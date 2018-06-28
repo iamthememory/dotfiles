@@ -1,16 +1,28 @@
 with import <nixpkgs> {};
 
-{
+rec {
   allowUnfree = true;
 
-  packageOverrides = pkgs: with pkgs; {
+  packageOverrides = pkgs: rec {
+
+    speedtest-cli = pkgs.python3Packages.buildPythonPackage rec {
+      inherit (pkgs.speedtest-cli) name version meta src;
+    };
+
+    GeoIP = pkgs.python3Packages.GeoIP.override {
+      geoip = pkgs.geoipWithDatabase;
+    };
+
+    i3pystatus = pkgs.i3pystatus.override {
+      extraLibs = [ GeoIP speedtest-cli ];
+    };
 
     # My basic packages.
     base = pkgs.buildEnv {
       name = "base-packages";
-      paths = [
+      paths = with pkgs; [
+        i3pystatus
         man
-        nix
         texinfoInteractive
         zsh
       ];
