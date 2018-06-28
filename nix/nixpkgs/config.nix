@@ -48,6 +48,9 @@ rec {
       '';
     });
 
+    pandoc = pkgs.pandoc.overrideDerivation (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [ pkgs.texlive.combined.scheme-basic ];
+    });
 
     st = pkgs.st.override {
       conf = builtins.readFile ~/dotfiles/st/st-0.8.1.h;
@@ -68,12 +71,16 @@ rec {
         i3pystatus
         man
         nerdfonts
+        nethack
         nix-repl
+        pandoc
         perl
         powerline-fonts
         ruby
         st
         texinfoInteractive
+        tmux
+        vimHugeX
         zsh
       ];
 
