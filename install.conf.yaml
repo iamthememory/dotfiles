@@ -81,6 +81,9 @@
       - nix-env -r -i -A nixpkgs.base
       - Installing nix packages
 
+- link:
+      ~/.local/share/fonts/nix-fonts: ~/.nix-profile/share/fonts
+
 
 # Perl config.
 
@@ -301,20 +304,6 @@
     ~/.gdbinit: gdb/gdbinit
 
 
-# Fonts.
-
-- shell:
-    -
-      - install -d -m 750 ~/.local/share/fonts
-      - Creating local font directory
-    -
-      - ~/dotfiles/fonts/powerline/install.sh
-      - Installing powerline fonts
-    -
-      - ~/dotfiles/fonts/nerd-fonts/install.sh
-      - Installing nerd fonts
-
-
 # st config.
 
 - shell:
@@ -373,18 +362,3 @@
 
 - clean:
     - ~/.config/i3pystatus
-
-- shell:
-    -
-      - >-
-        pip3 install --user --upgrade
-        git+https://github.com/enkore/i3pystatus.git
-        GeoIP
-        basiciw
-        colour
-        dbus-python
-        netifaces
-        psutil
-        requests
-        speedtest-cli
-      - Installing i3pystatus and optional module requirements

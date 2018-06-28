@@ -55,15 +55,17 @@ rec {
         R
         ack
         bumpversion
-        nix-repl
         ctags
         diceware
-        gnupg
         gitFull
+        gnupg
         go
         i3pystatus
         man
+        nerdfonts
+        nix-repl
         perl
+        powerline-fonts
         ruby
         texinfoInteractive
         zsh
