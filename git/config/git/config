@@ -41,3 +41,9 @@
 
 [include]
 	path = ~/.config/git/config.local
+
+[credential]
+	helper = libsecret
+
+[gpg]
+	program = gpg2

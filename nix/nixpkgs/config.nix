@@ -17,12 +17,54 @@ rec {
       extraLibs = [ GeoIP speedtest-cli ];
     };
 
+    bumpversion = with pkgs.pythonPackages; buildPythonApplication rec {
+      version = "0.5.3";
+      pname = "bumpversion";
+
+      src = fetchPypi {
+        inherit pname version;
+        sha256 = "6744c873dd7aafc24453d8b6a1a0d6d109faf63cd0cd19cb78fd46e74932c77e";
+      };
+    };
+
+    gnupg = with pkgs; pkgs.gnupg.override {
+      inherit pinentry adns gnutls libusb openldap readline zlib bzip2;
+      guiSupport = true;
+    };
+
+    gitFull = pkgs.gitAndTools.gitFull.overrideDerivation (oldAttrs: {
+      buildInputs = with pkgs; oldAttrs.buildInputs ++ [ pkgconfig libsecret.dev ];
+
+      postBuild = oldAttrs.postBuild + ''
+        pushd $PWD/contrib/credential/libsecret
+        make
+        popd
+      '';
+
+      preInstall = oldAttrs.preInstall + ''
+        mkdir -p $out/bin
+        cp -a $PWD/contrib/credential/libsecret/git-credential-libsecret $out/bin
+        rm -f $PWD/contrib/credential/libsecret/git-credential-libsecret.o
+      '';
+    });
+
     # My basic packages.
     base = pkgs.buildEnv {
       name = "base-packages";
       paths = with pkgs; [
+        R
+        ack
+        bumpversion
+        nix-repl
+        ctags
+        diceware
+        gnupg
+        gitFull
+        go
         i3pystatus
         man
+        perl
+        ruby
         texinfoInteractive
         zsh
       ];
