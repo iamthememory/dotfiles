@@ -48,6 +48,11 @@ rec {
       '';
     });
 
+
+    st = pkgs.st.override {
+      conf = builtins.readFile ~/dotfiles/st/st-0.8.1.h;
+    };
+
     # My basic packages.
     base = pkgs.buildEnv {
       name = "base-packages";
@@ -67,6 +72,7 @@ rec {
         perl
         powerline-fonts
         ruby
+        st
         texinfoInteractive
         zsh
       ];
@@ -75,11 +81,13 @@ rec {
         "/bin"
         "/etc"
         "/share/doc"
+        "/share/fonts"
         "/share/info"
         "/share/man"
       ];
 
       extraOutputsToInstall = [
+        "devdoc"
         "doc"
         "info"
         "man"

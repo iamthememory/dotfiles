@@ -306,11 +306,6 @@
 
 # st config.
 
-- shell:
-    -
-      - ./st/build-st.sh
-      - Building and installing st
-
 - link:
     ~/.env.d:
       glob: true
