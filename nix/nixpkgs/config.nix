@@ -16,5 +16,8 @@ rec {
       inherit pkgs pkgsets;
     };
 
+    envs = import ./envs.nix {
+      inherit custpkgs pkgs pkgsets utilities;
+    };
   };
 }
