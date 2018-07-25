@@ -74,11 +74,13 @@
 # Nix.
 
 - link:
-    ~/.nixpkgs/config.nix: nix/nixpkgs/config.nix
+    ~/.nixpkgs:
+      glob: true
+      path: nix/nixpkgs/*
 
 - shell:
     -
-      - nix-env -r -i -A nixpkgs.gui-full
+      - nix-env -r -i -A nixos.envs.home.gui-full
       - Installing nix packages
 
 - link:
