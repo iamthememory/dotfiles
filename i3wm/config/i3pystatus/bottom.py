@@ -57,7 +57,8 @@ if len(pools) > 0:
                     critical_limit=40,
                     color='#00ff00',
                     mounted_only=True,
-                    path=p[1])
+                    path=(p[1] if p[1] != 'legacy' else '/' + p[0] + 'pool')
+    )
 
 for p in pools:
     status.register('disk',
@@ -65,7 +66,7 @@ for p in pools:
                     critical_limit=40,
                     color='#00ff00',
                     mounted_only=True,
-                    path=p[1],
+                    path=(p[1] if p[1] != 'legacy' else '/' + p[0] + 'pool'),
                     hints={'separator': False}
     )
 
@@ -85,7 +86,7 @@ status.register('battery',
                 format='{status}: {percentage_design:4.02f}%[ ({remaining})]',
                 alert=True,
                 alert_percentage=50,
-                critical_level_percentage=30,
+                critical_level_percentage=25,
                 critical_level_command='systemctl suspend',
                 color='#ffff00',
                 hints={'separator': False})
