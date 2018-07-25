@@ -389,7 +389,6 @@ exec steam
 exec thunderbird
 exec run_keybase
 #exec --no-startup-id "gksudo aa-notify -p -f /var/log/audit/audit.log --display $DISPLAY"
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib64/libexec/kdeconnectd
 exec spotify
 exec slack
