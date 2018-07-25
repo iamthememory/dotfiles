@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Start tmux in a terminal, attaching if it already exists.
 

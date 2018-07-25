@@ -3,7 +3,7 @@
 	email = i.am.the.memory@gmail.com
 
 [core]
-	editor = /usr/bin/vim
+	editor = vim
 	abbrev = 12
 	excludesfile = ~/.config/git/ignore
 

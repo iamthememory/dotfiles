@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 extensions() {
   for f in "$@"

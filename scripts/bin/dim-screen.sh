@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Example notifier script -- lowers screen brightness, then waits to be killed
 # and restores previous brightness on exit.

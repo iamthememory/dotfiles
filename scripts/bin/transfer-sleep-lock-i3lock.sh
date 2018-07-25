@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Example locker script -- demonstrates how to use the --transfer-sleep-lock
 # option with i3lock's forking mode to delay sleep until the screen is locked.

@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 export LINES=24
 export COLUMNS=80
 
 logbase="${HOME}/.nethacklogs"
 
-saves="$(find /var/games/nethack/save -name "$(id -u)"'*' | wc -l)"
+saves="$(find "${HOME}/.config/nethack/save" -name "$(id -u)"'*' | wc -l)"
 
 if [ "${saves}x" = "0x" ]
 then

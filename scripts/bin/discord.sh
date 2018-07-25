@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #export PULSE_LATENCY_MSEC=30
-exec /usr/bin/discord --enable-speech-dispatcher
+exec Discord --enable-speech-dispatcher

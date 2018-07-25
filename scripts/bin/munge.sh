@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # $1: A colon separated list of directories, ala $PATH.
 # $2: A directory to add to the variable if not already present.
