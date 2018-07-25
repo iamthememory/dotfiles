@@ -381,6 +381,7 @@ for_window [class="^Skype$"]   move scratchpad
 for_window [class="^Keybase$"] move scratchpad
 
 exec --no-startup-id redshift-gtk
+exec dunst
 exec discord.sh
 #exec --no-startup-id run_keybase
 exec --no-startup-id mpd
@@ -392,3 +393,4 @@ exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib64/libexec/kdeconnectd
 exec spotify
 exec slack
+exec xcompmgr -c -n
