@@ -16,6 +16,7 @@ rec {
       "/bin"
       "/etc"
       "/lib/libexec"
+      "/lib/seahorse"
       "/share/applications"
       "/share/doc"
       "/share/fonts"

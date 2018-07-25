@@ -8,14 +8,21 @@ then
 fi
 
 
+# Read our modular config.
+if [ -d ~/.xprofile.d ]
+then
+  for file in ~/.xprofile.d/*
+  do
+    [ -f "$file" ] && [ -r "$file" ] && . "$file"
+  done
+fi
+unset file
+
+
 
 
 MPD_HOST="${HOME}/.config/mpd/socket"
 export MPD_HOST
-
-
-eval $(gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg)
-export SSH_AUTH_SOCK
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -58,10 +65,6 @@ blueman-applet &
 # Printer applet.
 system-config-printer-applet &
 
-
-# Keychain.
-export SSH_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
-
 # Skype.
 skypeforlinux &
 
@@ -72,16 +75,6 @@ run_keybase &
 
 
 
-
-# Read our modular config.
-if [ -d ~/.xprofile.d ]
-then
-  for file in ~/.xprofile.d/*
-  do
-    [ -f "$file" ] && [ -r "$file" ] && . "$file"
-  done
-fi
-unset file
 
 
 # Read local overrides.
