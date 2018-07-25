@@ -15,6 +15,7 @@ rec {
     pathsToLink = [
       "/bin"
       "/etc"
+      "/lib/libexec"
       "/share/applications"
       "/share/doc"
       "/share/fonts"
