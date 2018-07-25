@@ -4,37 +4,13 @@ rec {
   allowUnfree = true;
 
   packageOverrides = pkgs: rec {
-
-    mkenv = name: packages: pkgs.buildEnv {
-      inherit name;
-      paths = packages ++ [ pkgs.texinfoInteractive ];
-
-      pathsToLink = [
-        "/bin"
-        "/etc"
-        "/share/doc"
-        "/share/fonts"
-        "/share/info"
-        "/share/man"
-      ];
-
-      extraOutputsToInstall = [
-        "devdoc"
-        "doc"
-        "info"
-        "man"
-      ];
-      postBuild = ''
-        if [ -x $out/bin/install-info -a -w $out/share/info ]; then
-          shopt -s nullglob
-          for i in $out/share/info/*.info $out/share/info/*.info.gz; do
-              $out/bin/install-info $i $out/share/info/dir
-          done
-        fi
-      '';
+    custpkgs = import ./packages.nix {
+      inherit pkgs;
     };
 
-
+    utilities = import ./utilities.nix {
+      inherit pkgs;
+    };
     # My graphical packages.
     gui-packages = with pkgs; mkenv "gui-packages" [
       i3pystatus
