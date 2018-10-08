@@ -52,6 +52,7 @@ rec {
     pngcrush
     redshift
     scrot
+    solaar
     st
     system-config-printer
     unclutter-xfixes
@@ -110,6 +111,7 @@ rec {
     gnome3.eog
     inkscape
     kdeconnect
+    libreoffice
     mcomix
     picard
     skypeforlinux
@@ -125,6 +127,7 @@ rec {
     nethack
     steam
     steam-run
+    tinyfugue
   ] ++ optionals (nixos) [
     scanmem
   ];
@@ -134,7 +137,9 @@ rec {
   gui-games = [
     cabextract
     ftb
+    innoextract
     jre
+    openrct2
     playonlinux
     wineStaging
     winetricks
@@ -150,6 +155,7 @@ rec {
     cookiecutter
     ctags
     graphviz
+    shellcheck
     strace
   ] ++ optionals (nixos) [
     linuxPackages.systemtap
@@ -224,6 +230,7 @@ rec {
     avahi
     dnsutils
     host
+    metasploit
     nxBender
   ] ++ optionals (nixos) [
     chrony

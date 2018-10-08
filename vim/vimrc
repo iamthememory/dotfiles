@@ -126,6 +126,11 @@ set formatoptions+=tcqjn
 " Keep indents on linebreak.
 set breakindent
 
+" Show tabs, spaces, etc.
+set list
+
+set hlsearch
+
 
 " Try to template from a skeleton.
 autocmd BufNewFile *.* silent! execute '0r $HOME/.vim/templates/skeleton.'.expand("<afile>:e")

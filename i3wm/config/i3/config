@@ -53,7 +53,7 @@ bindsym Mod1+Shift+Return exec "st -e tmux new"
 bindsym Mod1+Control+Shift+y exec "xinput enable 'Yubico Yubikey 4 OTP+U2F+CCID'"
 bindsym Mod1+Shift+y exec "xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'"
 
-bindsym Mod1+Shift+x exec "xkill"
+bindsym Mod1+Shift+x exec "~/.nix-profile/bin/xkill"
 
 # Suspend
 bindsym Mod1+Control+Shift+u exec "systemctl suspend"
@@ -380,7 +380,7 @@ for_window [class="^Spotify$"] move scratchpad
 for_window [class="^Skype$"]   move scratchpad
 for_window [class="^Keybase$"] move scratchpad
 
-exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift-gtk
 exec dunst
 exec discord.sh
 #exec --no-startup-id run_keybase
@@ -389,7 +389,7 @@ exec steam
 exec thunderbird
 exec run_keybase
 #exec --no-startup-id "gksudo aa-notify -p -f /var/log/audit/audit.log --display $DISPLAY"
-exec --no-startup-id /usr/lib64/libexec/kdeconnectd
+#exec --no-startup-id /usr/lib64/libexec/kdeconnectd
 exec spotify
 exec slack
 exec xcompmgr -c -n

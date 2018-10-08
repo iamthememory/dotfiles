@@ -81,6 +81,8 @@ with pkgs; rec {
     ];
   };
 
+  metasploit = callPackage ./metasploit {};
+
   nxBender = with pkgs.pythonPackages; buildPythonApplication rec {
     pname = "nxBender";
     version = "454dedc6c72fc62eedb7be18e62c6b7ee5f82bb3";
@@ -120,13 +122,43 @@ with pkgs; rec {
   st = pkgs.st.override {
     conf = builtins.readFile ~/dotfiles/st/st-0.8.1.h;
     patches = [
-      ~/dotfiles/st/patches/st-no_bold_colors-0.8.1.patch
+      #~/dotfiles/st/patches/st-no_bold_colors-0.8.1.patch
+      ~/dotfiles/st/patches/st-colorswap-0.8.1.patch
+    ];
+  };
+
+  steam = pkgs.steam.override {
+    extraPkgs = pkgs: with pkgs; [
+      python3
     ];
   };
 
   steam-run = (steam.override {
     nativeOnly = true;
   }).run;
+
+  tinyfugue = pkgs.tinyfugue.overrideDerivation (oldAttrs: rec {
+    name = "tinyfugue-${version}";
+    version = "50b9";
+
+    inherit openssl;
+    sslSupport = true;
+
+    configureFlags = "--enable-ssl --enable-python --enable-256colors --enable-atcp --enable-gmcp --enable-option102 --enable-lua";
+
+    src = fetchFromGitHub {
+      owner = "ingwarsw";
+      repo = "tinyfugue";
+      rev = "d30f526fd32d2079f38fc7f39eded2e0872cdcea";
+      sha256 = "1ivnlnngxbff8l3w7n20aypfqvs78kzjdzn73ryk6fg0nzaaax4h";
+    };
+
+    buildInputs =  with pkgs; oldAttrs.buildInputs ++ [
+      lua
+      pcre.dev
+      python3
+    ];
+  });
 
   wine32 = pkgs.wineStaging;
 

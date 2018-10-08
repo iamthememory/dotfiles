@@ -103,6 +103,39 @@ static const char *colorname[] = {
 	"#6c71c4",  /* 13: brmagenta*/
 	"#93a1a1",  /* 14: brcyan   */
 	"#fdf6e3",  /* 15: brwhite  */
+
+	[255] = 0,
+
+	"#cccccc",
+	"#555555",
+};
+
+/* These are the default st colors. */
+static const char *altcolorname[] = {
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
+
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
+
+	[255] = 0,
+
+	"#cccccc",
+	"#555555",
 };
 
 
@@ -110,6 +143,16 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+unsigned int coldefaultfg = 12;
+unsigned int coldefaultbg = 8;
+static unsigned int coldefaultcs = 14;
+static unsigned int coldefaultrcs = 15;
+
+unsigned int altdefaultfg = 7;
+unsigned int altdefaultbg = 0;
+static unsigned int altdefaultcs = 256;
+static unsigned int altdefaultrcs = 257;
+
 unsigned int defaultfg = 12;
 unsigned int defaultbg = 8;
 static unsigned int defaultcs = 14;
@@ -172,6 +215,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
+	{ TERMMOD,              XK_S,           swapcolors,     {.i =  0} },
 };
 
 /*
