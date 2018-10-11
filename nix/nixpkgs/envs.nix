@@ -23,6 +23,9 @@ rec {
         gdb
         gnumake
         patchelf
+        pkgconfig
+
+        zlib.dev
       ];
     };
   };
