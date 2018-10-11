@@ -16,10 +16,11 @@ rec {
     direnv
     file
     git-lfs
-    gitFull
     gitAndTools.gitflow
+    gitFull
     gnupg
     man
+    nix-prefetch-git
     time
     tmux
     vimHugeX
@@ -44,6 +45,7 @@ rec {
     ibus-engines.anthy
     ibus-engines.table
     ibus-engines.table-others
+    kbfs
     keybase-gui
     libnotify
     numlockx
@@ -184,7 +186,6 @@ rec {
     libisoburn
     lm_sensors
     manpages
-    nix-repl
     nox
     openssh
     pandoc

@@ -17,13 +17,13 @@ let
   };
 in stdenv.mkDerivation rec {
   name = "metasploit-framework-${version}";
-  version = "4.17.5";
+  version = "4.17.16";
 
   src = fetchFromGitHub {
     owner = "rapid7";
     repo = "metasploit-framework";
     rev = version;
-    sha256 = "1vilyy0dqzp8kbbpvs2zrv2ac7s39w2vv7mrbzgcjgh2bj7c6bg1";
+    sha256 = "15nnyarr4zqwr81vp4xmnr287q0bwv0m7sayvbcgx14sb2fjjx4r";
   };
 
   buildInputs = [ makeWrapper ];

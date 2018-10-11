@@ -59,7 +59,10 @@ bindsym Mod1+Shift+x exec "~/.nix-profile/bin/xkill"
 bindsym Mod1+Control+Shift+u exec "systemctl suspend"
 
 # Fix bluetooth packet drops on headset.
-bindsym Mod1+Control+Shift+b exec "pactl suspend-sink 1 && pactl suspend-sink 0"
+bindsym Mod1+Shift+b exec "pactl suspend-sink 1 && pactl suspend-sink 0"
+
+# Change brightness.
+bindsym Mod1+Shift+Control+b exec "~/.local/bin/setbacklight.sh"
 
 # Enter a password (by typing it in automatically).
 bindsym Mod1+Shift+a exec "~/.local/bin/passmenu --type"
