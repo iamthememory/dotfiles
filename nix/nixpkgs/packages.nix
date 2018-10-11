@@ -12,6 +12,33 @@ with pkgs; rec {
     };
   };
 
+  cataclysm-dda-git = pkgs.cataclysm-dda-git.overrideDerivation (oldAttrs: rec {
+    version = "2018-10-10";
+    name = "cataclysm-dda-git-${version}";
+    tiles = false;
+
+    src = fetchFromGitHub {
+      owner = "CleverRaven";
+      repo = "Cataclysm-DDA";
+      rev = "90d0a9b1d92fbdc4e9d9058d0c681ec8d93e381b";
+      sha256 = "12cqi37bh3alqp0zcirz34l7r039k7ryiaxay9v9y12n2rjhqx6p";
+    };
+
+    patches = [];
+
+    makeFlags = builtins.filter
+      (
+        x:
+          x != "TILES=1"
+          && x != "SOUND=1"
+          && "${builtins.substring 0 8 x}" != "VERSION="
+      )
+      oldAttrs.makeFlags
+    ++ [
+      "VERSION=git-${version}-${builtins.substring 0 8 src.rev}"
+    ];
+  });
+
   chromium = pkgs.chromium.overrideDerivation (oldAttrs: {
     enableNacl = true;
     gnomeKeyringSupport = true;
