@@ -137,7 +137,7 @@ with pkgs; rec {
   st = pkgs.st.override {
     conf = builtins.readFile ~/dotfiles/st/st-0.8.1.h;
     patches = [
-      ~/dotfiles/st/patches/st-no_bold_colors-0.8.1.patch
+      ~/dotfiles/st/patches/st-colorswap-0.8.1.patch
     ];
   };
 
