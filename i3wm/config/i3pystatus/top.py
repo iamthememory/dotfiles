@@ -86,7 +86,7 @@ status.register('network',
                 graph_width=8,
                 recv_limit=8192,
                 divisor=1024,
-                next_if_down=True,
+                next_if_down=False,
                 hints={'separator': False})
 
 ## GROUPEND
