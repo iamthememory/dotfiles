@@ -11,15 +11,16 @@ rec {
 
   # Basic packages.
   cli-base = [
-    bashInteractive
     bash-completion
+    bashInteractive
     direnv
     file
     git-lfs
-    gitFull
     gitAndTools.gitflow
+    gitFull
     gnupg
     man
+    nix-prefetch-git
     time
     tmux
     vimHugeX
@@ -44,6 +45,7 @@ rec {
     ibus-engines.anthy
     ibus-engines.table
     ibus-engines.table-others
+    kbfs
     keybase-gui
     libnotify
     numlockx
@@ -52,6 +54,7 @@ rec {
     pngcrush
     redshift
     scrot
+    solaar
     st
     system-config-printer
     unclutter-xfixes
@@ -110,6 +113,7 @@ rec {
     gnome3.eog
     inkscape
     kdeconnect
+    libreoffice
     mcomix
     picard
     skypeforlinux
@@ -125,6 +129,7 @@ rec {
     nethack
     steam
     steam-run
+    tinyfugue
   ] ++ optionals (nixos) [
     scanmem
   ];
@@ -134,7 +139,9 @@ rec {
   gui-games = [
     cabextract
     ftb
+    innoextract
     jre
+    openrct2
     playonlinux
     wineStaging
     winetricks
@@ -150,6 +157,7 @@ rec {
     cookiecutter
     ctags
     graphviz
+    shellcheck
     strace
   ] ++ optionals (nixos) [
     linuxPackages.systemtap
@@ -178,7 +186,6 @@ rec {
     libisoburn
     lm_sensors
     manpages
-    nix-repl
     nox
     openssh
     pandoc
@@ -224,6 +231,7 @@ rec {
     avahi
     dnsutils
     host
+    metasploit
     nxBender
   ] ++ optionals (nixos) [
     chrony
