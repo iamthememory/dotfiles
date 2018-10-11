@@ -52,21 +52,9 @@ with pkgs; rec {
     geoip = pkgs.geoipWithDatabase;
   };
 
-  gitFull = pkgs.gitAndTools.gitFull.overrideDerivation (oldAttrs: {
-    buildInputs = with pkgs; oldAttrs.buildInputs ++ [ pkgconfig libsecret.dev ];
-
-    postBuild = oldAttrs.postBuild + ''
-      pushd $PWD/contrib/credential/libsecret
-      make
-      popd
-    '';
-
-    preInstall = oldAttrs.preInstall + ''
-      mkdir -p $out/bin
-      cp -a $PWD/contrib/credential/libsecret/git-credential-libsecret $out/bin
-      rm -f $PWD/contrib/credential/libsecret/git-credential-libsecret.o
-    '';
-  });
+  gitFull = pkgs.gitAndTools.gitFull.override {
+    withLibsecret = true;
+  };
 
   gnupg = with pkgs; pkgs.gnupg.override {
     inherit pinentry adns gnutls libusb openldap readline zlib bzip2;
