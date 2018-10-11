@@ -124,6 +124,12 @@ with pkgs; rec {
     ];
   };
 
+  steam = pkgs.steam.override {
+    extraPkgs = pkgs: with pkgs; [
+      python3
+    ];
+  };
+
   steam-run = (steam.override {
     nativeOnly = true;
   }).run;
