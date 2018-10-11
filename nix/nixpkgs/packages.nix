@@ -96,6 +96,8 @@ with pkgs; rec {
     ];
   };
 
+  metasploit = callPackage ./metasploit {};
+
   nxBender = with pkgs.pythonPackages; buildPythonApplication rec {
     pname = "nxBender";
     version = "454dedc6c72fc62eedb7be18e62c6b7ee5f82bb3";
