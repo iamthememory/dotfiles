@@ -390,9 +390,10 @@ exec discord.sh
 exec --no-startup-id mpd
 exec steam
 exec thunderbird
-exec run_keybase
 #exec --no-startup-id "gksudo aa-notify -p -f /var/log/audit/audit.log --display $DISPLAY"
 #exec --no-startup-id /usr/lib64/libexec/kdeconnectd
 exec spotify
 exec slack
 exec xcompmgr -c -n
+exec kbfsfuse /keybase
+exec keybase-gui
