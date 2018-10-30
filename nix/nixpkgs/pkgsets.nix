@@ -138,6 +138,7 @@ rec {
   # GUI Games.
   gui-games = [
     cabextract
+    dwarf-fortress-packages.dwarf-fortress-full
     ftb
     innoextract
     jre
