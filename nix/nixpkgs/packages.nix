@@ -13,15 +13,15 @@ with pkgs; rec {
   };
 
   cataclysm-dda-git = pkgs.cataclysm-dda-git.overrideDerivation (oldAttrs: rec {
-    version = "2018-10-10";
+    version = "2018-10-29";
     name = "cataclysm-dda-git-${version}";
     tiles = false;
 
     src = fetchFromGitHub {
       owner = "CleverRaven";
       repo = "Cataclysm-DDA";
-      rev = "90d0a9b1d92fbdc4e9d9058d0c681ec8d93e381b";
-      sha256 = "12cqi37bh3alqp0zcirz34l7r039k7ryiaxay9v9y12n2rjhqx6p";
+      rev = "46e2480318bb226d34f7b297075381258e9fb5e0";
+      sha256 = "01fw40rcpk94qcv174vk2bcl3z4359ypz34vrw2zd4yx4lnb0rmq";
     };
 
     patches = [];
