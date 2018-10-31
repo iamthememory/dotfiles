@@ -20,6 +20,7 @@ rec {
     gitFull
     gnupg
     man
+    nix-index
     nix-prefetch-git
     time
     tmux
