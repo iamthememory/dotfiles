@@ -24,7 +24,13 @@
       - install -d -m 750 ~/.local/lib64
       - Creating ~/.local/lib64
     -
+      - install -d -m 750 ~/.local/share
+      - Creating ~/.local/share
+    -
       - install -d -m 750 ~/.local/share/man
+      - Creating ~/.local/share/man
+    -
+      - install -d -m 750 ~/.local/share/fonts
       - Creating ~/.local/share/man
     -
       - install -d -m 750 ~/.config/systemd/user
@@ -304,6 +310,14 @@
 
 - link:
     ~/.gdbinit: gdb/gdbinit
+
+
+# Fonts.
+
+- link:
+    ~/.local/share/fonts:
+      glob: true
+      path: fonts/local/share/fonts/*
 
 
 # st config.

@@ -11,8 +11,8 @@ rec {
 
   # Basic packages.
   cli-base = [
-    bashInteractive
     bash-completion
+    bashInteractive
     direnv
     file
     git-lfs
@@ -20,6 +20,7 @@ rec {
     gitFull
     gnupg
     man
+    nix-index
     nix-prefetch-git
     time
     tmux
@@ -138,6 +139,7 @@ rec {
   # GUI Games.
   gui-games = [
     cabextract
+    dwarf-fortress-packages.dwarf-fortress-full
     ftb
     innoextract
     jre

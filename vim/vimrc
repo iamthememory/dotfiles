@@ -129,6 +129,7 @@ set breakindent
 " Show tabs, spaces, etc.
 set list
 
+" Show highlighting on searchs.
 set hlsearch
 
 
