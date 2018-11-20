@@ -89,6 +89,7 @@ rec {
     noto-fonts-emoji
     noto-fonts-extra
     powerline-fonts
+    vistafonts
   ];
 
 
