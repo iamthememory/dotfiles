@@ -1,23 +1,23 @@
 with import <nixpkgs> {};
+  let
+    custpkgs = import ./packages.nix;
+  in
+  rec {
+    allowUnfree = true;
 
-rec {
-  allowUnfree = true;
+    packageOverrides = pkgs: rec {
+      inherit custpkgs;
 
-  packageOverrides = pkgs: rec {
-    custpkgs = import ./packages.nix {
-      inherit pkgs;
+      pkgsets = import ./pkgsets.nix {
+        inherit pkgs;
+      };
+
+      utilities = import ./utilities.nix {
+        inherit pkgs;
+      };
+
+      envs = import ./envs.nix {
+        inherit pkgs;
+      };
     };
-
-    pkgsets = import ./pkgsets.nix {
-      inherit custpkgs envs pkgs;
-    };
-
-    utilities = import ./utilities.nix {
-      inherit pkgs pkgsets;
-    };
-
-    envs = import ./envs.nix {
-      inherit custpkgs pkgs pkgsets utilities;
-    };
-  };
-}
+  }

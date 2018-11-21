@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgsets,
 }:
 rec {
   mkhomeenv = name: packages: pkgs.buildEnv {
