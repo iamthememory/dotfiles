@@ -1,10 +1,7 @@
 {
-  custpkgs,
   pkgs,
-  pkgsets,
-  utilities,
 }:
-with pkgs // custpkgs;
+with pkgs;
 rec {
   home = {
     gui-full = utilities.mkhomeenv "gui-full" pkgsets.gui-full;

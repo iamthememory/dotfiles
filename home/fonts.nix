@@ -1,0 +1,6 @@
+{ pkgs, ... }:
+  {
+    fontconfig = {
+      enableProfileFonts = true;
+    };
+  }
