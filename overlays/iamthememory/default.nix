@@ -21,10 +21,4 @@ self: super:
     wine32 = self.wineStaging;
     wineStaging = import ./packages/wineStaging.nix { inherit self super; };
     winetricks = import ./packages/winetricks.nix { inherit self super; };
-
-    # Environments.
-    envs = import ./envs { pkgs = (super // self); };
-
-    # Package sets.
-    pkgsets = import ./pkgsets { pkgs = (super // self); };
   }

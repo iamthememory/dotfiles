@@ -44,11 +44,11 @@ zdata = subprocess.check_output(
     ]
 ).decode().splitlines()
 
-pools = sorted({
+pools = list(reversed(sorted({
     re.sub(r'^(.+)pool$', '\g<1>', d[0]): d[1]
     for s in zdata
     for d in [s.split('\t')]
-}.items())
+}.items())))
 
 if len(pools) > 0:
     p = pools.pop(0)

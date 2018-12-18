@@ -142,8 +142,9 @@ if dogpu:
 status.register('temp',
                 alert_temp=80)
 
-status.register('cpu_usage',
-                hints={'separator': False})
+#status.register('cpu_usage',
+#                format='{usage:02d}%',
+#                hints={'separator': False})
 
 cpubarformat = ''.join(
     '{usage_bar_cpu' + str(n) + '}' for n in range(cpu_count())

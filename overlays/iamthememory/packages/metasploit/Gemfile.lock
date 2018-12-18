@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/rapid7/metasploit-framework
-  revision: eb047933c9d49da48735e6ffecb8a2b32b0f3493
-  ref: refs/tags/4.17.25
+  revision: 2857b88aeddb920c2e36ed88675b87450d81c926
+  ref: refs/tags/4.17.29
   specs:
-    metasploit-framework (4.17.25)
+    metasploit-framework (4.17.29)
       actionpack (~> 4.2.6)
       activerecord (~> 4.2.6)
       activesupport (~> 4.2.6)
@@ -22,7 +22,7 @@ GIT
       metasploit-concern
       metasploit-credential (< 3.0.0)
       metasploit-model
-      metasploit-payloads (= 1.3.53)
+      metasploit-payloads (= 1.3.54)
       metasploit_data_models (< 3.0.0)
       metasploit_payloads-mettle (= 0.4.2)
       mqtt
@@ -78,27 +78,27 @@ GEM
   remote: https://rubygems.org/
   specs:
     Ascii85 (1.0.3)
-    actionpack (4.2.10)
-      actionview (= 4.2.10)
-      activesupport (= 4.2.10)
+    actionpack (4.2.11)
+      actionview (= 4.2.11)
+      activesupport (= 4.2.11)
       rack (~> 1.6)
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (4.2.10)
-      activesupport (= 4.2.10)
+    actionview (4.2.11)
+      activesupport (= 4.2.11)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activemodel (4.2.10)
-      activesupport (= 4.2.10)
+    activemodel (4.2.11)
+      activesupport (= 4.2.11)
       builder (~> 3.1)
-    activerecord (4.2.10)
-      activemodel (= 4.2.10)
-      activesupport (= 4.2.10)
+    activerecord (4.2.11)
+      activemodel (= 4.2.11)
+      activesupport (= 4.2.11)
       arel (~> 6.0)
-    activesupport (4.2.10)
+    activesupport (4.2.11)
       i18n (~> 0.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
@@ -123,7 +123,7 @@ GEM
     erubis (2.7.0)
     faker (1.9.1)
       i18n (>= 0.7)
-    faraday (0.15.3)
+    faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     filesize (0.2.0)
     hashery (2.1.2)
@@ -153,7 +153,7 @@ GEM
       activemodel (~> 4.2.6)
       activesupport (~> 4.2.6)
       railties (~> 4.2.6)
-    metasploit-payloads (1.3.53)
+    metasploit-payloads (1.3.54)
     metasploit_data_models (2.0.16)
       activerecord (~> 4.2.6)
       activesupport (~> 4.2.6)
@@ -208,14 +208,14 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    railties (4.2.10)
-      actionpack (= 4.2.10)
-      activesupport (= 4.2.10)
+    railties (4.2.11)
+      actionpack (= 4.2.11)
+      activesupport (= 4.2.11)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (12.3.1)
+    rake (12.3.2)
     rb-readline (0.5.5)
-    recog (2.1.34)
+    recog (2.1.35)
       nokogiri
     redcarpet (3.4.0)
     rex-arch (0.1.13)

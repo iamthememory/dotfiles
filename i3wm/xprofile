@@ -21,19 +21,11 @@ unset file
 
 
 
-MPD_HOST="${HOME}/.config/mpd/socket"
-export MPD_HOST
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 ibus-daemon -drx
 
 # Dim after 10 minutes, lock 10 minutes later.
 xset s 600 1200
-
-# Auto-lock.
-xss-lock -n /home/iamthememory/.local/bin/dim-screen.sh -l -- /home/iamthememory/.local/bin/transfer-sleep-lock-i3lock.sh &
 
 # Turn on numlock.
 numlockx on
@@ -53,15 +45,6 @@ setxkbmap -model evdev -layout us -option compose:lwin
 # Swap caps lock and escape.
 xmodmap ~/.config/speedswapper
 
-# Hide mouse when idle.
-unclutter --fork
-
-# NetworkManager applet.
-nm-applet &
-
-# Blueman applet.
-blueman-applet &
-
 # Printer applet.
 system-config-printer-applet &
 
@@ -69,11 +52,6 @@ system-config-printer-applet &
 skypeforlinux &
 
 xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'
-
-run_keybase &
-
-
-
 
 
 

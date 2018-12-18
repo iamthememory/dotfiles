@@ -209,6 +209,7 @@ bar {
 bar {
 	position bottom
 	id bar-bottom
+	tray_output primary
 	status_command i3pystatus -c ~/.config/i3pystatus/bottom.py
 	colors {
 		background #000000
