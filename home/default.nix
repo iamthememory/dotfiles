@@ -27,6 +27,7 @@ let
   impala      = import-channel "18.03";
   jellyfish   = import-channel "18.09";
 
+  stable      = jellyfish;
   unstable    = import-channel "unstable";
 
   staging     = import-branch  "staging";
@@ -68,7 +69,7 @@ in
       };
 
       language = {
-        base = "en_US";
+        base = "en_US.UTF-8";
       };
 
       packages = with unstable; [
@@ -300,8 +301,11 @@ in
         FCFLAGS = CFLAGS;
         FFLAGS = CFLAGS;
         GEM_HOME = "$(${unstable.ruby}/bin/ruby -e 'print Gem.user_dir')";
-        GIT_ASKPASS="${unstable.gnome3.seahorse}/lib/seahorse/seahorse-ssh-askpass";
+        GIT_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
         GTK_IM_MODULE = "ibus";
+        LANG = "en_US.UTF-8";
+        LC_ALL = "en_US.UTF-8";
+        LC_CTYPE = "en_US.UTF-8";
         LESSCOLOR = "yes";
         LIBVIRT_DEFAULT_URI = "qemu:///system";
         MPD_HOST = "${XDG_CONFIG_HOME}/mpd/socket";
@@ -313,8 +317,8 @@ in
         PERL_MM_OPT = "INSTALL_BASE=\${HOME}/perl5";
         QT_IM_MODULE = "ibus";
         QT_SELECT = "5";
-        SSH_ASKPASS="${unstable.gnome3.seahorse}/lib/seahorse/seahorse-ssh-askpass";
-        SUDO_ASKPASS="${unstable.gnome3.seahorse}/lib/seahorse/seahorse-ssh-askpass";
+        SSH_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
+        SUDO_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
         TERM = "screen-256color";
         TEXMFHOME = "\${HOME}/texmf";
         USE_CCACHE = "1";
@@ -1251,7 +1255,7 @@ in
       screen-locker = {
         enable = true;
         inactiveInterval = 20;
-        lockCmd = "\${unstable.i3lock}/bin/i3lock -n -e -c 202020";
+        lockCmd = "${unstable.i3lock}/bin/i3lock -n -e -c 202020";
       };
 
       unclutter = {
@@ -1288,7 +1292,7 @@ in
         ${unstable.numlockx}/bin/numlockx on
 
         # Set middle-button emulation.
-        for input in $(${unstable.xorg.xinput}/bin/xinput --list | ${unstable.coreutils}/bin/grep 'Logitech' | sed -r 's/.*\tid=([0-9]+)[^0-9].*$/\1/')
+        for input in $(${unstable.xorg.xinput}/bin/xinput --list | ${unstable.gnugrep}/bin/grep 'Logitech' | ${unstable.gnused}/bin/sed -r 's/.*\tid=([0-9]+)[^0-9].*$/\1/')
         do
           ${unstable.xorg.xinput}/bin/xinput --set-prop "$input" "libinput Middle Emulation Enabled" 1
         done
@@ -1368,12 +1372,44 @@ in
                   background = "#000000";
                   statusline = "#ffffff";
                   separator = "#666666";
+
+                  activeWorkspace = {
+                    background = "#68627e";
+                    border = "#4f4865";
+                    text = "#ffffff";
+                  };
+
+                  focusedWorkspace = {
+                    background = "#7e3fa0";
+                    border = "#6c2593";
+                    text = "#ffffff";
+                  };
+
+                  inactiveWorkspace = {
+                    background = "#443344";
+                    border = "#332233";
+                    text = "#998899";
+                  };
+
+                  urgentWorkspace = {
+                    background = "#c0458b";
+                    border = "#b02574";
+                    text = "#ffffff";
+                  };
+
+                  bindingMode = {
+                    background = "#c0458b";
+                    border = "#b02574";
+                    text = "#ffffff";
+                  };
                 };
 
-                statusCommand = "${jellyfish.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/top.py";
+                statusCommand = "${stable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/top.py";
 
                 id = "bar-top";
                 position = "top";
+
+                trayOutput = "none";
 
                 workspaceButtons = false;
               }
@@ -1416,7 +1452,7 @@ in
                   };
                 };
 
-                statusCommand = "${jellyfish.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/bottom.py";
+                statusCommand = "${stable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/bottom.py";
 
                 id = "bar-bottom";
                 position = "bottom";
@@ -1545,13 +1581,14 @@ in
 
               "${modifier}+a" = "focus parent";
               "${modifier}+Shift+a" = "exec ~/.local/bin/passmenu --type";
-              "${modifier}+Control+Shift+a" = "exec ~/.local/bin/passmenu";
+              "${modifier}+Control+a" = "exec ~/.local/bin/passmenu";
+              "${modifier}+Control+Shift+a" = "exec ${unstable.autorandr}/bin/autorandr -c";
 
               "${modifier}+Shift+b" = "exec ${unstable.pulseaudio}/bin/pactl suspend-sink 1 && ${unstable.pulseaudio}/bin/pactl suspend-sink 0";
 
               "${modifier}+c" = "focus child";
-              "${modifier}+Control+c" = "${programs.chromium.package}/bin/chromium-browser";
-              "${modifier}+Control+Shift+c" = "${programs.chromium.package}/bin/chromium-browser --incognito";
+              "${modifier}+Control+c" = "exec ${programs.chromium.package}/bin/chromium-browser";
+              "${modifier}+Control+Shift+c" = "exec ${programs.chromium.package}/bin/chromium-browser --incognito";
 
               "${modifier}+d" = "exec ${unstable.dmenu}/bin/dmenu_run";
               "${modifier}+Shift+d" = "exec ${unstable.i3}/bin/i3-dmenu-desktop";
@@ -1560,9 +1597,9 @@ in
               "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit & sleep 10 && loginctl terminate-session \$XDG_SESSION_ID'\"";
 
               "${modifier}+f" = "fullscreen toggle";
-              "${modifier}+Control+Shift+f" = "${unstable.playonlinux}/bin/playonlinux --run 'FINAL FANTASY XIV - A Realm Reborn'";
+              "${modifier}+Control+Shift+f" = "exec ${unstable.playonlinux}/bin/playonlinux --run 'FINAL FANTASY XIV - A Realm Reborn'";
 
-              "${modifier}+Control+Shift+g" = "${unstable.xorg.xmodmap}/bin/xmodmap ${speedswapper}";
+              "${modifier}+Control+Shift+g" = "exec ${unstable.xorg.xmodmap}/bin/xmodmap ${speedswapper}";
 
               "${modifier}+h" = "focus left";
               "${modifier}+Shift+h" = "move left";
@@ -1578,7 +1615,7 @@ in
 
               "${modifier}+l" = "focus right";
               "${modifier}+Shift+l" = "move right";
-              "${modifier}+Control+Shift+l" = "exec \"sudo -K; i3lock -c 202020 -e\"";
+              "${modifier}+Control+Shift+l" = "exec \"sudo -K; ${unstable.i3lock}/bin/i3lock -c 202020 -e\"";
 
               "${modifier}+Control+Shift+m" = "exec ${unstable.ftb}/bin/ftb-launch.sh";
 
@@ -1601,9 +1638,7 @@ in
               "${modifier}+Control+r" = "reload";
               "${modifier}+Control+Shift+r" = "restart";
 
-              "${modifier}+Shift+s" = "exec \"scrot -b -u -e 'pngcrush -brute -l 9 -reduce $f $f.crush.png && mv $f.crush.png $f' $(mktemp $(date '+/home/iamthememory/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.%N%z.XXXX.png'))\"";
-              "${modifier}+Control+s" = "exec \"${unstable.scrot}/bin/scrot -b -e 'pngcrush -brute -l 9 -reduce $f $f.crush.png && mv $f.crush.png $f' $(mktemp $(date '+/home/iamthememory/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.%N%z.XXXX.png'))\"";
-              "${modifier}+Control+Shift+s" = "exec \"${unstable.scrot}/bin/scrot -b -s -e '${unstable.pngcrush}/bin/pngcrush -brute -l 9 -reduce $f $f.crush.png && ${unstable.coreutils}/bin/mv $f.crush.png $f' $(${unstable.coreutils}/bin/mktemp $(date '+/home/iamthememory/screenshots/screenshot-%Y-%m-%d-%H:%M:%S.%N%z.XXXX.png'))\"";
+              "${modifier}+Control+Shift+s" = "exec ${unstable.flameshot}/bin/flameshot gui -p \"$(${unstable.coreutils}/bin/date \"+\$HOME/screenshots/%Y/%m\")\"";
 
               "${modifier}+t" = "mode \"passthrough\"";
               "${modifier}+Shift+t" = "exec ${unstable.xorg.xinput}/bin/xinput disable 'pointer:SynPS/2 Synaptics TouchPad'";
@@ -1667,6 +1702,11 @@ in
               ];
             };
           };
+
+          extraConfig = ''
+            default_border pixel 2
+            default_floating_border pixel 2
+          '';
         };
       };
 
