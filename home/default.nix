@@ -79,12 +79,10 @@ in
         ag
         agrep
         aircrack-ng
+        androidenv.platformTools
         appimage-run
-        #dwarf-fortress-packages.dwarf-fortress-full
-        #libreoffice-fresh
         aria2
         autorandr
-        gnugrep
         avahi
         bash-completion
         bashInteractive
@@ -115,12 +113,14 @@ in
         dosfstools
         dot2tex
         dunst
+        stable.dwarf-fortress-packages.dwarf-fortress-full
         ent
         evince
         ffmpeg
         file
         font-droid
         ftb
+        gdb
         gimp
         git-lfs
         gitAndTools.gitflow
@@ -128,11 +128,13 @@ in
         gksu
         gnome3.adwaita-icon-theme
         gnome3.eog
+        gnome3.gcr
         gnome3.gnome-disk-utility
         gnome3.nautilus
         gnome3.networkmanagerapplet
         gnome3.seahorse
         gnome3.zenity
+        gnugrep
         gnupg
         gnuplot
         gnutar
@@ -141,6 +143,7 @@ in
         gzip
         host
         htop
+        httpie
         i3
         i3lock
         ibus
@@ -161,6 +164,7 @@ in
         liberation_ttf
         libisoburn
         libnotify
+        #libreoffice-fresh
         lightdm
         lightdm_gtk_greeter
         links
@@ -213,6 +217,7 @@ in
         powerline-fonts
         powershell
         psmisc
+        pup
         pv
         pwgen
         pydf
@@ -978,7 +983,6 @@ in
 
       zsh = {
         enable = true;
-        enableAutosuggestions = true;
         enableCompletion = true;
 
         dotDir = ".config/zsh";
