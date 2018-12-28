@@ -12,10 +12,16 @@ let
     "nightmare"
   ];
 
+  game_hosts = [
+    "nightmare"
+  ];
+
   isin = list: host: builtins.any (x: x == host) list;
 in
 {
   hostname = host;
 
   hasGui = isin gui_hosts host;
+
+  hasGames = isin game_hosts host;
 }

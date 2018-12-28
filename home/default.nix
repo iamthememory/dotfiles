@@ -8,6 +8,7 @@ let
 in
   rec {
     imports = [
+      ./games
       ./gui
       ./zsh
     ];
@@ -56,9 +57,7 @@ in
         blueman
         bumpversion
         bzip2
-        cabextract
-        cataclysm-dda-git
-        chromium
+        config.programs.chromium.package
         chrony
         cloc
         cookiecutter
@@ -68,19 +67,16 @@ in
         ddrescue
         diceware
         direnv
-        discord
         dnsutils
         docker
         dos2unix
         dosfstools
         dot2tex
         dunst
-        unstable.dwarf-fortress-packages.dwarf-fortress-full
         ent
         evince
         ffmpeg
         file
-        ftb
         gdb
         gimp
         git-lfs
@@ -113,10 +109,8 @@ in
         ibus-engines.table-others
         imagemagick
         inkscape
-        innoextract
         iotop
         jq
-        jre
         kbfs
         kdeconnect
         keybase-gui
@@ -131,7 +125,6 @@ in
         lsof
         man
         manpages
-        mcomix
         megatools
         metasploit
         mlocate
@@ -141,7 +134,6 @@ in
         mpv
         mtr
         ncmpcpp
-        nethack
         ngrep
         nix-bundle
         nix-index
@@ -153,7 +145,6 @@ in
         numlockx
         nxBender
         octave
-        openrct2
         openssh
         stable.pandoc
         pass
@@ -161,7 +152,6 @@ in
         perlPackages.Appcpanminus
         picard
         pinfo
-        playonlinux
         pngcrush
         posix_man_pages
         powershell
@@ -176,7 +166,6 @@ in
         stable.python3Packages.glances
         redshift
         ruby
-        scanmem
         shellcheck
         skypeforlinux
         slack
@@ -187,22 +176,18 @@ in
         sqlite-interactive
         squashfsTools
         sshfs
-        steam
-        steam-run
         strace
         system-config-printer
         telnet
         texlive.combined.scheme-full
         thunderbird
         time
-        tinyfugue
         tmate
         tmux
         tor
         tor-browser-bundle
         torsocks
         tree
-        ttyrec
         unclutter-xfixes
         unrar
         unzip
@@ -210,8 +195,6 @@ in
         usbutils
         stable.virtmanager
         wget
-        wineStaging
-        winetricks
         wireshark
         x11_ssh_askpass
         xar
