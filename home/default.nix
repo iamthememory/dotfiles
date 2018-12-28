@@ -927,7 +927,7 @@ in
           global = {
             alignment = "left";
             always_run_script = "true";
-            browser = "chromium";
+            browser = "${config.programs.chromium.package}/bin/chromium";
             class = "Dunst";
             corner_radius = 0;
             dmenu = "dmenu -p dunst:";
