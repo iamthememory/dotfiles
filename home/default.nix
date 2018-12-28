@@ -79,7 +79,7 @@ in
         ag
         agrep
         aircrack-ng
-        androidenv.platformTools
+        androidenv.androidPkgs_9_0.platform-tools
         appimage-run
         aria2
         autorandr
@@ -113,7 +113,7 @@ in
         dosfstools
         dot2tex
         dunst
-        stable.dwarf-fortress-packages.dwarf-fortress-full
+        unstable.dwarf-fortress-packages.dwarf-fortress-full
         ent
         evince
         ffmpeg
@@ -203,7 +203,7 @@ in
         openrct2
         openssh
         pamixer
-        pandoc
+        stable.pandoc
         pass
         pavucontrol
         perl
@@ -223,8 +223,8 @@ in
         pydf
         python2
         python3
-        python36Packages.csvkit
-        python36Packages.glances
+        python3Packages.csvkit
+        stable.python3Packages.glances
         redshift
         ruby
         scanmem
@@ -263,7 +263,7 @@ in
         up
         usbutils
         usbutils
-        virtmanager
+        stable.virtmanager
         wget
         wineStaging
         winetricks
@@ -1408,7 +1408,7 @@ in
                   };
                 };
 
-                statusCommand = "${stable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/top.py";
+                statusCommand = "${unstable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/top.py";
 
                 id = "bar-top";
                 position = "top";
@@ -1456,7 +1456,7 @@ in
                   };
                 };
 
-                statusCommand = "${stable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/bottom.py";
+                statusCommand = "${unstable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/bottom.py";
 
                 id = "bar-bottom";
                 position = "bottom";
