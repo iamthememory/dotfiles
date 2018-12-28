@@ -12,6 +12,10 @@ in
 
     programs.direnv.enableZshIntegration = true;
 
+    xdg.configFile."liquidpromptrc" = {
+      source = ./liquidpromptrc;
+    };
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;
