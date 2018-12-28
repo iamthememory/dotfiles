@@ -5,6 +5,7 @@ in
   {
     imports = if hasGui then [
         ./fonts.nix
+        ./i3wm
       ]
       else [
       ];

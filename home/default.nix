@@ -42,6 +42,7 @@ in
 
       packages = with unstable; [
         R
+        wireguard-tools
         acct
         ack
         ag
@@ -240,17 +241,8 @@ in
       ];
 
       sessionVariables = let
-        fixup-paths = unstable.writeScript "fixup-paths.sh" ''
-          #!/usr/bin/env bash
-
-          echo "$1" \
-            | ${unstable.coreutils}/bin/tr ':' '\n' \
-            | ${unstable.gawk}/bin/gawk '!x[$0]++' \
-            | ${unstable.gnugrep}/bin/grep -E '^/' \
-            | ${unstable.coreutils}/bin/tr '\n' ':' \
-            | ${unstable.gnused}/bin/sed -r 's@^:+@@;s@:+$@@'
-        '';
-        in
+        fixup-paths = (import ./scripts).fixup-paths;
+      in
       rec {
         CCACHE_DIR = "\${HOME}/.ccache";
         CFLAGS = "-march=native -O2 -pipe -ggdb -fstack-protector-strong";
@@ -1487,156 +1479,6 @@ in
               "Literation Mono Nerd Font 8"
             ];
 
-            keybindings = {
-              "XF86AudioLowerVolume" = "exec \"${unstable.pamixer}/bin/pamixer --decrease 5";
-              "XF86AudioMute" = "exec ~/.local/bin/toggle-mute.sh";
-              "XF86AudioNext" = "exec ${unstable.playerctl}/bin/playerctl --player=spotify next";
-              "XF86AudioPause" = "exec ${unstable.playerctl}/bin/playerctl --player=spotify play-pause";
-              "XF86AudioPlay" = "exec ${unstable.playerctl}/bin/playerctl --player=spotify play-pause";
-              "XF86AudioPrev" = "exec ${unstable.playerctl}/bin/playerctl --player=spotify previous";
-              "XF86AudioRaiseVolume" = "exec \"${unstable.pamixer}/bin/pamixer --increase 5";
-
-              "${modifier}+Return" = "exec ~/.local/bin/start-tmux-x.sh";
-              "${modifier}+Shift+Return" = "exec ${unstable.st}/bin/st -e ${unstable.tmux}/bin/tmux new";
-
-              "${modifier}+space" = "focus mode_toggle";
-              "${modifier}+Shift+space" = "floating toggle";
-
-              "${modifier}+minus" = "scratchpad show";
-              "${modifier}+Shift+minus" = "move scratchpad";
-
-              "${modifier}+equal" = "[class=\"^Spotify$\"] scratchpad show";
-
-              "${modifier}+1" = "workspace number 1:disc";
-              "${modifier}+Shift+1" = "move container to workspace number 1:disc";
-
-              "${modifier}+2" = "workspace number 2:sys";
-              "${modifier}+Shift+2" = "move container to workspace number 2:sys";
-
-              "${modifier}+3" = "workspace number 3:mail";
-              "${modifier}+Shift+3" = "move container to workspace number 3:mail";
-
-              "${modifier}+4" = "workspace number 4:ffdoc";
-              "${modifier}+Shift+4" = "move container to workspace number 4:ffdoc";
-
-              "${modifier}+5" = "workspace number 5:ffxiv";
-              "${modifier}+Shift+5" = "move container to workspace number 5:ffxiv";
-
-              "${modifier}+6" = "workspace number 6";
-              "${modifier}+Shift+6" = "move container to workspace number 6";
-
-              "${modifier}+7" = "workspace number 7";
-              "${modifier}+Shift+7" = "move container to workspace number 7";
-
-              "${modifier}+8" = "workspace number 8:slack";
-              "${modifier}+Shift+8" = "move container to workspace number 8:slack";
-
-              "${modifier}+9" = "workspace number 9:misc";
-              "${modifier}+Shift+9" = "move container to workspace number 9:misc";
-
-              "${modifier}+0" = "workspace number 10:steam";
-              "${modifier}+Shift+0" = "move container to workspace number 10:steam";
-
-              "${modifier}+a" = "focus parent";
-              "${modifier}+Shift+a" = "exec ~/.local/bin/passmenu --type";
-              "${modifier}+Control+a" = "exec ~/.local/bin/passmenu";
-              "${modifier}+Control+Shift+a" = "exec ${unstable.autorandr}/bin/autorandr -c";
-
-              "${modifier}+Shift+b" = "exec ${unstable.pulseaudio}/bin/pactl suspend-sink 1 && ${unstable.pulseaudio}/bin/pactl suspend-sink 0";
-
-              "${modifier}+c" = "focus child";
-              "${modifier}+Control+c" = "exec ${programs.chromium.package}/bin/chromium-browser";
-              "${modifier}+Control+Shift+c" = "exec ${programs.chromium.package}/bin/chromium-browser --incognito";
-
-              "${modifier}+d" = "exec ${unstable.dmenu}/bin/dmenu_run";
-              "${modifier}+Shift+d" = "exec ${unstable.i3}/bin/i3-dmenu-desktop";
-
-              "${modifier}+e" = "layout toggle split";
-              "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit & sleep 10 && loginctl terminate-session \$XDG_SESSION_ID'\"";
-
-              "${modifier}+f" = "fullscreen toggle";
-              "${modifier}+Control+Shift+f" = "exec ${unstable.playonlinux}/bin/playonlinux --run 'FINAL FANTASY XIV - A Realm Reborn'";
-
-              "${modifier}+Control+Shift+g" = "exec ${unstable.xorg.xmodmap}/bin/xmodmap ${speedswapper}";
-
-              "${modifier}+h" = "focus left";
-              "${modifier}+Shift+h" = "move left";
-              "${modifier}+Control+Shift+h" = "exec ${unstable.st}/bin/st -e ${unstable.htop}/bin/htop";
-
-              "${modifier}+i" = "exec ${unstable.i3}/bin/i3-input";
-
-              "${modifier}+j" = "focus down";
-              "${modifier}+Shift+j" = "move down";
-
-              "${modifier}+k" = "focus up";
-              "${modifier}+Shift+k" = "move up";
-
-              "${modifier}+l" = "focus right";
-              "${modifier}+Shift+l" = "move right";
-              "${modifier}+Control+Shift+l" = "exec \"sudo -K; ${unstable.i3lock}/bin/i3lock -c 202020 -e\"";
-
-              "${modifier}+Control+Shift+m" = "exec ${unstable.ftb}/bin/ftb-launch.sh";
-
-              "${modifier}+n" = "workspace next";
-              "${modifier}+Shift+n" = "move container to workspace next";
-              "${modifier}+Control+n" = "exec ${unstable.playerctl}/bin/playerctl --player=spotify next";
-              "${modifier}+Control+Shift+n" = "exec ${unstable.gnome3.nautilus}/bin/nautilus";
-
-              "${modifier}+o" = "split h";
-
-              "${modifier}+p" = "workspace prev";
-              "${modifier}+Shift+p" = "move container to workspace prev";
-              "${modifier}+Control+p" = "exec ${unstable.playerctl}/bin/playerctl --player=spotify previous";
-              "${modifier}+Control+Shift+p" = "exec ${unstable.pavucontrol}/bin/pavucontrol";
-
-              "${modifier}+Shift+q" = "kill";
-
-              "${modifier}+r" = "mode \"resize\"";
-              "${modifier}+Shift+r" = "exec i3-input -F 'rename workspace to \"%s\"' -P 'New name: '";
-              "${modifier}+Control+r" = "reload";
-              "${modifier}+Control+Shift+r" = "restart";
-
-              "${modifier}+Control+Shift+s" = "exec ${unstable.flameshot}/bin/flameshot gui -p \"$(${unstable.coreutils}/bin/date \"+\$HOME/screenshots/%Y/%m\")\"";
-
-              "${modifier}+t" = "mode \"passthrough\"";
-              "${modifier}+Shift+t" = "exec ${unstable.xorg.xinput}/bin/xinput disable 'pointer:SynPS/2 Synaptics TouchPad'";
-              "${modifier}+Control+Shift+t" = "exec ${unstable.xorg.xinput}/bin/xinput enable 'pointer:SynPS/2 Synaptics TouchPad'";
-
-              "${modifier}+Control+Shift+u" = "exec ${unstable.systemd}/bin/systemctl suspend";
-
-              "${modifier}+v" = "split v";
-
-              "${modifier}+w" = "layout tabbed";
-
-              "${modifier}+Control+Shift+x" = "exec ${unstable.xorg.xkill}/bin/xkill";
-
-              "${modifier}+Shift+y" = "exec ${unstable.xorg.xinput}/bin/xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'";
-              "${modifier}+Control+Shift+y" = "exec ${unstable.xorg.xinput}/bin/xinput enable 'Yubico Yubikey 4 OTP+U2F+CCID'";
-            };
-
-            modes = {
-              "resize" = {
-                "Return" = "mode \"default\"";
-                "Escape" = "mode \"default\"";
-
-                "h" = "resize shrink width 10 px or 5 ppt";
-                "${modifier}+h" = "resize shrink width 1 px or 1 ppt";
-
-                "j" = "resize grow height 10 px or 5 ppt";
-                "${modifier}+j" = "resize grow height 1 px or 1 ppt";
-
-                "k" = "resize shrink height 10 px or 5 ppt";
-                "${modifier}+k" = "resize shrink height 1 px or 1 ppt";
-
-                "l" = "resize grow width 10 px or 5 ppt";
-                "${modifier}+l" = "resize grow width 1 px or 1 ppt";
-              };
-
-              "passthrough" = {
-                "${modifier}+t" = "mode \"default\"";
-              };
-            };
-
             startup = [
               { command = "~/.local/bin/discord.sh"; }
               { command = "${unstable.steam}/bin/steam"; }
@@ -1649,8 +1491,6 @@ in
             ];
 
             workspaceLayout = "tabbed";
-
-            modifier = "Mod1";
 
             window = {
               border = 2;
