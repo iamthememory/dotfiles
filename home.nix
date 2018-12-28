@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, lib, options, pkgs, ... }:
   import ./home {
-    inherit pkgs;
+    inherit config lib options pkgs;
   }

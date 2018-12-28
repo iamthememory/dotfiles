@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, lib, options, ... }:
 let
   import-channel = c: (
     import (
