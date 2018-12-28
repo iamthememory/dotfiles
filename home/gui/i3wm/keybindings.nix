@@ -2,7 +2,7 @@
 let
   inherit (import ../../channels.nix) unstable;
 
-  scripts = import ../../scripts;
+  scripts = import ../../scripts { inherit config; };
 
   modifier = config.xsession.windowManager.i3.config.modifier;
 
@@ -121,7 +121,7 @@ in
       "${modifier}+Control+r" = "reload";
       "${modifier}+Control+Shift+r" = "restart";
 
-      "${modifier}+Control+Shift+s" = "exec ${pkgs.flameshot}/bin/flameshot gui -p \"$(${pkgs.coreutils}/bin/date \"+\$HOME/screenshots/%Y/%m\")\"";
+      "${modifier}+Control+Shift+s" = "exec ${scripts.take-screenshot}";
 
       "${modifier}+t" = "mode \"passthrough\"";
       "${modifier}+Shift+t" = "exec ${pkgs.xorg.xinput}/bin/xinput disable 'pointer:SynPS/2 Synaptics TouchPad'";

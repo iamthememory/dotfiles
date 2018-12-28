@@ -2,7 +2,7 @@
 let
   inherit (import ./channels.nix) stable unstable jellyfish staging;
 
-  scripts = import ./scripts;
+  scripts = import ./scripts { inherit config; };
 
   speedswapper = scripts.speedswapper;
 in
@@ -227,7 +227,7 @@ in
       ];
 
       sessionVariables = let
-        fixup-paths = (import ./scripts).fixup-paths;
+        fixup-paths = scripts.fixup-paths;
       in
       rec {
         CCACHE_DIR = "\${HOME}/.ccache";
