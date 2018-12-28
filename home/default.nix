@@ -50,7 +50,6 @@ in
         aria2
         autorandr
         avahi
-        bash-completion
         bashInteractive
         bc
         binutils
@@ -472,24 +471,6 @@ in
         };
       };
 
-      bash = {
-        enable = true;
-
-        initExtra = ''
-          if [ -f ~/.env ] && [ -r ~/.env ]
-          then
-            . ~/.env
-          fi
-        '';
-
-        profileExtra = ''
-          if [ -f ~/.env ] && [ -r ~/.env ]
-          then
-            . ~/.env
-          fi
-        '';
-      };
-
       browserpass = {
         browsers = [
           "chromium"
@@ -523,7 +504,6 @@ in
 
       direnv = {
         enable = true;
-        enableBashIntegration = true;
       };
 
       fzf = {
