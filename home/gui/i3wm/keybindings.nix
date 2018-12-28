@@ -22,6 +22,7 @@ in
 
       "${modifier}+Return" = "exec ${scripts.start-tmux-x}";
       "${modifier}+Shift+Return" = "exec ${pkgs.st}/bin/st -e ${pkgs.tmux}/bin/tmux new";
+      "${modifier}+Control+Shift+Return" = "exec ${pkgs.st}/bin/st";
 
       "${modifier}+space" = "focus mode_toggle";
       "${modifier}+Shift+space" = "floating toggle";
