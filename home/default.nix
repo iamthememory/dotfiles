@@ -11,11 +11,9 @@ let
   '';
 in
   rec {
-    fonts = {
-      fontconfig = {
-        enableProfileFonts = true;
-      };
-    };
+    imports = [
+      ./gui
+    ];
 
     home = {
       file = {
@@ -67,12 +65,10 @@ in
         chrony
         cloc
         cookiecutter
-        corefonts
         coreutils
         ctags
         curl
         ddrescue
-        dejavu_fonts
         diceware
         direnv
         discord
@@ -88,7 +84,6 @@ in
         evince
         ffmpeg
         file
-        font-droid
         ftb
         gdb
         gimp
@@ -124,14 +119,11 @@ in
         inkscape
         innoextract
         iotop
-        ipafont
         jq
         jre
         kbfs
         kdeconnect
         keybase-gui
-        league-of-moveable-type
-        liberation_ttf
         libisoburn
         libnotify
         #libreoffice-fresh
@@ -153,7 +145,6 @@ in
         mpv
         mtr
         ncmpcpp
-        nerdfonts
         nethack
         ngrep
         nix-bundle
@@ -162,10 +153,6 @@ in
         nix-prefetch-github
         nix-prefetch-github
         nmap
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
-        noto-fonts-extra
         nox
         numlockx
         nxBender
@@ -184,7 +171,6 @@ in
         playonlinux
         pngcrush
         posix_man_pages
-        powerline-fonts
         powershell
         psmisc
         pup
@@ -209,7 +195,6 @@ in
         sqlite-interactive
         squashfsTools
         sshfs
-        sshfs
         st
         steam
         steam-run
@@ -231,7 +216,6 @@ in
         unrar
         unzip
         up
-        usbutils
         usbutils
         stable.virtmanager
         wget
