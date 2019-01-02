@@ -98,7 +98,7 @@ in
 
       "${modifier}+l" = "focus right";
       "${modifier}+Shift+l" = "move right";
-      "${modifier}+Control+Shift+l" = "exec \"sudo -K; ${pkgs.i3lock}/bin/i3lock -c 202020 -e\"";
+      "${modifier}+Control+Shift+l" = "exec ${pkgs.xorg.xset}/bin/xset s activate";
 
       "${modifier}+Control+Shift+m" = "exec ${pkgs.ftb}/bin/ftb-launch.sh";
 

@@ -102,7 +102,6 @@ in
         htop
         httpie
         i3
-        i3lock
         ibus
         ibus-engines.anthy
         ibus-engines.table
@@ -203,7 +202,6 @@ in
         xdg-user-dirs
         xdotool
         xorg.xdpyinfo
-        xss-lock
         xz
         youtube-dl
         zfs
@@ -895,6 +893,11 @@ in
         noDNDShadow = true;
         noDockShadow = true;
         shadow = false;
+
+        extraOptions = ''
+          paint-on-overlay = true;
+          mark-ovredir-focused = true;
+        '';
       };
 
       dunst = {
@@ -1036,12 +1039,6 @@ in
         };
 
         tray = true;
-      };
-
-      screen-locker = {
-        enable = true;
-        inactiveInterval = 20;
-        lockCmd = "${unstable.i3lock}/bin/i3lock -n -e -c 202020";
       };
 
       unclutter = {
