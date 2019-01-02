@@ -4,6 +4,7 @@ let
   host = import ~/host.nix;
 
   known_hosts = [
+    "aurora"
     "nightmare"
   ];
 
