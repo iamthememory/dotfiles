@@ -10,7 +10,6 @@ in
     home.packages = with unstable; [
       corefonts
       dejavu_fonts
-      font-droid
       ipafont
       league-of-moveable-type
       liberation_ttf
