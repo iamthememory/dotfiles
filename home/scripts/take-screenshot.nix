@@ -11,7 +11,7 @@ in
 
     if [ ! -e "$screendir" ]
     then
-      mkdir "$screendir"
+      mkdir -pv "$screendir"
     fi
 
     exec ${flameshot} gui -p "$screendir"
