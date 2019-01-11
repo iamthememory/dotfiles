@@ -43,6 +43,7 @@ in
         wireguard-tools
         acct
         ack
+        acpi
         ag
         agrep
         aircrack-ng
