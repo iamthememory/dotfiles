@@ -10,7 +10,7 @@
 
         src = fetchurl {
           url = "http://ftb.cursecdn.com/FTB2/launcher/FTB_Launcher.jar";
-          sha256 = "0pyh83hhni97ryvz6yy8lyiagjrlx67cwr780s2bja92rxc1sqpj";
+          sha256 = "0c60nbddxs8mv6i7g5dz365sfjrdq9pk12xggk4bm4px7xg5gv7j";
         };
 
         builder = builtins.toFile "builder.sh" ''
