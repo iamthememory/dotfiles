@@ -135,7 +135,7 @@ in
 
       "${modifier}+Control+Shift+x" = "exec ${pkgs.xorg.xkill}/bin/xkill";
 
-      "${modifier}+Shift+y" = "exec ${pkgs.xorg.xinput}/bin/xinput disable 'Yubico Yubikey 3 OTP+U2F+CCID'";
+      "${modifier}+Shift+y" = "exec ${pkgs.xorg.xinput}/bin/xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'";
       "${modifier}+Control+Shift+y" = "exec ${pkgs.xorg.xinput}/bin/xinput enable 'Yubico Yubikey 4 OTP+U2F+CCID'";
     };
 
