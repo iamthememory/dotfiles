@@ -123,6 +123,7 @@ in
         linuxPackages.systemtap
         lm_sensors
         lsof
+        gnumake
         man
         manpages
         megatools
@@ -205,6 +206,7 @@ in
         xorg.xdpyinfo
         xz
         youtube-dl
+        yq
         zfs
       ];
 
