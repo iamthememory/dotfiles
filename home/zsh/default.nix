@@ -127,6 +127,9 @@ in
 
         # Disable cd adding to the directory stack.
         unsetopt autopushd
+
+        # Add kitty zsh completion.
+        ${pkgs.kitty}/bin/kitty + complete setup zsh | source /dev/stdin
       '';
     };
   }
