@@ -9,7 +9,7 @@ self: super:
     gnupg = import ./packages/gnupg.nix { inherit self super; };
     i3pystatus = import ./packages/i3pystatus.nix { inherit self super; };
     metasploit = super.callPackage ./packages/metasploit { };
-    nerdfonts = import ./packages/nerdfonts.nix { inherit self super; };
+    nerdfonts = import ./packages/nerdfonts { inherit self super; };
     nxBender = import ./packages/nxBender.nix { inherit self super; };
     pandoc = import ./packages/pandoc.nix { inherit self super; };
     pydf = import ./packages/pydf.nix { inherit self super; };

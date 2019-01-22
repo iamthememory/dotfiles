@@ -6,10 +6,15 @@
           fontforge
         ]
     );
+
+    fontfix = super.writeText "0283-fix-font-spacing.patch" (
+      builtins.readFile ./0283-fix-font-spacing.patch
+    );
   in
   with (super // self); super.nerdfonts.overrideDerivation (oldAttrs: rec {
     buildInputs =  with pkgs; oldAttrs.buildInputs ++ [
       bc
+      pandoc
       powerline-fonts
       python
     ];
@@ -22,6 +27,7 @@
       pushd bin/scripts
       ./standardize-and-complete-readmes.sh
       popd
+      patch -Np1 < "${fontfix}"
     '';
 
     buildPhase = ''
