@@ -216,7 +216,7 @@ in
         CFLAGS = "-march=native -O2 -pipe -ggdb -fstack-protector-strong";
         CXXFLAGS = CFLAGS;
         DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/\${UID}/bus";
-        EDITOR = "\${HOME}/.nix-profile/bin/vim";
+        EDITOR = "${config.programs.vim.package}/bin/vim";
         FCFLAGS = CFLAGS;
         FFLAGS = CFLAGS;
         GEM_HOME = "$(${unstable.ruby}/bin/ruby -e 'print Gem.user_dir')";
@@ -238,7 +238,6 @@ in
         QT_SELECT = "5";
         SSH_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
         SUDO_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
-        TERM = "screen-256color";
         TEXMFHOME = "\${HOME}/texmf";
         USE_CCACHE = "1";
         XDG_CACHE_HOME = "\${HOME}/.cache";
@@ -297,7 +296,7 @@ in
             #!/usr/bin/env bash
 
             unset LS_COLORS
-            export TERM=screen-256color
+            export TERM=xterm-kitty
             eval "$(${unstable.coreutils}/bin/dircolors "${colorfile}")" 2>/dev/null
             echo "$LS_COLORS"
           '';
