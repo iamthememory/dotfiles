@@ -9,6 +9,7 @@ in
     imports = lib.optionals hasGui [
       ./fonts.nix
       ./i3wm
+      ./kitty.nix
       ./lock.nix
     ];
   }
