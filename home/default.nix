@@ -67,7 +67,6 @@ in
         curl
         ddrescue
         diceware
-        direnv
         dnsutils
         docker
         dos2unix
@@ -112,7 +111,6 @@ in
         iotop
         jq
         kbfs
-        kdeconnect
         keybase-gui
         libisoburn
         libnotify
