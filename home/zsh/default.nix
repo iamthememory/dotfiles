@@ -36,6 +36,7 @@ in
         grep = "${pkgs.gnugrep}/bin/grep --color=auto";
         ls = "${pkgs.coreutils}/bin/ls --color=auto";
         cp = "${pkgs.coreutils}/bin/cp --reflink=auto";
+        ssh = "${pkgs.kitty}/bin/kitty +kitten ssh";
       };
 
       oh-my-zsh = {

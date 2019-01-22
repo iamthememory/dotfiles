@@ -50,6 +50,8 @@ in
   {
     home.packages = with pkgs; [
       kitty
+      ncurses
+      ncurses.dev
     ];
 
     xdg.configFile."kitty/kitty.conf" = {
