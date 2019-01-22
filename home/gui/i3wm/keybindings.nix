@@ -20,8 +20,7 @@ in
       "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl --player=spotify previous";
       "XF86AudioRaiseVolume" = "exec \"${pkgs.pamixer}/bin/pamixer --increase 5";
 
-      "${modifier}+Return" = "exec ${scripts.start-tmux-x}";
-      "${modifier}+Shift+Return" = "exec ${pkgs.st}/bin/st -e ${pkgs.tmux}/bin/tmux new";
+      "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty --single-instance";
       "${modifier}+Control+Shift+Return" = "exec ${pkgs.st}/bin/st";
 
       "${modifier}+space" = "focus mode_toggle";
