@@ -133,6 +133,7 @@ in
         mpv
         mtr
         ncmpcpp
+        newt
         ngrep
         nix-bundle
         nix-index
