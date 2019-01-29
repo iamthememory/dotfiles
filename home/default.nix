@@ -1085,10 +1085,7 @@ in
         ${unstable.xorg.xinput}/bin/xinput disable 'pointer:SynPS/2 Synaptics TouchPad'
 
         # Activate Compose key.
-        ${unstable.xorg.setxkbmap}/bin/setxkbmap -model evdev -layout us -option compose:lwin
-
-        # Swap caps lock and escape.
-        ${unstable.xorg.xmodmap}/bin/xmodmap ${speedswapper}
+        ${unstable.xorg.setxkbmap}/bin/setxkbmap -model evdev -layout us -option compose:lwin -option caps:swapescape
 
         # Disable Yubikey by default.
         ${unstable.xorg.xinput}/bin/xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'
