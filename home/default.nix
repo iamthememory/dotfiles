@@ -57,6 +57,7 @@ in
         blueman
         bumpversion
         bzip2
+        cargo
         config.programs.chromium.package
         chrony
         cloc
@@ -164,6 +165,8 @@ in
         stable.python3Packages.glances
         redshift
         ruby
+        rustc
+        rustfmt
         shellcheck
         skypeforlinux
         slack
@@ -765,6 +768,7 @@ in
           "haskell-vim"
           "nerdtree"
           "nerdtree-git-plugin"
+          "rust-vim"
           "tagbar"
           "vim-airline"
           "vim-airline-themes"
