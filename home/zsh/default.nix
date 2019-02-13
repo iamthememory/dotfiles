@@ -32,6 +32,26 @@ in
         ls = "${pkgs.coreutils}/bin/ls --color=auto";
         cp = "${pkgs.coreutils}/bin/cp --reflink=auto";
         ssh = "${pkgs.kitty}/bin/kitty +kitten ssh";
+
+        eview = "${config.programs.vim.package}/bin/vim -y -R";
+        evim = "${config.programs.vim.package}/bin/vim -y";
+        ex = "${config.programs.vim.package}/bin/vim -e";
+        gex = "${config.programs.vim.package}/bin/vim -g -e";
+        gview = "${config.programs.vim.package}/bin/vim -g -R";
+        gvim = "${config.programs.vim.package}/bin/vim -g";
+        gvimdiff = "${config.programs.vim.package}/bin/vim -d -g";
+        rgview = "${config.programs.vim.package}/bin/vim -Z -R -g";
+        rgvim = "${config.programs.vim.package}/bin/vim -Z -g";
+        rview = "${config.programs.vim.package}/bin/vim -Z -R";
+        rvim = "${config.programs.vim.package}/bin/vim -Z";
+        vi = "${config.programs.vim.package}/bin/vim -v";
+        view = "${config.programs.vim.package}/bin/vim -R";
+        vimdiff = "${config.programs.vim.package}/bin/vim -d";
+
+        #gvimtutor = "${config.programs.vim.package}/bin/vim -e";
+        #vimtutor = "${config.programs.vim.package}/bin/vim -e";
+        #xxd = "${config.programs.vim.package}/bin/vim -e";
+
       };
 
       oh-my-zsh = {
