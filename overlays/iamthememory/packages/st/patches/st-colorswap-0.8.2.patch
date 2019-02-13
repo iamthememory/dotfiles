@@ -3,17 +3,10 @@ From: Linh Nguyen <linhvng.2212@gmail.com>
 Date: Wed, 28 Mar 2018 11:46:26 -0400
 Subject: [PATCH] port st-solarized-both to 0.8.1
 
----
- config.def.h | 72 ++++++++++++++++++++++++++++++++++++------------------------
- st.h         |  1 +
- x.c          | 28 ++++++++++++++++++-----
- 3 files changed, 66 insertions(+), 35 deletions(-)
-
-diff --git a/st.h b/st.h
-index dac64d8..7b0159d 100644
---- a/st.h
-+++ b/st.h
-@@ -118,6 +118,7 @@ extern char *vtiden;
+diff -ru a/st.h b/st.h
+--- a/st.h	2019-02-09 03:50:41.000000000 -0800
++++ b/st.h	2019-02-10 22:36:05.246960789 -0800
+@@ -117,6 +117,7 @@
  extern char *worddelimiters;
  extern int allowaltscreen;
  extern char *termname;
@@ -21,11 +14,10 @@ index dac64d8..7b0159d 100644
  extern unsigned int tabspaces;
  extern unsigned int defaultfg;
  extern unsigned int defaultbg;
-diff --git a/x.c b/x.c
-index c343ba2..47ef3e9 100644
---- a/x.c
-+++ b/x.c
-@@ -53,6 +53,7 @@ static void clipcopy(const Arg *);
+diff -ru a/x.c b/x.c
+--- a/x.c	2019-02-09 03:50:41.000000000 -0800
++++ b/x.c	2019-02-10 22:39:26.969698560 -0800
+@@ -53,6 +53,7 @@
  static void clippaste(const Arg *);
  static void numlock(const Arg *);
  static void selpaste(const Arg *);
@@ -33,7 +25,7 @@ index c343ba2..47ef3e9 100644
  static void zoom(const Arg *);
  static void zoomabs(const Arg *);
  static void zoomreset(const Arg *);
-@@ -240,6 +241,8 @@ static char *opt_title = NULL;
+@@ -240,6 +241,8 @@
  
  static int oldbutton = 3; /* button event on startup: 3 = release */
  
@@ -42,11 +34,10 @@ index c343ba2..47ef3e9 100644
  void
  clipcopy(const Arg *dummy)
  {
-@@ -278,6 +281,27 @@ numlock(const Arg *dummy)
- 	win.mode ^= MODE_NUMLOCK;
+@@ -279,6 +282,27 @@
  }
  
-+void
+ void
 +swapcolors(const Arg *dummy)
 +{
 +	usealtcolors = !usealtcolors;
@@ -67,10 +58,11 @@ index c343ba2..47ef3e9 100644
 +	redraw();
 +}
 +
- void
++void
  zoom(const Arg *arg)
  {
-@@ -700,6 +711,11 @@ sixd_to_16bit(int x)
+ 	Arg larg;
+@@ -702,6 +726,11 @@
  	return x == 0 ? 0 : 0x3737 + 0x2828 * x;
  }
  
@@ -82,7 +74,7 @@ index c343ba2..47ef3e9 100644
  int
  xloadcolor(int i, const char *name, Color *ncolor)
  {
-@@ -718,7 +734,7 @@ xloadcolor(int i, const char *name, Color *ncolor)
+@@ -720,7 +749,7 @@
  			return XftColorAllocValue(xw.dpy, xw.vis,
  			                          xw.cmap, &color, ncolor);
  		} else
@@ -91,27 +83,25 @@ index c343ba2..47ef3e9 100644
  	}
  
  	return XftColorAllocName(xw.dpy, xw.vis, xw.cmap, name, ncolor);
-@@ -731,7 +747,7 @@ xloadcols(void)
- 	static int loaded;
- 	Color *cp;
- 
--	dc.collen = MAX(LEN(colorname), 256);
-+	dc.collen = MAX(LEN(colorname), LEN(altcolorname));
- 	dc.col = xmalloc(dc.collen * sizeof(Color));
- 
- 	if (loaded) {
-@@ -741,8 +757,8 @@ xloadcols(void)
+@@ -737,14 +766,14 @@
+ 		for (cp = dc.col; cp < &dc.col[dc.collen]; ++cp)
+ 			XftColorFree(xw.dpy, xw.vis, xw.cmap, cp);
+ 	} else {
+-		dc.collen = MAX(LEN(colorname), 256);
++		dc.collen = MAX(LEN(colorname), LEN(altcolorname));
+ 		dc.col = xmalloc(dc.collen * sizeof(Color));
+ 	}
  
  	for (i = 0; i < dc.collen; i++)
  		if (!xloadcolor(i, NULL, &dc.col[i])) {
 -			if (colorname[i])
--				die("Could not allocate color '%s'\n", colorname[i]);
+-				die("could not allocate color '%s'\n", colorname[i]);
 +			if (getcolorname(i))
-+				die("Could not allocate color '%s'\n", getcolorname(i));
++				die("could not allocate color '%s'\n", getcolorname(i));
  			else
- 				die("Could not allocate color %d\n", i);
+ 				die("could not allocate color %d\n", i);
  		}
-@@ -1079,13 +1095,13 @@ xinit(int cols, int rows)
+@@ -1082,13 +1111,13 @@
  	cursor = XCreateFontCursor(xw.dpy, mouseshape);
  	XDefineCursor(xw.dpy, xw.win, cursor);
  
@@ -127,24 +117,7 @@ index c343ba2..47ef3e9 100644
  		xmousebg.red   = 0x0000;
  		xmousebg.green = 0x0000;
  		xmousebg.blue  = 0x0000;
--- 
-2.16.3
-
-
-From e0a92b498278e42e33f8007fd7b622a05e5310eb Mon Sep 17 00:00:00 2001
-From: Linh Nguyen <linhvng.2212@gmail.com>
-Date: Wed, 28 Mar 2018 12:23:45 -0400
-Subject: [PATCH] port st-no_bold_colors patch to 0.8.1
-
----
- x.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/x.c b/x.c
-index c343ba2..42e7e9f 100644
---- a/x.c
-+++ b/x.c
-@@ -1295,7 +1295,7 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
+@@ -1298,7 +1327,7 @@
  
  	/* Change basic system colors [0-7] to bright system colors [8-15] */
  	if ((base.mode & ATTR_BOLD_FAINT) == ATTR_BOLD && BETWEEN(base.fg, 0, 7))
@@ -153,6 +126,3 @@ index c343ba2..42e7e9f 100644
  
  	if (IS_SET(MODE_REVERSE)) {
  		if (fg == &dc.col[defaultfg]) {
--- 
-2.16.3
-
