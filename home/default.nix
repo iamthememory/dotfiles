@@ -110,6 +110,7 @@ in
         imagemagick
         inkscape
         iotop
+        jack2
         jq
         keybase-gui
         libisoburn
@@ -163,6 +164,7 @@ in
         python3
         python3Packages.csvkit
         stable.python3Packages.glances
+        qjackctl
         redshift
         ruby
         rustc
