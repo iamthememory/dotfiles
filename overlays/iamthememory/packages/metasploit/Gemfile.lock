@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/rapid7/metasploit-framework
-  revision: 2857b88aeddb920c2e36ed88675b87450d81c926
-  ref: refs/tags/4.17.29
+  revision: 0df030e8e5b7e45448c2a424d604815ea3d7d196
+  ref: refs/tags/5.0.5
   specs:
-    metasploit-framework (4.17.29)
+    metasploit-framework (5.0.5)
       actionpack (~> 4.2.6)
       activerecord (~> 4.2.6)
       activesupport (~> 4.2.6)
@@ -14,17 +14,18 @@ GIT
       concurrent-ruby (= 1.0.5)
       dnsruby
       ed25519
+      em-http-request
       faker
       filesize
       jsobfu
       json
       metasm
       metasploit-concern
-      metasploit-credential (< 3.0.0)
+      metasploit-credential
       metasploit-model
-      metasploit-payloads (= 1.3.54)
-      metasploit_data_models (< 3.0.0)
-      metasploit_payloads-mettle (= 0.4.2)
+      metasploit-payloads (= 1.3.61)
+      metasploit_data_models
+      metasploit_payloads-mettle (= 0.5.7)
       mqtt
       msgpack
       nessus_rest
@@ -66,10 +67,13 @@ GIT
       ruby_smb
       rubyntlm
       rubyzip
+      sinatra
       sqlite3
       sshkey
+      thin
       tzinfo
       tzinfo-data
+      warden
       windows_error
       xdr
       xmlrpc
@@ -116,17 +120,29 @@ GEM
     bit-struct (0.16)
     builder (3.2.3)
     concurrent-ruby (1.0.5)
+    cookiejar (0.3.3)
     crass (1.0.4)
+    daemons (1.3.1)
     dnsruby (1.61.2)
       addressable (~> 2.5)
     ed25519 (1.2.4)
+    em-http-request (1.1.5)
+      addressable (>= 2.3.4)
+      cookiejar (!= 0.3.1)
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.2)
+      eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
-    faker (1.9.1)
+    eventmachine (1.2.7)
+    faker (1.9.3)
       i18n (>= 0.7)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     filesize (0.2.0)
     hashery (2.1.2)
+    http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jsobfu (0.4.2)
@@ -140,10 +156,11 @@ GEM
       activemodel (~> 4.2.6)
       activesupport (~> 4.2.6)
       railties (~> 4.2.6)
-    metasploit-credential (2.0.14)
+    metasploit-credential (3.0.3)
       metasploit-concern
       metasploit-model
-      metasploit_data_models (< 3.0.0)
+      metasploit_data_models (>= 3.0.0)
+      net-ssh
       pg
       railties
       rex-socket
@@ -153,38 +170,38 @@ GEM
       activemodel (~> 4.2.6)
       activesupport (~> 4.2.6)
       railties (~> 4.2.6)
-    metasploit-payloads (1.3.54)
-    metasploit_data_models (2.0.16)
+    metasploit-payloads (1.3.61)
+    metasploit_data_models (3.0.5)
       activerecord (~> 4.2.6)
       activesupport (~> 4.2.6)
       arel-helpers
       metasploit-concern
       metasploit-model
-      pg (= 0.20.0)
+      pg
       postgres_ext
       railties (~> 4.2.6)
       recog (~> 2.0)
-    metasploit_payloads-mettle (0.4.2)
-    mini_portile2 (2.3.0)
+    metasploit_payloads-mettle (0.5.7)
+    mini_portile2 (2.4.0)
     minitest (5.11.3)
     mqtt (0.5.0)
-    msgpack (1.2.4)
+    msgpack (1.2.6)
     multipart-post (2.0.0)
     nessus_rest (0.1.6)
-    net-ssh (5.0.2)
+    net-ssh (5.1.0)
     network_interface (0.0.2)
     nexpose (7.2.1)
-    nokogiri (1.8.5)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.1)
+      mini_portile2 (~> 2.4.0)
     octokit (4.13.0)
       sawyer (~> 0.8.0, >= 0.5.3)
-    openssl-ccm (1.2.1)
+    openssl-ccm (1.2.2)
     openvas-omp (0.0.4)
     packetfu (1.1.13)
       pcaprub
     patch_finder (1.0.2)
     pcaprub (0.13.0)
-    pdf-reader (2.1.0)
+    pdf-reader (2.2.0)
       Ascii85 (~> 1.0.0)
       afm (~> 0.2.1)
       hashery (~> 2.0)
@@ -198,6 +215,8 @@ GEM
       pg_array_parser (~> 0.0.9)
     public_suffix (3.0.3)
     rack (1.6.11)
+    rack-protection (1.5.5)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails-deprecated_sanitizer (1.0.3)
@@ -215,7 +234,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.3.2)
     rb-readline (0.5.5)
-    recog (2.1.35)
+    recog (2.1.45)
       nokogiri
     redcarpet (3.4.0)
     rex-arch (0.1.13)
@@ -231,7 +250,7 @@ GEM
       metasm
       rex-arch
       rex-text
-    rex-exploitation (0.1.19)
+    rex-exploitation (0.1.20)
       jsobfu
       metasm
       rex-arch
@@ -276,15 +295,26 @@ GEM
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
-    sqlite3 (1.3.13)
-    sshkey (1.9.0)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sqlite3 (1.4.0)
+    sshkey (2.0.0)
+    thin (1.7.2)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
     thor (0.20.3)
     thread_safe (0.3.6)
+    tilt (2.0.9)
     ttfunk (1.5.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.7)
+    tzinfo-data (1.2018.9)
       tzinfo (>= 1.0.0)
+    warden (1.2.7)
+      rack (>= 1.0)
     windows_error (0.1.2)
     xdr (2.0.0)
       activemodel (>= 4.2.7)
@@ -298,4 +328,4 @@ DEPENDENCIES
   metasploit-framework!
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
