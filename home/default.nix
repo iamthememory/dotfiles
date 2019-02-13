@@ -50,7 +50,6 @@ in
         androidenv.androidPkgs_9_0.platform-tools
         appimage-run
         aria2
-        autorandr
         avahi
         bashInteractive
         bc
@@ -92,6 +91,7 @@ in
         gnome3.seahorse
         gnome3.zenity
         gnugrep
+        gnumake
         gnupg
         gnuplot
         gnutar
@@ -110,7 +110,6 @@ in
         inkscape
         iotop
         jq
-        kbfs
         keybase-gui
         libisoburn
         libnotify
@@ -121,7 +120,6 @@ in
         linuxPackages.systemtap
         lm_sensors
         lsof
-        gnumake
         man
         manpages
         megatools

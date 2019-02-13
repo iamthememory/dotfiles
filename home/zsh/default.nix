@@ -5,11 +5,6 @@ let
   pkgs = unstable;
 in
   {
-    home.packages = with unstable; [
-      zsh
-      zsh-completions
-    ];
-
     programs.direnv.enableZshIntegration = true;
 
     xdg.configFile."liquidpromptrc" = {
