@@ -1,6 +1,6 @@
 { config, lib, options, ... }:
 let
-  inherit (import ./channels.nix) stable unstable jellyfish staging;
+  inherit (import ./channels.nix) stable unstable jellyfish staging master;
 
   scripts = import ./scripts { inherit config; };
 
@@ -1312,7 +1312,7 @@ in
 
             startup = [
               { command = "~/.local/bin/discord.sh"; }
-              { command = "${unstable.steam}/bin/steam"; }
+              { command = "${master.steam}/bin/steam"; }
               { command = "${unstable.thunderbird}/bin/thunderbird"; }
               { command = "${unstable.spotify}/bin/spotify"; }
               { command = "${unstable.slack}/bin/slack"; }
