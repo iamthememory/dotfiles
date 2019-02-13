@@ -60,6 +60,7 @@ in
         cargo
         config.programs.chromium.package
         chrony
+        clang-tools
         cloc
         cookiecutter
         coreutils
