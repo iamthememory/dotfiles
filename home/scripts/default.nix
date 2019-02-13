@@ -6,6 +6,8 @@ let
 in
   {
     fixup-paths = mkscript ./fixup-paths.nix;
+    i3pystatus-bottom = mkscript ./i3pystatus-bottom.nix;
+    i3pystatus-top = mkscript ./i3pystatus-top.nix;
     speedswapper = mkscript ./speedswapper.nix;
     start-tmux-x = mkscript ./start-tmux-x.nix;
     take-screenshot = mkscript ./take-screenshot.nix;

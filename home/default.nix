@@ -1190,7 +1190,7 @@ in
                   };
                 };
 
-                statusCommand = "${unstable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/top.py";
+                statusCommand = "${unstable.i3pystatus}/bin/i3pystatus -c ${scripts.i3pystatus-top}";
 
                 id = "bar-top";
                 position = "top";
@@ -1238,7 +1238,7 @@ in
                   };
                 };
 
-                statusCommand = "${unstable.i3pystatus}/bin/i3pystatus -c ~/.config/i3pystatus/bottom.py";
+                statusCommand = "${unstable.i3pystatus}/bin/i3pystatus -c ${scripts.i3pystatus-bottom}";
 
                 id = "bar-bottom";
                 position = "bottom";
