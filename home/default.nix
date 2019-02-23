@@ -1090,6 +1090,8 @@ in
 
         # Turn off touchpad.
         ${unstable.xorg.xinput}/bin/xinput disable 'pointer:SynPS/2 Synaptics TouchPad'
+        ${unstable.xorg.xinput}/bin/xinput disable 'pointer:DELL081C:00 044E:121F Touchpad'
+        ${unstable.xorg.xinput}/bin/xinput disable 'pointer:DELL081C:00 044E:121F Mouse'
 
         # Activate Compose key.
         ${unstable.xorg.setxkbmap}/bin/setxkbmap -model evdev -layout us -option compose:lwin -option caps:swapescape
