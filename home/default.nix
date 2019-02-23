@@ -103,7 +103,6 @@ in
         graphviz
         gzip
         host
-        htop
         httpie
         i3
         ibus
@@ -125,7 +124,6 @@ in
         linuxPackages.systemtap
         lm_sensors
         lsof
-        man
         manpages
         megatools
         metasploit
@@ -189,7 +187,6 @@ in
         thunderbird
         time
         tmate
-        tmux
         tor
         tor-browser-bundle
         torsocks
