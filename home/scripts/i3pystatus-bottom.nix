@@ -16,8 +16,13 @@ pkgs.writeScript "i3pystatus-bottom.py" ''
 
   # Times.
 
+  status.register('moon',
+                  format='{moonicon} {status} {illum:.02f}%',
+                  interval=120)
+
   status.register('clock',
-                  format='%a %Y-%m-%d %H:%M:%S')
+                  format='%a %Y-%m-%d %H:%M:%S',
+                  hints={'separator': False})
 
   status.register('uptime',
                   format='up [{days} ]{hours}:{mins:02d}',
