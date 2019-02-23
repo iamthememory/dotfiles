@@ -5,6 +5,8 @@ let
   scripts = import ./scripts { inherit config; };
 
   speedswapper = scripts.speedswapper;
+
+  hostinfo = import ./hostid.nix;
 in
   rec {
     imports = [
@@ -522,7 +524,7 @@ in
         package = unstable.gitAndTools.gitFull;
 
         signing = {
-          key = "0xD226B54765D868B7";
+          key = hostinfo.gpgKey;
           signByDefault = true;
         };
 
