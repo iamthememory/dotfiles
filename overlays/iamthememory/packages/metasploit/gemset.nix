@@ -337,7 +337,7 @@
     source = {
       fetchSubmodules = false;
       rev = "0df030e8e5b7e45448c2a424d604815ea3d7d196";
-      sha256 = "098vb7srxg1afn9875xmzc1xkghmqf61y7b3i8gyrad3gn1ff8jg";
+      sha256 = "10vbbvrc32747q3z83n68bcjvkp93wv4hk55bcj8sh8m36s0qgvb";
       type = "git";
       url = "https://github.com/rapid7/metasploit-framework";
     };
