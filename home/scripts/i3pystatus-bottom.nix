@@ -21,7 +21,7 @@ pkgs.writeScript "i3pystatus-bottom.py" ''
 
   status.register('moon',
                   format='{moonicon} {status} {illum:.02f}%',
-                  interval=120)
+                  interval=10)
 
   status.register('clock',
                   format='%a %Y-%m-%d %H:%M:%S',
