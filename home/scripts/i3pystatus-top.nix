@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  hostinfo = import ../hostid.nix;
+in
 pkgs.writeScript "i3pystatus-top.py" ''
   #!${pkgs.python3}/bin/python3
   # -*- encoding: utf-8 -*-
@@ -84,7 +87,7 @@ pkgs.writeScript "i3pystatus-top.py" ''
   status.register('network',
                   #format_up='{interface}: {kbs}KB/s @ {essid} ({quality}%)',
                   format_up='{interface}: ↓{bytes_recv:4.0f} KiB/s ↑{bytes_sent:4.0f} KiB/s[ @ {essid}][ ({quality:3d}%)] {v4cidr}',
-                  interface='wlp5s0',
+                  interface='${hostinfo.defaultInterface}',
                   graph_width=8,
                   recv_limit=8192,
                   divisor=1024,

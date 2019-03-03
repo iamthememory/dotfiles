@@ -22,6 +22,11 @@ let
     aurora = "0x18EAD8C06EBF0479";
   };
 
+  interfaces = {
+    nightmare = "wlp5s0";
+    aurora = "wlp2s0";
+  };
+
   isin = list: host: builtins.any (x: x == host) list;
 in
 rec {
@@ -32,4 +37,6 @@ rec {
   hasGames = isin game_hosts host;
 
   gpgKey = gpg_keys."${hostname}";
+
+  defaultInterface = interfaces."${hostname}";
 }
