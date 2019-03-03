@@ -1,6 +1,6 @@
 { config, lib, options, ... }:
 let
-  inherit (import ../../channels.nix) unstable;
+  inherit (import ../../channels.nix) master unstable;
 
   scripts = import ../../scripts { inherit config; };
 
