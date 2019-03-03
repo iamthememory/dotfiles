@@ -1333,7 +1333,7 @@ in
               border = 2;
 
               commands = [
-                { command = "border none"; criteria = { instance = "^ffxiv\\.exe$"; }; }
+                { command = "border none"; criteria = { instance = "^ffxiv(|_dx11)\\.exe$"; }; }
               ];
             };
           };
