@@ -64,7 +64,7 @@ in
         chrony
         clang-tools
         cloc
-        cookiecutter
+        stable.cookiecutter
         coreutils
         ctags
         curl
@@ -112,7 +112,7 @@ in
         imagemagick
         inkscape
         iotop
-        jack2
+        stable.jack2
         jq
         keybase-gui
         libisoburn
@@ -163,7 +163,7 @@ in
         pydf
         python2
         python3
-        python3Packages.csvkit
+        stable.python3Packages.csvkit
         stable.python3Packages.glances
         qjackctl
         redshift

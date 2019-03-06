@@ -2,7 +2,7 @@
 let
   inherit (import ../hostid.nix) hostname hasGui hasGames;
 
-  inherit (import ../channels.nix) unstable master;
+  inherit (import ../channels.nix) unstable stable master;
   pkgs = unstable;
 in
   {
@@ -25,7 +25,7 @@ in
       jre
       mcomix
       openrct2
-      playonlinux
+      stable.playonlinux
       master.steam
       master.steam-run
       wineStaging
