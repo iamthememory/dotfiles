@@ -145,6 +145,11 @@ pkgs.writeScript "i3pystatus-top.py" ''
   # CPU
 
   status.register('temp',
+                  format='${hostinfo.i3pystatusTempFormat}',
+                  hints={'markup': 'pango'},
+                  lm_sensors_enabled=True,
+                  dynamic_color=True,
+
                   alert_temp=80)
 
   #status.register('cpu_usage',

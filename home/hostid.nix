@@ -27,6 +27,11 @@ let
     aurora = "wlp2s0";
   };
 
+  i3pyTempFormats = {
+    aurora = "{Package_id_0}°C {Package_id_0_bar}{Core_0_bar}{Core_1_bar}{Core_2_bar}{Core_3_bar}";
+    nightmare = "FIXME {temp}°C";
+  };
+
   isin = list: host: builtins.any (x: x == host) list;
 in
 rec {
@@ -39,4 +44,6 @@ rec {
   gpgKey = gpg_keys."${hostname}";
 
   defaultInterface = interfaces."${hostname}";
+
+  i3pystatusTempFormat = i3pyTempFormats."${hostname}";
 }

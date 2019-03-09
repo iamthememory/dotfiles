@@ -3,6 +3,7 @@
     propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [
       python3Packages.GeoIP
       python3Packages.dbus-python
+      python3Packages.pysensors
       speedtest-cli
       zfs
     ];
