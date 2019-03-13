@@ -86,7 +86,7 @@ pkgs.writeScript "i3pystatus-top.py" ''
 
   status.register('network',
                   #format_up='{interface}: {kbs}KB/s @ {essid} ({quality}%)',
-                  format_up='{interface}: ↓{bytes_recv} KiB/s ↑{bytes_sent} KiB/s[ @ {essid}][ ({quality:3d}%)] {v4cidr}',
+                  format_up='{interface}: ↓{bytes_recv:>5s} KiB/s ↑{bytes_sent:>5s} KiB/s[ @ {essid}][ ({quality:3d}%)] {v4cidr}',
                   interface='${hostinfo.defaultInterface}',
                   graph_width=8,
                   recv_limit=8192,
