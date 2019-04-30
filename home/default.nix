@@ -396,7 +396,7 @@ in
           "$(${fixup-paths} \"${rawpath}\")";
       };
 
-      stateVersion = "18.09";
+      stateVersion = "19.03";
     };
 
     manual = {
