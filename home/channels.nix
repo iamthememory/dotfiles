@@ -26,8 +26,9 @@ rec {
   hummingbird  = import-channel "17.09";
   impala       = import-channel "18.03";
   jellyfish    = import-channel "18.09";
+  koi          = import-channel "19.03";
 
-  stable       = jellyfish;
+  stable       = koi;
   unstable     = import-channel "unstable";
 
   master       = import-branch  "master";
