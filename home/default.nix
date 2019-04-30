@@ -234,12 +234,11 @@ in
         GEM_HOME = "$(${unstable.ruby}/bin/ruby -e 'print Gem.user_dir')";
         GIT_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
         GTK_IM_MODULE = "ibus";
-        LANG = "en_US.UTF-8";
         LC_ALL = "en_US.UTF-8";
         LC_CTYPE = "en_US.UTF-8";
         LESSCOLOR = "yes";
         LIBVIRT_DEFAULT_URI = "qemu:///system";
-        MPD_HOST = "${XDG_CONFIG_HOME}/mpd/socket";
+        MPD_HOST = "${config.home.homeDirectory}/.config/mpd/socket";
         NIX_AUTO_RUN = "1";
         PAGER = "less";
         PERL5LIB = "\${HOME}/perl5/lib/perl5";
@@ -252,9 +251,6 @@ in
         SUDO_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
         TEXMFHOME = "\${HOME}/texmf";
         USE_CCACHE = "1";
-        XDG_CACHE_HOME = "\${HOME}/.cache";
-        XDG_CONFIG_HOME = "\${HOME}/.config";
-        XDG_DATA_HOME = "\${HOME}/.local/share";
         XDG_DESKTOP_DIR = "\${HOME}/";
         XDG_DOCUMENTS_DIR = "\${HOME}/src";
         XDG_DOWNLOAD_DIR = "\${HOME}/Downloads";
@@ -1091,6 +1087,10 @@ in
 
     xdg = {
       enable = true;
+
+      cacheHome = "${config.home.homeDirectory}/.cache";
+      configHome = "${config.home.homeDirectory}/.config";
+      dataHome = "${config.home.homeDirectory}/.local/share";
     };
 
     xresources = {
