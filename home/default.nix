@@ -793,12 +793,16 @@ in
         enable = true;
 
         plugins = [
+          "Recover-vim"
           "editorconfig-vim"
+          "fzf-vim"
           "haskell-vim"
           "nerdtree"
           "nerdtree-git-plugin"
           "rust-vim"
+          "supertab"
           "tagbar"
+          "ultisnips"
           "vim-airline"
           "vim-airline-themes"
           "vim-colors-solarized"
@@ -810,7 +814,6 @@ in
           "vim-obsession"
           "vim-polyglot"
           "vim-sensible"
-          "vundle"
         ];
 
         extraConfig = ''
@@ -820,8 +823,6 @@ in
           let g:airline#extensions#tabline#enabled = 1
           let g:airline_powerline_fonts = 1
 
-          " Recover (diff swapfiles when recovering buffers).
-          "Plugin 'chrisbra/Recover.vim'
           let g:haskell_indent_if = 4
           let g:haskell_indent_case = 4
           let g:haskell_indent_let = 4
