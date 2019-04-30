@@ -507,7 +507,7 @@ in
           "ohnjgmpcibpbafdlkimncjhflgedgpam" # 4chan X
         ];
 
-        package = unstable.chromium;
+        package = master.chromium;
       };
 
       command-not-found = {
