@@ -1103,6 +1103,9 @@ in
 
         # Disable Yubikey by default.
         ${unstable.xorg.xinput}/bin/xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'
+
+        # Run autorandr.
+        ${unstable.autorandr}/bin/autorandr -c
       '';
 
       profileExtra = ''
