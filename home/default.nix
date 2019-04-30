@@ -217,7 +217,7 @@ in
         xz
         youtube-dl
         yq
-        zfs
+        zfsUnstable
       ];
 
       sessionVariables = let
