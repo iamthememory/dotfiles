@@ -19,6 +19,7 @@ self: super:
     steam = import ./packages/steam.nix { inherit self super; };
     steam-run = import ./packages/steam-run.nix { inherit self super; };
     tinyfugue = import ./packages/tinyfugue.nix { inherit self super; };
+    vim_configurable = import ./packages/vim_configurable.nix { inherit self super; };
     wine32 = self.wineStaging;
     wineStaging = import ./packages/wineStaging.nix { inherit self super; };
     winetricks = import ./packages/winetricks.nix { inherit self super; };
