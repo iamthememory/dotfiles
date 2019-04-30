@@ -171,7 +171,7 @@ in
         pydf
         python2
         python3
-        stable.python3Packages.csvkit
+        stable.csvkit
         stable.python3Packages.glances
         qjackctl
         redshift
