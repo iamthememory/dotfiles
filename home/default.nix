@@ -421,10 +421,10 @@ in
 
           nightmare-display = "00ffffffffffff0006af9d1200000000001a0104a526157802d295a356529d270b50540000000101010101010101010101010101010132698078703814400a0a33007dd61000001832698078703860440a0a33007dd610000018000000fe0041554f0a202020202020202020000000fe004231373348414e30312e32200a0058";
           work-displayport = "00ffffffffffff0010acb8a0554e3531251c0104a53420783a0495a9554d9d26105054a54b00714f8180a940d1c0d100010101010101283c80a070b023403020360006442100001e000000ff00434656394e38393931354e550a000000fc0044454c4c2055323431350a2020000000fd00313d1e5311000a202020202020010302031cf14f9005040302071601141f12132021222309070783010000023a801871382d40582c450006442100001e011d8018711c1620582c250006442100009e011d007251d01e206e28550006442100001e8c0ad08a20e02d10103e96000644210000180000000000000000000000000000000000000000000000000000000c";
+          aurora-display = "00ffffffffffff000daed31400000000161a0104951f117802ee95a3544c99260f505400000001010101010101010101010101010101b43b804a713834403020350035ad1000001ab43b804a713834403020350035ad1000001a000000fe003438444757803134304843450a00000000000041019e001000000a010a2020005a";
 
         in {
           "nightmare-work-docked" = {
-
             fingerprint = {
               DP-0 = nightmare-display;
               DP-1 = work-displayport;
@@ -434,14 +434,14 @@ in
               DP-0 = {
                 enable = true;
                 mode = "1920x1080";
-                position = "0x120";
+                position = "1920x120";
                 primary = true;
                 rate = "120.01";
               };
               DP-1 = {
                 enable = true;
                 mode = "1920x1200";
-                position = "1920x0";
+                position = "0x0";
                 rate = "59.95";
                 primary = false;
               };
@@ -449,13 +449,52 @@ in
           };
 
           "nightmare-undocked" = {
-
             fingerprint = {
               DP-0 = nightmare-display;
             };
 
             config = {
               DP-0 = {
+                enable = true;
+                mode = "1920x1080";
+                position = "0x0";
+                primary = true;
+                rate = "120.01";
+              };
+            };
+          };
+
+          "aurora-work-docked" = {
+            fingerprint = {
+              eDP1 = aurora-display;
+              DP1-2 = work-displayport;
+            };
+
+            config = {
+              eDP1 = {
+                enable = true;
+                mode = "1920x1080";
+                position = "1920x120";
+                primary = true;
+                rate = "120.01";
+              };
+              DP1-2 = {
+                enable = true;
+                mode = "1920x1200";
+                position = "0x0";
+                rate = "59.95";
+                primary = false;
+              };
+            };
+          };
+
+          "aurora-undocked" = {
+            fingerprint = {
+              eDP1 = aurora-display;
+            };
+
+            config = {
+              eDP1 = {
                 enable = true;
                 mode = "1920x1080";
                 position = "0x0";
