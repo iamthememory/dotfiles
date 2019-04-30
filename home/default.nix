@@ -374,26 +374,6 @@ in
           ];
         in
           "$(${fixup-paths} \"${rawpath}\")";
-
-        INFOPATH = let
-          rawpath = builtins.concatStringsSep ":" [
-            # Local scripts.
-            "\${HOME}/.local/share/info"
-
-            # Nix/NixOS paths.
-            "\${HOME}/.nix-profile/share/info"
-            "/run/current-system/sw/share/info"
-            "/nix/var/nix/profiles/default/share/info"
-
-            # General system paths.
-            "/usr/local/share/info"
-            "/usr/share/info"
-
-            # Original path.
-            "\${INFOPATH}"
-          ];
-        in
-          "$(${fixup-paths} \"${rawpath}\")";
       };
 
       stateVersion = "19.03";
