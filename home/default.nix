@@ -31,8 +31,15 @@ in
       keyboard = {
         layout = "us";
 
+        model = "evdev";
+
         options = [
+          "caps:swapescape"
           "compose:lwin"
+          "nbsp:level2"
+          "numpad:mac"
+          "shift:both_capslock"
+          "shift:breaks_caps"
         ];
       };
 
@@ -1090,9 +1097,6 @@ in
         ${unstable.xorg.xinput}/bin/xinput disable 'pointer:SynPS/2 Synaptics TouchPad'
         ${unstable.xorg.xinput}/bin/xinput disable 'pointer:DELL081C:00 044E:121F Touchpad'
         ${unstable.xorg.xinput}/bin/xinput disable 'pointer:DELL081C:00 044E:121F Mouse'
-
-        # Activate Compose key.
-        ${unstable.xorg.setxkbmap}/bin/setxkbmap -model evdev -layout us -option compose:lwin -option caps:swapescape
 
         # Disable Yubikey by default.
         ${unstable.xorg.xinput}/bin/xinput disable 'Yubico Yubikey 4 OTP+U2F+CCID'
