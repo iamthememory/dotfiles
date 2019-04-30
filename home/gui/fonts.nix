@@ -4,7 +4,7 @@ let
 in
   {
     # Discover fonts installed via nix-env too.
-    fonts.fontconfig.enableProfileFonts = true;
+    fonts.fontconfig.enable = true;
 
     # Add some font packages.
     home.packages = with unstable; [
