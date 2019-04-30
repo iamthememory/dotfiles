@@ -5,4 +5,9 @@ with import <nixpkgs> {};
     android_sdk = {
       accept_license = true;
     };
+
+    chromium = {
+      enablePepperFlash = true;
+      #enableWideVine = true;
+    };
   }
