@@ -3,6 +3,7 @@
     name = "ftb";
     targetPkgs = pkgs_: with pkgs_; [
       jdk8
+      pulseaudio
       xorg.libXxf86vm
       xorg.xrandr
       (stdenv.mkDerivation rec {
