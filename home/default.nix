@@ -208,6 +208,7 @@ in
         wget
         wireshark
         x11_ssh_askpass
+        x2goclient
         xar
         xclip
         xcompmgr
