@@ -180,7 +180,6 @@ in
         rustc
         rustfmt
         shellcheck
-        skypeforlinux
         slack
         socat
         solaar
@@ -1060,7 +1059,6 @@ in
 
               "scratchpad" = [
                 { class = "^Spotify$"; }
-                { class = "^Skype$"; }
                 { class = "^Keybase$"; }
               ];
             };
@@ -1214,7 +1212,6 @@ in
             floating = {
               criteria = [
                 { class = "^Spotify$"; }
-                { class = "^Skype$"; }
                 { class = "^Keybase$"; }
               ];
 
@@ -1236,7 +1233,6 @@ in
               { command = "${unstable.thunderbird}/bin/thunderbird"; }
               { command = "${unstable.spotify}/bin/spotify"; }
               { command = "${unstable.slack}/bin/slack"; }
-              { command = "${unstable.skypeforlinux}/bin/skypeforlinux"; }
               { command = "${unstable.system-config-printer}/bin/system-config-printer-applet"; }
               { command = "${unstable.ibus}/bin/ibus-daemon -drx"; }
             ];
