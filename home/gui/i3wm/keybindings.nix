@@ -120,6 +120,7 @@ in
       "${modifier}+Control+r" = "reload";
       "${modifier}+Control+Shift+r" = "restart";
 
+      "${modifier}+Shift+s" = "exec ${scripts.take-screenshot}";
       "${modifier}+Control+Shift+s" = "exec ${scripts.take-screenshot}";
 
       "${modifier}+t" = "mode \"passthrough\"";
