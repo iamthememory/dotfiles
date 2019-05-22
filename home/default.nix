@@ -38,7 +38,6 @@ in
         options = [
           "caps:swapescape"
           "compose:lwin"
-          "nbsp:level2"
           "numpad:mac"
           "shift:both_capslock"
           "shift:breaks_caps"
