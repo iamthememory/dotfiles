@@ -76,6 +76,7 @@ in
         coreutils
         ctags
         curl
+        dbus
         ddrescue
         diceware
         dnsutils
