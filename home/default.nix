@@ -74,7 +74,6 @@ in
         cloc
         stable.cookiecutter
         coreutils
-        ctags
         curl
         dbus
         ddrescue
@@ -202,6 +201,7 @@ in
         torsocks
         tree
         unclutter-xfixes
+        universal-ctags
         unrar
         unzip
         up
