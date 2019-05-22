@@ -159,6 +159,7 @@ in
         openssh
         stable.pandoc
         pass
+        pciutils
         perl
         perlPackages.Appcpanminus
         picard
