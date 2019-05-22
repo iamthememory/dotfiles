@@ -23,6 +23,7 @@ in
 
       extraOutputsToInstall = [
         "bin"
+        "debug"
         "devdoc"
         "doc"
         "info"
