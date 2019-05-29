@@ -10,6 +10,7 @@ let
 in
   rec {
     imports = [
+      ./ctags
       ./games
       ./gui
       ./vim
@@ -201,7 +202,6 @@ in
         torsocks
         tree
         unclutter-xfixes
-        universal-ctags
         unrar
         unzip
         up
