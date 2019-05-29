@@ -539,6 +539,9 @@ in
 
         ignores = [
           ".*.sw[op]"
+          "tags"
+          "tags.temp"
+          "tags.lock"
         ];
 
         includes = [
