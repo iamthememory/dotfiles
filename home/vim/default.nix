@@ -31,6 +31,7 @@ in
         "vim-eunuch"
         "vim-fugitive"
         "vim-gitgutter"
+        "vim-gutentags"
         "vim-obsession"
         "vim-polyglot"
         "vim-sensible"
@@ -43,6 +44,7 @@ in
         set updatetime=100
         set hidden
         let g:airline#extensions#tabline#enabled = 1
+        let g:airline#extensions#gutentags#enabled = 1
         let g:airline_powerline_fonts = 1
 
         let g:haskell_indent_if = 4
