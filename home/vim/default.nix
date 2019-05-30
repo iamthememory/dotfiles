@@ -8,7 +8,10 @@ in
 
       plugins = [
         "Recover-vim"
+        "ack-vim"
         "ale"
+        "auto-pairs"
+        "easymotion"
         "editorconfig-vim"
         "fzf-vim"
         "gundo"
@@ -18,8 +21,10 @@ in
         "nerdtree-git-plugin"
         "repeat"
         "rust-vim"
+        "sleuth"
         "supertab"
         "surround"
+        "tabular"
         "tagbar"
         "ultisnips"
         "vim-abolish"
@@ -36,6 +41,7 @@ in
         "vim-polyglot"
         "vim-sensible"
         "vim-snippets"
+        "vim-unimpaired"
       ];
 
       extraConfig = ''
