@@ -40,8 +40,6 @@ in
           "caps:swapescape"
           "compose:lwin"
           "numpad:mac"
-          "shift:both_capslock"
-          "shift:breaks_caps"
         ];
       };
 
