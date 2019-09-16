@@ -167,6 +167,7 @@ in
         nxBender
         obs-studio
         octave
+        okular
         openssh
         stable.pandoc
         pass
