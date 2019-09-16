@@ -1277,7 +1277,7 @@ in
               { command = "${unstable.thunderbird}/bin/thunderbird"; }
               { command = "${unstable.spotify}/bin/spotify"; }
               { command = "${unstable.system-config-printer}/bin/system-config-printer-applet"; }
-              { command = "${ibus-full}/bin/ibus-daemon -drx"; }
+              { command = "${ibus-full}/bin/ibus-daemon -drRx"; }
               { command = "${unstable.bitcoin}/bin/bitcoin-qt"; }
               { command = "${unstable.gcr}/libexec/gcr-prompter"; }
             ];
