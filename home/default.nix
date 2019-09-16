@@ -334,6 +334,7 @@ in
             # Local scripts.
             "\${HOME}/.local/bin"
 
+            "\${HOME}/.cargo/bin"
             "\${HOME}/${programs.go.goBin}"
             "\${HOME}/perl5/bin"
             "${GEM_HOME}/bin"
