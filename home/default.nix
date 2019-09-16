@@ -76,6 +76,7 @@ in
         bashInteractive
         bc
         binutils
+        bitcoin
         blueman
         bumpversion
         bzip2
@@ -1257,6 +1258,7 @@ in
               { command = "${unstable.spotify}/bin/spotify"; }
               { command = "${unstable.system-config-printer}/bin/system-config-printer-applet"; }
               { command = "${ibus-full}/bin/ibus-daemon -drx"; }
+              { command = "${unstable.bitcoin}/bin/bitcoin-qt"; }
             ];
 
             workspaceLayout = "tabbed";
