@@ -62,6 +62,8 @@ in
         let g:haskell_indent_guard = 2
         let g:cabal_indent_section = 4
 
+        let g:gutentags_ctags_tagfile = ".ctags"
+
         if has('python3')
           let g:gundo_prefer_python3 = 1
         endif
