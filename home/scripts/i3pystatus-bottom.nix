@@ -128,6 +128,7 @@ pkgs.writeScript "i3pystatus-bottom.py" ''
 
   status.register(
       'spotify',
+      player='spotify',
       format='{status} {title}[ by {artist}]',
       on_leftclick=['player_command', 'Previous'],
       on_middleclick='playpause',
