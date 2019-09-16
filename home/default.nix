@@ -572,41 +572,49 @@ in
 
         userName = "Alexandria Corkwell";
 
-        extraConfig = ''
-          [color]
-            ui = true
+        extraConfig = {
+          color = {
+            ui = true;
+          };
 
-          [core]
-            editor = vim
-            abbrev = 12
+          core = {
+            editor = "vim";
+            abbrev = 12;
+          };
 
-          [credential]
-            helper = libsecret
+          credential = {
+            helper = "libsecret";
+          };
 
-          [fetch]
-            prune = true
+          fetch = {
+            prune = true;
+          };
 
-          [merge]
-            ff = false
-            tool = vimdiff2
+          merge = {
+            ff = false;
+            tool = "vimdiff2";
+          };
 
-          [pull]
-            ff = only
+          pull = {
+            ff = "only";
+          };
 
-          [push]
-            default = simple
-            gpgsign = if-asked
+          push = {
+            default = "simple";
+            gpgsign = "if-asked";
+          };
 
-          [submodule]
-            recurse = true
+          submodule = {
+            recurse = true;
+          };
 
-          [filter "lfs"]
-            clean = git-lfs clean -- %f
-            smudge = git-lfs smudge -- %f
-            required = true
-            process = git-lfs filter-process
-
-        '';
+          "filter \"lfs\"" = {
+            clean = "git-lfs clean -- %f";
+            smudge = "git-lfs smudge -- %f";
+            required = true;
+            process = "git-lfs filter-process";
+          };
+        };
       };
 
       go = {
