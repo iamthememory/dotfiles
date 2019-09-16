@@ -191,6 +191,7 @@ in
         ruby
         rustc
         rustfmt
+        rustup
         shellcheck
         slack
         socat
