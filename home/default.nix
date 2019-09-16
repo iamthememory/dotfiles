@@ -162,6 +162,7 @@ in
         nix-prefetch-github
         nix-prefetch-github
         nmap
+        nodejs-12_x
         nox
         numlockx
         nxBender
