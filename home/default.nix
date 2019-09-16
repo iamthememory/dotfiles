@@ -209,6 +209,7 @@ in
         stdmanpages
         strace
         system-config-printer
+        tealdeer
         telnet
         texlive.combined.scheme-full
         thunderbird
