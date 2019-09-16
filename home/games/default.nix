@@ -26,6 +26,7 @@ in
       mcomix
       openrct2
       stable.playonlinux
+      retroarch
       master.steam
       master.steam-run
       wineStaging
