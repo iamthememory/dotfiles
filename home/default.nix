@@ -551,6 +551,9 @@ in
 
         ignores = [
           ".*.sw[op]"
+          ".ctags"
+          ".ctags.temp"
+          ".ctags.lock"
           "tags"
           "tags.temp"
           "tags.lock"
