@@ -16,14 +16,14 @@ let
     gemdir = ./.;
   };
 in stdenv.mkDerivation rec {
-  name = "metasploit-framework-${version}";
-  version = "4.17.54";
+  pname = "metasploit-framework";
+  version = "5.0.48";
 
   src = fetchFromGitHub {
     owner = "rapid7";
     repo = "metasploit-framework";
     rev = version;
-    sha256 = "1g17k35p2l57pjhik5ql7smrgv7jgns5af0a9jhwqm98apb3lhbv";
+    sha256 = "1ha4ifp68gca3q82ks8pgzrygdy5rnhgb0zw8p1rx042hivr8fk6";
   };
 
   buildInputs = [ makeWrapper ];
