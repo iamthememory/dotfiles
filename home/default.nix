@@ -200,6 +200,8 @@ in
         sqlite-interactive
         squashfsTools
         sshfs
+        stdman
+        stdmanpages
         strace
         system-config-printer
         telnet
