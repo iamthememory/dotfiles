@@ -217,6 +217,7 @@ in
         up
         usbutils
         stable.virtmanager
+        wavemon
         wget
         wireshark
         x11_ssh_askpass
