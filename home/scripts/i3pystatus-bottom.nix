@@ -19,13 +19,20 @@ pkgs.writeScript "i3pystatus-bottom.py" ''
   status.register('uname',
                   format='{nodename}')
 
+  status.register('weather',
+                  format='{icon} {current_temp}{temp_unit}/{feelslike}{temp_unit}',
+                  colorize=True,
+                  backend=weathercom.Weathercom(
+                        location_code='44065',
+                        units='imperial'),
+                  interval=20*60)
+
   status.register('moon',
                   format='{moonicon} {status} {illum:.02f}%',
                   interval=10)
 
   status.register('clock',
-                  format='%a %Y-%m-%d %H:%M:%S',
-                  hints={'separator': False})
+                  format='%a %Y-%m-%d %H:%M:%S')
 
   status.register('uptime',
                   format='up [{days} ]{hours}:{mins:02d}',
