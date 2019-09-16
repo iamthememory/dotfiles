@@ -24,6 +24,7 @@ in
       ftb
       innoextract
       jre
+      lutris
       mcomix
       openrct2
       stable.playonlinux
