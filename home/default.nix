@@ -101,6 +101,7 @@ in
         evince
         ffmpeg
         file
+        gcc
         gdb
         gimp
         git-lfs
