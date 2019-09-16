@@ -79,7 +79,7 @@ in
       "${modifier}+Shift+e" = "exec \"${pkgs.i3}/bin/i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' '${pkgs.i3}/bin/i3-msg exit & ${pkgs.coreutils}/bin/sleep 10 && ${pkgs.systemd}/bin/loginctl terminate-session \$XDG_SESSION_ID'\"";
 
       "${modifier}+f" = "fullscreen toggle";
-      "${modifier}+Control+Shift+f" = "exec ${master.steam}/bin/steam -applaunch 39210";
+      "${modifier}+Control+Shift+f" = "exec ${scripts.start-ffxiv}";
 
       "${modifier}+Control+Shift+g" = "exec ${pkgs.xorg.xmodmap}/bin/xmodmap ${scripts.speedswapper}";
 

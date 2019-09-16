@@ -9,6 +9,7 @@ in
     i3pystatus-bottom = mkscript ./i3pystatus-bottom.nix;
     i3pystatus-top = mkscript ./i3pystatus-top.nix;
     speedswapper = mkscript ./speedswapper.nix;
+    start-ffxiv = mkscript ./start-ffxiv.nix;
     start-tmux-x = mkscript ./start-tmux-x.nix;
     take-screenshot = mkscript ./take-screenshot.nix;
     toggle-mute = mkscript ./toggle-mute.nix;
