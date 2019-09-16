@@ -1070,8 +1070,7 @@ in
               "7" = [
               ];
 
-              "8:slack" = [
-                { class = "^Slack$"; }
+              "8" = [
               ];
 
               "9:misc" = [
@@ -1256,7 +1255,6 @@ in
               { command = "${master.steam}/bin/steam"; }
               { command = "${unstable.thunderbird}/bin/thunderbird"; }
               { command = "${unstable.spotify}/bin/spotify"; }
-              { command = "${unstable.slack}/bin/slack"; }
               { command = "${unstable.system-config-printer}/bin/system-config-printer-applet"; }
               { command = "${ibus-full}/bin/ibus-daemon -drx"; }
             ];
