@@ -20,6 +20,7 @@ in
       cabextract
       discord
       dwarf-fortress-packages.dwarf-fortress-full
+      freeciv
       ftb
       innoextract
       jre
