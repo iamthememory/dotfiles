@@ -1,6 +1,7 @@
 self: super:
   {
     # Overridden and custom packages.
+    appimage-run = import ./packages/appimage-run.nix { inherit self super; };
     bumpversion = import ./packages/bumpversion.nix { inherit self super; };
     cataclysm-dda-git = import ./packages/cataclysm-dda-git.nix { inherit self super; };
     chromium = import ./packages/chromium.nix { inherit self super; };
