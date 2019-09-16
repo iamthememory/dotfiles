@@ -70,7 +70,6 @@ in
           "git-flow-avh"
           "history"
           "httpie"
-          "lol"
           "npm"
           "pass"
           "pep8"
