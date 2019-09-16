@@ -7,6 +7,19 @@ let
   speedswapper = scripts.speedswapper;
 
   hostinfo = import ./hostid.nix;
+
+  ibus-full = unstable.ibus-with-plugins.override {
+    plugins = with unstable.ibus-engines; [
+      anthy
+      kkc
+      m17n
+      mozc
+      table
+      table-others
+      typing-booster
+      uniemoji
+    ];
+  };
 in
   rec {
     imports = [
@@ -113,10 +126,7 @@ in
         host
         httpie
         i3
-        ibus
-        ibus-engines.anthy
-        ibus-engines.table
-        ibus-engines.table-others
+        ibus-full
         imagemagick
         inkscape
         iotop
@@ -234,7 +244,7 @@ in
         FFLAGS = CFLAGS;
         GEM_HOME = "$(${unstable.ruby}/bin/ruby -e 'print Gem.user_dir')";
         GIT_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
-        GTK_IM_MODULE = "ibus";
+        GTK_IM_MODULE = "xim";
         LC_ALL = "en_US.UTF-8";
         LC_CTYPE = "en_US.UTF-8";
         LESSCOLOR = "yes";
@@ -247,6 +257,9 @@ in
         PERL_MB_OPT = "--install_base \${HOME}/perl5";
         PERL_MM_OPT = "INSTALL_BASE=\${HOME}/perl5";
         QT_IM_MODULE = "ibus";
+        QT3_IM_MODULE = "ibus";
+        QT4_IM_MODULE = "ibus";
+        QT5_IM_MODULE = "ibus";
         QT_SELECT = "5";
         SSH_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
         SUDO_ASKPASS="${unstable.gnome3.seahorse}/libexec/seahorse/ssh-askpass";
@@ -874,10 +887,10 @@ in
           };
 
           shortcuts = {
-            close = "ctrl+space";
-            close_all = "ctrl+shift+space";
+            close = "ctrl+shift+grave";
+            #close_all = "ctrl+shift+space";
             history = "ctrl+grave";
-            context = "ctrl+shift+period";
+            #context = "ctrl+shift+period";
           };
 
           urgency_low = {
@@ -1237,7 +1250,7 @@ in
               { command = "${unstable.spotify}/bin/spotify"; }
               { command = "${unstable.slack}/bin/slack"; }
               { command = "${unstable.system-config-printer}/bin/system-config-printer-applet"; }
-              { command = "${unstable.ibus}/bin/ibus-daemon -drx"; }
+              { command = "${ibus-full}/bin/ibus-daemon -drx"; }
             ];
 
             workspaceLayout = "tabbed";
