@@ -27,6 +27,7 @@ in
       openrct2
       stable.playonlinux
       retroarch
+      runelite
       master.steam
       master.steam-run
       wineStaging
