@@ -165,6 +165,7 @@ in
         nox
         numlockx
         nxBender
+        obs-studio
         octave
         openssh
         stable.pandoc
