@@ -147,6 +147,7 @@ in
         manpages
         megatools
         metasploit
+        minetime
         mlocate
         mosh
         mpc_cli
