@@ -217,6 +217,7 @@ in
         up
         usbutils
         stable.virtmanager
+        vuze
         wavemon
         wget
         wireshark
