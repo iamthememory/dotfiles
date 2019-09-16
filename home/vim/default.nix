@@ -6,42 +6,42 @@ in
     programs.vim = {
       enable = true;
 
-      plugins = [
-        "Recover-vim"
-        "ack-vim"
-        "ale"
-        "auto-pairs"
-        "easymotion"
-        "editorconfig-vim"
-        "fzf-vim"
-        "gundo"
-        "haskell-vim"
-        "nerdcommenter"
-        "nerdtree"
-        "nerdtree-git-plugin"
-        "repeat"
-        "rust-vim"
-        "sleuth"
-        "supertab"
-        "surround"
-        "tabular"
-        "tagbar"
-        "ultisnips"
-        "vim-abolish"
-        "vim-airline"
-        "vim-airline-themes"
-        "vim-colors-solarized"
-        "vim-devicons"
-        "vim-dispatch"
-        "vim-eunuch"
-        "vim-fugitive"
-        "vim-gitgutter"
-        "vim-gutentags"
-        "vim-obsession"
-        "vim-polyglot"
-        "vim-sensible"
-        "vim-snippets"
-        "vim-unimpaired"
+      plugins = with unstable.vimPlugins; [
+        Recover-vim
+        ack-vim
+        ale
+        easymotion
+        editorconfig-vim
+        fzf-vim
+        gundo
+        haskell-vim
+        nerdcommenter
+        nerdtree
+        nerdtree-git-plugin
+        repeat
+        rust-vim
+        sleuth
+        supertab
+        surround
+        tabular
+        tagbar
+        ultisnips
+        vim-abolish
+        vim-airline
+        vim-airline-themes
+        vim-colors-solarized
+        vim-devicons
+        vim-dispatch
+        vim-eunuch
+        vim-fugitive
+        vim-gitgutter
+        vim-gutentags
+        vim-liquid
+        vim-obsession
+        vim-polyglot
+        vim-sensible
+        vim-snippets
+        vim-unimpaired
       ];
 
       extraConfig = ''
