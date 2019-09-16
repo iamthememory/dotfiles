@@ -1013,6 +1013,12 @@ in
       cacheHome = "${config.home.homeDirectory}/.cache";
       configHome = "${config.home.homeDirectory}/.config";
       dataHome = "${config.home.homeDirectory}/.local/share";
+
+      configFile = {
+        "systemd/user/graphical-session-pre.target.wants/dbus.socket" = {
+          source = "${unstable.dbus}/etc/systemd/user/dbus.socket";
+        };
+      };
     };
 
     xresources = {
@@ -1273,6 +1279,7 @@ in
               { command = "${unstable.system-config-printer}/bin/system-config-printer-applet"; }
               { command = "${ibus-full}/bin/ibus-daemon -drx"; }
               { command = "${unstable.bitcoin}/bin/bitcoin-qt"; }
+              { command = "${unstable.gcr}/libexec/gcr-prompter"; }
             ];
 
             workspaceLayout = "tabbed";
