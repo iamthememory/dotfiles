@@ -4,6 +4,7 @@
       python3Packages.GeoIP
       python3Packages.dbus-python
       python3Packages.pysensors
+      python3Packages.requests
       speedtest-cli
       zfs
     ];
