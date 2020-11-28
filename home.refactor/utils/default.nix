@@ -5,5 +5,6 @@
 }: {
   imports = [
     ./doc.nix
+    ./net.nix
   ];
 }
