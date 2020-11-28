@@ -20,9 +20,9 @@
     httpie
 
     # Various standard network programs.
-    inetutils
     iproute
     iputils
+    nettools
 
     # An ssh-like remote shell for unreliable connections.
     mosh
