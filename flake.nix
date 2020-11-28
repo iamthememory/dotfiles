@@ -17,12 +17,14 @@
     nixpkgs-unstable,
     home-manager,
   }@inputs: let
+    defaultInputs = {
+    };
+
     hosts = [
       "nightmare"
     ];
 
-    defaultInputs = {
-    };
+    scripts = ./scripts.refactor;
 
     mkHost = {
       host,
@@ -42,6 +44,8 @@
 
       importedInputs = unimportedInputs // {
         inherit unstable stable;
+
+        scripts = import scripts { inherit pkgs; };
       };
     in home-manager.lib.homeManagerConfiguration {
       configuration = {
