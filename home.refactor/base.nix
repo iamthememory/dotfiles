@@ -44,4 +44,10 @@ in {
 
   # This must be at least 20.09 to work properly with flakes.
   home.stateVersion = "20.09";
+
+  # Ensure that nix has flakes enabled.
+  # FIXME: This can be removed once flakes are stable.
+  xdg.configFile."nix/nix.conf".text = ''
+    experimental-features = nix-command flakes
+  '';
 }
