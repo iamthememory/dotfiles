@@ -6,9 +6,7 @@
   inputs,
   ...
 }: {
-  home.packages = [
-    inputs.unstable.nixFlakes
+  imports = [
+    ../../base.nix
   ];
-
-  home.stateVersion = "20.09";
 }
