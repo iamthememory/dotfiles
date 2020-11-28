@@ -18,6 +18,7 @@
     home-manager,
   }@inputs: let
     defaultInputs = {
+      inherit home-manager;
     };
 
     hosts = [

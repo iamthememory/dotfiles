@@ -45,6 +45,12 @@ in {
   # This must be at least 20.09 to work properly with flakes.
   home.stateVersion = "20.09";
 
+  # Enable the home-manager binary for managing generations.
+  # NOTE: This probably won't work for building new generations for the
+  # foreseeable future.
+  programs.home-manager.enable = true;
+  programs.home-manager.path = "${inputs.home-manager}";
+
   # Ensure that nix has flakes enabled.
   # FIXME: This can be removed once flakes are stable.
   xdg.configFile."nix/nix.conf".text = ''
