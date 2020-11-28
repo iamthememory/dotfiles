@@ -9,6 +9,20 @@
     "doc"
   ];
 
+  home.packages = with pkgs; [
+    # Basic Linux manpages.
+    manpages
+
+    # A tool for converting and rendering things like markdown.
+    pandoc
+
+    # Basic POSIX standard manpages.
+    posix_man_pages
+
+    # Manpages for the C++ standard library.
+    stdman
+  ];
+
   # Install home-manager documentation.
   manual.html.enable = true;
   manual.json.enable = true;
