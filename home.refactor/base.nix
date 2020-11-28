@@ -18,8 +18,14 @@ in {
     unstable.nixFlakes
   ];
 
-  # This must be at least 20.09 to work properly with flakes.
-  home.stateVersion = "20.09";
+  # Set up the path to look up manpages.
+  home.sessionVariables.MANPATH = builtins.concatStringsSep ":" [
+    # Manpages installed by home-manager.
+    "${config.home.profileDirectory}/share/man"
+
+    # Manpages from the host system.
+    "/run/current-system/sw/share/man"
+  ];
 
   # Clear anything we didn't add to the PATH.
   home.sessionVariables.PATH = "";
@@ -30,9 +36,12 @@ in {
     "/run/wrappers/bin"
 
     # Programs installed by home-manager.
-    "${config.home.homeDirectory}/.nix-profile/bin"
+    "${config.home.profileDirectory}/bin"
 
     # Any tools from the host system that should be included.
     "/run/current-system/sw/bin"
   ];
+
+  # This must be at least 20.09 to work properly with flakes.
+  home.stateVersion = "20.09";
 }
