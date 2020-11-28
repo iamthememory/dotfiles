@@ -1,12 +1,15 @@
 # The base configuration used for all systems.
 {
   config,
-  pkgs,
   inputs,
   ...
 }: let
   unstable = inputs.unstable;
 in {
+  imports = [
+    ./xdg.nix
+  ];
+
   home.language.base = "en_US.UTF-8";
 
   home.packages = [
