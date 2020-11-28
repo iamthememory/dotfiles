@@ -17,4 +17,19 @@ in {
 
   # This must be at least 20.09 to work properly with flakes.
   home.stateVersion = "20.09";
+
+  # Clear anything we didn't add to the PATH.
+  home.sessionVariables.PATH = "";
+
+  # Initialize the PATH.
+  home.sessionPath = [
+    # NixOS wrappers for setuid programs.
+    "/run/wrappers/bin"
+
+    # Programs installed by home-manager.
+    "${config.home.homeDirectory}/.nix-profile/bin"
+
+    # Any tools from the host system that should be included.
+    "/run/current-system/sw/bin"
+  ];
 }
