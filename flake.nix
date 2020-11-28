@@ -32,7 +32,7 @@
       unimportedInputs ? defaultInputs,
       nixpkgs ? nixpkgs-unstable,
     }: let
-      hostfile = ./home.refactor/hosts + "/${host}.nix";
+      hostfile = ./home.refactor/hosts + "/${host}";
 
       importPkgs = p: import p { inherit system; };
 
