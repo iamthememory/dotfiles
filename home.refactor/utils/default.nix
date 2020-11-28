@@ -7,5 +7,6 @@
     ./doc.nix
     ./media.nix
     ./net.nix
+    ./tui
   ];
 }
