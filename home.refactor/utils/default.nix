@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./doc.nix
+    ./hardware.nix
     ./media.nix
     ./net.nix
     ./tui
