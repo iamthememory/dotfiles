@@ -8,6 +8,7 @@
     ./hardware.nix
     ./media.nix
     ./net.nix
+    ./scripting.nix
     ./tui
   ];
 }
