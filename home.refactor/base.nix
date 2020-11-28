@@ -45,6 +45,11 @@ in {
   # This must be at least 20.09 to work properly with flakes.
   home.stateVersion = "20.09";
 
+  # Allow unfree packages.
+  # Note that this must be set here, as home-manager reimports pkgs after
+  # getting its original path, stripping out any overlays or config we give it.
+  nixpkgs.config.allowUnfree = true;
+
   # Enable the home-manager binary for managing generations.
   # NOTE: This probably won't work for building new generations for the
   # foreseeable future.
