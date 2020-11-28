@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./htop.nix
+  ];
+
   home.packages = with pkgs; [
     # A tool that's like top for I/O.
     iotop
