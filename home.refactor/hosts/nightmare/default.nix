@@ -8,5 +8,6 @@
 }: {
   imports = [
     ../../base.nix
+    ../../utils
   ];
 }
