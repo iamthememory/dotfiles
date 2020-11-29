@@ -58,7 +58,8 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "zsh-async": "zsh-async",
-        "zsh-auto-notify": "zsh-auto-notify"
+        "zsh-auto-notify": "zsh-auto-notify",
+        "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting"
       }
     },
     "zsh-async": {
@@ -90,6 +91,22 @@
       "original": {
         "owner": "MichaelAquilina",
         "repo": "zsh-auto-notify",
+        "type": "github"
+      }
+    },
+    "zsh-fast-syntax-highlighting": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606388465,
+        "narHash": "sha256-SRM+PmbyEhIDo3V3X2BxtbYlfa/lKZ69CtLm8JTYUMo=",
+        "owner": "zdharma",
+        "repo": "fast-syntax-highlighting",
+        "rev": "be2f385453670c18c40320a7384333f98fcd9f79",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zdharma",
+        "repo": "fast-syntax-highlighting",
         "type": "github"
       }
     }

@@ -7,6 +7,7 @@
   imports = [
     ./zsh-async.nix
     ./directory-utils.nix
+    ./fsh.nix
   ];
 
   home.packages = with pkgs; [

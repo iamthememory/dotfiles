@@ -19,6 +19,11 @@
       url = "github:MichaelAquilina/zsh-auto-notify";
       flake = false;
     };
+
+    zsh-fast-syntax-highlighting = {
+      url = "github:zdharma/fast-syntax-highlighting";
+      flake = false;
+    };
   };
 
   outputs = {
