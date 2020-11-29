@@ -20,6 +20,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1606652934,
+        "narHash": "sha256-LVOj76cG3V8YomwCOzy5kD+ImNxyYdFEy5XWnWrLdmA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3a477cf32417b4c81c9fe42fbfb52c40b69fc110",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1606344557,
@@ -55,11 +71,13 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify",
         "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
+        "zsh-powerlevel10k": "zsh-powerlevel10k",
         "zsh-sudo": "zsh-sudo",
         "zsh-web-search": "zsh-web-search"
       }
@@ -109,6 +127,22 @@
       "original": {
         "owner": "zdharma",
         "repo": "fast-syntax-highlighting",
+        "type": "github"
+      }
+    },
+    "zsh-powerlevel10k": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606553713,
+        "narHash": "sha256-rwK85e5yIILPJ5TAs1WqPnOZMY6cdjO4VlmJgH9e92o=",
+        "owner": "romkatv",
+        "repo": "powerlevel10k",
+        "rev": "2c3bcd8b5d301f469fd8095d32ab2dc18e254a8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "romkatv",
+        "repo": "powerlevel10k",
         "type": "github"
       }
     },

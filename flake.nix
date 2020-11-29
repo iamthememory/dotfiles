@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -25,6 +26,11 @@
       flake = false;
     };
 
+    zsh-powerlevel10k = {
+      url = "github:romkatv/powerlevel10k";
+      flake = false;
+    };
+
     zsh-sudo = {
       url = "github:hcgraf/zsh-sudo";
       flake = false;
@@ -40,6 +46,7 @@
     self,
     nixpkgs-stable,
     nixpkgs-unstable,
+    nixpkgs-master,
     home-manager,
     ...
   }@inputs: let
@@ -50,6 +57,7 @@
         "self"
         "nixpkgs-stable"
         "nixpkgs-unstable"
+        "nixpkgs-master"
       ];
 
       notBlacklisted = n: v: !(builtins.elem n blacklist);
@@ -76,9 +84,10 @@
       pkgs = importPkgs nixpkgs;
       unstable = importPkgs nixpkgs-unstable;
       stable = importPkgs nixpkgs-stable;
+      master = importPkgs nixpkgs-master;
 
       importedInputs = unimportedInputs // {
-        inherit unstable stable;
+        inherit unstable stable master;
 
         scripts = import scripts { inherit pkgs; };
       };

@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./zsh-async.nix
+    ./powerlevel10k
     ./directory-utils.nix
     ./fsh.nix
     ./sudo.nix
