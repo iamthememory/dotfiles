@@ -9,6 +9,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    zsh-async = {
+      url = "github:mafredri/zsh-async";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -16,10 +21,19 @@
     nixpkgs-stable,
     nixpkgs-unstable,
     home-manager,
+    ...
   }@inputs: let
-    defaultInputs = {
-      inherit home-manager;
-    };
+    defaultInputs = let
+      # Exclude self and the un-initialized nixpkgs when passing inputs to
+      # home-manager.
+      blacklist = [
+        "self"
+        "nixpkgs-stable"
+        "nixpkgs-unstable"
+      ];
+
+      notBlacklisted = n: v: !(builtins.elem n blacklist);
+    in nixpkgs-stable.lib.filterAttrs notBlacklisted inputs;
 
     hosts = [
       "nightmare"

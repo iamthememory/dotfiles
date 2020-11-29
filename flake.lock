@@ -56,7 +56,24 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "zsh-async": "zsh-async"
+      }
+    },
+    "zsh-async": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1603559009,
+        "narHash": "sha256-oe8ZVI0n5i07zF4GY/EOTLKmBIaBoHeezaXiDc6GtDI=",
+        "owner": "mafredri",
+        "repo": "zsh-async",
+        "rev": "0f3b27b9ce3a1566d4393a6191b859ecb29b55b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mafredri",
+        "repo": "zsh-async",
+        "type": "github"
       }
     }
   },
