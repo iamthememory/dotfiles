@@ -2,14 +2,24 @@
 {
   config,
   inputs,
+  pkgs,
   ...
 }: let
   unstable = inputs.unstable;
+
+  homeDirectory = config.home.homeDirectory;
 in {
   imports = [
     ./xdg.nix
   ];
 
+  # Link the nixpkgs revision used for this generation in the home directory so
+  # it can be used for nix repl, and also for indirection when specifying
+  # NIX_PATH so that we don't have to worry about finding a way to invalidate
+  # and reload that variable in all active shells after an update.
+  home.file."nixpkgs".source = "${pkgs.path}";
+
+  # Set the locale to en_US.UTF-8.
   home.language.base = "en_US.UTF-8";
 
   home.packages = [
@@ -26,6 +36,11 @@ in {
     # Manpages from the host system.
     "/run/current-system/sw/share/man"
   ];
+
+  # Set the NIX_PATH so tools we can't manage inside a flake (like nix repl,
+  # parts of nix-index, etc.) use the same pinned revision used to build this
+  # configuration.
+  home.sessionVariables.NIX_PATH = "nixpkgs=${homeDirectory}/nixpkgs:nixos=${homeDirectory}/nixpkgs";
 
   # Clear anything we didn't add to the PATH.
   home.sessionVariables.PATH = "";
