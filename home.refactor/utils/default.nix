@@ -2,7 +2,23 @@
 {
   pkgs,
   ...
-}: {
+}: let
+  # Various common shell aliases.
+  shellAliases = {
+    # Enable color for common tools when in a terminal that supports it.
+
+    exa = "${pkgs.exa}/bin/exa --color=auto";
+
+    egrep = "${pkgs.gnugrep}/bin/egrep --color=auto";
+    fgrep = "${pkgs.gnugrep}/bin/fgrep --color=auto";
+    grep = "${pkgs.gnugrep}/bin/grep --color=auto";
+
+    ls = "${pkgs.coreutils}/bin/ls --color=auto";
+
+    # Use reflinks when able to to benefit from CoW filesystems.
+    cp = "${pkgs.coreutils}/bin/cp --reflink=auto";
+  };
+in {
   imports = [
     ./direnv.nix
     ./doc.nix
@@ -27,6 +43,9 @@
     # A tool for converting files between Windows-y CRLFs and *nixy LF line
     # endings.
     dos2unix
+
+    # A shiny alternative to ls written in rust.
+    exa
 
     # The file utility for identifying file contents and MIMEs.
     file
@@ -97,4 +116,10 @@
     # A (de)compressor for .zst.
     zstd
   ];
+
+  # Add the common shell aliases for all shells.
+  # NOTE: These will have no effect unless the relevant shell is enabled.
+  programs.bash.shellAliases = shellAliases;
+  programs.fish.shellAliases = shellAliases;
+  programs.zsh.shellAliases = shellAliases;
 }
