@@ -26,6 +26,7 @@ in {
     ./media.nix
     ./net.nix
     ./nix-index.nix
+    ./pazi.nix
     ./scripting.nix
     ./tui
   ];
