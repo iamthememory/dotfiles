@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./direnv.nix
     ./doc.nix
     ./hardware.nix
     ./media.nix
