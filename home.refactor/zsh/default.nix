@@ -9,8 +9,16 @@
     ./directory-utils.nix
   ];
 
+  home.packages = with pkgs; [
+    # Additional ZSH completions.
+    zsh-completions
+  ];
+
   # Enable zsh.
   programs.zsh.enable = true;
+
+  # Enable cd-ing by typing just directories.
+  programs.zsh.autocd = true;
 
   # Put all zsh files in their own directory.
   programs.zsh.dotDir = ".config/zsh";
