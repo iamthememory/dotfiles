@@ -9,6 +9,7 @@
     ./directory-utils.nix
     ./fsh.nix
     ./sudo.nix
+    ./web-search.nix
   ];
 
   home.packages = with pkgs; [

@@ -60,7 +60,8 @@
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify",
         "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
-        "zsh-sudo": "zsh-sudo"
+        "zsh-sudo": "zsh-sudo",
+        "zsh-web-search": "zsh-web-search"
       }
     },
     "zsh-async": {
@@ -124,6 +125,22 @@
       "original": {
         "owner": "hcgraf",
         "repo": "zsh-sudo",
+        "type": "github"
+      }
+    },
+    "zsh-web-search": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1594753727,
+        "narHash": "sha256-+Osu1CCixeTD9sfGkYF+ZNfSK5i51B1WazC2f9EVQCY=",
+        "owner": "sinetoami",
+        "repo": "web-search",
+        "rev": "e2c498dc9d573c731be69fb0d6000822ebe49185",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sinetoami",
+        "repo": "web-search",
         "type": "github"
       }
     }

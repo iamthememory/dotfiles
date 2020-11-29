@@ -29,6 +29,11 @@
       url = "github:hcgraf/zsh-sudo";
       flake = false;
     };
+
+    zsh-web-search = {
+      url = "github:sinetoami/web-search";
+      flake = false;
+    };
   };
 
   outputs = {
