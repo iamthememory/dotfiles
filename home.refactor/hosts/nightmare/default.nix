@@ -9,5 +9,6 @@
   imports = [
     ../../base.nix
     ../../utils
+    ../../zsh
   ];
 }
