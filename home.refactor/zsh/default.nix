@@ -3,6 +3,10 @@
   config,
   ...
 }: {
+  imports = [
+    ./directory-utils.nix
+  ];
+
   # Enable zsh.
   programs.zsh.enable = true;
 
