@@ -59,7 +59,8 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify",
-        "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting"
+        "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
+        "zsh-sudo": "zsh-sudo"
       }
     },
     "zsh-async": {
@@ -107,6 +108,22 @@
       "original": {
         "owner": "zdharma",
         "repo": "fast-syntax-highlighting",
+        "type": "github"
+      }
+    },
+    "zsh-sudo": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1487142265,
+        "narHash": "sha256-I17u8qmYttsodD58PqtTxtVZauyYcNw1orFLPngo9bY=",
+        "owner": "hcgraf",
+        "repo": "zsh-sudo",
+        "rev": "d8084def6bb1bde2482e7aa636743f40c69d9b32",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hcgraf",
+        "repo": "zsh-sudo",
         "type": "github"
       }
     }

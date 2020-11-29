@@ -24,6 +24,11 @@
       url = "github:zdharma/fast-syntax-highlighting";
       flake = false;
     };
+
+    zsh-sudo = {
+      url = "github:hcgraf/zsh-sudo";
+      flake = false;
+    };
   };
 
   outputs = {

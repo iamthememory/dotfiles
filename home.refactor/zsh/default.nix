@@ -8,6 +8,7 @@
     ./zsh-async.nix
     ./directory-utils.nix
     ./fsh.nix
+    ./sudo.nix
   ];
 
   home.packages = with pkgs; [
