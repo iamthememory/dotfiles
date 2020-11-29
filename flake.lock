@@ -57,7 +57,8 @@
         "home-manager": "home-manager",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "zsh-async": "zsh-async"
+        "zsh-async": "zsh-async",
+        "zsh-auto-notify": "zsh-auto-notify"
       }
     },
     "zsh-async": {
@@ -73,6 +74,22 @@
       "original": {
         "owner": "mafredri",
         "repo": "zsh-async",
+        "type": "github"
+      }
+    },
+    "zsh-auto-notify": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1567760450,
+        "narHash": "sha256-bY0qLX5Kpt2x4KnfvXjYK2+BhR3zKBgGsCvIxSzApws=",
+        "owner": "MichaelAquilina",
+        "repo": "zsh-auto-notify",
+        "rev": "fb38802d331408e2ebc8e6745fb8e50356344aa4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MichaelAquilina",
+        "repo": "zsh-auto-notify",
         "type": "github"
       }
     }

@@ -14,6 +14,11 @@
       url = "github:mafredri/zsh-async";
       flake = false;
     };
+
+    zsh-auto-notify = {
+      url = "github:MichaelAquilina/zsh-auto-notify";
+      flake = false;
+    };
   };
 
   outputs = {

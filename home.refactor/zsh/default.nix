@@ -1,9 +1,11 @@
 # The configuration for zsh.
 {
   config,
+  pkgs,
   ...
 }: {
   imports = [
+    ./zsh-async.nix
     ./directory-utils.nix
   ];
 
