@@ -48,4 +48,34 @@
 
   # Share history between shell sessions.
   programs.zsh.history.share = true;
+
+  # Additional ZSH configuration.
+  programs.zsh.initExtra = ''
+    # Don't display non-contiguous duplicates while searching with ^R.
+    HIST_FIND_NO_DUPS=1
+
+    # Use the more-featured time binary from the profile, rather than the
+    # builtin version.
+    disable -r time
+
+    # Interactively choose from multiple completions.
+    zstyle ':completion::complete:*' use-cache 1
+
+    # Change CTRL-U to clear the line before the cursor, not the entire line.
+    # This is more consistent with shells like bash.
+    bindkey '^U' backward-kill-line
+
+    # Enable spelling correction for commands.
+    setopt correct
+
+    # Enable ksh-style extended globbing, e.g. @(foo|bar)
+    setopt kshglob
+
+    # If a glob has no matches, remove it, rather than leaving it in the
+    # command as a literal.
+    setopt nullglob
+
+    # pushd alone goes to the home directory, like plain cd.
+    setopt pushdtohome
+  '';
 }
