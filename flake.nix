@@ -67,6 +67,8 @@
       "nightmare"
     ];
 
+    overlay = (import ./overlay.refactor);
+
     scripts = ./scripts.refactor;
 
     mkHost = {
@@ -79,7 +81,13 @@
     }: let
       hostfile = ./home.refactor/hosts + "/${host}";
 
-      importPkgs = p: import p { inherit system; };
+      importPkgs = p: import p {
+        inherit system;
+
+        overlays = [
+          overlay
+        ];
+      };
 
       pkgs = importPkgs nixpkgs;
       unstable = importPkgs nixpkgs-unstable;
