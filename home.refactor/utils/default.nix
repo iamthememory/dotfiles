@@ -32,6 +32,9 @@ in {
   ];
 
   home.packages = with pkgs; [
+    # A cat clone that does syntax highlighting.
+    bat
+
     # A basic terminal calculator useful for some scripting.
     bc
 
