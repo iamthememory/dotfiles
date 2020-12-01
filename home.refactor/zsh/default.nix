@@ -9,6 +9,7 @@
     ./powerlevel10k
     ./directory-utils.nix
     ./fsh.nix
+    ./omz.nix
     ./sudo.nix
     ./web-search.nix
   ];
@@ -49,6 +50,18 @@
   # Share history between shell sessions.
   programs.zsh.history.share = true;
 
+  # Early loaded ZSH configuration.
+  programs.zsh.initExtraBeforeCompInit = ''
+    # Smartly insert text that's pasted into the terminal rather than assuming
+    # it's a sequence of characters that's typed in.
+    autoload -Uz bracketed-paste-magic
+    zle -N bracketed-paste bracketed-paste-magic
+
+    # Smartly quote URLs if needed while typing/pasting them in.
+    autoload -Uz url-quote-magic
+    zle -N self-insert url-quote-magic
+  '';
+
   # Additional ZSH configuration.
   programs.zsh.initExtra = ''
     # Don't display non-contiguous duplicates while searching with ^R.
@@ -65,11 +78,26 @@
     # This is more consistent with shells like bash.
     bindkey '^U' backward-kill-line
 
+    # If a directory name is typed, and that isn't a command, cd to the
+    # directory.
+    setopt autocd
+
     # Enable spelling correction for commands.
     setopt correct
 
     # Enable ksh-style extended globbing, e.g. @(foo|bar)
     setopt kshglob
+
+    # Allow comments even though the shell is interactive.
+    setopt interactivecomments
+
+    # List jobs in the long format.
+    setopt longlistjobs
+
+    # Allow multiple redirects, inserting cat or tee as necessary.
+    # E.g., `date >file1 >file2` is equivalent to `date | tee file1 >file2` and
+    # `sort <file1 <file2` is equivalent to `cat file1 file2 | sort`.
+    setopt multios
 
     # If a glob has no matches, remove it, rather than leaving it in the
     # command as a literal.
@@ -78,4 +106,13 @@
     # pushd alone goes to the home directory, like plain cd.
     setopt pushdtohome
   '';
+
+  # ZSH aliases.
+  programs.zsh.shellAliases = {
+    # List directories in long form.
+    ll = "ls -lh";
+
+    # List all directories (except . and ..) in long form.
+    la = "ls -lAh";
+  };
 }
