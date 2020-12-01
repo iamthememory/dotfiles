@@ -13,6 +13,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     zsh-async = {
       url = "github:mafredri/zsh-async";
       flake = false;
@@ -50,6 +52,7 @@
     nixpkgs-unstable,
     nixpkgs-master,
     home-manager,
+    flake-utils,
     ...
   }@inputs: let
     defaultInputs = let
@@ -122,9 +125,32 @@
 
       inherit username homeDirectory system pkgs;
     };
+
+    devShells = flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = import nixpkgs-unstable {
+          inherit system;
+
+          overlays = [
+            overlay
+          ];
+        };
+      in {
+        # Ensure the environment has git-crypt and a nix that can build flakes.
+        devShell = with pkgs; mkShell {
+          buildInputs = [
+            gitAndTools.git-crypt
+            nixFlakes
+          ];
+
+          # Make sure nix knows to enable flakes.
+          NIX_CONFIG = "experimental-features = nix-command flakes";
+        };
+      }
+    );
   in {
     homeManagerConfigurations = {
       nightmare = mkHost { host = "nightmare"; };
     };
-  };
+  } // devShells;
 }
