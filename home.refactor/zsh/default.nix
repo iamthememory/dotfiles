@@ -1,9 +1,47 @@
 # The configuration for zsh.
 {
   config,
+  lib,
   pkgs,
   ...
-}: {
+}: let
+  readlink = "${pkgs.coreutils}/bin/readlink";
+
+
+  # Check if the given link to target would cause a collision, and kill the
+  # script if so.
+  checkLink = target: link: ''
+    if [ -e "${link}" ]
+    then
+      if [ ! -L "${link}" ]
+      then
+        errorEcho "Existing file '${link}' is in the way of a link to '${target}'"
+        errorEcho "Please move the above file and try again"
+        exit 1
+      elif [ "$(${readlink} "${link}")" != "${target}" ]
+      then
+        errorEcho "Existing link '${link}' is in the way of a link to '${target}'"
+        errorEcho "Please move or remove the above link and try again"
+        exit 1
+      fi
+    fi
+  '';
+
+  # Make a link to the given target.
+  mkLink = target: link: ''
+    ${checkLink target link}
+
+    if [ -L "${link}" ] && [ "$(${readlink} "${link}")" = "${target}" ]
+    then
+      $VERBOSE_ECHO "Link '${link} -> ${target}' already exists: skipping making link"
+    else
+      $DRY_RUN_CMD ${pkgs.coreutils}/bin/rm -f $VERBOSE_ARG "${link}"
+      $DRY_RUN_CMD ${pkgs.coreutils}/bin/ln -s $VERBOSE_ARG "${target}" "${link}"
+    fi
+  '';
+
+  dotDir = "${config.home.homeDirectory}/${config.programs.zsh.dotDir}";
+in {
   imports = [
     ./zsh-async.nix
     ./powerlevel10k
@@ -115,4 +153,22 @@
     # List all directories (except . and ..) in long form.
     la = "ls -lAh";
   };
+
+  # Add some convenience symlinks since the zsh files have dot prefixes,
+  # despite being in .config/zsh.
+  # NOTE: I assume there's a cleaner way to do this involving making relative
+  # symlinks and installing them, or making the symlinks abolute paths to the
+  # store paths for zshrc and zshenv, but I can't find it.
+  home.activation.addZshConvenienceLinks = let
+  in lib.hm.dag.entryAfter ["writeBoundary"] ''
+    ${mkLink ".zsh_history" "${dotDir}/zsh_history"}
+    ${mkLink ".zshenv" "${dotDir}/zshenv"}
+    ${mkLink ".zshrc" "${dotDir}/zshrc"}
+  '';
+  home.activation.checkZshConvenienceLinks = let
+  in lib.hm.dag.entryBefore ["writeBoundary"] ''
+    ${checkLink ".zsh_history" "${dotDir}/zsh_history"}
+    ${checkLink ".zshenv" "${dotDir}/zshenv"}
+    ${checkLink ".zshrc" "${dotDir}/zshrc"}
+  '';
 }
