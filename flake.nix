@@ -6,6 +6,8 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
+    nur.url = "github:nix-community/NUR";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -58,6 +60,7 @@
         "nixpkgs-stable"
         "nixpkgs-unstable"
         "nixpkgs-master"
+        "nur"
       ];
 
       notBlacklisted = n: v: !(builtins.elem n blacklist);
@@ -94,8 +97,17 @@
       stable = importPkgs nixpkgs-stable;
       master = importPkgs nixpkgs-master;
 
+      nur = import nixpkgs {
+        inherit system;
+
+        overlays = [
+          inputs.nur.overlay
+          overlay
+        ];
+      };
+
       importedInputs = unimportedInputs // {
-        inherit unstable stable master;
+        inherit unstable stable master nur;
 
         scripts = import scripts { inherit pkgs; };
       };
