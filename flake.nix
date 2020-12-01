@@ -80,7 +80,7 @@
 
     lib = ./lib;
 
-    overlay = (import ./overlay.refactor);
+    overlay = ./overlay.refactor;
 
     scripts = ./scripts.refactor;
 
@@ -102,7 +102,7 @@
         config = import nixpkgs-config;
 
         overlays = [
-          overlay
+          (import overlay)
         ];
       };
 
@@ -118,12 +118,12 @@
 
         overlays = [
           inputs.nur.overlay
-          overlay
+          (import overlay)
         ];
       };
 
       importedInputs = unimportedInputs // {
-        inherit unstable stable master nur nixpkgs-config;
+        inherit unstable stable master nur nixpkgs-config overlay;
 
         lib = import lib { inherit pkgs; };
         scripts = import scripts { inherit pkgs; };
@@ -148,7 +148,7 @@
           config = import nixpkgs-config;
 
           overlays = [
-            overlay
+            (import overlay)
           ];
         };
       in {

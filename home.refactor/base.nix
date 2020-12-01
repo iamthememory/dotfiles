@@ -64,6 +64,12 @@ in {
   # config.
   nixpkgs.config = import inputs.nixpkgs-config;
 
+  # Set the overlay for nixpkgs used in home-manager from the top-level
+  # overlay.
+  nixpkgs.overlays = [
+    (import inputs.overlay)
+  ];
+
   # Enable the home-manager binary for managing generations.
   # NOTE: This probably won't work for building new generations for the
   # foreseeable future.
@@ -78,4 +84,9 @@ in {
 
   # Set the nixpkgs config for the system from the config we use here.
   xdg.configFile."nixpkgs/config.nix".source = inputs.nixpkgs-config;
+
+  # Link the overlay we use here into the default user overlays location.
+  # This will make it easy to use the same overlayed packages from here in
+  # tools outside home-manager.
+  xdg.configFile."nixpkgs/overlays/dotfile-overlay".source = inputs.overlay;
 }
