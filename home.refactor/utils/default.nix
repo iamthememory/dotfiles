@@ -38,6 +38,10 @@ in {
     # A basic terminal calculator useful for some scripting.
     bc
 
+    # Some low-level binary utilities such as nm, objdump, readelf, strings,
+    # strip, etc.
+    binutils
+
     # A (de)compressor for .bz2.
     bzip2
 
