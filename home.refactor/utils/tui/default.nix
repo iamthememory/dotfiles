@@ -34,6 +34,9 @@
     tree
   ];
 
+  # Let less output control characters for, e.g., coloring.
+  home.sessionVariables.LESS = "-R";
+
   # Use less as the default pager.
   home.sessionVariables.PAGER = "${pkgs.less}/bin/less";
 
