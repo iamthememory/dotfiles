@@ -24,6 +24,7 @@ in {
     ./bat.nix
     ./direnv.nix
     ./doc.nix
+    ./fzf.nix
     ./hardware.nix
     ./media.nix
     ./net.nix
