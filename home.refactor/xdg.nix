@@ -3,8 +3,8 @@
   config,
   ...
 }: let
-  homeDirectory = config.home.homeDirectory;
-  userDirs = config.xdg.userDirs;
+  inherit (config.home) homeDirectory;
+  inherit (config.xdg) userDirs;
 in {
   # Manage the basic xdg directories.
   xdg.enable = true;

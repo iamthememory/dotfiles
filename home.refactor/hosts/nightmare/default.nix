@@ -8,6 +8,7 @@
 }: {
   imports = [
     ../../base.nix
+    ../../git.nix
     ../../gnupg.nix
     ../../utils
     ../../zsh

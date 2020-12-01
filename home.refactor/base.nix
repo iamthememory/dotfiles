@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: let
-  unstable = inputs.unstable;
+  inherit (inputs) unstable;
 
   homeDirectory = config.home.homeDirectory;
 in {

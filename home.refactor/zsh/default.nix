@@ -38,8 +38,8 @@
   # $HOME, not like xdg-style .config/... directories, so ZSH likes things
   # there to still have leading dots.)
   programs.zsh.history.path = let
-    homeDirectory = config.home.homeDirectory;
-    dotDir = config.programs.zsh.dotDir;
+    inherit (config.home) homeDirectory;
+    inherit (config.programs.zsh) dotDir;
   in "${homeDirectory}/${dotDir}/.zsh_history";
 
   # Keep a lot of history.
