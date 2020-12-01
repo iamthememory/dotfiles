@@ -15,6 +15,11 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    dircolors-solarized = {
+      url = "github:seebi/dircolors-solarized";
+      flake = false;
+    };
+
     zsh-async = {
       url = "github:mafredri/zsh-async";
       flake = false;

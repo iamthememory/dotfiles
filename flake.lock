@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "dircolors-solarized": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1599471540,
+        "narHash": "sha256-OEg2vJWIcu9er3HY4fDn73mSlEtuaWzPw//ER4TOhdo=",
+        "owner": "seebi",
+        "repo": "dircolors-solarized",
+        "rev": "65d4d595ceca96166139862131a006fa3079e00a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "seebi",
+        "repo": "dircolors-solarized",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1605370193,
@@ -100,6 +116,7 @@
     },
     "root": {
       "inputs": {
+        "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nixpkgs-master": "nixpkgs-master",

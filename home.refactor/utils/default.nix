@@ -1,5 +1,6 @@
 # Basic terminal utilities and niceties helpful for most systems.
 {
+  inputs,
   pkgs,
   ...
 }: let
@@ -124,6 +125,45 @@ in {
     # A (de)compressor for .zst.
     zstd
   ];
+
+  # Set ls's colors to solarized dark, and add in any custom colors.
+  home.sessionVariables.LS_COLORS = let
+    # Choose the 256 color solarize dark colors.
+    solarized = "${inputs.dircolors-solarized}/dircolors.256dark";
+
+    # Compute the LS_COLORS ahead of time, since any color-capable terminal
+    # should support these.
+    solarized-colorfile = pkgs.runCommand "LS_COLORS" {} ''
+      # Run strictly and die if anything fails.
+      set -euo pipefail
+
+      # Ensure we have a valid TERM set that is recognized by the color file.
+      TERM=xterm
+      export TERM
+
+      # Make sure LS_COLORS isn't set.
+      unset LS_COLORS
+
+      # Eval the color file, which will dump the colors into this script.
+      # NOTE: Replace this if I ever find a way to do this without eval.
+      eval "$(${pkgs.coreutils}/bin/dircolors "${solarized}")"
+
+      # Echo the colors as our output.
+      echo "$LS_COLORS" > "$out"
+    '';
+
+    # Trim trailing newlines from the given string.
+    trim = s: pkgs.lib.removeSuffix "\n" s;
+
+    # Read the computed colors as a string to skip having to cat it from
+    # another file during variable initialization.
+    solarized-colors = trim (builtins.readFile "${solarized-colorfile}");
+
+    # Custom colors to add to the solarized colors.
+    custom-colors = builtins.concatStringsSep ":" [
+      "*.green=04;32"
+    ];
+  in "${solarized-colors}:${custom-colors}";
 
   # Add the common shell aliases for all shells.
   # NOTE: These will have no effect unless the relevant shell is enabled.
