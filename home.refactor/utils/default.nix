@@ -30,6 +30,7 @@ in {
     ./net.nix
     ./nix-index.nix
     ./pazi.nix
+    ./pet.nix
     ./scripting.nix
     ./tui
   ];
