@@ -36,6 +36,14 @@
 in {
   # Add git-related tools and documentation.
   home.packages = with pkgs; [
+    # A tool to transparently encrypt and decrypt files in a git repo.
+    gitAndTools.git-crypt
+
+    # Additional convenient git tools.
+    gitAndTools.git-extras
+
+    # A tool for helping with the git flow workflow.
+    gitAndTools.gitflow
   ];
 
   # Enable the GitHub CLI tool.
@@ -173,6 +181,12 @@ in {
     "tags"
     "tags.lock"
     "tags.temp"
+
+    # Ignore nix-direnv's temporary directories.
+    ".direnv"
+
+    # Ignore result links from nix builds.
+    "/result"
   ];
 
   # Enable git-lfs.
