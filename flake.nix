@@ -78,6 +78,8 @@
       "nightmare"
     ];
 
+    lib = ./lib;
+
     overlay = (import ./overlay.refactor);
 
     scripts = ./scripts.refactor;
@@ -123,6 +125,7 @@
       importedInputs = unimportedInputs // {
         inherit unstable stable master nur nixpkgs-config;
 
+        lib = import lib { inherit pkgs; };
         scripts = import scripts { inherit pkgs; };
       };
     in home-manager.lib.homeManagerConfiguration {

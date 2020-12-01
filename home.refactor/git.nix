@@ -1,6 +1,7 @@
 # Configuration for git.
 {
   config,
+  inputs,
   pkgs,
   ...
 }: let
@@ -109,24 +110,16 @@ in {
 
   # Extra configuration options for git.
   programs.git.extraConfig = let
-    # True for non-null values.
-    notNullOrEmpty = n: v: v != null && v != {};
-
-    inherit (pkgs.lib) filterAttrs recursiveUpdate;
-
-    # mkDefault set.attr if attr is an attribute of set, otherwise null.
-    defaultOrNull = set: attr:
-      if builtins.hasAttr attr set then
-        mkDefault (builtins.getAttr attr set)
-      else
-        null;
+    inherit (inputs.lib) defaultOrNull filterNullOrEmpty;
+    inherit (pkgs.lib) recursiveUpdate;
 
     # Since null values are invalid, rather than just excluded from the
     # configuration, only include these options if they have a valid setting.
-    optionalValues = filterAttrs notNullOrEmpty {
-      # Remove non-null/empty attributes here, too, so that the total
-      # optionalValues set is empty if these are all empty.
-      core = filterAttrs notNullOrEmpty {
+    # We need to do this recursively.
+    # NOTE: Replace this once I find a more elegant way to filter recursively
+    # from the bottom up.
+    optionalValues = filterNullOrEmpty {
+      core = filterNullOrEmpty {
         # Use the same askpass as SSH_ASKPASS if set.
         askPass = defaultOrNull config.home.sessionVariables "SSH_ASKPASS";
 
