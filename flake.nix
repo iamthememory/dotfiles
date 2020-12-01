@@ -77,6 +77,8 @@
 
     scripts = ./scripts.refactor;
 
+    nixpkgs-config = ./config.nix;
+
     mkHost = {
       host,
       username ? "iamthememory",
@@ -89,6 +91,8 @@
 
       importPkgs = p: import p {
         inherit system;
+
+        config = import nixpkgs-config;
 
         overlays = [
           overlay
@@ -103,6 +107,8 @@
       nur = import nixpkgs {
         inherit system;
 
+        config = import nixpkgs-config;
+
         overlays = [
           inputs.nur.overlay
           overlay
@@ -110,7 +116,7 @@
       };
 
       importedInputs = unimportedInputs // {
-        inherit unstable stable master nur;
+        inherit unstable stable master nur nixpkgs-config;
 
         scripts = import scripts { inherit pkgs; };
       };
@@ -130,6 +136,8 @@
       system: let
         pkgs = import nixpkgs-unstable {
           inherit system;
+
+          config = import nixpkgs-config;
 
           overlays = [
             overlay

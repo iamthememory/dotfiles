@@ -60,10 +60,9 @@ in {
   # This must be at least 20.09 to work properly with flakes.
   home.stateVersion = "20.09";
 
-  # Allow unfree packages.
-  # Note that this must be set here, as home-manager reimports pkgs after
-  # getting its original path, stripping out any overlays or config we give it.
-  nixpkgs.config.allowUnfree = true;
+  # Set the configuration for nixpkgs used in home-manager from the top-level
+  # config.
+  nixpkgs.config = import inputs.nixpkgs-config;
 
   # Enable the home-manager binary for managing generations.
   # NOTE: This probably won't work for building new generations for the
@@ -76,4 +75,7 @@ in {
   xdg.configFile."nix/nix.conf".text = ''
     experimental-features = nix-command flakes
   '';
+
+  # Set the nixpkgs config for the system from the config we use here.
+  xdg.configFile."nixpkgs/config.nix".source = inputs.nixpkgs-config;
 }
