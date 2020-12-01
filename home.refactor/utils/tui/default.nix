@@ -34,6 +34,9 @@
     tree
   ];
 
+  # Use less as the default pager.
+  home.sessionVariables.PAGER = "${pkgs.less}/bin/less";
+
   # Enable lesspipe to transparently pre-process files fed to less.
   programs.lesspipe.enable = true;
 }
