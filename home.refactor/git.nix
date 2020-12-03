@@ -180,6 +180,7 @@ in {
 
     # Ignore result links from nix builds.
     "/result"
+    "/result-doc"
   ];
 
   # Enable git-lfs.
