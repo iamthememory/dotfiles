@@ -11,6 +11,7 @@
     ../../base.nix
     ../../git.nix
     ../../gnupg.nix
+    ../../neovim
     ../../pass.nix
     ../../utils
     ../../zsh
