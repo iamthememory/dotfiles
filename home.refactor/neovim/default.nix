@@ -31,6 +31,7 @@
 in {
   imports = [
     ./base.nix
+    ./theme.nix
   ];
 
   # Use neovim for resolving git merges.

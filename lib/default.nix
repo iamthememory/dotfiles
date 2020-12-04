@@ -22,4 +22,14 @@
     # True for non-null, non-empty values in the set.
     notNullOrEmpty = n: v: v != null && v != {};
   in set: filterAttrs notNullOrEmpty set;
+
+  # Build a vim plugin from the given input and name.
+  mkVimPlugin = {
+    src,
+    pname,
+  }: pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit pname src;
+
+    version = src.lastModifiedDate;
+  };
 }
