@@ -20,6 +20,11 @@
       flake = false;
     };
 
+    vim-nerdtree = {
+      url = "github:preservim/nerdtree";
+      flake = false;
+    };
+
     vim-polyglot = {
       url = "github:sheerun/vim-polyglot";
       flake = false;

@@ -5,6 +5,11 @@
 }: let
   inherit (inputs.lib) mkVimPlugin;
 
+  nerdtree = mkVimPlugin {
+    pname = "nerdtree";
+    src = inputs.vim-nerdtree;
+  };
+
   vim-polyglot = mkVimPlugin {
     pname = "vim-polyglot";
     src = inputs.vim-polyglot;
@@ -90,6 +95,9 @@ in {
 
   # Basic neovim plugins.
   programs.neovim.plugins = [
+    # A plugin for browsing directories.
+    nerdtree
+
     # Syntax, indent, definitions, and other support for many languages.
     vim-polyglot
 
