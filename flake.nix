@@ -20,6 +20,16 @@
       flake = false;
     };
 
+    vim-polyglot = {
+      url = "github:sheerun/vim-polyglot";
+      flake = false;
+    };
+
+    vim-sensible = {
+      url = "github:tpope/vim-sensible";
+      flake = false;
+    };
+
     zsh-async = {
       url = "github:mafredri/zsh-async";
       flake = false;

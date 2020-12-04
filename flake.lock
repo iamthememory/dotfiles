@@ -123,12 +123,46 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
+        "vim-polyglot": "vim-polyglot",
+        "vim-sensible": "vim-sensible",
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify",
         "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
         "zsh-powerlevel10k": "zsh-powerlevel10k",
         "zsh-sudo": "zsh-sudo",
         "zsh-web-search": "zsh-web-search"
+      }
+    },
+    "vim-polyglot": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606489829,
+        "narHash": "sha256-ZlvtJwa093UqgdCgG/FmOMfJE+WkHB4JgGMj8Kjd/CM=",
+        "owner": "sheerun",
+        "repo": "vim-polyglot",
+        "rev": "73c518717741fb3ebb6822645d38f37ffae7c19b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sheerun",
+        "repo": "vim-polyglot",
+        "type": "github"
+      }
+    },
+    "vim-sensible": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1574628322,
+        "narHash": "sha256-1/1kgtx0iJehF+ympl0R/p2t91654aG2ISBmQuAccZQ=",
+        "owner": "tpope",
+        "repo": "vim-sensible",
+        "rev": "2d9f34c09f548ed4df213389caa2882bfe56db58",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tpope",
+        "repo": "vim-sensible",
+        "type": "github"
       }
     },
     "zsh-async": {
