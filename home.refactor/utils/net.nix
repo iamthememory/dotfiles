@@ -14,7 +14,7 @@
     bind.host
 
     # A script-friendly HTTP(S), etc. utility.
-    curl
+    curlFull
 
     # A human and script-friendly HTTP(S) utility.
     httpie
