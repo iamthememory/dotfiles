@@ -52,30 +52,6 @@
     src = inputs.webapi;
   };
 in {
-  programs.neovim.extraPackages = with pkgs; [
-    # Essentially all of these should have git available.
-    # This is probably unnecessary, but doesn't hurt if neovim is invoked via
-    # an absolute path from a shell with a PATH not matching the generation's,
-    # which more or less only applies to testing neovim configurations without
-    # changing generations, or obscure recovery cases, but can't hurt.
-    config.programs.git.package
-
-    # Ensure we have curl available.
-    # This is probably already in our generation's profile, but it doesn't
-    # hurt.
-    curlFull
-
-    # Rhubarb needs hub.
-    # We probably have this but it never hurts.
-    gitAndTools.hub
-
-    # We should have grep available, but it doesn't hurt to make sure.
-    gnugrep
-
-    # Make sure we have wget, just in case.
-    wget
-  ];
-
   # Git-related plugins.
   programs.neovim.plugins = [
     # A plugin that adds a keymapping and command to show the commit(s) where a
