@@ -27,8 +27,58 @@
 
     # (Neo)vim plugins.
 
+    git-messenger = {
+      url = "github:rhysd/git-messenger.vim";
+      flake = false;
+    };
+
+    gv = {
+      url = "github:junegunn/gv.vim";
+      flake = false;
+    };
+
     nerdtree = {
       url = "github:preservim/nerdtree";
+      flake = false;
+    };
+
+    nerdtree-git-plugin = {
+      url = "github:Xuyuanp/nerdtree-git-plugin";
+      flake = false;
+    };
+
+    vim-airline = {
+      url = "github:vim-airline/vim-airline";
+      flake = false;
+    };
+
+    vim-airline-themes = {
+      url = "github:vim-airline/vim-airline-themes";
+      flake = false;
+    };
+
+    vim-devicons = {
+      url = "github:ryanoasis/vim-devicons";
+      flake = false;
+    };
+
+    vim-fugitive = {
+      url = "github:tpope/vim-fugitive";
+      flake = false;
+    };
+
+    vim-gist = {
+      url = "github:mattn/vim-gist";
+      flake = false;
+    };
+
+    vim-gitgutter = {
+      url = "github:airblade/vim-gitgutter";
+      flake = false;
+    };
+
+    vim-github-dashboard = {
+      url = "github:junegunn/vim-github-dashboard";
       flake = false;
     };
 
@@ -37,8 +87,23 @@
       flake = false;
     };
 
+    vim-rhubarb = {
+      url = "github:tpope/vim-rhubarb";
+      flake = false;
+    };
+
     vim-sensible = {
       url = "github:tpope/vim-sensible";
+      flake = false;
+    };
+
+    vim-solarized8 = {
+      url = "github:lifepillar/vim-solarized8";
+      flake = false;
+    };
+
+    webapi = {
+      url = "github:mattn/webapi-vim";
       flake = false;
     };
 
