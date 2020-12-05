@@ -45,6 +45,11 @@ in {
 
     # A tool for helping with the git flow workflow.
     gitAndTools.gitflow
+
+    # A tool that adds commands to interact with GitHub from the terminal.
+    # Mostly superseded by the newer GitHub CLI tool, but still used for older
+    # scripts and (neo)vim plugins.
+    gitAndTools.hub
   ];
 
   # Enable the GitHub CLI tool.
@@ -143,6 +148,9 @@ in {
 
     # Remove any remote tracking refs that no longer exist on remotes.
     fetch.prune = true;
+
+    # Use HTTPS when hub does GitHub operations.
+    hub.protocol = "https";
 
     # When merging, create an explicit merge commit, rather than
     # fast-forwarding.
