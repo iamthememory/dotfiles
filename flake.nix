@@ -27,8 +27,33 @@
 
     # (Neo)vim plugins.
 
+    direnv-vim = {
+      url = "github:direnv/direnv.vim";
+      flake = false;
+    };
+
+    editorconfig-vim = {
+      url = "github:editorconfig/editorconfig-vim";
+      flake = false;
+    };
+
+    fzf = {
+      url = "github:junegunn/fzf";
+      flake = false;
+    };
+
+    fzf-vim = {
+      url = "github:junegunn/fzf.vim";
+      flake = false;
+    };
+
     git-messenger = {
       url = "github:rhysd/git-messenger.vim";
+      flake = false;
+    };
+
+    gundo-vim = {
+      url = "github:sjl/gundo.vim";
       flake = false;
     };
 
@@ -47,6 +72,21 @@
       flake = false;
     };
 
+    recover-vim = {
+      url = "github:chrisbra/Recover.vim";
+      flake = false;
+    };
+
+    tabular = {
+      url = "github:godlygeek/tabular";
+      flake = false;
+    };
+
+    vim-abolish = {
+      url = "github:tpope/vim-abolish";
+      flake = false;
+    };
+
     vim-airline = {
       url = "github:vim-airline/vim-airline";
       flake = false;
@@ -57,8 +97,28 @@
       flake = false;
     };
 
+    vim-commentary = {
+      url = "github:tpope/vim-commentary";
+      flake = false;
+    };
+
     vim-devicons = {
       url = "github:ryanoasis/vim-devicons";
+      flake = false;
+    };
+
+    vim-dispatch = {
+      url = "github:tpope/vim-dispatch";
+      flake = false;
+    };
+
+    vim-easymotion = {
+      url = "github:easymotion/vim-easymotion";
+      flake = false;
+    };
+
+    vim-eunuch = {
+      url = "github:tpope/vim-eunuch";
       flake = false;
     };
 
@@ -82,8 +142,18 @@
       flake = false;
     };
 
+    vim-obsession = {
+      url = "github:tpope/vim-obsession";
+      flake = false;
+    };
+
     vim-polyglot = {
       url = "github:sheerun/vim-polyglot";
+      flake = false;
+    };
+
+    vim-repeat = {
+      url = "github:tpope/vim-repeat";
       flake = false;
     };
 
@@ -99,6 +169,21 @@
 
     vim-solarized8 = {
       url = "github:lifepillar/vim-solarized8";
+      flake = false;
+    };
+
+    vim-speeddating = {
+      url = "github:tpope/vim-speeddating";
+      flake = false;
+    };
+
+    vim-surround = {
+      url = "github:tpope/vim-surround";
+      flake = false;
+    };
+
+    vim-unimpaired = {
+      url = "github:tpope/vim-unimpaired";
       flake = false;
     };
 

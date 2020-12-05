@@ -32,6 +32,7 @@ in {
   imports = [
     ./base.nix
     ./git.nix
+    ./utils.nix
     ./theme.nix
   ];
 
