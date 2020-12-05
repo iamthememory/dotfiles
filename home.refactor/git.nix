@@ -189,6 +189,9 @@ in {
     # Ignore result links from nix builds.
     "/result"
     "/result-doc"
+
+    # Ignore (neo)vim session files.
+    "Session.vim"
   ];
 
   # Enable git-lfs.
