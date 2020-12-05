@@ -1,6 +1,7 @@
 # Basic configuration for neovim.
 {
   inputs,
+  pkgs,
   ...
 }: let
   inherit (inputs.lib) mkVimPlugin;
@@ -70,6 +71,10 @@ in {
 
     " Show line numbers by default.
     set number
+
+    " For maximum compatibility, use bash when running external commands in a
+    " shell.
+    set shell=${pkgs.stdenv.shell}
 
     " Don't show "match x of y" and similar messages at the bottom when doing
     " completions.
