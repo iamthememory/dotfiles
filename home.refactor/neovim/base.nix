@@ -7,7 +7,7 @@
 
   nerdtree = mkVimPlugin {
     pname = "nerdtree";
-    src = inputs.vim-nerdtree;
+    src = inputs.nerdtree;
   };
 
   vim-polyglot = mkVimPlugin {

@@ -12,8 +12,8 @@
   # gitstatusd/powerlevel10k upstream versions more closely.
   p10k = inputs.master.zsh-powerlevel10k.overrideAttrs (oldAttrs: rec {
     name = "${oldAttrs.pname}-${version}";
-    version = "${inputs.zsh-powerlevel10k.lastModifiedDate}";
-    src = inputs.zsh-powerlevel10k;
+    version = "${inputs.powerlevel10k.lastModifiedDate}";
+    src = inputs.powerlevel10k;
   });
 in {
   # Add the powerlevel10k plugin to ZSH.

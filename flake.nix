@@ -2,25 +2,32 @@
   description = "iamthememory's dotfiles and setup";
 
   inputs = {
+    # Nix packages.
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
+    # The Nix user repository overlay.
     nur.url = "github:nix-community/NUR";
 
+    # Home-manager.
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    # Various flake utilities.
     flake-utils.url = "github:numtide/flake-utils";
 
+    # Solarized LS_COLORS.
     dircolors-solarized = {
       url = "github:seebi/dircolors-solarized";
       flake = false;
     };
 
-    vim-nerdtree = {
+    # (Neo)vim plugins.
+
+    nerdtree = {
       url = "github:preservim/nerdtree";
       flake = false;
     };
@@ -35,6 +42,23 @@
       flake = false;
     };
 
+    # ZSH plugins.
+
+    fast-syntax-highlighting = {
+      url = "github:zdharma/fast-syntax-highlighting";
+      flake = false;
+    };
+
+    powerlevel10k = {
+      url = "github:romkatv/powerlevel10k";
+      flake = false;
+    };
+
+    web-search = {
+      url = "github:sinetoami/web-search";
+      flake = false;
+    };
+
     zsh-async = {
       url = "github:mafredri/zsh-async";
       flake = false;
@@ -45,23 +69,8 @@
       flake = false;
     };
 
-    zsh-fast-syntax-highlighting = {
-      url = "github:zdharma/fast-syntax-highlighting";
-      flake = false;
-    };
-
-    zsh-powerlevel10k = {
-      url = "github:romkatv/powerlevel10k";
-      flake = false;
-    };
-
     zsh-sudo = {
       url = "github:hcgraf/zsh-sudo";
-      flake = false;
-    };
-
-    zsh-web-search = {
-      url = "github:sinetoami/web-search";
       flake = false;
     };
   };

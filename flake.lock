@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "fast-syntax-highlighting": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606388465,
+        "narHash": "sha256-SRM+PmbyEhIDo3V3X2BxtbYlfa/lKZ69CtLm8JTYUMo=",
+        "owner": "zdharma",
+        "repo": "fast-syntax-highlighting",
+        "rev": "be2f385453670c18c40320a7384333f98fcd9f79",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zdharma",
+        "repo": "fast-syntax-highlighting",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1605370193,
@@ -48,6 +64,22 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nerdtree": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1602713298,
+        "narHash": "sha256-m9W8myUJ5UqMlW054OHbVZcPtMAf8GJ0AmiH9BNjoOA=",
+        "owner": "preservim",
+        "repo": "nerdtree",
+        "rev": "14af89743ac1c31ff9bb43682025eda50333a7d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "preservim",
+        "repo": "nerdtree",
         "type": "github"
       }
     },
@@ -114,28 +146,44 @@
         "type": "github"
       }
     },
+    "powerlevel10k": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606895794,
+        "narHash": "sha256-RUvyVHKY4YWDviKvJevBxjYtYWz/EIJUQ3DVsWfyCFY=",
+        "owner": "romkatv",
+        "repo": "powerlevel10k",
+        "rev": "b90b36251dcaa170f6a6553fbbaf5d4f4dd1786a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "romkatv",
+        "repo": "powerlevel10k",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "dircolors-solarized": "dircolors-solarized",
+        "fast-syntax-highlighting": "fast-syntax-highlighting",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
+        "nerdtree": "nerdtree",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
+        "powerlevel10k": "powerlevel10k",
         "vim-airline": "vim-airline",
         "vim-airline-themes": "vim-airline-themes",
         "vim-devicons": "vim-devicons",
-        "vim-nerdtree": "vim-nerdtree",
         "vim-polyglot": "vim-polyglot",
         "vim-sensible": "vim-sensible",
         "vim-solarized8": "vim-solarized8",
+        "web-search": "web-search",
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify",
-        "zsh-fast-syntax-highlighting": "zsh-fast-syntax-highlighting",
-        "zsh-powerlevel10k": "zsh-powerlevel10k",
-        "zsh-sudo": "zsh-sudo",
-        "zsh-web-search": "zsh-web-search"
+        "zsh-sudo": "zsh-sudo"
       }
     },
     "vim-airline": {
@@ -183,22 +231,6 @@
       "original": {
         "owner": "ryanoasis",
         "repo": "vim-devicons",
-        "type": "github"
-      }
-    },
-    "vim-nerdtree": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1602713298,
-        "narHash": "sha256-m9W8myUJ5UqMlW054OHbVZcPtMAf8GJ0AmiH9BNjoOA=",
-        "owner": "preservim",
-        "repo": "nerdtree",
-        "rev": "14af89743ac1c31ff9bb43682025eda50333a7d5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "preservim",
-        "repo": "nerdtree",
         "type": "github"
       }
     },
@@ -250,6 +282,22 @@
         "type": "github"
       }
     },
+    "web-search": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1594753727,
+        "narHash": "sha256-+Osu1CCixeTD9sfGkYF+ZNfSK5i51B1WazC2f9EVQCY=",
+        "owner": "sinetoami",
+        "repo": "web-search",
+        "rev": "e2c498dc9d573c731be69fb0d6000822ebe49185",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sinetoami",
+        "repo": "web-search",
+        "type": "github"
+      }
+    },
     "zsh-async": {
       "flake": false,
       "locked": {
@@ -282,38 +330,6 @@
         "type": "github"
       }
     },
-    "zsh-fast-syntax-highlighting": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1606388465,
-        "narHash": "sha256-SRM+PmbyEhIDo3V3X2BxtbYlfa/lKZ69CtLm8JTYUMo=",
-        "owner": "zdharma",
-        "repo": "fast-syntax-highlighting",
-        "rev": "be2f385453670c18c40320a7384333f98fcd9f79",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zdharma",
-        "repo": "fast-syntax-highlighting",
-        "type": "github"
-      }
-    },
-    "zsh-powerlevel10k": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1606553713,
-        "narHash": "sha256-rwK85e5yIILPJ5TAs1WqPnOZMY6cdjO4VlmJgH9e92o=",
-        "owner": "romkatv",
-        "repo": "powerlevel10k",
-        "rev": "2c3bcd8b5d301f469fd8095d32ab2dc18e254a8e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "romkatv",
-        "repo": "powerlevel10k",
-        "type": "github"
-      }
-    },
     "zsh-sudo": {
       "flake": false,
       "locked": {
@@ -327,22 +343,6 @@
       "original": {
         "owner": "hcgraf",
         "repo": "zsh-sudo",
-        "type": "github"
-      }
-    },
-    "zsh-web-search": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1594753727,
-        "narHash": "sha256-+Osu1CCixeTD9sfGkYF+ZNfSK5i51B1WazC2f9EVQCY=",
-        "owner": "sinetoami",
-        "repo": "web-search",
-        "rev": "e2c498dc9d573c731be69fb0d6000822ebe49185",
-        "type": "github"
-      },
-      "original": {
-        "owner": "sinetoami",
-        "repo": "web-search",
         "type": "github"
       }
     }
