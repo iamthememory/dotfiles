@@ -36,6 +36,9 @@ in {
   ];
 
   home.packages = with pkgs; [
+    # A grep-like tool for large source trees.
+    ack
+
     # A basic terminal calculator useful for some scripting.
     bc
 
@@ -93,6 +96,12 @@ in {
 
     # Utilities for /proc, such as fuser, killall, etc.
     psmisc
+
+    # A fast, featureful grep-like tool.
+    ripgrep
+
+    # A tool like ack, but faster.
+    silver-searcher
 
     # A utility for seeing the CPU/wall time a process uses, as well as various
     # memory/resource usage after it finishes.
