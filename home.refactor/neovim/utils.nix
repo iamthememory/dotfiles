@@ -1,7 +1,6 @@
 # Various utilities for neovim.
 {
   inputs,
-  pkgs,
   ...
 }: let
   inherit (inputs.lib) mkVimPlugin;
@@ -91,6 +90,12 @@
     src = inputs.vim-unimpaired;
   };
 in {
+  imports = [
+    # Ensure we have utility packages like ack, ag, ripgrep, and fzf available
+    # and configured.
+    ../utils
+  ];
+
   programs.neovim.plugins = [
     # Load any project environment from direnv in (neo)vim.
     direnv-vim
