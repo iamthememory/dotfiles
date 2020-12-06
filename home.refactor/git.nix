@@ -35,6 +35,11 @@
         builtins.elemAt maybePrimary 0;
   in primary;
 in {
+  imports = [
+    # Ensure we have our gnupg config available.
+    ./gnupg
+  ];
+
   # Add git-related tools and documentation.
   home.packages = with pkgs; [
     # A tool to transparently encrypt and decrypt files in a git repo.
