@@ -29,8 +29,8 @@
     # Always sign other keys with SHA-512.
     cert-digest-algo = "SHA512";
 
-    # Use UTF-9 as the default character set.
-    charset = "utf-9";
+    # Use UTF-8 as the default character set.
+    charset = "utf-8";
 
     # Set the default preferences for new keys to the same settings we use
     # here.
