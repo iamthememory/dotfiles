@@ -52,6 +52,11 @@
     src = inputs.webapi;
   };
 in {
+  imports = [
+    # Ensure we have our git configuration loaded in this generation.
+    ../git.nix
+  ];
+
   # Git-related plugins.
   programs.neovim.plugins = [
     # A plugin that adds a keymapping and command to show the commit(s) where a
