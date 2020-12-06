@@ -1,9 +1,19 @@
 # The configuration for gpg and gpg-agent.
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
+  # The configuration for dirmngr.
+  home.file.".gnupg/dirmngr.conf".text = ''
+    # Use the same keyserver we configured for gpg.
+    keyserver ${config.programs.gpg.settings.keyserver}
+
+    # Ensure the keyserver's certificate is available.
+    hkp-cacert ${./sks-keyservers.netCA.pem}
+  '';
+
   # Enable gpg.
   programs.gpg.enable = true;
 
