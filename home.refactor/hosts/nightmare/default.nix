@@ -11,7 +11,7 @@
     ../../base.nix
     ../../ctags.nix
     ../../git.nix
-    ../../gnupg.nix
+    ../../gnupg
     ../../neovim
     ../../pass.nix
     ../../utils
