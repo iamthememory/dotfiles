@@ -9,6 +9,7 @@
 }: {
   imports = [
     ../../base.nix
+    ../../ctags.nix
     ../../git.nix
     ../../gnupg.nix
     ../../neovim
