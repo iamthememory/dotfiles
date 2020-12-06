@@ -33,6 +33,7 @@ in {
     ./base.nix
     ./git.nix
     ./utils.nix
+    ./tags.nix
     ./theme.nix
   ];
 
