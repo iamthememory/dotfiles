@@ -45,6 +45,11 @@ in {
 
   home.sessionVariables.XDG_MAIL_DIR = userDirs.extraConfig.XDG_MAIL_DIR;
 
+  # Add the xdg locale file, installed/used by xdg-user-dirs.
+  xdg.configFile."user-dirs.locale".text = ''
+    ${config.home.language.base}
+  '';
+
   # Manage xdg mime.
   xdg.mime.enable = true;
   xdg.mimeApps.enable = true;
