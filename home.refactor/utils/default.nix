@@ -121,6 +121,9 @@ in {
     # applicable).
     utillinuxCurses
 
+    # A utility for running commands when files in a directory change.
+    watchman
+
     # A (de)compressor for .xz.
     xz
 
