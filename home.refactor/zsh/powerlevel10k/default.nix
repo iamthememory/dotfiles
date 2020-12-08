@@ -1,25 +1,13 @@
 # Configure the powerlevel10k theme and prompt.
 {
   config,
-  inputs,
   pkgs,
   ...
-}: let
-  # Use the nixpkgs derivation to provide a built and patched gitstatusd in
-  # powerlevel10k, but use the revision we pull from the repo as the source to
-  # get any newer features.
-  # NOTE: We pull from master since it's more likely to match the
-  # gitstatusd/powerlevel10k upstream versions more closely.
-  p10k = inputs.master.zsh-powerlevel10k.overrideAttrs (oldAttrs: rec {
-    name = "${oldAttrs.pname}-${version}";
-    version = "${inputs.powerlevel10k.lastModifiedDate}";
-    src = inputs.powerlevel10k;
-  });
-in {
+}: {
   # Add the powerlevel10k plugin to ZSH.
   programs.zsh.plugins = [{
     name = "powerlevel10k";
-    src = "${p10k}/share/zsh-powerlevel10k";
+    src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
     file = "powerlevel10k.zsh-theme";
   }];
 

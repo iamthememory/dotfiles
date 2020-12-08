@@ -25,189 +25,14 @@
       flake = false;
     };
 
-    # (Neo)vim plugins.
-
-    direnv-vim = {
-      url = "github:direnv/direnv.vim";
-      flake = false;
-    };
-
-    editorconfig-vim = {
-      url = "github:editorconfig/editorconfig-vim";
-      flake = false;
-    };
-
-    fzf = {
-      url = "github:junegunn/fzf";
-      flake = false;
-    };
-
-    fzf-vim = {
-      url = "github:junegunn/fzf.vim";
-      flake = false;
-    };
-
-    git-messenger = {
-      url = "github:rhysd/git-messenger.vim";
-      flake = false;
-    };
-
-    gundo-vim = {
-      url = "github:sjl/gundo.vim";
-      flake = false;
-    };
-
-    gv = {
-      url = "github:junegunn/gv.vim";
-      flake = false;
-    };
-
-    nerdtree = {
-      url = "github:preservim/nerdtree";
-      flake = false;
-    };
-
-    nerdtree-git-plugin = {
-      url = "github:Xuyuanp/nerdtree-git-plugin";
-      flake = false;
-    };
-
-    recover-vim = {
-      url = "github:chrisbra/Recover.vim";
-      flake = false;
-    };
-
-    tabular = {
-      url = "github:godlygeek/tabular";
-      flake = false;
-    };
-
-    vim-abolish = {
-      url = "github:tpope/vim-abolish";
-      flake = false;
-    };
-
-    vim-airline = {
-      url = "github:vim-airline/vim-airline";
-      flake = false;
-    };
-
-    vim-airline-themes = {
-      url = "github:vim-airline/vim-airline-themes";
-      flake = false;
-    };
-
-    vim-commentary = {
-      url = "github:tpope/vim-commentary";
-      flake = false;
-    };
-
-    vim-devicons = {
-      url = "github:ryanoasis/vim-devicons";
-      flake = false;
-    };
-
-    vim-dispatch = {
-      url = "github:tpope/vim-dispatch";
-      flake = false;
-    };
-
-    vim-easymotion = {
-      url = "github:easymotion/vim-easymotion";
-      flake = false;
-    };
-
-    vim-eunuch = {
-      url = "github:tpope/vim-eunuch";
-      flake = false;
-    };
-
-    vim-fugitive = {
-      url = "github:tpope/vim-fugitive";
-      flake = false;
-    };
-
-    vim-gist = {
-      url = "github:mattn/vim-gist";
-      flake = false;
-    };
-
-    vim-gitgutter = {
-      url = "github:airblade/vim-gitgutter";
-      flake = false;
-    };
-
-    vim-github-dashboard = {
-      url = "github:junegunn/vim-github-dashboard";
-      flake = false;
-    };
-
-    vim-obsession = {
-      url = "github:tpope/vim-obsession";
-      flake = false;
-    };
-
-    vim-polyglot = {
-      url = "github:sheerun/vim-polyglot";
-      flake = false;
-    };
-
-    vim-repeat = {
-      url = "github:tpope/vim-repeat";
-      flake = false;
-    };
-
-    vim-rhubarb = {
-      url = "github:tpope/vim-rhubarb";
-      flake = false;
-    };
-
-    vim-sensible = {
-      url = "github:tpope/vim-sensible";
-      flake = false;
-    };
+    # (Neo)vim plugins not in nixpkgs.
 
     vim-solarized8 = {
       url = "github:lifepillar/vim-solarized8";
       flake = false;
     };
 
-    vim-speeddating = {
-      url = "github:tpope/vim-speeddating";
-      flake = false;
-    };
-
-    vim-surround = {
-      url = "github:tpope/vim-surround";
-      flake = false;
-    };
-
-    vim-unimpaired = {
-      url = "github:tpope/vim-unimpaired";
-      flake = false;
-    };
-
-    webapi = {
-      url = "github:mattn/webapi-vim";
-      flake = false;
-    };
-
-    # ZSH plugins.
-
-    fast-syntax-highlighting = {
-      url = "github:zdharma/fast-syntax-highlighting";
-      flake = false;
-    };
-
-    powerlevel10k = {
-      url = "github:romkatv/powerlevel10k";
-      flake = false;
-    };
-
-    web-search = {
-      url = "github:sinetoami/web-search";
-      flake = false;
-    };
+    # ZSH plugins not in nixpkgs.
 
     zsh-async = {
       url = "github:mafredri/zsh-async";
@@ -216,11 +41,6 @@
 
     zsh-auto-notify = {
       url = "github:MichaelAquilina/zsh-auto-notify";
-      flake = false;
-    };
-
-    zsh-sudo = {
-      url = "github:hcgraf/zsh-sudo";
       flake = false;
     };
   };

@@ -1,70 +1,22 @@
 # Git-related configuration for neovim.
 {
   config,
-  inputs,
   pkgs,
   ...
-}: let
-  inherit (inputs.lib) mkVimPlugin;
-
-  git-messenger = mkVimPlugin {
-    pname = "git-messenger.vim";
-    src = inputs.git-messenger;
-  };
-
-  gv = mkVimPlugin {
-    pname = "gv.vim";
-    src = inputs.gv;
-  };
-
-  nerdtree-git-plugin = mkVimPlugin {
-    pname = "nerdtree-git-plugin";
-    src = inputs.nerdtree-git-plugin;
-  };
-
-  vim-fugitive = mkVimPlugin {
-    pname = "vim-fugitive";
-    src = inputs.vim-fugitive;
-  };
-
-  vim-gist = mkVimPlugin {
-    pname = "vim-gist";
-    src = inputs.vim-gist;
-  };
-
-  vim-github-dashboard = mkVimPlugin {
-    pname = "vim-github-dashboard";
-    src = inputs.vim-github-dashboard;
-  };
-
-  vim-gitgutter = mkVimPlugin {
-    pname = "vim-gitgutter";
-    src = inputs.vim-gitgutter;
-  };
-
-  vim-rhubarb = mkVimPlugin {
-    pname = "vim-rhubarb";
-    src = inputs.vim-rhubarb;
-  };
-
-  webapi-vim = mkVimPlugin {
-    pname = "webapi-vim";
-    src = inputs.webapi;
-  };
-in {
+}: {
   imports = [
     # Ensure we have our git configuration loaded in this generation.
     ../git.nix
   ];
 
   # Git-related plugins.
-  programs.neovim.plugins = [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # A plugin that adds a keymapping and command to show the commit(s) where a
     # line was added or modified.
-    git-messenger
+    git-messenger-vim
 
     # A Git commit browser built on top of fugitive.
-    gv
+    gv-vim
 
     # An extension to NERDTree that adds support for showing Git status of
     # files.

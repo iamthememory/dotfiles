@@ -1,26 +1,14 @@
 # ctags configuration for neovim.
 {
-  inputs,
+  pkgs,
   ...
-}: let
-  inherit (inputs.lib) mkVimPlugin;
-
-  tagbar = mkVimPlugin {
-    pname = "tagbar";
-    src = inputs.tagbar;
-  };
-
-  vim-gutentags = mkVimPlugin {
-    pname = "vim-gutentags";
-    src = inputs.vim-gutentags;
-  };
-in {
+}: {
   imports = [
     # Ensure we have ctags and its configuration available.
     ../ctags.nix
   ];
 
-  programs.neovim.plugins = [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # A plugin for showing the tags of a file in a window for navigation.
     tagbar
 

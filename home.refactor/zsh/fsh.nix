@@ -1,7 +1,7 @@
 # Configuration for fast-syntax-highlighting, ZSH syntax highlighting in the
 # shell.
 {
-  inputs,
+  pkgs,
   ...
 }: {
   programs.zsh.initExtra = ''
@@ -12,7 +12,7 @@
   # Add fast-syntax-highlighting to ZSH.
   programs.zsh.plugins = [{
     name = "fast-syntax-highlighting";
-    src = inputs.fast-syntax-highlighting;
+    src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
     file = "fast-syntax-highlighting.plugin.zsh";
   }];
 }

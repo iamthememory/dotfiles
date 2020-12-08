@@ -7,21 +7,7 @@
   inherit (inputs.lib) mkVimPlugin;
   inherit (inputs.scripts) truecolor-support;
 
-  vim-airline = mkVimPlugin {
-    pname = "vim-airline";
-    src = inputs.vim-airline;
-  };
-
-  vim-airline-themes = mkVimPlugin {
-    pname = "vim-airline-themes";
-    src = inputs.vim-airline-themes;
-  };
-
-  vim-devicons = mkVimPlugin {
-    pname = "vim-devicons";
-    src = inputs.vim-devicons;
-  };
-
+  # FIXME: Replace this if it gets added to nixpkgs.
   vim-solarized8 = mkVimPlugin {
     pname = "vim-solarized8";
     src = inputs.vim-solarized8;
@@ -49,7 +35,7 @@ in {
   ];
 
   # Theme-related plugins.
-  programs.neovim.plugins = [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # A plugin for a fancy, featureful statusline.
     {
       plugin = vim-airline;

@@ -1,26 +1,8 @@
 # Basic configuration for neovim.
 {
-  inputs,
   pkgs,
   ...
-}: let
-  inherit (inputs.lib) mkVimPlugin;
-
-  nerdtree = mkVimPlugin {
-    pname = "nerdtree";
-    src = inputs.nerdtree;
-  };
-
-  vim-polyglot = mkVimPlugin {
-    pname = "vim-polyglot";
-    src = inputs.vim-polyglot;
-  };
-
-  vim-sensible = mkVimPlugin {
-    pname = "vim-sensible";
-    src = inputs.vim-sensible;
-  };
-in {
+}: {
   # Basic configuration.
   programs.neovim.extraConfig = ''
     " When wrapping lines, keep new lines at the same indent.
@@ -99,7 +81,7 @@ in {
   '';
 
   # Basic neovim plugins.
-  programs.neovim.plugins = [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # A plugin for browsing directories.
     nerdtree
 

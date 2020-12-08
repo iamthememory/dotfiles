@@ -1,102 +1,15 @@
 # Various utilities for neovim.
 {
-  inputs,
+  pkgs,
   ...
-}: let
-  inherit (inputs.lib) mkVimPlugin;
-
-  direnv-vim = mkVimPlugin {
-    pname = "direnv.vim";
-    src = inputs.direnv-vim;
-  };
-
-  editorconfig-vim = mkVimPlugin {
-    pname = "editorconfig-vim";
-    src = inputs.editorconfig-vim;
-  };
-
-  fzf = mkVimPlugin {
-    pname = "fzf";
-    src = inputs.fzf;
-  };
-
-  fzf-vim = mkVimPlugin {
-    pname = "fzf.vim";
-    src = inputs.fzf-vim;
-  };
-
-  gundo-vim = mkVimPlugin {
-    pname = "gundo.vim";
-    src = inputs.gundo-vim;
-  };
-
-  recover-vim = mkVimPlugin {
-    pname = "Recover.vim";
-    src = inputs.recover-vim;
-  };
-
-  tabular = mkVimPlugin {
-    pname = "tabular";
-    src = inputs.tabular;
-  };
-
-  vim-abolish = mkVimPlugin {
-    pname = "vim-abolish";
-    src = inputs.vim-abolish;
-  };
-
-  vim-commentary = mkVimPlugin {
-    pname = "vim-commentary";
-    src = inputs.vim-commentary;
-  };
-
-  vim-dispatch = mkVimPlugin {
-    pname = "vim-dispatch";
-    src = inputs.vim-dispatch;
-  };
-
-  vim-easymotion = mkVimPlugin {
-    pname = "vim-easymotion";
-    src = inputs.vim-easymotion;
-  };
-
-  vim-eunuch = mkVimPlugin {
-    pname = "vim-eunuch";
-    src = inputs.vim-eunuch;
-  };
-
-  vim-obsession = mkVimPlugin {
-    pname = "vim-obsession";
-    src = inputs.vim-obsession;
-  };
-
-  vim-repeat = mkVimPlugin {
-    pname = "vim-repeat";
-    src = inputs.vim-repeat;
-  };
-
-  vim-speeddating = mkVimPlugin {
-    pname = "vim-speeddating";
-    src = inputs.vim-speeddating;
-  };
-
-  vim-surround = mkVimPlugin {
-    pname = "vim-surround";
-    src = inputs.vim-surround;
-  };
-
-  vim-unimpaired = mkVimPlugin {
-    pname = "vim-unimpaired";
-    src = inputs.vim-unimpaired;
-  };
-in {
+}: {
   imports = [
     # Ensure we have utility packages like ack, ag, ripgrep, and fzf available
     # and configured.
     ../utils
   ];
 
-  programs.neovim.plugins = [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # Load any project environment from direnv in (neo)vim.
     direnv-vim
 
@@ -112,7 +25,7 @@ in {
     }
 
     # A plugin to add basic fzf fuzzy file finding to (neo)vim.
-    fzf
+    fzfWrapper
 
     # A number of helpful commands using fzf.
     fzf-vim
@@ -128,7 +41,7 @@ in {
 
     # When starting, if there's a swapfile for the file we're trying to edit,
     # give options to compare, recover, etc.
-    recover-vim
+    Recover-vim
 
     # A plugin to help easily line up text to make tables or similar.
     tabular
