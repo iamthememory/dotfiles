@@ -67,6 +67,15 @@
     # rapidly restore all buffers, window layouts, etc.
     vim-obsession
 
+    # A plugin for making writing text as convenient as code.
+    {
+      plugin = vim-pencil;
+      config = ''
+        " Wrap lines at 80 characters.
+        let g:pencil#textwidth = 80
+      '';
+    }
+
     # Add support for repeating plugin maps with . for plugins that support it.
     vim-repeat
 
