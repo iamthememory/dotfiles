@@ -32,10 +32,11 @@ in {
   imports = [
     ./base.nix
     ./codesmarts.nix
+    ./filetypes
     ./git.nix
-    ./utils.nix
     ./tags.nix
     ./theme.nix
+    ./utils.nix
   ];
 
   # Use neovim for resolving git merges.
