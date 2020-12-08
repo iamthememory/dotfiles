@@ -11,6 +11,13 @@
 in {
   imports = [
     ./xdg.nix
+
+    # Import any custom home-manager modules.
+    # NOTE: Nix doesn't like this being provided through inputs, and I don't
+    # entirely know why, so we're including it here, even if that's kinda ugly.
+    # Maybe something to do with when the module argument(s) are processed vs
+    # imports, or something, but it gives infinite recursion.
+    ../hm-modules
   ];
 
   # Link the nixpkgs revision used for this generation in the home directory so

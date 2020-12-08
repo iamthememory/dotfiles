@@ -31,6 +31,7 @@
 in {
   imports = [
     ./base.nix
+    ./codesmarts.nix
     ./git.nix
     ./utils.nix
     ./tags.nix
