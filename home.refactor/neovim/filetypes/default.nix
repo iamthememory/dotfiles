@@ -6,6 +6,7 @@
     ./c.nix
     ./cfg.nix
     ./cmake.nix
+    ./docker.nix
     ./green.nix
     ./sh.nix
   ];
