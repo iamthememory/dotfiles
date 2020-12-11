@@ -25,5 +25,6 @@
     ./text.nix
     ./vim.nix
     ./web.nix
+    ./yaml.nix
   ];
 }
