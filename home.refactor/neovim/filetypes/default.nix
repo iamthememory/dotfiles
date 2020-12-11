@@ -11,6 +11,7 @@
     ./green.nix
     ./haskell.nix
     ./json.nix
+    ./lua.nix
     ./sh.nix
   ];
 }
