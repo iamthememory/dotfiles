@@ -23,5 +23,6 @@
     ./sh.nix
     ./tex.nix
     ./text.nix
+    ./vim.nix
   ];
 }
