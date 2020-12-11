@@ -3,6 +3,7 @@
   ...
 }: {
   imports = [
+    ./c.nix
     ./cfg.nix
     ./green.nix
     ./sh.nix
