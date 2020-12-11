@@ -9,6 +9,7 @@
     ./docker.nix
     ./dot.nix
     ./green.nix
+    ./haskell.nix
     ./sh.nix
   ];
 }
