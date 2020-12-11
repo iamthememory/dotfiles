@@ -21,5 +21,6 @@
     ./ruby.nix
     ./rust.nix
     ./sh.nix
+    ./tex.nix
   ];
 }
