@@ -19,6 +19,7 @@
     ./python.nix
     ./rst.nix
     ./ruby.nix
+    ./rust.nix
     ./sh.nix
   ];
 }
