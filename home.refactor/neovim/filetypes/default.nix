@@ -10,6 +10,7 @@
     ./dot.nix
     ./green.nix
     ./haskell.nix
+    ./json.nix
     ./sh.nix
   ];
 }
