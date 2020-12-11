@@ -52,6 +52,9 @@ in {
     # Basic GNU core utilities.
     coreutils
 
+    # Tools such as diff, cmp, etc.
+    diffutils
+
     # A tool for converting files between Windows-y CRLFs and *nixy LF line
     # endings.
     dos2unix
@@ -68,6 +71,9 @@ in {
     # The GNU grep.
     gnugrep
 
+    # The GNU sed implementation.
+    gnused
+
     # The GNU tape archive/tarball archiver/extractor.
     gnutar
 
@@ -83,6 +89,9 @@ in {
     # A (de)compressor for .7z files.
     # NOTE: This is the maintained fork, not the abandoned original p7zip.
     p7zip
+
+    # A tool for applying patches.
+    patch
 
     # A tool for binary patching ELF files and their library paths,
     # interpreters, etc.
