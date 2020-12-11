@@ -17,6 +17,7 @@
     ./nix.nix
     ./perl.nix
     ./python.nix
+    ./rst.nix
     ./sh.nix
   ];
 }
