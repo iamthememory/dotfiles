@@ -13,6 +13,7 @@
     ./json.nix
     ./lua.nix
     ./mail.nix
+    ./markdown.nix
     ./sh.nix
   ];
 }
