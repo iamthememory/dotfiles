@@ -16,6 +16,7 @@
     ./markdown.nix
     ./nix.nix
     ./perl.nix
+    ./python.nix
     ./sh.nix
   ];
 }
