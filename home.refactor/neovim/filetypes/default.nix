@@ -5,6 +5,7 @@
   imports = [
     ./c.nix
     ./cfg.nix
+    ./cmake.nix
     ./green.nix
     ./sh.nix
   ];
