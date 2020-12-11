@@ -18,6 +18,7 @@
     ./perl.nix
     ./python.nix
     ./rst.nix
+    ./ruby.nix
     ./sh.nix
   ];
 }
