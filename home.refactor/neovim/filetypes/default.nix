@@ -24,5 +24,6 @@
     ./tex.nix
     ./text.nix
     ./vim.nix
+    ./web.nix
   ];
 }
