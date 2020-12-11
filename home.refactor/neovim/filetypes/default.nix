@@ -22,5 +22,6 @@
     ./rust.nix
     ./sh.nix
     ./tex.nix
+    ./text.nix
   ];
 }
