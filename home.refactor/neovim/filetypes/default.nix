@@ -15,6 +15,7 @@
     ./mail.nix
     ./markdown.nix
     ./nix.nix
+    ./perl.nix
     ./sh.nix
   ];
 }
