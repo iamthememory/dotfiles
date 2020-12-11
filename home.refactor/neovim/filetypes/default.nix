@@ -12,6 +12,7 @@
     ./haskell.nix
     ./json.nix
     ./lua.nix
+    ./mail.nix
     ./sh.nix
   ];
 }
