@@ -14,6 +14,7 @@
     ./lua.nix
     ./mail.nix
     ./markdown.nix
+    ./nix.nix
     ./sh.nix
   ];
 }
