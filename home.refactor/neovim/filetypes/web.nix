@@ -1,8 +1,8 @@
 # HTML, XML, CSS, and Javascript configuration.
-{
-  pkgs,
-  ...
-}: let
+{ pkgs
+, ...
+}:
+let
   settings = ''
     " Expands tabs to spaces.
     setlocal expandtab
@@ -20,7 +20,8 @@
     " Try to wrap text at 80 characters.
     setlocal textwidth=80
   '';
-in {
+in
+{
   # Buffer settings for HTML and XML.
   xdg.configFile."nvim/ftplugin/html.vim".text = settings;
   xdg.configFile."nvim/ftplugin/xml.vim".text = settings;

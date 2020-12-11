@@ -4,10 +4,9 @@
 # GUI.
 # Include it on hosts which have a GUI since I don't know a good way of passing
 # a "hasGui" flag along for hosts.
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # zsh-auto-notify needs notify-send.

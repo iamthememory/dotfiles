@@ -1,8 +1,8 @@
 # The configuration for neovim.
-{
-  config,
-  ...
-}: let
+{ config
+, ...
+}:
+let
   neovim = "${config.programs.neovim.finalPackage}/bin/nvim";
 
   # Various aliases for vim modes.
@@ -28,7 +28,8 @@
     rnview = "${neovim} -Z -R";
     rnvim = "${neovim} -Z";
   };
-in {
+in
+{
   imports = [
     ./base.nix
     ./codesmarts.nix
@@ -41,9 +42,11 @@ in {
 
   # Use neovim for resolving git merges.
   programs.git.extraConfig.merge.tool = "nvimdiff3";
-  programs.git.extraConfig.mergetool.nvim3diff.cmd = let
-    cmd = "${neovim} -f -c \\\"Gdiff\\\" \\\"$MERGED\\\"";
-  in cmd;
+  programs.git.extraConfig.mergetool.nvim3diff.cmd =
+    let
+      cmd = "${neovim} -f -c \\\"Gdiff\\\" \\\"$MERGED\\\"";
+    in
+    cmd;
 
   # Enable neovim.
   programs.neovim.enable = true;

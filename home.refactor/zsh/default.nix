@@ -1,10 +1,10 @@
 # The configuration for zsh.
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   readlink = "${pkgs.coreutils}/bin/readlink";
 
 
@@ -41,7 +41,8 @@
   '';
 
   dotDir = "${config.home.homeDirectory}/${config.programs.zsh.dotDir}";
-in {
+in
+{
   imports = [
     ./zsh-async.nix
     ./powerlevel10k
@@ -76,10 +77,12 @@ in {
   # (Keep it .zsh_history because $ZDOTDIR is just treated like an alternate
   # $HOME, not like xdg-style .config/... directories, so ZSH likes things
   # there to still have leading dots.)
-  programs.zsh.history.path = let
-    inherit (config.home) homeDirectory;
-    inherit (config.programs.zsh) dotDir;
-  in "${homeDirectory}/${dotDir}/.zsh_history";
+  programs.zsh.history.path =
+    let
+      inherit (config.home) homeDirectory;
+      inherit (config.programs.zsh) dotDir;
+    in
+    "${homeDirectory}/${dotDir}/.zsh_history";
 
   # Keep a lot of history.
   programs.zsh.history.save = 1000000;
@@ -159,16 +162,20 @@ in {
   # NOTE: I assume there's a cleaner way to do this involving making relative
   # symlinks and installing them, or making the symlinks abolute paths to the
   # store paths for zshrc and zshenv, but I can't find it.
-  home.activation.addZshConvenienceLinks = let
-  in lib.hm.dag.entryAfter ["writeBoundary"] ''
-    ${mkLink ".zsh_history" "${dotDir}/zsh_history"}
-    ${mkLink ".zshenv" "${dotDir}/zshenv"}
-    ${mkLink ".zshrc" "${dotDir}/zshrc"}
-  '';
-  home.activation.checkZshConvenienceLinks = let
-  in lib.hm.dag.entryBefore ["writeBoundary"] ''
-    ${checkLink ".zsh_history" "${dotDir}/zsh_history"}
-    ${checkLink ".zshenv" "${dotDir}/zshenv"}
-    ${checkLink ".zshrc" "${dotDir}/zshrc"}
-  '';
+  home.activation.addZshConvenienceLinks =
+    let
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ${mkLink ".zsh_history" "${dotDir}/zsh_history"}
+      ${mkLink ".zshenv" "${dotDir}/zshenv"}
+      ${mkLink ".zshrc" "${dotDir}/zshrc"}
+    '';
+  home.activation.checkZshConvenienceLinks =
+    let
+    in
+    lib.hm.dag.entryBefore [ "writeBoundary" ] ''
+      ${checkLink ".zsh_history" "${dotDir}/zsh_history"}
+      ${checkLink ".zshenv" "${dotDir}/zshenv"}
+      ${checkLink ".zshrc" "${dotDir}/zshrc"}
+    '';
 }

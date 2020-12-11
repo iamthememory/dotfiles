@@ -1,7 +1,6 @@
 # reStructuredText configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for reStructuredText.
   xdg.configFile."nvim/ftplugin/rst.vim".text = ''

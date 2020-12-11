@@ -1,7 +1,6 @@
 # Python configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for python.
   xdg.configFile."nvim/ftplugin/python.vim".text = ''

@@ -1,7 +1,6 @@
 # Vimscript configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for vimscript.
   xdg.configFile."nvim/ftplugin/vim.vim".text = ''

@@ -1,7 +1,6 @@
 # Curses-like terminal utilities.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   imports = [
     ./htop.nix

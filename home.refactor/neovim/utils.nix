@@ -1,7 +1,6 @@
 # Various utilities for neovim.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   imports = [
     # Ensure we have utility packages like ack, ag, ripgrep, and fzf available

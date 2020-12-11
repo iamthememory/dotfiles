@@ -1,8 +1,8 @@
 # Configuration for C/C++.
-{
-  pkgs,
-  ...
-}: let
+{ pkgs
+, ...
+}:
+let
   settings = ''
     " Fold text by syntax, AKA brackets.
     setlocal foldmethod=syntax
@@ -20,7 +20,8 @@
     " Try to wrap at 80 characters.
     setlocal textwidth=80
   '';
-in {
+in
+{
   # Extra configuration for C/C++.
   programs.neovim.extraConfig = ''
     " Use Doxygen syntax support for C/C++ files by default.

@@ -1,6 +1,5 @@
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: rec {
   # If a set has an outPath it can be coerced to a string.
   # We take advantage of that to write the script so it can be used easily as a

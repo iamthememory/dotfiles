@@ -1,7 +1,6 @@
 # Configuration file configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for configuration files.
   xdg.configFile."nvim/ftplugin/cfg.vim".text = ''

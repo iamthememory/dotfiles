@@ -1,8 +1,8 @@
 # Rust configuration.
-{
-  inputs,
-  ...
-}: let
+{ inputs
+, ...
+}:
+let
   # FIXME: Remove this and use unstable when
   # f77eb9bb4d5d9ff34c6b1c18274e50d0bdddb652 lands in unstable.
   # We use master to ensure we have the changes to handle the Rust 1.47.0
@@ -10,7 +10,8 @@
   pkgs = inputs.master;
 
   rust-src = pkgs.rustPlatform.rustLibSrc;
-in {
+in
+{
   home.packages = with pkgs; [
     # Add cargo and rustc for building Rust.
     cargo
@@ -92,28 +93,30 @@ in {
   '';
 
   # Rustfmt settings.
-  xdg.configFile."rustfmt/rustfmt.toml".source = let
-    toTOML = (pkgs.formats.toml {}).generate;
-  in toTOML "rustfmt.toml" {
-    # Use the 2018 edition of Rust by default.
-    edition = "2018";
+  xdg.configFile."rustfmt/rustfmt.toml".source =
+    let
+      toTOML = (pkgs.formats.toml { }).generate;
+    in
+    toTOML "rustfmt.toml" {
+      # Use the 2018 edition of Rust by default.
+      edition = "2018";
 
-    # When splitting imports like `use foo::{x, y, z}`, across multiple lines,
-    # enforce one thing per line.
-    # E.g., format to
-    #   use foo:{
-    #     long_identifier,
-    #     another_identifier,
-    #     yet_another,
-    #   }
-    # rather than
-    #   use foo:{
-    #     long_identifier, another_identifier,
-    #     yet_another,
-    #   }
-    imports_layout = "HorizontalVertical";
+      # When splitting imports like `use foo::{x, y, z}`, across multiple lines,
+      # enforce one thing per line.
+      # E.g., format to
+      #   use foo:{
+      #     long_identifier,
+      #     another_identifier,
+      #     yet_another,
+      #   }
+      # rather than
+      #   use foo:{
+      #     long_identifier, another_identifier,
+      #     yet_another,
+      #   }
+      imports_layout = "HorizontalVertical";
 
-    # Wrap lines at 80 characters.
-    max_width = 80;
-  };
+      # Wrap lines at 80 characters.
+      max_width = 80;
+    };
 }

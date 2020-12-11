@@ -1,6 +1,5 @@
 # Settings for specific filetypes.
-{
-  ...
+{ ...
 }: {
   imports = [
     ./c.nix

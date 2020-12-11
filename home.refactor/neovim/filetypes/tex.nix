@@ -1,8 +1,8 @@
 # (La)TeX configuration.
-{
-  pkgs,
-  ...
-}: let
+{ pkgs
+, ...
+}:
+let
   settings = ''
     " Expands tabs to spaces.
     setlocal expandtab
@@ -20,7 +20,8 @@
     " Try to wrap text at 80 characters.
     setlocal textwidth=80
   '';
-in {
+in
+{
   programs.neovim.extraConfig = ''
     " Assume LaTeX format for TeX files
     let g:tex_flavor='latex'

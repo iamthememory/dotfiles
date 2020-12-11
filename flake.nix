@@ -45,122 +45,131 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs-stable,
-    nixpkgs-unstable,
-    nixpkgs-master,
-    home-manager,
-    flake-utils,
-    ...
-  }@inputs: let
-    defaultInputs = let
-      # Exclude self and the un-initialized nixpkgs when passing inputs to
-      # home-manager.
-      blacklist = [
-        "self"
-        "nixpkgs-stable"
-        "nixpkgs-unstable"
-        "nixpkgs-master"
-        "nur"
+  outputs =
+    { self
+    , nixpkgs-stable
+    , nixpkgs-unstable
+    , nixpkgs-master
+    , home-manager
+    , flake-utils
+    , ...
+    }@inputs:
+    let
+      defaultInputs =
+        let
+          # Exclude self and the un-initialized nixpkgs when passing inputs to
+          # home-manager.
+          blacklist = [
+            "self"
+            "nixpkgs-stable"
+            "nixpkgs-unstable"
+            "nixpkgs-master"
+            "nur"
+          ];
+
+          notBlacklisted = n: v: !(builtins.elem n blacklist);
+        in
+        nixpkgs-stable.lib.filterAttrs notBlacklisted inputs;
+
+      hosts = [
+        "nightmare"
       ];
 
-      notBlacklisted = n: v: !(builtins.elem n blacklist);
-    in nixpkgs-stable.lib.filterAttrs notBlacklisted inputs;
+      lib = ./lib;
 
-    hosts = [
-      "nightmare"
-    ];
+      overlay = ./overlay.refactor;
 
-    lib = ./lib;
+      scripts = ./scripts.refactor;
 
-    overlay = ./overlay.refactor;
+      nixpkgs-config = ./config.nix;
 
-    scripts = ./scripts.refactor;
+      mkHost =
+        { host
+        , username ? "iamthememory"
+        , homeDirectory ? "/home/${username}"
+        , system ? "x86_64-linux"
+        , unimportedInputs ? defaultInputs
+        , nixpkgs ? nixpkgs-unstable
+        ,
+        }:
+        let
+          hostfile = ./home.refactor/hosts + "/${host}";
 
-    nixpkgs-config = ./config.nix;
+          importPkgs = p: import p {
+            inherit system;
 
-    mkHost = {
-      host,
-      username ? "iamthememory",
-      homeDirectory ? "/home/${username}",
-      system ? "x86_64-linux",
-      unimportedInputs ? defaultInputs,
-      nixpkgs ? nixpkgs-unstable,
-    }: let
-      hostfile = ./home.refactor/hosts + "/${host}";
+            config = import nixpkgs-config;
 
-      importPkgs = p: import p {
-        inherit system;
+            overlays = [
+              (import overlay)
+            ];
+          };
 
-        config = import nixpkgs-config;
+          pkgs = importPkgs nixpkgs;
+          unstable = importPkgs nixpkgs-unstable;
+          stable = importPkgs nixpkgs-stable;
+          master = importPkgs nixpkgs-master;
 
-        overlays = [
-          (import overlay)
-        ];
-      };
+          nur = import nixpkgs {
+            inherit system;
 
-      pkgs = importPkgs nixpkgs;
-      unstable = importPkgs nixpkgs-unstable;
-      stable = importPkgs nixpkgs-stable;
-      master = importPkgs nixpkgs-master;
+            config = import nixpkgs-config;
 
-      nur = import nixpkgs {
-        inherit system;
+            overlays = [
+              inputs.nur.overlay
+              (import overlay)
+            ];
+          };
 
-        config = import nixpkgs-config;
+          importedInputs = unimportedInputs // {
+            inherit unstable stable master nur nixpkgs-config overlay;
 
-        overlays = [
-          inputs.nur.overlay
-          (import overlay)
-        ];
-      };
+            lib = import lib { inherit pkgs; };
+            scripts = import scripts { inherit pkgs; };
+          };
+        in
+        home-manager.lib.homeManagerConfiguration {
+          configuration = {
+            _module.args.inputs = importedInputs;
 
-      importedInputs = unimportedInputs // {
-        inherit unstable stable master nur nixpkgs-config overlay;
+            imports = [
+              hostfile
+            ];
+          };
 
-        lib = import lib { inherit pkgs; };
-        scripts = import scripts { inherit pkgs; };
-      };
-    in home-manager.lib.homeManagerConfiguration {
-      configuration = {
-        _module.args.inputs = importedInputs;
-
-        imports = [
-          hostfile
-        ];
-      };
-
-      inherit username homeDirectory system pkgs;
-    };
-
-    devShells = flake-utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = import nixpkgs-unstable {
-          inherit system;
-
-          config = import nixpkgs-config;
-
-          overlays = [
-            (import overlay)
-          ];
+          inherit username homeDirectory system pkgs;
         };
-      in {
-        # Ensure the environment has git-crypt and a nix that can build flakes.
-        devShell = with pkgs; mkShell {
-          buildInputs = [
-            gitAndTools.git-crypt
-            nixFlakes
-          ];
 
-          # Make sure nix knows to enable flakes.
-          NIX_CONFIG = "experimental-features = nix-command flakes";
-        };
-      }
-    );
-  in {
-    homeManagerConfigurations = {
-      nightmare = mkHost { host = "nightmare"; };
-    };
-  } // devShells;
+      devShells = flake-utils.lib.eachDefaultSystem (
+        system:
+        let
+          pkgs = import nixpkgs-unstable {
+            inherit system;
+
+            config = import nixpkgs-config;
+
+            overlays = [
+              (import overlay)
+            ];
+          };
+        in
+        {
+          # Ensure the environment has git-crypt and a nix that can build flakes.
+          devShell = with pkgs; mkShell {
+            buildInputs = [
+              gitAndTools.git-crypt
+              nixFlakes
+            ];
+
+            # Make sure nix knows to enable flakes.
+            NIX_CONFIG = "experimental-features = nix-command flakes";
+          };
+        }
+      );
+    in
+    {
+      homeManagerConfigurations = {
+        nightmare = mkHost { host = "nightmare"; };
+      };
+    } // devShells;
 }

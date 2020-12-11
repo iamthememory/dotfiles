@@ -1,8 +1,8 @@
 # Shell script configuration.
-{
-  pkgs,
-  ...
-}: let
+{ pkgs
+, ...
+}:
+let
   settings = ''
     " Expands tabs to spaces.
     setlocal expandtab
@@ -20,7 +20,8 @@
     " Try to wrap text at 80 characters.
     setlocal textwidth=80
   '';
-in {
+in
+{
   home.packages = with pkgs; [
     # Add shellcheck for linting shell scripts.
     shellcheck

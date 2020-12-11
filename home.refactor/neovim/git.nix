@@ -1,8 +1,7 @@
 # Git-related configuration for neovim.
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     # Ensure we have our git configuration loaded in this generation.
@@ -66,30 +65,32 @@
     # A plugin to look at the GitHub dashboard and activity in (neo)vim.
     {
       plugin = vim-github-dashboard;
-      config = let
-        git = "${config.programs.git.package}/bin/git";
-        getGitHubUser = "${git} config --get github.user";
-      in ''
-        " Clear/initialize the configuration.
-        let g:github_dashboard = {}
+      config =
+        let
+          git = "${config.programs.git.package}/bin/git";
+          getGitHubUser = "${git} config --get github.user";
+        in
+        ''
+          " Clear/initialize the configuration.
+          let g:github_dashboard = {}
 
-        " Set the username from the github.user key in git config, and clear
-        " whatever junk we put in there if it fails.
-        " There is probably a more elegant way to do this.
-        let g:github_dashboard['username'] = trim(system("${getGitHubUser}"))
-        if v:shell_error != 0
-          unlet g:github_dashboard['username']
-        endif
+          " Set the username from the github.user key in git config, and clear
+          " whatever junk we put in there if it fails.
+          " There is probably a more elegant way to do this.
+          let g:github_dashboard['username'] = trim(system("${getGitHubUser}"))
+          if v:shell_error != 0
+            unlet g:github_dashboard['username']
+          endif
 
-        " Add the GITHUB_TOKEN as the "password" from the environment if it's
-        " set.
-        if $GITHUB_TOKEN != ""
-          let g:github_dashboard['password'] = $GITHUB_TOKEN
-        endif
+          " Add the GITHUB_TOKEN as the "password" from the environment if it's
+          " set.
+          if $GITHUB_TOKEN != ""
+            let g:github_dashboard['password'] = $GITHUB_TOKEN
+          endif
 
-        " Allow outputting emoji.
-        let g:github_dashboard['emoji'] = 1
-      '';
+          " Allow outputting emoji.
+          let g:github_dashboard['emoji'] = 1
+        '';
     }
 
     # A plugin to allow omni-completion of GitHub issues, URLs, collaborators,

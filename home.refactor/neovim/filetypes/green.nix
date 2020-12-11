@@ -1,6 +1,5 @@
 # Green configuration.
-{
-  ...
+{ ...
 }: {
   # Enable detection for files.
   xdg.configFile."nvim/ftdetect/green.vim".text = ''

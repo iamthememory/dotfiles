@@ -1,7 +1,6 @@
 # Plain text configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for plain text.
   xdg.configFile."nvim/ftplugin/text.vim".text = ''

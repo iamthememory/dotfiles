@@ -1,7 +1,6 @@
 # Basic configuration for neovim.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Basic configuration.
   programs.neovim.extraConfig = ''

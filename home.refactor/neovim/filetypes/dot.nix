@@ -1,7 +1,6 @@
 # Graphviz configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for Graphviz.
   xdg.configFile."nvim/ftplugin/dot.vim".text = ''

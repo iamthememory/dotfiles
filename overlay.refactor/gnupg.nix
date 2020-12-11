@@ -1,6 +1,5 @@
-{
-  super,
-  ...
+{ super
+, ...
 }: super.gnupg.override {
   # Add support for many optional gpg features.
   # We need to do this in an overlay, since home-manager doesn't let us

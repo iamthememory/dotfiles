@@ -1,12 +1,13 @@
 # Configure pass.
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
+{ config
+, inputs
+, pkgs
+, ...
+}:
+let
   browserpassChromeID = "naepdomgkenhinolocfifgehidddafch";
-in {
+in
+{
   # Add additional passphrase-related packages.
   home.packages = with pkgs; [
     # A package for generating diceware passwords.
@@ -18,19 +19,21 @@ in {
   programs.browserpass.enable = true;
 
   # Enable the host-side program for browsers which are enabled.
-  programs.browserpass.browsers = let
-    inherit (config) programs;
+  programs.browserpass.browsers =
+    let
+      inherit (config) programs;
 
-    chromeEnabled = programs.google-chrome.enable
-      || programs.google-chrome-beta.enable
-      || programs.google-chrome-dev.enable;
+      chromeEnabled = programs.google-chrome.enable
+        || programs.google-chrome-beta.enable
+        || programs.google-chrome-dev.enable;
 
-    # NOTE: I'm not including vivaldi because there's no option in home-manager
-    # to enable vivaldi.
-    chrome = if chromeEnabled then [ "chrome" ] else [];
-    chromium = if programs.chromium.enable then [ "chromium" ] else [];
-    firefox = if programs.firefox.enable then [ "firefox" ] else [];
-  in chrome ++ chromium ++ firefox;
+      # NOTE: I'm not including vivaldi because there's no option in home-manager
+      # to enable vivaldi.
+      chrome = if chromeEnabled then [ "chrome" ] else [ ];
+      chromium = if programs.chromium.enable then [ "chromium" ] else [ ];
+      firefox = if programs.firefox.enable then [ "firefox" ] else [ ];
+    in
+    chrome ++ chromium ++ firefox;
 
   # Enable the browserpass extension for any browsers that're enabled.
   # NOTE: These will only do anything if the applicable browser is also
@@ -39,9 +42,11 @@ in {
   programs.google-chrome.extensions = [ browserpassChromeID ];
   programs.google-chrome-beta.extensions = [ browserpassChromeID ];
   programs.google-chrome-dev.extensions = [ browserpassChromeID ];
-  programs.firefox.extensions = let
-    inherit (inputs.nur.nur.repos.rycee) firefox-addons;
-  in [ firefox-addons.browserpass ];
+  programs.firefox.extensions =
+    let
+      inherit (inputs.nur.nur.repos.rycee) firefox-addons;
+    in
+    [ firefox-addons.browserpass ];
 
   # Enable pass.
   programs.password-store.enable = true;

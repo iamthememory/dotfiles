@@ -1,8 +1,7 @@
 # The configuration for direnv, which can dynamically add environment variables
 # for specific directories to, e.g., set up a build environment for a source
 # tree without needing a separate nix-shell or similar.
-{
-  ...
+{ ...
 }: {
   # Enable direnv.
   programs.direnv.enable = true;

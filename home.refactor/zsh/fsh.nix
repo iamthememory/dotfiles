@@ -1,8 +1,7 @@
 # Configuration for fast-syntax-highlighting, ZSH syntax highlighting in the
 # shell.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   programs.zsh.initExtra = ''
     # Use the default theme.

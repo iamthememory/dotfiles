@@ -2,12 +2,12 @@
 # what packages provide what files, to search for binaries or other files when
 # the package isn't known.
 # It can also handle when commands aren't found when typed in a shell.
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   # The portion of the script that scrapes for the index matching this revision
   # of nixpkgs.
   # This is kept separate so it can be used both on generation activation if
@@ -23,7 +23,8 @@
   # A short variable for invoking realpath to make the scripts easier to write.
   # This should follow and canonicalize a symlink to its real, absolute path.
   realpath = "${pkgs.coreutils}/bin/realpath -e";
-in {
+in
+{
   home.packages = with pkgs; [
     # Install nix-index so nix-locate can be called.
     nix-index
@@ -31,7 +32,7 @@ in {
 
   # Update the nix-index cache on generation activation if we have a new
   # nixpkgs revision.
-  home.activation.updateNixIndexCache = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.updateNixIndexCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     HM_DO_NIX_INDEX_UPDATE=0
 
     if [ ! -L "${nixIndexRevisionLink}" ]
@@ -78,18 +79,20 @@ in {
 
     Service = {
       Type = "oneshot";
-      ExecStart = let
-        update-index = pkgs.writeShellScript "update-nix-index.sh" ''
-          set -eu
-          set -o pipefail
+      ExecStart =
+        let
+          update-index = pkgs.writeShellScript "update-nix-index.sh" ''
+            set -eu
+            set -o pipefail
 
-          # Discard stderr, since nix-index will write progress info even when
-          # not connected to a terminal, flooding the journal.
-          ${updateNixIndex} 2>/dev/null
-          ${pkgs.coreutils}/bin/rm -f "${nixIndexRevisionLink}"
-          ${pkgs.coreutils}/bin/ln -s "${pkgs.path}" "${nixIndexRevisionLink}"
-        '';
-      in "${update-index}";
+            # Discard stderr, since nix-index will write progress info even when
+            # not connected to a terminal, flooding the journal.
+            ${updateNixIndex} 2>/dev/null
+            ${pkgs.coreutils}/bin/rm -f "${nixIndexRevisionLink}"
+            ${pkgs.coreutils}/bin/ln -s "${pkgs.path}" "${nixIndexRevisionLink}"
+          '';
+        in
+        "${update-index}";
     };
   };
 

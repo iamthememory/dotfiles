@@ -1,7 +1,6 @@
 # Docker configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for Docker.
   xdg.configFile."nvim/ftplugin/dockerfile.vim".text = ''

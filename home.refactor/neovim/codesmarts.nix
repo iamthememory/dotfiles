@@ -1,8 +1,7 @@
 # Neovim completion and linting configuration.
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # Enable COC.
   programs.neovim.coc.enable = true;

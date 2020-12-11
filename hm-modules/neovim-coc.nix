@@ -1,15 +1,15 @@
 # COC settings for neovim specifically.
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }: with lib; let
   neocfg = config.programs.neovim;
   cfg = config.programs.neovim.coc;
 
   jsonFormat = pkgs.formats.json { };
-in {
+in
+{
   options = {
     programs.neovim.coc = {
       enable = mkEnableOption "COC for Neovim";

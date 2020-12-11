@@ -1,14 +1,15 @@
 # The base configuration used for all systems.
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
+{ config
+, inputs
+, pkgs
+, ...
+}:
+let
   inherit (inputs) unstable;
 
   homeDirectory = config.home.homeDirectory;
-in {
+in
+{
   imports = [
     ./xdg.nix
 

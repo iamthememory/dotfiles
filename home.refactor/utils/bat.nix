@@ -1,6 +1,5 @@
 # Configure bat, a cat clone with syntax highlighting and git support.
-{
-  ...
+{ ...
 }: {
   # Enable bat.
   programs.bat.enable = true;

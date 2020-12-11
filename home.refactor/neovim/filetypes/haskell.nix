@@ -1,7 +1,6 @@
 # Haskell configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for Haskell.
   xdg.configFile."nvim/ftplugin/haskell.vim".text = ''

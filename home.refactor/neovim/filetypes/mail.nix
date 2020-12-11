@@ -1,7 +1,6 @@
 # Mail configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for mail.
   xdg.configFile."nvim/ftplugin/mail.vim".text = ''

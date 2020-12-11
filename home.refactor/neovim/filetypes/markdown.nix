@@ -1,7 +1,6 @@
 # Markdown configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for markdown.
   xdg.configFile."nvim/ftplugin/markdown.vim".text = ''

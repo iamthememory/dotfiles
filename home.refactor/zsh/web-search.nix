@@ -1,7 +1,6 @@
 # Configure the web-search plugin for ZSH.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Add web search aliases to ZSH.
   programs.zsh.plugins = [{

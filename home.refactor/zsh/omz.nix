@@ -4,12 +4,13 @@
 # This is mainly everything in the lib/* directory in oh-my-zsh, which is
 # apparently always loaded, and which contains tweaks to completion,
 # keybindings, etc.
-{
-  pkgs,
-  ...
-}: let
+{ pkgs
+, ...
+}:
+let
   omz-lib = "${pkgs.oh-my-zsh}/share/oh-my-zsh/lib";
-in {
+in
+{
   # Load some basic oh-my-zsh niceties early.
   programs.zsh.initExtraBeforeCompInit = ''
     # Load some completion tweaks.

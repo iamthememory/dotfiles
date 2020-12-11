@@ -1,7 +1,6 @@
 # Basic network utilities and niceties.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # A versatile fetcher for HTTP(S), FTP, torrents, etc.

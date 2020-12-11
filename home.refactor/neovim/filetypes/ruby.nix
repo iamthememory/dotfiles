@@ -1,7 +1,6 @@
 # Ruby configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for Ruby.
   xdg.configFile."nvim/ftplugin/ruby.vim".text = ''

@@ -1,7 +1,6 @@
 # Configuration for ctags.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # An actively developed ctags implementation.

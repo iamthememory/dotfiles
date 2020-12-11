@@ -1,7 +1,6 @@
 # Lua configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for Lua.
   xdg.configFile."nvim/ftplugin/lua.vim".text = ''

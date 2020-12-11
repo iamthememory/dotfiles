@@ -1,7 +1,6 @@
 # Nix configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # A sensible formatter for nix code.

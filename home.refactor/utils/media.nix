@@ -1,7 +1,6 @@
 # Basic media utilities.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # A tool for converting and manipulating media files.

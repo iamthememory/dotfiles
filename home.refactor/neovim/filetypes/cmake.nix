@@ -1,7 +1,6 @@
 # CMake configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for CMake.
   xdg.configFile."nvim/ftplugin/cmake.vim".text = ''

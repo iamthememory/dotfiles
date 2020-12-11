@@ -1,7 +1,6 @@
 # Basic terminal hardware utilities.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # A utility for rescuing disk data with progress (and also useful for

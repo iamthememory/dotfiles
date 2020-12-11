@@ -1,7 +1,6 @@
 # ctags configuration for neovim.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   imports = [
     # Ensure we have ctags and its configuration available.

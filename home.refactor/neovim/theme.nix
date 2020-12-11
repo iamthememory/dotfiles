@@ -1,9 +1,9 @@
 # Theme-related configuration for neovim.
-{
-  inputs,
-  pkgs,
-  ...
-}: let
+{ inputs
+, pkgs
+, ...
+}:
+let
   inherit (inputs.lib) mkVimPlugin;
   inherit (inputs.scripts) truecolor-support;
 
@@ -12,7 +12,8 @@
     pname = "vim-solarized8";
     src = inputs.vim-solarized8;
   };
-in {
+in
+{
   # Theme-related configuration.
   programs.neovim.extraConfig = ''
     " If we're in a terminal, assume we have a dark background, because we

@@ -1,7 +1,6 @@
 # Perl configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for Perl.
   xdg.configFile."nvim/ftplugin/perl.vim".text = ''

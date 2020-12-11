@@ -1,7 +1,6 @@
 # YAML configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for YAML.
   xdg.configFile."nvim/ftplugin/yaml.vim".text = ''

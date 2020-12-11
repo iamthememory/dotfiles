@@ -1,6 +1,5 @@
 # Configuration for fzf, a fuzzy finder.
-{
-  ...
+{ ...
 }: {
   # Enable fzf.
   programs.fzf.enable = true;

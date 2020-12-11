@@ -1,11 +1,12 @@
 # Set the values for the XDG directories.
-{
-  config,
-  ...
-}: let
+{ config
+, ...
+}:
+let
   inherit (config.home) homeDirectory;
   inherit (config.xdg) userDirs;
-in {
+in
+{
   # Manage the basic xdg directories.
   xdg.enable = true;
 

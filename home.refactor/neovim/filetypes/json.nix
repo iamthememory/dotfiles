@@ -1,7 +1,6 @@
 # JSON configuration.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Buffer settings for JSON.
   xdg.configFile."nvim/ftplugin/json.vim".text = ''

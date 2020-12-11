@@ -1,7 +1,6 @@
 # Basic documentation and utilities.
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   # Install documentation as well for any programs.
   home.extraOutputsToInstall = [
