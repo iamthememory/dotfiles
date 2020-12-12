@@ -56,7 +56,7 @@
 
     " For maximum compatibility, use bash when running external commands in a
     " shell.
-    set shell='${config.home.profileDirectory}/bin/bash'
+    set shell=${config.home.profileDirectory}/bin/bash
 
     " Don't show "match x of y" and similar messages at the bottom when doing
     " completions.
@@ -83,7 +83,7 @@
   # Basic neovim plugins.
   programs.neovim.plugins = with pkgs.vimPlugins; [
     # Ensure bash is available for our shell setting.
-    bashInteractive
+    pkgs.bashInteractive
 
     # A plugin for browsing directories.
     nerdtree
