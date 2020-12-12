@@ -12,6 +12,7 @@
     ../../gdb
     ../../git.nix
     ../../gnupg
+    ../../mail
     ../../neovim
     ../../pass.nix
     ../../utils
