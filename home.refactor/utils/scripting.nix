@@ -3,6 +3,9 @@
 , ...
 }: {
   home.packages = with pkgs; [
+    # Bash, for scripting.
+    bashInteractive
+
     # Perl, useful for little inline snippets in terminal pipelines.
     perl
 
