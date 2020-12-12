@@ -131,7 +131,7 @@ in
 
     # A variety of a bunch of standard Linux tools (with curses when
     # applicable).
-    utillinuxCurses
+    util-linuxCurses
 
     # A utility for running commands when files in a directory change.
     watchman
