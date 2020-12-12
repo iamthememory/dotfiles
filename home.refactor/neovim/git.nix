@@ -8,6 +8,13 @@
     ../git.nix
   ];
 
+  home.packages = with pkgs; [
+    # Ensure we have xclip available for vim-gist.
+    # FIXME: This should probably be based on whether this is X11, wayland,
+    # MacOS, etc., much like g:gist_clip_command below.
+    xclip
+  ];
+
   # Git-related plugins.
   programs.neovim.plugins = with pkgs.vimPlugins; [
     # A plugin that adds a keymapping and command to show the commit(s) where a
@@ -38,24 +45,28 @@
     # A plugin that allows creating, fetching, opening, etc. gists easily.
     {
       plugin = vim-gist;
-      config = ''
-        " Allow copying a gist to the clipboard.
-        " FIXME: This should probably be set based on whether this generation
-        " has X11, wayland, is on MacOS, etc. to the appropriate thing.
-        let g:gist_clip_command = '${pkgs.xclip}/bin/xclip -selection clipboard'
+      config =
+        let
+          xclip = "${config.home.profileDirectory}/bin/xclip";
+        in
+        ''
+          " Allow copying a gist to the clipboard.
+          " FIXME: This should probably be set based on whether this generation
+          " has X11, wayland, is on MacOS, etc. to the appropriate thing.
+          let g:gist_clip_command = '${xclip} -selection clipboard'
 
-        " Detect the gist filetype from the filename.
-        let g:gist_detect_filetype = 1
+          " Detect the gist filetype from the filename.
+          let g:gist_detect_filetype = 1
 
-        " List private gists when listing gists.
-        let g:gist_show_privates = 1
+          " List private gists when listing gists.
+          let g:gist_show_privates = 1
 
-        " Default gists to private.
-        let g:gist_post_private = 1
+          " Default gists to private.
+          let g:gist_post_private = 1
 
-        " Enable manipulating multiple files in a gist.
-        let g:gist_get_multiplefile = 1
-      '';
+          " Enable manipulating multiple files in a gist.
+          let g:gist_get_multiplefile = 1
+        '';
     }
 
     # A plugin that adds a marker in the sign column to show where lines have
@@ -67,7 +78,7 @@
       plugin = vim-github-dashboard;
       config =
         let
-          git = "${config.programs.git.package}/bin/git";
+          git = "${config.home.profileDirectory}/bin/git";
           getGitHubUser = "${git} config --get github.user";
         in
         ''

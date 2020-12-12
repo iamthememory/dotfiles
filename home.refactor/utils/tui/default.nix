@@ -1,5 +1,6 @@
 # Curses-like terminal utilities.
-{ pkgs
+{ config
+, pkgs
 , ...
 }: {
   imports = [
@@ -37,7 +38,7 @@
   home.sessionVariables.LESS = "-R";
 
   # Use less as the default pager.
-  home.sessionVariables.PAGER = "${pkgs.less}/bin/less";
+  home.sessionVariables.PAGER = "${config.home.profileDirectory}/bin/less";
 
   # Enable lesspipe to transparently pre-process files fed to less.
   programs.lesspipe.enable = true;

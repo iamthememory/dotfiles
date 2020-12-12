@@ -3,7 +3,7 @@
 , ...
 }:
 let
-  neovim = "${config.programs.neovim.finalPackage}/bin/nvim";
+  neovim = "nvim";
 
   # Various aliases for vim modes.
   shellAliases = {

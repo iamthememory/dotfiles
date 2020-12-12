@@ -1,5 +1,6 @@
 # Rust configuration.
-{ inputs
+{ config
+, inputs
 , ...
 }:
 let
@@ -37,7 +38,7 @@ in
     # The path to rust-analyzer.
     # If not specified, coc-rust-analyzer assumes it needs to download it from
     # a GitHub release.
-    "rust-analyzer.serverPath" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+    "rust-analyzer.serverPath" = "${config.home.profileDirectory}/bin/rust-analyzer";
   };
 
   # Configuration for Rust.

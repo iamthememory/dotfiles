@@ -1,5 +1,6 @@
 # Shell script configuration.
-{ pkgs
+{ config
+, pkgs
 , ...
 }:
 let
@@ -23,6 +24,9 @@ let
 in
 {
   home.packages = with pkgs; [
+    # Ensure bash is available.
+    bashInteractive
+
     # Add shellcheck for linting shell scripts.
     shellcheck
 
@@ -34,7 +38,7 @@ in
   programs.neovim.extraConfig = ''
     " Use bash as the default shell for linting if it can't be read from the
     " shebang.
-    let g:ale_sh_shell_default_shell = '${pkgs.stdenv.shell}'
+    let g:ale_sh_shell_default_shell = '${config.home.profileDirectory}/bin/bash'
 
     " Run shfmt on saving.
     " Also make sure g:ale_fixers exists, because home-manager can put these

@@ -25,7 +25,7 @@
     recursiveUpdate
       {
         # Use fzf for selections.
-        General.selectcmd = "${pkgs.fzf}/bin/fzf";
+        General.selectcmd = "${config.home.profileDirectory}/bin/fzf";
       }
       optionalValues;
 

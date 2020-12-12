@@ -1,12 +1,13 @@
 # Configuration for pazi, a tool to jump to frequently used directories.
-{ pkgs
+{ config
+, pkgs
 , ...
 }:
 let
   paziAliases = {
     # An alias for using pazi with fzf for selecting the directory.
     # NOTE: z is itself an alias to a shell function, so there is no full path.
-    zf = "z --pipe=${pkgs.fzf}/bin/fzf";
+    zf = "z --pipe=${config.home.profileDirectory}/bin/fzf";
   };
 in
 {

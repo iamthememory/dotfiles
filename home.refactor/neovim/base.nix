@@ -1,5 +1,6 @@
 # Basic configuration for neovim.
-{ pkgs
+{ config
+, pkgs
 , ...
 }: {
   # Basic configuration.
@@ -55,7 +56,7 @@
 
     " For maximum compatibility, use bash when running external commands in a
     " shell.
-    set shell=${pkgs.stdenv.shell}
+    set shell='${config.home.profileDirectory}/bin/bash'
 
     " Don't show "match x of y" and similar messages at the bottom when doing
     " completions.
@@ -81,6 +82,9 @@
 
   # Basic neovim plugins.
   programs.neovim.plugins = with pkgs.vimPlugins; [
+    # Ensure bash is available for our shell setting.
+    bashInteractive
+
     # A plugin for browsing directories.
     nerdtree
 

@@ -1,23 +1,25 @@
 # Basic terminal utilities and niceties helpful for most systems.
-{ inputs
+{ config
+, inputs
 , pkgs
 , ...
 }:
 let
+  profileBin = "${config.home.profileDirectory}/bin";
   # Various common shell aliases.
   shellAliases = {
     # Enable color for common tools when in a terminal that supports it.
 
-    exa = "${pkgs.exa}/bin/exa --color=auto";
+    exa = "${profileBin}/exa --color=auto";
 
-    egrep = "${pkgs.gnugrep}/bin/egrep --color=auto";
-    fgrep = "${pkgs.gnugrep}/bin/fgrep --color=auto";
-    grep = "${pkgs.gnugrep}/bin/grep --color=auto";
+    egrep = "${profileBin}/egrep --color=auto";
+    fgrep = "${profileBin}/fgrep --color=auto";
+    grep = "${profileBin}/grep --color=auto";
 
-    ls = "${pkgs.coreutils}/bin/ls --color=auto";
+    ls = "${profileBin}/ls --color=auto";
 
     # Use reflinks when able to to benefit from CoW filesystems.
-    cp = "${pkgs.coreutils}/bin/cp --reflink=auto";
+    cp = "${profileBin}/cp --reflink=auto";
   };
 in
 {
@@ -151,8 +153,11 @@ in
   # Set ls's colors to solarized dark, and add in any custom colors.
   home.sessionVariables.LS_COLORS =
     let
-      # Choose the 256 color solarize dark colors.
-      solarized = "${inputs.dircolors-solarized}/dircolors.256dark";
+      # Choose the dark solarized colors.
+      # NOTE: This assumes the default terminal colors have been remapped to
+      # solarized dark, but is more accurate than the 256-color approximation
+      # version.
+      solarized = "${inputs.dircolors-solarized}/dircolors.ansi-dark";
 
       # Compute the LS_COLORS ahead of time, since any color-capable terminal
       # should support these.
