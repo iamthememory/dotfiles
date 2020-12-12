@@ -17,6 +17,10 @@
     # An ncurses TUI for seeing what files take up how much space on disk.
     ncdu
 
+    # Several important terminal utilities, like clear, infocmp, reset, tput,
+    # etc. are provided directly by ncurses.
+    ncurses
+
     # A color-enabled info viewer.
     pinfo
 
