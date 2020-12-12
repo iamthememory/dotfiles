@@ -25,6 +25,33 @@
       flake = false;
     };
 
+    # GDB-related things not in nixpkgs.
+
+    # A set of additions to GDB for reverse engineering and exploiting.
+    # FIXME: Set this to hugsy/gef/dev when
+    # https://github.com/hugsy/gef/pull/591 is merged, or hugsy/gef if/when
+    # that's merged to master.
+    # Otherwise, architecture checks for Rust fail since Rust doesn't have a
+    # void type, disabling a number of panes and commands.
+    # Since this isn't the official repo, it's pinned to the fix commit on
+    # https://github.com/Mic92/gef/commits/fix-rust.
+    gef = {
+      url = "github:Mic92/gef/992d1888833b9e1ba1363a670646f52dedeed2e0";
+      flake = false;
+    };
+
+    # Extra scripts and structures for GEF.
+    gef-extras = {
+      url = "github:hugsy/gef-extras";
+      flake = false;
+    };
+
+    # An assembler framework.
+    keystone-engine = {
+      url = "github:keystone-engine/keystone";
+      flake = false;
+    };
+
     # (Neo)vim plugins not in nixpkgs.
 
     vim-solarized8 = {

@@ -31,6 +31,39 @@
         "type": "github"
       }
     },
+    "gef": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1607623080,
+        "narHash": "sha256-s0tPLff+kWbHqMMHRdRlyVOxXeLO2BrvJi+lLw1Dof8=",
+        "owner": "Mic92",
+        "repo": "gef",
+        "rev": "992d1888833b9e1ba1363a670646f52dedeed2e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "gef",
+        "rev": "992d1888833b9e1ba1363a670646f52dedeed2e0",
+        "type": "github"
+      }
+    },
+    "gef-extras": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1605494520,
+        "narHash": "sha256-m4h2lOrFkKeO0/z/O9eaWvxCFE6hngc5NCl/3iW4OSs=",
+        "owner": "hugsy",
+        "repo": "gef-extras",
+        "rev": "39126cdba4f0f02e2e7d50cba97b13725fa9643a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hugsy",
+        "repo": "gef-extras",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -48,6 +81,22 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "keystone-engine": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1598971795,
+        "narHash": "sha256-9POEprYCRLOwKZFj6C4kzlt/yW5Vh9lq7f7rriRpxhc=",
+        "owner": "keystone-engine",
+        "repo": "keystone",
+        "rev": "e1547852d9accb9460573eb156fc81645b8e1871",
+        "type": "github"
+      },
+      "original": {
+        "owner": "keystone-engine",
+        "repo": "keystone",
         "type": "github"
       }
     },
@@ -118,7 +167,10 @@
       "inputs": {
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",
+        "gef": "gef",
+        "gef-extras": "gef-extras",
         "home-manager": "home-manager",
+        "keystone-engine": "keystone-engine",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
