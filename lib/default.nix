@@ -25,6 +25,9 @@
     in
     set: filterAttrs notNullOrEmpty set;
 
+  # Various mail functions.
+  mail = import ./mail-account.nix;
+
   # Build a vim plugin from the given input and name.
   mkVimPlugin =
     { src
