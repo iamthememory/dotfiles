@@ -140,7 +140,6 @@
                 set crypt_replysign = no
                 set crypt_replyencrypt = no
                 set crypt_replysignencrypted = no
-                set crypt_use_pka = no
                 unset pgp_default_key
               ''
               else ''
@@ -152,10 +151,6 @@
 
                 # Sign replies to emails that are encrypted as well.
                 set crypt_replysignencrypted = yes
-
-                # Use PKA to find keys via DNS records and possibly check
-                # whether an email address is controlled by who it says it is.
-                set crypt_use_pka = yes
 
                 # Set the default PGP key.
                 set pgp_default_key = ${gpgKey}
