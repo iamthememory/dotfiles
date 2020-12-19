@@ -9,6 +9,7 @@
     ../xdg.nix
 
     ./mailcap.nix
+    ./neomutt.nix
   ];
 
   # Set the base mail path to the same as the xdg mail directory.
