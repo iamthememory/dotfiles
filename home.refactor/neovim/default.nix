@@ -40,6 +40,9 @@ in
     ./utils.nix
   ];
 
+  # Use neovim as the default editor.
+  home.sessionVariables.EDITOR = "${config.home.profileDirectory}/bin/nvim";
+
   # Use neovim for resolving git merges.
   programs.git.extraConfig.merge.tool = "nvimdiff3";
   programs.git.extraConfig.mergetool.nvim3diff.cmd =
