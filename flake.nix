@@ -25,6 +25,12 @@
       flake = false;
     };
 
+    # Solarized mutt colorschemes.
+    mutt-colors-solarized = {
+      url = "github:altercation/mutt-colors-solarized";
+      flake = false;
+    };
+
     # GDB-related things not in nixpkgs.
 
     # A set of additions to GDB for reverse engineering and exploiting.
@@ -150,6 +156,8 @@
 
           importedInputs = unimportedInputs // {
             inherit unstable stable master nur nixpkgs-config overlay;
+
+            hostname = host;
 
             lib = import lib { inherit pkgs; };
             scripts = import scripts { inherit pkgs; };

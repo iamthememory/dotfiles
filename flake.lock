@@ -100,6 +100,22 @@
         "type": "github"
       }
     },
+    "mutt-colors-solarized": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1301122944,
+        "narHash": "sha256-UWQ4M3/4PsZzt3UZguy10WufXDOp7IKABzgVjkGNJNQ=",
+        "owner": "altercation",
+        "repo": "mutt-colors-solarized",
+        "rev": "3b23c55eb43849975656dd89e3f35dacd2b93e69",
+        "type": "github"
+      },
+      "original": {
+        "owner": "altercation",
+        "repo": "mutt-colors-solarized",
+        "type": "github"
+      }
+    },
     "nixpkgs-master": {
       "locked": {
         "lastModified": 1607766819,
@@ -171,6 +187,7 @@
         "gef-extras": "gef-extras",
         "home-manager": "home-manager",
         "keystone-engine": "keystone-engine",
+        "mutt-colors-solarized": "mutt-colors-solarized",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
