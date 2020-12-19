@@ -3,7 +3,7 @@
 , ...
 }:
 let
-  neovim = "nvim";
+  neovim = "${config.home.profileDirectory}/bin/nvim";
 
   # Various aliases for vim modes.
   shellAliases = {
