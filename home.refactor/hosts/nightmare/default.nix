@@ -18,6 +18,8 @@
     ../../utils
     ../../zsh
     ../../zsh/zsh-auto-notify.nix
+
+    ./secrets
   ];
 
   # Set the GitHub token from pass on login for tools like the GitHub CLI.
