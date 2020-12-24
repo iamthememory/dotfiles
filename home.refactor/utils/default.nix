@@ -68,6 +68,9 @@ in
     # The file utility for identifying file contents and MIMEs.
     file
 
+    # Utilities such as find, xargs, locate/updatedb, etc.
+    findutils
+
     # Basic low-level utilities such as getconf, iconv, ldd, and locale.
     glibc.bin
 
