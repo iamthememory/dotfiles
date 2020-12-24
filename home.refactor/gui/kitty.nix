@@ -12,6 +12,9 @@ let
 in
 {
   imports = [
+    # Ensure we have our SSH configuration available.
+    ../ssh.nix
+
     # Ensure we have basic terminal utilities.
     ../utils
 

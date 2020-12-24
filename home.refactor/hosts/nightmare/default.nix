@@ -16,6 +16,7 @@
     ../../mail
     ../../neovim
     ../../pass.nix
+    ../../ssh.nix
     ../../utils
     ../../zsh
     ../../zsh/zsh-auto-notify.nix

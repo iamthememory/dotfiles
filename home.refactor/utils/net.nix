@@ -2,6 +2,11 @@
 { pkgs
 , ...
 }: {
+  imports = [
+    # Ensure our SSH configuration is available.
+    ../ssh.nix
+  ];
+
   home.packages = with pkgs; [
     # A versatile fetcher for HTTP(S), FTP, torrents, etc.
     aria2
@@ -34,9 +39,6 @@
     nix-prefetch
     nix-prefetch-git
     nix-prefetch-github
-
-    # SSH.
-    openssh
 
     # Mount a remote directory using FUSE over SSH.
     sshfs
