@@ -1,5 +1,9 @@
 # Basic GUI setup.
-{ ...
+{ config
+, inputs
+, lib
+, pkgs
+, ...
 }: {
   imports = [
     ./dunst.nix
@@ -20,4 +24,16 @@
     link = "${config.xdg.configHome}/systemd/user/graphical-session-pre.target.wants/dbus.socket";
     target = "${config.home.profileDirectory}/etc/systemd/user/dbus.socket";
   };
+
+  # Use solarized dark colors for anything that reads xresources.
+  xresources.extraConfig =
+    let
+      solarizedDark = "${inputs.xresources-solarized}/Xresources.dark";
+    in
+    builtins.readFile solarizedDark;
+
+  # Use Literation Mono (Liberation Mono patched with NerdFont glyphs) as the
+  # default xterm font.
+  xresources.properties."XTerm.vt100.faceName" =
+    "LiterationMono Nerd Font Mono:size=9:antialias=true";
 }

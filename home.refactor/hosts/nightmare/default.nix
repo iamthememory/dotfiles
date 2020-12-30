@@ -47,4 +47,7 @@
 
   # Use a GUI pinentry.
   services.gpg-agent.pinentryFlavor = "gtk2";
+
+  # Use 96 as the DPI for anything that reads xresources.
+  xresources.properties."Xft.dpi" = 96;
 }
