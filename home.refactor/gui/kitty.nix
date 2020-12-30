@@ -1,5 +1,6 @@
 # Terminal setup for kitty.
 { config
+, inputs
 , pkgs
 , ...
 }:
@@ -173,84 +174,26 @@ in
       # Color scheme settings.
       colorSettings =
         let
-          # The solarized-dark palette, as mapped onto the basic 16 terminal
-          # colors.
-          colors = {
-            black = "#073642";
-            brblack = "#002b36";
-
-            red = "#dc322f";
-            brred = "#cb4b16";
-
-            green = "#859900";
-            brgreen = "#586e75";
-
-            yellow = "#b58900";
-            bryellow = "#657b83";
-
-            blue = "#268bd2";
-            brblue = "#839496";
-
-            magenta = "#d33682";
-            brmagenta = "#6c71c4";
-
-            cyan = "#2aa198";
-            brcyan = "#93a1a1";
-
-            white = "#eee8d5";
-            brwhite = "#fdf6e3";
-          };
+          colors = inputs.lib.solarized;
         in
-        rec {
+        with colors; rec {
           # The border color for active, inactive, and bell-ed windows.
-          active_border_color = colors.green;
-          bell_border_color = colors.brred;
-          inactive_border_color = colors.yellow;
+          active_border_color = colorNames.green;
+          bell_border_color = colorNames.orange;
+          inactive_border_color = colorNames.yellow;
 
           # The background color.
-          background = colors.brblack;
-
-          # Black and bright black.
-          color0 = colors.black;
-          color8 = colors.brblack;
-
-          # Black and bright red.
-          color1 = colors.red;
-          color9 = colors.brred;
-
-          # Black and bright green.
-          color2 = colors.green;
-          color10 = colors.brgreen;
-
-          # Black and bright yellow.
-          color3 = colors.yellow;
-          color11 = colors.bryellow;
-
-          # Black and bright blue.
-          color4 = colors.blue;
-          color12 = colors.brblue;
-
-          # Black and bright magenta.
-          color5 = colors.magenta;
-          color13 = colors.brmagenta;
-
-          # Black and bright cyan.
-          color6 = colors.cyan;
-          color14 = colors.brcyan;
-
-          # Black and bright white.
-          color7 = colors.white;
-          color15 = colors.brwhite;
+          background = colorNames.base03;
 
           # The cursor color.
-          cursor = colors.brcyan;
+          cursor = colorNames.base1;
 
           # The text under the cursor should be the background color the cell
           # would have if the cursor weren't there.
           cursor_text_color = "background";
 
           # The foreground color.
-          foreground = colors.brblue;
+          foreground = colorNames.base0;
 
           # When selecting text, reverse the foreground and background from the
           # default.
@@ -258,8 +201,8 @@ in
           selection_foreground = background;
 
           # The color to use for URLs on mouseover.
-          url_color = colors.blue;
-        };
+          url_color = colorNames.blue;
+        } // colors.darkColors;
     in
     {
       # Allow other programs to control kitty.

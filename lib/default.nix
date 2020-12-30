@@ -38,4 +38,7 @@
 
       version = src.lastModifiedDate;
     };
+
+  # Solarized colors.
+  solarized = import ./solarized-colors.nix;
 }
