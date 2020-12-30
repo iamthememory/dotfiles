@@ -5,9 +5,7 @@
 , ...
 }:
 let
-  inherit (inputs) unstable;
-
-  homeDirectory = config.home.homeDirectory;
+  inherit (config.home) homeDirectory;
 in
 {
   imports = [
@@ -30,10 +28,13 @@ in
   # Set the locale to en_US.UTF-8.
   home.language.base = "en_US.UTF-8";
 
-  home.packages = [
+  home.packages = with pkgs; [
     # FIXME: This should be replaced with regular nix once flakes make it into
     # stable.
-    unstable.nixFlakes
+    nixFlakes
+
+    # Ensure systemctl, etc. is available.
+    systemd
   ];
 
   # Set up the path to look up manpages.
