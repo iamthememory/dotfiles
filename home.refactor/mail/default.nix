@@ -60,7 +60,7 @@
         if browserCommand == null then ""
         else ''
           # Set the browser used by abook.
-          set www_command = ${browser}
+          set www_command = ${browserCommand}
         '';
     in
     ''
