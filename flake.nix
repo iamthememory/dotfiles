@@ -31,6 +31,12 @@
       flake = false;
     };
 
+    # Solarized Xresources colors.
+    xresources-solarized = {
+      url = "github:solarized/xresources";
+      flake = false;
+    };
+
     # GDB-related things not in nixpkgs.
 
     # A set of additions to GDB for reverse engineering and exploiting.

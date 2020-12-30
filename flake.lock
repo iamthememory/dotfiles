@@ -193,6 +193,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "vim-solarized8": "vim-solarized8",
+        "xresources-solarized": "xresources-solarized",
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify"
       }
@@ -210,6 +211,22 @@
       "original": {
         "owner": "lifepillar",
         "repo": "vim-solarized8",
+        "type": "github"
+      }
+    },
+    "xresources-solarized": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1430001079,
+        "narHash": "sha256-Ls2wr69YKMDUBHKgOB4Im01dQ9V2WURHSx4NWN8Zu1M=",
+        "owner": "solarized",
+        "repo": "xresources",
+        "rev": "025ceddbddf55f2eb4ab40b05889148aab9699fc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "solarized",
+        "repo": "xresources",
         "type": "github"
       }
     },
