@@ -41,9 +41,6 @@ in
   home.sessionVariables.MANPATH = builtins.concatStringsSep ":" [
     # Manpages installed by home-manager.
     "${config.home.profileDirectory}/share/man"
-
-    # Manpages from the host system.
-    "/run/current-system/sw/share/man"
   ];
 
   # Set the NIX_PATH so tools we can't manage inside a flake (like nix repl,
