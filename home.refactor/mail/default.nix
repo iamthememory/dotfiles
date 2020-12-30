@@ -1,5 +1,6 @@
 # Settings for email.
 { config
+, inputs
 , lib
 , pkgs
 , ...
@@ -17,35 +18,11 @@
 
   # Link ~/.abook to ~/.config/abook for compatibility, since home-manager likes
   # to put abook's config there, and this keeps all the files together.
-  home.activation.createAbookConfigDirectoryLink =
-    let
-      # The path to ~/.abook.
-      homeConfig = "${config.home.homeDirectory}/.abook";
-
-      # The path to a ln binary.
-      ln = "${pkgs.coreutils}/bin/ln";
-
-      # The path to a realpath binary.
-      realpath = "${pkgs.coreutils}/bin/realpath";
-
-      # The path to ~/.config/abook.
-      xdgConfig = "${config.xdg.configHome}/abook";
-    in
-    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      if [ ! -e "${homeConfig}" ]
-      then
-        $VERBOSE_ECHO "Linking ${homeConfig} -> ${xdgConfig}"
-        $DRY_RUN_CMD ${ln} -s $VERBOSE_ARG "${xdgConfig}" "${homeConfig}"
-      else
-        if [ -L "${homeConfig}" ] && [ "$(${realpath} "${homeConfig}")" = "${xdgConfig}" ]
-        then
-          $VERBOSE_ECHO "Link ${homeConfig} -> ${xdgConfig} already exists"
-        else
-          errorEcho "Abook config location ${homeConfig} must be a symlink to ${xdgConfig}"
-          exit 1
-        fi
-      fi
-    '';
+  home.activation.createAbookConfigDirectoryLink = inputs.lib.mkSymlink {
+    inherit lib;
+    link = "${config.home.homeDirectory}/.abook";
+    target = "${config.xdg.configHome}/abook";
+  };
 
   # Enable abook for storing addresses.
   programs.abook.enable = true;

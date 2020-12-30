@@ -28,6 +28,38 @@
   # Various mail functions.
   mail = import ./mail-account.nix;
 
+  # Ensure a symlink exists or create one on profile activation.
+  # - lib: home-manager's lib, for DAG functions.
+  # - target: Where the symlink should point.
+  # - link: Where the symlink should be.
+  mkSymlink =
+    let
+      # The path to ln.
+      ln = "${pkgs.coreutils}/bin/ln";
+
+      # The path to realpath.
+      realpath = "${pkgs.coreutils}/bin/realpath";
+    in
+    { lib
+    , link
+    , target
+    }:
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      if [ ! -e "${link}" ]
+      then
+        $VERBOSE_ECHO "Linking ${link} -> ${target}"
+        $DRY_RUN_CMD ${ln} -s $VERBOSE_ARG "${target}" "${link}"
+      else
+        if [ -L "${link}" ] && [ "$(${realpath} "${link}")" = "${target}" ]
+        then
+          $VERBOSE_ECHO "Link ${link} -> ${target} already exists"
+        else
+          errorEcho "${link} must be a symlink to ${target}"
+          exit 1
+        fi
+      fi
+    '';
+
   # Build a vim plugin from the given input and name.
   mkVimPlugin =
     { src
