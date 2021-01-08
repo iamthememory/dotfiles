@@ -25,6 +25,19 @@
     target = "${config.home.profileDirectory}/etc/systemd/user/dbus.socket";
   };
 
+  # Ensure all programs share the same default dbus session, even if started via
+  # something like cron or a systemd user unit.
+  # FIXME: Maybe this shouldn't assume it should be in /run/user/<UID>?
+  home.sessionVariables.DBUS_SESSION_BUS_ADDRESS =
+    let
+      # The path to the latest id in the profile.
+      id = "${config.home.profileDirectory}/bin/id";
+
+      # The real user ID at the time this is run.
+      uid = "$(\"${id}\" --real --user)";
+    in
+    "unix:path=/run/user/${uid}/bus";
+
   # Settings to use when running most Java applications.
   home.sessionVariables._JAVA_OPTIONS =
     let
