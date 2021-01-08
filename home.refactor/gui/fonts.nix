@@ -32,6 +32,7 @@
     # A set of nice fonts from Google.
     noto-fonts
     noto-fonts-cjk
+    noto-fonts-emoji
     noto-fonts-extra
 
     # A set of monospaced fonts patched with extra glyphs, although I believe
