@@ -9,6 +9,7 @@
     ./dunst.nix
     ./fonts.nix
     ./kitty.nix
+    ./input.nix
     ./locker.nix
   ];
 
