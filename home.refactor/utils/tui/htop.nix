@@ -24,7 +24,6 @@
   # The fields in the htop table.
   programs.htop.fields = [
     "PID"
-    "CGROUP"
     "USER"
     "NICE"
     "IO_PRIORITY"
