@@ -25,6 +25,20 @@
     target = "${config.home.profileDirectory}/etc/systemd/user/dbus.socket";
   };
 
+  # Settings to use when running most Java applications.
+  home.sessionVariables._JAVA_OPTIONS =
+    let
+      options = [
+        # Use font anti-aliasing, with RGB-style LCD subpixel hinting.
+        "-Dawt.useSystemAAFontSettings=lcd"
+
+        # Use a GTK look and feel by default, so Java programs look more natural
+        # when around native programs.
+        "-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+      ];
+    in
+    builtins.concatStringsSep " " options;
+
   # Use solarized dark colors for anything that reads xresources.
   xresources.extraConfig =
     let
