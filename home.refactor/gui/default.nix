@@ -19,6 +19,13 @@
 
     # Ensure dbus is available.
     dbus
+
+    # The dconf tool for reading the GTK-y settings that aren't stored in
+    # program-specific files.
+    gnome3.dconf
+
+    # The GUI dconf editor.
+    gnome3.dconf-editor
   ];
 
   # Link dbus.socket into the systemd user directory to ensure it's started for
