@@ -13,6 +13,9 @@
   ];
 
   home.packages = with pkgs; [
+    # Ensure coreutils is available.
+    coreutils
+
     # Ensure dbus is available.
     dbus
   ];
