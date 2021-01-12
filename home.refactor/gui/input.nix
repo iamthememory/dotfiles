@@ -193,13 +193,6 @@
         "${xinput}" --set-prop "$input" "libinput Middle Emulation Enabled" 1
       done
 
-      # Disable Yubikey input by default.
-      # This doesn't prevent smarter programs from asking the Yubikey for a
-      # token, then touching it to authorize, it only prevents the Yubikey from
-      # emulating a keyboard to type a one time code every time it's bumped.
-      # FIXME: This should probably cover more models or be host-specific.
-      "${xinput}" disable 'Yubico Yubikey 4 OTP+U2F+CCID'
-
       # Start the ibus daemon.
       "${ibus-daemon}" --daemonize --replace --restart
     '';

@@ -8,6 +8,7 @@
   imports = [
     ./dunst.nix
     ./fonts.nix
+    ./keyring.nix
     ./kitty.nix
     ./input.nix
     ./locker.nix
