@@ -48,6 +48,16 @@
   # Use a GUI pinentry.
   services.gpg-agent.pinentryFlavor = "gtk2";
 
+  # Disable the touchpad by default.
+  xsession.initExtra =
+    let
+      xinput = "${config.home.profileDirectory}/bin/xinput";
+    in
+    ''
+      # Turn off the touchpad.
+      ${xinput} disable 'pointer:SynPS/2 Synaptics TouchPad'
+    '';
+
   # Use 96 as the DPI for anything that reads xresources.
   xresources.properties."Xft.dpi" = 96;
 }
