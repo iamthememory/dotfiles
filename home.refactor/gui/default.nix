@@ -6,6 +6,7 @@
 , ...
 }: {
   imports = [
+    ./browser.nix
     ./dunst.nix
     ./fonts.nix
     ./keyring.nix
