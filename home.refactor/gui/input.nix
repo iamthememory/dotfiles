@@ -166,6 +166,9 @@
   home.sessionVariables.QT5_IM_MODULE = "ibus";
   home.sessionVariables.XMODIFIERS = "@im=ibus";
 
+  # Enable the unclutter daemon to hide the mouse pointer on inactivity.
+  services.unclutter.enable = true;
+
   # Extra commands to run when starting X11.
   xsession.initExtra =
     let
