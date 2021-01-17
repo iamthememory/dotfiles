@@ -166,6 +166,9 @@
   home.sessionVariables.QT5_IM_MODULE = "ibus";
   home.sessionVariables.XMODIFIERS = "@im=ibus";
 
+  # Add clipmenu to keep track of old clipboard entries.
+  services.clipmenu.enable = true;
+
   # Enable the unclutter daemon to hide the mouse pointer on inactivity.
   services.unclutter.enable = true;
 
