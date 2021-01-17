@@ -57,6 +57,16 @@ let
   '';
 in
 {
+  home.packages = with pkgs; [
+    # Add the caffeine package to the profile to send commands programmatically
+    # to the caffeine service.
+    caffeine-ng
+  ];
+
+  # Enable the caffeine daemon/applet for stopping locking when, e.g., watching
+  # videos.
+  services.caffeine.enable = true;
+
   # Enable the X11 screen locker.
   services.screen-locker.enable = true;
 
