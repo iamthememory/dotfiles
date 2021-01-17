@@ -1,6 +1,7 @@
 # Configuration for git.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -11,7 +12,7 @@ let
     withLibsecret = true;
   };
 
-  inherit (pkgs.lib) mkDefault;
+  inherit (lib) mkDefault;
 
   # The primary mail account if one exists.
   # If there is one, we set git's default name and email from it, making it
@@ -20,8 +21,6 @@ let
   # assertions home-manager makes.
   primary-mail =
     let
-      inherit (pkgs) lib;
-
       # Return true if this is the primary account.
       filterPrimary = n: v: v.primary == true;
 
@@ -129,7 +128,7 @@ in
   programs.git.extraConfig =
     let
       inherit (inputs.lib) defaultOrNull filterNullOrEmpty;
-      inherit (pkgs.lib) recursiveUpdate;
+      inherit (lib) recursiveUpdate;
 
       # Since null values are invalid, rather than just excluded from the
       # configuration, only include these options if they have a valid setting.

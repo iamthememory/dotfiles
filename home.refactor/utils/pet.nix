@@ -1,7 +1,7 @@
 # The configuration for pet, a terminal command snippet manager.
 { config
 , inputs
-, pkgs
+, lib
 , ...
 }: {
   # Enable pet.
@@ -11,7 +11,7 @@
   programs.pet.settings =
     let
       inherit (inputs.lib) filterNullOrEmpty defaultOrNull;
-      inherit (pkgs.lib) recursiveUpdate;
+      inherit (lib) recursiveUpdate;
 
       # It's invalid to have any of these as null, so remove them entirely if
       # null.

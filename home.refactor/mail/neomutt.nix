@@ -1,6 +1,7 @@
 # Settings for neomutt.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -52,7 +53,7 @@ in
       # Extra options to set for vi/vim/neovim for editing mail.
       vimOptions = "-c 'set syntax=mail ft=mail enc=utf-8 spell spelllang=en'";
 
-      inherit (pkgs.lib) hasSuffix;
+      inherit (lib) hasSuffix;
 
       # Check if the given editor is probably vim or neovim.
       isVim = e:

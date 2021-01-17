@@ -1,6 +1,7 @@
 # Basic terminal utilities and niceties helpful for most systems.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -184,7 +185,7 @@ in
       '';
 
       # Trim trailing newlines from the given string.
-      trim = s: pkgs.lib.removeSuffix "\n" s;
+      trim = s: lib.removeSuffix "\n" s;
 
       # Read the computed colors as a string to skip having to cat it from
       # another file during variable initialization.

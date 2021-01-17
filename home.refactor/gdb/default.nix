@@ -1,6 +1,7 @@
 # Configuration for GDB.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -138,16 +139,16 @@ in
       # Format lines in the same way as `gef config save` to make it easy to see
       # what's different.
       # This is essentially mkKeyValueDefault, but with a space around the `=`.
-      toINI = pkgs.lib.generators.toINI {
+      toINI = lib.generators.toINI {
         mkKeyValue = k: v:
           let
-            inherit (pkgs.lib.strings) escape;
+            inherit (lib.strings) escape;
 
             # GEF wants its true/false to be capitalized.
             mkValueString = v:
               if v == true then "True"
               else if v == false then "False"
-              else pkgs.lib.generators.mkValueStringDefault { } v;
+              else lib.generators.mkValueStringDefault { } v;
 
             sep = if v == "" then " =" else " = ";
           in

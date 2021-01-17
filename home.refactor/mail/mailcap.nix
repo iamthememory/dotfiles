@@ -1,5 +1,6 @@
 # Mailcap settings.
 { config
+, lib
 , pkgs
 , ...
 }: {
@@ -67,7 +68,7 @@
 
       # The mailcap entries for libreoffice.
       libreofficeMailcap =
-        pkgs.lib.concatMapStringsSep
+        lib.concatMapStringsSep
           "\n"
           (x: mkLibreofficeMailcap x.mime x.ext)
           libreofficeMimes;
