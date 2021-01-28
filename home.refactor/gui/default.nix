@@ -66,6 +66,16 @@
     in
     builtins.concatStringsSep " " options;
 
+  # Enable the blueman applet for bluetooth.
+  servies.blueman-applet.enable = true;
+
+  # Enable KDE connect and its tray icon.
+  services.kdeconnect.enable = true;
+  services.kdeconnect.indicator = true;
+
+  # Enable the Network Manager applet.
+  services.network-manager-applet.enable = true;
+
   # Use solarized dark colors for anything that reads xresources.
   xresources.extraConfig =
     let
