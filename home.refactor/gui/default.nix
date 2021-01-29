@@ -67,7 +67,7 @@
     builtins.concatStringsSep " " options;
 
   # Enable the blueman applet for bluetooth.
-  servies.blueman-applet.enable = true;
+  services.blueman-applet.enable = true;
 
   # Enable KDE connect and its tray icon.
   services.kdeconnect.enable = true;
