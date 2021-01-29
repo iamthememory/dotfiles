@@ -10,6 +10,13 @@ let
   shellAliases = {
     ssh = "${config.home.profileDirectory}/bin/kitty +kitten ssh";
   };
+
+  # A wrapper to call kitty as a single instance for better GPU caching.
+  kitty-single-wrapper = pkgs.writeScriptBin "kitty-single.sh" ''
+    #!${pkgs.stdenv.shell}
+
+    exec ${config.home.profileDirectory}/bin/kitty --single-instance "$@"
+  '';
 in
 {
   imports = [
@@ -24,15 +31,18 @@ in
   ];
 
   # Extra packages to add.
-  home.packages = with pkgs; [
+  home.packages = [
+    # Add the kitty wrapper script.
+    kitty-single-wrapper
+
     # Ensure we have less available, for the scrollback pager.
-    less
+    pkgs.less
 
     # Add ncurses, to ensure we have terminfo databases available.
-    ncurses
+    pkgs.ncurses
 
     # Add the dev output of ncurses too, primarily for the toe binary.
-    ncurses.dev
+    pkgs.ncurses.dev
   ];
 
   # Use kitty as the default terminal, using a single instance for better GPU
@@ -40,11 +50,11 @@ in
   # This is the same variable i3-sensible-terminal uses, so we're using it for
   # our terminal setting.
   # NOTE: I don't know if this is used as-is or not, so it's a wrapper script.
-  home.sessionVariables.TERMINAL = pkgs.writeScript "kitty.sh" ''
-    #!${pkgs.stdenv.shell}
-
-    exec ${config.home.profileDirectory}/bin/kitty --single-instance "$@"
-  '';
+  home.sessionVariables.TERMINAL =
+    let
+      profileBin = "${config.home.profileDirectory}/bin";
+    in
+    "${profileBin}/kitty-single.sh";
 
   # Enable kitty.
   programs.kitty.enable = true;
