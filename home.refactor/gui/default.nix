@@ -70,6 +70,16 @@
     in
     builtins.concatStringsSep " " options;
 
+  # Enable the NVIDIA shader cache.
+  home.sessionVariables.__GL_SHADER_DISK_CACHE = true;
+
+  # Store the NVIDIA shader cache in the newer default location.
+  home.sessionVariables.__GL_SHADER_DISK_CACHE_PATH =
+    "${config.xdg.cacheHome}/nvidia/GLCache";
+
+  # Enable a relatively large shader cache of 16 gigabytes.
+  home.sessionVariables.__GL_SHADER_DISK_CACHE_SIZE = 16 * 1024 * 1024 * 1024;
+
   # Enable the blueman applet for bluetooth.
   services.blueman-applet.enable = true;
 
