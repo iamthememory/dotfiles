@@ -30,6 +30,9 @@
 
     # The GUI dconf editor.
     gnome3.dconf-editor
+
+    # The nautilus file browser.
+    gnome3.nautilus
   ];
 
   # Link dbus.socket into the systemd user directory to ensure it's started for
