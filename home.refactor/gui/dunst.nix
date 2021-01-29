@@ -61,7 +61,7 @@
             dmenuArgs = builtins.concatStringsSep " " [
               # Use the same font we use for dunst, just with font size
               # specified how Fontconfig prefers it.
-              "-fn 'LiterationMono Nerd Font Mono-9'"
+              "-fn 'LiterationMono Nerd Font Mono:size=9:antialias=true:autohint=true'"
 
               # The background color to use.
               "-nb '${base03}'"
