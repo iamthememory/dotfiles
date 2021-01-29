@@ -91,4 +91,7 @@
   # default xterm font.
   xresources.properties."XTerm.vt100.faceName" =
     "LiterationMono Nerd Font Mono:size=9:antialias=true";
+
+  # Enable managing the X11 session.
+  xsession.enable = true;
 }
