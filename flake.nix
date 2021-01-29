@@ -19,6 +19,15 @@
     # Various flake utilities.
     flake-utils.url = "github:numtide/flake-utils";
 
+    # i3status-rust.
+    # FIXME: Remove this and use the version in nixpkgs once
+    # https://github.com/greshake/i3status-rust/pull/972
+    # is in a released version.
+    i3status-rust = {
+      url = "github:greshake/i3status-rust";
+      flake = false;
+    };
+
     # Solarized LS_COLORS.
     dircolors-solarized = {
       url = "github:seebi/dircolors-solarized";

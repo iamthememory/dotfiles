@@ -12,6 +12,7 @@
     ./fonts.nix
     ./keyring.nix
     ./kitty.nix
+    ./i3
     ./input.nix
     ./locker.nix
   ];

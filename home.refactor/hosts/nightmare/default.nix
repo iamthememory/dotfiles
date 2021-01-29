@@ -48,6 +48,34 @@
   # Use a GUI pinentry.
   services.gpg-agent.pinentryFlavor = "gtk2";
 
+  # The mountpoints to monitor.
+  system.monitor-mounts = {
+    # The hard disk ZFS pool.
+    rpool = {
+      # The root of rpool is mounted at /rpool to make it easy to check the
+      # available space.
+      mountpoint = "/rpool";
+
+      # The available GiB to warn and alert at.
+      warning = 256;
+      alert = 128;
+    };
+
+    # The SSD ZFS pool.
+    spool = {
+      # The root of spool is mounted at /spool to make it easy to check the
+      # available space.
+      mountpoint = "/spool";
+
+      # The available GiB to warn and alert at.
+      warning = 192;
+      alert = 96;
+    };
+  };
+
+  # Monitor the NVIDIA GPU.
+  system.monitor-nvidia = true;
+
   # Disable the touchpad by default.
   xsession.initExtra =
     let

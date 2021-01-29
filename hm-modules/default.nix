@@ -4,5 +4,6 @@
 }: {
   imports = [
     ./neovim-coc.nix
+    ./system-settings.nix
   ];
 }

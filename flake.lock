@@ -84,6 +84,22 @@
         "type": "github"
       }
     },
+    "i3status-rust": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1611648474,
+        "narHash": "sha256-lrAUB8v8OSr/M9j10UADl49JN147r2LAituqNHbpdAY=",
+        "owner": "greshake",
+        "repo": "i3status-rust",
+        "rev": "7a71a37ec40f67c8fb16bb771a8c1c48bc16dcc0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "greshake",
+        "repo": "i3status-rust",
+        "type": "github"
+      }
+    },
     "keystone-engine": {
       "flake": false,
       "locked": {
@@ -186,6 +202,7 @@
         "gef": "gef",
         "gef-extras": "gef-extras",
         "home-manager": "home-manager",
+        "i3status-rust": "i3status-rust",
         "keystone-engine": "keystone-engine",
         "mutt-colors-solarized": "mutt-colors-solarized",
         "nixpkgs-master": "nixpkgs-master",
