@@ -233,7 +233,7 @@ in
         block = "cpu";
 
         # The format to use.
-        format = "{barchart} {utilization}%";
+        format = "{barchart} {utilization}% {frequency}GHz";
       }
 
       # Show the CPU temperature.
@@ -248,6 +248,9 @@ in
       # Show the GPU utilization.
       {
         block = "nvidia_gpu";
+
+        # Show clock speeds.
+        show_clocks = true;
       }
     ) ++ [
 
