@@ -43,6 +43,9 @@
       };
     in
     with pkgs; [
+      # Add the unclutter package to the profile.
+      config.services.unclutter.package
+
       # Make sure sed and grep are available.
       gnugrep
       gnused
