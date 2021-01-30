@@ -14,6 +14,7 @@
     ../../gnupg
     ../../gui
     ../../mail
+    ../../media
     ../../neovim
     ../../pass.nix
     ../../ssh.nix
