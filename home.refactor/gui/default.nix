@@ -18,6 +18,9 @@
   ];
 
   home.packages = with pkgs; [
+    # Add blueman to the packages.
+    blueman
+
     # Ensure coreutils is available.
     coreutils
 
