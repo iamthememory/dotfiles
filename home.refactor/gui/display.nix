@@ -50,6 +50,9 @@ in
       });
     in
     [
+      # Add the redshift package to the profile.
+      config.services.redshift.package
+
       # Coreutils, for the date program used in the screenshot script.
       pkgs.coreutils
 
