@@ -3,5 +3,6 @@
 }: {
   imports = [
     ./docs.nix
+    ./images.nix
   ];
 }
