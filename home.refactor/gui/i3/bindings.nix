@@ -105,6 +105,22 @@ let
       i3-dmenu-desktop = "${profileBin}/i3-dmenu-desktop";
     in
     "${i3-dmenu-desktop} ${dmenuArgs} -p 'Run: '";
+
+  # A small script to toggle mute in pulseaudio.
+  toggle-mute =
+    let
+      pamixer = "${pkgs.pamixer}/bin/pamixer";
+    in
+    pkgs.writeShellScriptBin "toggle-mute.sh" ''
+      if [ "$(${pamixer} --get-mute)" = "false" ]
+      then
+        # Mute pulseaudio.
+        ${pamixer} --mute
+      else
+        # Unmute pulseaudio.
+        ${pamixer} --unmute
+      fi
+    '';
 in
 {
   imports = [
@@ -134,6 +150,16 @@ in
     # Ensure loginctl is available.
     systemd
 
+    # A tool to control pulseaudio-compatible sound volume.
+    pamixer
+
+    # A GUI for adjusting pulseaudio-compatible sound volume and default sinks
+    # and such.
+    pavucontrol
+
+    # A script to toggle mute.
+    toggle-mute
+
     # Ensure xkill is available for forcibly killing a window.
     xorg.xkill
 
@@ -146,6 +172,17 @@ in
 
   # The i3 keybindings.
   xsession.windowManager.i3.config.keybindings = {
+    # Toggle mute.
+    "XF86AudioMute" = "exec ${profileBin}/toggle-mute.sh";
+
+
+    # Lower the volume of the default sink by 5%.
+    "XF86AudioLowerVolume" = "exec ${profileBin}/pamixer --decrease 5";
+
+    # Raise the volume of the default sink by 5%.
+    "XF86AudioRaiseVolume" = "exec ${profileBin}/pamixer --increase 5";
+
+
     # Spawn a terminal.
     "${mod}+Return" =
       "exec ${config.xsession.windowManager.i3.config.terminal}";
@@ -310,6 +347,9 @@ in
 
     # Move the currently focused container to the previous workspace.
     "${mod}+Shift+p" = "move container to workspace prev";
+
+    # Open pavucontrol to adjust the volume.
+    "${mod}+Control+Shift+p" = "exec ${profileBin}/pavucontrol";
 
 
     # Kill the current window nicely.
