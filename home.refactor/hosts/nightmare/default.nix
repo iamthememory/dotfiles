@@ -15,6 +15,7 @@
     ../../gui
     ../../mail
     ../../media
+    ../../media/sound/spotify.nix
     ../../neovim
     ../../pass.nix
     ../../ssh.nix
