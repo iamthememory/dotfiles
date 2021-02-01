@@ -157,6 +157,9 @@ in
     # and such.
     pavucontrol
 
+    # A tool to control media players over DBUS.
+    playerctl
+
     # A script to toggle mute.
     toggle-mute
 
@@ -171,247 +174,282 @@ in
   xsession.windowManager.i3.config.modifier = "Mod1";
 
   # The i3 keybindings.
-  xsession.windowManager.i3.config.keybindings = {
-    # Toggle mute.
-    "XF86AudioMute" = "exec ${profileBin}/toggle-mute.sh";
+  xsession.windowManager.i3.config.keybindings =
+    let
+      # The playerctl to use.
+      playerctl =
+        let
+          # The player to control.
+          player =
+            config.home.sessionVariables.DEFAULT_PLAYERCTL_PLAYER or null;
 
+          # The default player option.
+          playerOption =
+            if player == null then ""
+            else "--player=${player}";
+        in
+        "${profileBin}/playerctl ${playerOption}";
+    in
+    {
+      # Toggle mute.
+      "XF86AudioMute" = "exec ${profileBin}/toggle-mute.sh";
 
-    # Lower the volume of the default sink by 5%.
-    "XF86AudioLowerVolume" = "exec ${profileBin}/pamixer --decrease 5";
 
-    # Raise the volume of the default sink by 5%.
-    "XF86AudioRaiseVolume" = "exec ${profileBin}/pamixer --increase 5";
+      # Lower the volume of the default sink by 5%.
+      "XF86AudioLowerVolume" = "exec ${profileBin}/pamixer --decrease 5";
 
+      # Raise the volume of the default sink by 5%.
+      "XF86AudioRaiseVolume" = "exec ${profileBin}/pamixer --increase 5";
 
-    # Spawn a terminal.
-    "${mod}+Return" =
-      "exec ${config.xsession.windowManager.i3.config.terminal}";
 
+      # Skip to the next song.
+      "XF86AudioNext" = "exec ${playerctl} next";
 
-    # Switch focus between tiled and floating windows.
-    "${mod}+space" = "focus mode_toggle";
+      # Toggle play/pause.
+      "XF86AudioPause" = "exec ${playerctl} play-pause";
 
-    # Switch a window between tiled and floating mode.
-    "${mod}+Shift+space" = "floating toggle";
+      # Toggle play/pause.
+      "XF86AudioPlay" = "exec ${playerctl} play-pause";
 
+      # Go back to the previous song.
+      "XF86AudioPrev" = "exec ${playerctl} previous";
 
-    # Show a window from the scratchpad.
-    "${mod}+minus" = "scratchpad show";
 
-    # Move a window to the scratchpad.
-    "${mod}+Shift+minus" = "move scratchpad";
+      # Spawn a terminal.
+      "${mod}+Return" =
+        "exec ${config.xsession.windowManager.i3.config.terminal}";
 
 
-    # Focus on the parent container.
-    "${mod}+a" = "focus parent";
+      # Switch focus between tiled and floating windows.
+      "${mod}+space" = "focus mode_toggle";
 
-    # Select a password and type it into the current window.
-    "${mod}+Shift+a" = "exec ${passmenu} --type";
+      # Switch a window between tiled and floating mode.
+      "${mod}+Shift+space" = "floating toggle";
 
-    # Select a password and insert it into the clipboard.
-    "${mod}+Control+a" = "exec ${passmenu}";
 
+      # Show a window from the scratchpad.
+      "${mod}+minus" = "scratchpad show";
 
-    # Focus on the child container.
-    "${mod}+c" = "focus child";
+      # Move a window to the scratchpad.
+      "${mod}+Shift+minus" = "move scratchpad";
 
-    # Run a browser.
-    "${mod}+Control+c" = "exec ${config.home.sessionVariables.BROWSER}";
 
-    # Run a browser in private/incognito mode.
-    "${mod}+Control+Shift+c" =
-      "exec ${config.home.sessionVariables.BROWSER_PRIVATE}";
+      # Focus on the parent container.
+      "${mod}+a" = "focus parent";
 
+      # Select a password and type it into the current window.
+      "${mod}+Shift+a" = "exec ${passmenu} --type";
 
-    # Run an arbitrary binary from the menu.
-    "${mod}+d" = "exec ${config.xsession.windowManager.i3.config.menu}";
+      # Select a password and insert it into the clipboard.
+      "${mod}+Control+a" = "exec ${passmenu}";
 
-    # Run a program from its desktop file.
-    "${mod}+Shift+d" = "exec ${i3-dmenu-desktop}";
 
-    # Run autorandr for the current setup.
-    "${mod}+Control+Shift+d" = "exec ${profileBin}/autorandr -c";
+      # Focus on the child container.
+      "${mod}+c" = "focus child";
 
+      # Run a browser.
+      "${mod}+Control+c" = "exec ${config.home.sessionVariables.BROWSER}";
 
-    # Toggle the split direction for the current container between horizontal
-    # and vertical.
-    "${mod}+e" = "layout toggle split";
+      # Run a browser in private/incognito mode.
+      "${mod}+Control+Shift+c" =
+        "exec ${config.home.sessionVariables.BROWSER_PRIVATE}";
 
-    # Exit the current i3 session.
-    "${mod}+Shift+e" =
-      let
-        # The i3-msg in the current profile.
-        i3-msg = "${profileBin}/i3-msg";
 
-        # The i3-nagbar in the current profile.
-        i3-nagbar = "${profileBin}/i3-nagbar";
+      # Run an arbitrary binary from the menu.
+      "${mod}+d" = "exec ${config.xsession.windowManager.i3.config.menu}";
 
-        # The loginctl in the current profile.
-        loginctl = "${profileBin}/loginctl";
+      # Run a program from its desktop file.
+      "${mod}+Shift+d" = "exec ${i3-dmenu-desktop}";
 
-        # The warning to show.
-        warning = builtins.concatStringsSep " " [
-          "You pressed the exit shortcut."
-          "Do you really want to exit i3?"
-          "This will end your X session."
-        ];
+      # Run autorandr for the current setup.
+      "${mod}+Control+Shift+d" = "exec ${profileBin}/autorandr -c";
 
-        # The command to run to exit i3.
-        exit = builtins.concatStringsSep " " [
-          # Tell i3 to exit.
-          "${i3-msg} exit &"
 
-          # Sleep for ten seconds.
-          "${profileBin}/sleep 10"
+      # Toggle the split direction for the current container between horizontal
+      # and vertical.
+      "${mod}+e" = "layout toggle split";
 
-          # Then tell loginctl to terminate the current session, since sometimes
-          # when i3 exits not everything gets the message that the session
-          # should end.
-          "&& ${loginctl} terminate-session \$XDG_SESSION_ID"
-        ];
+      # Exit the current i3 session.
+      "${mod}+Shift+e" =
+        let
+          # The i3-msg in the current profile.
+          i3-msg = "${profileBin}/i3-msg";
 
-        # The message to exit i3.
-        exitMsg = "Yes, exit i3";
+          # The i3-nagbar in the current profile.
+          i3-nagbar = "${profileBin}/i3-nagbar";
 
-        # The full exit command.
-        exitCommand =
-          "${i3-nagbar} -t warning -m '${warning}' -b '${exitMsg}' '${exit}'";
-      in
-      "exec \"${exitCommand}\"";
+          # The loginctl in the current profile.
+          loginctl = "${profileBin}/loginctl";
 
+          # The warning to show.
+          warning = builtins.concatStringsSep " " [
+            "You pressed the exit shortcut."
+            "Do you really want to exit i3?"
+            "This will end your X session."
+          ];
 
-    # Toggle fullscreen for a window.
-    "${mod}+f" = "fullscreen toggle";
+          # The command to run to exit i3.
+          exit = builtins.concatStringsSep " " [
+            # Tell i3 to exit.
+            "${i3-msg} exit &"
 
+            # Sleep for ten seconds.
+            "${profileBin}/sleep 10"
 
-    # Focus the window left of the current focus.
-    "${mod}+h" = "focus left";
+            # Then tell loginctl to terminate the current session, since sometimes
+            # when i3 exits not everything gets the message that the session
+            # should end.
+            "&& ${loginctl} terminate-session \$XDG_SESSION_ID"
+          ];
 
-    # Move the focused window left.
-    "${mod}+Shift+h" = "move left";
+          # The message to exit i3.
+          exitMsg = "Yes, exit i3";
 
-    # Start htop in a terminal.
-    "${mod}+Control+Shift+h" =
-      let
-        inherit (config.xsession.windowManager.i3.config) terminal;
+          # The full exit command.
+          exitCommand =
+            "${i3-nagbar} -t warning -m '${warning}' -b '${exitMsg}' '${exit}'";
+        in
+        "exec \"${exitCommand}\"";
 
-        htop = "${profileBin}/htop";
-      in
-      "exec ${terminal} ${htop}";
 
+      # Toggle fullscreen for a window.
+      "${mod}+f" = "fullscreen toggle";
 
-    # Run i3-input to input a raw i3 command.
-    "${mod}+i" = "exec ${profileBin}/i3-input";
 
+      # Focus the window left of the current focus.
+      "${mod}+h" = "focus left";
 
-    # Focus the window below the current focus.
-    "${mod}+j" = "focus down";
+      # Move the focused window left.
+      "${mod}+Shift+h" = "move left";
 
-    # Move the focused window down.
-    "${mod}+Shift+j" = "move down";
+      # Start htop in a terminal.
+      "${mod}+Control+Shift+h" =
+        let
+          inherit (config.xsession.windowManager.i3.config) terminal;
 
+          htop = "${profileBin}/htop";
+        in
+        "exec ${terminal} ${htop}";
 
-    # Focus the window above the current focus.
-    "${mod}+k" = "focus up";
 
-    # Move the focused window up.
-    "${mod}+Shift+k" = "move up";
+      # Run i3-input to input a raw i3 command.
+      "${mod}+i" = "exec ${profileBin}/i3-input";
 
 
-    # Focus the window right of the current focus.
-    "${mod}+l" = "focus right";
+      # Focus the window below the current focus.
+      "${mod}+j" = "focus down";
 
-    # Move the focused window right.
-    "${mod}+Shift+l" = "move right";
+      # Move the focused window down.
+      "${mod}+Shift+j" = "move down";
 
-    # Lock the screen.
-    "${mod}+Control+Shift+l" = "exec ${profileBin}/xset s activate";
 
+      # Focus the window above the current focus.
+      "${mod}+k" = "focus up";
 
-    # Move to the next workspace.
-    "${mod}+n" = "workspace next";
+      # Move the focused window up.
+      "${mod}+Shift+k" = "move up";
 
-    # Move the currently focused container to the next workspace.
-    "${mod}+Shift+n" = "move container to workspace next";
 
-    # Start nautilus to browse files.
-    "${mod}+Control+Shift+n" = "exec ${profileBin}/nautilus";
+      # Focus the window right of the current focus.
+      "${mod}+l" = "focus right";
 
+      # Move the focused window right.
+      "${mod}+Shift+l" = "move right";
 
-    # Split the current container horizontally.
-    "${mod}+o" = "split h";
+      # Lock the screen.
+      "${mod}+Control+Shift+l" = "exec ${profileBin}/xset s activate";
 
 
-    # Move to the previous workspace.
-    "${mod}+p" = "workspace prev";
+      # Move to the next workspace.
+      "${mod}+n" = "workspace next";
 
-    # Move the currently focused container to the previous workspace.
-    "${mod}+Shift+p" = "move container to workspace prev";
+      # Move the currently focused container to the next workspace.
+      "${mod}+Shift+n" = "move container to workspace next";
 
-    # Open pavucontrol to adjust the volume.
-    "${mod}+Control+Shift+p" = "exec ${profileBin}/pavucontrol";
+      # Skip to the next song.
+      "${mod}+Control+n" = "exec ${playerctl} next";
 
+      # Start nautilus to browse files.
+      "${mod}+Control+Shift+n" = "exec ${profileBin}/nautilus";
 
-    # Kill the current window nicely.
-    "${mod}+Shift+q" = "kill";
 
-    # Forcibly kill the process owning a window.
-    "${mod}+Control+Shift+q" = "exec ${profileBin}/xkill";
+      # Split the current container horizontally.
+      "${mod}+o" = "split h";
 
 
-    # Switch to resize mode.
-    "${mod}+r" = "mode \"resize\"";
+      # Move to the previous workspace.
+      "${mod}+p" = "workspace prev";
 
-    # Rename the current workspace.
-    "${mod}+Shift+r" =
-      let
-        i3-input = "${profileBin}/i3-input";
-      in
-      "exec ${i3-input} -F 'rename workspace to \"%s\"' -P 'New name: '";
+      # Move the currently focused container to the previous workspace.
+      "${mod}+Shift+p" = "move container to workspace prev";
 
-    # Reload i3's configuration.
-    "${mod}+Control+r" = "reload";
+      # Go back to the previous song.
+      "${mod}+Control+p" = "exec ${playerctl} previous";
 
-    # Restart i3.
-    "${mod}+Control+Shift+r" = "restart";
+      # Open pavucontrol to adjust the volume.
+      "${mod}+Control+Shift+p" = "exec ${profileBin}/pavucontrol";
 
 
-    # Take a screenshot.
-    "${mod}+Shift+s" =
-      "exec ${config.home.sessionVariables.SCREENSHOT_PROGRAM}";
+      # Kill the current window nicely.
+      "${mod}+Shift+q" = "kill";
 
+      # Forcibly kill the process owning a window.
+      "${mod}+Control+Shift+q" = "exec ${profileBin}/xkill";
 
-    # Switch to passthrough mode.
-    "${mod}+Control+Shift+t" = "mode \"passthrough\"";
 
+      # Switch to resize mode.
+      "${mod}+r" = "mode \"resize\"";
 
-    # Suspend the system.
-    "${mod}+Control+Shift+u" = "exec ${profileBin}/systemctl suspend";
+      # Rename the current workspace.
+      "${mod}+Shift+r" =
+        let
+          i3-input = "${profileBin}/i3-input";
+        in
+        "exec ${i3-input} -F 'rename workspace to \"%s\"' -P 'New name: '";
 
+      # Reload i3's configuration.
+      "${mod}+Control+r" = "reload";
 
-    # Split the current container vertically.
-    "${mod}+v" = "split v";
+      # Restart i3.
+      "${mod}+Control+Shift+r" = "restart";
 
-    # Fetch a previous clipboard entry into the current clipboard.
-    "${mod}+Control+v" =
-      let
-        clipmenu = "${profileBin}/clipmenu";
 
-        clipmenuArgs = builtins.concatStringsSep " " [
-          # Match case-insensitively.
-          "-i"
+      # Take a screenshot.
+      "${mod}+Shift+s" =
+        "exec ${config.home.sessionVariables.SCREENSHOT_PROGRAM}";
 
-          # Show things vertically on 8 lines, since clipboard fetches are
-          # probably long.
-          "-l 8"
-        ];
-      in
-      "exec ${clipmenu} ${dmenuArgs} ${clipmenuArgs}";
 
+      # Switch to passthrough mode.
+      "${mod}+Control+Shift+t" = "mode \"passthrough\"";
 
-    # Switch to a tabbed layout.
-    "${mod}+w" = "layout tabbed";
-  } // workspaceBindings;
+
+      # Suspend the system.
+      "${mod}+Control+Shift+u" = "exec ${profileBin}/systemctl suspend";
+
+
+      # Split the current container vertically.
+      "${mod}+v" = "split v";
+
+      # Fetch a previous clipboard entry into the current clipboard.
+      "${mod}+Control+v" =
+        let
+          clipmenu = "${profileBin}/clipmenu";
+
+          clipmenuArgs = builtins.concatStringsSep " " [
+            # Match case-insensitively.
+            "-i"
+
+            # Show things vertically on 8 lines, since clipboard fetches are
+            # probably long.
+            "-l 8"
+          ];
+        in
+        "exec ${clipmenu} ${dmenuArgs} ${clipmenuArgs}";
+
+
+      # Switch to a tabbed layout.
+      "${mod}+w" = "layout tabbed";
+    } // workspaceBindings;
 
   # Keybindings for resize mode, where bindings resize tiled or floating
   # windows.
