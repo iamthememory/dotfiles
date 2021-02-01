@@ -4,5 +4,6 @@
   imports = [
     ./docs.nix
     ./images.nix
+    ./video.nix
   ];
 }
