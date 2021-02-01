@@ -7,6 +7,6 @@
     ./video.nix
   ];
 
-  # Add playerctld to track the last used media player for playerctl.
+  # Add playerctld to track the last player for playerctl.
   services.playerctld.enable = true;
 }
