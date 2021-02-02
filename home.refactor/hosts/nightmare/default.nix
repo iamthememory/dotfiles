@@ -21,6 +21,7 @@
     ../../media/sound/spotify.nix
     ../../neovim
     ../../pass.nix
+    ../../security
     ../../ssh.nix
     ../../utils
     ../../zsh
