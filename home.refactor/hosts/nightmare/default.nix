@@ -10,6 +10,7 @@
     ../../base.nix
     ../../ctags.nix
     ../../games
+    ../../games/steam.nix
     ../../gdb
     ../../git.nix
     ../../gnupg
