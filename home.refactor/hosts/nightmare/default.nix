@@ -24,6 +24,7 @@
     ../../security
     ../../ssh.nix
     ../../utils
+    ../../virtualization
     ../../zsh
     ../../zsh/zsh-auto-notify.nix
 
