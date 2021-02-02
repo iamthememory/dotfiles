@@ -82,6 +82,9 @@ in
   programs.home-manager.enable = true;
   programs.home-manager.path = "${inputs.home-manager}";
 
+  # (Re)start services on generation activation.
+  systemd.user.startServices = "legacy";
+
   # Ensure that nix has flakes enabled.
   # FIXME: This can be removed once flakes are stable.
   xdg.configFile."nix/nix.conf".text = ''
