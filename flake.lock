@@ -133,6 +133,23 @@
         "type": "github"
       }
     },
+    "lutris-ge-4_17": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1571177242,
+        "narHash": "sha256-4N7TMFETa3f0+eQLxxI3gbbBs1AjF48zaE+mbvN1dcw=",
+        "owner": "lutris",
+        "repo": "wine",
+        "rev": "a7c2a7ebe9ee945dc36b7e71767666afddcb3e5a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lutris",
+        "ref": "lutris-ge-4.17",
+        "repo": "wine",
+        "type": "github"
+      }
+    },
     "mutt-colors-solarized": {
       "flake": false,
       "locked": {
@@ -222,6 +239,7 @@
         "i3status-rust": "i3status-rust",
         "keystone-engine": "keystone-engine",
         "lutris-6_0": "lutris-6_0",
+        "lutris-ge-4_17": "lutris-ge-4_17",
         "mutt-colors-solarized": "mutt-colors-solarized",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",

@@ -87,6 +87,11 @@
 
     # WINE packages and patches not in nixpkgs.
 
+    lutris-ge-4_17 = {
+      url = "github:lutris/wine/lutris-ge-4.17";
+      flake = false;
+    };
+
     lutris-6_0 = {
       url = "github:lutris/wine/lutris-6.0";
       flake = false;

@@ -12,6 +12,7 @@
     ../../communication/discord.nix
     ../../ctags.nix
     ../../games
+    ../../games/ffxiv
     ../../games/steam.nix
     ../../gdb
     ../../git.nix
@@ -36,6 +37,9 @@
     # xinput, for the touchpad keybindings below.
     xorg.xinput
   ];
+
+  # The path to put FFXIV.
+  home.sessionVariables.FFXIV_DIRECTORY = "/opt/ffxiv";
 
   # Set the GitHub token from pass on login for tools like the GitHub CLI.
   # We need to set this as a session variable since we can't set its config to
