@@ -136,9 +136,9 @@
 
       lib = ./lib;
 
-      overlay = ./overlay.refactor;
+      overlay = ./overlay;
 
-      scripts = ./scripts.refactor;
+      scripts = ./scripts;
 
       nixpkgs-config = ./config.nix;
 
@@ -152,7 +152,7 @@
         ,
         }:
         let
-          hostfile = ./home.refactor/hosts + "/${host}";
+          hostfile = ./home/hosts + "/${host}";
 
           importPkgs = p: import p {
             inherit system;
