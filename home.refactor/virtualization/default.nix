@@ -18,6 +18,5 @@
   ];
 
   # Default to controlling the system's KVM VMs.
-  home.sessionVariables.LIBVIRT_DEFAULT_URI =
-    lib.mkDefault "qemu:///system";
+  home.sessionVariables.LIBVIRT_DEFAULT_URI = "qemu:///system";
 }
