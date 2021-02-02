@@ -84,6 +84,13 @@
       url = "github:MichaelAquilina/zsh-auto-notify";
       flake = false;
     };
+
+    # WINE packages and patches not in nixpkgs.
+
+    lutris-6_0 = {
+      url = "github:lutris/wine/lutris-6.0";
+      flake = false;
+    };
   };
 
   outputs =

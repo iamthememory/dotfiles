@@ -9,6 +9,7 @@
   imports = [
     ../../base.nix
     ../../ctags.nix
+    ../../games
     ../../gdb
     ../../git.nix
     ../../gnupg

@@ -28,6 +28,9 @@
   # Various mail functions.
   mail = import ./mail-account.nix;
 
+  # Wine related functions.
+  wine = import ./wine { lib = pkgs.lib; };
+
   # Ensure a symlink exists or create one on profile activation.
   # - lib: home-manager's lib, for DAG functions.
   # - target: Where the symlink should point.
