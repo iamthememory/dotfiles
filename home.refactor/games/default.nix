@@ -15,6 +15,7 @@ in
 {
   imports = [
     ./cli.nix
+    ./gui.nix
   ];
 
   home.packages = with pkgs; [
