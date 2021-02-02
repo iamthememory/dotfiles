@@ -6,6 +6,15 @@
 let
   # The location of the seahorse askpass in the profile..
   askpass = "${config.home.profileDirectory}/libexec/seahorse/ssh-askpass";
+
+  # The i3 modifier key.
+  mod = config.xsession.windowManager.i3.config.modifier;
+
+  # The current xinput location.
+  xinput = "${config.home.profileDirectory}/bin/xinput";
+
+  # The Yubikey input name.
+  yubikeyInput = "Yubico Yubikey 4 OTP+U2F+CCID";
 in
 {
   home.packages = with pkgs; [
@@ -61,18 +70,23 @@ in
   services.keybase.enable = true;
 
   # Extra commands to run when starting X11.
-  xsession.initExtra =
-    let
-      xinput = "${config.home.profileDirectory}/bin/xinput";
-    in
-    ''
-      # Disable Yubikey input by default.
-      # This doesn't prevent smarter programs from asking the Yubikey for a
-      # token, then touching it to authorize, it only prevents the Yubikey from
-      # emulating a keyboard to type a one time code every time it's bumped.
-      # FIXME: This should probably cover more models or be host-specific.
-      "${xinput}" disable 'Yubico Yubikey 4 OTP+U2F+CCID'
-    '';
+  xsession.initExtra = ''
+    # Disable Yubikey input by default.
+    # This doesn't prevent smarter programs from asking the Yubikey for a
+    # token, then touching it to authorize, it only prevents the Yubikey from
+    # emulating a keyboard to type a one time code every time it's bumped.
+    # FIXME: This should probably cover more models or be host-specific.
+    "${xinput}" disable '${yubikeyInput}'
+  '';
+
+  # i3 keybindings for the Yubikey.
+  xsession.windowManager.i3.config.keybindings = {
+    # Disable yubikey input.
+    "${mod}+Shift+y" = "exec ${xinput} disable '${yubikeyInput}'";
+
+    # Enable yubikey input.
+    "${mod}+Control+Shift+y" = "exec ${xinput} enable '${yubikeyInput}'";
+  };
 
   # Extra i3 configuration.
   xsession.windowManager.i3.extraConfig = ''
