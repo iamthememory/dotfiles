@@ -8,6 +8,9 @@
   ];
 
   home.packages = with pkgs; [
+    # A tool for making project directories from templates.
+    cookiecutter
+
     # A tool that's like top for I/O.
     iotop
 
