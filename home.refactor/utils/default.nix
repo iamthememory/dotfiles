@@ -109,6 +109,9 @@ in
     # binaries to run outside of a FHS-y chroot.
     patchelf
 
+    # A modern ps-like tool written in Rust.
+    procs
+
     # Various process and /proc utilities, such as kill, ps, uptime watch,,
     # etc.
     procps
@@ -121,6 +124,9 @@ in
 
     # A tool like ack, but faster.
     silver-searcher
+
+    # A tool for tracing system calls.
+    strace
 
     # A utility for seeing the CPU/wall time a process uses, as well as various
     # memory/resource usage after it finishes.
