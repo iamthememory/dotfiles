@@ -159,7 +159,7 @@ in
     "exec ${profileBin}/start-ffxiv.sh";
 
   # Disable window borders for FFXIV.
-  xsession.windowManager.i3.window.commands = [
+  xsession.windowManager.i3.config.window.commands = [
     {
       command = "border none";
       criteria = { instance = "^ffxiv(|_dx11)\\.exe$"; };
