@@ -8,6 +8,7 @@
 }: {
   imports = [
     ../../base.nix
+    ../../bitcoin.nix
     ../../ctags.nix
     ../../games
     ../../games/steam.nix
