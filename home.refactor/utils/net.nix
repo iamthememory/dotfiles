@@ -28,6 +28,9 @@
     iputils
     nettools
 
+    # Tools for uploading/downloading files from/to MEGA.
+    megatools
+
     # An ssh-like remote shell for unreliable connections.
     mosh
 
@@ -40,11 +43,21 @@
     nix-prefetch-git
     nix-prefetch-github
 
+    # A tool for doing cat-like operations over sockets.
+    socat
+
     # Mount a remote directory using FUSE over SSH.
     sshfs
 
+    # Telnet.
+    telnet
+
     # A terminal sharing utility based on tmux and ssh.
     tmate
+
+    # A tool for seeing WiFi status, such as dropped packet rates, signal
+    # strength, etc.
+    wavemon
 
     # An easy HTTP(S), etc. fetcher.
     wget
