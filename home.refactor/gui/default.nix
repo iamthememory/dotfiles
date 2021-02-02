@@ -18,6 +18,9 @@
   ];
 
   home.packages = with pkgs; [
+    # A tool for seeing disk space usage.
+    baobab
+
     # Add blueman to the packages.
     blueman
 
@@ -34,8 +37,34 @@
     # The GUI dconf editor.
     gnome3.dconf-editor
 
+    # A tool for managing disks and easily seeing SMART data.
+    gnome3.gnome-disk-utility
+
     # The nautilus file browser.
     gnome3.nautilus
+
+    # The NetworkManager applet.
+    gnome3.networkmanagerapplet
+
+    # A tool for controlling Logitech receivers to, e.g., pair them with new
+    # mice and keyboards.
+    solaar
+
+    # A tool for manipulating the X11 clipboard.
+    xclip
+
+    # A tool for automated input in X11.
+    xdotool
+
+    # A tool for showing info about the X11 server.
+    xorg.xdpyinfo
+
+    # A tool for seeing X11 events such as keyboard input.
+    xorg.xev
+
+    # Tools for getting X11 window info.
+    xorg.xprop
+    xorg.xwininfo
   ];
 
   # Link dbus.socket into the systemd user directory to ensure it's started for
