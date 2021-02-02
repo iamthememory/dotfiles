@@ -26,6 +26,11 @@
     ./secrets
   ];
 
+  home.packages = with pkgs; [
+    # xinput, for the touchpad keybindings below.
+    xorg.xinput
+  ];
+
   # Set the GitHub token from pass on login for tools like the GitHub CLI.
   # We need to set this as a session variable since we can't set its config to
   # run a command to get the token, and since the config is linked to the nix
@@ -121,6 +126,23 @@
       { class = "^Steam$"; }
     ];
   };
+
+  xsession.windowManager.i3.config.keybindings =
+    let
+      # The i3 modifier key.
+      mod = config.xsession.windowManager.i3.config.modifier;
+
+      # The name of the touchpad device.
+      touchpadName = "pointer:SynPS/2 Synaptics TouchPad";
+
+      # The path to xinput in the local profile.
+      xinput = "${config.home.profileDirectory}/bin/xinput";
+    in
+    {
+      "${mod}+Shift+t" = "exec ${xinput} disable '${touchpadName}'";
+      "${mod}+Control+t" = "exec ${xinput} enable '${touchpadName}'";
+
+    };
 
   # Use 96 as the DPI for anything that reads xresources.
   xresources.properties."Xft.dpi" = 96;
