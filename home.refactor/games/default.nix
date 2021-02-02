@@ -13,6 +13,10 @@ let
   };
 in
 {
+  imports = [
+    ./cli.nix
+  ];
+
   home.packages = with pkgs; [
     # A tool for running appimages.
     appimage-run

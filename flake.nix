@@ -91,6 +91,12 @@
       url = "github:lutris/wine/lutris-6.0";
       flake = false;
     };
+
+    # A patched, more up-to-date tinyfugue.
+    tinyfugue-patched = {
+      url = "github:ingwarsw/tinyfugue";
+      flake = false;
+    };
   };
 
   outputs =
