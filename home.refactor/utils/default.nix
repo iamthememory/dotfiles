@@ -56,6 +56,9 @@ in
     # Basic GNU core utilities.
     coreutils
 
+    # A tool for manipulating CSV files.
+    csvkit
+
     # Tools such as diff, cmp, etc.
     diffutils
 
