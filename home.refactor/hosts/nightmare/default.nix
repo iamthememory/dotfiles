@@ -9,6 +9,7 @@
   imports = [
     ../../base.nix
     ../../bitcoin.nix
+    ../../communication/discord.nix
     ../../ctags.nix
     ../../games
     ../../games/steam.nix
