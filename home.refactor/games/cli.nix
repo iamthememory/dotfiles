@@ -34,7 +34,7 @@
     ];
 
   # Configuration for nethack.
-  home.file.".nethackrc".source = ''
+  home.file.".nethackrc".text = ''
     AUTOPICKUP_EXCEPTION=">chest"
     AUTOPICKUP_EXCEPTION=">corpse"
     AUTOPICKUP_EXCEPTION=">large box"
