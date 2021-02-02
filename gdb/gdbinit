@@ -1,3 +1,0 @@
-set breakpoint pending on
-source ~/.gef/gef.py
-set pagination off

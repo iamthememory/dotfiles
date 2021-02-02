@@ -1,7 +1,0 @@
---exclude=.git
---extra=+q
---fields=+aiS
---recurse=yes
-
---c-kinds=+lpx
---c++-kinds=+lpx
