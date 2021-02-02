@@ -185,6 +185,7 @@
 
             hostname = host;
 
+            flake = self;
             lib = import lib { inherit pkgs; };
             scripts = import scripts { inherit pkgs; };
           };

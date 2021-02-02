@@ -19,6 +19,13 @@ in
     ../hm-modules
   ];
 
+  # A link to the current generation's source.
+  home.file."generation".source = "${inputs.flake.sourceInfo}";
+
+  # The current generation's revision.
+  home.file."generation.rev".text =
+    inputs.flake.rev or "dirty";
+
   # Link the nixpkgs revision used for this generation in the home directory so
   # it can be used for nix repl, and also for indirection when specifying
   # NIX_PATH so that we don't have to worry about finding a way to invalidate
