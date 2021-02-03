@@ -32,7 +32,7 @@ let
   winePrefix = "${ffxivDirectory}/pfx";
 
   # The link to the unpatched WINE for checking if it needs to be re-setuided.
-  unpatchedWineLink = "${patchedWineDirectory}/unpatched-wine";
+  unpatchedWineLink = "${ffxivDirectory}/unpatched-wine";
 
   # The FFXIV WINE wrapper.
   ffxivWineWrapper = pkgs.writeShellScriptBin "ffxiv-wine.sh" ''
@@ -114,16 +114,16 @@ in
         set -euo pipefail
 
         # Sync the unpatched WINE and delete anything else.
-        ${gksudo} ${rsync} -avHAXS --delete "$1/" "$2/"
+        ${rsync} -aHAXS --delete "$1/" "$2/"
 
         # Set the new WINE ownership to root.
-        ${gksudo} ${chown} -hRv root:root "$2"
+        ${chown} -hR root:root "$2"
 
         # Set the proper permissions on WINE binaries for ACT to be able to
         # work.
-        ${gksudo} ${setcap} cap_net_raw,cap_net_admin,cap_sys_ptrace=eip "$2/bin/wine"
-        ${gksudo} ${setcap} cap_net_raw,cap_net_admin,cap_sys_ptrace=eip "$2/bin/wine64"
-        ${gksudo} ${setcap} cap_sys_nice,cap_net_raw,cap_net_admin,cap_sys_ptrace=eip "$2/bin/wineserver"
+        ${setcap} cap_net_raw,cap_net_admin,cap_sys_ptrace=eip "$2/bin/wine"
+        ${setcap} cap_net_raw,cap_net_admin,cap_sys_ptrace=eip "$2/bin/wine64"
+        ${setcap} cap_sys_nice,cap_net_raw,cap_net_admin,cap_sys_ptrace=eip "$2/bin/wineserver"
       '';
     in
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -143,10 +143,12 @@ in
 
       if [ "$HM_DO_FFXIV_WINE_UPDATE" = "1" ]
       then
-        $DRY_RUN_CMD ${patchWine} ${ffxivWine} "${patchedWineDirectory}"
+        $DRY_RUN_CMD ${gksudo} -- ${patchWine} ${ffxivWine} "${patchedWineDirectory}"
         $DRY_RUN_CMD ${rm} -f "${unpatchedWineLink}"
         $DRY_RUN_CMD ${ln} -s ${ffxivWine} "${unpatchedWineLink}"
       fi
+
+      unset HM_DO_FFXIV_WINE_UPDATE
     '';
 
   # Make ACT always floating.
