@@ -42,11 +42,11 @@ let
 in
 {
   # Use Chromium as the default browser.
-  home.sessionVariables.BROWSER = "${profileBin}/bin/chromium-browser";
+  home.sessionVariables.BROWSER = "${profileBin}/chromium-browser";
 
   # Use Chromium as the incognito browser.
   home.sessionVariables.BROWSER_PRIVATE =
-    "${profileBin}/bin/chromium-browser --incognito";
+    "${profileBin}/chromium-browser --incognito";
 
   # Enable Chromium.
   programs.chromium.enable = true;
