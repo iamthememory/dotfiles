@@ -91,12 +91,14 @@ let
     ];
 
   # The passmenu to use for copying/typing passwords from the password store.
-  passmenu =
+  # The arguments to pass need to be supplied separately because they must come
+  # before the dmenu arguments.
+  passmenu = args:
     let
       # The path to passmenu.
       passmenu = "${profileBin}/passmenu";
     in
-    "${passmenu} ${dmenuArgs} -p 'Pass: '";
+    "${passmenu} ${args} ${dmenuArgs} -p 'Pass: '";
 
   # The i3-dmenu-desktop to run.
   i3-dmenu-desktop =
@@ -238,10 +240,10 @@ in
       "${mod}+a" = "focus parent";
 
       # Select a password and type it into the current window.
-      "${mod}+Shift+a" = "exec ${passmenu} --type";
+      "${mod}+Shift+a" = "exec ${passmenu "--type"}";
 
       # Select a password and insert it into the clipboard.
-      "${mod}+Control+a" = "exec ${passmenu}";
+      "${mod}+Control+a" = "exec ${passmenu ""}";
 
 
       # Focus on the child container.
