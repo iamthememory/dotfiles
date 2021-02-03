@@ -40,8 +40,8 @@
       # The path to ln.
       ln = "${pkgs.coreutils}/bin/ln";
 
-      # The path to realpath.
-      realpath = "${pkgs.coreutils}/bin/realpath";
+      # The path to readlink.
+      readlink = "${pkgs.coreutils}/bin/readlink";
     in
     { lib
     , link
@@ -53,7 +53,7 @@
         $VERBOSE_ECHO "Linking ${link} -> ${target}"
         $DRY_RUN_CMD ${ln} -s $VERBOSE_ARG "${target}" "${link}"
       else
-        if [ -L "${link}" ] && [ "$(${realpath} "${link}")" = "${target}" ]
+        if [ -L "${link}" ] && [ "$(${readlink} "${link}")" = "${target}" ]
         then
           $VERBOSE_ECHO "Link ${link} -> ${target} already exists"
         else
