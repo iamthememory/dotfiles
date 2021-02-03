@@ -24,9 +24,9 @@
     httpie
 
     # Various standard network programs.
+    inetutils
     iproute
     iputils
-    nettools
 
     # Tools for uploading/downloading files from/to MEGA.
     megatools
