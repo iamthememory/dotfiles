@@ -1,150 +1,181 @@
-{ config, lib, options, ... }:
+# The configuration for zsh.
+{ config
+, lib
+, pkgs
+, ...
+}:
 let
-  inherit (import ../channels.nix) unstable;
+  readlink = "${pkgs.coreutils}/bin/readlink";
 
-  pkgs = unstable;
+
+  # Check if the given link to target would cause a collision, and kill the
+  # script if so.
+  checkLink = target: link: ''
+    if [ -e "${link}" ]
+    then
+      if [ ! -L "${link}" ]
+      then
+        errorEcho "Existing file '${link}' is in the way of a link to '${target}'"
+        errorEcho "Please move the above file and try again"
+        exit 1
+      elif [ "$(${readlink} "${link}")" != "${target}" ]
+      then
+        errorEcho "Existing link '${link}' is in the way of a link to '${target}'"
+        errorEcho "Please move or remove the above link and try again"
+        exit 1
+      fi
+    fi
+  '';
+
+  # Make a link to the given target.
+  mkLink = target: link: ''
+    ${checkLink target link}
+
+    if [ -L "${link}" ] && [ "$(${readlink} "${link}")" = "${target}" ]
+    then
+      $VERBOSE_ECHO "Link '${link} -> ${target}' already exists: skipping making link"
+    else
+      $DRY_RUN_CMD ${pkgs.coreutils}/bin/rm -f $VERBOSE_ARG "${link}"
+      $DRY_RUN_CMD ${pkgs.coreutils}/bin/ln -s $VERBOSE_ARG "${target}" "${link}"
+    fi
+  '';
+
+  dotDir = "${config.home.homeDirectory}/${config.programs.zsh.dotDir}";
 in
-  {
-    programs.direnv.enableZshIntegration = true;
+{
+  imports = [
+    ./zsh-async.nix
+    ./powerlevel10k
+    ./directory-utils.nix
+    ./fsh.nix
+    ./omz.nix
+    ./sudo.nix
+    ./web-search.nix
+  ];
 
-    xdg.configFile."liquidpromptrc" = {
-      source = ./liquidpromptrc;
-    };
+  home.packages = with pkgs; [
+    # Additional ZSH completions.
+    zsh-completions
+  ];
 
-    programs.zsh = {
-      enable = true;
-      enableCompletion = true;
+  # Enable zsh.
+  programs.zsh.enable = true;
 
-      dotDir = ".config/zsh";
+  # Enable cd-ing by typing just directories.
+  programs.zsh.autocd = true;
 
-      history = {
-        extended = true;
-        ignoreDups = true;
-        save = 10000000;
-        share = true;
-        size = 10000000;
-      };
+  # Put all zsh files in their own directory.
+  programs.zsh.dotDir = ".config/zsh";
 
-      shellAliases = {
-        egrep = "${pkgs.gnugrep}/bin/egrep --color=auto";
-        fgrep = "${pkgs.gnugrep}/bin/fgrep --color=auto";
-        grep = "${pkgs.gnugrep}/bin/grep --color=auto";
-        ls = "${pkgs.coreutils}/bin/ls --color=auto";
-        cp = "${pkgs.coreutils}/bin/cp --reflink=auto";
-        ssh = "${pkgs.kitty}/bin/kitty +kitten ssh";
+  # Enable completions for command arguments.
+  programs.zsh.enableCompletion = true;
 
-        eview = "${config.programs.vim.package}/bin/vim -y -R";
-        evim = "${config.programs.vim.package}/bin/vim -y";
-        ex = "${config.programs.vim.package}/bin/vim -e";
-        gex = "${config.programs.vim.package}/bin/vim -g -e";
-        gview = "${config.programs.vim.package}/bin/vim -g -R";
-        gvim = "${config.programs.vim.package}/bin/vim -g";
-        gvimdiff = "${config.programs.vim.package}/bin/vim -d -g";
-        rgview = "${config.programs.vim.package}/bin/vim -Z -R -g";
-        rgvim = "${config.programs.vim.package}/bin/vim -Z -g";
-        rview = "${config.programs.vim.package}/bin/vim -Z -R";
-        rvim = "${config.programs.vim.package}/bin/vim -Z";
-        vi = "${config.programs.vim.package}/bin/vim -v";
-        view = "${config.programs.vim.package}/bin/vim -R";
-        vimdiff = "${config.programs.vim.package}/bin/vim -d";
+  # Save timestamps in the ZSH history.
+  programs.zsh.history.extended = true;
 
-        #gvimtutor = "${config.programs.vim.package}/bin/vim -e";
-        #vimtutor = "${config.programs.vim.package}/bin/vim -e";
-        #xxd = "${config.programs.vim.package}/bin/vim -e";
+  # Put the ZSH history into the same directory as the configuration.
+  # (Keep it .zsh_history because $ZDOTDIR is just treated like an alternate
+  # $HOME, not like xdg-style .config/... directories, so ZSH likes things
+  # there to still have leading dots.)
+  programs.zsh.history.path =
+    let
+      inherit (config.home) homeDirectory;
+      inherit (config.programs.zsh) dotDir;
+    in
+    "${homeDirectory}/${dotDir}/.zsh_history";
 
-      };
+  # Keep a lot of history.
+  programs.zsh.history.save = 1000000;
+  programs.zsh.history.size = config.programs.zsh.history.save;
 
-      oh-my-zsh = {
-        enable = true;
+  # Share history between shell sessions.
+  programs.zsh.history.share = true;
 
-        plugins = [
-          "autopep8"
-          "catimg"
-          "copyfile"
-          "cpanm"
-          "docker"
-          "encode64"
-          "extract"
-          "git"
-          "git-extras"
-          "git-flow-avh"
-          "history"
-          "httpie"
-          "npm"
-          "pass"
-          "pep8"
-          "pip"
-          "python"
-          "sudo"
-          "taskwarrior"
-          "web-search"
-        ];
-      };
+  # Early loaded ZSH configuration.
+  programs.zsh.initExtraBeforeCompInit = ''
+    # Smartly insert text that's pasted into the terminal rather than assuming
+    # it's a sequence of characters that's typed in.
+    autoload -Uz bracketed-paste-magic
+    zle -N bracketed-paste bracketed-paste-magic
 
-      plugins = [
-        {
-          name = "zsh-syntax-highlighting";
-          src = builtins.fetchGit {
-            url = "https://github.com/zsh-users/zsh-syntax-highlighting.git";
-            ref = "master";
-          };
-        }
-        {
-          name = "liquidprompt";
-          src = builtins.fetchGit {
-            url = "https://github.com/nojhan/liquidprompt.git";
-            ref = "master";
-          };
-        }
-        {
-          name = "nix-zsh-completions";
-          src = builtins.fetchGit {
-            url = "https://github.com/spwhitt/nix-zsh-completions.git";
-            ref = "master";
-          };
-        }
-      ];
+    # Smartly quote URLs if needed while typing/pasting them in.
+    autoload -Uz url-quote-magic
+    zle -N self-insert url-quote-magic
+  '';
 
-      initExtra = ''
-        # Don't display non-contiguous duplicates while searching with ^R.
-        HIST_FIND_NO_DUPS=1
+  # Additional ZSH configuration.
+  programs.zsh.initExtra = ''
+    # Don't display non-contiguous duplicates while searching with ^R.
+    HIST_FIND_NO_DUPS=1
 
-        # Use the system time binary, rather than the builtin
-        disable -r time
+    # Use the more-featured time binary from the profile, rather than the
+    # builtin version.
+    disable -r time
 
-        # Interactively choose from multiple completions.
-        zstyle ':completion::complete:*' use-cache 1
+    # Interactively choose from multiple completions.
+    zstyle ':completion::complete:*' use-cache 1
 
-        # Change CTRL-U to clear the line before the cursor, not the entire line.
-        # This is more consistent with shells like bash.
-        bindkey '^U' backward-kill-line
+    # Change CTRL-U to clear the line before the cursor, not the entire line.
+    # This is more consistent with shells like bash.
+    bindkey '^U' backward-kill-line
 
-        # Just type a directory to cd into it.
-        setopt autocd
+    # If a directory name is typed, and that isn't a command, cd to the
+    # directory.
+    setopt autocd
 
-        # Enable spelling correction for commands.
-        setopt correct
+    # Enable spelling correction for commands.
+    setopt correct
 
-        # Use extended globs.
-        setopt extendedglob
+    # Enable ksh-style extended globbing, e.g. @(foo|bar)
+    setopt kshglob
 
-        # Use timestamps in history.
-        setopt extendedhistory
+    # Allow comments even though the shell is interactive.
+    setopt interactivecomments
 
-        # Use ksh-style extended globbing, e.g. @(foo|bar).
-        setopt kshglob
+    # List jobs in the long format.
+    setopt longlistjobs
 
-        # If a glob has no matches, remove it.
-        setopt nullglob
+    # Allow multiple redirects, inserting cat or tee as necessary.
+    # E.g., `date >file1 >file2` is equivalent to `date | tee file1 >file2` and
+    # `sort <file1 <file2` is equivalent to `cat file1 file2 | sort`.
+    setopt multios
 
-        # pushd alone goes to the home directory, like plain cd.
-        setopt pushdtohome
+    # If a glob has no matches, remove it, rather than leaving it in the
+    # command as a literal.
+    setopt nullglob
 
-        # Disable cd adding to the directory stack.
-        unsetopt autopushd
+    # pushd alone goes to the home directory, like plain cd.
+    setopt pushdtohome
+  '';
 
-        # Add kitty zsh completion.
-        ${pkgs.kitty}/bin/kitty + complete setup zsh | source /dev/stdin
-      '';
-    };
-  }
+  # ZSH aliases.
+  programs.zsh.shellAliases = {
+    # List directories in long form.
+    ll = "ls -lh";
+
+    # List all directories (except . and ..) in long form.
+    la = "ls -lAh";
+  };
+
+  # Add some convenience symlinks since the zsh files have dot prefixes,
+  # despite being in .config/zsh.
+  # NOTE: I assume there's a cleaner way to do this involving making relative
+  # symlinks and installing them, or making the symlinks abolute paths to the
+  # store paths for zshrc and zshenv, but I can't find it.
+  home.activation.addZshConvenienceLinks =
+    let
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ${mkLink ".zsh_history" "${dotDir}/zsh_history"}
+      ${mkLink ".zshenv" "${dotDir}/zshenv"}
+      ${mkLink ".zshrc" "${dotDir}/zshrc"}
+    '';
+  home.activation.checkZshConvenienceLinks =
+    let
+    in
+    lib.hm.dag.entryBefore [ "writeBoundary" ] ''
+      ${checkLink ".zsh_history" "${dotDir}/zsh_history"}
+      ${checkLink ".zshenv" "${dotDir}/zshenv"}
+      ${checkLink ".zshrc" "${dotDir}/zshrc"}
+    '';
+}

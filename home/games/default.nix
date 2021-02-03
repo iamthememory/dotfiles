@@ -1,38 +1,52 @@
-{ config, lib, options, ... }:
+# Game-related packages and configuration.
+{ inputs
+, pkgs
+, ...
+}:
 let
-  inherit (import ../hostid.nix) hostname hasGui hasGames;
+  # A build of WINE using the patches Lutris uses.
+  lutrisWine = inputs.lib.wine.mkWine {
+    inherit pkgs;
 
-  inherit (import ../channels.nix) unstable stable master;
-  pkgs = unstable;
+    src = inputs.lutris-5_21-3;
+    version = "lutris-5.21-3";
+  };
 in
-  {
-    imports = lib.optionals hasGames [
-      ./nethack.nix
-    ] ++ lib.optionals (hasGames && hasGui) [
-    ];
+{
+  imports = [
+    ./cli.nix
+    ./gui.nix
+  ];
 
-    home.packages = with pkgs; lib.optionals hasGames [
-      cataclysm-dda-git
-      scanmem
-      tinyfugue
-      ttyrec
-    ] ++ lib.optionals (hasGames && hasGui) [
-      cabextract
-      discord
-      dwarf-fortress-packages.dwarf-fortress-full
-      freeciv
-      ftb
-      innoextract
+  home.packages = with pkgs;
+    let
+      # Only use native libraries for steam-run, rather than the older libraries
+      # in its runtime.
+      steam-run = (steam.override {
+        nativeOnly = true;
+      }).run;
+    in
+    [
+      # A tool for running appimages.
+      appimage-run
+
+      # A tool for showing OpenGL info for testing and debugging.
+      glxinfo
+
+      # The JAVA runtime.
       jre
+
+      # A tool for easily running games on Linux.
       lutris
-      mcomix
-      openrct2
-      stable.playonlinux
-      retroarch
-      runelite
-      master.steam
-      master.steam-run
-      wineStaging
+
+      # A build of WINE using Lutris patches.
+      lutrisWine
+
+      # A tool for running games and other binaries under the same FHS environment
+      # used for Steam.
+      steam-run
+
+      # A way of easily applying libraries to WINE prefixes.
       winetricks
     ];
-  }
+}

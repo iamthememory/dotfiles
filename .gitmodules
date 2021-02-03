@@ -1,6 +1,0 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-[submodule "base/dircolors-solarized"]
-	path = base/dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized.git

@@ -1,0 +1,9 @@
+# The direnv cache.
+.direnv
+
+# New generation links.
+/new-generation
+/new-os-generation
+
+# Various build result symlinks.
+/result*

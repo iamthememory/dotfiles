@@ -1,404 +1,318 @@
-{ config, lib, options, ... }:
+# Terminal setup for kitty.
+{ config
+, inputs
+, pkgs
+, ...
+}:
 let
-  inherit (import ../channels.nix) unstable;
-  pkgs = unstable;
-
-  mkKittyConfig = {
-    opts ? {},
-    mod ? "ctrl+shift",
-    keys ? {},
-    clearKeys ? "yes",
-    extra ? ""
-  }:
-    (pkgs.lib.generators.toKeyValue {
-      mkKeyValue = k: v: "${k} ${toString v}";
-    } opts) + ''
-      clear_all_shortcuts ${clearKeys}
-      kitty_mod ${mod}
-    '' + (pkgs.lib.generators.toKeyValue {
-      mkKeyValue = k: v: "map ${k} ${toString v}";
-    } keys) + extra;
-
-  colors = {
-    # Solarized dark.
-
-    black = "#073642";
-    brblack = "#002b36";
-
-    red = "#dc322f";
-    brred = "#cb4b16";
-
-    green = "#859900";
-    brgreen = "#586e75";
-
-    yellow = "#b58900";
-    bryellow = "#657b83";
-
-    blue = "#268bd2";
-    brblue = "#839496";
-
-    magenta = "#d33682";
-    brmagenta = "#6c71c4";
-
-    cyan = "#2aa198";
-    brcyan = "#93a1a1";
-
-    white = "#eee8d5";
-    brwhite = "#fdf6e3";
+  # Alias SSH to the kitty helper for ensuring the terminfo entry is available
+  # on the SSH host.
+  shellAliases = {
+    ssh = "${config.home.profileDirectory}/bin/kitty +kitten ssh";
   };
+
+  # A wrapper to call kitty as a single instance for better GPU caching.
+  kitty-single-wrapper = pkgs.writeScriptBin "kitty-single.sh" ''
+    #!${pkgs.stdenv.shell}
+
+    exec ${config.home.profileDirectory}/bin/kitty --single-instance "$@"
+  '';
 in
-  {
-    home.packages = with pkgs; [
-      kitty
-      ncurses
-      ncurses.dev
-    ];
+{
+  imports = [
+    # Ensure we have our SSH configuration available.
+    ../ssh.nix
 
-    xdg.configFile."kitty/kitty.conf" = {
-      text = mkKittyConfig {
-        mod = "ctrl+shift";
+    # Ensure we have basic terminal utilities.
+    ../utils
 
+    # Ensure we have the ZSH configuration available.
+    ../zsh
+  ];
 
-        keys = {
-          # Clipboard.
+  # Extra packages to add.
+  home.packages = [
+    # Add the kitty wrapper script.
+    kitty-single-wrapper
 
-          "kitty_mod+c" = "copy_to_clipboard";
-          "kitty_mod+v" = "paste_from_clipboard";
-          "kitty_mod+s" = "paste_from_selection";
-          "kitty_mod+o" = "pass_selection_to_program";
+    # Ensure we have less available, for the scrollback pager.
+    pkgs.less
 
+    # Add ncurses, to ensure we have terminfo databases available.
+    pkgs.ncurses
 
-          # Scrolling.
+    # Add the dev output of ncurses too, primarily for the toe binary.
+    pkgs.ncurses.dev
+  ];
 
-          "kitty_mod+k" = "scroll_line_up";
-          "kitty_mod+j" = "scroll_line_down";
+  # Use kitty as the default terminal, using a single instance for better GPU
+  # caching.
+  # This is the same variable i3-sensible-terminal uses, so we're using it for
+  # our terminal setting.
+  # NOTE: I don't know if this is used as-is or not, so it's a wrapper script.
+  home.sessionVariables.TERMINAL =
+    let
+      profileBin = "${config.home.profileDirectory}/bin";
+    in
+    "${profileBin}/kitty-single.sh";
 
-          "kitty_mod+page_up" = "scroll_page_up";
-          "kitty_mod+page_down" = "scroll_page_down";
+  # Enable kitty.
+  programs.kitty.enable = true;
 
-          "kitty_mod+home" = "scroll_home";
-          "kitty_mod+end" = "scroll_end";
+  # Extra configuration for kitty.
+  programs.kitty.extraConfig = ''
+  '';
 
-          # Show scrollback buffer in less.
-          "kitty_mod+h" = "show_scrollback";
+  # The font to use in kitty, and its package.
+  # Here, we use the nerdfonts-patched Li[bt]eration Mono font, with extra
+  # glyphs and symbols added.
+  programs.kitty.font.name = "LiterationMono Nerd Font Mono";
+  programs.kitty.font.package = pkgs.nerdfonts;
 
+  # Keybindings for kitty.
+  programs.kitty.keybindings = {
+    # Move to the next and previous tabs.
+    "kitty_mod+left" = "previous_tab";
+    "kitty_mod+right" = "next_tab";
 
-          # Windows.
+    # Scroll text a single line up or down.
+    "kitty_mod+down" = "scroll_line_down";
+    "kitty_mod+up" = "scroll_line_up";
 
-          "kitty_mod+enter" = "new_window";
-          "kitty_mod+n" = "new_os_window";
+    # Scroll text a page up or down.
+    "kitty_mod+page_down" = "scroll_page_down";
+    "kitty_mod+page_up" = "scroll_page_up";
 
-          "kitty_mod+w" = "close_window";
+    # Scroll to the top and bottom.
+    "kitty_mod+home" = "scroll_home";
+    "kitty_mod+end" = "scroll_end";
 
-          "kitty_mod+]" = "next_window";
-          "kitty_mod+[" = "previous_window";
+    # Create a new window within kitty.
+    "kitty_mod+enter" = "new_window";
 
-          "kitty_mod+f" = "move_window_forward";
-          "kitty_mod+b" = "move_window_backward";
-          "kitty_mod+`" = "move_window_to_top";
+    # Increase and decrease the font size.
+    "kitty_mod+equal" = "change_font_size all +1.0";
+    "kitty_mod+minus" = "change_font_size all -1.0";
 
-          "kitty_mod+r" = "start_resizing_window";
+    # Reset the font size.
+    "kitty_mod+backspace" = "change_font_size all 0";
 
-          "kitty_mod+1" = "first_window";
-          "kitty_mod+2" = "second_window";
-          "kitty_mod+3" = "third_window";
-          "kitty_mod+4" = "fourth_window";
-          "kitty_mod+5" = "fifth_window";
-          "kitty_mod+6" = "sixth_window";
-          "kitty_mod+7" = "seventh_window";
-          "kitty_mod+8" = "eighth_window";
-          "kitty_mod+9" = "ninth_window";
-          "kitty_mod+0" = "tenth_window";
+    # Open the kitty command shell.
+    "kitty_mod+escape" = "kitty_shell window";
 
+    # Move forward and backward between windows.
+    "kitty_mod+]" = "next_window";
+    "kitty_mod+[" = "previous_window";
 
-          # Tabs.
+    # Move a window to the top.
+    "kitty_mod+`" = "move_window_to_top";
 
-          "kitty_mod+right" = "next_tab";
-          "kitty_mod+left" = "previous_tab";
+    # Move the current tab backward and forward.
+    "kitty_mod+," = "move_tab_backward";
+    "kitty_mod+." = "move_tab_forward";
 
-          "kitty_mod+t" = "new_tab";
-          "kitty_mod+q" = "close_tab";
+    # Change the current tab title.
+    "kitty_mod+;" = "set_tab_title";
 
-          "kitty_mod+." = "move_tab_forward";
-          "kitty_mod+," = "move_tab_backward";
+    # Move a window backward within a tab.
+    "kitty_mod+b" = "move_window_forward";
 
-          "kitty_mod+;" = "set_tab_title";
+    # Copy text to the clipboard.
+    "kitty_mod+c" = "copy_to_clipboard";
 
+    # Open a URL that's currently visible.
+    "kitty_mod+e" = "kitten hints";
 
-          # Layout.
+    # Move a window forward within a tab.
+    "kitty_mod+f" = "move_window_forward";
 
-          "kitty_mod+l" = "next_layout";
+    # Show the full scrollback buffer in less.
+    "kitty_mod+h" = "show_scrollback";
 
+    # Switch to the next window layout.
+    "kitty_mod+l" = "next_layout";
 
-          # Fonts.
+    # Create a new OS window for kitty.
+    "kitty_mod+n" = "new_os_window";
 
-          "kitty_mod+equal" = "change_font_size all +1.0";
-          "kitty_mod+minus" = "change_font_size all -1.0";
+    # Select a visible filepath/name and insert it at the cursor.
+    "kitty_mod+p>f" = "kitten hints --type path --program -";
 
-          # Reset font size.
-          "kitty_mod+backspace" = "change_font_size all 0";
+    # Open selected path with the default open program.
+    "kitty_mod+p>shift+f" = "kitten hints --type path";
 
+    # Insert selected hash-like text at the cursor.
+    "kitty_mod+p>h" = "kitten hints --type hash --program -";
 
-          # Select/act on visible text.
+    # Insert selected line at the cursor.
+    "kitty_mod+p>l" = "kitten hints --type line --program -";
 
-          # Open visible URL.
-          "kitty_mod+e" = "kitten hints";
+    # Insert selected word at the cursor.
+    "kitty_mod+p>w" = "kitten hints --type word --program -";
 
-          # Insert selected path.
-          "kitty_mod+p>f" = "kitten hints --type path --program -";
+    # Resize the given window.
+    "kitty_mod+r" = "start_resizing_window";
 
-          # Open selected path.
-          "kitty_mod+p>shift+f" = "kitten hints --type path";
+    # Paste text from the current selection.
+    "kitty_mod+s" = "paste_from_selection";
 
-          # Insert selected line.
-          "kitty_mod+p>l" = "kitten hints --type line --program -";
+    # Open a new tab.
+    "kitty_mod+t" = "new_tab";
 
-          # Insert selected word.
-          "kitty_mod+p>w" = "kitten hints --type word --program -";
+    # Input a unicode character.
+    "kitty_mod+u" = "kitten unicode_input";
 
-          # Insert selected hash.
-          "kitty_mod+p>h" = "kitten hints --type hash --program -";
+    # Paste text from the clipboard.
+    "kitty_mod+v" = "paste_from_clipboard";
 
+    # Switch to the given window number.
+    "kitty_mod+1" = "first_window";
+    "kitty_mod+2" = "second_window";
+    "kitty_mod+3" = "third_window";
+    "kitty_mod+4" = "fourth_window";
+    "kitty_mod+5" = "fifth_window";
+    "kitty_mod+6" = "sixth_window";
+    "kitty_mod+7" = "seventh_window";
+    "kitty_mod+8" = "eighth_window";
+    "kitty_mod+9" = "ninth_window";
+    "kitty_mod+0" = "tenth_window";
+  };
 
-          # Miscellaneous.
+  # Settings for kitty.
+  programs.kitty.settings =
+    let
+      # Color scheme settings.
+      colorSettings =
+        let
+          colors = inputs.lib.solarized;
+        in
+        with colors; rec {
+          # The border color for active, inactive, and bell-ed windows.
+          active_border_color = colorNames.green;
+          bell_border_color = colorNames.orange;
+          inactive_border_color = colorNames.yellow;
 
-          # Unicode input.
-          "kitty_mod+u" = "kitten unicode_input";
+          # The background color.
+          background = colorNames.base03;
 
-          # Open the kitty command shell.
-          "kitty_mod+escape" = "kitty_shell window";
+          # The cursor color.
+          cursor = colorNames.base1;
 
-          # Reset the terminal.
-          "kitty_mod+delete" = "clear_terminal reset active";
-        };
-
-
-        opts = {
-          # Fonts.
-
-          font_family = "Literation Mono Nerd Font";
-          bold_font = "Literation Mono Nerd Font";
-          italic_font = "Literation Mono Nerd Font";
-          bold_italic_font = "Literation Mono Nerd Font";
-
-          font_size = "9.0";
-
-          # Adjust the size of each character cell.
-          adjust_line_height = 0;
-          adjust_column_width = 0;
-
-          # The lines for box drawing unicode characters.
-          box_drawing_scale = "0.001, 1, 1.5, 2";
-
-
-          # Cursor.
-
-          cursor = colors.brcyan;
+          # The text under the cursor should be the background color the cell
+          # would have if the cursor weren't there.
           cursor_text_color = "background";
 
-          cursor_shape = "block";
+          # The foreground color.
+          foreground = colorNames.base0;
 
-          cursor_blink_interval = "0.0";
-          cursor_stop_blinking_after = "0.0";
+          # When selecting text, reverse the foreground and background from the
+          # default.
+          selection_background = foreground;
+          selection_foreground = background;
 
-
-          # Scrollback.
-
-          scrollback_lines = 10000;
-
-          scrollback_pager = "${pkgs.less}/bin/less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
-
-          # The scrollback history for viewing in a pager.
-          # This is in megabytes, about 2500 lines per megabyte.
-          scrollback_pager_history_size = 16;
-
-          # Mouse wheel scrolling multiplier.
-          wheel_scroll_multiplier = "1.0";
-
-          # Touchpad scrolling multiplier.
-          touch_scroll_multiplier = "1.0";
-
-
-          # Mouse.
-
-          url_color = colors.blue;
-
-          # The URL style can be none/single/double/curly
-          url_style = "single";
-
-          open_url_modifiers = "kitty_mod";
-
-          open_url_with = "${config.programs.chromium.package}/bin/chromium-browser";
-
-          copy_on_select = "no";
-
-          rectangle_select_modifiers = "ctrl+alt";
-
-          # The non-alphanumeric characters also part of a word.
-          select_by_word_characters = ":@-./_~?&=%+#";
-
-          # Use the default double/triple click interval.
-          click_interval = "-1.0";
-
-          mouse_hide_wait = "0.0";
-
-          focus_follows_mouse = "no";
-
-
-          # Performance.
-
-          # Milliseconds between screen updates.
-          repaint_delay = 10;
-
-          input_delay = 3;
-
-          sync_to_monitor = "yes";
-
-
-          # Bell.
-
-          enable_audio_bell = "no";
-
-          visual_bell_duration = "0.1";
-
-          window_alert_on_bell = "yes";
-
-          bell_on_tab = "yes";
-
-
-          # Window layout.
-
-          remember_window_size = "yes";
-
-          initial_window_width = 640;
-          initial_window_height = 400;
-
-          enabled_layouts = "*";
-
-          window_resize_step_cells = 1;
-          window_resize_step_lines = 1;
-
-          window_border_width = "1.0";
-
-          draw_minimal_borders = "yes";
-
-          window_margin_width = "0.0";
-
-          single_window_margin_width = "-1000.0";
-
-          window_padding_width = "0.0";
-
-          active_border_color = colors.green;
-          inactive_border_color = colors.yellow;
-          bell_border_color = colors.brred;
-
-          inactive_text_alpha = "1.0";
-
-          hide_window_decorations = "no";
-
-
-          # Tab bar.
-
-          tab_bar_edge = "bottom";
-
-          tab_bar_margin_width = "0.0";
-
-          tab_bar_style = "separator";
-
-          tab_fade = "0.25 0.5 0.75 1";
-
-          tab_separator = "┇";
-
-          tab_title_template = "{index}: {title}";
-
-          active_tab_foreground = "#000";
-          active_tab_background = "#eee";
-          active_tab_font_style = "bold-italic";
-
-          inactive_tab_foreground = "#444";
-          inactive_tab_background = "#999";
-          inactive_tab_font_style = "normal";
-
-
-          # Color scheme.
-
-          foreground = colors.brblue;
-          background = colors.brblack;
-
-          background_opacity = "1.0";
-          dynamic_background_opacity = "no";
-
-          dim_opacity = "0.75";
-
-          selection_foreground = colors.brblack;
-          selection_background = colors.brblue;
-
-          color0 = colors.black;
-          color8 = colors.brblack;
-
-          color1 = colors.red;
-          color9 = colors.brred;
-
-          color2 = colors.green;
-          color10 = colors.brgreen;
-
-          color3 = colors.yellow;
-          color11 = colors.bryellow;
-
-          color4 = colors.blue;
-          color12 = colors.brblue;
-
-          color5 = colors.magenta;
-          color13 = colors.brmagenta;
-
-          color6 = colors.cyan;
-          color14 = colors.brcyan;
-
-          color7 = colors.white;
-          color15 = colors.brwhite;
-
-
-          # Advanced.
-
-          shell = ".";
-
-          editor = ".";
-
-          close_on_child_death = "no";
-
-          allow_remote_control = "yes";
-
-          startup_session = "none";
-
-          clipboard_control = "write-clipboard write-primary";
-
-          term = "xterm-kitty";
-
-
-          # MacOS tweaks.
-
-          macos_titlebar_color = "system";
-
-          macos_option_as_alt = "yes";
-
-          macos_hide_from_tasks = "no";
-
-          macos_quit_when_last_window_closed = "no";
-
-          macos_window_resizable = "yes";
-
-          macos_thicken_font = 0;
-
-          macos_traditional_fullscreen = "no";
-
-          macos_custom_beam_cursor = "no";
-        };
-
-
-        extra = ''
-          #symbol_map UnicodeCodepoints FontFamilyName
-          #env VAR=x
-        '';
-      };
-    };
-  }
+          # The color to use for URLs on mouseover.
+          url_color = colorNames.blue;
+        } // colors.darkColors;
+    in
+    {
+      # Allow other programs to control kitty.
+      allow_remote_control = true;
+
+      # Clear all default shortcuts.
+      # NOTE: This works because home-manager puts the settings before
+      # keybindings.
+      clear_all_shortcuts = true;
+
+      # Don't blink the cursor.
+      cursor_blink_interval = 0;
+
+      # Draw all borders for inactive windows.
+      draw_minimal_borders = false;
+
+      # Use the default editor if available, or fall back to defaults.
+      editor = config.home.sessionVariables.EDITOR or ".";
+
+      # Disable the audio bell, to only use visual indicators.
+      enable_audio_bell = false;
+
+      # Use size 9.0 font.
+      font_size = "9.0";
+
+      # Use ctrl+shift as the kitty modifier.
+      kitty_mod = "ctrl+shift";
+
+      # Listen on the given UNIX socket.
+      listen_on = "unix:@/tmp/kitty-${config.home.username}";
+
+      # Don't hide the mouse cursor.
+      mouse_hide_wait = "0";
+
+      # Open URLs with the browser if available.
+      open_url_with = config.home.sessionVariables.BROWSER or "default";
+
+      # Keep 10_000 lines of interactive scrollback.
+      scrollback_lines = 10000;
+
+      # The command to view the full scrollback buffer.
+      scrollback_pager =
+        let
+          less = "${config.home.profileDirectory}/bin/less";
+        in
+        "${less} --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
+
+      # The size in megabytes for the full scrollback buffer that can be viewed
+      # in a pager.
+      # This is about 2500-10_000 lines per megabyte.
+      scrollback_pager_history_size = 32;
+
+      # Consider all of these characters as part of words when double-clicking
+      # to select text.
+      select_by_word_characters = ":@-./_~?&=%+#";
+
+      # Use ZSH as the shell.
+      shell = "${config.home.profileDirectory}/bin/zsh";
+
+      # Use a powerline-style tab bar separator.
+      tab_bar_style = "powerline";
+
+      # The tab title format.
+      tab_title_template = "{index}: {title}";
+
+      # Scroll one line at a time when scrolling with a touchpad.
+      touch_scroll_multiplier = "1.0";
+
+      # Style URLs with a single underline on mouse-over.
+      url_style = "single";
+
+      # Flash the screen for 0.2 seconds for the visual bell.
+      visual_bell_duration = "0.2";
+
+      # Scroll one line at a time when scrolling with a mousewheel.
+      wheel_scroll_multiplier = "1.0";
+
+      # Draw window borders as 1.0pt wide.
+      window_border_width = "1.0pt";
+
+      # Resize windows by one cell at a time.
+      window_resize_step_cells = 1;
+      window_resize_step_lines = 1;
+    } // colorSettings;
+
+  # Add shell aliases for all shells.
+  # NOTE: These will have no effect unless the relevant shell is enabled.
+  programs.bash.shellAliases = shellAliases;
+  programs.fish.shellAliases = shellAliases;
+  programs.zsh.shellAliases = shellAliases;
+
+  # Add kitty completion for Bash.
+  programs.bash.initExtra = ''
+    # Add completion for kitty.
+    source <(${config.home.profileDirectory}/bin/kitty + complete setup bash)
+  '';
+
+  # Add kitty completion for ZSH.
+  programs.zsh.initExtra = ''
+    # Add kitty zsh completion.
+    ${config.home.profileDirectory}/bin/kitty + complete setup zsh | source /dev/stdin
+  '';
+}
