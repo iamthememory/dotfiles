@@ -98,8 +98,8 @@
       flake = false;
     };
 
-    lutris-6_0 = {
-      url = "github:lutris/wine/lutris-6.0";
+    lutris-5_21-3 = {
+      url = "github:lutris/wine/lutris-5.21-3";
       flake = false;
     };
 
