@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cataclysm-dda": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612305197,
+        "narHash": "sha256-KwA816kzJFFGqP+LPE0nzLrkLT2ODUCPCFga8b8VuUM=",
+        "owner": "CleverRaven",
+        "repo": "Cataclysm-DDA",
+        "rev": "6f0e582530d1c38641cc76167f8e68a744e8f434",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CleverRaven",
+        "repo": "Cataclysm-DDA",
+        "type": "github"
+      }
+    },
     "dircolors-solarized": {
       "flake": false,
       "locked": {
@@ -231,6 +247,7 @@
     },
     "root": {
       "inputs": {
+        "cataclysm-dda": "cataclysm-dda",
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",
         "gef": "gef",

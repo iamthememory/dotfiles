@@ -1,21 +1,34 @@
 # GUI-based games and their configurations.
-{ pkgs
+{ inputs
+, pkgs
 , ...
 }: {
-  home.packages = with pkgs; [
-    # Cataclysm: DDA, built from git and with the GUI enabled.
-    cataclysmDDA.git.tiles
+  home.packages = with pkgs;
+    let
+      # Build Cataclysm: DDA from the current source.
+      cataclysm-dda-git = pkgs.cataclysm-dda.overrideAttrs (oldAttrs: rec {
+        name = "${oldAttrs.pname}-${version}";
+        version = "${inputs.cataclysm-dda.lastModifiedDate}";
+        src = inputs.cataclysm-dda;
 
-    # Dwarf Fortress with Dwarf Therapist and dfhack.
-    (dwarf-fortress-packages.dwarf-fortress-full.override {
-      # Disable the intro video.
-      enableIntro = false;
+        # Enable tiles.
+        tiles = true;
+      });
+    in
+    [
+      # Cataclysm: DDA, built from git and with the GUI enabled.
+      cataclysm-dda-git
 
-      # Enable the FPS counter.
-      enableFPS = true;
-    })
+      # Dwarf Fortress with Dwarf Therapist and dfhack.
+      (dwarf-fortress-packages.dwarf-fortress-full.override {
+        # Disable the intro video.
+        enableIntro = false;
 
-    # Freeciv.
-    freeciv_gtk
-  ];
+        # Enable the FPS counter.
+        enableFPS = true;
+      })
+
+      # Freeciv.
+      freeciv_gtk
+    ];
 }

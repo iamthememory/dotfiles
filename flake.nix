@@ -28,6 +28,12 @@
       flake = false;
     };
 
+    # The latest cataclysm-dda.
+    cataclysm-dda = {
+      url = "github:CleverRaven/Cataclysm-DDA";
+      flake = false;
+    };
+
     # Solarized LS_COLORS.
     dircolors-solarized = {
       url = "github:seebi/dircolors-solarized";
