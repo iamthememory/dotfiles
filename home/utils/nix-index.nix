@@ -39,7 +39,7 @@ in
     then
       $VERBOSE_ECHO "nix-index nixpkgs revision link missing or not a symlink: Updating nix-index"
       HM_DO_NIX_INDEX_UPDATE=1
-    elif ! ${realpath} -q "${nixIndexRevisionLink}"
+    elif ! ${realpath} -q "${nixIndexRevisionLink}" >/dev/null
     then
       $VERBOSE_ECHO "nix-index nixpkgs revision symlink broken: Updating nix-index"
       HM_DO_NIX_INDEX_UPDATE=1
