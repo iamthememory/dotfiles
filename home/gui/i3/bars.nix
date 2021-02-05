@@ -125,29 +125,6 @@ in
           show_volume_when_muted = true;
         }
 
-        # Show IBus status.
-        {
-          block = "ibus";
-
-          # Mappings for short names for the IBus modes.
-          mappings = {
-            # Raw English input.
-            "xkb:us::eng" = "EN";
-
-            # Typing booster input.
-            "typing-booster" = "EN(B)";
-
-            # LaTeX-like input.
-            "table:latex" = "LaTeX";
-
-            # Emoji by their unicode names.
-            "uniemoji" = "emo";
-
-            # Anthy for Japanese input.
-            "anthy" = "JP";
-          };
-        }
-
         # Show new mail.
         {
           block = "maildir";
