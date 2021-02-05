@@ -166,6 +166,9 @@ in
         # Use HTTPS when hub does GitHub operations.
         hub.protocol = "https";
 
+        # Use main as the default branch name.
+        init.defaultBranch = "main";
+
         # When merging, create an explicit merge commit, rather than
         # fast-forwarding.
         merge.ff = false;
