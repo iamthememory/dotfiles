@@ -70,10 +70,10 @@
               "-nf '${base00}'"
 
               # The background for the current selection.
-              "-sb '${base01}'"
+              "-sb '${base00}'"
 
               # The text color for the current selection.
-              "-sf '${base1}'"
+              "-sf '${base03}'"
 
               # The prompt to show.
               "-p 'Dunst: '"

@@ -64,10 +64,10 @@
         "-nf '${colorNames.base00}'"
 
         # The background for the current selection.
-        "-sb '${colorNames.base01}'"
+        "-sb '${colorNames.base00}'"
 
         # The text color for the current selection.
-        "-sf '${colorNames.base1}'"
+        "-sf '${colorNames.base03}'"
 
         # The prompt to show.
         "-p 'Run: '"
