@@ -72,11 +72,8 @@ in
   programs.neomutt.extraConfig =
     let
       # Use the solarized dark theme.
-      # NOTE: This is the 16-color variant, which is more accurate but also
-      # assumes a terminal with its basic colors changed to solarized dark
-      # colors.
       colorFile =
-        "${inputs.mutt-colors-solarized}/mutt-colors-solarized-dark-16.muttrc";
+        "${inputs.mutt-colors-solarized}/mutt-colors-solarized-dark-256.muttrc";
 
       # A script to find all mailboxes and make mutt entries for them
       # dynamically.
