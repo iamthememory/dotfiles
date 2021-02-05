@@ -87,9 +87,9 @@ in
   # Enable the redshift daemon to shift color to red at night.
   services.redshift.enable = true;
 
-  # Vary the screen brightness from 50% at night to 100% during the day.
+  # Vary the screen brightness from 80% at night to 100% during the day.
   services.redshift.brightness.day = "1.0";
-  services.redshift.brightness.night = "0.5";
+  services.redshift.brightness.night = "0.8";
 
   # By default, set the location from geoclue.
   services.redshift.provider = lib.mkDefault "geoclue2";
