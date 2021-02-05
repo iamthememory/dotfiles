@@ -161,8 +161,8 @@ in
     toINI {
       # Context configuration.
 
-      # Clear the screen before printing context.
-      context.clear_screen = true;
+      # Don't clear the screen before printing context.
+      context.clear_screen = false;
 
       # Show the context when breaking.
       context.enable = true;
