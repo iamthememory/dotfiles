@@ -1,17 +1,23 @@
 # Settings for X11 screen-locking utilities.
-{ pkgs
+{ config
+, inputs
+, pkgs
 , ...
 }:
 let
   # The locker script to use.
   # Here we set the environment variables for xsecurelock's settings.
-  locker = pkgs.writeScript "locker.sh" ''
-    #!${pkgs.coreutils}/bin/env -S -i ${pkgs.stdenv.shell}
-
-    # The way we invoke this script above *should* clear all environment
-    # variables from the environment, so we can rely on defaults without
-    # worrying about environment variables sneaking in maliciously or otherwise
-    # to, e.g., set authentication via text file rather than PAM.
+  locker = pkgs.writeShellScriptBin "locker.sh" ''
+    # Clear out any XSECURELOCK variables from the environment.
+    # This has to be done with half of it in a substitution, because pipelines
+    # are run in subshells, so a while at the end of a pipeline can't unset
+    # variables in the top-level shell.
+    while read -r VARIABLENAME
+    do
+      unset "$VARIABLENAME"
+    done < <( ${pkgs.coreutils}/bin/env \
+    | ${pkgs.gnugrep}/bin/grep '^XSECURELOCK' \
+    | ${pkgs.gnused}/bin/sed 's/=.*//' )
 
     # Set the screen to suspend mode when blanking.
     # NOTE: From what I can tell, for nearly all LCDs, standby/suspend/off are
@@ -53,7 +59,12 @@ let
     export PATH="${pkgs.coreutils}/bin:${pkgs.xlibs.xprop}/bin:${pkgs.xlibs.xwininfo}/bin"
 
     # Exec xsecurelock.
-    exec "${pkgs.xsecurelock}/bin/xsecurelock"
+    # FIXME: xsecurelock's authproto_pam has been segfaulting ever since glibc
+    # was updated to 2.32.
+    # I can't figure out why or what change in glibc causes ld to segfault when
+    # initing pthreads, so for now I'm pinning this to nixos-20.09 which has
+    # glibc 2.31.
+    exec "${inputs.stable.xsecurelock}/bin/xsecurelock"
   '';
 in
 {
@@ -61,6 +72,10 @@ in
     # Add the caffeine package to the profile to send commands programmatically
     # to the caffeine service.
     caffeine-ng
+
+    # Add the locker script to the profile so long-running things such as
+    # xautolock don't end up trying to use older lockers.
+    locker
   ];
 
   # Enable the caffeine daemon/applet for stopping locking when, e.g., watching
@@ -74,7 +89,8 @@ in
   services.screen-locker.inactiveInterval = 20;
 
   # Use our locker script for the lock command.
-  services.screen-locker.lockCmd = "${locker}";
+  services.screen-locker.lockCmd =
+    "${config.home.profileDirectory}/bin/locker.sh";
 
   # Extra options for xautolock.
   services.screen-locker.xautolockExtraOptions = [
