@@ -103,7 +103,7 @@
             mbsync.extraConfig.account.Timeout = 60;
 
             # Store folders exactly as named, allowing subdirectories.
-            mbsync.extraConfig.local.SubFolders = "Verbatim";
+            mbsync.subFolders = "Verbatim";
           };
       in
       {

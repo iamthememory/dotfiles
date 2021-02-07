@@ -27,6 +27,16 @@ let
     name = "${oldAttrs.pname}-${version}";
 
     src = inputs.i3status-rust;
+
+    buildInputs = oldAttrs.buildInputs ++ [
+      pkgs.pkgsStatic.openssl
+    ];
+
+    cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
+      name = "${name}-vendor.tar.gz";
+      inherit src;
+      outputHash = "pgZQ3FfN1xVXpqI6CXTjD+Od+mN2VTBvMO7C/r7iqfU=";
+    });
   });
 in
 {
