@@ -59,6 +59,10 @@
     --exclude=result
     --exclude=result-*
 
+    # Ignore generation builds in this repository.
+    --exclude=new-generation
+    --exclude=new-os-generation
+
     # Ignore (neo)vim swapfiles and session files.
     --exclude=*.swn
     --exclude=*.swo
