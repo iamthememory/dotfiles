@@ -32,9 +32,6 @@ let
 
     # Looper for YouTube.
     "iggpfpnahkgpnindfkdncknoldgnccdg"
-
-    # The Great Suspender.
-    "klbibkeccnjlkjkiokjodocebajanakg"
   ];
 
   # The home profile binary directory.
