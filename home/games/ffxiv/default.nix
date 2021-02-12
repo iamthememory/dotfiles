@@ -13,10 +13,8 @@ let
   ffxivWine = inputs.lib.wine.mkWine {
     inherit pkgs;
 
-    src = inputs.lutris-ge-4_17;
-    version = "lutris-ge-4.17";
-
-    patchECDSA = true;
+    src = inputs.lutris-6_0;
+    version = "lutris-6.0";
   };
 
   # The current profile's binary directory.
