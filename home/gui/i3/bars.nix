@@ -258,7 +258,7 @@ in
         clickable = false;
 
         # The format to show.
-        format_mem = "{Mug}/{MTg} GiB";
+        format_mem = "{Mug} ({MUg})/{MTg} GiB";
       }
 
       # Show swap usage.
@@ -271,6 +271,31 @@ in
 
         # The format to show.
         format_swap = "{SUg}/{STg} GiB";
+      }
+
+      # Show the space used/available on /tmp, since that's usually a tmpfs.
+      {
+        block = "disk_space";
+
+        # The name to display.
+        alias = "tmp";
+
+        # The path to monitor.
+        path = "/tmp";
+
+        # Use GiB as the unit.
+        unit = "GiB";
+
+        # Show the amount used, rather than the amount available, since this
+        # is actually in RAM.
+        format = "{alias} {used}/{total} {unit}";
+
+        # Warn when we use 10% of /tmp, and alert if we pass 20% used.
+        # Since /tmp is usually a tmpfs for small stuff, if it ever passes a
+        # significant size that's usually something to look at.
+        alert_absolute = false;
+        warning = 90;
+        alert = 80;
       }
 
       # Show the network information for the current default route interface.
