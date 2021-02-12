@@ -220,7 +220,7 @@ in
         block = "cpu";
 
         # The format to use.
-        format = "{barchart} {utilization}% {frequency}GHz";
+        format = "{barchart} {utilization}% {frequency}";
       }
 
       # Show the CPU temperature.
