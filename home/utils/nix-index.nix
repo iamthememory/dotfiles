@@ -8,14 +8,6 @@
 , ...
 }:
 let
-  # The portion of the script that scrapes for the index matching this revision
-  # of nixpkgs.
-  # This is kept separate so it can be used both on generation activation if
-  # the nixpkgs revision has changed, and so that it can be used periodically
-  # to update for any packages that may not have been built in hydra yet when
-  # the generation was activated.
-  updateNixIndex = "${pkgs.nix-index}/bin/nix-index -f '${pkgs.path}'";
-
   # Where the link to the nixpkgs revision used to generate the nix-index
   # should go.
   nixIndexRevisionLink = "${config.xdg.cacheHome}/nix-index/nixpkgs-tree";
@@ -23,6 +15,35 @@ let
   # A short variable for invoking realpath to make the scripts easier to write.
   # This should follow and canonicalize a symlink to its real, absolute path.
   realpath = "${pkgs.coreutils}/bin/realpath -e";
+
+  # A script to run nix-index and update the symlink.
+  updateNixIndex = pkgs.writeShellScript "update-nix-index.sh" ''
+    # Die on any errors.
+    set -euo pipefail
+
+    # Make a temporary directory to hold any file listings that failed to parse.
+    # This is so we can remove them after running nix-index, because they can
+    # add up over time to literal gigabytes in some cases, which ends up taking
+    # up RAM since /tmp is usually a tmpfs.
+    export TMPDIR="$(${pkgs.coreutils}/bin/mktemp -d /tmp/nix-index.XXXXXXXXXXXXXXXX)"
+    export TMP="$TMPDIR"
+
+    # Clear the directory when the script dies or exits.
+    cleanup() {
+      ${pkgs.coreutils}/bin/rm -rf "$TMPDIR"
+    }
+    trap cleanup EXIT INT TERM
+
+    # Update the nix index using the packages for this generation.
+    # We use pkgs.path here so that it will always choose the packages for the
+    # generation that this script is part of, so it always does the same thing,
+    # whether called as part of the generation activation or the update timer.
+    ${pkgs.nix-index}/bin/nix-index -f '${pkgs.path}'
+
+    # Replace the revision link with a link to the pkgs we just used.
+    ${pkgs.coreutils}/bin/rm -f "${nixIndexRevisionLink}"
+    ${pkgs.coreutils}/bin/ln -s "${pkgs.path}" "${nixIndexRevisionLink}"
+  '';
 in
 {
   home.packages = with pkgs; [
@@ -54,8 +75,6 @@ in
     if [ "$HM_DO_NIX_INDEX_UPDATE" = "1" ]
     then
       $DRY_RUN_CMD ${updateNixIndex}
-      $DRY_RUN_CMD ${pkgs.coreutils}/bin/rm -f "${nixIndexRevisionLink}"
-      $DRY_RUN_CMD ${pkgs.coreutils}/bin/ln -s "${pkgs.path}" "${nixIndexRevisionLink}"
     fi
 
     unset HM_DO_NIX_INDEX_UPDATE
@@ -88,8 +107,6 @@ in
             # Discard stderr, since nix-index will write progress info even when
             # not connected to a terminal, flooding the journal.
             ${updateNixIndex} 2>/dev/null
-            ${pkgs.coreutils}/bin/rm -f "${nixIndexRevisionLink}"
-            ${pkgs.coreutils}/bin/ln -s "${pkgs.path}" "${nixIndexRevisionLink}"
           '';
         in
         "${update-index}";
