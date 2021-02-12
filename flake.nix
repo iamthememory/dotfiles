@@ -23,8 +23,11 @@
     # FIXME: Remove this and use the version in nixpkgs once
     # https://github.com/greshake/i3status-rust/pull/972
     # is in a released version.
+    # FIXME: This is pinned since the commit changing block IDs to usize can
+    # cause integer overflows in i3 when it tries to parse output if a block
+    # outputs its ID.
     i3status-rust = {
-      url = "github:greshake/i3status-rust";
+      url = "github:greshake/i3status-rust/5564c9c131ec2c34d8ce15f7b5cd1edde6a47c33";
       flake = false;
     };
 

@@ -35,7 +35,7 @@ let
     cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
       name = "${name}-vendor.tar.gz";
       inherit src;
-      outputHash = "TnSz3bVDHd0RQ/mIVHQ06gF6xecXGQ1+Vlwy9nFvHuw=";
+      outputHash = "NOJZLGHDLDvTbuvOfbK0FxrWk0oOs4y/2RBgb44KgQQ=";
     });
   });
 in
