@@ -5,9 +5,6 @@
   home.packages = with pkgs; [
     # A video editor.
     kdenlive
-
-    # A streaming, broadcasting, and screenrecording program.
-    obs-studio
   ];
 
   # Add mpv to the profile.
@@ -64,4 +61,16 @@
     screenshot-format = "png";
     screenshot-png-compression = 9;
   };
+
+  # Enable obs-studio.
+  programs.obs-studio.enable = true;
+
+  # Plugins for obs-studio.
+  programs.obs-studio.plugins = with pkgs; [
+    # An virtual v4l output for obs-studio.
+    obs-v4l2sink
+
+    # A plugin to do screen capture on wlroots-based wayland compositors.
+    obs-wlrobs
+  ];
 }
