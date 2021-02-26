@@ -134,7 +134,7 @@ in
 
     # Colors for the currently focused window.
     focused = rec {
-      border = colorNames.base03;
+      border = background;
       background = colorNames.violet;
       text = colorNames.base2;
       indicator = colorNames.magenta;
@@ -143,7 +143,7 @@ in
 
     # Colors for an inactive window within the currently focused container.
     focusedInactive = rec {
-      border = colorNames.base03;
+      border = background;
       background = colorNames.base0;
       text = colorNames.base02;
       indicator = colorNames.cyan;
@@ -155,7 +155,7 @@ in
 
     # Colors for unfocused windows.
     unfocused = rec {
-      border = colorNames.base03;
+      border = background;
       background = colorNames.base02;
       text = colorNames.base00;
       indicator = colorNames.cyan;
@@ -164,7 +164,7 @@ in
 
     # Colors for urgent windows with activity.
     urgent = rec {
-      border = colorNames.base03;
+      border = background;
       background = colorNames.red;
       text = colorNames.base2;
       indicator = colorNames.magenta;
