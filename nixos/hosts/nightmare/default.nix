@@ -4,7 +4,12 @@
 }: {
   imports = [
     ./disks.nix
+
+    ../../boot
   ];
+
+  # Copy kernels and initrds to the boot partitions.
+  boot.loader.grub.copyKernels = true;
 
   # set the host id for nightmare.
   # this is needed for zfs.
