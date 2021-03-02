@@ -206,6 +206,26 @@
           inherit username homeDirectory system pkgs;
         };
 
+      mkOSHost =
+        { host
+        , system ? "x86_64-linux"
+        , nixpkgs ? nixpkgs-stable
+        }:
+        let
+          hostfile = ./nixos/hosts + "/${host}";
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            ({
+              _module.args.inputs = defaultInputs;
+              _module.args.system = system;
+            })
+            hostfile
+          ];
+        };
+
       devShells = flake-utils.lib.eachDefaultSystem (
         system:
         let
@@ -236,6 +256,10 @@
     {
       homeManagerConfigurations = {
         nightmare = mkHost { host = "nightmare"; };
+      };
+
+      nixosConfigurations = {
+        nightmare = mkOSHost { host = "nightmare"; };
       };
     } // devShells;
 }
