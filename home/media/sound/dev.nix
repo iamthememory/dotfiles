@@ -73,7 +73,6 @@ in
     setbfree
     sorcer
     speech-denoiser
-    sunvox
     swh_lv2
     synthv1
     xsynth_dssi
