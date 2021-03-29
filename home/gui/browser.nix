@@ -48,9 +48,6 @@ in
   # Enable Chromium.
   programs.chromium.enable = true;
 
-  # Enable the binary Google Chrome for testing and DRM purposes.
-  programs.google-chrome.enable = true;
-
   # Enable our extensions for all Chrome-like browsers.
   programs.brave.extensions = extensions;
   programs.chromium.extensions = extensions;
