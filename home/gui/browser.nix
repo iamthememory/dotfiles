@@ -54,9 +54,6 @@ in
   # Enable our extensions for all Chrome-like browsers.
   programs.brave.extensions = extensions;
   programs.chromium.extensions = extensions;
-  programs.google-chrome-beta.extensions = extensions;
-  programs.google-chrome-dev.extensions = extensions;
-  programs.google-chrome.extensions = extensions;
 
   # Set Chromium as the default browser.
   xdg.mimeApps.defaultApplications =

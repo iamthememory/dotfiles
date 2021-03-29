@@ -39,9 +39,6 @@ in
   # NOTE: These will only do anything if the applicable browser is also
   # enabled.
   programs.chromium.extensions = [ browserpassChromeID ];
-  programs.google-chrome.extensions = [ browserpassChromeID ];
-  programs.google-chrome-beta.extensions = [ browserpassChromeID ];
-  programs.google-chrome-dev.extensions = [ browserpassChromeID ];
   programs.firefox.extensions =
     let
       inherit (inputs.nur.nur.repos.rycee) firefox-addons;
