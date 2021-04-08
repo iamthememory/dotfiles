@@ -1,6 +1,10 @@
 # Sound settings for NixOS.
 { ...
 }: {
+  imports = [
+    ./pipewire.nix
+  ];
+
   # Extra sysctl options.
   boot.kernel.sysctl = {
     # Let the high-precision event timer do up to 2048 Hz.
