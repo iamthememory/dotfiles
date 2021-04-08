@@ -32,7 +32,7 @@
   # Pet snippets.
   programs.pet.snippets = [
     {
-      command = "cd ~/dotfiles && nix build \".#homeManagerConfigurations.$(hostname).activationPackage\" && ./result/activate";
+      command = "cd ~/dotfiles && nix build \".#homeConfigurations.$(whoami)@$(hostname).activationPackage\" && ./result/activate";
       description = "Build and activate a new home-manager generation for the current host";
     }
     {

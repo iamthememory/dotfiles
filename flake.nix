@@ -291,8 +291,8 @@
       );
     in
     {
-      homeManagerConfigurations = {
-        nightmare = mkHost { host = "nightmare"; };
+      homeConfigurations = {
+        "iamthememory@nightmare" = mkHost { host = "nightmare"; };
       };
 
       nixosConfigurations = {
