@@ -242,10 +242,43 @@
         {
           # Ensure the environment has git-crypt and a nix that can build flakes.
           devShell = with pkgs; mkShell {
-            buildInputs = [
-              gitAndTools.git-crypt
-              nixFlakes
-            ];
+            buildInputs =
+              let
+                nixos-rebuild = pkgs.nixos-rebuild.override {
+                  nix = nixFlakes;
+                };
+
+                # A script to open the NixOS manual for the nixos-unstable
+                # commit currently in the flake.
+                # This shouldn't be needed for stable, since stable doesn't
+                # change much and so the manual on the Nix website should be up
+                # to date.
+                nixos-unstable-manual =
+                  let
+                    inherit (nixos-unstable.htmlDocs) nixosManual;
+
+                    # The path to the manual index.
+                    manualPath = "${nixosManual}/share/doc/nixos/index.html";
+                  in
+                  pkgs.writeShellScriptBin "nixos-unstable-manual" ''
+                    if [ ! -z "$BROWSER" ]
+                    then
+                      # Open the manual index in the browser in the environment.
+                      exec "$BROWSER" "${manualPath}"
+                    else
+                      # Don't try to find a backup browser, just dump the index
+                      # of the manual.
+                      echo "\\$BROWSER not specified"
+                      echo "NixOS manual index: ${manualPath}"
+                    fi
+                  '';
+              in
+              [
+                gitAndTools.git-crypt
+                nixFlakes
+                nixos-rebuild
+                nixos-unstable-manual
+              ];
 
             # Make sure nix knows to enable flakes.
             NIX_CONFIG = "experimental-features = nix-command flakes";
