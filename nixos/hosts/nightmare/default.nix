@@ -20,6 +20,7 @@
     ../../network/wireless.nix
     ../../nix.nix
     ../../printing.nix
+    ../../sound
     ../../utils.nix
     ../../virt/compat.nix
     ../../virt/docker.nix
