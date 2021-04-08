@@ -31,6 +31,9 @@
   # Wine related functions.
   wine = import ./wine { lib = pkgs.lib; };
 
+  # Network-related functions.
+  network = import ./network.nix { lib = pkgs.lib; };
+
   # Ensure a symlink exists or create one on profile activation.
   # - lib: home-manager's lib, for DAG functions.
   # - target: Where the symlink should point.
