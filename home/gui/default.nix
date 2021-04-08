@@ -6,7 +6,7 @@
 , ...
 }: {
   imports = [
-    ./browser.nix
+    ./browser
     ./display.nix
     ./dunst.nix
     ./fonts.nix

@@ -4,53 +4,20 @@
 , ...
 }:
 let
-  # The Chromium and Chrome extensions to install.
-  extensions = [
-    # Adblock Plus.
-    "cfhdojbkjhnklbpkdaibdccddilifddb"
-
-    # Stylus.
-    "clngdbkpkpeebahjckkjfobafhncgmne"
-
-    # Vimium.
-    "dbepggeogbaibhgnhhndojpepiihcmeb"
-
-    # Tampermonkey.
-    "dhdgffkkebhmkfjojejmpbldmpobfkfo"
-
-    # Downloads Router.
-    "fgkboeogiiklpklnjgdiaghaiehcknjo"
-
-    # HTTPS Everywhere.
-    "gcbommkclmclpchllfjekcdonpmejbdp"
-
-    # Google Docs Offline.
-    "ghbmnnjooekpmoecnnnilnnbdlolhkhi"
-
-    # Allow Right-Click.
-    "hompjdfbfmmmgflfjdlnkohcplmboaeo"
-
-    # Looper for YouTube.
-    "iggpfpnahkgpnindfkdncknoldgnccdg"
-  ];
-
   # The home profile binary directory.
   profileBin = "${config.home.profileDirectory}/bin";
 in
 {
+  imports = [
+    ./chrome.nix
+  ];
+
   # Use Chromium as the default browser.
   home.sessionVariables.BROWSER = "${profileBin}/chromium-browser";
 
   # Use Chromium as the incognito browser.
   home.sessionVariables.BROWSER_PRIVATE =
     "${profileBin}/chromium-browser --incognito";
-
-  # Enable Chromium.
-  programs.chromium.enable = true;
-
-  # Enable our extensions for all Chrome-like browsers.
-  programs.brave.extensions = extensions;
-  programs.chromium.extensions = extensions;
 
   # Set Chromium as the default browser.
   xdg.mimeApps.defaultApplications =
