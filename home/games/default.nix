@@ -42,10 +42,6 @@ in
       # A build of WINE using Lutris patches.
       lutrisWine
 
-      # A tool for running games and other binaries under the same FHS environment
-      # used for Steam.
-      steam-run
-
       # A way of easily applying libraries to WINE prefixes.
       winetricks
     ];
