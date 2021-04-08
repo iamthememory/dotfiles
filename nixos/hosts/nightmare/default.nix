@@ -5,6 +5,7 @@
   imports = [
     ./disks.nix
 
+    ../../base.nix
     ../../boot
   ];
 
