@@ -109,6 +109,11 @@ in
     # binaries to run outside of a FHS-y chroot.
     patchelf
 
+    # A tool for inspecting binaries, including lddtree, an ldd-like tool that
+    # shows what's loaded as a tree, without actually loading the binary and
+    # potentially allowing arbitrary code execution like ldd.
+    pax-utils
+
     # A modern ps-like tool written in Rust.
     procs
 
