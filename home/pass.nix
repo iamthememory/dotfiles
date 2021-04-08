@@ -38,7 +38,7 @@ in
   programs.chromium.extensions = [ browserpassChromeID ];
   programs.firefox.extensions =
     let
-      inherit (inputs.nur.nur.repos.rycee) firefox-addons;
+      inherit (inputs.nur.repos.rycee) firefox-addons;
     in
     [ firefox-addons.browserpass ];
 

@@ -173,7 +173,7 @@
           stable = importPkgs nixos-stable;
           master = importPkgs nixpkgs-master;
 
-          nur = import nixpkgs {
+          nur = (import nixpkgs {
             inherit system;
 
             config = import nixpkgs-config;
@@ -182,7 +182,7 @@
               inputs.nur.overlay
               (import overlay)
             ];
-          };
+          }).nur;
 
           importedInputs = unimportedInputs // {
             inherit unstable stable master nur nixpkgs-config overlay;
