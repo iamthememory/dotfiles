@@ -10,6 +10,7 @@ in
 {
   imports = [
     ./chrome.nix
+    ./firefox.nix
   ];
 
   # Use Chromium as the default browser.
