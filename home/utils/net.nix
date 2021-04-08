@@ -25,7 +25,7 @@
 
     # Various standard network programs.
     inetutils
-    iproute
+    iproute2
     iputils
 
     # Tools for uploading/downloading files from/to MEGA.
