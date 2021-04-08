@@ -10,6 +10,7 @@
     ../../boot
     ../../docs.nix
     ../../network
+    ../../network/wireless.nix
     ../../nix.nix
     ../../printing.nix
     ../../utils.nix
