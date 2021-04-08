@@ -112,7 +112,7 @@ in
         set -euo pipefail
 
         # Sync the unpatched WINE and delete anything else.
-        ${rsync} -aHAXS --delete "$1/" "$2/"
+        ${rsync} -aHAXSc --delete "$1/" "$2/"
 
         # Set the new WINE ownership to root.
         ${chown} -hR root:root "$2"
