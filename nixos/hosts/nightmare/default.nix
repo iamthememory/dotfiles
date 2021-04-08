@@ -22,6 +22,7 @@
     ../../printing.nix
     ../../utils.nix
     ../../virt/compat.nix
+    ../../virt/docker.nix
     ../../zfs.nix
   ];
 
