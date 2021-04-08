@@ -1,5 +1,5 @@
 # NixOS settings for nightmare.
-{ inputs
+{ pkgs
 , ...
 }: {
   imports = [
