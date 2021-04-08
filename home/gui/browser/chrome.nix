@@ -28,6 +28,9 @@ let
     # Allow Right-Click.
     "hompjdfbfmmmgflfjdlnkohcplmboaeo"
 
+    # Tab Session Manager.
+    "iaiomicjabeggjcfkbimgmglanimpnae"
+
     # Looper for YouTube.
     "iggpfpnahkgpnindfkdncknoldgnccdg"
   ];
