@@ -6,6 +6,7 @@
     ./disks.nix
 
     ../../base.nix
+    ../../bluetooth.nix
     ../../boot
     ../../docs.nix
     ../../network
