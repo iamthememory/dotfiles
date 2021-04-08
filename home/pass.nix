@@ -1,6 +1,7 @@
 # Configure pass.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -26,14 +27,10 @@ in
       chromeEnabled = programs.google-chrome.enable
         || programs.google-chrome-beta.enable
         || programs.google-chrome-dev.enable;
-
-      # NOTE: I'm not including vivaldi because there's no option in home-manager
-      # to enable vivaldi.
-      chrome = if chromeEnabled then [ "chrome" ] else [ ];
-      chromium = if programs.chromium.enable then [ "chromium" ] else [ ];
-      firefox = if programs.firefox.enable then [ "firefox" ] else [ ];
     in
-    chrome ++ chromium ++ firefox;
+    (lib.optional chromeEnabled "chrome")
+    ++ (lib.optional programs.chromium.enable "chromium")
+    ++ (lib.optional programs.firefox.enable "firefox");
 
   # Enable the browserpass extension for any browsers that're enabled.
   # NOTE: These will only do anything if the applicable browser is also
