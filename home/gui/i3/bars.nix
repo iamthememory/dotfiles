@@ -315,9 +315,6 @@ in
       {
         block = "speedtest";
 
-        # Show units in bytes.
-        bytes = true;
-
         # Update every 30 minutes.
         interval = 30 * 60;
       }
