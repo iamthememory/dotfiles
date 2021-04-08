@@ -235,6 +235,7 @@
             config = import nixpkgs-config;
 
             overlays = [
+              inputs.nur.overlay
               (import overlay)
             ];
           };
@@ -278,6 +279,7 @@
                 nixFlakes
                 nixos-rebuild
                 nixos-unstable-manual
+                nur.repos.rycee.firefox-addons-generator
               ];
 
             # Make sure nix knows to enable flakes.
