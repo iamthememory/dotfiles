@@ -9,6 +9,7 @@
     ../../bluetooth.nix
     ../../boot
     ../../docs.nix
+    ../../games
     ../../gui.nix
     ../../network
     ../../network/networkmanager.nix
