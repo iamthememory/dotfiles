@@ -4,6 +4,9 @@
 }: {
   imports = [
     ./disks.nix
+    ./hardware.nix
+    ./nix.nix
+    ./users.nix
 
     ../../base.nix
     ../../bluetooth.nix
