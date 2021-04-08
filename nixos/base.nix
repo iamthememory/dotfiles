@@ -42,6 +42,10 @@
   # from the same nixpkgs convenient for testing things.
   environment.etc."nixpkgs".source = "${pkgs.path}";
 
+  # Enable all firmware.
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
+
   # Extra PAM login limits.
   security.pam.loginLimits = [
     # Allow users in the wheel group to have more files open.
