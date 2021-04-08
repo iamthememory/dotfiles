@@ -12,6 +12,7 @@
     ../../nix.nix
     ../../printing.nix
     ../../utils.nix
+    ../../zfs.nix
   ];
 
   # Copy kernels and initrds to the boot partitions.
