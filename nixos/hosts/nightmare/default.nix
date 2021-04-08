@@ -23,6 +23,7 @@
     ../../utils.nix
     ../../virt/compat.nix
     ../../virt/docker.nix
+    ../../virt/libvirt.nix
     ../../zfs.nix
   ];
 
