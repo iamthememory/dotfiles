@@ -205,6 +205,9 @@ in
       # Don't redirect context to another TTY.
       context.redirect = "";
 
+      # Show up to 8 bytes of opcodes next to disassembly.
+      context.show_opcodes_size = 8;
+
       # Dereference registers.
       context.show_registers_raw = false;
 
