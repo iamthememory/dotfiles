@@ -83,7 +83,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "nixos-unstable"
         ]
       },
       "locked": {
@@ -166,23 +166,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-master": {
-      "locked": {
-        "lastModified": 1617224280,
-        "narHash": "sha256-0frDPo55rJP0RP/Y0kR0U1qty00JxHusQlOpCmDJgK4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ba6679206fd277020bf2a04dad974ff12eb2c734",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-stable": {
+    "nixos-stable": {
       "locked": {
         "lastModified": 1617146108,
         "narHash": "sha256-Y7ThcrI5BNbXEc8KAYlqcAYAtAl9btqcFaqzLCsslkw=",
@@ -198,7 +182,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-unstable": {
+    "nixos-unstable": {
       "locked": {
         "lastModified": 1617082367,
         "narHash": "sha256-W0cQPGjc4IVzryaGycuoS8KZkXafS1P23w/fcKLoD5Y=",
@@ -210,6 +194,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1617224280,
+        "narHash": "sha256-0frDPo55rJP0RP/Y0kR0U1qty00JxHusQlOpCmDJgK4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ba6679206fd277020bf2a04dad974ff12eb2c734",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -241,9 +241,9 @@
         "keystone-engine": "keystone-engine",
         "lutris-6_0": "lutris-6_0",
         "mutt-colors-solarized": "mutt-colors-solarized",
+        "nixos-stable": "nixos-stable",
+        "nixos-unstable": "nixos-unstable",
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "tinyfugue-patched": "tinyfugue-patched",
         "vim-solarized8": "vim-solarized8",

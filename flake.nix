@@ -3,8 +3,8 @@
 
   inputs = {
     # Nix packages.
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
+    nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
     # The Nix user repository overlay.
@@ -13,7 +13,7 @@
     # Home-manager.
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixos-unstable";
     };
 
     # Various flake utilities.
@@ -110,8 +110,8 @@
 
   outputs =
     { self
-    , nixpkgs-stable
-    , nixpkgs-unstable
+    , nixos-stable
+    , nixos-unstable
     , nixpkgs-master
     , home-manager
     , flake-utils
@@ -124,15 +124,15 @@
           # home-manager.
           blacklist = [
             "self"
-            "nixpkgs-stable"
-            "nixpkgs-unstable"
+            "nixos-stable"
+            "nixos-unstable"
             "nixpkgs-master"
             "nur"
           ];
 
           notBlacklisted = n: v: !(builtins.elem n blacklist);
         in
-        nixpkgs-stable.lib.filterAttrs notBlacklisted inputs;
+        nixos-stable.lib.filterAttrs notBlacklisted inputs;
 
       hosts = [
         "nightmare"
@@ -152,7 +152,7 @@
         , homeDirectory ? "/home/${username}"
         , system ? "x86_64-linux"
         , unimportedInputs ? defaultInputs
-        , nixpkgs ? nixpkgs-unstable
+        , nixpkgs ? nixos-unstable
         ,
         }:
         let
@@ -169,8 +169,8 @@
           };
 
           pkgs = importPkgs nixpkgs;
-          unstable = importPkgs nixpkgs-unstable;
-          stable = importPkgs nixpkgs-stable;
+          unstable = importPkgs nixos-unstable;
+          stable = importPkgs nixos-stable;
           master = importPkgs nixpkgs-master;
 
           nur = import nixpkgs {
@@ -209,7 +209,7 @@
       mkOSHost =
         { host
         , system ? "x86_64-linux"
-        , nixpkgs ? nixpkgs-stable
+        , nixpkgs ? nixos-unstable
         }:
         let
           hostfile = ./nixos/hosts + "/${host}";
@@ -229,7 +229,7 @@
       devShells = flake-utils.lib.eachDefaultSystem (
         system:
         let
-          pkgs = import nixpkgs-unstable {
+          pkgs = import nixos-unstable {
             inherit system;
 
             config = import nixpkgs-config;
