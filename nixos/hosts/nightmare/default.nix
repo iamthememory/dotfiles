@@ -6,6 +6,7 @@
     ./disks.nix
     ./hardware.nix
     ./nix.nix
+    ./secrets
     ./users.nix
 
     ../../base.nix
