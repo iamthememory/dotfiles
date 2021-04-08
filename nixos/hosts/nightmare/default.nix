@@ -9,6 +9,7 @@
     ../../bluetooth.nix
     ../../boot
     ../../docs.nix
+    ../../gui.nix
     ../../network
     ../../network/networkmanager.nix
     ../../network/wireless.nix
