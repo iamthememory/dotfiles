@@ -219,7 +219,11 @@
 
           modules = [
             ({
-              _module.args.inputs = defaultInputs;
+              _module.args.inputs = defaultInputs // {
+                inherit nixpkgs-config overlay;
+                flake = self;
+                lib = import lib { pkgs = nixpkgs; };
+              };
               _module.args.system = system;
             })
             hostfile
