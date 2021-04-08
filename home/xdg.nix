@@ -24,6 +24,9 @@ in
   # these like it does with the basic xdg directories.
   xdg.userDirs.enable = true;
 
+  # Create any directories which are missing.
+  xdg.userDirs.createDirectories = true;
+
   xdg.userDirs.desktop = "${homeDirectory}";
   xdg.userDirs.documents = "${homeDirectory}/src";
   xdg.userDirs.download = "${homeDirectory}/Downloads";
