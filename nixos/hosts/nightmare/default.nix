@@ -8,6 +8,7 @@
     ../../base.nix
     ../../boot
     ../../docs.nix
+    ../../network
     ../../nix.nix
     ../../utils.nix
   ];
