@@ -280,8 +280,6 @@
               in
               [
                 gitAndTools.git-crypt
-                nixFlakes
-                nixos-rebuild
                 nixos-unstable-manual
                 nur.repos.rycee.firefox-addons-generator
               ];

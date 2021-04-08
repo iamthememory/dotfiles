@@ -35,10 +35,6 @@ in
   home.language.base = "en_US.UTF-8";
 
   home.packages = with pkgs; [
-    # FIXME: This should be replaced with regular nix once flakes make it into
-    # stable.
-    nixFlakes
-
     # Ensure systemctl, etc. is available.
     systemd
   ];
