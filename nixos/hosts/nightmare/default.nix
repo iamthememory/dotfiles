@@ -8,6 +8,7 @@
     ../../base.nix
     ../../boot
     ../../docs.nix
+    ../../utils.nix
   ];
 
   # Copy kernels and initrds to the boot partitions.
