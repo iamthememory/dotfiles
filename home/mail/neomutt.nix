@@ -20,26 +20,57 @@ in
   programs.neomutt.enable = true;
 
   # The keybindings in neomutt.
-  programs.neomutt.binds =
-    let
-      # Make a keybinding from the given values.
-      mkBind = m: k: a: {
-        action = a;
-        key = k;
-        map = m;
-      };
+  programs.neomutt.binds = [
+    # Reply to a group or mailing list.
+    {
+      action = "group-reply";
+      key = "R";
+      map = [
+        "index"
+        "pager"
+      ];
+    }
 
-      # Make bindings for each of the modes given.
-      # This is needed since home-manager doesn't allow us to specify multiple
-      # modes for a single binding like `index,pager` like (neo)mutt does.
-      repBind = ms: k: a: map (m: mkBind m k a) ms;
-    in
-    [
-    ] ++ (repBind [ "index" "pager" ] "R" "group-reply")
-    ++ (repBind [ "index" "pager" ] "\\cK" "sidebar-prev")
-    ++ (repBind [ "index" "pager" ] "\\cJ" "sidebar-next")
-    ++ (repBind [ "index" "pager" ] "\\cO" "sidebar-open")
-    ++ (repBind [ "index" "pager" ] "Z" "view-raw-message");
+    # Move to the previous box in the sidebar.
+    {
+      action = "sidebar-prev";
+      key = "\\cK";
+      map = [
+        "index"
+        "pager"
+      ];
+    }
+
+    # Move to the next box in the sidebar.
+    {
+      action = "sidebar-next";
+      key = "\\cJ";
+      map = [
+        "index"
+        "pager"
+      ];
+    }
+
+    # Open the current box highlighted in the sidebar.
+    {
+      action = "sidebar-open";
+      key = "\\cO";
+      map = [
+        "index"
+        "pager"
+      ];
+    }
+
+    # View the raw contents of a message.
+    {
+      action = "view-raw-message";
+      key = "Z";
+      map = [
+        "index"
+        "pager"
+      ];
+    }
+  ];
 
   # Check for new mail every two minutes.
   programs.neomutt.checkStatsInterval = 120;
@@ -131,30 +162,36 @@ in
     '';
 
   # Macros for neomutt.
-  programs.neomutt.macros =
-    let
-      # A convenience function to make a macro from the given arguments.
-      mkMacro = m: k: a: {
-        action = a;
-        key = k;
-        map = m;
-      };
-
-      # Make a macro for each of the given modes.
-      # This is needed since home-manager doesn't allow us to specify multiple
-      # modes for a single macro like `index,pager` like (neo)mutt does.
-      repMacro = ms: k: a: map (m: mkMacro m k a) ms;
-    in
-    [
+  programs.neomutt.macros = [
       # Toggle the sidebar's visibility and refresh/redraw the screen.
-      (mkMacro "index" "B" "<enter-command>toggle sidebar_visible<enter><refresh>")
-      (mkMacro "pager" "B" "<enter-command>toggle sidebar_visible<enter><redraw-screen>")
+      {
+        action = "<enter-command>toggle sidebar_visible<enter><refresh>";
+        key = "B";
+        map = [ "index" ];
+      }
+      {
+        action = "<enter-command>toggle sidebar_visible<enter><redraw-screen>";
+        key = "B";
+        map = [ "pager" ];
+      }
 
       # Show the URLs in the current message.
-      (mkMacro "pager" ",e" "<pipe-message>${profileBin}/extract_url<return>")
-    ] ++
-    # Add the from address to abook.
-    (repMacro [ "index" "pager" ] "A" "<pipe-message>${profileBin}/abook --add-email<return>");
+      {
+        action = "<pipe-message>${profileBin}/extract_url<return>";
+        key = ",e";
+        map = [ "pager" ];
+      }
+
+      # Add the from address to abook.
+      {
+        action = "<pipe-message>${profileBin}/abook --add-email<return>";
+        key = "A";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+    ];
 
   # Neomutt settings.
   programs.neomutt.settings = {
