@@ -13,20 +13,20 @@ in
     ./firefox.nix
   ];
 
-  # Use Chromium as the default browser.
-  home.sessionVariables.BROWSER = "${profileBin}/chromium-browser";
+  # Use Firefox as the default browser.
+  home.sessionVariables.BROWSER = "${profileBin}/firefox";
 
-  # Use Chromium as the incognito browser.
+  # Use Firefox as the incognito browser.
   home.sessionVariables.BROWSER_PRIVATE =
-    "${profileBin}/chromium-browser --incognito";
+    "${profileBin}/firefox --private-window";
 
-  # Set Chromium as the default browser.
+  # Set Firefox as the default browser.
   xdg.mimeApps.defaultApplications =
     let
       inherit (lib) genAttrs;
 
       # The Desktop entry to use.
-      browser = "chromium-browser.desktop";
+      browser = "firefox.desktop";
 
       # All MIMEs to set.
       mimes = [
