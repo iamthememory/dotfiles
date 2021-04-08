@@ -1,5 +1,6 @@
 # Disk configuration for nightmare.
 { config
+, lib
 , ...
 }:
 let
@@ -118,6 +119,16 @@ in
     in
     builtins.listToAttrs (builtins.map mkLuksEntry devices);
 
+  # Configuration for fwupd's UEFI support.
+  # FIXME: Remove this once NixOS fixes that it puts the UEFI partition info in
+  # fwupd/uefi.conf instead of fwupd/uefi_capsule.conf.
+  environment.etc."fwupd/uefi_capsule.conf" = lib.mkForce {
+    text = lib.generators.toINI { } {
+      # Use the first EFI mount point for fwupd.
+      uefi.OverrideESPMountPoint = "/boot0/efi";
+    };
+  };
+
   # Boot filesystems.
   fileSystems."/boot0" = mkExt4 "a1efbceb-f1ae-493a-ab75-6765a8a1961b";
   fileSystems."/boot0/efi" = mkVfat "7EC6-BF71";
@@ -159,14 +170,6 @@ in
   # check zfS pools.
   fileSystems."/rpool" = mkZFS "rpool";
   fileSystems."/spool" = mkZFS "spool";
-
-  # Swap partitions.
-  swapDevices = [
-    # spool/swap.
-    {
-      device = "/dev/disk/by-uuid/08352cc8-8e19-4a59-a760-a201ee0ff3de";
-    }
-  ];
 
   # Znapzend ZFS snapshotting configuration for different ZFS datasets.
   services.znapzend.zetup =
@@ -239,7 +242,20 @@ in
         "spool/nix/var"
         "spool/shared/home"
         "spool/shared/opt/ffxiv"
+        "spool/shared/opt/lutris"
+        "spool/shared/opt/steam"
       ];
     in
     builtins.listToAttrs (builtins.map mkZetup datasets);
+
+  # Swap partitions.
+  swapDevices = [
+    # spool/swap.
+    {
+      device = "/dev/disk/by-uuid/08352cc8-8e19-4a59-a760-a201ee0ff3de";
+    }
+  ];
+
+  # Use ZFS as the storage backend for Docker.
+  virtualisation.docker.storageDriver = "zfs";
 }
