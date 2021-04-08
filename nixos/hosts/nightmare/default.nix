@@ -10,6 +10,7 @@
     ../../docs.nix
     ../../network
     ../../nix.nix
+    ../../printing.nix
     ../../utils.nix
   ];
 
