@@ -48,21 +48,6 @@ in
   home.sessionVariables.SSH_ASKPASS = askpass;
   home.sessionVariables.SUDO_ASKPASS = askpass;
 
-  # Enable GNOME keyring.
-  services.gnome-keyring.enable = true;
-
-  # Enable all GNOME keyring components.
-  services.gnome-keyring.components = [
-    # PKCS11 certificate storage.
-    "pkcs11"
-
-    # Secrets (passwords and tokens) storage.
-    "secrets"
-
-    # SSH key storage.
-    "ssh"
-  ];
-
   # Enable keybase's FUSE mount.
   services.kbfs.enable = true;
 
