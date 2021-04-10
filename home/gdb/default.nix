@@ -349,6 +349,15 @@ in
       # Here, we load them from gef-extras.
       pcustom.struct_path = "${gef-extras}/structs";
 
+      # The color for structure names.
+      pcustom.structure_name = "bold blue";
+
+      # The color for attribute sizes.
+      pcustom.structure_size = "green";
+
+      # The color for attribute types.
+      pcustom.structure_type = "bold red";
+
       # Process search settings.
 
       # The command to run to get process information.
