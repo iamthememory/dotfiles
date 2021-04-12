@@ -34,11 +34,11 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1617631617,
-        "narHash": "sha256-PARRCz55qN3gy07VJZIlFeOX420d0nGF0RzGI/9hVlw=",
+        "lastModified": 1618217525,
+        "narHash": "sha256-WGrhVczjXTiswQaoxQ+0PTfbLNeOQM6M36zvLn78AYg=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b2c27d1a81b0dc266270fa8aeecebbd1807fc610",
+        "rev": "c6169a2772643c4a93a0b5ac1c61e296cba68544",
         "type": "github"
       },
       "original": {
@@ -168,11 +168,11 @@
     },
     "nixos-stable": {
       "locked": {
-        "lastModified": 1618149891,
-        "narHash": "sha256-Sz3DzI1k49Puq+F5KRBsaN3gRXHDzCTG6AwK29Znw0M=",
+        "lastModified": 1618170470,
+        "narHash": "sha256-6l43B/yy3dxAb3OaF20S0le83Uy+/ouUCXuJrIQP1Gs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a7ff7a57c96588fd89370568b72751dd15d24e72",
+        "rev": "d170a7bc3971f6bf6499c549b046e9b3d3db3613",
         "type": "github"
       },
       "original": {
@@ -200,11 +200,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1618213181,
-        "narHash": "sha256-PYzqW8h3b//MhAx4SnUHs51zAZpgGa0Mzs4375yJ3xE=",
+        "lastModified": 1618254733,
+        "narHash": "sha256-PAnOs5ytQgapytd8h4dxewHZiynwYRoJpg12xc/M0oQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2111e0cde85cddae111005b6de881a6d9180b245",
+        "rev": "c63de9b098512694c862257b71b51709cbb3183e",
         "type": "github"
       },
       "original": {
@@ -216,11 +216,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1618213923,
-        "narHash": "sha256-XnKChk/rp7NkMtOMcR9SVs+kZxwLKgUHvZYeXT1cHnU=",
+        "lastModified": 1618251830,
+        "narHash": "sha256-VsujEkndl/1sp21IATlLfVlMsOEkjmyyQw52ODyeLl4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d46eede22fb1daaa7b94bfe6114c2b7939735ee2",
+        "rev": "2eb07980125a79330c18b50186161c5c83d5ea5d",
         "type": "github"
       },
       "original": {
