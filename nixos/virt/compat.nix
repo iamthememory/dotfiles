@@ -25,10 +25,6 @@
         "riscv32-linux"
         "riscv64-linux"
 
-        # Windows architectures.
-        "i686-windows"
-        "x86_64-windows"
-
         # Webassembly.
         "wasm32-wasi"
         "wasm64-wasi"
