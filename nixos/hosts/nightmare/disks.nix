@@ -243,7 +243,6 @@ in
         "spool/shared/home"
         "spool/shared/opt/ffxiv"
         "spool/shared/opt/lutris"
-        "spool/shared/opt/steam"
       ];
     in
     builtins.listToAttrs (builtins.map mkZetup datasets);
