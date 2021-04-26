@@ -61,17 +61,6 @@
       zen-fox
     ];
 
-  # The Firefox package to use.
-  programs.firefox.package =
-    let
-      # Overridden options for Firefox.
-      firefox-unwrapped = pkgs.firefox-unwrapped.override {
-        # Enable DRM with widevine by default.
-        drmSupport = true;
-      };
-    in
-    pkgs.wrapFirefox firefox-unwrapped { };
-
   # Settings for the default Firefox profile.
   programs.firefox.profiles.default.settings = {
     # Disable the warning on accessing about:config.
