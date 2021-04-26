@@ -15,6 +15,7 @@
     ./i3
     ./input.nix
     ./locker.nix
+    ./st
   ];
 
   home.packages = with pkgs; [
