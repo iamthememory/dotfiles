@@ -10,10 +10,8 @@
   # Run the garbage collector at 05:35 daily, rather than the default 03:15.
   nix.gc.dates = "05:35";
 
-  # Garbage-collect non-active profile generations older than two weeks.
-  # Given that older flake commits can be reliably recreated, this is likely
-  # safe even at shorter periods than this.
-  nix.gc.options = "--delete-older-than 14d";
+  # Garbage-collect non-active profile generations older than a month.
+  nix.gc.options = "--delete-older-than 30d";
 
   # Only build a single package at a time by default.
   nix.maxJobs = 1;
