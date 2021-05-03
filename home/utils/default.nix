@@ -57,7 +57,8 @@ in
     coreutils
 
     # A tool for manipulating CSV files.
-    csvkit
+    # FIXME: Switch this back to unstable when csvkit builds properly.
+    inputs.stable.csvkit
 
     # Tools such as diff, cmp, etc.
     diffutils
