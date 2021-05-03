@@ -100,23 +100,6 @@
         "type": "github"
       }
     },
-    "i3status-rust": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1612933419,
-        "narHash": "sha256-wqtFiY8Y2Ev7K2VJuhPMNj1ad9qoTb1iwYU9/Ja5SSU=",
-        "owner": "greshake",
-        "repo": "i3status-rust",
-        "rev": "5564c9c131ec2c34d8ce15f7b5cd1edde6a47c33",
-        "type": "github"
-      },
-      "original": {
-        "owner": "greshake",
-        "repo": "i3status-rust",
-        "rev": "5564c9c131ec2c34d8ce15f7b5cd1edde6a47c33",
-        "type": "github"
-      }
-    },
     "keystone-engine": {
       "flake": false,
       "locked": {
@@ -237,7 +220,6 @@
         "gef": "gef",
         "gef-extras": "gef-extras",
         "home-manager": "home-manager",
-        "i3status-rust": "i3status-rust",
         "keystone-engine": "keystone-engine",
         "lutris-6_5": "lutris-6_5",
         "mutt-colors-solarized": "mutt-colors-solarized",

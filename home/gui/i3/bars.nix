@@ -17,27 +17,6 @@ let
 
   # Use the solarized dark theme.
   theme = "solarized-dark";
-
-  # Override i3status-rust to build it from the master branch.
-  # FIXME: Remove this and use the version in nixpkgs once
-  # https://github.com/greshake/i3status-rust/pull/972
-  # is in a released version.
-  i3status-rust = pkgs.i3status-rust.overrideAttrs (oldAttrs: rec {
-    version = inputs.i3status-rust.lastModifiedDate;
-    name = "${oldAttrs.pname}-${version}";
-
-    src = inputs.i3status-rust;
-
-    buildInputs = oldAttrs.buildInputs ++ [
-      pkgs.pkgsStatic.openssl
-    ];
-
-    cargoDeps = oldAttrs.cargoDeps.overrideAttrs (lib.const {
-      name = "${name}-vendor.tar.gz";
-      inherit src;
-      outputHash = "NOJZLGHDLDvTbuvOfbK0FxrWk0oOs4y/2RBgb44KgQQ=";
-    });
-  });
 in
 {
   home.packages = with pkgs; [
@@ -56,9 +35,6 @@ in
 
   # Enable i3status-rust.
   programs.i3status-rust.enable = true;
-
-  # Use the updated i3status-rust from master.
-  programs.i3status-rust.package = i3status-rust;
 
   # The configuration for the bottom bar, from left to right.
   programs.i3status-rust.bars.bottom = {
