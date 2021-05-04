@@ -58,7 +58,6 @@ in
   programs.neovim.withNodeJs = true;
 
   # Enable Python support.
-  programs.neovim.withPython = true;
   programs.neovim.withPython3 = true;
 
   # Enable Ruby support.
