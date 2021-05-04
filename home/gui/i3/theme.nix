@@ -6,10 +6,16 @@
 let
   inherit (inputs.lib.solarized) colorNames;
 
-  # The fonts to use below.
-  fonts = [
-    "LiterationMono Nerd Font Mono 9"
-  ];
+  # The font settings to to use below.
+  fonts = {
+    # The names of the fonts to use, in order.
+    names = [
+      "LiterationMono Nerd Font Mono"
+    ];
+
+    # The size of font to use.
+    size = 9.0;
+  };
 in
 {
   imports = [
