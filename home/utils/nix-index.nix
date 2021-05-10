@@ -82,15 +82,7 @@ in
 
   # Handle commands that aren't found with nix-index, showing what packages
   # provide them.
-  # NOTE: These won't have an effect unless bash/zsh are enabled too.
-  # (We disable the regular command-not-found as well.)
-  programs.command-not-found.enable = false;
-  programs.bash.initExtra = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
-  programs.zsh.initExtra = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
+  programs.nix-index.enable = true;
 
   # Update the nix-index cache.
   systemd.user.services.update-nix-index-cache = {
