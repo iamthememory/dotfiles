@@ -47,8 +47,8 @@ in
         mkDiskBlock = name: value: {
           block = "disk_space";
 
-          # The name to display
-          alias = name;
+          # The format to display.
+          format = "${name} {available:6;G*_B} GiB";
 
           # The path to monitor.
           path = value.mountpoint;
@@ -101,7 +101,7 @@ in
           driver = "pulseaudio";
 
           # The format to use.
-          format = "{volume}%";
+          format = "{volume}";
 
           # Don't set the volume above 130% by scrolling.
           # That's still probably too high, but it's better than nothing.
@@ -141,7 +141,7 @@ in
           block = "kdeconnect";
 
           # The format to use.
-          format = "{bat_icon}{bat_charge}% {notif_icon}{notif_count}";
+          format = "{bat_icon}{bat_charge} {notif_icon}{notif_count}";
         }
 
         # Show the battery status.
@@ -149,10 +149,10 @@ in
           block = "battery";
 
           # The format for when charging or discharging.
-          format = "{percentage}% ({time})";
+          format = "{percentage} ({time})";
 
           # The format to use when the battery is full.
-          full_format = "{percentage}%";
+          full_format = "{percentage}";
 
           # The percentages to use for various alert levels.
           info = 75;
@@ -222,7 +222,7 @@ in
         block = "load";
 
         # The format to show.
-        format = "{1m} {5m} {15m}";
+        format = "{1m:4} {5m:4} {15m:4}";
       }
 
       # Show RAM usage.
@@ -234,7 +234,7 @@ in
         clickable = false;
 
         # The format to show.
-        format_mem = "{Mug} ({MUg})/{MTg} GiB";
+        format_mem = "{mem_used:4;G*_B} ({mem_total_used:4;G*_B})/{mem_total:4;G*_B} GiB";
       }
 
       # Show swap usage.
@@ -246,7 +246,7 @@ in
         clickable = false;
 
         # The format to show.
-        format_swap = "{SUg}/{STg} GiB";
+        format_swap = "{swap_used:4;G*_B}/{swap_total:4;G*_B} GiB";
       }
 
       # Show the space used/available on /tmp, since that's usually a tmpfs.
@@ -264,7 +264,7 @@ in
 
         # Show the amount used, rather than the amount available, since this
         # is actually in RAM.
-        format = "{alias} {used}/{total} {unit}";
+        format = "{alias} {used:4;G*_B}/{total:4;G*_B} GiB";
 
         # Warn when we use 10% of /tmp, and alert if we pass 20% used.
         # Since /tmp is usually a tmpfs for small stuff, if it ever passes a
@@ -282,9 +282,9 @@ in
         format =
           let
             # The format to use for the speed.
-            speed = "{speed_up} {speed_down}";
+            speed = "{speed_up:3} {speed_down:3}";
           in
-          "${speed} @ {ssid} ({signal_strength}) {ip}";
+          "${speed} @ {ssid:12^12} ({signal_strength:3}) {ip:15}";
       }
 
       # Show the current network speed and ping.
