@@ -1,5 +1,6 @@
 # Configuration for making and editting music and sound files.
 { config
+, inputs
 , pkgs
 , ...
 }:
@@ -17,7 +18,8 @@ in
 {
   home.packages = with pkgs; [
     # A multi-track recording/audio/MIDI software.
-    ardour
+    # FIXME: Switch this back to unstable when it builds.
+    inputs.stable.ardour
 
     # A basic audio editor.
     audacity
