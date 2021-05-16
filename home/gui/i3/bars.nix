@@ -54,7 +54,7 @@ in
           path = value.mountpoint;
 
           # Use GiB as the unit.
-          unit = "GiB";
+          unit = "GB";
 
           # Use GiB for the warning/alert values.
           alert_absolute = true;
@@ -260,7 +260,7 @@ in
         path = "/tmp";
 
         # Use GiB as the unit.
-        unit = "GiB";
+        unit = "GB";
 
         # Show the amount used, rather than the amount available, since this
         # is actually in RAM.
