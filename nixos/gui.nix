@@ -11,7 +11,7 @@
   security.chromiumSuidSandbox.enable = true;
 
   # Enable GNOME keyring.
-  services.gnome3.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Enable flatpaks.
   services.flatpak.enable = true;

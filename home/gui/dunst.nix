@@ -18,7 +18,7 @@
     dunst
 
     # Ensure Adwaita icons are available.
-    gnome3.adwaita-icon-theme
+    gnome.adwaita-icon-theme
   ];
 
   # Enable dunst for notifications.

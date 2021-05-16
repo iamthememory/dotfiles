@@ -147,7 +147,7 @@ in
     coreutils
 
     # Ensure nautilus is available.
-    gnome3.nautilus
+    gnome.nautilus
 
     # Ensure loginctl is available.
     systemd

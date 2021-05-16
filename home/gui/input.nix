@@ -80,7 +80,7 @@
   xsession.numlock.enable = true;
 
   # Use a size 16 Adwaita cursor.
-  xsession.pointerCursor.package = pkgs.gnome3.adwaita-icon-theme;
+  xsession.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
   xsession.pointerCursor.name = "Adwaita";
   xsession.pointerCursor.size = 16;
 }

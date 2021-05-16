@@ -8,7 +8,7 @@
     gimp
 
     # An image viewer.
-    gnome3.eog
+    gnome.eog
 
     # A vector image editor.
     inkscape

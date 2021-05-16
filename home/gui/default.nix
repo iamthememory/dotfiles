@@ -33,19 +33,19 @@
 
     # The dconf tool for reading the GTK-y settings that aren't stored in
     # program-specific files.
-    gnome3.dconf
+    gnome.dconf
 
     # The GUI dconf editor.
-    gnome3.dconf-editor
+    gnome.dconf-editor
 
     # A tool for managing disks and easily seeing SMART data.
-    gnome3.gnome-disk-utility
+    gnome.gnome-disk-utility
 
     # The nautilus file browser.
-    gnome3.nautilus
+    gnome.nautilus
 
     # The NetworkManager applet.
-    gnome3.networkmanagerapplet
+    gnome.networkmanagerapplet
 
     # A tool for controlling Logitech receivers to, e.g., pair them with new
     # mice and keyboards.

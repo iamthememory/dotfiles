@@ -98,7 +98,7 @@
 
   # Set the default pinentry to curses.
   # NOTE: This should be overridden for hosts with GUIs.
-  # NOTE: The gnome3 pinentry doesn't like to work on non-GNOME desktops.
+  # NOTE: The gnome pinentry doesn't like to work on non-GNOME desktops.
   # The solution is to either keep starting gcr, or shove it into dbus
   # packages (for the host system?), or, easier, just use the gtk2 or qt
   # flavors.
