@@ -1,81 +1,143 @@
 # htop configuration.
-{ pkgs
+{ config
+, pkgs
 , ...
 }: {
   # Manage htop configuration.
   programs.htop.enable = true;
 
-  # Show guest (VM) time in the CPU meters.
-  programs.htop.accountGuestInCpuMeter = true;
+  # Settings for htop.
+  programs.htop.settings =
+    let
+      # Use a custom function to generate the meter settings, since the
+      # home-manager ones don't allow controlling the order.
+      formatMeters = side: meters: {
+        "${side}_meters" = map (x: x.name) meters;
+        "${side}_meter_modes" = map (x: x.mode) meters;
+      };
 
-  # Use the "broken gray" color scheme, which works properly with
-  # solarized-dark.
-  programs.htop.colorScheme = 6;
+      # The meters in the left side of the header.
+      leftMeters = with config.lib.htop; formatMeters "left" [
+        { name = "AllCPUs2"; mode = modes.Bar; }
+        { name = "CPU"; mode = modes.Bar; }
+        { name = "Memory"; mode = modes.Bar; }
+        { name = "Swap"; mode = modes.Bar; }
+        { name = "PressureStallIOFull"; mode = modes.Bar; }
+        { name = "Battery"; mode = modes.Bar; }
+      ];
 
-  # Count CPUs starting at 0.
-  programs.htop.cpuCountFromZero = true;
+      # The meters in the right side of the header.
+      rightMeters = with config.lib.htop; formatMeters "right" [
+        { name = "Hostname"; mode = modes.Text; }
+        { name = "Tasks"; mode = modes.Text; }
+        { name = "LoadAverage"; mode = modes.Text; }
+        { name = "DiskIO"; mode = modes.Text; }
+        { name = "NetworkIO"; mode = modes.Text; }
+        { name = "ZFSARC"; mode = modes.Text; }
+        { name = "ZFSCARC"; mode = modes.Text; }
+        { name = "Uptime"; mode = modes.Text; }
+        { name = "Clock"; mode = modes.Text; }
+      ];
+    in
+    {
+      # Show guest (VM) time in the CPU meters.
+      account_guest_in_cpu_meter = true;
 
-  # Update once a second.
-  programs.htop.delay = 10;
+      # Use the "broken gray" color scheme, which works properly with
+      # solarized-dark.
+      color_scheme = 6;
 
-  # Show a detailed CPU time breakdown in the CPU meters.
-  programs.htop.detailedCpuTime = true;
+      # Count CPUs starting at 0.
+      cpu_count_from_one = false;
 
-  # The fields in the htop table.
-  programs.htop.fields = [
-    "PID"
-    "USER"
-    "NICE"
-    "IO_PRIORITY"
-    "M_SIZE"
-    "M_RESIDENT"
-    "M_SHARE"
-    "STATE"
-    "PERCENT_CPU"
-    "PERCENT_MEM"
-    "TIME"
-    "STARTTIME"
-    "COMM"
-  ];
+      # Update once a second.
+      delay = 10;
 
-  # Don't put a margin between the headers and table to save space.
-  programs.htop.headerMargin = false;
+      # Show a detailed CPU time breakdown in the CPU meters.
+      detailed_cpu_time = true;
 
-  # Hide threads by default.
-  programs.htop.hideKernelThreads = true;
-  programs.htop.hideThreads = true;
-  programs.htop.hideUserlandThreads = true;
+      # Enable using the mouse.
+      enable_mouse = true;
 
-  # Highlight the basename of the running program.
-  programs.htop.highlightBaseName = true;
+      # The fields in the htop table.
+      fields = with config.lib.htop.fields; [
+        PID
+        USER
+        NICE
+        IO_PRIORITY
+        M_SIZE
+        M_RESIDENT
+        M_SHARE
+        STATE
+        PERCENT_CPU
+        PERCENT_MEM
+        TIME
+        STARTTIME
+        COMM
+      ];
 
-  # The meters in the left side of the header.
-  programs.htop.meters.left = [
-    "AllCPUs2"
-    "CPU"
-    "Memory"
-    "Swap"
-    { kind = "Battery"; mode = 1; }
-  ];
+      # Try to find comm in the cmdline when Command is merged.
+      find_comm_in_cmdline = true;
 
-  # The meters in the right side of the header.
-  programs.htop.meters.right = [
-    "Hostname"
-    "Tasks"
-    "LoadAverage"
-    "Uptime"
-    "Clock"
-  ];
+      # Don't put a margin between the headers and table to save space.
+      header_margin = false;
 
-  # SHadow other users' processes by default.
-  programs.htop.shadowOtherUsers = true;
+      # Don't hide the function bar at the bottom.
+      hide_function_bar = 0;
 
-  # Show full program paths.
-  programs.htop.showProgramPath = true;
+      # Hide threads by default.
+      hide_kernel_threads = true;
+      hide_threads = true;
+      hide_userland_threads = true;
 
-  # Show thread names.
-  programs.htop.showThreadNames = true;
+      # Highlight the basename of the running program.
+      highlight_base_name = true;
 
-  # By default, show processes in a tree.
-  programs.htop.treeView = true;
+      # Don't highlight new/dead processes by default, but if enabled, highlight
+      # them for 5 seconds.
+      highlight_changes = false;
+      highlight_changes_delay_secs = 5;
+
+      # Show amounts of memory above about a megabyte in a different color.
+      highlight_megabytes = true;
+
+      # Show threads in a different color.
+      highlight_threads = true;
+
+      # Shadow other users' processes by default.
+      shadow_other_users = true;
+
+      # Show the CPU frequency and usage percentages in the CPU bars.
+      show_cpu_frequency = true;
+      show_cpu_usage = true;
+
+      # Don't merge exe, comm, and cmdline in the Command column.
+      show_merged_command = false;
+
+      # Show full program paths.
+      show_program_path = true;
+
+      # Show thread names.
+      show_thread_names = true;
+
+      # By default when not in tree view, sort by the CPU usage.
+      sort_direction = 1;
+      sort_key = config.lib.htop.fields.PERCENT_CPU;
+
+      # Don't strip exe from cmdline when Command is merged.
+      strip_exe_from_cmdline = false;
+
+      # By default when in tree view, sort by PID.
+      tree_sort_direction = 1;
+      tree_sort_key = config.lib.htop.fields.PID;
+
+      # Enable tree view by default.
+      tree_view = true;
+
+      # Don't always force tree view to sort by PID.
+      tree_view_always_by_pid = false;
+
+      # Don't update process names on every refresh.
+      update_process_names = false;
+    } // leftMeters // rightMeters;
 }
