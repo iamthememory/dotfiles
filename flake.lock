@@ -212,6 +212,23 @@
         "type": "github"
       }
     },
+    "picom": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618322328,
+        "narHash": "sha256-CaSw80lfxopVNydn9f6lbl28agzvMkDCub8dYRv3Q30=",
+        "owner": "yshui",
+        "repo": "picom",
+        "rev": "7ba87598c177092a775d5e8e4393cb68518edaac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yshui",
+        "ref": "next",
+        "repo": "picom",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "cataclysm-dda": "cataclysm-dda",
@@ -227,6 +244,7 @@
         "nixos-unstable": "nixos-unstable",
         "nixpkgs-master": "nixpkgs-master",
         "nur": "nur",
+        "picom": "picom",
         "tinyfugue-patched": "tinyfugue-patched",
         "vim-solarized8": "vim-solarized8",
         "xresources-solarized": "xresources-solarized",

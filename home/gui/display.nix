@@ -76,6 +76,15 @@ in
   # Enable the picom compositor.
   services.picom.enable = true;
 
+  # The picom package to use.
+  # FIXME: Remove this once there's a version in nixpkgs that doesn't have the
+  # weird flickering bug.
+  services.picom.package = pkgs.picom.overrideAttrs (oldAttrs: rec {
+    name = "${oldAttrs.pname}-${version}";
+    version = "${inputs.picom.lastModifiedDate}";
+    src = inputs.picom;
+  });
+
   # Extra options for picom.
   services.picom.extraOptions = ''
     # This forces certain kinds of windows to be considered focus, which helps
