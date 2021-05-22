@@ -133,7 +133,7 @@
 
     # A plugin to show completion function signatures.
     {
-      plugin = echodoc;
+      plugin = echodoc-vim;
       config = ''
         let g:echodoc#enable_at_startup = 1
       '';
