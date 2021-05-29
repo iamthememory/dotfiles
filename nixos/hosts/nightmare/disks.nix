@@ -78,12 +78,14 @@ in
         {
           uuid = "1ad26a74-07b5-45ec-a9e1-5df0aa51d9e0";
           allowDiscards = true;
+          bypassWorkqueues = true;
         }
 
         # SSD ZFS pool spool mirror vdev 1.
         {
           uuid = "58fc5413-b912-449d-96ea-684b6c6eb5ca";
           allowDiscards = true;
+          bypassWorkqueues = true;
         }
 
 
