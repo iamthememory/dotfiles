@@ -3,7 +3,7 @@
 
   inputs = {
     # Nix packages.
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-21.05";
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
@@ -198,6 +198,10 @@
               hostfile
             ];
           };
+
+          # Only update this after checking the changelog after a new
+          # home-manager state version.
+          stateVersion = "21.05";
 
           inherit username homeDirectory system pkgs;
         };

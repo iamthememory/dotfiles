@@ -68,9 +68,6 @@ in
     "/run/current-system/sw/bin"
   ];
 
-  # This must be at least 20.09 to work properly with flakes.
-  home.stateVersion = "20.09";
-
   # Set the configuration for nixpkgs used in home-manager from the top-level
   # config.
   nixpkgs.config = import inputs.nixpkgs-config;

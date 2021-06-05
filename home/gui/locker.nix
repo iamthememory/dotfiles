@@ -1,6 +1,5 @@
 # Settings for X11 screen-locking utilities.
 { config
-, inputs
 , pkgs
 , ...
 }:
@@ -59,12 +58,7 @@ let
     export PATH="${pkgs.coreutils}/bin:${pkgs.xlibs.xprop}/bin:${pkgs.xlibs.xwininfo}/bin"
 
     # Exec xsecurelock.
-    # FIXME: xsecurelock's authproto_pam has been segfaulting ever since glibc
-    # was updated to 2.32.
-    # I can't figure out why or what change in glibc causes ld to segfault when
-    # initing pthreads, so for now I'm pinning this to nixos-20.09 which has
-    # glibc 2.31.
-    exec "${inputs.stable.xsecurelock}/bin/xsecurelock"
+    exec "${pkgs.xsecurelock}/bin/xsecurelock"
   '';
 in
 {
