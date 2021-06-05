@@ -9,34 +9,27 @@
   # Settings for htop.
   programs.htop.settings =
     let
-      # Use a custom function to generate the meter settings, since the
-      # home-manager ones don't allow controlling the order.
-      formatMeters = side: meters: {
-        "${side}_meters" = map (x: x.name) meters;
-        "${side}_meter_modes" = map (x: x.mode) meters;
-      };
-
       # The meters in the left side of the header.
-      leftMeters = with config.lib.htop; formatMeters "left" [
-        { name = "AllCPUs2"; mode = modes.Bar; }
-        { name = "CPU"; mode = modes.Bar; }
-        { name = "Memory"; mode = modes.Bar; }
-        { name = "Swap"; mode = modes.Bar; }
-        { name = "PressureStallIOFull"; mode = modes.Bar; }
-        { name = "Battery"; mode = modes.Bar; }
+      leftMeters = with config.lib.htop; config.lib.htop.leftMeters [
+        (bar "AllCPUs2")
+        (bar "CPU")
+        (bar "Memory")
+        (bar "Swap")
+        (bar "PressureStallIOFull")
+        (bar "Battery")
       ];
 
       # The meters in the right side of the header.
-      rightMeters = with config.lib.htop; formatMeters "right" [
-        { name = "Hostname"; mode = modes.Text; }
-        { name = "Tasks"; mode = modes.Text; }
-        { name = "LoadAverage"; mode = modes.Text; }
-        { name = "DiskIO"; mode = modes.Text; }
-        { name = "NetworkIO"; mode = modes.Text; }
-        { name = "ZFSARC"; mode = modes.Text; }
-        { name = "ZFSCARC"; mode = modes.Text; }
-        { name = "Uptime"; mode = modes.Text; }
-        { name = "Clock"; mode = modes.Text; }
+      rightMeters = with config.lib.htop; config.lib.htop.rightMeters [
+        (text "Hostname")
+        (text "Tasks")
+        (text "LoadAverage")
+        (text "DiskIO")
+        (text "NetworkIO")
+        (text "ZFSARC")
+        (text "ZFSCARC")
+        (text "Uptime")
+        (text "Clock")
       ];
     in
     {
