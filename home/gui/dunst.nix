@@ -14,9 +14,6 @@
     # Ensure dmenu is available.
     dmenu
 
-    # Ensure dunst is available in the path, for dunstctl.
-    dunst
-
     # Ensure Adwaita icons are available.
     gnome.adwaita-icon-theme
   ];
