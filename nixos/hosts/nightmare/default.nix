@@ -68,9 +68,6 @@
   # Enable wireshark for capturing packets.
   programs.wireshark.enable = true;
 
-  # Enable updating GeoIP databases regularly.
-  services.geoip-updater.enable = true;
-
   # Enable the GPS daemon.
   services.gpsd.enable = true;
 
