@@ -1,0 +1,15 @@
+diff --git a/scripts/windbg.py b/scripts/windbg.py
+index 7acdad4580dc..ccb3468c3b1f 100644
+--- a/scripts/windbg.py
++++ b/scripts/windbg.py
+@@ -392,10 +392,7 @@ GefAlias("bd", "disable breakpoints")
+ GefAlias("bc", "delete breakpoints")
+ GefAlias("be", "enable breakpoints")
+ GefAlias("tbp", "tbreak", completer_class=gdb.COMPLETE_LOCATION)
+-GefAlias("s", "grep", completer_class=gdb.COMPLETE_LOCATION)
+ GefAlias("pa", "advance", completer_class=gdb.COMPLETE_LOCATION)
+-GefAlias("t", "stepi", completer_class=gdb.COMPLETE_LOCATION)
+-GefAlias("p", "nexti", completer_class=gdb.COMPLETE_LOCATION)
+ GefAlias("kp", "info stack")
+ GefAlias("uf", "disassemble")
+ 

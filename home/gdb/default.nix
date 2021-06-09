@@ -82,7 +82,19 @@ let
     gef = inputs.gef;
   };
 
-  inherit (inputs) gef-extras;
+  gef-extras = pkgs.applyPatches {
+    src = inputs.gef-extras;
+
+    name = "gef-extras-patched";
+
+    # Disable aliases in gef-extras that conflict with the standard
+    # abbreviations.
+    # Since gef-extras adds these in the code rather than the configuration, it
+    # seems we need to patch it out to disable these aliases.
+    patches = [
+      ./0000-gef-extras-disable-conflicting-aliases.patch
+    ];
+  };
 in
 {
   # GDB configuration.
