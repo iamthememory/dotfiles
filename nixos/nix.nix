@@ -14,8 +14,9 @@
   # Extra options for nix.
   nix.extraOptions = ''
     # Ensure the newer nix commands and flake support are enabled.
+    # Additionally, enable content-addressed features.
     # FIXME: Remove this once these are in stable nix.
-    experimental-features = nix-command flakes
+    experimental-features = ca-derivations ca-references flakes nix-command
 
     # If a binary substitute fails, build from source.
     fallback = true
