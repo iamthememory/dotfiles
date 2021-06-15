@@ -13,6 +13,9 @@
   programs.direnv.enableZshIntegration = true;
 
   # Enable using nix-direnv, a faster version of direnv's use_nix which can
-  # also cache the development shells, and possibly use flakes?
-  programs.direnv.enableNixDirenvIntegration = true;
+  # also cache the development shells.
+  programs.direnv.nix-direnv.enable = true;
+
+  # Enable flakes support in nix-direnv.
+  programs.direnv.nix-direnv.enableFlakes = true;
 }
