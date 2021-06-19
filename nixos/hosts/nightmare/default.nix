@@ -40,6 +40,12 @@
   # Force the display to use 96 DPI.
   fonts.fontconfig.dpi = 96;
 
+  # Extra UDP port ranges to allow through the firewall.
+  networking.firewall.allowedUDPPortRanges = [
+    # KDE Connect connections.
+    { from = 1714; to = 1764; }
+  ];
+
   # Extra TCP port ranges to allow through the firewall.
   networking.firewall.allowedTCPPortRanges = [
     # Metasploit reverse shell connections.
