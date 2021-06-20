@@ -66,11 +66,8 @@
   programs.obs-studio.enable = true;
 
   # Plugins for obs-studio.
-  programs.obs-studio.plugins = with pkgs; [
-    # An virtual v4l output for obs-studio.
-    obs-v4l2sink
-
+  programs.obs-studio.plugins = with pkgs.obs-studio-plugins; [
     # A plugin to do screen capture on wlroots-based wayland compositors.
-    obs-wlrobs
+    wlrobs
   ];
 }
