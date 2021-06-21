@@ -11,6 +11,21 @@
         version = "${inputs.cataclysm-dda.lastModifiedDate}";
         src = inputs.cataclysm-dda;
 
+        # Upstream cataclysm-dda renamed its desktop file and icon.
+        postInstall =
+          let
+            from = [
+              "data/xdg/*cataclysm-dda.desktop"
+              "data/xdg/cataclysm-dda.svg"
+            ];
+
+            to = [
+              "data/xdg/org.cataclysmdda.CataclysmDDA.desktop"
+              "data/xdg/org.cataclysmdda.CataclysmDDA.svg"
+            ];
+          in
+          builtins.replaceStrings from to oldAttrs.postInstall;
+
         # Enable tiles.
         tiles = true;
       });
