@@ -9,6 +9,9 @@
     # A tool for generating memorable passphrases from a wordlist.
     diceware
 
+    # A tool for receiving radio.
+    gqrx
+
     # Firmware tools for the HackRF.
     hackrf
 
