@@ -8,8 +8,8 @@ let
   lutrisWine = inputs.lib.wine.mkWine {
     inherit pkgs;
 
-    src = inputs.lutris-6_5;
-    version = "lutris-6.5";
+    src = inputs.lutris-6_10_6;
+    version = "lutris-6.10-6";
   };
 in
 {
