@@ -22,6 +22,7 @@
     ./sh.nix
     ./tex.nix
     ./text.nix
+    ./toml.nix
     ./vim.nix
     ./web.nix
     ./yaml.nix
