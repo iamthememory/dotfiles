@@ -1,5 +1,6 @@
 # Settings for X11 screen-locking utilities.
 { config
+, inputs
 , pkgs
 , ...
 }:
@@ -58,7 +59,9 @@ let
     export PATH="${pkgs.coreutils}/bin:${pkgs.xlibs.xprop}/bin:${pkgs.xlibs.xwininfo}/bin"
 
     # Exec xsecurelock.
-    exec "${pkgs.xsecurelock}/bin/xsecurelock"
+    # FIXME: xsecurelock's authproto_pam has returned to segfaulting in
+    # nixos-unstable, so pin this to nixos-21.05, which seems to be working.
+    exec "${inputs.stable.xsecurelock}/bin/xsecurelock"
   '';
 in
 {
