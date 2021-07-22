@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1626893367,
-        "narHash": "sha256-RpVh/Bu/it20xZraw91UiBYlDWKZBNGxEV4TrNjA5rU=",
+        "lastModified": 1626968855,
+        "narHash": "sha256-xKbYYrs2ZlAE76BD7o7overlM6vN/1Lk6ZytxaqP79w=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "90539ba0b25d787ea877de061f5ca899cf02fdd9",
+        "rev": "6d521443d946c3dd36fd9a6c7379b1290ca37a80",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
     "gef": {
       "flake": false,
       "locked": {
-        "lastModified": 1626545901,
-        "narHash": "sha256-xdpkaCNGeils5/nAZkf3u/eVdLoWpjoiDJXwxKOYchQ=",
+        "lastModified": 1626965850,
+        "narHash": "sha256-GMgxeNkVy2PnblNb4fM7WD00PzpMWAO5trszkNo3CCk=",
         "owner": "hugsy",
         "repo": "gef",
-        "rev": "1e52006a3b51b34c5c516060c72e5a43851c9972",
+        "rev": "57d8450a38a707b632756b4d866198e733b268da",
         "type": "github"
       },
       "original": {
@@ -183,11 +183,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1626913199,
-        "narHash": "sha256-YY6WcbsOEN04SuQyHQuJCKCJKM7pFPC3+MWsAY79dgc=",
+        "lastModified": 1626993607,
+        "narHash": "sha256-wpOmiWfKdFDVXmi8Lqn2TzQWSKE4AuLxx/kcGrrUPGg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5ea865562be7d21f57bf8bb1634c72ebe57e5be8",
+        "rev": "1f64e3fb9665a61793550d07d26b675f9693714f",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1626902480,
-        "narHash": "sha256-QxuNG/HbNIUArO8mHlbQhqgSp+N0bmVDYleBdgfSwD4=",
+        "lastModified": 1626982225,
+        "narHash": "sha256-ooIdfZSrDvn9B0bBugV6ECFIRla4wN7WgV3nkCpZB78=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "13874a00d35eae68e87e4e629ae69e7617090c51",
+        "rev": "3ea9fdbf49b3be0da2a61b6feb46ba4892e0d757",
         "type": "github"
       },
       "original": {
@@ -215,11 +215,11 @@
     "picom": {
       "flake": false,
       "locked": {
-        "lastModified": 1626270452,
-        "narHash": "sha256-/ZWYHu0l+pVHkcjleft0TmEFWO4i3iKHMCUF8tNbVwU=",
+        "lastModified": 1626985577,
+        "narHash": "sha256-TjbNTIP9rQTpARwbWjaehBmZXCIJWDuJNam+ok8V6pQ=",
         "owner": "yshui",
         "repo": "picom",
-        "rev": "057a939431a5e856d001a5b2be9b9ba86738e829",
+        "rev": "084b670f6a9f5b08d4f61d0611c8c86e4ee052aa",
         "type": "github"
       },
       "original": {
