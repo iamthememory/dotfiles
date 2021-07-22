@@ -124,6 +124,9 @@ in
     # Utilities for /proc, such as fuser, killall, etc.
     psmisc
 
+    # A tool for helping with licensing projects.
+    reuse
+
     # A fast, featureful grep-like tool.
     ripgrep
 
