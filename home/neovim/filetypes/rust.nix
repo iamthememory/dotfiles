@@ -1,18 +1,8 @@
 # Rust configuration.
 { config
-, inputs
+, pkgs
 , ...
-}:
-let
-  # FIXME: Remove this and use unstable when
-  # f77eb9bb4d5d9ff34c6b1c18274e50d0bdddb652 lands in unstable.
-  # We use master to ensure we have the changes to handle the Rust 1.47.0
-  # reorganization of rust's sources.
-  pkgs = inputs.master;
-
-  rust-src = pkgs.rustPlatform.rustLibSrc;
-in
-{
+}: {
   home.packages = with pkgs; [
     # Add cargo and rustc for building Rust.
     cargo
@@ -65,7 +55,7 @@ in
     " If it's not set by the project via direnv, set Rust's sources to one from
     " nixpkgs.
     if empty($RUST_SRC_PATH)
-      let $RUST_SRC_PATH = '${rust-src}'
+      let $RUST_SRC_PATH = '${pkgs.rustPlatform.rustLibSrc}'
     endif
   '';
 
