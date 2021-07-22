@@ -33,6 +33,20 @@
     ./secrets
   ];
 
+  # Cookiecutter configuration.
+  home.file.".cookiecutterrc".text = lib.generators.toYAML { } {
+    # The place to put cloned templates.
+    cookiecutters_dir = "${config.home.profileDirectory}/.cookiecutters";
+
+    # Template defaults.
+    default_context = {
+      full_name = "Alexandria Corkwell";
+      email = "i.am.the.memory@gmail.com";
+      github_username = "iamthememory";
+      license = "MIT OR Apache-2.0";
+    };
+  };
+
   home.packages = with pkgs; [
     # xinput, for the touchpad keybindings below.
     xorg.xinput
