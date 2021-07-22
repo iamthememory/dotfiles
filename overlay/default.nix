@@ -5,12 +5,6 @@ self: super: {
   # Customize appimage-run.
   appimage-run = import ./appimage-run.nix { inherit self super; };
 
-  # Customize gnupg.
-  gnupg = import ./gnupg.nix { inherit self super; };
-
-  # Patch and customize git and its packages.
-  gitAndTools = import ./gitAndTools.nix { inherit self super; };
-
   # Customize steam.
   steam = import ./steam.nix { inherit self super; };
 }
