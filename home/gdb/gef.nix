@@ -13,6 +13,7 @@ pkgs.stdenv.mkDerivation {
   patchPhase = ''
     sed -i \
       -e 's@pythonbin = which("python3\?")@pythonbin = sys.executable@g' \
+      -e 's@PYTHONBIN = which("python3\?")@PYTHONBIN = sys.executable@g' \
       gef.py
   '';
 
