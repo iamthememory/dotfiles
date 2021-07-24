@@ -16,7 +16,7 @@
     ../../games/steam.nix
     ../../gdb
     ../../git.nix
-    ../../gnupg
+    ../../gnupg.nix
     ../../gui
     ../../mail
     ../../media

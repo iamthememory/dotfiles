@@ -39,7 +39,7 @@ in
 {
   imports = [
     # Ensure we have our gnupg config available.
-    ./gnupg
+    ./gnupg.nix
   ];
 
   # Add git-related tools and documentation.

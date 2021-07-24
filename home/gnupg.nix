@@ -7,9 +7,6 @@
   home.file.".gnupg/dirmngr.conf".text = ''
     # Use the same keyserver we configured for gpg.
     keyserver ${config.programs.gpg.settings.keyserver}
-
-    # Ensure the keyserver's certificate is available.
-    hkp-cacert ${./sks-keyservers.netCA.pem}
   '';
 
   # Enable gpg.
@@ -49,8 +46,8 @@
       # Show key IDs as the long 16-character ID, prefixed with 0x.
       keyid-format = "0xlong";
 
-      # Use a secure keyserver pool that supports TLS.
-      keyserver = "hkps://hkps.pool.sks-keyservers.net";
+      # Use the ubuntu keyserver.
+      keyserver = "hkps://keyserver.ubuntu.com";
 
       # Fetch keys automatically when needed to verify signatures.
       keyserver-options = "auto-key-retrieve";
