@@ -93,6 +93,52 @@ in
     experimental-features = nix-command flakes
   '';
 
+  # The user registry of extra flake identifiers, to more quickly reference
+  # flakes without the full repo URL.
+  xdg.configFile."nix/registry.json".text =
+    let
+      # Make a flake registry for a GitHub flake.
+      mkGithubFlake =
+        { repo
+        , owner ? "nix-community"
+        , id ? repo
+        }: {
+          from.id = id;
+          from.type = "indirect";
+
+          to.owner = owner;
+          to.repo = repo;
+          to.type = "github";
+        };
+
+      githubFlakes = [
+        # Useful flake utilities.
+        {
+          owner = "numtide";
+          repo = "flake-utils";
+        }
+
+        # A way of managing a home configuration in nix.
+        {
+          repo = "home-manager";
+        }
+
+        # Utilities for building rust projects.
+        {
+          repo = "naersk";
+        }
+      ];
+
+      # The registry configuration.
+      registry = {
+        # The version to use.
+        version = 2;
+
+        flakes = builtins.map mkGithubFlake githubFlakes;
+      };
+    in
+    builtins.toJSON registry;
+
   # Set the nixpkgs config for the system from the config we use here.
   xdg.configFile."nixpkgs/config.nix".source = inputs.nixpkgs-config;
 
