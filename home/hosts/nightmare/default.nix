@@ -34,18 +34,38 @@
   ];
 
   # Cookiecutter configuration.
-  home.file.".cookiecutterrc".text = lib.generators.toYAML { } {
-    # The place to put cloned templates.
-    cookiecutters_dir = "${config.home.profileDirectory}/.cookiecutters";
+  # NOTE: Cookiecutter's YAML parser can only parse a subset of YAML that
+  # *looks* like YAML, and isn't JSON compatible, so we need to reformat it to
+  # look like more standard YAML.
+  home.file.".cookiecutterrc".source =
+    let
+      # The JSON version of the configuration.
+      configJSON = builtins.toFile "cookiecutterrc.json" (builtins.toJSON {
+        # The place to put cloned templates.
+        cookiecutters_dir = "${config.home.homeDirectory}/.cookiecutters";
 
-    # Template defaults.
-    default_context = {
-      full_name = "Alexandria Corkwell";
-      email = "i.am.the.memory@gmail.com";
-      github_username = "iamthememory";
-      license = "MIT OR Apache-2.0";
-    };
-  };
+        # Template defaults.
+        default_context = {
+          full_name = "Alexandria Corkwell";
+          email = "i.am.the.memory@gmail.com";
+          github_username = "iamthememory";
+          license = "MIT OR Apache-2.0";
+        };
+
+        # The directory to store replay information.
+        replay_dir = "${config.home.homeDirectory}/.cookiecutter_replay";
+      });
+
+      # Convert/reformat the JSON config to a more YAML-looking file.
+      configYAML = pkgs.runCommand "cookiecutterrc.yaml" { } ''
+        # Run strictly and die if anything fails.
+        set -euo pipefail
+
+        # Reformat using yq.
+        "${pkgs.yq}/bin/yq" -y < "${configJSON}" > "$out"
+      '';
+    in
+    configYAML;
 
   home.packages = with pkgs; [
     # xinput, for the touchpad keybindings below.
