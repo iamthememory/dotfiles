@@ -92,6 +92,11 @@
   '';
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
+    # The COC code completion and analysis engine.
+    # FIXME: I'm pretty sure this is supposed to be included by turning
+    # programs.neovim.coc.enable on, but for some reason it doesn't seem to be?
+    coc-nvim
+
     # A plugin to show diagnostics and linter warnings.
     {
       plugin = ale;
