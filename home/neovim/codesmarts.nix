@@ -6,8 +6,30 @@
   # Enable COC.
   programs.neovim.coc.enable = true;
 
+  # COC settings.
+  programs.neovim.coc.settings = {
+    # Don't check for updates, since we manage COC extensions through our
+    # generation.
+    "coc.preferences.extensionUpdateCheck" = "never";
+
+    # Use the quickfix list for locations.
+    "coc.preferences.useQuickfixForLocations" = true;
+
+    # Send diagnostics to ALE to display them.
+    "diagnostic.displayByAle" = true;
+
+    # Don't save sessions with coc-lists, let obsession manage that.
+    "session.saveOnVimLeave" = false;
+
+    # The directory for custom snippets.
+    "snippets.userSnippetsDirectory" = "${config.xdg.configHome}/nvim/snippets";
+
+    # Show function signatures with echodoc.
+    "suggest.echodocSupport" = true;
+  };
+
   # COC's neovim configuration.
-  programs.neovim.coc.config = ''
+  programs.neovim.extraConfig = ''
     " Much of the following is from COC's README.
 
     " Check if we're in a word or if right before the cursor is whitespace.
@@ -68,28 +90,6 @@
     " Add :OR to organize the imports of the current buffer.
     command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
   '';
-
-  # COC settings.
-  programs.neovim.coc.settings = {
-    # Don't check for updates, since we manage COC extensions through our
-    # generation.
-    "coc.preferences.extensionUpdateCheck" = "never";
-
-    # Use the quickfix list for locations.
-    "coc.preferences.useQuickfixForLocations" = true;
-
-    # Send diagnostics to ALE to display them.
-    "diagnostic.displayByAle" = true;
-
-    # Don't save sessions with coc-lists, let obsession manage that.
-    "session.saveOnVimLeave" = false;
-
-    # The directory for custom snippets.
-    "snippets.userSnippetsDirectory" = "${config.xdg.configHome}/nvim/snippets";
-
-    # Show function signatures with echodoc.
-    "suggest.echodocSupport" = true;
-  };
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
     # A plugin to show diagnostics and linter warnings.
