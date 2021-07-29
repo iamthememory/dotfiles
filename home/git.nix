@@ -80,6 +80,10 @@ in
     {
       inherit logg;
 
+      # Show a log of all changes since the last pull/ref change, and their
+      # patches.
+      lastpatch = "${logg} -p @{1}..HEAD";
+
       # logg, but show PGP signatures too.
       loggs = "${logg} --show-signature";
 
