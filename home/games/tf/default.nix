@@ -8,7 +8,7 @@
       tinyfugue-patched = tinyfugue.overrideDerivation
         (oldAttrs: rec {
           name = "tinyfugue-${version}";
-          version = "50b9-${inputs.tinyfugue-patched.lastModifiedDate}";
+          version = "5.1.0-${inputs.tinyfugue-patched.lastModifiedDate}";
 
           inherit openssl;
           sslSupport = true;
