@@ -98,51 +98,74 @@ let
 in
 {
   # GDB configuration.
-  home.file.".gdbinit".text =
-    let
-      # The path to the rust pretty printer path.
-      rust-pretty = "${pkgs.rustc}/lib/rustlib/etc";
-    in
-    ''
-      # Allow setting breakpoints at places that haven't been loaded yet.
-      set breakpoint pending on
+  home.file.".gdbinit".text = ''
+    # Allow setting breakpoints at places that haven't been loaded yet.
+    set breakpoint pending on
 
-      # Use Intel-flavor assembly for x86.
-      set disassembly-flavor intel
+    # Use Intel-flavor assembly for x86.
+    set disassembly-flavor intel
 
-      # Disable pagination of output.
-      set pagination off
+    # Disable pagination of output.
+    set pagination off
 
-      # Add Rust's pretty printers to the allowed load path.
-      add-auto-load-safe-path ${rust-pretty}
+    # Add Rust's debugging pretty printers.
+    python
+    import gdb
+    import os
+    import subprocess
+    import sys
 
-      # Add Rust's debugging pretty printers.
-      python
-      import gdb
-      import os
-      import sys
+    # Default the pretty printers to nixpkgs rust.
+    rustc_sysroot = '${pkgs.rustc}'
 
-      # Add Rust's pretty printers to PYTHONPATH.
-      # Note that Python and gdb have different ideas of the environment
-      # variables, so we have to set it for both.
-      # This will ensure it's passed to any child processes.
-      if os.getenv('PYTHONPATH', default=''') == ''':
-        os.environ['PYTHONPATH'] = '${rust-pretty}'
-        gdb.execute('set environment PYTHONPATH "${rust-pretty}"')
-      else:
-        os.environ['PYTHONPATH'] += '${rust-pretty}'
-        gdb.execute('set environment PYTHONPATH "%s:${rust-pretty}"' % os.environ['PYTHONPATH'])
+    # Try to get the pretty printer path from whichever rustc is in the
+    # current PATH if possible.
+    # This will let us use pretty printers from, e.g., nightly rust in a
+    # flake, rather than the default pretty printers for a different rust
+    # version.
+    try:
+        # Ask rustc for the sysroot.
+        sysroot = subprocess.run(
+            ['rustc', '--print=sysroot'],
+            stdout=subprocess.PIPE,
+            text=True,
+        )
 
-      # Add Rust's pretty printers to the in-use module path.
-      sys.path.append('${rust-pretty}')
-      end
+        # If it succeeded, use the sysroot it gave.
+        if sysroot.returncode == 0:
+            rustc_sysroot = sysroot.stdout.strip()
+    except:
+        # On any error, just use the default sysroot.
+        pass
 
-      # Add Rust's pretty printers to GDB's directory search path.
-      directory ${rust-pretty}
+    # Get the pretty-printer directory.
+    rustc_pretty = os.path.join(rustc_sysroot, 'lib', 'rustlib', 'etc')
 
-      # Source GEF.
-      source ${gef}/gef.py
-    '';
+
+    # Add Rust's pretty printers to PYTHONPATH.
+    # Note that Python and gdb have different ideas of the environment
+    # variables, so we have to set it for both.
+    # This will ensure it's passed to any child processes.
+    if os.getenv('PYTHONPATH', default=''') == ''':
+      os.environ['PYTHONPATH'] = rustc_pretty
+      gdb.execute('set environment PYTHONPATH %s' % rustc_pretty)
+    else:
+      os.environ['PYTHONPATH'] += rustc_pretty
+      gdb.execute('set environment PYTHONPATH %s:%s' % (os.environ['PYTHONPATH'], rustc_pretty))
+
+    # Add Rust's pretty printers to the in-use module path.
+    sys.path.append(rustc_pretty)
+
+    # Add Rust's pretty printers to GDB's directory search path.
+    gdb.execute('directory %s' % rustc_pretty)
+
+    # Add Rust's pretty printers to the allowed load path.
+    gdb.execute('add-auto-load-safe-path %s' % rustc_pretty)
+    end
+
+    # Source GEF.
+    source ${gef}/gef.py
+  '';
 
   # GEF configuration.
   # NOTE: This is essentially what `gef config save` will generate.
