@@ -243,6 +243,17 @@
               (import overlay)
             ];
           };
+
+          stable-pkgs = import nixos-stable {
+            inherit system;
+
+            config = import nixpkgs-config;
+
+            overlays = [
+              inputs.nur.overlay
+              (import overlay)
+            ];
+          };
         in
         {
           # Ensure the environment has git-crypt and a nix that can build flakes.
@@ -281,7 +292,7 @@
               [
                 gitAndTools.git-crypt
                 nixos-unstable-manual
-                nur.repos.rycee.firefox-addons-generator
+                stable-pkgs.nur.repos.rycee.firefox-addons-generator
               ];
 
             # Make sure nix knows to enable flakes.
