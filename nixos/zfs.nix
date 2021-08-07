@@ -1,6 +1,11 @@
 # ZFS configuration.
-{ ...
+{ config
+, ...
 }: {
+  # Use the latest kernel packages that're compatible with whatever version of
+  # ZFS we're using.
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+
   # Regularly scrub ZFS pools.
   services.zfs.autoScrub.enable = true;
 
