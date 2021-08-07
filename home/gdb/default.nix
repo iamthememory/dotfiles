@@ -508,7 +508,6 @@ in
       aliases.bc = "delete breakpoints";
       aliases.be = "enable breakpoints";
       aliases.tbp = "tbreak";
-      aliases.s = "grep";
       aliases.pa = "advance";
       aliases.kp = "info stack";
       aliases.ptc = "finish";
@@ -520,6 +519,9 @@ in
       aliases."ida-rpyc cmt" = "ida-rpyc comments";
       aliases."ida-rpyc hl" = "ida-rpyc highlight";
       aliases.decompile = "retdec";
+
+      # My aliases.
+      aliases.s = "step";
     };
 
   home.packages = [
