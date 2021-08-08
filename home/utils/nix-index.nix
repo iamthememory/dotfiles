@@ -17,7 +17,7 @@ let
   realpath = "${pkgs.coreutils}/bin/realpath -e";
 
   # A script to run nix-index and update the symlink.
-  updateNixIndex = pkgs.writeShellScript "update-nix-index.sh" ''
+  updateNixIndexPkg = pkgs.writeShellScriptBin "update-nix-index.sh" ''
     # Die on any errors.
     set -euo pipefail
 
@@ -44,11 +44,16 @@ let
     ${pkgs.coreutils}/bin/rm -f "${nixIndexRevisionLink}"
     ${pkgs.coreutils}/bin/ln -s "${pkgs.path}" "${nixIndexRevisionLink}"
   '';
+
+  updateNixIndex = "${updateNixIndexPkg}/bin/update-nix-index.sh";
 in
 {
   home.packages = with pkgs; [
     # Install nix-index so nix-locate can be called.
     nix-index
+
+    # Install the wrapper to run nix-index on the current packages manually.
+    updateNixIndexPkg
   ];
 
   # Update the nix-index cache on generation activation if we have a new
