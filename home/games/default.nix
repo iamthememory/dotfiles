@@ -33,9 +33,6 @@ in
       # A tool for showing OpenGL info for testing and debugging.
       glxinfo
 
-      # The JAVA runtime.
-      jre
-
       # A tool for easily running games on Linux.
       lutris
 
@@ -45,4 +42,7 @@ in
       # A way of easily applying libraries to WINE prefixes.
       winetricks
     ];
+
+  # Install Java.
+  programs.java.enable = true;
 }
