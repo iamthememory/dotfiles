@@ -10,6 +10,11 @@
   # This lets Chromium, Chrome, electron, etc. sandbox itself.
   security.chromiumSuidSandbox.enable = true;
 
+  # Ensure dbus knows about GNOME stuff.
+  services.dbus.packages = with pkgs; [
+    gnome.dconf
+  ];
+
   # Enable GNOME keyring.
   services.gnome.gnome-keyring.enable = true;
 

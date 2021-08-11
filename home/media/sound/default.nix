@@ -10,4 +10,7 @@
     # A tool for tagging music files.
     picard
   ];
+
+  # Enable easyeffects for effects on pipewire sound.
+  services.easyeffects.enable = true;
 }
