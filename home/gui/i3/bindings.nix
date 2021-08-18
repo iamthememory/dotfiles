@@ -191,6 +191,14 @@ in
             else "--player=${player}";
         in
         "${profileBin}/playerctl ${playerOption}";
+
+      # Optional keybindings to enable if this profile has specific features.
+      optionalBindings = builtins.listToAttrs (
+        lib.optional config.services.easyeffects.enable {
+          name = "${mod}+Control+Shift+e";
+          value = "${profileBin}/easyeffects";
+        }
+      );
     in
     {
       # Toggle mute.
@@ -451,7 +459,7 @@ in
 
       # Switch to a tabbed layout.
       "${mod}+w" = "layout tabbed";
-    } // workspaceBindings;
+    } // workspaceBindings // optionalBindings;
 
   # Keybindings for resize mode, where bindings resize tiled or floating
   # windows.
