@@ -1,5 +1,6 @@
 # Various security and pentesting-related tools.
-{ pkgs
+{ inputs
+, pkgs
 , ...
 }: {
   home.packages = with pkgs; [
@@ -20,7 +21,7 @@
     kalibrate-hackrf
 
     # The metasploit framework.
-    metasploit
+    inputs.stable.metasploit
 
     # Basic wordlists.
     netbsd.dict
