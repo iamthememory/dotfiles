@@ -196,7 +196,7 @@ in
       optionalBindings = builtins.listToAttrs (
         lib.optional config.services.easyeffects.enable {
           name = "${mod}+Control+Shift+e";
-          value = "${profileBin}/easyeffects";
+          value = "exec ${profileBin}/easyeffects";
         }
       );
     in
