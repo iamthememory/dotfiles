@@ -37,9 +37,6 @@
   # Enable debug info for packages.
   environment.enableDebugInfo = true;
 
-  # Force the display to use 96 DPI.
-  fonts.fontconfig.dpi = 96;
-
   # Extra UDP port ranges to allow through the firewall.
   networking.firewall.allowedUDPPortRanges = [
     # KDE Connect connections.
