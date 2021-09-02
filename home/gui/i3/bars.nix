@@ -212,8 +212,14 @@ in
       {
         block = "nvidia_gpu";
 
+        # Use a blank GPU label, rather than the model to save space.
+        label = "";
+
         # Show clock speeds.
         show_clocks = true;
+
+        # Show the current power draw of the GPU.
+        show_power_draw = true;
       }
     ) ++ [
 
