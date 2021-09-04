@@ -194,10 +194,23 @@ in
 
       # Optional keybindings to enable if this profile has specific features.
       optionalBindings = builtins.listToAttrs (
-        lib.optional config.services.easyeffects.enable {
+        (lib.optional config.services.easyeffects.enable {
+          # Launch the easyeffects GUI.
           name = "${mod}+Control+Shift+e";
           value = "exec ${profileBin}/easyeffects";
-        }
+        }) ++ (lib.optionals config.services.picom.enable [
+          # Increase opacity of the current window.
+          {
+            name = "${mod}+Shift+o";
+            value = "exec ${profileBin}/picom-trans -c +5";
+          }
+
+          # Decrease opacity of the current window.
+          {
+            name = "${mod}+Control+o";
+            value = "exec ${profileBin}/picom-trans -c -5";
+          }
+        ])
       );
     in
     {
