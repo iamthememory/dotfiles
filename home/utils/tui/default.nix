@@ -20,6 +20,15 @@
     # An ncurses TUI for seeing what files take up how much space on disk.
     ncdu
 
+    # A tool to see the space taken up by nix store gc-roots.
+    nix-du
+
+    # A tool to track what nix is currently building.
+    nix-top
+
+    # A TUI to browse the dependencies of a nix store path.
+    nix-tree
+
     # Several important terminal utilities, like clear, infocmp, reset, tput,
     # etc. are provided directly by ncurses.
     # This is set to low priority so that any terminfo files installed by

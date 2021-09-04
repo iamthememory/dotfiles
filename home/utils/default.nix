@@ -96,6 +96,15 @@ in
     # A tool to show what file descriptors processes have open.
     lsof
 
+    # A tool to bundle a nix package as a binary.
+    nix-bundle
+
+    # A small tool to dump info about the nix environment.
+    nix-info
+
+    # A tool to review nixpkgs pull requests.
+    nixpkgs-review
+
     # A (de)compressor for .7z files.
     # NOTE: This is the maintained fork, not the abandoned original p7zip.
     p7zip
