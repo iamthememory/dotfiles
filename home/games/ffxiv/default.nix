@@ -166,8 +166,9 @@ in
     }
   ];
 
-  # Put ACT on the scratchpad.
+  # Don't automatically focus ACT windows, since they might be overlays that
+  # grab the mouse mid-fight.
   xsession.windowManager.i3.extraConfig = ''
-    for_window [class="[Aa]dvanced [Cc]ombat [Tt]racker"] move scratchpad
+    no_focus [class="[Aa]dvanced [Cc]ombat [Tt]racker"]
   '';
 }
