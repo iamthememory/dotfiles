@@ -78,7 +78,7 @@
       # A set of servers that support NTS, preventing MITM attacks.
       ntsServers = [
         # Cloudflare's NTP server.
-        "time.cloudflare.org"
+        "time.cloudflare.com"
 
         # The netnod NTP server.
         "nts.netnod.se"
@@ -93,10 +93,6 @@
       # The NTS-capable servers.
       ${lib.concatMapStringsSep "\n" (s: "server ${s} iburst nts") ntsServers}
 
-      # The NixOS pool to pull extra servers from to prevent issues if some of
-      # the NTS servers aren't available or are too far away.
-      pool nixos.pool.ntp.org iburst maxsources 8
-
       # Only update the local clock if at least four sources are considered
       # good.
       minsources 4
@@ -107,23 +103,7 @@
       # Where possible, tell the network interface's hardware to timestamp
       # exactly when packets are received/sent to increase accuracy.
       hwtimestamp *
-
-      # When chrony starts during boot, quickly poll a couple servers for the
-      # time.
-      # If the clock is wrong by more than five minutes, step the clock to the
-      # correct time rather than trying to slowly adjust it.
-      # FIXME: This has to be manually put in the configuration since
-      # services.chrony.servers is cleared.
-      # It can probably be removed when NTS is more widely available for the
-      # same reasons as above.
-      initstepslew 300 0.nixos.pool.ntp.org 1.nixos.pool.ntp.org 2.nixos.pool.ntp.org 3.nixos.pool.ntp.org
     '';
-
-  # Clear the default NTP servers, since we set some in the configuration
-  # itself.
-  # FIXME: This should be removed once there are enough NTS-capable servers to
-  # add to networking.timeServers, which is what this defaults to.
-  services.chrony.servers = [ ];
 
   # Regularly TRIM mounted partitions backed by SSDs in the background every few
   # days.
