@@ -189,6 +189,12 @@ in
 
         # Recurse into submodules with commands like fetch, pull, push by default.
         submodule.recurse = true;
+
+        # Rewrite any remotes like gh:user/repo to point to GitHub repos.
+        url."https://github.com/" = {
+          insteadOf = "gh:";
+          pushInsteadOf = "gh:";
+        };
       }
       optionalValues;
 
