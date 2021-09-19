@@ -169,8 +169,9 @@
               # Don't allow device nodes.
               "nodev"
 
-              # Allow /tmp to take up up to 50% of RAM.
-              "size=50%"
+              # Allow /tmp to take up up to 50% of RAM (or the configured
+              # amount).
+              "size=${toString config.boot.tmpOnTmpfsSize}"
 
               # Allow as many inodes as needed.
               "nr_inodes=0"
