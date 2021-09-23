@@ -44,7 +44,7 @@
             lieer.sync.frequency = "*:0/5";
 
             # Timeout after 60 seconds.
-            lieer.timeout = 60;
+            lieer.settings.timeout = 60;
           }
           else {
             # The folder layout.
