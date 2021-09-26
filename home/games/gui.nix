@@ -45,5 +45,8 @@
 
       # Freeciv.
       freeciv_gtk
+
+      # A Minecraft launcher and manager.
+      multimc
     ];
 }
