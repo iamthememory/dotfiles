@@ -114,7 +114,7 @@
       show_thread_names = true;
 
       # By default when not in tree view, sort by the CPU usage.
-      sort_direction = 1;
+      sort_direction = 0;
       sort_key = config.lib.htop.fields.PERCENT_CPU;
 
       # Don't strip exe from cmdline when Command is merged.
