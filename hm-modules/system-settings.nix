@@ -17,7 +17,7 @@
         mountpoints, and the warning/alert remaining space in GiB.
       '';
 
-      example = literalExample ''
+      example = literalExpression ''
         {
           home = {
             mountpoint = "/home";

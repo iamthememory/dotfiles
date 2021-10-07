@@ -90,13 +90,13 @@ in
     "${config.home.profileDirectory}/bin/locker.sh";
 
   # Extra options for xautolock.
-  services.screen-locker.xautolockExtraOptions = [
+  services.screen-locker.xautolock.extraOptions = [
     # Don't allow running `xautolock -exit` or the like to kill xautolock.
     "-secure"
   ];
 
   # Extra options for xss-lock.
-  services.screen-locker.xssLockExtraOptions = [
+  services.screen-locker.xss-lock.extraOptions = [
     # Pass the sleep lock file descriptor along to the locker command.
     # This way, when the computer is suspending, the computer will pause
     # suspending until the locker closes it to show that it's locked the screen.
