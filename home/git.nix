@@ -65,7 +65,8 @@ in
   programs.gh.enable = true;
 
   # Use the default editor if available.
-  programs.gh.editor = mkDefault (config.home.sessionVariables.EDITOR or "");
+  programs.gh.settings.editor =
+    mkDefault (config.home.sessionVariables.EDITOR or "");
 
   # Enable git.
   programs.git.enable = true;
