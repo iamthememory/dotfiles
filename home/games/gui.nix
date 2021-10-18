@@ -46,6 +46,9 @@
       # Freeciv.
       freeciv_gtk
 
+      # A mod manager for Kerbal Space Program.
+      ckan
+
       # A Minecraft launcher and manager.
       multimc
     ];
