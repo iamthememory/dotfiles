@@ -64,6 +64,9 @@ in
   # for the particular host for authentication.
   programs.gh.enable = true;
 
+  # Use gh for managing GitHub credentials.
+  programs.gh.enableGitCredentialHelper = true;
+
   # Use the default editor if available.
   programs.gh.settings.editor =
     mkDefault (config.home.sessionVariables.EDITOR or "");
