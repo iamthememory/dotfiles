@@ -5,12 +5,6 @@
 , ...
 }:
 let
-  # Alias SSH to the kitty helper for ensuring the terminfo entry is available
-  # on the SSH host.
-  shellAliases = {
-    ssh = "${config.home.profileDirectory}/bin/kitty +kitten ssh";
-  };
-
   # A wrapper to call kitty as a single instance for better GPU caching.
   kitty-single-wrapper = pkgs.writeScriptBin "kitty-single.sh" ''
     #!${pkgs.stdenv.shell}
@@ -55,6 +49,14 @@ in
       profileBin = "${config.home.profileDirectory}/bin";
     in
     "${profileBin}/kitty-single.sh";
+
+  # Alias SSH to the kitty helper for ensuring the terminfo entry is available
+  # on the SSH host.
+  home.shellAliases.ssh =
+    let
+      kitty = "${config.home.profileDirectory}/bin/kitty";
+    in
+    "${kitty} +kitten ssh";
 
   # Enable kitty.
   programs.kitty.enable = true;
@@ -297,12 +299,6 @@ in
       window_resize_step_cells = 1;
       window_resize_step_lines = 1;
     } // colorSettings;
-
-  # Add shell aliases for all shells.
-  # NOTE: These will have no effect unless the relevant shell is enabled.
-  programs.bash.shellAliases = shellAliases;
-  programs.fish.shellAliases = shellAliases;
-  programs.zsh.shellAliases = shellAliases;
 
   # Add kitty completion for Bash.
   programs.bash.initExtra = ''

@@ -3,10 +3,25 @@
 , ...
 }:
 let
+  # The full path to the current neovim.
   neovim = "${config.home.profileDirectory}/bin/nvim";
+in
+{
+  imports = [
+    ./base.nix
+    ./codesmarts.nix
+    ./filetypes
+    ./git.nix
+    ./tags.nix
+    ./theme.nix
+    ./utils.nix
+  ];
 
-  # Various aliases for vim modes.
-  shellAliases = {
+  # Use neovim as the default editor.
+  home.sessionVariables.EDITOR = "${config.home.profileDirectory}/bin/nvim";
+
+  # Add shell aliases for various vim modes.
+  home.shellAliases = {
     # Compatibility aliases for the basic vim commands.
     ex = "${neovim} -e";
     vi = "${neovim}";
@@ -28,20 +43,6 @@ let
     rnview = "${neovim} -Z -R";
     rnvim = "${neovim} -Z";
   };
-in
-{
-  imports = [
-    ./base.nix
-    ./codesmarts.nix
-    ./filetypes
-    ./git.nix
-    ./tags.nix
-    ./theme.nix
-    ./utils.nix
-  ];
-
-  # Use neovim as the default editor.
-  home.sessionVariables.EDITOR = "${config.home.profileDirectory}/bin/nvim";
 
   # Use neovim for resolving git merges.
   programs.git.extraConfig.merge.tool = "nvimdiff3";
@@ -62,10 +63,4 @@ in
 
   # Enable Ruby support.
   programs.neovim.withRuby = true;
-
-  # Add shell aliases for all shells.
-  # NOTE: These will have no effect unless the relevant shell is enabled.
-  programs.bash.shellAliases = shellAliases;
-  programs.fish.shellAliases = shellAliases;
-  programs.zsh.shellAliases = shellAliases;
 }

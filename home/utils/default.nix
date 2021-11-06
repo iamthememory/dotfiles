@@ -4,26 +4,7 @@
 , lib
 , pkgs
 , ...
-}:
-let
-  profileBin = "${config.home.profileDirectory}/bin";
-  # Various common shell aliases.
-  shellAliases = {
-    # Enable color for common tools when in a terminal that supports it.
-
-    exa = "${profileBin}/exa --color=auto";
-
-    egrep = "${profileBin}/egrep --color=auto";
-    fgrep = "${profileBin}/fgrep --color=auto";
-    grep = "${profileBin}/grep --color=auto";
-
-    ls = "${profileBin}/ls --color=auto";
-
-    # Use reflinks when able to to benefit from CoW filesystems.
-    cp = "${profileBin}/cp --reflink=auto";
-  };
-in
-{
+}: {
   imports = [
     ./bat.nix
     ./direnv.nix
@@ -224,9 +205,23 @@ in
     in
     "${solarized-colors}:${custom-colors}";
 
-  # Add the common shell aliases for all shells.
-  # NOTE: These will have no effect unless the relevant shell is enabled.
-  programs.bash.shellAliases = shellAliases;
-  programs.fish.shellAliases = shellAliases;
-  programs.zsh.shellAliases = shellAliases;
+  # Various common shell aliases.
+  home.shellAliases =
+    let
+      profileBin = "${config.home.profileDirectory}/bin";
+    in
+    {
+      # Enable color for common tools when in a terminal that supports it.
+
+      exa = "${profileBin}/exa --color=auto";
+
+      egrep = "${profileBin}/egrep --color=auto";
+      fgrep = "${profileBin}/fgrep --color=auto";
+      grep = "${profileBin}/grep --color=auto";
+
+      ls = "${profileBin}/ls --color=auto";
+
+      # Use reflinks when able to to benefit from CoW filesystems.
+      cp = "${profileBin}/cp --reflink=auto";
+    };
 }
