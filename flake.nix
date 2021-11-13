@@ -260,10 +260,6 @@
           devShell = with pkgs; mkShell {
             buildInputs =
               let
-                nixos-rebuild = pkgs.nixos-rebuild.override {
-                  nix = nixFlakes;
-                };
-
                 # A script to open the NixOS manual for the nixos-unstable
                 # commit currently in the flake.
                 # This shouldn't be needed for stable, since stable doesn't

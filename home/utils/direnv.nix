@@ -15,7 +15,4 @@
   # Enable using nix-direnv, a faster version of direnv's use_nix which can
   # also cache the development shells.
   programs.direnv.nix-direnv.enable = true;
-
-  # Enable flakes support in nix-direnv.
-  programs.direnv.nix-direnv.enableFlakes = true;
 }

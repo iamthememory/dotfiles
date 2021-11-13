@@ -15,7 +15,7 @@
   nix.extraOptions = ''
     # Ensure the newer nix commands and flake support are enabled.
     # Additionally, enable content-addressed features.
-    # FIXME: Remove this once these are in stable nix.
+    # FIXME: Remove this once these are enabled in stable nix.
     experimental-features = ca-derivations ca-references flakes nix-command
 
     # If a binary substitute fails, build from source.
@@ -34,10 +34,6 @@
   # Regularly find identical files in the nix store and hardlink them to save
   # space.
   nix.optimise.automatic = true;
-
-  # Use a build of nix that can support flakes.
-  # FIXME: This should be removed once flake support is in stable.
-  nix.package = pkgs.nixFlakes;
 
   # Users who have additional privileges with the Nix daemon.
   nix.trustedUsers = [
