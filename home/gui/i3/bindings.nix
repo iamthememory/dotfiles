@@ -238,6 +238,13 @@ in
       "XF86AudioPrev" = "exec ${playerctl} previous";
 
 
+      # Close the last dunst notification.
+      "Control+Shift+grave" = "exec ${profileBin}/dunstctl close";
+
+      # Show a notification from the notification history.
+      "Control+grave" = "exec ${profileBin}/dunstctl history-pop";
+
+
       # Spawn a terminal.
       "${mod}+Return" =
         "exec ${config.xsession.windowManager.i3.config.terminal}";

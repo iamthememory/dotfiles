@@ -265,23 +265,6 @@
       per_monitor_dpi = false;
     };
 
-    shortcuts = {
-      # FIXME: Add the equivalent dunstctl commands to i3 config.
-      # NOTE: Don't commit this.
-
-      # dunstctl close
-      close = "ctrl+shift+grave";
-
-      # dunstctl close-all
-      #close_all = "ctrl+shift+space";
-
-      # dunstctl history-pop
-      history = "ctrl+grave";
-
-      # dunstctl context
-      #context = "ctrl+shift+period";
-    };
-
     # Low-urgency message settings.
     urgency_low = {
       # The background color.
