@@ -11,14 +11,14 @@
     # A tool for making project directories from templates.
     cookiecutter
 
+    # An ncurses TUI for seeing what files take up how much space on disk.
+    gdu
+
     # A tool that's like top for I/O.
     iotop
 
     # A pager for viewing files.
     less
-
-    # An ncurses TUI for seeing what files take up how much space on disk.
-    ncdu
 
     # A tool to see the space taken up by nix store gc-roots.
     nix-du
