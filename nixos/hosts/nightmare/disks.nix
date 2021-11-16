@@ -121,6 +121,9 @@ in
     in
     builtins.listToAttrs (builtins.map mkLuksEntry devices);
 
+  # Prompt for encryption keys/passphrases when importing the pools.
+  boot.zfs.requestEncryptionCredentials = true;
+
   # Configuration for fwupd's UEFI support.
   # FIXME: Remove this once NixOS fixes that it puts the UEFI partition info in
   # fwupd/uefi.conf instead of fwupd/uefi_capsule.conf.
