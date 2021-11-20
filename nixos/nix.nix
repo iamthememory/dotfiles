@@ -7,9 +7,10 @@
   # Detect duplicate files in the store and hardlink them to save space.
   nix.autoOptimiseStore = true;
 
-  # Give the nix build daemon low IO and CPU priority.
-  nix.daemonIONiceLevel = lib.mkDefault 7;
-  nix.daemonNiceLevel = lib.mkDefault 19;
+  # Prefer to run things besides the nix daemon when under load.
+  nix.daemonCPUSchedPolicy = lib.mkDefault "idle";
+  nix.daemonIOSchedClass = lib.mkDefault "idle";
+  nix.daemonIOSchedPriority = lib.mkDefault 7;
 
   # Extra options for nix.
   nix.extraOptions = ''
