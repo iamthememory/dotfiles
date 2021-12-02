@@ -130,7 +130,7 @@
   # The NixOS release this configuration is compatible with.
   # On new NixOS releases, bump this only after going through the release notes
   # and ensuring compatibility with any changes.
-  system.stateVersion = "21.05";
+  system.stateVersion = "21.11";
 
   # Extra mount units for systemd.
   systemd.mounts =
