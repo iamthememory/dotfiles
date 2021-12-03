@@ -12,23 +12,33 @@ let
     pname = "vim-solarized8";
     src = inputs.vim-solarized8;
   };
-in
-{
-  # Theme-related configuration.
-  programs.neovim.extraConfig = ''
-    " If we're in a terminal, assume we have a dark background, because we
-    " almost certainly do, and I don't know of a way to detect it.
-    " This also makes vim-solarized8 choose a solarized dark theme.
-    if !has('gui_running')
-      set background=dark
-    endif
 
-    " Check if we have truecolor, and if so, enable all neovim colors.
-    if trim(system("${truecolor-support}")) == "yes"
-      set termguicolors
+  # A short bit of script to setup colors.
+  # This is here because adding it to extraConfig appends it to the neovim
+  # config, but it needs to be done before plugins that use colors.
+  # Since plugins don't really have a predictable order, we just run it before
+  # plugins that might need colors setup.
+  setupColors = ''
+    " Skip over this if this has already been run.
+    if !exists("g:home_manager_color_support_has_been_done")
+      " If we're in a terminal, assume we have a dark background, because we
+      " almost certainly do, and I don't know of a way to detect it.
+      " This also makes vim-solarized8 choose a solarized dark theme.
+      if !has('gui_running')
+        set background=dark
+      endif
+
+      " Check if we have truecolor, and if so, enable all neovim colors.
+      if trim(system("${truecolor-support}")) == "yes"
+        set termguicolors
+      endif
+
+      " Don't run this block again.
+      let g:home_manager_color_support_has_been_done = 1
     endif
   '';
-
+in
+{
   # Extra things to add to the PATH when running neovim.
   programs.neovim.extraPackages = with pkgs; [
     # Airline needs msgfmt for .po support.
@@ -55,6 +65,9 @@ in
     {
       plugin = vim-airline-themes;
       config = ''
+        " Ensure colors are setup.
+        ${setupColors}
+
         " Use the solarized theme.
         let g:airline_theme='solarized'
 
@@ -73,6 +86,9 @@ in
     {
       plugin = vim-solarized8;
       config = ''
+        " Ensure colors are setup.
+        ${setupColors}
+
         " Use the default solarized variant.
         colorscheme solarized8
       '';
