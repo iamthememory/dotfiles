@@ -22,6 +22,9 @@
   # Update the CPU microcode.
   hardware.cpu.intel.updateMicrocode = true;
 
+  # Allow hackrf access to users in the plugdev group.
+  hardware.hackrf.enable = true;
+
   # Enable system76 hardware options.
   hardware.system76.enableAll = true;
 
@@ -73,14 +76,6 @@
       in
       "\"${builtins.concatStringsSep " " usbIDs}\"";
   };
-
-  # Extra udev rules.
-  services.udev.extraRules = ''
-    # Allow hackrf access to users in the plugdev group.
-    ATTR{idVendor}=="1d50", ATTR{idProduct}=="604b", SYMLINK+="hackrf-jawbreaker-%k", MODE="660", GROUP="plugdev"
-    ATTR{idVendor}=="1d50", ATTR{idProduct}=="6089", SYMLINK+="hackrf-one-%k", MODE="660", GROUP="plugdev"
-    ATTR{idVendor}=="1fc9", ATTR{idProduct}=="000c", SYMLINK+="hackrf-dfu-%k", MODE="660", GROUP="plugdev"
-  '';
 
   # Extra packages with udev rules.
   services.udev.packages = with pkgs; [
