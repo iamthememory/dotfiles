@@ -12,7 +12,7 @@
 
   # Ensure dbus knows about GNOME stuff.
   services.dbus.packages = with pkgs; [
-    gnome.dconf
+    dconf
   ];
 
   # Enable GNOME keyring.

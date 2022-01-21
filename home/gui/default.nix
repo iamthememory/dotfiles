@@ -33,7 +33,7 @@
 
     # The dconf tool for reading the GTK-y settings that aren't stored in
     # program-specific files.
-    gnome.dconf
+    dconf
 
     # The GUI dconf editor.
     gnome.dconf-editor
@@ -45,7 +45,7 @@
     gnome.nautilus
 
     # The NetworkManager applet.
-    gnome.networkmanagerapplet
+    networkmanagerapplet
 
     # A tool for controlling Logitech receivers to, e.g., pair them with new
     # mice and keyboards.
