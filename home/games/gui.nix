@@ -34,6 +34,9 @@
       # Cataclysm: DDA, built from git and with the GUI enabled.
       cataclysm-dda-git
 
+      # A mod manager for Kerbal Space Program.
+      ckan
+
       # Dwarf Fortress with Dwarf Therapist and dfhack.
       (dwarf-fortress-packages.dwarf-fortress-full.override {
         # Disable the intro video.
@@ -46,10 +49,7 @@
       # Freeciv.
       freeciv_gtk
 
-      # A mod manager for Kerbal Space Program.
-      ckan
-
       # A Minecraft launcher and manager.
-      multimc
+      polymc
     ];
 }
