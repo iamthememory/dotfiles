@@ -62,6 +62,9 @@
     # An easy HTTP(S), etc. fetcher.
     wget
 
+    # A newer, not quite compatible version of wget.
+    wget2
+
     # A fetcher for videos from various sites for archiving or local playback.
     youtube-dl
   ];
