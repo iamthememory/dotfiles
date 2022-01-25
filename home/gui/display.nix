@@ -136,7 +136,6 @@ in
       General.drawThickness = 4;
 
       # The default screenshot location.
-      General.saveAfterCopyPath = defaultScreenshotDirectory;
       General.savePath = defaultScreenshotDirectory;
     };
 
