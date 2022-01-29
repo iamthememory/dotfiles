@@ -1,9 +1,6 @@
 # Nix configuration for nightmare
 { ...
 }: {
-  # Build with at most four cores.
-  nix.buildCores = 4;
-
   # Enable regularly performing garbage collection.
   nix.gc.automatic = true;
 
@@ -13,8 +10,11 @@
   # Garbage-collect non-active profile generations older than a month.
   nix.gc.options = "--delete-older-than 30d";
 
+  # Build with at most four cores.
+  nix.settings.cores = 4;
+
   # Only build a single package at a time by default.
-  nix.maxJobs = 1;
+  nix.settings.max-jobs = 1;
 
   # Optimize the nix store later in the morning, after the garbage collector is
   # run, rather than the default 03:45.
