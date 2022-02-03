@@ -99,8 +99,8 @@ in
     let
       # The path to various tools.
       chown = "${pkgs.coreutils}/bin/chown";
-      gksudo = "${pkgs.gksu}/bin/gksudo";
       ln = "${pkgs.coreutils}/bin/ln";
+      qsudo = "${pkgs.qsudo}/bin/qsudo";
       realpath = "${pkgs.coreutils}/bin/realpath";
       rm = "${pkgs.coreutils}/bin/rm";
       rsync = "${pkgs.rsync}/bin/rsync";
@@ -141,7 +141,7 @@ in
 
       if [ "$HM_DO_FFXIV_WINE_UPDATE" = "1" ]
       then
-        $DRY_RUN_CMD ${gksudo} -- ${patchWine} ${ffxivWine} "${patchedWineDirectory}"
+        $DRY_RUN_CMD ${qsudo} -- ${patchWine} ${ffxivWine} "${patchedWineDirectory}"
         $DRY_RUN_CMD ${rm} -f "${unpatchedWineLink}"
         $DRY_RUN_CMD ${ln} -s ${ffxivWine} "${unpatchedWineLink}"
       fi
