@@ -20,6 +20,9 @@
     # A script-friendly HTTP(S), etc. utility.
     curlFull
 
+    # A modern dig-like tool.
+    dogdns
+
     # A human and script-friendly HTTP(S) utility.
     httpie
 
