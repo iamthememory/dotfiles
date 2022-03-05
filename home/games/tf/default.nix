@@ -17,6 +17,7 @@
 
           patches = [
             ./0000-italics-fix.patch
+            ./0001-bold-is-bright.patch
           ];
 
           src = inputs.tinyfugue-patched;

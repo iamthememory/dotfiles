@@ -1,0 +1,28 @@
+Some terminal emulators like kitty don't consider bold to also switch to the
+brighter colors.
+This doesn't play well with some servers, which assume bold is bright, and will
+do, e.g., bold black on black.
+Just swap to the bright color if it's also bold.
+diff --git a/src/output.c b/src/output.c
+index e2c7693d2cc9..5937c6db42d4 100644
+--- a/src/output.c
++++ b/src/output.c
+@@ -2795,7 +2795,17 @@ static void attributes_on(attr_t attrs)
+         if (have_attr & attrs & F_FLASH)     tp(flash);
+     }
+ 
+-    if (attrs & F_FGCOLOR)  color_on("", attr2fgcolor(attrs));
++    if (attrs & F_FGCOLOR) {
++        long color = attr2fgcolor(attrs);
++
++        /* If the text is bold, change the color to bright. */
++        if ((attrs & F_BOLD) && (color >= 0) && (color < 8)) {
++            color += 8;
++        }
++
++        color_on("", color);
++    }
++
+     if (attrs & F_BGCOLOR)  color_on("bg", attr2bgcolor(attrs));
+ }
+ 
