@@ -13,6 +13,7 @@
     ./lua.nix
     ./mail.nix
     ./markdown.nix
+    ./moo.nix
     ./nix.nix
     ./perl.nix
     ./python.nix
