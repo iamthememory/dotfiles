@@ -1,6 +1,7 @@
 # Terminal setup for kitty.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -73,6 +74,12 @@ in
 
   # Keybindings for kitty.
   programs.kitty.keybindings = {
+    # Load dark compatible colors.
+    "kitty_mod+f11" = "set_colors ${config.xdg.configHome}/kitty/compat-colors.conf";
+
+    # Load the default colors.
+    "kitty_mod+f12" = "set_colors ${config.xdg.configHome}/kitty/kitty.conf";
+
     # Move to the next and previous tabs.
     "kitty_mod+left" = "previous_tab";
     "kitty_mod+right" = "next_tab";
@@ -311,4 +318,94 @@ in
     # Add kitty zsh completion.
     ${config.home.profileDirectory}/bin/kitty + complete setup zsh | source /dev/stdin
   '';
+
+  # A colorscheme that should be compatible with non-themeable programs.
+  xdg.configFile."kitty/compat-colors.conf".text =
+    let
+      # Dark colors from st.
+      compatColors = rec {
+        # Normal colors.
+
+        # Black.
+        color0 = "#000000";
+
+        # Red3.
+        color1 = "#cd0000";
+
+        # Green3.
+        color2 = "#00cd00";
+
+        # Yellow3.
+        color3 = "#cdcd00";
+
+        # Blue2.
+        color4 = "#0000ee";
+
+        # Magenta3.
+        color5 = "#cd00cd";
+
+        # Cyan3.
+        color6 = "#00cdcd";
+
+        # Gray90.
+        color7 = "#e5e5e5";
+
+        # Bright colors.
+
+        # Gray50.
+        color8 = "#7f7f7f";
+
+        # Red.
+        color9 = "#ff0000";
+
+        # Green.
+        color10 = "#00ff00";
+
+        # Yellow.
+        color11 = "#ffff00";
+
+        # Blue.
+        color12 = "#5c5cff";
+
+        # Magenta.
+        color13 = "#ff00ff";
+
+        # Cyan.
+        color14 = "#00ffff";
+
+        # White.
+        color15 = "#ffffff";
+
+        # The border colors.
+        active_border_color = config.programs.kitty.settings.active_border_color;
+        bell_border_color = config.programs.kitty.settings.bell_border_color;
+        inactive_border_color = config.programs.kitty.settings.inactive_border_color;
+
+        # The background color.
+        background = color0;
+
+        # The cursor color.
+        cursor = "#cccccc";
+
+        # The text under the cursor should be the background color the cell
+        # would have if the cursor weren't there.
+        cursor_text_color = "background";
+
+        # The foreground color.
+        foreground = color7;
+
+        # When selecting text, reverse the foreground and background from the
+        # default.
+        selection_background = foreground;
+        selection_foreground = background;
+
+        # The color to use for URLs on mouseover.
+        url_color = color12;
+      };
+
+      mkConfig = lib.generators.toKeyValue {
+        mkKeyValue = key: value: "${key} ${toString value}";
+      };
+    in
+    mkConfig compatColors;
 }
