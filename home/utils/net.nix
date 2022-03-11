@@ -52,9 +52,6 @@
     # Mount a remote directory using FUSE over SSH.
     sshfs
 
-    # Telnet.
-    telnet
-
     # A terminal sharing utility based on tmux and ssh.
     tmate
 

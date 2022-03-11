@@ -4,6 +4,6 @@
 }: super.appimage-run.override {
   # Extra packages to make available.
   extraPkgs = pkgs: with pkgs; [
-    at_spi2_core.out
+    at-spi2-core.out
   ];
 }

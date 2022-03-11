@@ -10,7 +10,7 @@
 
   home.packages = with pkgs; [
     # Basic Linux manpages.
-    manpages
+    man-pages
 
     # A tool for converting and rendering things like markdown.
     pandoc
