@@ -68,6 +68,9 @@ in
     "/run/current-system/sw/bin"
   ];
 
+  # The nix package to check the nix user configuration against.
+  nix.package = pkgs.nix;
+
   # The user registry of extra flake identifiers, to more quickly reference
   # flakes without the full repo URL.
   nix.registry =
@@ -104,6 +107,10 @@ in
     in
     builtins.foldl' (x: y: x // y) { } (builtins.map mkGithubFlake githubFlakes);
 
+  # Ensure that nix has flakes enabled.
+  # FIXME: This can be removed once flakes are stable.
+  nix.settings.experimental-features = "nix-command flakes";
+
   # Set the configuration for nixpkgs used in home-manager from the top-level
   # config.
   nixpkgs.config = import inputs.nixpkgs-config;
@@ -122,12 +129,6 @@ in
 
   # (Re)start services on generation activation.
   systemd.user.startServices = "legacy";
-
-  # Ensure that nix has flakes enabled.
-  # FIXME: This can be removed once flakes are stable.
-  xdg.configFile."nix/nix.conf".text = ''
-    experimental-features = nix-command flakes
-  '';
 
   # Set the nixpkgs config for the system from the config we use here.
   xdg.configFile."nixpkgs/config.nix".source = inputs.nixpkgs-config;
