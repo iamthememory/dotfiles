@@ -15,8 +15,5 @@
 
     " Treat hard tabs as 8 spaces.
     setlocal tabstop=8
-
-    " Try to wrap text at 80 characters.
-    setlocal textwidth=80
   '';
 }
