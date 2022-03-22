@@ -56,15 +56,6 @@ let
           # Add CMake for keystone's build process.
           nativeBuildInputs = [ pkgs.cmake ];
         };
-
-        # Make a package of ropper, but built as a Python library, rather than
-        # an application.
-        # This is necessary for the modules to be loadable by GEF.
-        ropper-lib = python3Packages: python3Packages.buildPythonPackage {
-          # Just inherit everything from ropper.
-          inherit (python3Packages.ropper)
-            pname version src doCheck checkInputs propagatedBuildInputs meta;
-        };
       in
       pkgs.python3.withPackages (p: with p; [
         capstone
@@ -73,7 +64,6 @@ let
         unicorn
 
         (keystone-engine p)
-        (ropper-lib p)
       ]);
   };
 
