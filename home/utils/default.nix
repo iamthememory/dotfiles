@@ -50,6 +50,9 @@
     # A shiny alternative to ls written in rust.
     exa
 
+    # A shiny alternative to find written in rust.
+    fd
+
     # The file utility for identifying file contents and MIMEs.
     file
 
