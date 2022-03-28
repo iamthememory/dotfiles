@@ -3,6 +3,7 @@
 }: {
   # Enable pipewire.
   services.pipewire.enable = true;
+  services.pipewire.audio.enable = true;
 
   # Enable ALSA compatibility for pipewire.
   services.pipewire.alsa.enable = true;
