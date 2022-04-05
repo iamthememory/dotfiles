@@ -41,6 +41,12 @@ let
     '';
 in
 {
+  # Enable managing the GTK configuration.
+  gtk.enable = true;
+
+  # Use Adwaita dark as the GTK theme.
+  gtk.theme.name = "Adwaita-dark";
+
   home.packages =
     let
       # Flameshot, with its priority increased to avoid a collision with the
