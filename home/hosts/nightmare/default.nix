@@ -20,6 +20,7 @@
     ../../gui
     ../../mail
     ../../media
+    ../../media/sound/mpd.nix
     ../../media/sound/spotify.nix
     ../../neovim
     ../../pass.nix
@@ -98,6 +99,9 @@
 
   # Use a GUI pinentry.
   services.gpg-agent.pinentryFlavor = "gtk2";
+
+  # Use /data/music for mpd's music.
+  services.mpd.musicDirectory = "/data/music";
 
   # The mountpoints to monitor.
   system.monitor-mounts = {

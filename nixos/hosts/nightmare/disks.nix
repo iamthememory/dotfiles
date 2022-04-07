@@ -160,6 +160,7 @@ in
   fileSystems."/data/downloads" = mkZFS "rpool/shared/data/downloads";
   fileSystems."/data/ebook" = mkZFS "rpool/shared/data/ebook";
   fileSystems."/data/music" = mkZFS "rpool/shared/data/music";
+  fileSystems."/data/music.old" = mkZFS "rpool/shared/data/music.old";
   fileSystems."/data/src" = mkZFS "rpool/shared/data/src";
   fileSystems."/data/src/libvirt-images" = mkZFS "rpool/shared/data/src/libvirt-images";
   fileSystems."/var/cache/ccache" = mkZFS "rpool/nix/var/cache/ccache";
@@ -239,6 +240,7 @@ in
         "rpool/shared/data/downloads"
         "rpool/shared/data/ebook"
         "rpool/shared/data/music"
+        "rpool/shared/data/music.old"
         "rpool/shared/data/src"
         "spool"
         "spool/nix"

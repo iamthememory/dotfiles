@@ -16,9 +16,6 @@ in
     spotify
   ];
 
-  # Make Spotify the default player to control.
-  home.sessionVariables.DEFAULT_PLAYERCTL_PLAYER = "spotify";
-
   # Make Spotify always a floating window.
   xsession.windowManager.i3.config.floating.criteria = [
     { class = "^Spotify$"; }
