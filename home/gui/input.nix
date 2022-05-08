@@ -45,6 +45,13 @@
   # This can be overridden for, e.g., dvorak.
   home.keyboard.variant = lib.mkDefault "";
 
+  # Use a size 16 Adwaita cursor.
+  home.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
+  home.pointerCursor.name = "Adwaita";
+  home.pointerCursor.size = 16;
+  home.pointerCursor.gtk.enable = true;
+  home.pointerCursor.x11.enable = true;
+
   # Add clipmenu to keep track of old clipboard entries.
   services.clipmenu.enable = true;
 
@@ -78,9 +85,4 @@
 
   # Turn on Num Lock when starting the X11 session.
   xsession.numlock.enable = true;
-
-  # Use a size 16 Adwaita cursor.
-  xsession.pointerCursor.package = pkgs.gnome.adwaita-icon-theme;
-  xsession.pointerCursor.name = "Adwaita";
-  xsession.pointerCursor.size = 16;
 }
