@@ -18,8 +18,7 @@ in
 {
   home.packages = with pkgs; [
     # A multi-track recording/audio/MIDI software.
-    # FIXME: Switch this back to unstable when it builds.
-    inputs.stable.ardour
+    ardour
 
     # A basic audio editor.
     audacity
