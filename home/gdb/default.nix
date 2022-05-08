@@ -59,6 +59,7 @@ let
       in
       pkgs.python3.withPackages (p: with p; [
         capstone
+        pygments
         ropper
         rpyc
         unicorn
