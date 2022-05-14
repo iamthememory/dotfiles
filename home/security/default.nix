@@ -35,6 +35,9 @@
     # A tool for generating random passwords.
     pwgen
 
+    # The flipper GUI tool.
+    qFlipper
+
     # A tool for viewing and recording network traffic on an interface.
     wireshark
   ];
