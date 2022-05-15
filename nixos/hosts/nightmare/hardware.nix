@@ -79,6 +79,9 @@
 
   # Extra packages with udev rules.
   services.udev.packages = with pkgs; [
+    # Flipper Zero access rules.
+    qFlipper
+
     # Yubikey access rules.
     yubikey-personalization
   ];
