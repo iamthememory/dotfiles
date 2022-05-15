@@ -11,10 +11,10 @@ let
 
   # The WINE to use for FFXIV.
   ffxivWine = inputs.lib.wine.mkWine {
-    inherit pkgs;
+    pkgs = inputs.stable;
 
-    src = inputs.lutris-7_2;
-    version = "lutris-7.2";
+    src = inputs.lutris-6_5;
+    version = "lutris-6.5";
   };
 
   # The current profile's binary directory.

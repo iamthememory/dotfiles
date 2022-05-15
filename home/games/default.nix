@@ -6,10 +6,10 @@
 let
   # A build of WINE using the patches Lutris uses.
   lutrisWine = inputs.lib.wine.mkWine {
-    inherit pkgs;
+    pkgs = inputs.stable;
 
-    src = inputs.lutris-7_2;
-    version = "lutris-7.2";
+    src = inputs.lutris-6_5;
+    version = "lutris-6.5";
   };
 in
 {
