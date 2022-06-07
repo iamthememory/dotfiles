@@ -26,9 +26,6 @@ in
     # A tool for managing wine prefixes.
     bottles
 
-    # The FFXIV WINE wrapper.
-    ffxivWineWrapper
-
     # A wrapper to start FFXIV.
     start-ffxiv
   ];
