@@ -116,23 +116,6 @@
         "type": "github"
       }
     },
-    "lutris-6_5": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1617136800,
-        "narHash": "sha256-sAxAoznTlX8gYp2F8yOR0ZH+b42UOHE9+vc3ZXlXTy4=",
-        "owner": "lutris",
-        "repo": "wine",
-        "rev": "80455bfeab104fe29a47fe23c285ada9bb79cea1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lutris",
-        "ref": "lutris-6.5",
-        "repo": "wine",
-        "type": "github"
-      }
-    },
     "mutt-colors-solarized": {
       "flake": false,
       "locked": {
@@ -238,7 +221,6 @@
         "gef-extras": "gef-extras",
         "home-manager": "home-manager",
         "keystone-engine": "keystone-engine",
-        "lutris-7_2": "lutris-7_2",
         "mutt-colors-solarized": "mutt-colors-solarized",
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",

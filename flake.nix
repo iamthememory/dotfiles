@@ -92,11 +92,6 @@
 
     # WINE packages and patches not in nixpkgs.
 
-    lutris-6_5 = {
-      url = "github:lutris/wine/lutris-6.5";
-      flake = false;
-    };
-
     # A patched, more up-to-date tinyfugue.
     tinyfugue-patched = {
       url = "github:ingwarsw/tinyfugue";

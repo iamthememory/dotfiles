@@ -2,17 +2,7 @@
 { inputs
 , pkgs
 , ...
-}:
-let
-  # A build of WINE using the patches Lutris uses.
-  lutrisWine = inputs.lib.wine.mkWine {
-    pkgs = inputs.stable;
-
-    src = inputs.lutris-6_5;
-    version = "lutris-6.5";
-  };
-in
-{
+}: {
   imports = [
     ./cli.nix
     ./gui.nix
@@ -30,17 +20,20 @@ in
       # A tool for running appimages.
       appimage-run
 
+      # A tool for managing separate wine prefixes.
+      bottles
+
       # A tool for showing OpenGL info for testing and debugging.
       glxinfo
 
       # A tool for easily running games on Linux.
       lutris
 
-      # A build of WINE using Lutris patches.
-      lutrisWine
-
       # A way of easily applying libraries to WINE prefixes.
       winetricks
+
+      # A default wine.
+      wineWowPackages.staging
     ];
 
   # Install Java.
