@@ -69,6 +69,9 @@
     # Disable the warning on accessing about:config.
     "browser.aboutConfig.showWarning" = false;
 
+    # Don't always open the download panel when downloading files.
+    "browser.download.alwaysOpenPanel" = false;
+
     # Don't autohide the address bar and tab bar in fullscreen.
     "browser.fullscreen.autohide" = false;
 
