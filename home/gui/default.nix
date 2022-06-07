@@ -137,4 +137,13 @@
 
   # Enable managing the X11 session.
   xsession.enable = true;
+
+  # Extra things to run when starting the X11 session.
+  xsession.initExtra = ''
+    # Redirect output to /dev/null, since anything started via i3 dumps its
+    # output to these file descriptors, flooding the journal if any GUI programs
+    # are particularly verbose.
+    exec >/dev/null
+    exec 2>/dev/null
+  '';
 }
