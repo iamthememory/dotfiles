@@ -54,6 +54,9 @@
       # A tab manager.
       tab-session-manager
 
+      # A tool for injecting javascript into pages.
+      tampermonkey
+
       # An extension to provide Vi-like keybindings in Firefox.
       vimium
 
