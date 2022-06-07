@@ -102,6 +102,9 @@
   # Sync mbsync accounts every 5 minutes.
   services.mbsync.frequency = "*:0/5";
 
+  # Don't log verbose information to the logs.
+  services.mbsync.verbose = false;
+
   # A service to update the notmuch database for new messages.
   systemd.user.services."update-notmuch-database" = {
     Unit.Description = "Update the notmuch database for new messages";
