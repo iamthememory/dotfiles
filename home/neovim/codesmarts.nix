@@ -12,6 +12,9 @@
     # generation.
     "coc.preferences.extensionUpdateCheck" = "never";
 
+    # Format code as it's typed.
+    "coc.preferences.formatOnType" = true;
+
     # Use the quickfix list for locations.
     "coc.preferences.useQuickfixForLocations" = true;
 
@@ -45,7 +48,7 @@
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-    " Use shift-tab to move back in te completion list if it's available.
+    " Use shift-tab to move back in the completion list if it's available.
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
     " Jump to the definition of a symbol.
@@ -76,6 +79,11 @@
 
     " Highlight the symbol and references when holding the cursor.
     autocmd CursorHold * silent call CocActionAsync('highlight')
+
+    " When hitting enter in between two brackets, reformat them to move the
+    " closing bracket below the cursor on its own line.
+    inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
     " Format the selected code.
     xmap <leader>f <Plug>(coc-format-selected)
@@ -123,6 +131,9 @@
 
     # Extra lists for COC.
     coc-lists
+
+    # A plugin to auto-close paired delimiters.
+    coc-pairs
 
     # A plugin for snippet completion and expansion with COC.
     {
