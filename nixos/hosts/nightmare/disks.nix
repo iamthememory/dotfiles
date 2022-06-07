@@ -167,6 +167,7 @@ in
   fileSystems."/var/cache/spotify" = mkZFS "rpool/nix/var/cache/spotify";
 
   # Game filesystems.
+  fileSystems."/opt/bottles" = mkZFS "spool/shared/opt/bottles";
   fileSystems."/opt/ffxiv" = mkZFS "spool/shared/opt/ffxiv";
   fileSystems."/opt/itch" = mkZFS "spool/shared/opt/itch";
   fileSystems."/opt/lutris" = mkZFS "spool/shared/opt/lutris";
@@ -248,6 +249,7 @@ in
         "spool/nix/usr"
         "spool/nix/var"
         "spool/shared/home"
+        "spool/shared/opt/bottles"
         "spool/shared/opt/ffxiv"
         "spool/shared/opt/lutris"
       ];
