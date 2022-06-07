@@ -69,6 +69,14 @@
     # Disable the warning on accessing about:config.
     "browser.aboutConfig.showWarning" = false;
 
+    # Disable the on-disk cache.
+    # This isn't as necessary with decent internet/memory, and with frequent
+    # snapshots tends to balloon disk usage from all the churn.
+    "browser.cache.disk.capacity" = 0;
+    "browser.cache.disk.enable" = false;
+    "browser.cache.disk.smart_size.enabled" = false;
+    "browser.cache.disk_cache_ssl" = false;
+
     # Don't always open the download panel when downloading files.
     "browser.download.alwaysOpenPanel" = false;
 
