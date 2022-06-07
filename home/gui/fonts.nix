@@ -31,7 +31,8 @@
 
     # A set of nice fonts from Google.
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     noto-fonts-emoji
     noto-fonts-extra
 
