@@ -28,9 +28,6 @@
   # Various mail functions.
   mail = import ./mail-account.nix;
 
-  # Wine related functions.
-  wine = import ./wine { lib = pkgs.lib; };
-
   # Network-related functions.
   network = import ./network.nix { lib = pkgs.lib; };
 
