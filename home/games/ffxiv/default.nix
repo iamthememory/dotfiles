@@ -11,23 +11,11 @@ let
 
   # The current profile's binary directory.
   profileBin = "${config.home.profileDirectory}/bin";
-
-  # A script to start FFXIV.
-  start-ffxiv = pkgs.writeShellScriptBin "start-ffxiv.sh" ''
-    # Die on errors.
-    set -euo pipefail
-
-    # Run XIVLauncher through bottles.
-    exec ${profileBin}/bottles-cli run -b FFXIV -p XIVLauncher
-  '';
 in
 {
   home.packages = with pkgs; [
-    # A tool for managing wine prefixes.
-    bottles
-
-    # A wrapper to start FFXIV.
-    start-ffxiv
+    # XIVLauncher.
+    xivlauncher
   ];
 
   # Make ACT always floating.
@@ -37,7 +25,7 @@ in
 
   # Start FFXIV.
   xsession.windowManager.i3.config.keybindings."${mod}+Control+Shift+f" =
-    "exec ${profileBin}/start-ffxiv.sh";
+    "exec ${profileBin}/XIVLauncher.Core";
 
   # Disable window borders for FFXIV.
   xsession.windowManager.i3.config.window.commands = [
