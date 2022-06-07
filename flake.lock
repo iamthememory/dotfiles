@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1652568718,
-        "narHash": "sha256-LKpy8qk5O7r9RaS2LetGTQ1Md69SrAgssyKefWFKoBU=",
+        "lastModified": 1654578423,
+        "narHash": "sha256-93+t0dzMp7oG8s1nACEI2IReV+slCgyEHXrF2E2pRTg=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "b03e0412066085d8013d0bb85e388aa1f7ac3933",
+        "rev": "7ffd17f6048e05bdb4b8afc35b2b1c57df6b17b8",
         "type": "github"
       },
       "original": {
@@ -34,11 +34,11 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1652557277,
-        "narHash": "sha256-jSes9DaIVMdmwBB78KkFUVrlDzawmD62vrUg0GS2500=",
+        "lastModified": 1653893745,
+        "narHash": "sha256-0jntwV3Z8//YwuOjzhV2sgJJPt+HY6KhU7VZUL0fKZQ=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "12806d31a381e7cd169a6bac35590e7b36dc5fe5",
+        "rev": "1ed9fb1935d260de5fe1c2f7ee0ebaae17ed2fa1",
         "type": "github"
       },
       "original": {
@@ -50,11 +50,11 @@
     "gef": {
       "flake": false,
       "locked": {
-        "lastModified": 1649518613,
-        "narHash": "sha256-1IfPPNzWkYdDZjSl65t9XpgV8pNKopCJclRxdk8ib3c=",
+        "lastModified": 1653232452,
+        "narHash": "sha256-tku4i4Ru9HcXB8OjuS93UEXn2pi1+iGshneKL3dtOE0=",
         "owner": "hugsy",
         "repo": "gef",
-        "rev": "e50af7761c61cc66cf2e4649dccb0000cacdfcf6",
+        "rev": "7f45550ea610a832817edc8cc18248deea90cf59",
         "type": "github"
       },
       "original": {
@@ -67,11 +67,11 @@
     "gef-extras": {
       "flake": false,
       "locked": {
-        "lastModified": 1650947108,
-        "narHash": "sha256-DmKA6HFi6cakLqsFsSwnKjLSluRfgYDvx0Aq846hWQs=",
+        "lastModified": 1653230448,
+        "narHash": "sha256-lcTVPxBvmQIktuO5YVInWsPvivDYQi99OjQr+zBV1Do=",
         "owner": "hugsy",
         "repo": "gef-extras",
-        "rev": "e9ed2e33a9610ee871af9e2c71a1dcee36690f84",
+        "rev": "9a160e8b94136833a9531571b0cfd8614249df16",
         "type": "github"
       },
       "original": {
@@ -87,11 +87,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652452043,
-        "narHash": "sha256-nh3mdVB/Kk5ag1uRMAlKo8r+ssN3HNxwbLsqRG4xZkw=",
+        "lastModified": 1654422613,
+        "narHash": "sha256-ZxkMM13AnrMwYOV99ohzcqeTkAOqD9Q2SBdZ9WoFE9Y=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "273598f53e04f0111dca5724b37640e3907edaaf",
+        "rev": "20703892473d01c70fb10248442231fe94f4ceb4",
         "type": "github"
       },
       "original": {
@@ -167,11 +167,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1652378906,
-        "narHash": "sha256-DeV2myAMArPvyqxp0M6z30kuXb2L9SO2QXjxbbsZQyY=",
+        "lastModified": 1654230545,
+        "narHash": "sha256-8Vlwf0x8ow6pPOK2a04bT+pxIeRnM1+O0Xv9/CuDzRs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d89d7af1ba23bd8a5341d00bdd862e8e9a808f56",
+        "rev": "236cc2971ac72acd90f0ae3a797f9f83098b17ec",
         "type": "github"
       },
       "original": {
@@ -183,11 +183,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1652568403,
-        "narHash": "sha256-cWXlFnBmB5RJdZ0BYnK6a/L7PTEpxd4VcgagALO0Hw4=",
+        "lastModified": 1654596000,
+        "narHash": "sha256-KEsNCD0IPGaONtz6FxgaRpJO/yyJ+C559TmgXvXrO5o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "82c1de01159a68b5d0655097bd62a98b9375edf2",
+        "rev": "a1ab62da271128de091642e5737a6e8ea1634746",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1652570003,
-        "narHash": "sha256-F8Y+Si85W3o4Qxk2+J5rc3lRxDRJ7xkmzmG648PXJyc=",
+        "lastModified": 1654593979,
+        "narHash": "sha256-iDvyU5vs7IoPBpxwhNAI/J3llDsmtzH1xYqvCGvzCww=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d5446de0541b90187f30b7e7e8e7818c39dc2b76",
+        "rev": "47044837d4ebcaa37e699d92d893a32d4e301852",
         "type": "github"
       },
       "original": {
@@ -238,7 +238,7 @@
         "gef-extras": "gef-extras",
         "home-manager": "home-manager",
         "keystone-engine": "keystone-engine",
-        "lutris-6_5": "lutris-6_5",
+        "lutris-7_2": "lutris-7_2",
         "mutt-colors-solarized": "mutt-colors-solarized",
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",
