@@ -77,6 +77,12 @@
     "browser.cache.disk.smart_size.enabled" = false;
     "browser.cache.disk_cache_ssl" = false;
 
+    # Allow a larger memory cache than the default, which is a few dozen
+    # megabytes.
+    # Allow up to 512 MiB of RAM cache, caching things up to 12 MiB.
+    "browser.cache.memory.capacity" = 512 * 1024;
+    "browser.cache.memory.max_entry_size" = 12 * 1024;
+
     # Don't always open the download panel when downloading files.
     "browser.download.alwaysOpenPanel" = false;
 
