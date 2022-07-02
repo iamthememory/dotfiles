@@ -30,10 +30,10 @@
       };
     "downthemall" = buildFirefoxXpiAddon {
       pname = "downthemall";
-      version = "4.3.1";
+      version = "4.4.1";
       addonId = "{DDC359D1-844A-42a7-9AA1-88A850A938A8}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3871271/downthemall-4.3.1.xpi";
-      sha256 = "7163f8301a78ab3832563acb3d36aaffcb6be1979e8161dd7de7caecd6e701b6";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3965183/downthemall-4.4.1.xpi";
+      sha256 = "1911b6710d2b1b672d30135341e543041a60104aa200c343bc08393a8380b546";
       meta = with lib;
       {
         homepage = "https://www.downthemall.org/";
