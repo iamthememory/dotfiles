@@ -68,6 +68,10 @@ in
     "/run/current-system/sw/bin"
   ];
 
+  # Only update this after checking the changelog after a new
+  # home-manager state version.
+  home.stateVersion = "22.05";
+
   # The nix package to check the nix user configuration against.
   nix.package = pkgs.nix;
 

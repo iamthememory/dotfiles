@@ -180,19 +180,19 @@
           };
         in
         home-manager.lib.homeManagerConfiguration {
-          configuration = {
-            _module.args.inputs = importedInputs;
+          modules = [
+            hostfile
 
-            imports = [
-              hostfile
-            ];
-          };
+            {
+              home = {
+                inherit username homeDirectory;
+              };
 
-          # Only update this after checking the changelog after a new
-          # home-manager state version.
-          stateVersion = "22.05";
+              _module.args.inputs = importedInputs;
+            }
+          ];
 
-          inherit username homeDirectory system pkgs;
+          inherit pkgs;
         };
 
       mkOSHost =
