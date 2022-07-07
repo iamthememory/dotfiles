@@ -144,6 +144,12 @@ in
   fileSystems."/boot1" = mkExt4 "cb5fae85-7483-4fd3-8eeb-b1441fb15a7d";
   fileSystems."/boot1/efi" = mkVfat "DD67-7023";
 
+  # Bind /boot0 to /boot for compatibility with, e.g., system76-firmware-daemon.
+  fileSystems."/boot" = {
+    device = "/boot0";
+    options = [ "bind" ];
+  };
+
   # System filesystems.
   fileSystems."/" = mkZFS "spool/enc/nixos";
   fileSystems."/home" = mkZFS "spool/enc/shared/home";
