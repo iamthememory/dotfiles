@@ -18,9 +18,6 @@
   # Create missing destination datasets when replicating datasets.
   services.znapzend.autoCreation = true;
 
-  # Enable sending compressed data.
-  services.znapzend.features.compressed = true;
-
   # Keep destination datasets unmounted when receiving.
   services.znapzend.features.recvu = true;
 
