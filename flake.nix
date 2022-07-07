@@ -202,6 +202,47 @@
         }:
         let
           hostfile = ./nixos/hosts + "/${host}";
+
+          # A minimal recovery ISO.
+          recoverySystem = nixpkgs.lib.nixosSystem {
+            inherit system;
+
+            modules = [{
+              imports = [
+                "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+              ];
+
+              # Ensure the stage 1 initrd has LUKS support in case it's needed.
+              # This won't make the stage 1 boot script handle LUKS on its own,
+              # but it will ensure the LUKS tools are available.
+              boot.initrd.luks.forceLuksSupportInInitrd = true;
+
+              # Ensure the stage 1 initrd has enough filesystem support to find
+              # its ISO on whatever /boot is likely to be, if, e.g., /boot is
+              # ext4 and the ISO's in /boot/iso/nixos-minimal.iso.
+              boot.initrd.supportedFilesystems = [
+                # Support bcachefs.
+                "bcachefs"
+
+                # Support btrfs.
+                "btrfs"
+
+                # Support the ext family.
+                "ext2"
+                "ext3"
+                "ext4"
+
+                # Support FAT filesystems.
+                "exfat"
+                "vfat"
+
+                # Support ZFS.
+                "zfs"
+              ];
+            }];
+          };
+
+          recoveryISO = recoverySystem.config.system.build.isoImage;
         in
         nixpkgs.lib.nixosSystem {
           inherit system;
@@ -209,7 +250,7 @@
           modules = [
             ({
               _module.args.inputs = defaultInputs // {
-                inherit nixpkgs-config overlay;
+                inherit nixpkgs-config overlay recoveryISO;
                 flake = self;
                 lib = import lib { pkgs = nixpkgs; };
               };

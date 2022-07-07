@@ -1,5 +1,6 @@
 # NixOS settings for nightmare.
-{ pkgs
+{ inputs
+, pkgs
 , ...
 }: {
   imports = [
@@ -30,6 +31,38 @@
 
   # Copy kernels and initrds to the boot partitions.
   boot.loader.grub.copyKernels = true;
+
+  # Autodetect and boot ISOs in /boot*/iso.
+  # This is mainly to make it easier to have a minimal system for recovery
+  # that's more convenient than just the initramfs.
+  boot.loader.grub.extraEntries = ''
+    submenu "Auto-detected ISO images" --class submenu {
+      source /grub/autoiso.cfg
+    }
+  '';
+
+  # Copy autoiso.cfg from GRUB2's sources.
+  # Unfortunately, this doesn't seem to be installed by default in GRUB's
+  # packages, so we need to pull it out ourselves.
+  boot.loader.grub.extraFiles."grub/autoiso.cfg" = (pkgs.stdenv.mkDerivation {
+    pname = "autoiso.cfg";
+
+    # Copy the version and src from the GRUB2 package.
+    version = pkgs.grub2.version;
+    src = pkgs.grub2.src;
+
+    # Only unpack and run our installPhase.
+    phases = [ "unpackPhase" "installPhase" ];
+
+    # Just copy out the autoiso.cfg file.
+    installPhase = ''
+      cp docs/autoiso.cfg $out
+    '';
+  });
+
+  # Copy a recovery ISO to the boot partitions.
+  boot.loader.grub.extraFiles."iso/nixos-minimal.iso" =
+    "${inputs.recoveryISO}/iso/${inputs.recoveryISO.isoName}";
 
   # Mount a tmpfs on /tmp.
   boot.tmpOnTmpfs = true;
