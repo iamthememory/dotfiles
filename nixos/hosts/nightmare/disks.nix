@@ -121,8 +121,12 @@ in
     in
     builtins.listToAttrs (builtins.map mkLuksEntry devices);
 
-  # Prompt for encryption keys/passphrases when importing the pools.
-  boot.zfs.requestEncryptionCredentials = true;
+  # Prompt for encryption keys/passphrases when importing the pools for the
+  # encryption roots of datasets.
+  boot.zfs.requestEncryptionCredentials = [
+    "spool/enc"
+    "rpool/enc"
+  ];
 
   # Configuration for fwupd's UEFI support.
   # FIXME: Remove this once NixOS fixes that it puts the UEFI partition info in
@@ -141,37 +145,36 @@ in
   fileSystems."/boot1/efi" = mkVfat "DD67-7023";
 
   # System filesystems.
-  fileSystems."/" = mkZFS "spool/nix";
-  fileSystems."/home" = mkZFS "spool/shared/home";
-  fileSystems."/nix" = mkZFS "spool/nix/nix";
-  fileSystems."/opt" = mkZFS "spool/nix/opt";
-  fileSystems."/srv" = mkZFS "rpool/nix/srv";
-  fileSystems."/usr" = mkZFS "spool/nix/usr";
-  fileSystems."/var" = mkZFS "spool/nix/var";
-  fileSystems."/var/cache" = mkZFS "rpool/nix/var/cache";
-  fileSystems."/var/lib" = mkZFS "rpool/nix/var/lib";
-  fileSystems."/var/lib/docker" = mkZFS "rpool/nix/var/lib/docker";
-  fileSystems."/var/log" = mkZFS "rpool/nix/var/log";
-  fileSystems."/var/tmp" = mkZFS "rpool/nix/var/tmp";
+  fileSystems."/" = mkZFS "spool/enc/nixos";
+  fileSystems."/home" = mkZFS "spool/enc/shared/home";
+  fileSystems."/nix" = mkZFS "spool/enc/nixos/nix";
+  fileSystems."/opt" = mkZFS "spool/enc/nixos/opt";
+  fileSystems."/srv" = mkZFS "rpool/enc/nixos/srv";
+  fileSystems."/usr" = mkZFS "spool/enc/nixos/usr";
+  fileSystems."/var" = mkZFS "spool/enc/nixos/var";
+  fileSystems."/var/cache" = mkZFS "rpool/enc/nixos/var/cache";
+  fileSystems."/var/lib" = mkZFS "rpool/enc/nixos/var/lib";
+  fileSystems."/var/lib/docker" = mkZFS "rpool/enc/nixos/var/lib/docker";
+  fileSystems."/var/log" = mkZFS "rpool/enc/nixos/var/log";
+  fileSystems."/var/tmp" = mkZFS "rpool/enc/nixos/var/tmp";
   fileSystems."/var/tmp/ram" = mkTmpfs;
 
   # Data filesystems.
-  fileSystems."/data" = mkZFS "rpool/shared/data";
-  fileSystems."/data/downloads" = mkZFS "rpool/shared/data/downloads";
-  fileSystems."/data/ebook" = mkZFS "rpool/shared/data/ebook";
-  fileSystems."/data/music" = mkZFS "rpool/shared/data/music";
-  fileSystems."/data/music.old" = mkZFS "rpool/shared/data/music.old";
-  fileSystems."/data/src" = mkZFS "rpool/shared/data/src";
-  fileSystems."/data/src/libvirt-images" = mkZFS "rpool/shared/data/src/libvirt-images";
-  fileSystems."/var/cache/ccache" = mkZFS "rpool/nix/var/cache/ccache";
-  fileSystems."/var/cache/spotify" = mkZFS "rpool/nix/var/cache/spotify";
+  fileSystems."/data" = mkZFS "rpool/enc/shared/data";
+  fileSystems."/data/downloads" = mkZFS "rpool/enc/shared/data/downloads";
+  fileSystems."/data/ebook" = mkZFS "rpool/enc/shared/data/ebook";
+  fileSystems."/data/music" = mkZFS "rpool/enc/shared/data/music";
+  fileSystems."/data/music.old" = mkZFS "rpool/enc/shared/data/music.old";
+  fileSystems."/data/src" = mkZFS "rpool/enc/shared/data/src";
+  fileSystems."/var/cache/ccache" = mkZFS "rpool/enc/nixos/var/cache/ccache";
+  fileSystems."/var/cache/spotify" = mkZFS "rpool/enc/nixos/var/cache/spotify";
 
   # Game filesystems.
-  fileSystems."/opt/bottles" = mkZFS "spool/shared/opt/bottles";
-  fileSystems."/opt/ffxiv" = mkZFS "spool/shared/opt/ffxiv";
-  fileSystems."/opt/itch" = mkZFS "spool/shared/opt/itch";
-  fileSystems."/opt/lutris" = mkZFS "spool/shared/opt/lutris";
-  fileSystems."/opt/steam" = mkZFS "spool/shared/opt/steam";
+  fileSystems."/opt/bottles" = mkZFS "spool/enc/shared/opt/bottles";
+  fileSystems."/opt/ffxiv" = mkZFS "spool/enc/shared/opt/ffxiv";
+  fileSystems."/opt/itch" = mkZFS "spool/enc/shared/opt/itch";
+  fileSystems."/opt/lutris" = mkZFS "spool/enc/shared/opt/lutris";
+  fileSystems."/opt/steam" = mkZFS "spool/enc/shared/opt/steam";
 
   # Pool mountpoints to check pool free space with tools that don't specially
   # check zfS pools.
@@ -230,28 +233,26 @@ in
 
       # The datasets to snapshot.
       datasets = [
-        "rpool"
-        "rpool/nix/srv"
-        "rpool/nix/var/cache"
-        "rpool/nix/var/cache/ccache"
-        "rpool/nix/var/cache/spotify"
-        "rpool/nix/var/lib"
-        "rpool/nix/var/log"
-        "rpool/shared/data"
-        "rpool/shared/data/downloads"
-        "rpool/shared/data/ebook"
-        "rpool/shared/data/music"
-        "rpool/shared/data/music.old"
-        "rpool/shared/data/src"
-        "spool"
-        "spool/nix"
-        "spool/nix/opt"
-        "spool/nix/usr"
-        "spool/nix/var"
-        "spool/shared/home"
-        "spool/shared/opt/bottles"
-        "spool/shared/opt/ffxiv"
-        "spool/shared/opt/lutris"
+        "rpool/enc/nixos/srv"
+        "rpool/enc/nixos/var/cache"
+        "rpool/enc/nixos/var/cache/ccache"
+        "rpool/enc/nixos/var/cache/spotify"
+        "rpool/enc/nixos/var/lib"
+        "rpool/enc/nixos/var/log"
+        "rpool/enc/shared/data"
+        "rpool/enc/shared/data/downloads"
+        "rpool/enc/shared/data/ebook"
+        "rpool/enc/shared/data/music"
+        "rpool/enc/shared/data/music.old"
+        "rpool/enc/shared/data/src"
+        "spool/enc/nixos"
+        "spool/enc/nixos/opt"
+        "spool/enc/nixos/usr"
+        "spool/enc/nixos/var"
+        "spool/enc/shared/home"
+        "spool/enc/shared/opt/bottles"
+        "spool/enc/shared/opt/ffxiv"
+        "spool/enc/shared/opt/lutris"
       ];
     in
     builtins.listToAttrs (builtins.map mkZetup datasets);
@@ -260,7 +261,8 @@ in
   swapDevices = [
     # spool/swap.
     {
-      device = "/dev/disk/by-uuid/08352cc8-8e19-4a59-a760-a201ee0ff3de";
+      device = "/dev/disk/by-uuid/ef9cb187-471a-4893-91d8-6b11b7a0e12f";
+      discardPolicy = "both";
     }
   ];
 
