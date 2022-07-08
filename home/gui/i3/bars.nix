@@ -48,7 +48,7 @@ in
           block = "disk_space";
 
           # The format to display.
-          format = "${name} {available:6;G*_B} GiB";
+          format = "${name} {available:6;_G*_B} GiB";
 
           # The path to monitor.
           path = value.mountpoint;
@@ -240,7 +240,7 @@ in
         clickable = false;
 
         # The format to show.
-        format_mem = "{mem_used:4;G*_B} ({mem_total_used:4;G*_B})/{mem_total:4;G*_B} GiB";
+        format_mem = "{mem_used:4;_G*_B} ({mem_total_used:4;_G*_B})/{mem_total:4;_G*_B} GiB";
       }
 
       # Show swap usage.
@@ -252,7 +252,7 @@ in
         clickable = false;
 
         # The format to show.
-        format_swap = "{swap_used:4;G*_B}/{swap_total:4;G*_B} GiB";
+        format_swap = "{swap_used:4;_G*_B}/{swap_total:4;_G*_B} GiB";
       }
 
       # Show the space used/available on /tmp, since that's usually a tmpfs.
@@ -270,7 +270,7 @@ in
 
         # Show the amount used, rather than the amount available, since this
         # is actually in RAM.
-        format = "{alias} {used:4;G*_B}/{total:4;G*_B} GiB";
+        format = "{alias} {used:4;_G*_B}/{total:4;_G*_B} GiB";
 
         # Warn when we use 10% of /tmp, and alert if we pass 20% used.
         # Since /tmp is usually a tmpfs for small stuff, if it ever passes a
