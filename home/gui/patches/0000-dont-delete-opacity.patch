@@ -1,0 +1,20 @@
+diff -ru a/transSet.c b/transSet.c
+--- a/transSet.c	2018-03-10 00:31:33.000000000 -0500
++++ b/transSet.c	2022-07-08 22:59:20.786543614 -0400
+@@ -325,13 +325,10 @@
+         if (current_opacity != OPAQUE)
+             opacity = OPAQUE;
+ 
+-    if (opacity == OPAQUE)
+-  	XDeleteProperty (dpy, target_win, XInternAtom (dpy, OPACITY, False));
+     /* set it */
+-    else
+-        XChangeProperty (dpy, target_win, XInternAtom (dpy, OPACITY, False),
+-                         XA_CARDINAL, 32, PropModeReplace,
+-                         (unsigned char *) &opacity, 1L);
++    XChangeProperty (dpy, target_win, XInternAtom (dpy, OPACITY, False),
++                     XA_CARDINAL, 32, PropModeReplace,
++                     (unsigned char *) &opacity, 1L);
+     XSync (dpy, False);
+ 
+     printf ("Set Property to %g", (double) opacity / OPAQUE);

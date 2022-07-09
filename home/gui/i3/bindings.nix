@@ -202,13 +202,13 @@ in
           # Increase opacity of the current window.
           {
             name = "${mod}+Shift+o";
-            value = "exec ${profileBin}/picom-trans -c +5";
+            value = "exec ${profileBin}/transset -a --inc 0.05";
           }
 
           # Decrease opacity of the current window.
           {
             name = "${mod}+Control+o";
-            value = "exec ${profileBin}/picom-trans -c -5";
+            value = "exec ${profileBin}/transset -a --dec 0.05";
           }
         ])
       );

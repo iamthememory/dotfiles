@@ -54,6 +54,16 @@ in
       flameshot = pkgs.flameshot.overrideAttrs (oldAttrs: {
         meta.priority = 20;
       });
+
+      # transset, for setting window transparency without the rounding issues
+      # picom-trans has, but patched to not delete the X11 property for
+      # transparency if a window is set to fully opaque, because for some reason
+      # picom turns windows about 60% opaque when that happens.
+      transset = pkgs.xorg.transset.overrideAttrs (final: orig: {
+        patches = [
+          ./patches/0000-dont-delete-opacity.patch
+        ];
+      });
     in
     [
       # Add the redshift package to the profile.
@@ -67,6 +77,9 @@ in
 
       # Our screenshot script using flameshot.
       screenshot
+
+      # A small utility to set window transparency.
+      transset
     ];
 
   # The script to use for screenshotting, for whatever might want it.
@@ -81,15 +94,6 @@ in
 
   # Enable the picom compositor.
   services.picom.enable = true;
-
-  # The picom package to use.
-  # FIXME: Remove this once there's a version in nixpkgs that doesn't have the
-  # weird flickering bug.
-  services.picom.package = pkgs.picom.overrideAttrs (oldAttrs: rec {
-    name = "${oldAttrs.pname}-${version}";
-    version = "${inputs.picom.lastModifiedDate}";
-    src = inputs.picom;
-  });
 
   # Extra options for picom.
   services.picom.extraOptions = ''
