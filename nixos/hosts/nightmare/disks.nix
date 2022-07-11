@@ -72,28 +72,6 @@ in
           uuid = "9dbd677e-023f-4e81-92fa-15d7b7cf479b";
           allowDiscards = true;
         }
-
-
-        # SSD ZFS pool spool mirror vdev 0.
-        {
-          uuid = "1ad26a74-07b5-45ec-a9e1-5df0aa51d9e0";
-          allowDiscards = true;
-          bypassWorkqueues = true;
-        }
-
-        # SSD ZFS pool spool mirror vdev 1.
-        {
-          uuid = "58fc5413-b912-449d-96ea-684b6c6eb5ca";
-          allowDiscards = true;
-          bypassWorkqueues = true;
-        }
-
-
-        # Hard disk ZFS pool rpool mirror vdev 0.
-        "79808dc3-3315-4a24-a99a-4231e2ca2677"
-
-        # Hard disk ZFS pool rpool mirror vdev 1.
-        "7d18d2a1-9822-4775-ba1f-f75fba52bea5"
       ];
 
       # Given a device's info, make its LUKS entry.
