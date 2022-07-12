@@ -31,6 +31,9 @@
     iproute2
     iputils
 
+    # A tool for measuring network bandwidth between two hosts.
+    iperf3
+
     # Tools for uploading/downloading files from/to MEGA.
     megatools
 
