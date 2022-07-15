@@ -31,14 +31,6 @@
       flake = false;
     };
 
-    # The latest upstream picom.
-    # FIXME: This can be removed once they release a version with changes that
-    # fix the weird flickering bug.
-    picom = {
-      url = "github:yshui/picom/next";
-      flake = false;
-    };
-
     # Solarized Xresources colors.
     xresources-solarized = {
       url = "github:solarized/xresources";
