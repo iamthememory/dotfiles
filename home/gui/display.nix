@@ -95,13 +95,10 @@ in
   # Enable the picom compositor.
   services.picom.enable = true;
 
-  # Extra options for picom.
-  services.picom.extraOptions = ''
-    # This forces certain kinds of windows to be considered focus, which helps
-    # with xsecurelock to ensure picom doesn't think it should be transparent,
-    # defeating the purpose of a lockscreen.
-    mark-ovredir-focused = true;
-  '';
+  # This forces certain kinds of windows to be considered focus, which helps
+  # with xsecurelock to ensure picom doesn't think it should be transparent,
+  # defeating the purpose of a lockscreen.
+  services.picom.settings.mark-ovredir-focused = true;
 
   # Enable the redshift daemon to shift color to red at night.
   services.redshift.enable = true;
