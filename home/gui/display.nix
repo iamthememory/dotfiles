@@ -95,6 +95,15 @@ in
   # Enable the picom compositor.
   services.picom.enable = true;
 
+  # The picom package to use.
+  # FIXME: Remove this once a version in nixpkgs plays well with xsecurelock (or
+  # after moving to wayland).
+  services.picom.package = pkgs.picom.overrideAttrs (finalAttrs: oldAttrs: {
+    name = "${oldAttrs.pname}-${finalAttrs.version}";
+    version = "${inputs.picom.lastModifiedDate}";
+    src = inputs.picom;
+  });
+
   # This forces certain kinds of windows to be considered focus, which helps
   # with xsecurelock to ensure picom doesn't think it should be transparent,
   # defeating the purpose of a lockscreen.

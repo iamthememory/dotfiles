@@ -181,6 +181,23 @@
         "type": "github"
       }
     },
+    "picom": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1658167490,
+        "narHash": "sha256-QaEuewhAbaBW+rYt0eFwV1hD466ydI6ihGWasFICurI=",
+        "owner": "yshui",
+        "repo": "picom",
+        "rev": "896acabab11e977a5a07e2a59d9b35bfeb167263",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yshui",
+        "ref": "next",
+        "repo": "picom",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "dircolors-solarized": "dircolors-solarized",
@@ -194,6 +211,7 @@
         "nixos-unstable": "nixos-unstable",
         "nixpkgs-master": "nixpkgs-master",
         "nur": "nur",
+        "picom": "picom",
         "tinyfugue-patched": "tinyfugue-patched",
         "vim-solarized8": "vim-solarized8",
         "xresources-solarized": "xresources-solarized",
