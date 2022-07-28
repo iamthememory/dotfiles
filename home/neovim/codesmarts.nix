@@ -144,9 +144,6 @@
       '';
     }
 
-    # Enable completion/highlighting from the yank history.
-    coc-yank
-
     # A plugin to show completion function signatures.
     {
       plugin = echodoc-vim;
