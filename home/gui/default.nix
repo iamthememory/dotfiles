@@ -66,6 +66,9 @@
     # Tools for getting X11 window info.
     xorg.xprop
     xorg.xwininfo
+
+    # A tool for telling how long the X11 user has been idle.
+    xprintidle
   ];
 
   # Link dbus.socket into the systemd user directory to ensure it's started for
