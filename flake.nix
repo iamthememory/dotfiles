@@ -286,7 +286,7 @@
               [
                 gitAndTools.git-crypt
                 nixos-unstable-manual
-                stable-pkgs.nur.repos.rycee.firefox-addons-generator
+                stable-pkgs.nur.repos.rycee.mozilla-addons-to-nix
               ];
 
             # Make sure nix knows to enable flakes.
