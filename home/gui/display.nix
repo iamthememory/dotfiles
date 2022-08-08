@@ -107,7 +107,7 @@ in
   # Use the glx backend for picom.
   # This should prevent issues where windows below the lockscreen can be drawn
   # over it.
-  services.picom.settings.backent = "glx";
+  services.picom.backend = "glx";
 
   # This forces certain kinds of windows to be considered focus, which helps
   # with xsecurelock to ensure picom doesn't think it should be transparent,
