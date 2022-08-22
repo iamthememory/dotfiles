@@ -91,15 +91,6 @@
       url = "github:ingwarsw/tinyfugue";
       flake = false;
     };
-
-    # A shiny new MUD client written in rust.
-    # FIXME: Remove this once blightmud 3.6.2 (or later) is merged.
-    # See https://github.com/NixOS/nixpkgs/pull/173148
-    # NOTE: master seems to point to the latest release, so this should be safe.
-    blightmud = {
-      url = "github:Blightmud/Blightmud";
-      flake = false;
-    };
   };
 
   outputs =

@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "blightmud": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1659598936,
-        "narHash": "sha256-e5PyNiP8PMzBN4nTJQ6LUj64idYH0qXqotCDsALdikY=",
-        "owner": "Blightmud",
-        "repo": "Blightmud",
-        "rev": "3b1b89af63407b2c7ba387a1e39386435c33b315",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Blightmud",
-        "repo": "Blightmud",
-        "type": "github"
-      }
-    },
     "dircolors-solarized": {
       "flake": false,
       "locked": {
@@ -216,7 +200,6 @@
     },
     "root": {
       "inputs": {
-        "blightmud": "blightmud",
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",
         "gef": "gef",
