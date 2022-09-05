@@ -13,7 +13,7 @@ let
   profileBin = "${config.home.profileDirectory}/bin";
 in
 {
-  home.packages = with pkgs; [
+  home.packages = with inputs.master; [
     # XIVLauncher.
     xivlauncher
   ];
