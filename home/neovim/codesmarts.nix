@@ -43,13 +43,13 @@
 
     " Use tab for completion, snippet expansion, and jumping.
     inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#pum#visible() ? coc#pum#confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump','''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
     " Use shift-tab to move back in the completion list if it's available.
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
     " Jump to the definition of a symbol.
     nmap <silent> gd <Plug>(coc-definition)
@@ -82,8 +82,8 @@
 
     " When hitting enter in between two brackets, reformat them to move the
     " closing bracket below the cursor on its own line.
-    inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() :
+      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
     " Format the selected code.
     xmap <leader>f <Plug>(coc-format-selected)
