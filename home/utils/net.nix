@@ -71,4 +71,7 @@
     # A fetcher for videos from various sites for archiving or local playback.
     youtube-dl
   ];
+
+  # A fork of youtube-dl.
+  programs.yt-dlp.enable = true;
 }
