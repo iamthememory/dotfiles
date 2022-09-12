@@ -227,4 +227,7 @@
       # Use reflinks when able to to benefit from CoW filesystems.
       cp = "${profileBin}/cp --reflink=auto";
     };
+
+  # A process queue manager.
+  services.pueue.enable = true;
 }
