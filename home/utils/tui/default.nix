@@ -48,6 +48,9 @@
     # A shinier, colorful df alternative.
     pydf
 
+    # A TUI for viewing /sys nodes along with documentation.
+    systeroid
+
     # A way of showing a directory tree as a tree diagram.
     tree
   ];
