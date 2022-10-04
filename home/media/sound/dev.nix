@@ -42,7 +42,6 @@ in
     AMB-plugins
     ams-lv2
     artyFX
-    avldrums-lv2
     bristol
     bshapr
     bslizr
@@ -76,6 +75,7 @@ in
     speech-denoiser
     swh_lv2
     synthv1
+    x42-avldrums
     xsynth_dssi
     yoshimi
     zam-plugins

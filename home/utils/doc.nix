@@ -12,11 +12,11 @@
     # Basic Linux manpages.
     man-pages
 
+    # Basic POSIX standard manpages.
+    man-pages-posix
+
     # A tool for converting and rendering things like markdown.
     pandoc
-
-    # Basic POSIX standard manpages.
-    posix_man_pages
 
     # Manpages for the C++ standard library.
     stdman

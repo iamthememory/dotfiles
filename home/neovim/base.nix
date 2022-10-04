@@ -3,6 +3,11 @@
 , pkgs
 , ...
 }: {
+  home.packages = with pkgs; [
+    # Ensure bash is available for our shell setting.
+    pkgs.bashInteractive
+  ];
+
   # Basic configuration.
   programs.neovim.extraConfig = ''
     " When wrapping lines, keep new lines at the same indent.
@@ -82,9 +87,6 @@
 
   # Basic neovim plugins.
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    # Ensure bash is available for our shell setting.
-    pkgs.bashInteractive
-
     # A plugin for browsing directories.
     nerdtree
 

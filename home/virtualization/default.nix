@@ -14,7 +14,7 @@
     qemu-utils
 
     # A tool for managing libvirt VMs.
-    virtmanager
+    virt-manager
   ];
 
   # Default to controlling the system's KVM VMs.
