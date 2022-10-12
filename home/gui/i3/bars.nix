@@ -48,7 +48,7 @@ in
           block = "disk_space";
 
           # The format to display.
-          format = "${name} {available:6;_G*_B} GiB";
+          format = "${name} {available:6; G*_B}iB";
 
           # The path to monitor.
           path = value.mountpoint;
