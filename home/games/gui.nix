@@ -23,6 +23,6 @@
     freeciv_gtk
 
     # A Minecraft launcher and manager.
-    polymc
+    prismlauncher
   ];
 }
