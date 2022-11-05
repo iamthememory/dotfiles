@@ -7,7 +7,7 @@
 }:
 let
   # A script to take a screenshot to a directory, organized by year and month.
-  screenshot =
+  screenshot = arg:
     with pkgs;
     let
       # The path to the profile's bin directory.
@@ -22,7 +22,7 @@ let
       # The base screenshot directory, ~/screenshots.
       screenshotDirectory = "${config.home.homeDirectory}/screenshots";
     in
-    writeShellScriptBin "screenshot.sh" ''
+    writeShellScriptBin "screenshot-${arg}.sh" ''
       #!${stdenv.shell}
 
       # The directory for a screenshot in the current month in the default
@@ -37,7 +37,7 @@ let
 
       # Tell an existing flameshot service to take a screenshot in the month
       # directory.
-      exec ${flameshot} gui -p "$screendir"
+      exec ${flameshot} "${arg}" -p "$screendir"
     '';
 in
 {
@@ -75,16 +75,21 @@ in
       # Flameshot, for the utility used in the screenshot script.
       flameshot
 
-      # Our screenshot script using flameshot.
-      screenshot
+      # Our screenshot scripts using flameshot.
+      (screenshot "full")
+      (screenshot "gui")
 
       # A small utility to set window transparency.
       transset
     ];
 
-  # The script to use for screenshotting, for whatever might want it.
+  # The scripts to use for screenshotting, for whatever might want them.
   home.sessionVariables.SCREENSHOT_PROGRAM =
-    "${config.home.profileDirectory}/bin/screenshot.sh";
+    "${config.home.profileDirectory}/bin/screenshot-gui.sh";
+  home.sessionVariables.SCREENSHOT_GUI =
+    "${config.home.profileDirectory}/bin/screenshot-gui.sh";
+  home.sessionVariables.SCREENSHOT_FULL =
+    "${config.home.profileDirectory}/bin/screenshot-full.sh";
 
   # Enable autorandr.
   programs.autorandr.enable = true;

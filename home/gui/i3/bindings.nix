@@ -444,9 +444,13 @@ in
       "${mod}+Control+Shift+r" = "restart";
 
 
-      # Take a screenshot.
+      # Take a screenshot via the selection GUI.
       "${mod}+Shift+s" =
-        "exec ${config.home.sessionVariables.SCREENSHOT_PROGRAM}";
+        "exec ${config.home.sessionVariables.SCREENSHOT_GUI}";
+
+      # Take a screenshot of the whole desktop.
+      "${mod}+Control+s" =
+        "exec ${config.home.sessionVariables.SCREENSHOT_FULL}";
 
 
       # Switch to passthrough mode.
