@@ -16,7 +16,6 @@
           configureFlags = "--enable-ssl --enable-python --enable-256colors --enable-atcp --enable-gmcp --enable-option102 --enable-lua";
 
           patches = [
-            ./0000-italics-fix.patch
             ./0001-bold-is-bright.patch
           ];
 
