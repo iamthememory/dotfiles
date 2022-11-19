@@ -17,6 +17,9 @@
 
       # Enable the FPS counter.
       enableFPS = true;
+
+      # Use the mayday theme.
+      theme = dwarf-fortress-packages.themes.mayday;
     })
 
     # Freeciv.
