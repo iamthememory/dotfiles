@@ -3,29 +3,47 @@
 , pkgs
 , ...
 }: {
-  home.packages = with pkgs; [
-    # Cataclysm: DDA.
-    cataclysm-dda-git
+  home.packages =
+    let
+      # Pull in a patched nixpkgs with an update to dfhack.
+      # This should be dropped once NixOS/nixpkgs#201568 or an equivalent is
+      # merged.
+      df-pkgs =
+        let
+          patched-pkgs = pkgs.applyPatches {
+            name = "nixos-unstable-201568";
+            src = inputs.flake.inputs.nixos-unstable;
+            patches = [ ./nixpkgs-dwarf-fortress-201568.patch ];
+          };
+        in
+        import patched-pkgs { inherit (pkgs) config overlays system; };
 
-    # A mod manager for Kerbal Space Program.
-    ckan
+      # The customized dwarf fortress to use.
+      dwarf-fortress-custom = (df-pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+        # Disable the intro video.
+        enableIntro = false;
 
-    # Dwarf Fortress with Dwarf Therapist and dfhack.
-    (dwarf-fortress-packages.dwarf-fortress-full.override {
-      # Disable the intro video.
-      enableIntro = false;
+        # Enable the FPS counter.
+        enableFPS = true;
 
-      # Enable the FPS counter.
-      enableFPS = true;
+        # Use the mayday theme.
+        theme = df-pkgs.dwarf-fortress-packages.themes.mayday;
+      });
+    in
+    with pkgs; [
+      # Cataclysm: DDA.
+      cataclysm-dda-git
 
-      # Use the mayday theme.
-      theme = dwarf-fortress-packages.themes.mayday;
-    })
+      # A mod manager for Kerbal Space Program.
+      ckan
 
-    # Freeciv.
-    freeciv_gtk
+      # Dwarf Fortress with Dwarf Therapist and dfhack.
+      dwarf-fortress-custom
 
-    # A Minecraft launcher and manager.
-    prismlauncher
-  ];
+      # Freeciv.
+      freeciv_gtk
+
+      # A Minecraft launcher and manager.
+      prismlauncher
+    ];
 }
