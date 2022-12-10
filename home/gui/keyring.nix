@@ -41,7 +41,7 @@ in
     yubikey-personalization-gui
 
     # The Yubikey oath configuration program.
-    yubioath-desktop
+    yubioath-flutter
   ];
 
   # The askpass to use for GUI ssh and sudo prompts.
