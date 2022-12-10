@@ -33,6 +33,9 @@
   # Show smartd notifications on the default X11 display.
   services.smartd.notifications.x11.enable = true;
 
+  # Enable udisks2.
+  services.udisks2.enable = true;
+
   # Enable X11.
   services.xserver.enable = true;
 
