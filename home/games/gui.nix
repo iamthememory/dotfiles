@@ -5,21 +5,8 @@
 }: {
   home.packages =
     let
-      # Pull in a patched nixpkgs with an update to dfhack.
-      # This should be dropped once NixOS/nixpkgs#201568 or an equivalent is
-      # merged.
-      df-pkgs =
-        let
-          patched-pkgs = pkgs.applyPatches {
-            name = "nixos-unstable-201568";
-            src = inputs.flake.inputs.nixos-unstable;
-            patches = [ ./nixpkgs-dwarf-fortress-201568.patch ];
-          };
-        in
-        import patched-pkgs { inherit (pkgs) config overlays system; };
-
       # The customized dwarf fortress to use.
-      dwarf-fortress-custom = (df-pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+      dwarf-fortress-custom = (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
         # Disable the intro video.
         enableIntro = false;
 
@@ -27,7 +14,7 @@
         enableFPS = true;
 
         # Use the mayday theme.
-        theme = df-pkgs.dwarf-fortress-packages.themes.mayday;
+        theme = pkgs.dwarf-fortress-packages.themes.mayday;
       });
     in
     with pkgs; [
