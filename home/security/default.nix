@@ -21,7 +21,7 @@
     kalibrate-hackrf
 
     # The metasploit framework.
-    inputs.stable.metasploit
+    metasploit
 
     # Basic wordlists.
     netbsd.dict
