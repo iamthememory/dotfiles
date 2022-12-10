@@ -31,14 +31,6 @@
       flake = false;
     };
 
-    # The latest upstream picom.
-    # FIXME: Remove this once a version in nixos-unstable works with xsecurelock
-    # (or after wayland on NVIDIA works well).
-    picom = {
-      url = "github:yshui/picom/next";
-      flake = false;
-    };
-
     # Solarized Xresources colors.
     xresources-solarized = {
       url = "github:solarized/xresources";

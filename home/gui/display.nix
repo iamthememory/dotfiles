@@ -100,15 +100,6 @@ in
   # Enable the picom compositor.
   services.picom.enable = true;
 
-  # The picom package to use.
-  # FIXME: Remove this once a version in nixpkgs plays well with xsecurelock (or
-  # after moving to wayland).
-  services.picom.package = pkgs.picom.overrideAttrs (finalAttrs: oldAttrs: {
-    name = "${oldAttrs.pname}-${finalAttrs.version}";
-    version = "${inputs.picom.lastModifiedDate}";
-    src = inputs.picom;
-  });
-
   # Use the glx backend for picom.
   # This should prevent issues where windows below the lockscreen can be drawn
   # over it.
