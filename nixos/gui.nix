@@ -10,9 +10,13 @@
   # This lets Chromium, Chrome, electron, etc. sandbox itself.
   security.chromiumSuidSandbox.enable = true;
 
-  # Ensure dbus knows about GNOME stuff.
+  # Ensure dbus knows about these packages.
   services.dbus.packages = with pkgs; [
+    # GNOME-related things.
     dconf
+
+    # A service to use pass passwords via libsecret.
+    pass-secret-service
   ];
 
   # Enable GNOME keyring.
