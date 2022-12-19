@@ -16,7 +16,15 @@
       # Add jack support to mpv.
       jackaudioSupport = true;
     })
-    { };
+    {
+      scripts = with pkgs.mpvScripts; [
+        # A plugin to control mpv via MPRIS.
+        mpris
+
+        # A script to show preview thumbnails when seeking in a video.
+        thumbnail
+      ];
+    };
 
   # Custom keybindings for mpv.
   programs.mpv.bindings =
