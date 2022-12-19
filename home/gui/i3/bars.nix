@@ -89,6 +89,9 @@ in
 
           # The maximum width of the block.
           max_width = 32;
+
+          # Seek 15 seconds when scrolling.
+          seek_step = 15 * 1000;
         }
 
         # Show sound status.
