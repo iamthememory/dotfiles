@@ -124,7 +124,7 @@ in
     "kitty_mod+;" = "set_tab_title";
 
     # Move a window backward within a tab.
-    "kitty_mod+b" = "move_window_forward";
+    "kitty_mod+b" = "move_window_backward";
 
     # Copy text to the clipboard.
     "kitty_mod+c" = "copy_to_clipboard";
