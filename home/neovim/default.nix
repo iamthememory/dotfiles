@@ -17,9 +17,6 @@ in
     ./utils.nix
   ];
 
-  # Use neovim as the default editor.
-  home.sessionVariables.EDITOR = "${config.home.profileDirectory}/bin/nvim";
-
   # Add shell aliases for various vim modes.
   home.shellAliases = {
     # Compatibility aliases for the basic vim commands.
@@ -54,6 +51,9 @@ in
 
   # Enable neovim.
   programs.neovim.enable = true;
+
+  # Use neovim as the default editor.
+  programs.neovim.defaultEditor = true;
 
   # Enable Node support.
   programs.neovim.withNodeJs = true;
