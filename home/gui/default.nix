@@ -107,7 +107,7 @@
     builtins.concatStringsSep " " options;
 
   # Enable the NVIDIA shader cache.
-  home.sessionVariables.__GL_SHADER_DISK_CACHE = true;
+  home.sessionVariables.__GL_SHADER_DISK_CACHE = 1;
 
   # Store the NVIDIA shader cache in the newer default location.
   home.sessionVariables.__GL_SHADER_DISK_CACHE_PATH =
