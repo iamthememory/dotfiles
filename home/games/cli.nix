@@ -9,6 +9,9 @@
   ];
 
   home.packages = with pkgs; [
+    # A MUD client written in rust.
+    blightmud-tts
+
     # A rogue-like.
     nethack
   ];
