@@ -35,10 +35,6 @@
       # A downloads manager.
       downthemall
 
-      # A tool to use HTTPS wherever possible, and to convert HTTP to HTTPS
-      # links when possible.
-      https-everywhere
-
       # An extension to isolate shared cookies and info by tab type, e.g., work,
       # home, etc., for privacy.
       multi-account-containers
