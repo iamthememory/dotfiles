@@ -13,7 +13,7 @@
           inherit openssl;
           sslSupport = true;
 
-          configureFlags = "--enable-ssl --enable-python --enable-256colors --enable-atcp --enable-gmcp --enable-option102 --enable-lua";
+          configureFlags = "--enable-ssl --enable-python --enable-256colors --enable-atcp --enable-gmcp --enable-option102 --enable-lua --enable-widechar";
 
           patches = [
             ./0001-bold-is-bright.patch
@@ -22,9 +22,14 @@
           src = inputs.tinyfugue-patched;
 
           buildInputs = with pkgs; oldAttrs.buildInputs ++ [
+            icu.dev
             lua
             pcre.dev
             python3
+          ];
+
+          nativeBuildInputs = with pkgs; oldAttrs.buildInputs ++ [
+            pkg-config
           ];
         });
     in
