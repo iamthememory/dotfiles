@@ -93,6 +93,7 @@ in
 
   # Enable autorandr.
   programs.autorandr.enable = true;
+  services.autorandr.enable = true;
 
   # Enable the flameshot screenshot service.
   services.flameshot.enable = true;
@@ -155,10 +156,4 @@ in
       # The default screenshot location.
       General.savePath = defaultScreenshotDirectory;
     };
-
-  # Extra commands to run when starting an X11 session.
-  xsession.initExtra = ''
-    # Run autorandr to set up the attached displays.
-    ${config.home.profileDirectory}/bin/autorandr -c
-  '';
 }
