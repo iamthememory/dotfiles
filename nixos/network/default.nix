@@ -15,7 +15,7 @@
   services.openssh.enable = true;
 
   # By default, disallow root SSH logins.
-  services.openssh.permitRootLogin = "no";
+  services.openssh.settings.permitRootLogin = "no";
 
   # Block addresses that attempt to brute force passwords.
   services.sshguard.enable = true;
