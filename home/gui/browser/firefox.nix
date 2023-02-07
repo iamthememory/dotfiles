@@ -7,7 +7,7 @@
   programs.firefox.enable = true;
 
   # Extensions for Firefox.
-  programs.firefox.extensions =
+  programs.firefox.profiles.default.extensions =
     let
       # Extra Firefox addons.
       extraAddons =

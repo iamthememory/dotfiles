@@ -36,7 +36,7 @@ in
   # NOTE: These will only do anything if the applicable browser is also
   # enabled.
   programs.chromium.extensions = [ browserpassChromeID ];
-  programs.firefox.extensions =
+  programs.firefox.profiles.default.extensions =
     let
       inherit (inputs.nur.repos.rycee) firefox-addons;
     in
