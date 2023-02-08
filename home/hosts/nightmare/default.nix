@@ -68,6 +68,9 @@
     configYAML;
 
   home.packages = with pkgs; [
+    # A utility for syncing files over adb.
+    adb-sync
+
     # xinput, for the touchpad keybindings below.
     xorg.xinput
   ];
