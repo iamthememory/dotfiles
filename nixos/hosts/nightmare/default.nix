@@ -31,6 +31,11 @@
   # Copy kernels and initrds to the boot partitions.
   boot.loader.grub.copyKernels = true;
 
+  # Enable NTFS support.
+  boot.supportedFilesystems = [
+    "ntfs"
+  ];
+
   # Mount a tmpfs on /tmp.
   boot.tmpOnTmpfs = true;
 
