@@ -1,0 +1,15 @@
+diff --git a/pkgs/applications/misc/bottles/fhsenv.nix b/pkgs/applications/misc/bottles/fhsenv.nix
+index 34036894d6e6..c73aac2fb081 100644
+--- a/pkgs/applications/misc/bottles/fhsenv.nix
++++ b/pkgs/applications/misc/bottles/fhsenv.nix
+@@ -15,6 +15,10 @@ let fhsEnv = {
+     vkbasalt
+   ] ++ extraPkgs pkgs;
+ 
++  # Allow sharing the IPC and PID namespaces to fix some compatibility issues.
++  unshareIpc = false;
++  unsharePid = false;
++
+   multiPkgs =
+     let
+       xorgDeps = pkgs: with pkgs.xorg; [

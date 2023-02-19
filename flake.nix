@@ -101,9 +101,6 @@
           # home-manager.
           blacklist = [
             "self"
-            "nixos-stable"
-            "nixos-unstable"
-            "nixpkgs-master"
             "nur"
           ];
 
