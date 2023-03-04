@@ -150,11 +150,6 @@ in
 
   # ZSH aliases.
   programs.zsh.shellAliases = {
-    # List directories in long form.
-    ll = "ls -lh";
-
-    # List all directories (except . and ..) in long form.
-    la = "ls -lAh";
   };
 
   # Add some convenience symlinks since the zsh files have dot prefixes,

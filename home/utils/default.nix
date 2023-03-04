@@ -47,9 +47,6 @@
     # endings.
     dos2unix
 
-    # A shiny alternative to ls written in rust.
-    exa
-
     # A shiny alternative to find written in rust.
     fd
 
@@ -216,17 +213,37 @@
     {
       # Enable color for common tools when in a terminal that supports it.
 
-      exa = "${profileBin}/exa --color=auto";
-
       egrep = "${profileBin}/egrep --color=auto";
       fgrep = "${profileBin}/fgrep --color=auto";
       grep = "${profileBin}/grep --color=auto";
 
-      ls = "${profileBin}/ls --color=auto";
-
       # Use reflinks when able to to benefit from CoW filesystems.
       cp = "${profileBin}/cp --reflink=auto";
     };
+
+  # A shiny alternative to ls written in rust.
+  programs.exa.enable = true;
+
+  # Enable the ls aliases.
+  programs.exa.enableAliases = true;
+
+  # Show icons and git status in exa.
+  programs.exa.git = true;
+  programs.exa.icons = true;
+
+  programs.exa.extraOptions = [
+    # Use binary prefixes for file sizes.
+    "--binary"
+
+    # Enable color when possible.
+    "--color=auto"
+
+    # Color file sizes based on how large they are.
+    "--color-scale"
+
+    # Show groups in the long listing.
+    "--group"
+  ];
 
   # A process queue manager.
   services.pueue.enable = true;
