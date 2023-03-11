@@ -71,6 +71,9 @@
     # A utility for syncing files over adb.
     adb-sync
 
+    # A tool to help reverse-engineer binaries.
+    ghidra
+
     # xinput, for the touchpad keybindings below.
     xorg.xinput
   ];
