@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "3.16.1";
+      version = "3.16.2";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4067141/adblock_plus-3.16.1.xpi";
-      sha256 = "3f22f5b20ca831a2463751ed66e3fcdf5b51f09caff390b8e7ad0a850e694bfe";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4080833/adblock_plus-3.16.2.xpi";
+      sha256 = "a7b729b1d37c1636d8bdf2f3b04fc9a1b2beb08f4e4dba45a2f5ba71f6873e9a";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
