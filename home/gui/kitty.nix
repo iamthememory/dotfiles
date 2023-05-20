@@ -307,18 +307,6 @@ in
       window_resize_step_lines = 1;
     } // colorSettings;
 
-  # Add kitty completion for Bash.
-  programs.bash.initExtra = ''
-    # Add completion for kitty.
-    source <(${config.home.profileDirectory}/bin/kitty + complete setup bash)
-  '';
-
-  # Add kitty completion for ZSH.
-  programs.zsh.initExtra = ''
-    # Add kitty zsh completion.
-    ${config.home.profileDirectory}/bin/kitty + complete setup zsh | source /dev/stdin
-  '';
-
   # A colorscheme that should be compatible with non-themeable programs.
   xdg.configFile."kitty/compat-colors.conf".text =
     let
