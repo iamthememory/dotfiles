@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "3.16.2";
+      version = "3.17";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4080833/adblock_plus-3.16.2.xpi";
-      sha256 = "a7b729b1d37c1636d8bdf2f3b04fc9a1b2beb08f4e4dba45a2f5ba71f6873e9a";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4102426/adblock_plus-3.17.xpi";
+      sha256 = "e7679c365efa21c6e1315195bd1d69218762485e05015b565202845592c0c225";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -16,10 +16,10 @@
       };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.16.2.0";
+      version = "3.17.0";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4075872/adnauseam-3.16.2.0.xpi";
-      sha256 = "9342eb0fa05890b094639b305856461ecf6622387dc5ab9b7cfc12ba97cbfb4e";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4122213/adnauseam-3.17.0.xpi";
+      sha256 = "ed4d2f3498b3eb379053970e24150d31d4f19ff5987907fc98f870697dffb7c9";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
@@ -30,10 +30,10 @@
       };
     "downthemall" = buildFirefoxXpiAddon {
       pname = "downthemall";
-      version = "4.8.1";
+      version = "4.10.1";
       addonId = "{DDC359D1-844A-42a7-9AA1-88A850A938A8}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4073703/downthemall-4.8.1.xpi";
-      sha256 = "03285ad03425ed3ac4b8d79ebdf8534bdb275fc694ea41bd924aecb8ac73b898";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4115622/downthemall-4.10.1.xpi";
+      sha256 = "38795ef655c17921f857d67d59c1a799c24d912bc07c21ef96b97b4eee90422c";
       meta = with lib;
       {
         homepage = "https://www.downthemall.org/";
