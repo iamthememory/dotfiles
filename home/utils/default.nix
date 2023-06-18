@@ -117,9 +117,6 @@
     # A tool for helping with licensing projects.
     reuse
 
-    # A fast, featureful grep-like tool.
-    ripgrep
-
     # A tool like ack, but faster.
     silver-searcher
 
@@ -244,6 +241,9 @@
     # Show groups in the long listing.
     "--group"
   ];
+
+  # A fast, featureful grep-like tool.
+  programs.ripgrep.enable = true;
 
   # A process queue manager.
   services.pueue.enable = true;
