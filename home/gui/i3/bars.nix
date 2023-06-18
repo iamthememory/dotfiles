@@ -1,16 +1,12 @@
 # i3status-rust configuration.
 { config
-, inputs
 , lib
 , pkgs
 , ...
 }:
 let
   # Use the Font Awesome 4.x icons.
-  # NOTE: These are patched into Nerd Fonts, so we can use them.
-  # At the moment, the Font Awesome 5.x icons aren't though, as far as I can
-  # tell.
-  icons = "awesome";
+  icons = "awesome4";
 
   # Other i3status-rust settings.
   settings = { };
@@ -48,16 +44,13 @@ in
           block = "disk_space";
 
           # The format to display.
-          format = "${name} {available:6; G*_B}iB";
+          format = " $icon ${name} $available.eng(w:4,p:Gi) ";
 
           # The path to monitor.
           path = value.mountpoint;
 
-          # Use GiB as the unit.
-          unit = "GB";
-
           # Use GiB for the warning/alert values.
-          alert_absolute = true;
+          alert_unit = "GB";
 
           # The alert and warning available space.
           alert = value.alert;
@@ -70,28 +63,14 @@ in
       in
       lib.mkDefault ([
         # Show the currently playing media.
-        # This can be cycled by right-clicking.
         {
           block = "music";
 
-          # Show all control buttons.
-          buttons = [
-            "prev"
-            "play"
-            "next"
-          ];
-
           # The format to use.
-          format = "{combo} ({avail})";
+          format = " $icon{ $combo.str(max_w:32)|} $prev $play $next ";
 
-          # Don't rotate/marquee text if it doesn't fit.
-          marquee = false;
-
-          # The maximum width of the block.
-          max_width = 32;
-
-          # Seek 15 seconds when scrolling.
-          seek_step = 15 * 1000;
+          # Seek 15 seconds at a time when scrolling.
+          seek_step_secs = 15;
         }
 
         # Show sound status.
@@ -104,10 +83,12 @@ in
           driver = "pulseaudio";
 
           # The format to use.
-          format = "{volume}";
+          format = " $icon {$volume.eng(w:2)|N/A} ";
+
+          # Show when headphones are used.
+          headphones_indicator = true;
 
           # Don't set the volume above 130% by scrolling.
-          # That's still probably too high, but it's better than nothing.
           max_vol = 130;
 
           # Show the volume even if muted.
@@ -117,6 +98,9 @@ in
         # Show new mail.
         {
           block = "maildir";
+
+          # The format to use.
+          format = " $icon $status ";
 
           # The inboxes to check.
           inboxes =
@@ -144,18 +128,21 @@ in
           block = "kdeconnect";
 
           # The format to use.
-          format = "{bat_icon}{bat_charge} {notif_icon}{notif_count}";
+          format = " $icon{ $network_icon|}{ $bat_icon $bat_charge|}{ $notif_icon $notif_count|} ";
         }
 
         # Show the battery status.
-        {
+        rec {
           block = "battery";
 
           # The format for when charging or discharging.
-          format = "{percentage} ({time})";
+          format = " $icon $percentage{ ($time)|}{ $power|} ";
 
-          # The format to use when the battery is full.
-          full_format = "{percentage}";
+          # The format for other modes the battery might be in.";
+          empty_format = format;
+          full_format = format;
+          missing_format = " $icon N/A ";
+          not_charging_format = format;
 
           # The percentages to use for various alert levels.
           info = 75;
@@ -167,20 +154,34 @@ in
         # Show the screen brightness.
         {
           block = "backlight";
+
+          # The format to use.
+          format = " $icon $brightness ";
+
+          # Invert the icons order since it seems to show backwards for Nerd
+          # Fonts.
+          invert_icons = true;
+
+          # The format when there's no backlight.
+          missing_format = " $icon N/A ";
         }
-
       ] ++ mountBlocks ++ [
-
         # Show system uptime.
         {
           block = "uptime";
+
+          # The format to use.
+          format = " $icon $text ";
+
+          # Update regularly.
+          interval = 15;
         }
 
         # Show the current time.
         {
           block = "time";
 
-          format = "%a %Y-%m-%d %H:%M:%S";
+          format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %H:%M:%S %:z') ";
 
           # Update twice a second.
           interval = 0.5;
@@ -192,6 +193,7 @@ in
   programs.i3status-rust.bars.top = {
     inherit icons settings theme;
 
+
     # The blocks for this bar.
     blocks = lib.mkDefault ([
       # Show the CPU utilization.
@@ -199,86 +201,72 @@ in
         block = "cpu";
 
         # The format to use.
-        format = "{barchart} {utilization} {frequency}";
+        format = " $icon{ $barchart|}{ $utilization|}{ $frequency.eng(w:4)/$max_frequency.eng(w:4)|}{ $boost|} ";
       }
 
       # Show the CPU temperature.
       {
         block = "temperature";
 
-        # Don't collapse by default.
-        collapsed = false;
-      }
+        # Only use the coretemp for the CPUs.
+        chip = "coretemp-*";
 
+        # The format to use.
+        format = " $icon $min / $average / $max ";
+      }
     ] ++ (lib.optional config.system.monitor-nvidia
       # Show the GPU utilization.
       {
         block = "nvidia_gpu";
 
-        # Use a blank GPU label, rather than the model to save space.
-        label = "";
-
-        # Show clock speeds.
-        show_clocks = true;
-
-        # Show the current power draw of the GPU.
-        show_power_draw = true;
+        # The format to use.
+        format = " $icon{ $utilization|}{ $memory.eng(p:Mi,force_prefix:true)|}{ $temperature|}{ $clocks.eng(w:4)|}{ $power|} ";
       }
     ) ++ [
-
       # Show the system load.
       {
         block = "load";
 
         # The format to show.
-        format = "{1m:4} {5m:4} {15m:4}";
+        format = " $icon $1m.eng(w:4) $5m.eng(w:4) $15m.eng(w:4) ";
       }
 
-      # Show RAM usage.
+      # Show RAM and swap usage.
       {
         block = "memory";
 
-        # Lock this to RAM mode.
-        display_type = "memory";
-        clickable = false;
-
         # The format to show.
-        format_mem = "{mem_used:4;_G*_B} ({mem_total_used:4;_G*_B})/{mem_total:4;_G*_B} GiB";
-      }
+        format =
+          let
+            # Format a memory variable consistently.
+            format = var: "$" + "${var}.eng(w:4,p:Gi,force_prefix:true)";
 
-      # Show swap usage.
-      {
-        block = "memory";
+            # Format a memory variable without the unit.
+            formatNoUnit = var: "$" + "${var}.eng(w:4,p:Gi,force_prefix:true,hide_prefix:true,hide_unit:true)";
 
-        # Lock this to swap mode.
-        display_type = "swap";
-        clickable = false;
+            # The memory format.
+            memory = "${formatNoUnit "mem_used"} (${formatNoUnit "mem_total_used"})/${format "mem_total"}";
 
-        # The format to show.
-        format_swap = "{swap_used:4;_G*_B}/{swap_total:4;_G*_B} GiB";
+            # The swap format.
+            swap = "${formatNoUnit "swap_used"}/${format "swap_total"}";
+          in
+          " $icon ${memory} $icon_swap ${swap} ";
       }
 
       # Show the space used/available on /tmp, since that's usually a tmpfs.
       {
         block = "disk_space";
 
-        # The name to display.
-        alias = "tmp";
-
         # The path to monitor.
         path = "/tmp";
 
-        # Use GiB as the unit.
-        unit = "GB";
-
         # Show the amount used, rather than the amount available, since this
         # is actually in RAM.
-        format = "{alias} {used:4;_G*_B}/{total:4;_G*_B} GiB";
+        format = " $icon tmp $used.eng(w:4,p:Gi,hide_unit:true,hide_prefix:true)/$total.eng(w:4,p:Gi) ";
 
         # Warn when we use 10% of /tmp, and alert if we pass 20% used.
         # Since /tmp is usually a tmpfs for small stuff, if it ever passes a
         # significant size that's usually something to look at.
-        alert_absolute = false;
         warning = 90;
         alert = 80;
       }
@@ -287,18 +275,36 @@ in
       {
         block = "net";
 
-        # The format to show.
         format =
           let
-            # The format to use for the speed.
-            speed = "{speed_up:3} {speed_down:3}";
+            speeds = " ^icon_net_down $speed_down.eng(w:3) ^icon_net_up $speed_up.eng(w:3)";
+            interface_info = " @ {$ssid|N/A} ({$signal_strength @ $frequency|N/A}) $ip @ $device";
           in
-          "${speed} @ {ssid:12^12} ({signal_strength:3}) {ip:15}";
+          " $icon${speeds}${interface_info} ";
       }
 
       # Show the current network speed and ping.
       {
         block = "speedtest";
+
+        # Force updates on right-click.
+        click = [
+          {
+            button = "right";
+            update = true;
+          }
+        ];
+
+        # On an error, try again in a minute or so.
+        error_interval = 60;
+
+        # The format to use.
+        format =
+          let
+            down = "^icon_net_down $speed_down.eng(w:4,u:B)";
+            up = "^icon_net_up $speed_up.eng(w:4,u:B)";
+          in
+          " ^icon_ping {$ping ${down} ${up}|N/A}";
 
         # Update every 30 minutes.
         interval = 30 * 60;
