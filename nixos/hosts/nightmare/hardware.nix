@@ -22,6 +22,9 @@
   # Update the CPU microcode.
   hardware.cpu.intel.updateMicrocode = true;
 
+  # Support for the Flipper Zero.
+  hardware.flipperzero.enable = true;
+
   # Allow hackrf access to users in the plugdev group.
   hardware.hackrf.enable = true;
 
@@ -79,9 +82,6 @@
 
   # Extra packages with udev rules.
   services.udev.packages = with pkgs; [
-    # Flipper Zero access rules.
-    qFlipper
-
     # Yubikey access rules.
     yubikey-personalization
   ];
