@@ -70,7 +70,7 @@ in
 
   # Only update this after checking the changelog after a new
   # home-manager state version.
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 
   # The nix package to check the nix user configuration against.
   nix.package = pkgs.nix;
