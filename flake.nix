@@ -51,12 +51,6 @@
       flake = false;
     };
 
-    # An assembler framework.
-    keystone-engine = {
-      url = "github:keystone-engine/keystone";
-      flake = false;
-    };
-
     # (Neo)vim plugins not in nixpkgs.
 
     vim-solarized8 = {

@@ -10,62 +10,15 @@ let
   gdb = pkgs.gdb.override {
     pythonSupport = true;
 
-    python3 =
-      let
-        keystone-engine = python3Packages: python3Packages.buildPythonPackage {
-          pname = "keystone-engine";
-          version = inputs.keystone-engine.lastModifiedDate;
-
-          # Keystone keeps its Python bindings in a directory inside the repo,
-          # and needs the C sources inside of *that* directory when building the
-          # Python bindings.
-          # To simplify everything, just build a sdist like the one uploaded to
-          # pypi.
-          src = pkgs.stdenv.mkDerivation rec {
-            pname = "keystone-engine-python-src";
-            version = inputs.keystone-engine.lastModifiedDate;
-            name = "${pname}-${version}.tar.gz";
-            src = inputs.keystone-engine;
-
-            # Disable unneeded phases.
-            configurePhase = ":";
-            checkPhase = ":";
-
-            buildInputs = [
-              (python3Packages.python.withPackages (p: [ p.setuptools ]))
-            ];
-
-            # Build the source distribution.
-            buildPhase = ''
-              cd bindings/python
-              python3 setup.py sdist --formats=gztar
-              cd ../..
-            '';
-
-            # Install it.
-            installPhase = ''
-              cd bindings/python
-              cp -v "dist/$(python3 setup.py --fullname).tar.gz" "$out"
-              cd ../..
-            '';
-          };
-
-          # Disable trying to configure and build as a CMake package.
-          dontUseCmakeConfigure = true;
-
-          # Add CMake for keystone's build process.
-          nativeBuildInputs = [ pkgs.cmake ];
-        };
-      in
-      pkgs.python3.withPackages (p: with p; [
-        capstone
-        pygments
-        ropper
-        rpyc
-        unicorn
-
-        (keystone-engine p)
-      ]);
+    python3 = pkgs.python3.withPackages (p: with p; [
+      capstone
+      keystone-engine
+      pkgs.keystone
+      pygments
+      ropper
+      rpyc
+      unicorn
+    ]);
   };
 
   gef = import ./gef.nix {
@@ -518,5 +471,8 @@ in
   home.packages = [
     # GDB, with custom Python packages for GEF.
     gdb
+
+    # The keystone assembler.
+    pkgs.keystone
   ];
 }
