@@ -6,7 +6,7 @@
 , ...
 }: {
   # Clean /tmp on each boot.
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
 
   # Enable a rescue kernel to dump core if the kernel crashes.
   boot.crashDump.enable = true;
@@ -130,7 +130,7 @@
   # The NixOS release this configuration is compatible with.
   # On new NixOS releases, bump this only after going through the release notes
   # and ensuring compatibility with any changes.
-  system.stateVersion = "22.11";
+  system.stateVersion = "23.05";
 
   # Extra mount units for systemd.
   systemd.mounts =
@@ -171,7 +171,7 @@
 
               # Allow /tmp to take up up to 50% of RAM (or the configured
               # amount).
-              "size=${toString config.boot.tmpOnTmpfsSize}"
+              "size=${toString config.boot.tmp.tmpfsSize}"
 
               # Allow as many inodes as needed.
               "nr_inodes=0"
@@ -180,7 +180,7 @@
           builtins.concatStringsSep "," options;
       };
     in
-    lib.optional config.boot.tmpOnTmpfs tmpMount;
+    lib.optional config.boot.tmp.useTmpfs tmpMount;
 
   # Default to UTC.
   time.timeZone = lib.mkDefault "UTC";

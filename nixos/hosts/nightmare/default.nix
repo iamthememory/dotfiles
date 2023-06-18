@@ -37,7 +37,7 @@
   ];
 
   # Mount a tmpfs on /tmp.
-  boot.tmpOnTmpfs = true;
+  boot.tmp.useTmpfs = true;
 
   # Enable debug info for packages.
   environment.enableDebugInfo = true;
