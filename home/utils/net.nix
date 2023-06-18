@@ -72,6 +72,9 @@
     youtube-dl
   ];
 
+  # A program for translating text via calls to translation services.
+  programs.translate-shell.enable = true;
+
   # A fork of youtube-dl.
   programs.yt-dlp.enable = true;
 }
