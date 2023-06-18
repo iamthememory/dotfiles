@@ -245,6 +245,13 @@
   # A fast, featureful grep-like tool.
   programs.ripgrep.enable = true;
 
+  # A script manager.
+  programs.script-directory.enable = true;
+
+  # Use bat instead of cat.
+  programs.script-directory.settings.SD_CAT =
+    "${config.home.profileDirectory}/bin/bat";
+
   # A process queue manager.
   services.pueue.enable = true;
 }
