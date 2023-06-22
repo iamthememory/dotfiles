@@ -5,7 +5,7 @@
 , pkgs
 , inputs
 , ...
-}: {
+}: rec {
   imports = [
     ../../base.nix
     ../../communication/discord.nix
@@ -91,6 +91,11 @@
 
   # Rhubarb, the neovim plugin, wants its GitHub token in its own variable.
   home.sessionVariables.RHUBARB_TOKEN = config.home.sessionVariables.GITHUB_TOKEN;
+
+  # Copy the above variables to the ZSH config to refresh them in new shells if
+  # needed.
+  programs.zsh.sessionVariables.GITHUB_TOKEN = home.sessionVariables.GITHUB_TOKEN;
+  programs.zsh.sessionVariables.RHUBARB_TOKEN = home.sessionVariables.RHUBARB_TOKEN;
 
   # Set the default GitHub username for any programs or (neo)vim plugins that
   # expect it.
