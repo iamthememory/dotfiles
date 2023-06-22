@@ -16,6 +16,9 @@ in
     # Load some completion tweaks.
     source "${omz-lib}/completion.zsh"
 
+    # Load some functions from oh-my-zsh.
+    source "${omz-lib}/functions.zsh"
+
     # Load history tweaks.
     source "${omz-lib}/history.zsh"
 
