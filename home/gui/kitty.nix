@@ -71,6 +71,7 @@ in
   # glyphs and symbols added.
   programs.kitty.font.name = "LiterationMono Nerd Font Mono";
   programs.kitty.font.package = pkgs.nerdfonts;
+  programs.kitty.font.size = 9.0;
 
   # Keybindings for kitty.
   programs.kitty.keybindings = {
@@ -224,6 +225,12 @@ in
         } // colors.darkColors;
     in
     {
+      # Override the bold/italic font detection since auto currently isn't
+      # picking up the other files.
+      bold_font = "LiterationMono Nerd Font Mono Bold";
+      italic_font = "LiterationMono Nerd Font Mono Italic";
+      bold_italic_font = "LiterationMono Nerd Font Mono Bold Italic";
+
       # Allow other programs to control kitty.
       allow_remote_control = true;
 
@@ -246,9 +253,6 @@ in
 
       # Disable the audio bell, to only use visual indicators.
       enable_audio_bell = false;
-
-      # Use size 9.0 font.
-      font_size = "9.0";
 
       # Use ctrl+shift as the kitty modifier.
       kitty_mod = "ctrl+shift";
