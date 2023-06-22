@@ -235,6 +235,9 @@ in
       # Don't blink the cursor.
       cursor_blink_interval = 0;
 
+      # Use a block cursor.
+      cursor_shape = "block";
+
       # Draw all borders for inactive windows.
       draw_minimal_borders = false;
 
@@ -287,6 +290,9 @@ in
       # The tab title format.
       tab_title_template = "{index}: {title}";
 
+      # Use the older text composition strategy.
+      text_composition_strategy = "legacy";
+
       # Scroll one line at a time when scrolling with a touchpad.
       touch_scroll_multiplier = "1.0";
 
@@ -306,6 +312,9 @@ in
       window_resize_step_cells = 1;
       window_resize_step_lines = 1;
     } // colorSettings;
+
+  # Don't change to a beam-shaped cursor at prompts.
+  programs.kitty.shellIntegration.mode = "no-cursor";
 
   # A colorscheme that should be compatible with non-themeable programs.
   xdg.configFile."kitty/compat-colors.conf".text =
