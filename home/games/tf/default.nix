@@ -23,7 +23,7 @@
 
           buildInputs = with pkgs; oldAttrs.buildInputs ++ [
             icu.dev
-            lua
+            lua5_4
             pcre.dev
             python3
           ];
