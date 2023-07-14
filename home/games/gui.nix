@@ -19,7 +19,7 @@
     in
     with pkgs; [
       # Cataclysm: DDA.
-      cataclysm-dda-git
+      cataclysm-dda
 
       # A mod manager for Kerbal Space Program.
       ckan
