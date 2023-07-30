@@ -61,6 +61,7 @@
         M_SIZE
         M_RESIDENT
         M_SHARE
+        M_SWAP
         STATE
         PERCENT_CPU
         PERCENT_MEM
