@@ -47,7 +47,7 @@
 
     # Extra scripts and structures for GEF.
     gef-extras = {
-      url = "github:hugsy/gef-extras/dev";
+      url = "github:hugsy/gef-extras";
       flake = false;
     };
 
