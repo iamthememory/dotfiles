@@ -65,7 +65,7 @@ in
   programs.gh.enable = true;
 
   # Use gh for managing GitHub credentials.
-  programs.gh.enableGitCredentialHelper = true;
+  programs.gh.gitCredentialHelper.enable = true;
 
   # Use the default editor if available.
   programs.gh.settings.editor =
