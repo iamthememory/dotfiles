@@ -16,6 +16,10 @@
     # Firmware tools for the HackRF.
     hackrf
 
+    # A tool for cracking passwords.
+    hashcat
+    hashcat-utils
+
     # A tool to calibrate the HackRF tranceiver by locating cell tower baseband
     # frequencies.
     kalibrate-hackrf
