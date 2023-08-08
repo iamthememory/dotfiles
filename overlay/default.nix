@@ -5,6 +5,10 @@ self: super: {
   # Customize appimage-run.
   appimage-run = import ./appimage-run.nix { inherit self super; };
 
+  # Lower the priority of the nix-zsh-completions so packages providing their
+  # own completions take priority.
+  nix-zsh-completions = super.lib.setPrio 20 super.nix-zsh-completions;
+
   # Customize steam.
   steam = import ./steam.nix { inherit self super; };
 }
