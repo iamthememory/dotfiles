@@ -41,7 +41,7 @@
 
     # A set of additions to GDB for reverse engineering and exploiting.
     gef = {
-      url = "github:hugsy/gef/dev";
+      url = "github:hugsy/gef";
       flake = false;
     };
 
