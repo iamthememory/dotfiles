@@ -20,15 +20,11 @@
     --if0=no
 
     # Enable all kinds of language specific tags by default.
-    # NOTE: For some reason I also had --kinds-all=-F before but I don't
-    # remember why, beyond that I think it was to fix some issue with a vim
-    # ctags plugin.
-    # I also can't find an F kind for any language with ctags --list-kinds=all,
-    # so I'm not entirely sure what this did, if anything, or if it's no longer
-    # relevant, or what language it was originally for.
-    # I'm keeping this note here just in case I ever hit any issues related to
-    # it.
     --kinds-all=*
+
+    # Disable the F-kind, which appears to be related to file information, but
+    # which tagbar complains about.
+    --kinds-all=-F
 
     # Follow symbolic links.
     --links=yes
