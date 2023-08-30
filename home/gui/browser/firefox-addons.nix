@@ -11,6 +11,24 @@
         homepage = "https://adblockplus.org/";
         description = "One of the most popular free ad blockers for Firefox. Block annoying ads on sites like Facebook, YouTube and all other websites.\n\nAdblock Plus blocks all annoying ads, and supports websites by not blocking unobtrusive ads by default (configurable).";
         license = licenses.gpl3;
+        mozPermissions = [
+          "<all_urls>"
+          "contextMenus"
+          "notifications"
+          "storage"
+          "tabs"
+          "unlimitedStorage"
+          "webNavigation"
+          "webRequest"
+          "webRequestBlocking"
+          "devtools"
+          "http://*/*"
+          "https://*/*"
+          "https://accounts.adblockplus.org/premium"
+          "https://accounts.adblockplus.org/premium?*"
+          "https://accounts.adblockplus.org/*/premium"
+          "https://accounts.adblockplus.org/*/premium?*"
+          ];
         platforms = platforms.all;
         };
       };
@@ -25,20 +43,57 @@
         homepage = "https://adnauseam.io";
         description = "Blocking ads and fighting back against advertising surveillance.";
         license = licenses.gpl3;
+        mozPermissions = [
+          "dns"
+          "menus"
+          "privacy"
+          "storage"
+          "tabs"
+          "unlimitedStorage"
+          "webNavigation"
+          "webRequest"
+          "webRequestBlocking"
+          "management"
+          "<all_urls>"
+          "http://*/*"
+          "https://*/*"
+          "file://*/*"
+          "https://easylist.to/*"
+          "https://*.fanboy.co.nz/*"
+          "https://filterlists.com/*"
+          "https://forums.lanik.us/*"
+          "https://github.com/*"
+          "https://*.github.io/*"
+          "https://*.letsblock.it/*"
+          ];
         platforms = platforms.all;
         };
       };
     "downthemall" = buildFirefoxXpiAddon {
       pname = "downthemall";
-      version = "4.10.1";
+      version = "4.11.1";
       addonId = "{DDC359D1-844A-42a7-9AA1-88A850A938A8}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4115622/downthemall-4.10.1.xpi";
-      sha256 = "38795ef655c17921f857d67d59c1a799c24d912bc07c21ef96b97b4eee90422c";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4157731/downthemall-4.11.1.xpi";
+      sha256 = "8f4d25c179e8324d4f8ad785a5dc92d547003974fd3609a06e250f826270291b";
       meta = with lib;
       {
         homepage = "https://www.downthemall.org/";
         description = "The Mass Downloader for your browser";
         license = licenses.gpl2;
+        mozPermissions = [
+          "<all_urls>"
+          "contextMenus"
+          "downloads"
+          "downloads.open"
+          "history"
+          "menus"
+          "notifications"
+          "sessions"
+          "storage"
+          "tabs"
+          "theme"
+          "webNavigation"
+          ];
         platforms = platforms.all;
         };
       };
@@ -52,6 +107,12 @@
       {
         description = "Free your FFXIV inventory up!\nAdditional information is added to your lodestone retainer's inventory page to help you reduce the number of occupied inventory slots.";
         license = licenses.gpl3;
+        mozPermissions = [
+          "storage"
+          "unlimitedStorage"
+          "https://retainmenot.ffxivaddons.com/*"
+          "https://*.finalfantasyxiv.com/lodestone/character/*/retainer/*/baggage/"
+          ];
         platforms = platforms.all;
         };
       };
@@ -66,6 +127,7 @@
         homepage = "https://github.com/mr-islam/zen-fox";
         description = "Theme Firefox to suit you, day or night, solarized.\n\nFirefox has never looked this good.";
         license = licenses.gpl2;
+        mozPermissions = [ "storage" "theme" "alarms" ];
         platforms = platforms.all;
         };
       };
