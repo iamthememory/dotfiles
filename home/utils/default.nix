@@ -219,16 +219,16 @@
     };
 
   # A shiny alternative to ls written in rust.
-  programs.exa.enable = true;
+  programs.eza.enable = true;
 
   # Enable the ls aliases.
-  programs.exa.enableAliases = true;
+  programs.eza.enableAliases = true;
 
   # Show icons and git status in exa.
-  programs.exa.git = true;
-  programs.exa.icons = true;
+  programs.eza.git = true;
+  programs.eza.icons = true;
 
-  programs.exa.extraOptions = [
+  programs.eza.extraOptions = [
     # Use binary prefixes for file sizes.
     "--binary"
 
