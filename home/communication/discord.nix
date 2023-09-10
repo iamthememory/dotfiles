@@ -36,7 +36,7 @@ in
           while true
           do
             # Run Discord.
-            "${discord}" --enable-speech-dispatcher 2>&1 \
+            "${discord}" --enable-speech-dispatcher --multi-instance 2>&1 \
               | "${tee}" -a "${logFile}" \
               || true
 
