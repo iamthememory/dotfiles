@@ -2,16 +2,36 @@
 { pkgs
 , ...
 }: {
-  home.packages = with pkgs; [
-    # Bash, for scripting.
-    bashInteractive
+  home.packages = with pkgs;
+    let
+      python = python3.withPackages (p: with p; [
+        matplotlib
+        numpy
+        pandas
+        scipy
+      ]);
 
-    # Perl, useful for little inline snippets in terminal pipelines.
-    perl
+      R = rWrapper.override {
+        packages = [
+        ];
+      };
+    in
+    [
+      # Bash, for scripting.
+      bashInteractive
 
-    # Python, which I sometimes use as an over-powered calculator for reasons.
-    python3
-  ];
+      # Octave, useful for math.
+      octaveFull
+
+      # Perl, useful for little inline snippets in terminal pipelines.
+      perl
+
+      # Python, which I sometimes use as an over-powered calculator.
+      python
+
+      # R, useful for statistics.
+      R
+    ];
 
   # When running python as a REPL, save its history and use readline for
   # completion.
