@@ -34,10 +34,10 @@
       };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.17.0";
+      version = "3.18.0";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4122213/adnauseam-3.17.0.xpi";
-      sha256 = "ed4d2f3498b3eb379053970e24150d31d4f19ff5987907fc98f870697dffb7c9";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4174127/adnauseam-3.18.0.xpi";
+      sha256 = "7a68641d944803100ef7a54abc7e9fabf5d9e12a826155b303bfd62aae746dd4";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
