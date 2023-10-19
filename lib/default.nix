@@ -68,7 +68,7 @@
     { src
     , pname
     ,
-    }: pkgs.vimUtils.buildVimPluginFrom2Nix {
+    }: pkgs.vimUtils.buildVimPlugin {
       inherit pname src;
 
       version = src.lastModifiedDate;
