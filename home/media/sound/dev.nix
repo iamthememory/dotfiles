@@ -70,7 +70,7 @@ in
     nova-filters
     rkrlv2
     qsynth
-    setbfree
+    #setbfree
     sorcer
     speech-denoiser
     swh_lv2
