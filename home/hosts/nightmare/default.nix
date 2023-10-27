@@ -74,6 +74,12 @@
     # A tool to help reverse-engineer binaries.
     ghidra
 
+    # Grep for the keybindings below.
+    gnugrep
+
+    # Sed for the keybindings below.
+    gnused
+
     # xinput, for the touchpad keybindings below.
     xorg.xinput
   ];
@@ -141,11 +147,18 @@
   # Disable the touchpad by default.
   xsession.initExtra =
     let
+      grep = "${config.home.profileDirectory}/bin/grep";
+      sed = "${config.home.profileDirectory}/bin/sed";
       xinput = "${config.home.profileDirectory}/bin/xinput";
     in
     ''
       # Turn off the touchpad.
-      ${xinput} disable 'pointer:SynPS/2 Synaptics TouchPad'
+      "${xinput}" disable 'pointer:SynPS/2 Synaptics TouchPad'
+
+      # Configure sensitivity for my new mouse.
+      logitech_mouse_id="$("${xinput}" list | "${grep}" 'Logitech M325' | sed -En -e '4s/^.*[[:space:]]id=([0-9]+)[[:space:]].*$/\1/p')"
+      "${xinput}" --set-prop "$${logitech_mouse_id}" 'libinput Accel Speed' -0.5
+      unset logitech_mouse_id
     '';
 
   # Custom i3 workspaces for nightmare.
