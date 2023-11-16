@@ -73,11 +73,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1698392685,
-        "narHash": "sha256-yx/sbRneR2AfSAeAMqUu0hoVJdjh+qhl/7dkirp8yo8=",
+        "lastModified": 1700087144,
+        "narHash": "sha256-LJP1RW0hKNWmv2yRhnjkUptMXInKpn/rV6V6ofuZkHU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1369d2cefb6f128c30e42fabcdebbacc07e18b3f",
+        "rev": "ab1459a1fb646c40419c732d05ec0bf2416d4506",
         "type": "github"
       },
       "original": {
@@ -104,11 +104,11 @@
     },
     "nixos-stable": {
       "locked": {
-        "lastModified": 1698288402,
-        "narHash": "sha256-jIIjApPdm+4yt8PglX8pUOexAdEiAax/DXW3S/Mb21E=",
+        "lastModified": 1699994397,
+        "narHash": "sha256-xxNeIcMNMXH2EA9IAX6Cny+50mvY22LhIBiGZV363gc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "60b9db998f71ea49e1a9c41824d09aa274be1344",
+        "rev": "d4b5a67bbe9ef750bd2fdffd4cad400dd5553af8",
         "type": "github"
       },
       "original": {
@@ -120,11 +120,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1698134075,
-        "narHash": "sha256-foCD+nuKzfh49bIoiCBur4+Fx1nozo+4C/6k8BYk4sg=",
+        "lastModified": 1699963925,
+        "narHash": "sha256-LE7OV/SwkIBsCpAlIPiFhch/J+jBDGEZjNfdnzCnCrY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8efd5d1e283604f75a808a20e6cde0ef313d07d4",
+        "rev": "bf744fe90419885eefced41b3e5ae442d732712d",
         "type": "github"
       },
       "original": {
@@ -136,11 +136,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1698425172,
-        "narHash": "sha256-scPP9cZl4qx+6SSdMMb66E3XmDkWHU+rqfUyS0tkXe4=",
+        "lastModified": 1700160117,
+        "narHash": "sha256-ZYU6UBIAJDuogqOB2+naL7dU6QwrpY8Sra/0MVWRqY8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2afbe53d47f3f1f1c50cbd61bac21cf99db91241",
+        "rev": "80ba19c414001eb3e75fb457b30d443cf4dc8200",
         "type": "github"
       },
       "original": {
@@ -152,11 +152,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1698425228,
-        "narHash": "sha256-8ZWUb8x0l0SUzbDLL5siWKTXCat1palhh/sKHLUq9p4=",
+        "lastModified": 1700155100,
+        "narHash": "sha256-Aod0fylWCnnk24q4/W+TgudcZ1HX5VShZ87ChmIr7WA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "6c78a26198809d199ba6e5f162124e446c9d8e58",
+        "rev": "f0a59b437b4331ad543404ff1ef5d590e4a1bfb2",
         "type": "github"
       },
       "original": {
