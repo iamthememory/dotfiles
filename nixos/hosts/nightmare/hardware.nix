@@ -2,6 +2,12 @@
 { pkgs
 , ...
 }: {
+  # Try to disable power saving to see if that fixes an NVME issue.
+  boot.kernel.sysctl = {
+    "nvme_core.default_ps_max_latency_us" = 0;
+    "pcie_aspm" = "off";
+  };
+
   # Extra commands to run in early boot.
   boot.postBootCommands =
     let
