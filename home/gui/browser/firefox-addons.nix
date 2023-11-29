@@ -34,10 +34,10 @@
       };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.18.0";
+      version = "3.19.0";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4174127/adnauseam-3.18.0.xpi";
-      sha256 = "7a68641d944803100ef7a54abc7e9fabf5d9e12a826155b303bfd62aae746dd4";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4200304/adnauseam-3.19.0.xpi";
+      sha256 = "3905de2ab2d5cf519dba1693b426b0ebe33d3193254ff23e2fb2349b59843a64";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
@@ -65,6 +65,9 @@
           "https://github.com/*"
           "https://*.github.io/*"
           "https://*.letsblock.it/*"
+          "https://github.com/uBlockOrigin/*"
+          "https://ublockorigin.github.io/*"
+          "https://*.reddit.com/r/uBlockOrigin/*"
           ];
         platforms = platforms.all;
         };
