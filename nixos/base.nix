@@ -68,6 +68,11 @@
   # Enable chrony
   services.chrony.enable = true;
 
+  # Track the drift of the system RTC, syncing when it differs by more than 15
+  # seconds.
+  services.chrony.enableRTCTrimming = true;
+  services.chrony.autotrimThreshold = 15;
+
   # Chrony's configuration.
   # FIXME: When NTS-capable servers are more common, and we don't need a mix of
   # NTS and non-NTS servers, this should be reorganized as most of this won't be
@@ -97,8 +102,8 @@
       # good.
       minsources 4
 
-      # Regularly update the RTC with the time.
-      rtcsync
+      # Set the RTC to UTC.
+      rtconutc
 
       # Where possible, tell the network interface's hardware to timestamp
       # exactly when packets are received/sent to increase accuracy.
