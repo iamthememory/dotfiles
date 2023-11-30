@@ -16,6 +16,9 @@
     # A digital art program.
     krita
 
+    # Another image viewer, which has replaced eog upstream.
+    loupe
+
     # A utility to optimize PNGs to the smaller sizes without sacrificing
     # quality.
     pngcrush
