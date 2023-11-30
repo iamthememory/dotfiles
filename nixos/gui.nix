@@ -65,6 +65,12 @@
   # Enable XDG portals.
   xdg.portal.enable = true;
 
+  # Packages with XDG portal configs.
+  xdg.portal.configPackages = with pkgs; [
+    # The GTK desktop portal backend.
+    xdg-desktop-portal-gtk
+  ];
+
   # Extra portals to add.
   xdg.portal.extraPortals = with pkgs; [
     # The GTK desktop portal backend.
