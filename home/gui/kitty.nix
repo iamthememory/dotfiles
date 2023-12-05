@@ -266,6 +266,11 @@ in
       # Open URLs with the browser if available.
       open_url_with = config.home.sessionVariables.BROWSER or "default";
 
+      # Quote URLs, replace control codes, and confirm when pasting large
+      # amounts of text.
+      paste_actions =
+        "confirm-if-large,quote-urls-at-prompt,replace-dangerous-control-codes";
+
       # Keep 10_000 lines of interactive scrollback.
       scrollback_lines = 10000;
 
