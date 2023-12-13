@@ -4,6 +4,7 @@
 }: super.steam.override {
   # Extra packages to make available.
   extraPkgs = pkgs: with pkgs; [
+    fluidsynth
     freetype
     gtk3-x11
     icu
