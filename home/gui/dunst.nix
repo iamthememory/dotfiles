@@ -246,8 +246,8 @@
         title = "Dunst";
         class = "Dunst";
 
-        # Make the notification window slightly transparent.
-        transparency = 20;
+        # Make the notification window somewhat transparent.
+        transparency = 40;
 
         # Show important messages from dunst in logs.
         verbosity = "mesg";
