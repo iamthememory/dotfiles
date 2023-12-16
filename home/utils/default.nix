@@ -34,6 +34,9 @@
     # A (de)compressor for .bz2.
     bzip2
 
+    # A line of code counter.
+    cloc
+
     # Basic GNU core utilities.
     coreutils
 
