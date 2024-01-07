@@ -32,5 +32,8 @@
 
       # A Minecraft launcher and manager.
       prismlauncher
+
+      # A Minecraft-like survival game.
+      vintagestory
     ];
 }
