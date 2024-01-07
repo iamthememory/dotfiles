@@ -45,22 +45,28 @@
   # Extra UDP port ranges to allow through the firewall.
   networking.firewall.allowedUDPPortRanges = [
     # SS14.
-    { from = 1212; to = 1212;}
+    { from = 1212; to = 1212; }
 
     # KDE Connect connections.
     { from = 1714; to = 1764; }
+
+    # Vintagestory.
+    { from = 42420; to = 42420; }
   ];
 
   # Extra TCP port ranges to allow through the firewall.
   networking.firewall.allowedTCPPortRanges = [
     # SS14.
-    { from = 1212; to = 1212;}
+    { from = 1212; to = 1212; }
+
+    # KDE Connect connections.
+    { from = 1714; to = 1764; }
 
     # Metasploit reverse shell connections.
     { from = 4433; to = 4436; }
 
-    # KDE Connect connections.
-    { from = 1714; to = 1764; }
+    # Vintagestory.
+    { from = 42420; to = 42420; }
   ];
 
   # Set the host id for nightmare.
