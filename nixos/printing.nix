@@ -6,7 +6,7 @@
   services.avahi.enable = true;
 
   # Allow resolving .local names on the local network via Avahi.
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
   # Enable CUPS.
   services.printing.enable = true;
