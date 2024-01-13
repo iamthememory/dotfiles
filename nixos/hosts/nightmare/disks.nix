@@ -69,7 +69,7 @@ in
 
         # SSD boot mirror 1.
         {
-          uuid = "9dbd677e-023f-4e81-92fa-15d7b7cf479b";
+          uuid = "82a7773a-e8f3-41f5-81e6-e8742a617bd2";
           allowDiscards = true;
         }
       ];
@@ -119,8 +119,8 @@ in
   # Boot filesystems.
   fileSystems."/boot0" = mkExt4 "a1efbceb-f1ae-493a-ab75-6765a8a1961b";
   fileSystems."/boot0/efi" = mkVfat "7EC6-BF71";
-  fileSystems."/boot1" = mkExt4 "cb5fae85-7483-4fd3-8eeb-b1441fb15a7d";
-  fileSystems."/boot1/efi" = mkVfat "DD67-7023";
+  fileSystems."/boot1" = mkExt4 "7823746c-8419-429e-8937-9f8a7ba8d1ce";
+  fileSystems."/boot1/efi" = mkVfat "D459-2F58";
 
   # Bind /boot0 to /boot for compatibility with, e.g., system76-firmware-daemon.
   fileSystems."/boot" = {
