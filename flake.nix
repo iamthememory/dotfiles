@@ -77,6 +77,11 @@
       url = "github:ingwarsw/tinyfugue";
       flake = false;
     };
+
+    # Nightly Rust builds.
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+    };
   };
 
   outputs =
@@ -152,8 +157,19 @@
             ];
           }).nur;
 
+          rust-bin = (import nixpkgs {
+            inherit system;
+
+            config = import nixpkgs-config;
+
+            overlays = [
+              (import overlay)
+              inputs.rust-overlay.overlays.default
+            ];
+          }).rust-bin;
+
           importedInputs = unimportedInputs // {
-            inherit unstable stable master nur nixpkgs-config overlay;
+            inherit unstable stable master nur nixpkgs-config overlay rust-bin;
 
             hostname = host;
 

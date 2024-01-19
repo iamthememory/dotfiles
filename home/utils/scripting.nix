@@ -20,6 +20,9 @@
       # Bash, for scripting.
       bashInteractive
 
+      # A rust REPL.
+      evcxr
+
       # Octave, useful for math.
       octaveFull
 
