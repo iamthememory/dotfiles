@@ -34,6 +34,9 @@
       # A Minecraft launcher and manager.
       prismlauncher
 
+      # An old-school Runescape client.
+      runelite
+
       # A Minecraft-like survival game.
       vintagestory
     ];
