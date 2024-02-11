@@ -79,7 +79,7 @@ in
 
     if [ "$HM_DO_NIX_INDEX_UPDATE" = "1" ]
     then
-      $DRY_RUN_CMD ${updateNixIndex}
+      run ${updateNixIndex}
     fi
 
     unset HM_DO_NIX_INDEX_UPDATE

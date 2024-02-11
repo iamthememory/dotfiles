@@ -19,7 +19,8 @@
     in
     with pkgs; [
       # Cataclysm: DDA.
-      cataclysm-dda
+      # FIXME: Use stable until this compiles with GCC 13.
+      inputs.stable.cataclysm-dda
 
       # A mod manager for Kerbal Space Program.
       ckan

@@ -51,7 +51,7 @@
       if [ ! -e "${link}" ]
       then
         $VERBOSE_ECHO "Linking ${link} -> ${target}"
-        $DRY_RUN_CMD ${ln} -s $VERBOSE_ARG "${target}" "${link}"
+        run ${ln} -s $VERBOSE_ARG "${target}" "${link}"
       else
         if [ -L "${link}" ] && [ "$(${readlink} "${link}")" = "${target}" ]
         then

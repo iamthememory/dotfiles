@@ -53,14 +53,14 @@
   services.xserver.displayManager.lightdm.greeters.gtk.clock-format =
     "%a %Y-%m-%d %H:%M:%S";
 
-  # Use the US keyboard layout.
-  services.xserver.layout = "us";
-
   # Enable libinput.
   services.xserver.libinput.enable = true;
 
   # Enable i3wm.
   services.xserver.windowManager.i3.enable = true;
+
+  # Use the US keyboard layout.
+  services.xserver.xkb.layout = "us";
 
   # Enable XDG portals.
   xdg.portal.enable = true;

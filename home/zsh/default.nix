@@ -35,8 +35,8 @@ let
     then
       $VERBOSE_ECHO "Link '${link} -> ${target}' already exists: skipping making link"
     else
-      $DRY_RUN_CMD ${pkgs.coreutils}/bin/rm -f $VERBOSE_ARG "${link}"
-      $DRY_RUN_CMD ${pkgs.coreutils}/bin/ln -s $VERBOSE_ARG "${target}" "${link}"
+      run ${pkgs.coreutils}/bin/rm -f $VERBOSE_ARG "${link}"
+      run ${pkgs.coreutils}/bin/ln -s $VERBOSE_ARG "${target}" "${link}"
     fi
   '';
 
@@ -149,8 +149,7 @@ in
   '';
 
   # ZSH aliases.
-  programs.zsh.shellAliases = {
-  };
+  programs.zsh.shellAliases = { };
 
   # Add some convenience symlinks since the zsh files have dot prefixes,
   # despite being in .config/zsh.

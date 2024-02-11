@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "3.22";
+      version = "3.23";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4219246/adblock_plus-3.22.xpi";
-      sha256 = "175f20beb1e96b09133fa6e699316efc9c2b092fc5b8b86158605a59dfbd10d0";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4225699/adblock_plus-3.23.xpi";
+      sha256 = "cb09e839395aaa0f1a69655384681c42dbe18122f41df703109bdbd6c42af07f";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -42,16 +42,17 @@
       };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.19.0";
+      version = "3.20.0";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4200304/adnauseam-3.19.0.xpi";
-      sha256 = "3905de2ab2d5cf519dba1693b426b0ebe33d3193254ff23e2fb2349b59843a64";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4222459/adnauseam-3.20.0.xpi";
+      sha256 = "01feaac30026ae91f80c46960cc3008a8d9e0d4d068129241a356b5434dc4d39";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
         description = "Blocking ads and fighting back against advertising surveillance.";
         license = licenses.gpl3;
         mozPermissions = [
+          "alarms"
           "dns"
           "menus"
           "privacy"
@@ -82,10 +83,10 @@
       };
     "downthemall" = buildFirefoxXpiAddon {
       pname = "downthemall";
-      version = "4.11.1";
+      version = "4.12.1";
       addonId = "{DDC359D1-844A-42a7-9AA1-88A850A938A8}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4157731/downthemall-4.11.1.xpi";
-      sha256 = "8f4d25c179e8324d4f8ad785a5dc92d547003974fd3609a06e250f826270291b";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4228862/downthemall-4.12.1.xpi";
+      sha256 = "4e652c23da2560d02246afa3eeeee442b6de3dddb1ee3ce10aaa214e57e676fd";
       meta = with lib;
       {
         homepage = "https://www.downthemall.org/";

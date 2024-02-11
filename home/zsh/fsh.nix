@@ -41,7 +41,7 @@
         fi
       else
         $VERBOSE_ECHO "Creating FSH working directory: ${FAST_WORK_DIR}"
-        $DRY_RUN_CMD ${pkgs.coreutils}/bin/mkdir -p $VERBOSE_ARG "${FAST_WORK_DIR}"
+        run ${pkgs.coreutils}/bin/mkdir -p $VERBOSE_ARG "${FAST_WORK_DIR}"
       fi
     '';
 }
