@@ -120,6 +120,9 @@
     # A tool for helping with licensing projects.
     reuse
 
+    # A tool for copying and backing up files and directories.
+    rsync
+
     # A tool like ack, but faster.
     silver-searcher
 
