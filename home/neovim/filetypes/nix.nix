@@ -3,11 +3,11 @@
 , ...
 }: {
   home.packages = with pkgs; [
+    # An LSP for nix.
+    nil
+
     # A sensible formatter for nix code.
     nixpkgs-fmt
-
-    # An LSP for nix.
-    rnix-lsp
   ];
 
   # COC settings.
@@ -15,11 +15,15 @@
     # Nix setup.
     languageserver.nix = {
       # The command to run.
-      command = "rnix-lsp";
+      command = "nil";
 
       # Run on nix files.
       filetypes = [
         "nix"
+      ];
+
+      rootPatterns = [
+        "flake.nix"
       ];
     };
   };
