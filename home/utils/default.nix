@@ -228,7 +228,8 @@
   programs.eza.enable = true;
 
   # Enable the ls aliases.
-  programs.eza.enableAliases = true;
+  programs.eza.enableBashIntegration = true;
+  programs.eza.enableZshIntegration = true;
 
   # Show icons and git status in exa.
   programs.eza.git = true;
