@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "3.25";
+      version = "3.25.1";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4245699/adblock_plus-3.25.xpi";
-      sha256 = "76287d2cc2032baab1cfe572214e594ff3e3896f3a764bd56341ce31d4c5e417";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4258996/adblock_plus-3.25.1.xpi";
+      sha256 = "9806cd85dceb038204ac361c07d998d35635052fd77020d887189ce245092d60";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -30,6 +30,12 @@
           "https://accounts.adblockplus.org/*/premium?*"
           "https://youtube.com/*"
           "https://www.youtube.com/*"
+          "https://adblockplus.org/*"
+          "https://accounts.adblockplus.org/*"
+          "https://new.adblockplus.org/*"
+          "https://welcome.adblockplus.org/*"
+          "https://getadblock.com/*"
+          "https://vpn.getadblock.com/*"
           "https://adblockplus.org/installed"
           "https://adblockplus.org/installed?*"
           "https://adblockplus.org/*/installed"
