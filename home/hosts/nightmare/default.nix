@@ -71,6 +71,9 @@
     # A utility for syncing files over adb.
     adb-sync
 
+    # A 3D modeling tool.
+    blender
+
     # A tool to help reverse-engineer binaries.
     ghidra
 
