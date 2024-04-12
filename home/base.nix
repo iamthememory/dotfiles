@@ -1,6 +1,7 @@
 # The base configuration used for all systems.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -129,7 +130,7 @@ in
   # NOTE: This probably won't work for building new generations for the
   # foreseeable future.
   programs.home-manager.enable = true;
-  programs.home-manager.path = "${inputs.home-manager}";
+  programs.home-manager.path = lib.mkDefault "${inputs.home-manager}";
 
   # (Re)start services on generation activation.
   systemd.user.startServices = "legacy";
