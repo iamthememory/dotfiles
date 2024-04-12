@@ -11,6 +11,7 @@
     libbsd
     liberation_ttf
     libva1
+    libxcrypt-legacy
     mesa
     python3
   ];
