@@ -183,8 +183,8 @@ in
 
           format = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %H:%M:%S %:z') ";
 
-          # Update twice a second.
-          interval = 0.5;
+          # Update every second.
+          interval = 1;
         }
       ]);
   };
