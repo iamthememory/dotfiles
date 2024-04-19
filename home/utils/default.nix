@@ -50,9 +50,6 @@
     # endings.
     dos2unix
 
-    # A shiny alternative to find written in rust.
-    fd
-
     # The file utility for identifying file contents and MIMEs.
     file
 
@@ -248,6 +245,9 @@
     # Show groups in the long listing.
     "--group"
   ];
+
+  # A shiny alternative to find written in rust.
+  programs.fd.enable = true;
 
   # A fast, featureful grep-like tool.
   programs.ripgrep.enable = true;
