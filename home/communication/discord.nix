@@ -44,6 +44,11 @@ in
             "${sleep}" 5
           done
         '';
+
+    discord = pkgs.discord.override {
+      # A Discord client mod.
+      withVencord = true;
+    };
     in
     [
       # Ensure coreutils is available.
