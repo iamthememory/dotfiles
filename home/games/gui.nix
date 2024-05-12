@@ -34,6 +34,9 @@
       # A Minecraft launcher and manager.
       prismlauncher
 
+      # An emulator.
+      retroarchFull
+
       # An old-school Runescape client.
       runelite
 
