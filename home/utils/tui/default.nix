@@ -61,6 +61,9 @@
   # Use less as the default pager.
   home.sessionVariables.PAGER = "${config.home.profileDirectory}/bin/less";
 
+  # Enable fastfetch, a way of showing system information.
+  programs.fastfetch.enable = true;
+
   # Enable lesspipe to transparently pre-process files fed to less.
   programs.lesspipe.enable = true;
 }
