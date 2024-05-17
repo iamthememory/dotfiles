@@ -34,6 +34,9 @@
   # Enable Bolt for managing Thunderbolt security levels.
   services.hardware.bolt.enable = true;
 
+  # Enable libinput.
+  services.libinput.enable = true;
+
   # Show smartd notifications on the default X11 display.
   services.smartd.notifications.x11.enable = true;
 
@@ -52,9 +55,6 @@
   # Set the clock format in lightdm.
   services.xserver.displayManager.lightdm.greeters.gtk.clock-format =
     "%a %Y-%m-%d %H:%M:%S";
-
-  # Enable libinput.
-  services.xserver.libinput.enable = true;
 
   # Enable i3wm.
   services.xserver.windowManager.i3.enable = true;
