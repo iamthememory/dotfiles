@@ -293,6 +293,9 @@ in
       # Use ZSH as the shell.
       shell = "${config.home.profileDirectory}/bin/zsh";
 
+      # Always show the tab bar.
+      tab_bar_min_tabs = 1;
+
       # Use a powerline-style tab bar separator.
       tab_bar_style = "powerline";
 
