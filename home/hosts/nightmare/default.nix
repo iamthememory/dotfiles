@@ -71,6 +71,9 @@
     # A utility for syncing files over adb.
     adb-sync
 
+    # A tool for AWS.
+    awscli2
+
     # A 3D modeling tool.
     blender
 
