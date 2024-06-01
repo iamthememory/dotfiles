@@ -43,10 +43,6 @@
       # disable things that track anyway.
       privacy-badger
 
-      # An extension for showing ways to free up FFXIV inventory on the
-      # lodestone retainer inventory pages.
-      retain-me-not
-
       # A tab manager.
       tab-session-manager
 
