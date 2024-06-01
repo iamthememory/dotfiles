@@ -42,10 +42,10 @@
           "https://adblockplus.org/*/installed?*"
           "https://welcome.adblockplus.org/*/installed"
           "https://welcome.adblockplus.org/*/installed?*"
-          ];
+        ];
         platforms = platforms.all;
-        };
       };
+    };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
       version = "3.21.4";
@@ -83,10 +83,10 @@
           "https://github.com/uBlockOrigin/*"
           "https://ublockorigin.github.io/*"
           "https://*.reddit.com/r/uBlockOrigin/*"
-          ];
+        ];
         platforms = platforms.all;
-        };
       };
+    };
     "downthemall" = buildFirefoxXpiAddon {
       pname = "downthemall";
       version = "4.12.1";
@@ -111,29 +111,10 @@
           "tabs"
           "theme"
           "webNavigation"
-          ];
+        ];
         platforms = platforms.all;
-        };
       };
-    "retain-me-not" = buildFirefoxXpiAddon {
-      pname = "retain-me-not";
-      version = "1.5.2";
-      addonId = "{66da545d-d31d-4eec-a202-622d99b660c7}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3012883/retain_me_not-1.5.2.xpi";
-      sha256 = "8a77b062526cc4dbd29861eccb908fd04e39d0cdd8e0829a8a7334f7579f8fb6";
-      meta = with lib;
-      {
-        description = "Free your FFXIV inventory up!\nAdditional information is added to your lodestone retainer's inventory page to help you reduce the number of occupied inventory slots.";
-        license = licenses.gpl3;
-        mozPermissions = [
-          "storage"
-          "unlimitedStorage"
-          "https://retainmenot.ffxivaddons.com/*"
-          "https://*.finalfantasyxiv.com/lodestone/character/*/retainer/*/baggage/"
-          ];
-        platforms = platforms.all;
-        };
-      };
+    };
     "zen-fox" = buildFirefoxXpiAddon {
       pname = "zen-fox";
       version = "1.9.9";
@@ -147,6 +128,6 @@
         license = licenses.gpl2;
         mozPermissions = [ "storage" "theme" "alarms" ];
         platforms = platforms.all;
-        };
       };
-    }
+    };
+  }
