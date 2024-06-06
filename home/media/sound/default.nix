@@ -18,10 +18,6 @@
       });
     in
     with pkgs; [
-      # Tools for analyzing music files and submitting data on them to
-      # AcousticBrainz.
-      # Picard uses these.
-      acousticbrainz-client
       essentia-extractor
 
       # A podcast manager.
