@@ -70,11 +70,14 @@
       flake = false;
     };
 
-    # WINE packages and patches not in nixpkgs.
-
     # A patched, more up-to-date tinyfugue.
     tinyfugue-patched = {
       url = "github:ingwarsw/tinyfugue";
+      flake = false;
+    };
+
+    cataclysm-dda = {
+      url = "github:CleverRaven/Cataclysm-DDA";
       flake = false;
     };
 

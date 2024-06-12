@@ -5,6 +5,20 @@
 }: {
   home.packages =
     let
+      # Build Cataclysm: DDA from the current source.
+      cataclysm-dda-git = pkgs.cataclysm-dda.overrideAttrs (oldAttrs: rec {
+        name = "${oldAttrs.pname}-${version}";
+        version = "${inputs.cataclysm-dda.lastModifiedDate}";
+        src = inputs.cataclysm-dda;
+
+        patches = [
+          ./cataclysm-locale-path.patch
+        ];
+
+        # Enable tiles.
+        tiles = true;
+      });
+
       # The customized dwarf fortress to use.
       dwarf-fortress-custom = (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
         # Disable the intro video.
@@ -19,8 +33,7 @@
     in
     with pkgs; [
       # Cataclysm: DDA.
-      # FIXME: Use stable until this compiles with GCC 13.
-      inputs.stable.cataclysm-dda
+      cataclysm-dda-git
 
       # A mod manager for Kerbal Space Program.
       ckan
