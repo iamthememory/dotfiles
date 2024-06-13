@@ -86,6 +86,9 @@
     # Sed for the keybindings below.
     gnused
 
+    # A game engine.
+    godot_4
+
     # xinput, for the touchpad keybindings below.
     xorg.xinput
   ];
