@@ -10,21 +10,14 @@
   # Add mpv to the profile.
   programs.mpv.enable = true;
 
-  # The mpv package to use.
-  programs.mpv.package = pkgs.wrapMpv
-    (pkgs.mpv-unwrapped.override {
-      # Add jack support to mpv.
-      jackaudioSupport = true;
-    })
-    {
-      scripts = with pkgs.mpvScripts; [
-        # A plugin to control mpv via MPRIS.
-        mpris
+  # The scripts to include with mpv.
+  programs.mpv.scripts = with pkgs.mpvScripts; [
+    # A plugin to control mpv via MPRIS.
+    mpris
 
-        # A script to show preview thumbnails when seeking in a video.
-        thumbnail
-      ];
-    };
+    # A script to show preview thumbnails when seeking in a video.
+    thumbnail
+  ];
 
   # Custom keybindings for mpv.
   programs.mpv.bindings =
