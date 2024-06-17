@@ -261,7 +261,7 @@
                     inherit (nixos-unstable.htmlDocs) nixosManual;
 
                     # The path to the manual index.
-                    manualPath = "${nixosManual}/share/doc/nixos/index.html";
+                    manualPath = "${nixosManual.x86_64-linux}/share/doc/nixos/index.html";
                   in
                   pkgs.writeShellScriptBin "nixos-unstable-manual" ''
                     if [ ! -z "$BROWSER" ]
