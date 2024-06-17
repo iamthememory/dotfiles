@@ -50,6 +50,9 @@
     # KDE Connect connections.
     { from = 1714; to = 1764; }
 
+    # Factorio
+    { from = 34197; to = 34197; }
+
     # Vintagestory.
     { from = 42420; to = 42420; }
   ];
@@ -64,6 +67,9 @@
 
     # Metasploit reverse shell connections.
     { from = 4433; to = 4436; }
+
+    # Factorio
+    { from = 34197; to = 34197; }
 
     # Vintagestory.
     { from = 42420; to = 42420; }
