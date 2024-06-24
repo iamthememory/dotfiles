@@ -47,7 +47,7 @@ in
 
       discord = pkgs.discord.override {
         # A Discord client mod.
-        withVencord = true;
+        withVencord = false;
       };
     in
     [
