@@ -23,9 +23,6 @@
     # A tool to see the space taken up by nix store gc-roots.
     nix-du
 
-    # A tool to track what nix is currently building.
-    nix-top
-
     # A TUI to browse the dependencies of a nix store path.
     nix-tree
 
