@@ -6,7 +6,7 @@
   home.packages =
     let
       # Build Cataclysm: DDA from the current source.
-      cataclysm-dda-git = pkgs.cataclysm-dda.overrideAttrs (oldAttrs: rec {
+      cataclysm-dda-git-latest = pkgs.cataclysm-dda.overrideAttrs (oldAttrs: rec {
         name = "${oldAttrs.pname}-${version}";
         version = "${inputs.cataclysm-dda.lastModifiedDate}";
         src = inputs.cataclysm-dda;
@@ -18,6 +18,16 @@
         # Enable tiles.
         tiles = true;
       });
+
+      magiclysm-no-class-limit = pkgs.cataclysmDDA.buildMod {
+        modName = "Magiclysm_No_Class_Limit";
+        version = inputs.cataclysm-dda-no-class-limit.lastModifiedDate;
+        src = inputs.cataclysm-dda-no-class-limit;
+      };
+
+      cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
+        magiclysm-no-class-limit
+      ]);
 
       # The customized dwarf fortress to use.
       dwarf-fortress-custom = (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
@@ -33,7 +43,7 @@
     in
     with pkgs; [
       # Cataclysm: DDA.
-      cataclysm-dda-git
+      cataclysm-dda-git-with-mods
 
       # A mod manager for Kerbal Space Program.
       ckan
