@@ -81,6 +81,11 @@
       flake = false;
     };
 
+    cataclysm-dda-no-class-limit = {
+      url = "github:martinrhan/Magiclysm_No_Class_Limit";
+      flake = false;
+    };
+
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
