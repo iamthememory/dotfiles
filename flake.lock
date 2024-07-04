@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-mining-mod": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707541318,
+        "narHash": "sha256-s83kHIvx5u6c3cOdtKFU/sR5GEtaq46kCu/+uZEdbBQ=",
+        "owner": "DangerNoodle",
+        "repo": "mining-mod",
+        "rev": "2b0fb908c4e91dd7a430827a1b90fd420564d607",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DangerNoodle",
+        "repo": "mining-mod",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-no-class-limit": {
       "flake": false,
       "locked": {
@@ -216,6 +232,7 @@
     "root": {
       "inputs": {
         "cataclysm-dda": "cataclysm-dda",
+        "cataclysm-dda-mining-mod": "cataclysm-dda-mining-mod",
         "cataclysm-dda-no-class-limit": "cataclysm-dda-no-class-limit",
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",

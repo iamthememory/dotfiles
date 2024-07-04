@@ -25,8 +25,16 @@
         src = inputs.cataclysm-dda-no-class-limit;
       };
 
+      mining-mod = pkgs.cataclysmDDA.buildMod {
+        modName = "Mining_Mod";
+        version = inputs.cataclysm-dda-mining-mod.lastModifiedDate;
+        src = inputs.cataclysm-dda-mining-mod;
+        modRoot = "Mining_Mod";
+      };
+
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
         magiclysm-no-class-limit
+        mining-mod
       ]);
 
       # The customized dwarf fortress to use.

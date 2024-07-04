@@ -86,6 +86,11 @@
       flake = false;
     };
 
+    cataclysm-dda-mining-mod = {
+      url = "github:DangerNoodle/mining-mod";
+      flake = false;
+    };
+
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
