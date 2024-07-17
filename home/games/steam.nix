@@ -7,6 +7,9 @@
     # A winetricks wrapper that can run winetricks on Steam game prefixes
     # easily.
     protontricks
+
+    # A wrapper for Steam games.
+    steamtinkerlaunch
   ];
 
   # Start Steam on startup.
