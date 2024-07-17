@@ -13,7 +13,7 @@
         propagatedBuildInputs =
           with pkgs.python3Packages; prev.propagatedBuildInputs ++ [
             mutagen
-            youtube-dl
+            yt-dlp
           ];
       });
     in

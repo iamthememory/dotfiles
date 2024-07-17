@@ -67,9 +67,6 @@
 
     # A newer, not quite compatible version of wget.
     wget2
-
-    # A fetcher for videos from various sites for archiving or local playback.
-    youtube-dl
   ];
 
   # A program for translating text via calls to translation services.
