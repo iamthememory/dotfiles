@@ -15,7 +15,7 @@
     dmenu
 
     # Ensure Adwaita icons are available.
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
   ];
 
   # Enable dunst for notifications.

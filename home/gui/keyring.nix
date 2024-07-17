@@ -20,7 +20,7 @@ in
   home.packages = with pkgs; [
     # Ensure seahorse is available for both a GUI askpass, and managing
     # gnome-keyring.
-    gnome.seahorse
+    seahorse
 
     # Add the keybase filesystem package explicitly to ensure git-remote-keybase
     # is available.

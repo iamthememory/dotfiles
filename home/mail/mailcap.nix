@@ -95,7 +95,7 @@
     coreutils
 
     # An image viewer.
-    gnome.eog
+    eog
 
     # A PDF (and other document types) viewer.
     evince

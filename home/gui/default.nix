@@ -36,13 +36,13 @@
     dconf
 
     # The GUI dconf editor.
-    gnome.dconf-editor
+    dconf-editor
 
     # A tool for managing disks and easily seeing SMART data.
-    gnome.gnome-disk-utility
+    gnome-disk-utility
 
     # The nautilus file browser.
-    gnome.nautilus
+    nautilus
 
     # The NetworkManager applet.
     networkmanagerapplet
