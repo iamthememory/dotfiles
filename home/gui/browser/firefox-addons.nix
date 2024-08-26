@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "4.4";
+      version = "4.5.1";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4320724/adblock_plus-4.4.xpi";
-      sha256 = "2736acc5c2499b1ca7f0d039323a60bf982b709fd747aedffd9bdac56d27fbd3";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4336281/adblock_plus-4.5.1.xpi";
+      sha256 = "bfeaf433cb0b728d7011a4354524a3943a8885241105c60aa94555d8561c3ae5";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -48,10 +48,10 @@
     };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.21.4";
+      version = "3.22.0";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4282819/adnauseam-3.21.4.xpi";
-      sha256 = "a29a137c530be59612ebfbe0b13f1a9105bfe47cb868d1db4e51a9e7a0e9fa81";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4328793/adnauseam-3.22.0.xpi";
+      sha256 = "1648ecfc60892c356f9142e0c6fcb68928f6154e0887125726dd4b049c778ca0";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
@@ -79,7 +79,6 @@
           "https://forums.lanik.us/*"
           "https://github.com/*"
           "https://*.github.io/*"
-          "https://*.letsblock.it/*"
           "https://github.com/uBlockOrigin/*"
           "https://ublockorigin.github.io/*"
           "https://*.reddit.com/r/uBlockOrigin/*"
