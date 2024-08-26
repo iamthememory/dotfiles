@@ -133,7 +133,7 @@ in
   programs.home-manager.path = lib.mkDefault "${inputs.home-manager}";
 
   # (Re)start services on generation activation.
-  systemd.user.startServices = "legacy";
+  systemd.user.startServices = true;
 
   # Set the nixpkgs config for the system from the config we use here.
   xdg.configFile."nixpkgs/config.nix".source = inputs.nixpkgs-config;
