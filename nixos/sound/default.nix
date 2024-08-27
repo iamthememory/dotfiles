@@ -90,7 +90,4 @@
     KERNEL=="hpet", GROUP="audio"
     KERNEL=="rtc0", GROUP="audio"
   '';
-
-  # Enable ALSA.
-  sound.enable = true;
 }

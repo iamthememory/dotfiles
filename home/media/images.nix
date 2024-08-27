@@ -20,7 +20,7 @@
     loupe
 
     # A comic reader.
-    mcomix
+    #mcomix
 
     # A utility to optimize PNGs to the smaller sizes without sacrificing
     # quality.

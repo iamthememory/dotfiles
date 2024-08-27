@@ -42,6 +42,9 @@
   # Enable debug info for packages.
   environment.enableDebugInfo = true;
 
+  # Enable NVIDIA GPU support inside docker containers.
+  hardware.nvidia-container-toolkit.enable = true;
+
   # Extra UDP port ranges to allow through the firewall.
   networking.firewall.allowedUDPPortRanges = [
     # SS14.
@@ -136,9 +139,6 @@
 
   # Set the timezone.
   time.timeZone = "America/New_York";
-
-  # Enable NVIDIA GPU support inside docker containers.
-  virtualisation.docker.enableNvidia = true;
 
   # Regularly prune unused docker images and storage.
   virtualisation.docker.autoPrune.enable = true;

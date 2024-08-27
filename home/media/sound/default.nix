@@ -11,7 +11,7 @@
       # Add some additional dependencies to gPodder.
       gpodder-custom = pkgs.gpodder.overrideAttrs (final: prev: {
         propagatedBuildInputs =
-          with pkgs.python3Packages; prev.propagatedBuildInputs ++ [
+          with pkgs.python311Packages; prev.propagatedBuildInputs ++ [
             mutagen
             yt-dlp
           ];

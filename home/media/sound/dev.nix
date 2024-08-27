@@ -40,7 +40,7 @@ in
     adlplug
     aeolus
     AMB-plugins
-    ams-lv2
+    #ams-lv2
     artyFX
     bristol
     bshapr
@@ -56,7 +56,7 @@ in
     dssi
     eq10q
     fluidsynth
-    fmsynth
+    #fmsynth
     fomp
     gxplugins-lv2
     helm
