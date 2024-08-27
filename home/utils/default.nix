@@ -43,6 +43,9 @@
     # A tool for manipulating CSV files.
     csvkit
 
+    # A tool for managing development environments.
+    devenv
+
     # Tools such as diff, cmp, etc.
     diffutils
 
