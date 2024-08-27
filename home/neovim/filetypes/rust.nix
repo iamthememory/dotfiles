@@ -28,7 +28,8 @@
     # The path to rust-analyzer.
     # If not specified, coc-rust-analyzer assumes it needs to download it from
     # a GitHub release.
-    "rust-analyzer.serverPath" = "${config.home.profileDirectory}/bin/rust-analyzer";
+    # Not using an absolute path makes it use one from $PATH.
+    "rust-analyzer.server.path" = "rust-analyzer";
   };
 
   # Configuration for Rust.
