@@ -34,6 +34,10 @@
   # Allow hackrf access to users in the plugdev group.
   hardware.hackrf.enable = true;
 
+  # Use the legacy NVIDIA drivers, since the open source ones don't support
+  # older GPUs.
+  hardware.nvidia.open = false;
+
   # Enable system76 hardware options.
   hardware.system76.enableAll = true;
 
