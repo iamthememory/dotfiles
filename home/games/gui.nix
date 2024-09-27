@@ -83,6 +83,7 @@ in
 
         patches = [
           ./cataclysm-locale-path.patch
+          ./cataclysm-sky-island-range.patch
         ];
 
         # Enable tiles.
