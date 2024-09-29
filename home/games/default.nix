@@ -31,7 +31,7 @@
       appimage-run
 
       # A tool for managing separate wine prefixes.
-      bottles-nixpkgs.bottles
+      bottles
 
       # A tool for showing OpenGL info for testing and debugging.
       glxinfo
