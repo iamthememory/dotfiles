@@ -91,6 +91,11 @@
       flake = false;
     };
 
+    cdda-sounds = {
+      url = "git+https://github.com/Fris0uman/CDDA-Soundpacks?submodules=1";
+      flake = false;
+    };
+
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

@@ -103,7 +103,15 @@ in
         modRoot = "Mining_Mod";
       };
 
+      cc-sounds = pkgs.cataclysmDDA.buildSoundPack {
+        modName = "CC-Sounds";
+        version = inputs.cdda-sounds.lastModifiedDate;
+        src = inputs.cdda-sounds;
+        modRoot = "sound/CC-Sounds";
+      };
+
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
+        cc-sounds
         magiclysm-no-class-limit
         mining-mod
       ]);

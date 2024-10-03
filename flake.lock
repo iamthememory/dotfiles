@@ -48,6 +48,24 @@
         "type": "github"
       }
     },
+    "cdda-sounds": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727869997,
+        "narHash": "sha256-HqbA7FiKvN7/cApOHla2M0GItWcLNMrm7fzdXLnhZrM=",
+        "ref": "refs/heads/main",
+        "rev": "8d4f75dffa8fb727159d2bf5d92c1d1d401b241d",
+        "revCount": 75,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/Fris0uman/CDDA-Soundpacks"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/Fris0uman/CDDA-Soundpacks"
+      }
+    },
     "dircolors-solarized": {
       "flake": false,
       "locked": {
@@ -234,6 +252,7 @@
         "cataclysm-dda": "cataclysm-dda",
         "cataclysm-dda-mining-mod": "cataclysm-dda-mining-mod",
         "cataclysm-dda-no-class-limit": "cataclysm-dda-no-class-limit",
+        "cdda-sounds": "cdda-sounds",
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",
         "gef": "gef",
