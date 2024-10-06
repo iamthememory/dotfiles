@@ -3,6 +3,7 @@
   # Make an email account from the given settings.
   mkEmail =
     { address
+    , enableSync ? true
     , gpgKey ? null
     , imapHost ? if isGmail then "imap.gmail.com" else null
     , isGmail ? true
@@ -38,7 +39,7 @@
             lieer.enable = true;
 
             # Enable syncing for this account.
-            lieer.sync.enable = true;
+            lieer.sync.enable = enableSync;
 
             # Sync every five minutes.
             lieer.sync.frequency = "*:0/5";
@@ -86,7 +87,7 @@
               if isGmail then mbsyncLayoutGmail else mbsyncLayout;
 
             # Enable mbsync for this account.
-            mbsync.enable = true;
+            mbsync.enable = enableSync;
 
             # If a folder is added locally or on Gmail, create it on the other
             # side as well and sync it too.
