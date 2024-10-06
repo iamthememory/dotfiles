@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1728145112,
-        "narHash": "sha256-3QNf9AftZO0BxcG+S94uQUEJfbGeAko0xWlYsJEbUaM=",
+        "lastModified": 1728237595,
+        "narHash": "sha256-WeHlMxibXltcBYdsTqx9SMDspDIUzX+TJ9p23AG8b3w=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "a26f6eaf88bbdb762bdb883aca82b575dd2d0b22",
+        "rev": "b65f3e6f97aa4fc5cba63370b575cfd6e35c0bc5",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,11 @@
     "cdda-sounds": {
       "flake": false,
       "locked": {
-        "lastModified": 1727869997,
-        "narHash": "sha256-HqbA7FiKvN7/cApOHla2M0GItWcLNMrm7fzdXLnhZrM=",
+        "lastModified": 1728207933,
+        "narHash": "sha256-7DnetRDEWe5dmz638StZeyHPDUc2xumAYQFCISR2WK8=",
         "ref": "refs/heads/main",
-        "rev": "8d4f75dffa8fb727159d2bf5d92c1d1d401b241d",
-        "revCount": 75,
+        "rev": "8b54f305264e6e1e760833e3274358e013bb1cfb",
+        "revCount": 76,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/Fris0uman/CDDA-Soundpacks"
@@ -170,11 +170,11 @@
     },
     "nixos-stable": {
       "locked": {
-        "lastModified": 1728067476,
-        "narHash": "sha256-/uJcVXuBt+VFCPQIX+4YnYrHaubJSx4HoNsJVNRgANM=",
+        "lastModified": 1728193676,
+        "narHash": "sha256-PbDWAIjKJdlVg+qQRhzdSor04bAPApDqIv2DofTyynk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6e6b3dd395c3b1eb9be9f2d096383a8d05add030",
+        "rev": "ecbc1ca8ffd6aea8372ad16be9ebbb39889e55b6",
         "type": "github"
       },
       "original": {
@@ -218,11 +218,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1728155797,
-        "narHash": "sha256-Me4Q6d6E33EGedpYPGEhWYSYOppjmCMrx+nV2iVmZ9A=",
+        "lastModified": 1728246118,
+        "narHash": "sha256-uFAtmNu+OH7mk/kT5X3d5ojK1WW+xnp3b81AcoqMQ5c=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a343982b86127ff5bf8212f2d56a7338269f2889",
+        "rev": "a5b2e07c4c60fa744f183ec64cd0621fb9311612",
         "type": "github"
       },
       "original": {
@@ -234,11 +234,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1728153016,
-        "narHash": "sha256-MKjHJ7iSlZTSslIk8d+QwPNDBvrfz61pl6jl2wnyuo0=",
+        "lastModified": 1728243923,
+        "narHash": "sha256-jopCYqAnXCqFmLx3wMjIyAFx92C6m8WX6IL3No63KVU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "e04ee56d887b86becbcb7bcef332bdba891b5714",
+        "rev": "5cc3dd44039b1aae38ba8c765634a54e6ce43ae0",
         "type": "github"
       },
       "original": {
@@ -276,11 +276,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1728095260,
-        "narHash": "sha256-X62hA5ivYLY5G5+mXI6l9eUDkgi6Wu/7QUrwXhJ09oo=",
+        "lastModified": 1728181869,
+        "narHash": "sha256-sQXHXsjIcGEoIHkB+RO6BZdrPfB+43V1TEpyoWRI3ww=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "d1d2532ab267cfe6e40dff73fbaf34436c406d26",
+        "rev": "cd46aa3906c14790ef5cbe278d9e54f2c38f95c0",
         "type": "github"
       },
       "original": {
