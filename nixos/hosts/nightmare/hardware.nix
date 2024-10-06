@@ -41,6 +41,9 @@
   # Enable system76 hardware options.
   hardware.system76.enableAll = true;
 
+  # Enable the xpadneo driver.
+  hardware.xpadneo.enable = true;
+
   # Prefer increasing frequency to max slowly, rather than ramping up the CPU
   # frequency to maximum quickly when load increases.
   # With the intel_pstate driver, powersave should still be relatively close to
