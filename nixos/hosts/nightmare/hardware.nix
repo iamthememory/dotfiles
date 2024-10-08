@@ -25,6 +25,10 @@
       ${setpci} -v -s 00:1f.3 latency_timer=ff
     '';
 
+  hardware.bluetooth.input = {
+    General.ClassicBondedOnly = false;
+  };
+
   # Update the CPU microcode.
   hardware.cpu.intel.updateMicrocode = true;
 
