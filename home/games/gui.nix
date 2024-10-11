@@ -1,6 +1,7 @@
 # GUI-based games and their configurations.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -99,7 +100,13 @@ in
       mining-mod = pkgs.cataclysmDDA.buildMod {
         modName = "Mining_Mod";
         version = inputs.cataclysm-dda-mining-mod.lastModifiedDate;
-        src = inputs.cataclysm-dda-mining-mod;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-mining-mod-patched";
+          src = inputs.cataclysm-dda-mining-mod;
+          patches = [
+            ./cataclysm-mining-mod-count.patch
+          ];
+        };
         modRoot = "Mining_Mod";
       };
 
