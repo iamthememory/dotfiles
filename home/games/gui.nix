@@ -1,7 +1,6 @@
 # GUI-based games and their configurations.
 { config
 , inputs
-, lib
 , pkgs
 , ...
 }:
