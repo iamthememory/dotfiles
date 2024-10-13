@@ -116,6 +116,10 @@
   # expect it.
   programs.git.extraConfig.github.user = "iamthememory";
 
+  # Enable automatic git maintenance.
+  programs.git.maintenance.enable = true;
+  programs.git.extraConfig.maintenance.strategy = "incremental";
+
   # Select the default gpg signing subkey.
   programs.gpg.settings.default-key = "0x34915A26CE416A5CDF500247D226B54765D868B7";
 
