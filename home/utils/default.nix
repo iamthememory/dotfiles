@@ -233,7 +233,7 @@
 
   # Show icons and git status in exa.
   programs.eza.git = true;
-  programs.eza.icons = true;
+  programs.eza.icons = "auto";
 
   programs.eza.extraOptions = [
     # Use binary prefixes for file sizes.
