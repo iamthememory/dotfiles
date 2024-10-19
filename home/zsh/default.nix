@@ -126,8 +126,8 @@ in
     # Enable spelling correction for commands.
     setopt correct
 
-    # Enable ksh-style extended globbing, e.g. @(foo|bar)
-    setopt kshglob
+    # Enable extended globs.
+    setopt extended_glob
 
     # Allow comments even though the shell is interactive.
     setopt interactivecomments
