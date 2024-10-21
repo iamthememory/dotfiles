@@ -84,6 +84,7 @@ in
         patches = [
           ./cataclysm-locale-path.patch
           ./cataclysm-sky-island-range.patch
+          ./cataclysm-sleepiness-clamp.patch
         ];
 
         # Enable tiles.

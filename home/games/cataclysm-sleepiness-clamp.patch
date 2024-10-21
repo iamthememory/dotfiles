@@ -1,0 +1,13 @@
+diff --git a/src/activity_tracker.cpp b/src/activity_tracker.cpp
+index 473fbac3bf4a..95a16ee8669e 100644
+--- a/src/activity_tracker.cpp
++++ b/src/activity_tracker.cpp
+@@ -23,7 +23,7 @@ void activity_tracker::try_reduce_weariness( int bmr, float sleepiness_mod,
+         float sleepiness_regen_mod )
+ {
+     if( average_activity() < LIGHT_EXERCISE ) {
+-        cata_assert( sleepiness_mod > 0.0f );
++        sleepiness_mod = std::max(0.01f, sleepiness_mod);
+         low_activity_ticks += std::min( 1.0f, ( ( LIGHT_EXERCISE - average_activity() ) /
+                                                 ( LIGHT_EXERCISE - NO_EXERCISE ) ) ) / sleepiness_mod;
+         // Recover (by default) twice as fast while sleeping
