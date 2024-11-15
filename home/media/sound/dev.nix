@@ -50,7 +50,7 @@ in
     carla
     cmt
     csa
-    distrho
+    #distrho
     drumgizmo
     drumkv1
     dssi
