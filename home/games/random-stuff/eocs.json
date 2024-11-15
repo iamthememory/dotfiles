@@ -1,0 +1,92 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_A_LOT_OF_RANDOM_SEEDS",
+    "effect": [
+      {
+        "u_spawn_item": "farming_seeds",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_FARMING_TOOLS",
+    "effect": [
+      {
+        "u_spawn_item": "farming_tools",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_HYDRO",
+    "effect": [
+      {
+        "u_spawn_item": "hydro",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_HARDWARE",
+    "effect": [
+      {
+        "u_spawn_item": "hardware",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_HARDWARE_BULK",
+    "effect": [
+      {
+        "u_spawn_item": "hardware_bulk",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_SUPPLIES",
+    "effect": [
+      {
+        "u_spawn_item": "seed_weed",
+        "count": [5, 10]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_A_LOT_OF_RANDOM_SEEDS"
+        ],
+        "iterations": [200, 400]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_FARMING_TOOLS"
+        ],
+        "iterations": [10, 20]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_HYDRO"
+        ],
+        "iterations": [200, 400]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_HARDWARE"
+        ],
+        "iterations": [200, 400]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_HARDWARE_BULK"
+        ],
+        "iterations": [200, 400]
+      }
+    ]
+  }
+]

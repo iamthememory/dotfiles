@@ -1,0 +1,14 @@
+[
+  {
+    "type": "item_group",
+    "id": "NC_DM_MERCHANT_stock",
+    "copy-from": "NC_DM_MERCHANT_stock",
+    "subtype": "collection",
+    "extend": {
+      "entries": [
+        { "group": "collection_matrix_dust", "prob": 90 },
+        { "group": "dist_matrix_crystals", "prob": 5 }
+      ]
+    }
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "ident": "cdda-defense-additions",
+    "name": "Various Defense Mode Additions",
+    "authors": [ "iamthememory" ],
+    "description": "This mod adds extra stuff to the Defense Mode Trader.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "defense_mode" ]
+  }
+]

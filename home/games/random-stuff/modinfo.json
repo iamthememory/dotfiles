@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "ident": "random-stuff",
+    "name": "Random Stuff",
+    "authors": [ "iamthememory" ],
+    "description": "Various little EOCs and stuff",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]

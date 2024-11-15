@@ -87,6 +87,9 @@ in
           ./cataclysm-sleepiness-clamp.patch
         ];
 
+        # Enable debugging info.
+        #separateDebugInfo = true;
+
         # Enable tiles.
         tiles = true;
       });
@@ -117,10 +120,64 @@ in
         modRoot = "sound/CC-Sounds";
       };
 
+      grow-more-drugs = pkgs.cataclysmDDA.buildMod {
+        modName = "grow_more_drugs";
+        version = inputs.cataclysm-dda-grow-more-drugs.lastModifiedDate;
+        src = inputs.cataclysm-dda-grow-more-drugs;
+        modRoot = "mods/grow_more_drugs";
+      };
+
+      elf-crops-src = pkgs.applyPatches {
+        name = "elfcrops-patched";
+        src = inputs.cataclysm-dda-elf-crops;
+        patches = [
+          ./cataclysm-elfcrops-fixdup.patch
+        ];
+      };
+
+      plant-crops = pkgs.cataclysmDDA.buildMod {
+        modName = "Plant_Crops";
+        version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
+        src = elf-crops-src;
+        modRoot = "Plant Crops";
+      };
+
+      resource-crops = pkgs.cataclysmDDA.buildMod {
+        modName = "Resource_Crops";
+        version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
+        src = elf-crops-src;
+        modRoot = "Resource Crops";
+      };
+
+      resource-crops-magiclysm = pkgs.cataclysmDDA.buildMod {
+        modName = "Resource_Crops_Magiclysm_addon";
+        version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
+        src = elf-crops-src;
+        modRoot = "Resource Crops Magiclysm addon";
+      };
+
+      cdda-defense-additions = pkgs.cataclysmDDA.buildMod {
+        modName = "cdda-defense-additions";
+        version = config.home.file."generation.rev".text;
+        src = ./cdda-defense-additions;
+      };
+
+      random-stuff = pkgs.cataclysmDDA.buildMod {
+        modName = "random-stuff";
+        version = config.home.file."generation.rev".text;
+        src = ./random-stuff;
+      };
+
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
         cc-sounds
         magiclysm-no-class-limit
         mining-mod
+        grow-more-drugs
+        plant-crops
+        resource-crops
+        resource-crops-magiclysm
+        cdda-defense-additions
+        random-stuff
       ]);
 
       # The customized dwarf fortress to use.
