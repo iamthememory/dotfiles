@@ -40,6 +40,9 @@
     " Allow hiding buffers without forcing prompts to save.
     set hidden
 
+    " Store a lot of command history.
+    set history=10000
+
     " Highlight all search results.
     set hlsearch
 
