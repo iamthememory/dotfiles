@@ -77,6 +77,9 @@
     # A 3D modeling tool.
     blender
 
+    # A tool for streaming to icecast.
+    darkice
+
     # A tool to help reverse-engineer binaries.
     ghidra
 
