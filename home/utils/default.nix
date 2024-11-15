@@ -231,6 +231,9 @@
   programs.eza.enableBashIntegration = true;
   programs.eza.enableZshIntegration = true;
 
+  # Enable color when possible.
+  programs.eza.colors = "auto";
+
   # Show icons and git status in exa.
   programs.eza.git = true;
   programs.eza.icons = "auto";
@@ -238,9 +241,6 @@
   programs.eza.extraOptions = [
     # Use binary prefixes for file sizes.
     "--binary"
-
-    # Enable color when possible.
-    "--color=auto"
 
     # Color file sizes based on how large they are.
     "--color-scale"
