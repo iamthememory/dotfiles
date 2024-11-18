@@ -50,7 +50,7 @@ in
     carla
     cmt
     csa
-    #distrho
+    distrho-ports
     drumgizmo
     drumkv1
     dssi
@@ -70,7 +70,7 @@ in
     nova-filters
     rkrlv2
     qsynth
-    #setbfree
+    setbfree
     sorcer
     speech-denoiser
     swh_lv2
