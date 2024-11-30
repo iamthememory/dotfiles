@@ -25,9 +25,9 @@
     # A set of free fonts compatible with the classic Microsoft ones.
     liberation_ttf
 
-    # A set of various monospaced fonts, patched with numerous extra unicode
-    # glyphs for extra-shiny fonts in terminals, etc.
-    nerdfonts
+    # A monospaced fonts, patched with numerous extra unicode glyphs for
+    # extra-shiny fonts in terminals, etc.
+    nerd-fonts.liberation
 
     # A set of nice fonts from Google.
     noto-fonts

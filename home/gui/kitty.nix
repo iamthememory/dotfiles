@@ -70,7 +70,7 @@ in
   # Here, we use the nerdfonts-patched Li[bt]eration Mono font, with extra
   # glyphs and symbols added.
   programs.kitty.font.name = "LiterationMono Nerd Font Mono";
-  programs.kitty.font.package = pkgs.nerdfonts;
+  programs.kitty.font.package = pkgs.nerd-fonts.liberation;
   programs.kitty.font.size = 9.0;
 
   # Keybindings for kitty.
