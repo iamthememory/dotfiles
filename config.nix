@@ -21,4 +21,13 @@
 
   # Enable CUDA support.
   cudaSupport = true;
+
+  # Allow dotnet 7 for now since vintagestory needs it.
+  # FIXME: If vintagestory switches to a more up to date dotnet version, remove
+  # this.
+  permittedInsecurePackages = [
+    "dotnet-runtime-7.0.20"
+    "dotnet-runtime-wrapped-7.0.20"
+    "dotnet-wrapped-7.0.20"
+  ];
 }
