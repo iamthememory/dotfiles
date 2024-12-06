@@ -92,6 +92,9 @@
     # A game engine.
     godot_4
 
+    # A tool for setting the background.
+    nitrogen
+
     # xinput, for the touchpad keybindings below.
     xorg.xinput
   ];
@@ -164,6 +167,7 @@
   xsession.initExtra =
     let
       grep = "${config.home.profileDirectory}/bin/grep";
+      nitrogen = "${config.home.profileDirectory}/bin/nitrogen";
       sed = "${config.home.profileDirectory}/bin/sed";
       xinput = "${config.home.profileDirectory}/bin/xinput";
     in
@@ -175,6 +179,9 @@
       logitech_mouse_id="$("${xinput}" list | "${grep}" 'Logitech M325' | sed -En -e '4s/^.*[[:space:]]id=([0-9]+)[[:space:]].*$/\1/p')"
       "${xinput}" --set-prop "$${logitech_mouse_id}" 'libinput Accel Speed' -0.5
       unset logitech_mouse_id
+
+      # Set a background image.
+      nitrogen --restore &
     '';
 
   # Custom i3 workspaces for nightmare.
