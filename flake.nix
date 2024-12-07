@@ -181,7 +181,7 @@
             config = import nixpkgs-config;
 
             overlays = [
-              inputs.nur.overlay
+              inputs.nur.overlays.default
               (import overlay)
             ];
           }).nur;
@@ -256,7 +256,7 @@
             config = import nixpkgs-config;
 
             overlays = [
-              inputs.nur.overlay
+              inputs.nur.overlays.default
               (import overlay)
             ];
           };
@@ -267,7 +267,7 @@
             config = import nixpkgs-config;
 
             overlays = [
-              inputs.nur.overlay
+              inputs.nur.overlays.default
               (import overlay)
             ];
           };
