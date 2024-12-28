@@ -63,7 +63,7 @@ in
       devices = [
         # SSD boot mirror 0.
         {
-          uuid = "4ae6a235-3856-4134-83fb-8b66cdd41aca";
+          uuid = "9c4a12a3-d18d-43e5-a036-25c666a0a6a9";
           allowDiscards = true;
         }
 
@@ -117,8 +117,8 @@ in
   };
 
   # Boot filesystems.
-  fileSystems."/boot0" = mkExt4 "a1efbceb-f1ae-493a-ab75-6765a8a1961b";
-  fileSystems."/boot0/efi" = mkVfat "7EC6-BF71";
+  fileSystems."/boot0" = mkExt4 "7b7bb35c-836b-4b0d-ac77-3d643e06a3aa";
+  fileSystems."/boot0/efi" = mkVfat "05C6-8755";
   fileSystems."/boot1" = mkExt4 "7823746c-8419-429e-8937-9f8a7ba8d1ce";
   fileSystems."/boot1/efi" = mkVfat "D459-2F58";
 
