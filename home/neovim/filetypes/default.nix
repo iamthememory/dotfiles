@@ -7,6 +7,7 @@
     ./cmake.nix
     ./docker.nix
     ./dot.nix
+    ./go.nix
     ./green.nix
     ./haskell.nix
     ./json.nix
