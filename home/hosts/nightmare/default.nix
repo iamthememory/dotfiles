@@ -89,6 +89,10 @@
     # Sed for the keybindings below.
     gnused
 
+    # The go tools.
+    go
+    gopls
+
     # A game engine.
     godot_4
 
