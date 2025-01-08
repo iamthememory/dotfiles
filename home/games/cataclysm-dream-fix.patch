@@ -1,0 +1,13 @@
+diff --git a/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json b/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json
+index 52f7ea1bb407..0794298ff549 100644
+--- a/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json
++++ b/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json
+@@ -71,7 +71,7 @@
+     "id": "EOC_XE_QUEUE_LEVELING",
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+-    "condition": { "test_eoc": "EOC_CONDITION_BANNED_DREAM_MAGIC_TRAITS" },
++    "condition": { "and": [ { "test_eoc": "EOC_CONDITION_BANNED_DREAM_MAGIC_TRAITS" }, "u_is_avatar" ] },
+     "effect": [
+       {
+         "if": { "math": [ "xe_eater_leveling > 0" ] },

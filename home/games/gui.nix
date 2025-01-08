@@ -85,6 +85,8 @@ in
           ./cataclysm-locale-path.patch
           ./cataclysm-sky-island-range.patch
           ./cataclysm-sleepiness-clamp.patch
+          ./cataclysm-seedbearer-fix.patch
+          ./cataclysm-dream-fix.patch
         ];
 
         # Enable debugging info.
@@ -97,7 +99,13 @@ in
       magiclysm-no-class-limit = pkgs.cataclysmDDA.buildMod {
         modName = "Magiclysm_No_Class_Limit";
         version = inputs.cataclysm-dda-no-class-limit.lastModifiedDate;
-        src = inputs.cataclysm-dda-no-class-limit;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-no-class-limit";
+          src = inputs.cataclysm-dda-no-class-limit;
+          patches = [
+            ./cataclysm-magiclysm-no-class-limit.patch
+          ];
+        };
       };
 
       mining-mod = pkgs.cataclysmDDA.buildMod {
@@ -135,27 +143,6 @@ in
         ];
       };
 
-      plant-crops = pkgs.cataclysmDDA.buildMod {
-        modName = "Plant_Crops";
-        version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
-        src = elf-crops-src;
-        modRoot = "Plant Crops";
-      };
-
-      resource-crops = pkgs.cataclysmDDA.buildMod {
-        modName = "Resource_Crops";
-        version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
-        src = elf-crops-src;
-        modRoot = "Resource Crops";
-      };
-
-      resource-crops-magiclysm = pkgs.cataclysmDDA.buildMod {
-        modName = "Resource_Crops_Magiclysm_addon";
-        version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
-        src = elf-crops-src;
-        modRoot = "Resource Crops Magiclysm addon";
-      };
-
       cdda-defense-additions = pkgs.cataclysmDDA.buildMod {
         modName = "cdda-defense-additions";
         version = config.home.file."generation.rev".text;
@@ -173,9 +160,6 @@ in
         magiclysm-no-class-limit
         mining-mod
         grow-more-drugs
-        plant-crops
-        resource-crops
-        resource-crops-magiclysm
         cdda-defense-additions
         random-stuff
       ]);
