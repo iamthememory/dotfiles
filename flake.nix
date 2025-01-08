@@ -101,12 +101,6 @@
       flake = false;
     };
 
-    cataclysm-dda-elf-crops =
-      {
-        url = "github:OromisElf/ElfCrops";
-        flake = false;
-      };
-
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
