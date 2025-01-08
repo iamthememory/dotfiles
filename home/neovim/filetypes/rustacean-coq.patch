@@ -1,0 +1,24 @@
+diff --git a/lua/rustaceanvim/config/server.lua b/lua/rustaceanvim/config/server.lua
+index 9027d5567ca5..5a1e22acdfa1 100644
+--- a/lua/rustaceanvim/config/server.lua
++++ b/lua/rustaceanvim/config/server.lua
+@@ -143,6 +143,9 @@ function server.create_client_capabilities()
+   local selection_range_capabilities = mk_capabilities_if_available('lsp-selection-range', function(lsp_selection_range)
+     return lsp_selection_range.update_capabilities {}
+   end)
++  local coq_capabilities = mk_capabilities_if_available('coq', function(coq)
++    return coq.lsp_ensure_capabilities {}
++  end)
+   local folding_range_capabilities = mk_capabilities_if_available('ufo', function(_)
+     return {
+       textDocument = {
+@@ -159,7 +162,8 @@ function server.create_client_capabilities()
+     blink_capabilities,
+     cmp_capabilities,
+     selection_range_capabilities,
+-    folding_range_capabilities
++    folding_range_capabilities,
++    coq_capabilities
+   )
+ end
+ 

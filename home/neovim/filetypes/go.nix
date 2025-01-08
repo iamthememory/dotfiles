@@ -2,8 +2,17 @@
 { pkgs
 , ...
 }: {
+  home.packages = with pkgs; [
+    # A go LSP.
+    gopls
+  ];
+
+  programs.neovim.extraLuaConfig = ''
+    require 'lspconfig'.gopls.setup(require 'coq'.lsp_ensure_capabilities())
+  '';
+
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    vim-go
+    #vim-go
   ];
 
   # Buffer settings for go.

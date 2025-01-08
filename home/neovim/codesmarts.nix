@@ -3,115 +3,29 @@
 , pkgs
 , ...
 }: {
-  # Enable COC.
-  programs.neovim.coc.enable = true;
+  # Extra code-related neovim configuration.
+  #programs.neovim.extraConfig = ''
+  #  " Check if we're in a word or if right before the cursor is whitespace.
+  #  function! s:check_back_space() abort
+  #    let col = col('.') - 1
+  #    return !col || getline('.')[col - 1] =~# '\s'
+  #  endfunction
 
-  # COC settings.
-  programs.neovim.coc.settings = {
-    # Don't check for updates, since we manage COC extensions through our
-    # generation.
-    "coc.preferences.extensionUpdateCheck" = "never";
+  #  " Use tab for completion, snippet expansion, and jumping.
+  #  inoremap <silent><expr> <TAB>
+  #    \ pumvisible() ? "\<C-n>" :
+  #    \ <SID>check_back_space() ? "\<TAB>" :
+  #    \ deoplete#manual_complete()
 
-    # Format code as it's typed.
-    "coc.preferences.formatOnType" = true;
-
-    # Use the quickfix list for locations.
-    "coc.preferences.useQuickfixForLocations" = true;
-
-    # Send diagnostics to ALE to display them.
-    "diagnostic.displayByAle" = true;
-
-    # Don't save sessions with coc-lists, let obsession manage that.
-    "session.saveOnVimLeave" = false;
-
-    # The directory for custom snippets.
-    "snippets.userSnippetsDirectory" = "${config.xdg.configHome}/nvim/snippets";
-
-    # Show function signatures with echodoc.
-    "suggest.echodocSupport" = true;
-  };
-
-  # COC's neovim configuration.
-  programs.neovim.extraConfig = ''
-    " Much of the following is from COC's README.
-
-    " Check if we're in a word or if right before the cursor is whitespace.
-    function! s:check_back_space() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1] =~# '\s'
-    endfunction
-
-    " Use tab for completion, snippet expansion, and jumping.
-    inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump','''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-    " Use shift-tab to move back in the completion list if it's available.
-    inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-    " Jump to the definition of a symbol.
-    nmap <silent> gd <Plug>(coc-definition)
-
-    " Jump to the type definition of a symbol.
-    nmap <silent> gy <Plug>(coc-type-definition)
-
-    " Jump to the implementation for a symbol.
-    nmap <silent> gi <Plug>(coc-implementation)
-
-    " Jump to references for a symbol.
-    nmap <silent> gr <Plug>(coc-references)
-
-    " Show the documentation for the given symbol.
-    function! s:show_documentation()
-      if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-      elseif (coc#rpc#ready())
-        call CocActionAsync('doHover')
-      else
-        execute &keywordprg . " " . expand('<cword>')
-      endif
-    endfunction
-
-    " Show documentation in a preview window.
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-    " Highlight the symbol and references when holding the cursor.
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-
-    " When hitting enter in between two brackets, reformat them to move the
-    " closing bracket below the cursor on its own line.
-    inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() :
-      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-    " Format the selected code.
-    xmap <leader>f <Plug>(coc-format-selected)
-    nmap <leader>f <Plug>(coc-format-selected)
-
-    " Add :Format to format the current buffer.
-    command! -nargs=0 Format :call CocAction('format')
-
-    " Add :Fold to fold the current buffer.
-    command! -nargs=? Fold :call CocAction('fold', <f-args>)
-
-    " Add :OR to organize the imports of the current buffer.
-    command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-  '';
+  #  " Use shift-tab to move back in the completion list if it's available.
+  #  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  #'';
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    # The COC code completion and analysis engine.
-    # FIXME: I'm pretty sure this is supposed to be included by turning
-    # programs.neovim.coc.enable on, but for some reason it doesn't seem to be?
-    coc-nvim
-
     # A plugin to show diagnostics and linter warnings.
     {
       plugin = ale;
       config = ''
-        " Disable LSP features, since COC is supplying those to ALE.
-        let g:ale_disable_lsp = 1
-
         " Run fixers on each file save.
         let g:ale_fix_on_save = 1
 
@@ -126,21 +40,11 @@
       '';
     }
 
-    # A plugin to view COC lists with fzf.
-    coc-fzf
-
-    # Extra lists for COC.
-    coc-lists
-
-    # A plugin to auto-close paired delimiters.
-    coc-pairs
-
-    # A plugin for snippet completion and expansion with COC.
+    # A completion engine.
     {
-      plugin = coc-snippets;
+      plugin = coq_nvim;
       config = ''
-        " Go to the next snippet.
-        let g:coc_snippet_next = '<tab>'
+        let g:coq_settings = { 'auto_start': v:true }
       '';
     }
 
@@ -151,5 +55,8 @@
         let g:echodoc#enable_at_startup = 1
       '';
     }
+
+    # A set of LSP configurations.
+    nvim-lspconfig
   ];
 }

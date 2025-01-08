@@ -10,24 +10,6 @@
     nixpkgs-fmt
   ];
 
-  # COC settings.
-  programs.neovim.coc.settings = {
-    # Nix setup.
-    languageserver.nix = {
-      # The command to run.
-      command = "nil";
-
-      # Run on nix files.
-      filetypes = [
-        "nix"
-      ];
-
-      rootPatterns = [
-        "flake.nix"
-      ];
-    };
-  };
-
   # Configuration for nix.
   programs.neovim.extraConfig = ''
     " Run nixpkgs-fmt on saving.

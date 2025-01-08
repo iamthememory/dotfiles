@@ -7,24 +7,6 @@
     haskell-language-server
   ];
 
-  # COC settings for haskell-language-server.
-  programs.neovim.coc.settings.languageserver.haskell = {
-    # Use whatever wrapper is in the PATH.
-    command = "haskell-language-server-wrapper";
-    args = [ "--lsp" ];
-    rootPatterns = [
-      "*.cabal"
-      "stack.yaml"
-      "cabal.project"
-      "package.yaml"
-      "hie.yaml"
-    ];
-    filetypes = [
-      "haskell"
-      "lhaskell"
-    ];
-  };
-
   # Buffer settings for Haskell.
   xdg.configFile."nvim/ftplugin/haskell.vim".text = ''
     " Expands tabs to spaces.

@@ -3,34 +3,9 @@
 , pkgs
 , ...
 }: {
-  home.packages = with pkgs; [
-    # Add cargo and rustc for building Rust.
-    cargo
-    rustc
-
-    # Add clippy for basic linting.
-    clippy
-
-    # Add rust-analyzer, the newer, more modular LSP for Rust.
-    # NOTE: This is wrapped to add RUST_SRC_PATH if not set.
-    # If we have RUST_SRC_PATH set, it'll use that instead.
-    rust-analyzer
-
-    # Add rustfmt for formatting Rust code.
-    rustfmt
+  imports = [
+    ../../utils/rust.nix
   ];
-
-  # COC settings.
-  programs.neovim.coc.settings = {
-    # Show document links when hovering.
-    "rust-analyzer.hoverActions.linksInHover" = true;
-
-    # The path to rust-analyzer.
-    # If not specified, coc-rust-analyzer assumes it needs to download it from
-    # a GitHub release.
-    # Not using an absolute path makes it use one from $PATH.
-    "rust-analyzer.server.path" = "rust-analyzer";
-  };
 
   # Configuration for Rust.
   programs.neovim.extraConfig = ''
@@ -60,10 +35,20 @@
     endif
   '';
 
-  programs.neovim.plugins = with pkgs.vimPlugins; [
-    # A plugin to add rust-analyzer's LSP support to COC.
-    coc-rust-analyzer
-  ];
+  programs.neovim.plugins = with pkgs.vimPlugins;
+    let
+      rustaceanvim-patched = pkgs.neovimUtils.buildNeovimPlugin {
+        luaAttr = pkgs.neovim-unwrapped.lua.pkgs.rustaceanvim.overrideAttrs (final: prev: {
+          patches = [
+            ./rustacean-coq.patch
+          ];
+        });
+        nvimRequireCheck = "rustaceanvim";
+      };
+    in
+    [
+      rustaceanvim-patched
+    ];
 
   # Buffer settings for Rust.
   xdg.configFile."nvim/ftplugin/rust.vim".text = ''
@@ -83,32 +68,4 @@
     " Try to wrap text at 80 characters.
     setlocal textwidth=80
   '';
-
-  # Rustfmt settings.
-  xdg.configFile."rustfmt/rustfmt.toml".source =
-    let
-      toTOML = (pkgs.formats.toml { }).generate;
-    in
-    toTOML "rustfmt.toml" {
-      # Use the 2018 edition of Rust by default.
-      edition = "2018";
-
-      # When splitting imports like `use foo::{x, y, z}`, across multiple lines,
-      # enforce one thing per line.
-      # E.g., format to
-      #   use foo:{
-      #     long_identifier,
-      #     another_identifier,
-      #     yet_another,
-      #   }
-      # rather than
-      #   use foo:{
-      #     long_identifier, another_identifier,
-      #     yet_another,
-      #   }
-      imports_layout = "HorizontalVertical";
-
-      # Wrap lines at 80 characters.
-      max_width = 80;
-    };
 }

@@ -38,6 +38,19 @@
       '';
     }
 
+    # A framework for interfacing with tests in neovim.
+    {
+      plugin = neotest;
+      config = ''
+        require('neotest').setup ({
+          adapters = {
+            require('rustaceanvim.neotest')
+          }
+        })
+      '';
+      type = "lua";
+    }
+
     # When starting, if there's a swapfile for the file we're trying to edit,
     # give options to compare, recover, etc.
     Recover-vim
