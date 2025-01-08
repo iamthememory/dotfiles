@@ -83,8 +83,8 @@
   # Enable the gpg-agent.
   services.gpg-agent.enable = true;
 
-  # By default, cache keys for an hour after their last use.
-  services.gpg-agent.defaultCacheTtl = 3600;
+  # By default, cache keys for a few hours after their last use.
+  services.gpg-agent.defaultCacheTtl = 4 * 3600;
 
   # If in a GUI, grab the keyboard and mouse when asking for a key
   # passphrase.
