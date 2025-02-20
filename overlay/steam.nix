@@ -14,5 +14,6 @@
     libxcrypt-legacy
     mesa
     python3
+    xorg.libSM
   ];
 }
