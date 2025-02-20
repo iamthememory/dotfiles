@@ -90,6 +90,9 @@
 
   # Basic neovim plugins.
   programs.neovim.plugins = with pkgs.vimPlugins; [
+    # A plugin to disable expensive features when editing large files.
+    bigfile-nvim
+
     # A plugin for browsing directories.
     nerdtree
 
