@@ -17,6 +17,7 @@
 
           patches = [
             ./0001-bold-is-bright.patch
+            ./tinyfugue-94-gcc-14.patch
           ];
 
           src = inputs.tinyfugue-patched;

@@ -1,0 +1,38 @@
+From b37633172bb87009b2a607f25beeba79f4122e74 Mon Sep 17 00:00:00 2001
+From: Chris Gallant <chris.j.gallant@gmail.com>
+Date: Sun, 20 Oct 2024 01:34:27 +0000
+Subject: [PATCH 1/2] Fixes for GCC-14. handle_python_function defined with
+ only one argument, struct Value has two in command.h. Gave default of 0 to
+ second argument in call from expr.c. Change from int to long int in
+ pyvar_to_tfvar.
+
+---
+ src/expr.c     | 2 +-
+ src/tfpython.c | 4 ++--
+ src/tfpython.h | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+From 5360de5cfa70210298bfbfc31f15f4ebcc1c2b86 Mon Sep 17 00:00:00 2001
+From: fierlo <chris.j.gallant@gmail.com>
+Date: Sat, 16 Nov 2024 12:44:22 -0400
+Subject: [PATCH 2/2] Undoing unnecessary changes from previous commit.
+
+---
+ src/expr.c     | 2 +-
+ src/tfpython.c | 2 +-
+ src/tfpython.h | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/tfpython.c b/src/tfpython.c
+index a1fbfe2e..5f7d4987 100644
+--- a/src/tfpython.c
++++ b/src/tfpython.c
+@@ -201,7 +201,7 @@ static struct Value* pyvar_to_tfvar( PyObject *pRc )
+ {
+ 	struct Value *rc;
+ 	char *cstr;
+-	int len; // Py_ssize_t len;
++	long int len; // Py_ssize_t len;
+
+ 	// can be null if exception was thrown
+ 	if( !pRc ) {
