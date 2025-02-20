@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "4.10.0";
+      version = "4.12.0";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4403035/adblock_plus-4.10.0.xpi";
-      sha256 = "af02f8d71d0523a9f3511ba5b9f96e55e6cb67161a7167a665ebfa9c6a012b52";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4426544/adblock_plus-4.12.0.xpi";
+      sha256 = "dce93a562ab847d32c54330bb988d61a0a621b37b5857f556e2f0a9fe230ba82";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -13,6 +13,7 @@
         license = licenses.gpl3;
         mozPermissions = [
           "<all_urls>"
+          "alarms"
           "contextMenus"
           "notifications"
           "storage"
@@ -50,10 +51,10 @@
     };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.23.2";
+      version = "3.24.4";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4368589/adnauseam-3.23.2.xpi";
-      sha256 = "91e3562961030f0c65f0a9c06cd8be09da32ba754bbcc40cadeb3b1e08189e69";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4423711/adnauseam-3.24.4.xpi";
+      sha256 = "31d393007796807244c55e2af02147fc27f5e33939d77d38f9525152dcbc64a7";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
