@@ -42,7 +42,7 @@ in
     AMB-plugins
     #ams-lv2
     artyFX
-    bristol
+    #bristol
     bshapr
     bslizr
     calf
@@ -63,7 +63,7 @@ in
     infamousPlugins
     ingen
     ladspaPlugins
-    linuxsampler
+    #linuxsampler
     mda_lv2
     metersLv2
     mod-distortion
