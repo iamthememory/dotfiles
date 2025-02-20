@@ -101,6 +101,11 @@
       flake = false;
     };
 
+    cataclysm-dda-mining-enchanced = {
+      url = "github:xGorax/CDDA-Mining-enchanced-Mod";
+      flake = false;
+    };
+
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

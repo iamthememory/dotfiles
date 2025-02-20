@@ -83,10 +83,12 @@ in
 
         patches = [
           ./cataclysm-locale-path.patch
-          ./cataclysm-sky-island-range.patch
+          #./cataclysm-sky-island-range.patch
           ./cataclysm-sleepiness-clamp.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-dream-fix.patch
+          ./cataclysm-xedra-dream.patch
+          ./cataclysm-craft-percent-fix.patch
         ];
 
         # Enable debugging info.
@@ -114,11 +116,21 @@ in
         src = pkgs.applyPatches {
           name = "cataclysm-dda-mining-mod-patched";
           src = inputs.cataclysm-dda-mining-mod;
-          patches = [
-            ./cataclysm-mining-mod-count.patch
-          ];
         };
         modRoot = "Mining_Mod";
+      };
+
+      mining-enchanced = pkgs.cataclysmDDA.buildMod {
+        modName = "Mining_enchanced_Mod";
+        version = inputs.cataclysm-dda-mining-enchanced.lastModifiedDate;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-mining-enchanced-patched";
+          src = inputs.cataclysm-dda-mining-enchanced;
+          patches = [
+            ./cataclysm-mining-enchanced.patch
+          ];
+        };
+        modRoot = "Mining_Enchanced_0.2.1";
       };
 
       cc-sounds = pkgs.cataclysmDDA.buildSoundPack {
@@ -131,7 +143,13 @@ in
       grow-more-drugs = pkgs.cataclysmDDA.buildMod {
         modName = "grow_more_drugs";
         version = inputs.cataclysm-dda-grow-more-drugs.lastModifiedDate;
-        src = inputs.cataclysm-dda-grow-more-drugs;
+        src = pkgs.applyPatches {
+          name = "grow_more_drugs-patched";
+          src = inputs.cataclysm-dda-grow-more-drugs;
+          patches = [
+            ./cataclysm-grow-more-drugs-fix.patch
+          ];
+        };
         modRoot = "mods/grow_more_drugs";
       };
 
@@ -155,13 +173,21 @@ in
         src = ./random-stuff;
       };
 
+      xedra-disable-leveling = pkgs.cataclysmDDA.buildMod {
+        modName = "xedra-disable-leveling";
+        version = config.home.file."generation.rev".text;
+        src = ./xedra-disable-leveling;
+      };
+
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
         cc-sounds
         magiclysm-no-class-limit
         mining-mod
+        mining-enchanced
         grow-more-drugs
         cdda-defense-additions
         random-stuff
+        xedra-disable-leveling
       ]);
 
       # The customized dwarf fortress to use.

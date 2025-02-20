@@ -1,0 +1,17 @@
+[
+  {
+    "copy-from": "defense_mode_fortified",
+    "type": "scenario",
+    "id": "defense_mode_fortified",
+    "extend": {
+      "allowed_locs": [
+        "sloc_campground",
+        "sloc_campsite",
+        "sloc_desert_island",
+        "sloc_field",
+        "sloc_forest",
+        "sloc_river"
+      ]
+    }
+  }
+]

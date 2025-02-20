@@ -1,0 +1,11 @@
+[
+  {
+    "copy-from": "EOC_XE_QUEUE_LEVELING",
+    "type": "effect_on_condition",
+    "id": "EOC_XE_QUEUE_LEVELING",
+    "condition": {
+      "compare_string": [ "foo", "bar" ]
+    },
+    "effect": [ ]
+  }
+]

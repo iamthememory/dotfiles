@@ -1,0 +1,44 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_FORCE_RECONFIGURE_DEFENSE_MODE",
+    "effect": [
+      { "open_dialogue": { "topic": "TALK_DEFENSE_MODE_MAIN_MENU" } }
+    ]
+  },
+  {
+    "copy-from": "DEFENSE_MODE_FORTRESS_TRAP",
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_FORTRESS_TRAP",
+    "condition": {
+      "compare_string": [ "foo", "bar" ]
+    },
+    "effect": [ ]
+  },
+  {
+    "copy-from": "DEFENSE_MODE_WAVE_CONTROL",
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_WAVE_CONTROL",
+    "recurrence": [ "12 hours", "4 days" ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_WAVE_SPAWN_AFTERSHOCK",
+    "effect": { "run_eocs": "DEFENSE_MODE_WAVE_SPAWN_FALLBACK" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_WAVE_SPAWN_MEGAFAUNA",
+    "effect": { "run_eocs": "DEFENSE_MODE_WAVE_SPAWN_FALLBACK" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_WAVE_SPAWN_MYTHOS",
+    "effect": { "run_eocs": "DEFENSE_MODE_WAVE_SPAWN_FALLBACK" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_WAVE_SPAWN_CANDY",
+    "effect": { "run_eocs": "DEFENSE_MODE_WAVE_SPAWN_FALLBACK" }
+  }
+]

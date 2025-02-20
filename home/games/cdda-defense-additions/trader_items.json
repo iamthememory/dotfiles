@@ -9,6 +9,7 @@
         { "group": "SUS_junk_drawer", "prob": 100 },
         { "group": "SUS_junk_drawer_messy", "prob": 100 },
         { "group": "homebooks", "prob": 100 },
+        { "group": "lab_bookshelves", "prob": 2 },
         { "group": "manuals", "prob": 80 }
       ]
     }

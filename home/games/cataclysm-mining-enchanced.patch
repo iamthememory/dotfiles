@@ -1,0 +1,1012 @@
+diff --git a/Mining_Enchanced_0.2.1/itemgroups.json b/Mining_Enchanced_0.2.1/itemgroups.json
+new file mode 100644
+index 000000000000..31604b097b25
+--- /dev/null
++++ b/Mining_Enchanced_0.2.1/itemgroups.json
+@@ -0,0 +1,17 @@
++[
++  {
++    "id": "mining_rock",
++    "type": "item_group",
++    "copy-from": "mining_rock",
++    "subtype": "collection",
++    "extend": {
++      "items": [
++        { "item": "chunk_cassiterite", "count": [ 1, 5 ], "prob": 3 },
++        { "item": "chunk_chalcopyrite", "count": [ 1, 5 ], "prob": 3 },
++        { "item": "material_niter", "count": [ 1, 5 ], "prob": 5 },
++        { "item": "chunk_sulfur", "count": [ 1, 5 ], "prob": 5 },
++        { "item": "chunk_sphalerite", "count": [ 1, 5 ], "prob": 1 }
++      ]
++    }
++  }
++]
+diff --git a/Mining_Enchanced_0.2.1/items.json b/Mining_Enchanced_0.2.1/items.json
+index 1c61d5441664..8d7ad0fffb56 100644
+--- a/Mining_Enchanced_0.2.1/items.json
++++ b/Mining_Enchanced_0.2.1/items.json
+@@ -3,92 +3,86 @@
+     "type": "GENERIC",
+     "id": "chunk_malachite",
+     "category": "spare_parts",
+-    "price": 100,
++    "price": "1 USD",
+     "name": { "str": "chunk of malachite", "str_pl": "chunks of malachite" },
+     "symbol": "*",
+     "color": "green",
+     "description": "A chunk of copper ore.",
+     "material": "copper",
+     "volume": "500 ml",
+-    "weight": "2000 g",
+-    "bashing": 2
++    "weight": "2000 g"
+   },
+   {
+     "type": "GENERIC",
+     "id": "chunk_chalcopyrite",
+     "category": "spare_parts",
+-    "price": 100,
++    "price": "1 USD",
+     "name": { "str": "chunk of chalcopyrite", "str_pl": "chunks of chalcopyrite" },
+     "symbol": "*",
+     "color": "light_red",
+     "description": "A chunk of copper ore with some iron present.",
+     "material": "copper",
+     "volume": "500 ml",
+-    "weight": "2270 g",
+-    "bashing": 3
++    "weight": "2270 g"
+   },
+   {
+     "type": "GENERIC",
+     "id": "chunk_bauxite",
+     "category": "spare_parts",
+-    "price": 1000,
++    "price": "10 USD",
+     "name": { "str": "chunk of bauxite", "str_pl": "chunks of bauxite" },
+     "symbol": "*",
+     "color": "white",
+     "description": "A chunk of aluminium ore.",
+     "material": "aluminum",
+     "volume": "500 ml",
+-    "weight": "641 g",
+-    "bashing": 1
++    "weight": "641 g"
+   },
+   {
+     "type": "GENERIC",
+     "id": "chunk_cassiterite",
+     "category": "spare_parts",
+-    "price": 300,
++    "price": "3 USD",
+     "name": { "str": "chunk of cassiterite", "str_pl": "chunks of cassiterite" },
+     "symbol": "*",
+     "color": "brown",
+     "description": "A chunk of tin ore.",
+     "material": "stone",
+     "volume": "500 ml",
+-    "weight": "3757 g",
+-    "bashing": 3
++    "weight": "3757 g"
+   },
+   {
+     "type": "GENERIC",
+     "id": "chunk_galena",
+     "category": "spare_parts",
+-    "price": 250,
++    "price": "250 cent",
+     "name": { "str": "chunk of galena", "str_pl": "chunks of galena" },
+     "symbol": "*",
+     "color": "white",
+     "description": "A chunk of lead ore that also contain silver.",
+     "material": "stone",
+     "volume": "500 ml",
+-    "weight": "3800 g",
+-    "bashing": 3
++    "weight": "3800 g"
+   },
+   {
+     "type": "GENERIC",
+     "id": "chunk_hematite",
+     "category": "spare_parts",
+-    "price": 250,
++    "price": "250 cent",
+     "name": { "str": "chunk of hematite", "str_pl": "chunks of hematite" },
+     "symbol": "*",
+     "color": "brown",
+     "description": "A chunk of iron ore.",
+     "material": "stone",
+     "volume": "500 ml",
+-    "weight": "2625 g",
+-    "bashing": 3
++    "weight": "2625 g"
+   },
+   {
+     "type": "AMMO",
+     "id": "brass",
+     "category": "spare_parts",
+-    "price": 130,
+-    "price_postapoc": 25,
++    "price": "130 cent",
++    "price_postapoc": "25 cent",
+     "name": { "str_sp": "brass" },
+     "symbol": "=",
+     "color": "yellow",
+@@ -109,9 +103,8 @@
+     "looks_like": "sheet_metal",
+     "volume": "16 L",
+ 	"weight": "1200 g",
+-    "price": 26000,
+-    "price_postapoc": 25,
+-    "bashing": 5,
++    "price": "260 USD",
++    "price_postapoc": "25 cent",
+     "to_hit": -3,
+     "stack_size": 8,
+     "material": [ "brass" ],
+@@ -171,14 +164,13 @@
+     "type": "GENERIC",
+     "id": "chunk_sphalerite",
+     "category": "spare_parts",
+-    "price": 300,
++    "price": "3 USD",
+     "name": { "str": "chunk of sphalerite", "str_pl": "chunks of sphalerite" },
+     "symbol": "*",
+     "color": "brown",
+     "description": "A chunk of zinc ore.",
+     "material": "stone",
+     "volume": "500 ml",
+-    "weight": "2050 g",
+-    "bashing": 3
++    "weight": "2050 g"
+   }
+ ]
+diff --git a/Mining_Enchanced_0.2.1/items/vehicle/armor.json b/Mining_Enchanced_0.2.1/items/vehicle/armor.json
+index 5def26007f98..60e075931b1c 100644
+--- a/Mining_Enchanced_0.2.1/items/vehicle/armor.json
++++ b/Mining_Enchanced_0.2.1/items/vehicle/armor.json
+@@ -7,10 +7,10 @@
+     "description": "A mining drill. This toy can whitstand a lot of punishment but still can be damaged and will require repairs",
+     "weight": "72200 g",
+     "volume": "8 L",
+-    "price": 100,
+-    "price_postapoc": 10,
++    "price": "1 USD",
++    "price_postapoc": "10 cent",
+     "to_hit": -1,
+-    "bashing": 36,
++    "melee_damage": { "bash": 36 },
+     "material": [ "steel" ],
+     "symbol": "^",
+     "color": "light_gray"
+diff --git a/Mining_Enchanced_0.2.1/modinfo.json b/Mining_Enchanced_0.2.1/modinfo.json
+index 1dc7ba8094de..3ae7cdc65b70 100644
+--- a/Mining_Enchanced_0.2.1/modinfo.json
++++ b/Mining_Enchanced_0.2.1/modinfo.json
+@@ -1,7 +1,7 @@
+ [
+   {
+     "type": "MOD_INFO",
+-    "ident": "Mining_enchanced_Mod",
++    "id": "Mining_enchanced_Mod",
+     "name": "Mining_enchanced",
+     "authors": [ "♣Góra♣" ],
+     "description": "A mod that adds a veins of underground minerals and some metalurgy recipes.",
+diff --git a/Mining_Enchanced_0.2.1/overmap_specials.json b/Mining_Enchanced_0.2.1/overmap_specials.json
+index b415212d01b0..bf93d4cc9497 100644
+--- a/Mining_Enchanced_0.2.1/overmap_specials.json
++++ b/Mining_Enchanced_0.2.1/overmap_specials.json
+@@ -3,12 +3,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_h",
+     "overmaps": [
+-	{ "point": [ 0, 0, -4 ], "overmap": "vein_long_1h" }, 
++	{ "point": [ 0, 0, -4 ], "overmap": "vein_long_1h" },
+ 	{ "point": [ 1, 0, -4 ], "overmap": "vein_long_2h" },
+ 	{ "point": [ 2, 0, -4 ], "overmap": "vein_long_3h" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 50 ],
++    "occurrences": [ 3, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -16,12 +16,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_h",
+     "overmaps": [
+-	{ "point": [ 0, 0, -4 ], "overmap": "vein_tall_1h" }, 
++	{ "point": [ 0, 0, -4 ], "overmap": "vein_tall_1h" },
+ 	{ "point": [ 0, 1, -4 ], "overmap": "vein_tall_2h" },
+ 	{ "point": [ 0, 2, -4 ], "overmap": "vein_tall_3h" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -29,12 +29,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_c",
+     "overmaps": [
+-	{ "point": [ 0, 0, -1 ], "overmap": "vein_long_1c" }, 
++	{ "point": [ 0, 0, -1 ], "overmap": "vein_long_1c" },
+ 	{ "point": [ 1, 0, -1 ], "overmap": "vein_long_2c" },
+ 	{ "point": [ 2, 0, -1 ], "overmap": "vein_long_3c" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -42,12 +42,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_c",
+     "overmaps": [
+-	{ "point": [ 0, 0, -1 ], "overmap": "vein_tall_1c" }, 
++	{ "point": [ 0, 0, -1 ], "overmap": "vein_tall_1c" },
+ 	{ "point": [ 0, 1, -1 ], "overmap": "vein_tall_2c" },
+ 	{ "point": [ 0, 2, -1 ], "overmap": "vein_tall_3c" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -55,12 +55,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_n",
+     "overmaps": [
+-	{ "point": [ 0, 0, -1 ], "overmap": "vein_long_1n" }, 
++	{ "point": [ 0, 0, -1 ], "overmap": "vein_long_1n" },
+ 	{ "point": [ 1, 0, -1 ], "overmap": "vein_long_2n" },
+ 	{ "point": [ 2, 0, -1 ], "overmap": "vein_long_3n" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -68,12 +68,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_n",
+     "overmaps": [
+-	{ "point": [ 0, 0, -1 ], "overmap": "vein_tall_1n" }, 
++	{ "point": [ 0, 0, -1 ], "overmap": "vein_tall_1n" },
+ 	{ "point": [ 0, 1, -1 ], "overmap": "vein_tall_2n" },
+ 	{ "point": [ 0, 2, -1 ], "overmap": "vein_tall_3n" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -81,12 +81,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_b",
+     "overmaps": [
+-	{ "point": [ 0, 0, -2 ], "overmap": "vein_long_1b" }, 
++	{ "point": [ 0, 0, -2 ], "overmap": "vein_long_1b" },
+ 	{ "point": [ 1, 0, -2 ], "overmap": "vein_long_2b" },
+ 	{ "point": [ 2, 0, -2 ], "overmap": "vein_long_3b" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -94,12 +94,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_b",
+     "overmaps": [
+-	{ "point": [ 0, 0, -2 ], "overmap": "vein_tall_1b" }, 
++	{ "point": [ 0, 0, -2 ], "overmap": "vein_tall_1b" },
+ 	{ "point": [ 0, 1, -2 ], "overmap": "vein_tall_2b" },
+ 	{ "point": [ 0, 2, -2 ], "overmap": "vein_tall_3b" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -107,12 +107,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_l",
+     "overmaps": [
+-	{ "point": [ 0, 0, -2 ], "overmap": "vein_long_1l" }, 
++	{ "point": [ 0, 0, -2 ], "overmap": "vein_long_1l" },
+ 	{ "point": [ 1, 0, -2 ], "overmap": "vein_long_2l" },
+ 	{ "point": [ 2, 0, -2 ], "overmap": "vein_long_3l" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -120,12 +120,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_l",
+     "overmaps": [
+-	{ "point": [ 0, 0, -2 ], "overmap": "vein_tall_1l" }, 
++	{ "point": [ 0, 0, -2 ], "overmap": "vein_tall_1l" },
+ 	{ "point": [ 0, 1, -2 ], "overmap": "vein_tall_2l" },
+ 	{ "point": [ 0, 2, -2 ], "overmap": "vein_tall_3l" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -133,12 +133,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_m",
+     "overmaps": [
+-	{ "point": [ 0, 0, -3 ], "overmap": "vein_long_1m" }, 
++	{ "point": [ 0, 0, -3 ], "overmap": "vein_long_1m" },
+ 	{ "point": [ 1, 0, -3 ], "overmap": "vein_long_2m" },
+ 	{ "point": [ 2, 0, -3 ], "overmap": "vein_long_3m" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -146,12 +146,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_m",
+     "overmaps": [
+-	{ "point": [ 0, 0, -3 ], "overmap": "vein_tall_1m" }, 
++	{ "point": [ 0, 0, -3 ], "overmap": "vein_tall_1m" },
+ 	{ "point": [ 0, 1, -3 ], "overmap": "vein_tall_2m" },
+ 	{ "point": [ 0, 2, -3 ], "overmap": "vein_tall_3m" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -159,12 +159,12 @@
+     "type": "overmap_special",
+     "id": "vein_long_cs",
+     "overmaps": [
+-	{ "point": [ 0, 0, -3 ], "overmap": "vein_long_1cs" }, 
++	{ "point": [ 0, 0, -3 ], "overmap": "vein_long_1cs" },
+ 	{ "point": [ 1, 0, -3 ], "overmap": "vein_long_2cs" },
+ 	{ "point": [ 2, 0, -3 ], "overmap": "vein_long_3cs" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -172,12 +172,12 @@
+     "type": "overmap_special",
+     "id": "vein_tall_cs",
+     "overmaps": [
+-	{ "point": [ 0, 0, -3 ], "overmap": "vein_tall_1cs" }, 
++	{ "point": [ 0, 0, -3 ], "overmap": "vein_tall_1cs" },
+ 	{ "point": [ 0, 1, -3 ], "overmap": "vein_tall_2cs" },
+ 	{ "point": [ 0, 2, -3 ], "overmap": "vein_tall_3cs" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 15, 50 ],
++    "occurrences": [ 2, 50 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -188,7 +188,7 @@
+ 	{ "point": [ 0, 0, -4 ], "overmap": "vein_small_4h" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 100 ],
++    "occurrences": [ 3, 100 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -199,7 +199,7 @@
+ 	{ "point": [ 0, 0, -3 ], "overmap": "vein_small_4m" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 100 ],
++    "occurrences": [ 3, 100 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -210,7 +210,7 @@
+ 	{ "point": [ 0, 0, -3 ], "overmap": "vein_small_4cs" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 100 ],
++    "occurrences": [ 3, 100 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -221,7 +221,7 @@
+ 	{ "point": [ 0, 0, -1 ], "overmap": "vein_small_4n" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 100 ],
++    "occurrences": [ 3, 100 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -232,7 +232,7 @@
+ 	{ "point": [ 0, 0, -2 ], "overmap": "vein_small_4b" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 100 ],
++    "occurrences": [ 3, 100 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -243,7 +243,7 @@
+ 	{ "point": [ 0, 0, -5 ], "overmap": "vein_small_4bx" }
+ 	],
+     "locations": [ "land", "water" ],
+-    "occurrences": [ 20, 100 ],
++    "occurrences": [ 3, 100 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   }
+diff --git a/Mining_Enchanced_0.2.1/overmap_terrain.json b/Mining_Enchanced_0.2.1/overmap_terrain.json
+index 2352789ff74a..0d1cb27a4eac 100644
+--- a/Mining_Enchanced_0.2.1/overmap_terrain.json
++++ b/Mining_Enchanced_0.2.1/overmap_terrain.json
+@@ -5,7 +5,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+  {
+@@ -14,7 +14,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+  {
+@@ -23,7 +23,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+  {
+@@ -32,7 +32,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+  {
+@@ -41,7 +41,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+  {
+@@ -50,7 +50,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+  {
+@@ -59,7 +59,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -68,7 +68,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -77,7 +77,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -86,7 +86,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -95,7 +95,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -104,7 +104,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -113,7 +113,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -122,7 +122,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -131,7 +131,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -140,7 +140,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -149,7 +149,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -158,7 +158,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -167,7 +167,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -176,7 +176,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -185,7 +185,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -194,7 +194,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -203,7 +203,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -212,7 +212,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -221,7 +221,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -230,7 +230,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -239,7 +239,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -248,7 +248,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -257,7 +257,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -266,7 +266,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -275,7 +275,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -284,7 +284,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -293,7 +293,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -302,7 +302,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -311,7 +311,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -320,7 +320,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -329,7 +329,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -338,7 +338,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -347,7 +347,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -356,7 +356,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -365,7 +365,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+  {
+@@ -374,7 +374,7 @@
+     "name": " vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+  },
+   {
+@@ -383,7 +383,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "light_gray",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+   {
+@@ -392,7 +392,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "green",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+   {
+@@ -401,7 +401,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "brown",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+   {
+@@ -410,7 +410,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "white",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+   {
+@@ -419,7 +419,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "yellow",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   },
+   {
+@@ -428,7 +428,7 @@
+     "name": "vein",
+     "sym": "V",
+     "color": "red",
+-    "see_cost": 5,
++    "see_cost": "full_high",
+     "flags": [ "NO_ROTATE" ]
+   }
+ ]
+diff --git a/Mining_Enchanced_0.2.1/recipes.json b/Mining_Enchanced_0.2.1/recipes.json
+index 12069cba2c77..6c0b4b912763 100644
+--- a/Mining_Enchanced_0.2.1/recipes.json
++++ b/Mining_Enchanced_0.2.1/recipes.json
+@@ -37,7 +37,7 @@
+     "result": "copper",
+     "type": "recipe",
+     "activity_level": "LIGHT_EXERCISE",
+-    "id_suffix": "native",
++    "id_suffix": "malachite",
+     "category": "CC_OTHER",
+     "subcategory": "CSC_OTHER_MATERIALS",
+     "skill_used": "fabrication",
+@@ -53,7 +53,7 @@
+     "result": "copper",
+     "type": "recipe",
+     "activity_level": "LIGHT_EXERCISE",
+-    "id_suffix": "native",
++    "id_suffix": "chalcopyrite",
+     "category": "CC_OTHER",
+     "subcategory": "CSC_OTHER_MATERIALS",
+     "skill_used": "fabrication",
+@@ -135,7 +135,7 @@
+ 	"book_learn": [ [ "recipe_bullets", 2 ], [ "textbook_fabrication", 2 ], [ "welding_book", 2 ] ],
+     "result_mult": 1,
+     "tools": [ [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ], [ [ "fire", -1 ], [ "toolset", 10 ] ] ],
+-    "components": [ [ [ "copper", 90 ], [ "zinc_metal",10 ] ] ]
++    "components": [ [ [ "copper", 90 ] ], [ [ "zinc_metal", 10 ] ] ]
+   },
+   {
+     "result": "sheet_brass_small",
+@@ -147,7 +147,6 @@
+     "difficulty": 3,
+     "time": "70 m",
+     "autolearn": true,
+-    "using": [ [ "brass", 10 ] ],
+     "qualities": [ { "id": "ANVIL", "level": 3 }, { "id": "HAMMER", "level": 3 }, { "id": "CHISEL", "level": 3 } ],
+     "proficiencies": [ { "proficiency": "prof_metalworking" }, { "proficiency": "prof_redsmithing" } ],
+     "tools": [ [ [ "tongs", -1 ] ], [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ] ],
+@@ -285,7 +284,7 @@
+     "tools": [ [ [ "swage", -1 ] ] ],
+     "components": [ [ [ "44_casing_cup", 50 ] ] ]
+   },
+-  { 
++  {
+     "type": "recipe",
+     "activity_level": "BRISK_EXERCISE",
+     "result": "m_drill",
+diff --git a/Mining_Enchanced_0.2.1/terrain.json b/Mining_Enchanced_0.2.1/terrain.json
+index d2b428c0d2eb..875fd01a8078 100644
+--- a/Mining_Enchanced_0.2.1/terrain.json
++++ b/Mining_Enchanced_0.2.1/terrain.json
+@@ -1,38 +1,4 @@
+ [
+-
+-  {
+-    "type": "terrain",
+-    "id": "t_rock",
+-    "name": "solid rock",
+-    "description": "It's solid rock, could be full of all kinds of interesting things.  Best grab your pickaxe or equivalent digging implement, and strike the earth!",
+-    "symbol": "#",
+-    "color": "white",
+-    "move_cost": 0,
+-    "coverage": 100,
+-    "flags": [ "NOITEM", "SUPPORTS_ROOF", "WALL", "NO_SCENT", "MINEABLE", "BLOCK_WIND" ],
+-    "roof": "t_rock_floor_no_roof",
+-    "bash": {
+-      "str_min": 50,
+-      "str_max": 150,
+-      "sound": "crash!",
+-      "sound_fail": "whump!",
+-      "ter_set": "t_rock_floor",
+-      "ter_set_bashed_from_above": "t_rock_floor_no_roof",
+-      "items": [
+-        { "item": "rock", "count": [ 9, 18 ] },
+-        { "item": "coal_lump", "charges": [ 250, 500 ], "prob": 10 },
+-        { "item": "material_limestone", "charges": [ 10, 25 ], "prob": 80 },
+-        { "item": "material_rocksalt", "count": [ 0, 1 ], "prob": 20 },
+-        { "item": "material_rhodonite", "count": [ 1, 1 ], "prob": 3 },
+-        { "item": "material_zincite", "count": [ 1, 5 ], "prob": 5 },
+-		{ "item": "chunk_cassiterite", "count": [ 1, 5 ], "prob": 3 },
+-		{ "item": "chunk_chalcopyrite", "count": [ 1, 5 ], "prob": 3 },
+-		{ "item": "material_niter", "count": [ 1, 5 ], "prob": 5 },
+-		{ "item": "chunk_sulfur", "count": [ 1, 5 ], "prob": 5 },
+-		{ "item": "chunk_sphalerite", "count": [ 1, 5 ], "prob": 1 }
+-      ]
+-    }
+-  },
+   {
+     "type": "terrain",
+     "id": "t_rock_niter",
+diff --git a/Mining_Enchanced_0.2.1/vehicleparts/vparts.json b/Mining_Enchanced_0.2.1/vehicleparts/vparts.json
+index 60d471266fc5..4adcce6d74d2 100644
+--- a/Mining_Enchanced_0.2.1/vehicleparts/vparts.json
++++ b/Mining_Enchanced_0.2.1/vehicleparts/vparts.json
+@@ -5,8 +5,7 @@
+     "name": { "str": "mining drill" },
+     "item": "m_drill",
+     "location": "armor",
+-    "symbol": "^",
+-    "broken_symbol": "*",
++    "variants": [ { "symbols": "^", "symbols_broken": "*" } ],
+     "categories": [ "warfare" ],
+     "color": "dark_gray",
+     "broken_color": "light_gray",
+@@ -18,7 +17,7 @@
+       "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "30 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+       "repair": { "skills": [ [ "mechanics", 3 ] ], "time": "60 m", "using": [ [ "welding_standard", 5 ] ] }
+     },
+-    "flags": [ "ARMOR", "FOLDABLE" ],
++    "flags": [ "ARMOR" ],
+     "damage_reduction": { "all": 50 }
+   }
+ ]

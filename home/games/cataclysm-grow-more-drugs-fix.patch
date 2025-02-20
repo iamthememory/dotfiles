@@ -1,0 +1,22 @@
+diff --git a/mods/grow_more_drugs/items/gmd_drugs.json b/mods/grow_more_drugs/items/gmd_drugs.json
+index 848eac2c52ab..e632950d897f 100644
+--- a/mods/grow_more_drugs/items/gmd_drugs.json
++++ b/mods/grow_more_drugs/items/gmd_drugs.json
+@@ -31,8 +31,8 @@
+     "description": "A medical cream that provides both vascular restriction and anesthetic properties. It is made from pure cocaine, not that street stuff, and lasts longer than other similar recipes.",
+     "weight": "5 g",
+     "volume": "250 ml",
+-    "price": 750,
+-    "price_postapoc": 3500,
++    "price": "750 cent",
++    "price_postapoc": "3500 cent",
+     "charges": 6,
+     "stack_size": 60,
+     "symbol": "u",
+@@ -75,4 +75,4 @@
+       "moves": 250
+     }
+   }
+-]
+\ No newline at end of file
++]

@@ -51,6 +51,62 @@
   },
   {
     "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_SPELLBOOKS",
+    "effect": [
+      {
+        "u_spawn_item": "magic_shop_books",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_DREAMER_ARTIFACT",
+    "effect": [
+      {
+        "u_spawn_item": "xe_dreamer_spells_mid",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_INVENTOR_ARTIFACT",
+    "effect": [
+      {
+        "u_spawn_item": "xe_inventor_spells_mid",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_MAGIC_SUPPLIES",
+    "effect": [
+      {
+        "u_spawn_item": "matrix_crystal_coruscating",
+        "count": [3, 4]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_SPELLBOOKS"
+        ],
+        "iterations": [8, 12]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_DREAMER_ARTIFACT"
+        ]
+      },
+      {
+        "run_eocs": [
+          "EOC_SPAWN_RANDOM_INVENTOR_ARTIFACT"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
     "id": "EOC_SPAWN_RANDOM_SUPPLIES",
     "effect": [
       {
@@ -87,6 +143,17 @@
         ],
         "iterations": [200, 400]
       }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_FORCE_LOCATE_FORGE_OF_WONDERS",
+    "effect": [
+      {
+        "u_location_variable": { "context_val": "forge_location" },
+        "target_params": { "om_terrain": "forge_x2y2z1", "z": 0 }
+      },
+      { "reveal_map": { "context_val": "forge_location" }, "radius": 4 }
     ]
   }
 ]
