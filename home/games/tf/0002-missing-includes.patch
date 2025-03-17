@@ -1,7 +1,77 @@
+diff --git a/src/command.c b/src/command.c
+index 2bd7e082f94d..9c14a91c7ec5 100644
+--- a/src/command.c
++++ b/src/command.c
+@@ -10,6 +10,12 @@
+  * Fugue command handlers
+  *****************************************************************/
+
++#ifdef __STDC_ALLOC_LIB__
++#define __STDC_WANT_LIB_EXT2__ 1
++#else
++#define _POSIX_C_SOURCE 200809L
++#endif
++
+ #include "tfconfig.h"
+ #include "port.h"
+ #include "tf.h"
+@@ -31,6 +37,8 @@
+ #include "lua.h" /* lua scripting handling */
+ #include "tfpython.h"
+
++#include <string.h>
++
+ int exiting = 0;
+
+ static char *pattern, *body;
+diff --git a/src/expand.c b/src/expand.c
+index f5760da5b214..0482d09e569a 100644
+--- a/src/expand.c
++++ b/src/expand.c
+@@ -15,8 +15,8 @@
+  ********************************************************************/
+
+ #include "tfconfig.h"
+-#include <math.h>
+ #include "port.h"
++#include <math.h>
+ #include "tf.h"
+ #include "util.h"
+ #include "pattern.h"
+diff --git a/src/lua.c b/src/lua.c
+index bf24be20b03f..aeacf5352386 100644
+--- a/src/lua.c
++++ b/src/lua.c
+@@ -1,11 +1,12 @@
++#include "tfconfig.h"
++#include "port.h"
++
+ #include <string.h>
+
+ #include <lua.h>
+ #include <lauxlib.h>
+ #include <lualib.h>
+
+-#include "tfconfig.h"
+-#include "port.h"
+ #include "tf.h"
+ #include "util.h"
+ #include "pattern.h"
 diff --git a/src/port.h b/src/port.h
 index ff1887136699..9c70ad55b70a 100644
 --- a/src/port.h
 +++ b/src/port.h
+@@ -54,6 +54,10 @@
+ #  define format_printf(fmt, var)     /* empty */
+ #endif
+
++#define _POSIX_C_SOURCE 200809L
++#define _XOPEN_SOURCE 600
++#define _DEFAULT_SOURCE
++
+ /* Wide character support */
+ #if WIDECHAR
+ #include <wctype.h>
 @@ -112,6 +116,7 @@ extern void free();
 
  /* Try the common case insensitive strcmp's before falling back to our own */
