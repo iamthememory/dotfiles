@@ -4,7 +4,7 @@
 }: {
   home.packages = with pkgs; [
     # A video editor.
-    kdenlive
+    kdePackages.kdenlive
   ];
 
   # Add mpv to the profile.
