@@ -1,20 +1,8 @@
-diff --git a/src/command.c b/src/command.c
-index 2bd7e082f94d..e300780c9718 100644
---- a/src/command.c
-+++ b/src/command.c
-@@ -30,6 +30,7 @@
- #include "variable.h"
- #include "lua.h" /* lua scripting handling */
- #include "tfpython.h"
-+#include <string.h>
-
- int exiting = 0;
-
 diff --git a/src/port.h b/src/port.h
-index ff1887136699..5acf1af15809 100644
+index ff1887136699..9c70ad55b70a 100644
 --- a/src/port.h
 +++ b/src/port.h
-@@ -112,6 +112,7 @@ extern void free();
+@@ -112,6 +116,7 @@ extern void free();
 
  /* Try the common case insensitive strcmp's before falling back to our own */
  #if HAVE_STRCASECMP
@@ -22,3 +10,26 @@ index ff1887136699..5acf1af15809 100644
  # define cstrcmp   strcasecmp
  #else
  # if HAVE_STRICMP
+@@ -215,6 +220,7 @@ extern char *sys_errlist[];
+  */
+
+ #if HAVE_SRANDOM
++# include <stdlib.h>
+ # include <math.h>
+ # define RAND()         (int)random()
+ # define SRAND(seed)    srandom(seed)
+diff --git a/src/tfconfig.h.in b/src/tfconfig.h.in
+index 56c707657040..f3fbba3f6cc4 100644
+--- a/src/tfconfig.h.in
++++ b/src/tfconfig.h.in
+@@ -103,5 +103,9 @@
+ #include "tfdefs.h"
+
+ #undef NDEBUG
+-#include <assert.h>
+
++#define _POSIX_C_SOURCE 200809L
++#define _XOPEN_SOURCE 600
++#define _DEFAULT_SOURCE 1
++
++#include <assert.h>
