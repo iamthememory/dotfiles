@@ -1,0 +1,24 @@
+diff --git a/src/command.c b/src/command.c
+index 2bd7e082f94d..e300780c9718 100644
+--- a/src/command.c
++++ b/src/command.c
+@@ -30,6 +30,7 @@
+ #include "variable.h"
+ #include "lua.h" /* lua scripting handling */
+ #include "tfpython.h"
++#include <string.h>
+
+ int exiting = 0;
+
+diff --git a/src/port.h b/src/port.h
+index ff1887136699..5acf1af15809 100644
+--- a/src/port.h
++++ b/src/port.h
+@@ -112,6 +112,7 @@ extern void free();
+
+ /* Try the common case insensitive strcmp's before falling back to our own */
+ #if HAVE_STRCASECMP
++# include <strings.h>
+ # define cstrcmp   strcasecmp
+ #else
+ # if HAVE_STRICMP
