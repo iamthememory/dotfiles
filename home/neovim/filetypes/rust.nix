@@ -55,8 +55,9 @@
     " Expands tabs to spaces.
     setlocal expandtab
 
-    " Fold text by indent.
-    setlocal foldmethod=indent
+    " Fold text by treesitter.
+    setlocal foldmethod=expr
+    setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 
     " Set shifts and expanded tabs to four spaces.
     setlocal shiftwidth=4

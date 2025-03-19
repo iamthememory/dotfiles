@@ -8,6 +8,7 @@
     ./docker.nix
     ./dot.nix
     ./go.nix
+    ./godot.nix
     ./green.nix
     ./haskell.nix
     ./json.nix

@@ -21,13 +21,18 @@
     let g:ale_fixers['nix'] = ['nixpkgs-fmt']
   '';
 
+  programs.neovim.extraLuaConfig = ''
+    require("lspconfig").nil_ls.setup(require("coq").lsp_ensure_capabilities())
+  '';
+
   # Buffer settings for nix.
   xdg.configFile."nvim/ftplugin/nix.vim".text = ''
     " Expands tabs to spaces.
     setlocal expandtab
 
-    " Fold text by indent.
-    setlocal foldmethod=indent
+    " Fold text by treesitter.
+    setlocal foldmethod=expr
+    setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 
     " Set shifts and expanded tabs to two spaces.
     setlocal shiftwidth=2

@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1742319334,
-        "narHash": "sha256-ZdRbQmPhAuraRq4g/pmxyWUPCdMR9uu976933PHDHfQ=",
+        "lastModified": 1742374234,
+        "narHash": "sha256-plmwTtZyaGxBXyOmjQPY+ueE1MNbxml3xbqutnwlSf4=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "b0df3aa34584761348822825ba3f4b91eed87b37",
+        "rev": "165202aed4cdf753163ec0e55aa4d263106eeeaf",
         "type": "github"
       },
       "original": {
@@ -271,11 +271,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1742357951,
-        "narHash": "sha256-dc+IUoL1mz5//4QDiBGBL2wpLUi+xAJNJD1eJf1+Rt4=",
+        "lastModified": 1742397651,
+        "narHash": "sha256-nNd7M+iDdp2o0eyosamY76Yvb4+QOdDx54EIG31O3eg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "529d4344f514b70b9736f432e974c59ffad9557a",
+        "rev": "7399f8c0838f38ba45b996942ae3cc16b59513c1",
         "type": "github"
       },
       "original": {
@@ -308,11 +308,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1742357152,
-        "narHash": "sha256-/Tmttrq+QfJklz6aBIghrIQRNBi7ZZCGUyOeIMDvszU=",
+        "lastModified": 1742392354,
+        "narHash": "sha256-zWsw/tQ45G92yoG+ievU9nVUa3e807nQ6YpsdxcoOYM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "a44eb6d369b1a68e4e993400f83b9a8b35759141",
+        "rev": "339f1d2fd68fc1e33ece1f94ee2ab4b4badecbf7",
         "type": "github"
       },
       "original": {

@@ -4,14 +4,7 @@
 , ...
 }:
 let
-  inherit (inputs.lib) mkVimPlugin;
   inherit (inputs.scripts) truecolor-support;
-
-  # FIXME: Replace this if it gets added to nixpkgs.
-  vim-solarized8 = mkVimPlugin {
-    pname = "vim-solarized8";
-    src = inputs.vim-solarized8;
-  };
 
   # A short bit of script to setup colors.
   # This is here because adding it to extraConfig appends it to the neovim
@@ -23,7 +16,6 @@ let
     if !exists("g:home_manager_color_support_has_been_done")
       " If we're in a terminal, assume we have a dark background, because we
       " almost certainly do, and I don't know of a way to detect it.
-      " This also makes vim-solarized8 choose a solarized dark theme.
       if !has('gui_running')
         set background=dark
       endif
@@ -47,6 +39,14 @@ in
 
   # Theme-related plugins.
   programs.neovim.plugins = with pkgs.vimPlugins; [
+    # A color scheme plugin with treesitter and LSP support.
+    {
+      plugin = nvim-solarized-lua;
+      config = ''
+        colorscheme solarized
+      '';
+    }
+
     # A plugin for a fancy, featureful statusline.
     {
       plugin = vim-airline;
@@ -81,17 +81,5 @@ in
 
     # A plugin that adds icons to other plugins.
     vim-devicons
-
-    # A solarized colorscheme that supports truecolor.
-    {
-      plugin = vim-solarized8;
-      config = ''
-        " Ensure colors are setup.
-        ${setupColors}
-
-        " Use the default solarized variant.
-        colorscheme solarized8
-      '';
-    }
   ];
 }

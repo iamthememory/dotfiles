@@ -4,8 +4,9 @@
 }:
 let
   settings = ''
-    " Fold text by syntax, AKA brackets.
-    setlocal foldmethod=syntax
+    " Fold text by treesitter.
+    setlocal foldmethod=expr
+    setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 
     " Use hard tabs.
     setlocal noexpandtab
