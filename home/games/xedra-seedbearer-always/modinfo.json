@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "xedra-seedbearer-always",
+    "name": "Always allow seed bearing",
+    "authors": [ "iamthememory" ],
+    "description": "Always allow activating the arvore seed bearer mutation, regardless of surroundings.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]

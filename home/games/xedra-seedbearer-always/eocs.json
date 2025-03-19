@@ -1,0 +1,10 @@
+[
+  {
+    "copy-from": "EOC_ARVORE_SEED_BEARER_activated",
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_SEED_BEARER_activated",
+    "condition": {
+      "compare_string": [ "foo", "foo" ]
+    }
+  }
+]

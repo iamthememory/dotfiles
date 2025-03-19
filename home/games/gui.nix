@@ -180,6 +180,12 @@ in
         src = ./xedra-disable-leveling;
       };
 
+      xedra-seedbearer-always = pkgs.cataclysmDDA.buildMod {
+        modName = "xedra-seedbearer-always";
+        version = config.home.file."generation.rev".text;
+        src = ./xedra-seedbearer-always;
+      };
+
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
         cc-sounds
         magiclysm-no-class-limit
@@ -189,6 +195,7 @@ in
         cdda-defense-additions
         random-stuff
         xedra-disable-leveling
+        xedra-seedbearer-always
       ]);
 
       # The customized dwarf fortress to use.
