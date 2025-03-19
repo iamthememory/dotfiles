@@ -341,7 +341,6 @@
         "nur": "nur",
         "rust-overlay": "rust-overlay",
         "tinyfugue-patched": "tinyfugue-patched",
-        "vim-solarized8": "vim-solarized8",
         "xresources-solarized": "xresources-solarized",
         "zsh-async": "zsh-async",
         "zsh-auto-notify": "zsh-auto-notify"
@@ -414,22 +413,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "vim-solarized8": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1719652250,
-        "narHash": "sha256-qSdtFB0tCsbP6b7OBc/Fa57efdPqw4L4tQb2norr45g=",
-        "owner": "lifepillar",
-        "repo": "vim-solarized8",
-        "rev": "c4fd8a45767dea23fe51816967cdb3c86436eaad",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lifepillar",
-        "repo": "vim-solarized8",
         "type": "github"
       }
     },

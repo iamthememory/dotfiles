@@ -51,13 +51,6 @@
       flake = false;
     };
 
-    # (Neo)vim plugins not in nixpkgs.
-
-    vim-solarized8 = {
-      url = "github:lifepillar/vim-solarized8";
-      flake = false;
-    };
-
     # ZSH plugins not in nixpkgs.
 
     zsh-async = {
