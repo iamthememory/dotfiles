@@ -110,7 +110,7 @@
             program = function()
               return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
             end,
-            cwd = "$${workspaceFolder}",
+            cwd = "''${workspaceFolder}",
             stopAtBeginningOfMainSubprogram = false,
           },
           {
@@ -124,7 +124,7 @@
                local name = vim.fn.input('Executable name (filter): ')
                return require("dap.utils").pick_process({ filter = name })
             end,
-            cwd = '$${workspaceFolder}'
+            cwd = "''${workspaceFolder}"
           },
           {
             name = 'Attach to gdbserver :1234',
@@ -134,7 +134,7 @@
             program = function()
                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
             end,
-            cwd = '$${workspaceFolder}'
+            cwd = "''${workspaceFolder}"
           },
         }
         dap.configurations.cpp = dap.configurations.c
