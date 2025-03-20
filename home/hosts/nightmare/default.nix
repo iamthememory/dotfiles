@@ -71,6 +71,12 @@
     # A utility for syncing files over adb.
     adb-sync
 
+    # The Android SDK.
+    android-studio-full
+
+    # Don't conflict with QEMU.
+    (lib.lowPrio android-studio-full.sdk)
+
     # A tool for AWS.
     awscli2
 
