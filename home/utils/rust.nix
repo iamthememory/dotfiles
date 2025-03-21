@@ -4,7 +4,7 @@
 , pkgs
 , ...
 }: {
-  home.packages =
+  home.packages = with pkgs;
     let
       rustToolchain = inputs.rust-bin.selectLatestNightlyWith (toolchain:
         toolchain.default.override {
@@ -37,8 +37,35 @@
       };
     in
     [
-      pkgs.gcc
+      gcc
       rustToolchain
+      valgrind
+
+      # Cargo plugins.
+      cargo-about
+      cargo-audit
+      cargo-auditable
+      cargo-bloat
+      cargo-cache
+      cargo-crev
+      cargo-criterion
+      cargo-cross
+      cargo-deny
+      cargo-edit
+      cargo-expand
+      cargo-feature
+      cargo-features-manager
+      cargo-flamegraph
+      cargo-geiger
+      cargo-info
+      cargo-make
+      cargo-msrv
+      cargo-outdated
+      cargo-readme
+      cargo-semver-checks
+      cargo-supply-chain
+      cargo-udeps
+      cargo-valgrind
     ];
 
   # Rustfmt settings.
