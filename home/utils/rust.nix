@@ -14,7 +14,6 @@
             "llvm-bitcode-linker"
             "llvm-tools"
             "miri"
-            "rls"
             "reproducible-artifacts"
             "rust"
             "rust-analysis"
