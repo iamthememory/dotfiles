@@ -1,9 +1,8 @@
 # Configure settings for nightmare.
 { config
-, lib
-, options
-, pkgs
 , inputs
+, lib
+, pkgs
 , ...
 }: rec {
   imports = [
@@ -104,6 +103,9 @@
 
     # A tool for setting the background.
     nitrogen
+
+    # A tool for running binaries on NixOS.
+    inputs.nix-alien.packages."${pkgs.system}".nix-alien
 
     # xinput, for the touchpad keybindings below.
     xorg.xinput

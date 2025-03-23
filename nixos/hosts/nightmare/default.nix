@@ -91,6 +91,9 @@
   # Enable bcc for kernel tracing and such with eBPF.
   programs.bcc.enable = true;
 
+  # A way to run unpatched binaries.
+  programs.nix-ld.enable = true;
+
   # Enable systemtap for instrumenting the running kernel.
   programs.systemtap.enable = true;
 

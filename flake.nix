@@ -19,6 +19,9 @@
     # Various flake utilities.
     flake-utils.url = "github:numtide/flake-utils";
 
+    # A tool for running unpatched binaries.
+    nix-alien.url = "github:thiagokokada/nix-alien";
+
     # Solarized LS_COLORS.
     dircolors-solarized = {
       url = "github:seebi/dircolors-solarized";
