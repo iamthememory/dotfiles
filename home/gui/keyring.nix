@@ -32,9 +32,8 @@ in
     # Ensure xinput is available.
     xorg.xinput
 
-    # The Yubikey manager and its GUI.
+    # The Yubikey manager.
     yubikey-manager
-    yubikey-manager-qt
 
     # The Yubikey personalization tool and its GUI.
     yubikey-personalization
