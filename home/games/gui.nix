@@ -235,6 +235,9 @@ in
       # An old-school Runescape client.
       runelite
 
+      # The launcher for SS14.
+      space-station-14-launcher
+
       # A Minecraft-like survival game.
       vintagestory
     ];
