@@ -13,7 +13,7 @@
     libnotify
   ];
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     # Notify for commands running longer than 30 seconds.
     AUTO_NOTIFY_THRESHOLD=30
 

@@ -4,7 +4,8 @@
 # This is mainly everything in the lib/* directory in oh-my-zsh, which is
 # apparently always loaded, and which contains tweaks to completion,
 # keybindings, etc.
-{ pkgs
+{ lib
+, pkgs
 , ...
 }:
 let
@@ -12,7 +13,7 @@ let
 in
 {
   # Load some basic oh-my-zsh niceties early.
-  programs.zsh.initExtraBeforeCompInit = ''
+  programs.zsh.initContent = lib.mkOrder 550 ''
     # Load some completion tweaks.
     source "${omz-lib}/completion.zsh"
 

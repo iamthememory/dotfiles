@@ -92,7 +92,7 @@ in
   programs.zsh.history.share = true;
 
   # Early loaded ZSH configuration.
-  programs.zsh.initExtraBeforeCompInit = ''
+  programs.zsh.initContent = lib.mkOrder 550 ''
     # Smartly insert text that's pasted into the terminal rather than assuming
     # it's a sequence of characters that's typed in.
     autoload -Uz bracketed-paste-magic
@@ -101,10 +101,7 @@ in
     # Smartly quote URLs if needed while typing/pasting them in.
     autoload -Uz url-quote-magic
     zle -N self-insert url-quote-magic
-  '';
 
-  # Additional ZSH configuration.
-  programs.zsh.initExtra = ''
     # Don't display non-contiguous duplicates while searching with ^R.
     HIST_FIND_NO_DUPS=1
 
@@ -157,16 +154,12 @@ in
   # symlinks and installing them, or making the symlinks abolute paths to the
   # store paths for zshrc and zshenv, but I can't find it.
   home.activation.addZshConvenienceLinks =
-    let
-    in
     lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       ${mkLink ".zsh_history" "${dotDir}/zsh_history"}
       ${mkLink ".zshenv" "${dotDir}/zshenv"}
       ${mkLink ".zshrc" "${dotDir}/zshrc"}
     '';
   home.activation.checkZshConvenienceLinks =
-    let
-    in
     lib.hm.dag.entryBefore [ "writeBoundary" ] ''
       ${checkLink ".zsh_history" "${dotDir}/zsh_history"}
       ${checkLink ".zshenv" "${dotDir}/zshenv"}

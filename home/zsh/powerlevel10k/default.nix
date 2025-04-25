@@ -1,5 +1,6 @@
 # Configure the powerlevel10k theme and prompt.
 { config
+, lib
 , pkgs
 , ...
 }: {
@@ -10,13 +11,14 @@
     file = "powerlevel10k.zsh-theme";
   }];
 
-  programs.zsh.initExtraBeforeCompInit =
+  programs.zsh.initContent =
     let
       username = config.home.username;
       cacheHome = config.xdg.cacheHome;
+      p10k-config = "${config.home.homeDirectory}/.p10k.zsh";
       p10k-instant = "${cacheHome}/p10k-instant-prompt-${username}.zsh";
     in
-    ''
+    lib.mkOrder 550 ''
       # Enable the Powerlevel10k instant prompt.
       # This should be as close to the top of .zshrc as possible, but after
       # anything that's interactive, if applicable.
@@ -26,13 +28,7 @@
       then
         source "${p10k-instant}"
       fi
-    '';
 
-  programs.zsh.initExtra =
-    let
-      p10k-config = "${config.home.homeDirectory}/.p10k.zsh";
-    in
-    ''
       # Load the powerline10k theme.
       if [ -e "${p10k-config}" ]
       then

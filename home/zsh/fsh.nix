@@ -5,7 +5,7 @@
 , pkgs
 , ...
 }: {
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     # Use the default theme.
     fast-theme -q default
   '';
