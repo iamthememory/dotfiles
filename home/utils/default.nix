@@ -252,6 +252,9 @@
   # A shiny alternative to find written in rust.
   programs.fd.enable = true;
 
+  # A program to generate nix packages from URLs.
+  programs.nix-init.enable = true;
+
   # A fast, featureful grep-like tool.
   programs.ripgrep.enable = true;
 
