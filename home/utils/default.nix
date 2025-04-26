@@ -123,6 +123,9 @@
     # A tool for copying and backing up files and directories.
     rsync
 
+    # A replacement tool similar to sed.
+    sd
+
     # A tool like ack, but faster.
     silver-searcher
 
