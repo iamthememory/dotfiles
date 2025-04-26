@@ -22,7 +22,8 @@
   '';
 
   programs.neovim.extraLuaConfig = ''
-    require("lspconfig").nil_ls.setup(require("coq").lsp_ensure_capabilities())
+    vim.lsp.config('nil_ls', require('coq').lsp_ensure_capabilities())
+    vim.lsp.enable('nil_ls')
   '';
 
   # Buffer settings for nix.

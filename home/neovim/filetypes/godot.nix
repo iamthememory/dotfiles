@@ -23,12 +23,13 @@
   '';
 
   programs.neovim.extraLuaConfig = ''
-    require("lspconfig").gdscript.setup(
-      require("coq").lsp_ensure_capabilities({
+    vim.lsp.config('gdscript',
+      require('coq').lsp_ensure_capabilities({
         name = "godot",
         cmd = vim.lsp.rpc.connect("127.0.0.1", "6005")
       })
     )
+    vim.lsp.enable('gdscript')
 
     local dap = require("dap")
 

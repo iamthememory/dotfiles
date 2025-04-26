@@ -35,20 +35,15 @@
     endif
   '';
 
-  programs.neovim.plugins = with pkgs.vimPlugins;
-    let
-      rustaceanvim-patched = pkgs.neovimUtils.buildNeovimPlugin {
-        luaAttr = pkgs.neovim-unwrapped.lua.pkgs.rustaceanvim.overrideAttrs (final: prev: {
-          patches = [
-            ./rustacean-coq.patch
-          ];
-        });
-        nvimRequireCheck = "rustaceanvim";
-      };
-    in
-    [
-      rustaceanvim-patched
-    ];
+  # Lua configuration for rust.
+  programs.neovim.extraLuaConfig = ''
+    vim.lsp.config('rust_analyzer', require('coq').lsp_ensure_capabilities())
+    vim.lsp.enable('rust_analyzer')
+  '';
+
+  programs.neovim.plugins = with pkgs.vimPlugins; [
+    rustaceanvim
+  ];
 
   # Buffer settings for Rust.
   xdg.configFile."nvim/ftplugin/rust.vim".text = ''

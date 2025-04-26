@@ -8,7 +8,8 @@
   ];
 
   programs.neovim.extraLuaConfig = ''
-    require 'lspconfig'.gopls.setup(require 'coq'.lsp_ensure_capabilities())
+    vim.lsp.config('gopls', require('coq').lsp_ensure_capabilities())
+    vim.lsp.enable('gopls')
   '';
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
