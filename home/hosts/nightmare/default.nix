@@ -140,7 +140,7 @@
   programs.gpg.settings.default-key = "0x34915A26CE416A5CDF500247D226B54765D868B7";
 
   # Use a GUI pinentry.
-  services.gpg-agent.pinentryPackage = pkgs.pinentry-qt;
+  services.gpg-agent.pinentry.package = pkgs.pinentry-qt;
 
   # Use /data/music for mpd's music.
   services.mpd.musicDirectory = "/data/music";
