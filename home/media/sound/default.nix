@@ -6,29 +6,18 @@
     ./dev.nix
   ];
 
-  home.packages =
-    let
-      # Add some additional dependencies to gPodder.
-      gpodder-custom = pkgs.gpodder.overrideAttrs (final: prev: {
-        propagatedBuildInputs =
-          with pkgs.python311Packages; prev.propagatedBuildInputs ++ [
-            mutagen
-            yt-dlp
-          ];
-      });
-    in
-    with pkgs; [
-      essentia-extractor
+  home.packages = with pkgs; [
+    essentia-extractor
 
-      # A podcast manager.
-      gpodder-custom
+    # A podcast manager.
+    gpodder
 
-      # A tool for tagging music files.
-      picard
+    # A tool for tagging music files.
+    picard
 
-      # Tools for working with OGG files and vorbis stuff.
-      vorbis-tools
-    ];
+    # Tools for working with OGG files and vorbis stuff.
+    vorbis-tools
+  ];
 
   # Enable easyeffects for effects on pipewire sound.
   services.easyeffects.enable = true;
