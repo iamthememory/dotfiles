@@ -88,7 +88,6 @@ in
           ./cataclysm-dream-fix.patch
           ./cataclysm-xedra-dream.patch
           ./cataclysm-craft-percent-fix.patch
-          ./cataclysm-flawless-transfer.patch
         ];
 
         # Enable debugging info.
