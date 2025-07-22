@@ -17,7 +17,6 @@
 
           patches = [
             ./0001-bold-is-bright.patch
-            ./tinyfugue-94-gcc-14.patch
             ./0002-missing-includes.patch
           ];
 
@@ -26,7 +25,7 @@
           buildInputs = with pkgs; oldAttrs.buildInputs ++ [
             icu.dev
             lua5_4
-            pcre.dev
+            pcre2.dev
             python3
           ];
 
