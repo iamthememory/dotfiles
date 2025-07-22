@@ -1,10 +1,12 @@
+diff --git a/data/mods/Xedra_Evolved/mutations/paraclesians/arvore_eocs.json b/data/mods/Xedra_Evolved/mutations/paraclesians/arvore_eocs.json
+index 23092e782350..cb78d17ea451 100644
 --- a/data/mods/Xedra_Evolved/mutations/paraclesians/arvore_eocs.json
 +++ b/data/mods/Xedra_Evolved/mutations/paraclesians/arvore_eocs.json
 @@ -4,7 +4,6 @@
      "id": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD_ON_OMT_ENTER",
      "eoc_type": "EVENT",
      "required_event": "avatar_enters_omt",
--    "condition": { "u_has_trait": "ARVORE" },
+-    "condition": { "u_has_any_trait": [ "ARVORE", "FALSE_ARVORE_HATRED", "FAE_ENMITY" ] },
      "effect": [
        {
          "run_eocs": [
