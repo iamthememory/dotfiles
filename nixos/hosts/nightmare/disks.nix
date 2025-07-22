@@ -156,6 +156,7 @@ in
   # Game filesystems.
   fileSystems."/opt/bottles" = mkZFS "spool/enc/shared/opt/bottles";
   fileSystems."/opt/ffxiv" = mkZFS "spool/enc/shared/opt/ffxiv";
+  fileSystems."/opt/horizonxi" = mkZFS "spool/enc/shared/opt/horizonxi";
   fileSystems."/opt/itch" = mkZFS "spool/enc/shared/opt/itch";
   fileSystems."/opt/lutris" = mkZFS "spool/enc/shared/opt/lutris";
   fileSystems."/opt/steam" = mkZFS "spool/enc/shared/opt/steam";
