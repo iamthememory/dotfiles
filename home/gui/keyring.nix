@@ -35,10 +35,6 @@ in
     # The Yubikey manager.
     yubikey-manager
 
-    # The Yubikey personalization tool and its GUI.
-    yubikey-personalization
-    yubikey-personalization-gui
-
     # The Yubikey oath configuration program.
     yubioath-flutter
   ];
