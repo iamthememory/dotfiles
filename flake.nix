@@ -102,6 +102,11 @@
       flake = false;
     };
 
+    cataclysm-dda-stats-through-skills = {
+      url = "github:Erin105/StatsThroughSkills";
+      flake = false;
+    };
+
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

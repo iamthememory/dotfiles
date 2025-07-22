@@ -184,6 +184,12 @@ in
         src = ./xedra-seedbearer-always;
       };
 
+      stats-through-skills = pkgs.cataclysmDDA.buildMod {
+        modName = "StatsThroughSkills";
+        version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
+        src = inputs.cataclysm-dda-stats-through-skills;
+      };
+
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
         cc-sounds
         magiclysm-no-class-limit
@@ -194,6 +200,7 @@ in
         random-stuff
         xedra-disable-leveling
         xedra-seedbearer-always
+        stats-through-skills
       ]);
 
       # The customized dwarf fortress to use.

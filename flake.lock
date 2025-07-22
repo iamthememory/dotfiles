@@ -80,6 +80,22 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-stats-through-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1749496565,
+        "narHash": "sha256-rzbB2iDAeP6Cf1LXCXhvDx3jx3SOojAqSn+e3zZBphs=",
+        "owner": "Erin105",
+        "repo": "StatsThroughSkills",
+        "rev": "7ae491ae5ab5875348ac02448789f29eae8544ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Erin105",
+        "repo": "StatsThroughSkills",
+        "type": "github"
+      }
+    },
     "cdda-sounds": {
       "flake": false,
       "locked": {
@@ -399,6 +415,7 @@
         "cataclysm-dda-mining-enchanced": "cataclysm-dda-mining-enchanced",
         "cataclysm-dda-mining-mod": "cataclysm-dda-mining-mod",
         "cataclysm-dda-no-class-limit": "cataclysm-dda-no-class-limit",
+        "cataclysm-dda-stats-through-skills": "cataclysm-dda-stats-through-skills",
         "cdda-sounds": "cdda-sounds",
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",
