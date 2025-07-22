@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "4.20.0";
+      version = "4.22.1";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4474868/adblock_plus-4.20.0.xpi";
-      sha256 = "6b67fdd2bae9b3bd7f26c31d5a674e6b6383a99544e34962000871cf2d8bcff9";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4506230/adblock_plus-4.22.1.xpi";
+      sha256 = "aa3c92aa3bbbca59cf8dfc8d55f244197027078ed518315c43dff44e234ad369";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -43,7 +43,8 @@
           "https://adblockplus.org/*/installed?*"
           "https://welcome.adblockplus.org/*/installed"
           "https://welcome.adblockplus.org/*/installed?*"
-          "https://ext-bridge.eyeo.com/"
+          "https://btloader.com/trustedIframe.html?o=*"
+          "*://*.facebook.com/*"
         ];
         platforms = platforms.all;
       };
