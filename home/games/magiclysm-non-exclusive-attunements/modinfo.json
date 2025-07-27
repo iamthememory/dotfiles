@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "magiclysm-non-exclusive-attunements",
+    "name": "Non-exclusive Attunements",
+    "authors": [ "iamthememory" ],
+    "description": "Make the new Magiclysm attunement EOCs non-exclusive.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "magiclysm" ]
+  }
+]

@@ -1,0 +1,742 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_ARTIFICER",
+    "condition": {
+      "and": [
+        { "u_has_trait": "STORMSHAPER" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "ARTIFICER" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'STORMSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'STORMSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "ARTIFICER" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_ALCHEMIST",
+    "condition": {
+      "and": [
+        { "u_has_trait": "ANIMIST" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "ALCHEMIST" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "ALCHEMIST" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_BIOTEK",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "BIOTEK" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "BIOTEK" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_BLOOD_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "ANIMIST" },
+        { "not": { "u_has_trait": "BLOOD_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "BLOOD_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_BOREAL_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "KELVINIST" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "BOREAL_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "BOREAL_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_CLEANSING_FLAME",
+    "condition": {
+      "and": [
+        { "u_has_trait": "DRUID" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "CLEANSING_FLAME" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "CLEANSING_FLAME" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_CRUSADER",
+    "condition": {
+      "and": [
+        { "u_has_trait": "DRUID" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "CRUSADER" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "CRUSADER" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_EARTH_ELEMENTAL",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "EARTHSHAPER" },
+        { "not": { "u_has_trait": "EARTH_ELEMENTAL" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "EARTH_ELEMENTAL" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_FIRE_ELEMENTAL",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "FIRE_ELEMENTAL" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "FIRE_ELEMENTAL" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_FORCE_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "MAGUS" },
+        { "u_has_trait": "STORMSHAPER" },
+        { "not": { "u_has_trait": "FORCE_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'STORMSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'STORMSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "FORCE_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_GAIAS_CHOSEN",
+    "condition": {
+      "and": [
+        { "u_has_trait": "DRUID" },
+        { "u_has_trait": "EARTHSHAPER" },
+        { "not": { "u_has_trait": "GAIAS_CHOSEN" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "GAIAS_CHOSEN" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_GLACIER_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "EARTHSHAPER" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "GLACIER_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [
+      { "u_add_trait": "FROZEN_PRESSURE_OFF" },
+      { "u_add_trait": "GLACIER_MAGE" },
+      { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_GOLEMANCER",
+    "condition": {
+      "and": [
+        { "u_has_trait": "ANIMIST" },
+        { "u_has_trait": "EARTHSHAPER" },
+        { "not": { "u_has_trait": "GOLEMANCER" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "GOLEMANCER" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_GRAVITY_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "EARTHSHAPER" },
+        { "u_has_trait": "MAGUS" },
+        { "not": { "u_has_trait": "GRAVITY_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "GRAVITY_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_ICE_ELEMENTAL",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "ICE_ELEMENTAL" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "ICE_ELEMENTAL" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_ILLUSIONIST",
+    "condition": {
+      "and": [
+        { "u_has_trait": "MAGUS" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "ILLUSIONIST" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "ILLUSIONIST" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_MAGNETISM_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "EARTHSHAPER" },
+        { "u_has_trait": "STORMSHAPER" },
+        { "not": { "u_has_trait": "MAGNETISM_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'STORMSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'STORMSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "MAGNETISM_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_OVERCLOCKER",
+    "condition": {
+      "and": [
+        { "u_has_trait": "KELVINIST" },
+        { "u_has_trait": "TECHNOMANCER" },
+        { "not": { "u_has_trait": "OVERCLOCKER" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'TECHNOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'TECHNOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "OVERCLOCKER" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_PERMAFROST_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "KELVINIST" },
+        { "u_has_trait": "MAGUS" },
+        { "not": { "u_has_trait": "PERMAFROST_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "PERMAFROST_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_RADIATION_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "ANIMIST" },
+        { "u_has_trait": "STORMSHAPER" },
+        { "not": { "u_has_trait": "RADIATION_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'STORMSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'STORMSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [
+      { "u_add_trait": "CLAIRVOYANCE_OFF" },
+      { "u_add_trait": "RADIATION_MAGE" },
+      { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_SHAMAN",
+    "condition": {
+      "and": [
+        { "u_has_trait": "ANIMIST" },
+        { "u_has_trait": "DRUID" },
+        { "not": { "u_has_trait": "SHAMAN" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "MIND_READ_OFF" }, { "u_add_trait": "SHAMAN" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_SHAPESHIFTER",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "MAGUS" },
+        { "not": { "u_has_trait": "SHAPESHIFTER" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "SHAPESHIFTER" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_SOULFIRE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "ANIMIST" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "SOULFIRE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [
+      { "u_add_trait": "SOUL_PRESSURE_OFF" },
+      { "u_add_trait": "SOULFIRE" },
+      { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_STORM_ELEMENTAL",
+    "condition": {
+      "and": [
+        { "u_has_trait": "BIOMANCER" },
+        { "u_has_trait": "STORMSHAPER" },
+        { "not": { "u_has_trait": "STORM_ELEMENTAL" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'BIOMANCER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'STORMSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'BIOMANCER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'STORMSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "STORM_ELEMENTAL" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_STORMCALLER",
+    "condition": {
+      "and": [
+        { "u_has_trait": "DRUID" },
+        { "u_has_trait": "STORMSHAPER" },
+        { "not": { "u_has_trait": "STORMCALLER" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'STORMSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'STORMSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "STORMCALLER" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_SUN_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "KELVINIST" },
+        { "u_has_trait": "MAGUS" },
+        { "not": { "u_has_trait": "SUN_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "SUN_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_TUNDRA_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "DRUID" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "TUNDRA_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [
+      { "u_add_trait": "FREEZING_AURA_OFF" },
+      { "u_add_trait": "TUNDRA_MAGE" },
+      { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_VOID_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "ANIMIST" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "VOID_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'ANIMIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'ANIMIST') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "VOID_MAGE" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_VULCANIST",
+    "condition": {
+      "and": [
+        { "u_has_trait": "EARTHSHAPER" },
+        { "u_has_trait": "KELVINIST" },
+        { "not": { "u_has_trait": "VULCANIST" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'EARTHSHAPER') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'KELVINIST') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'EARTHSHAPER') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'KELVINIST') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [ { "u_add_trait": "VULCANIST" }, { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GIVE_ATTUNEMENT_WITHER_MAGE",
+    "condition": {
+      "and": [
+        { "u_has_trait": "DRUID" },
+        { "u_has_trait": "MAGUS" },
+        { "not": { "u_has_trait": "WITHER_MAGE" } },
+        {
+          "not": {
+            "u_has_any_trait": [
+              "MAGIC_EMPTY"
+            ]
+          }
+        },
+        { "math": [ "u_spell_count('school': 'DRUID') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_count('school': 'MAGUS') >= u_required_attunement_spell_count" ] },
+        { "math": [ "u_spell_level_sum('school': 'DRUID') >= u_required_attunement_spell_levels" ] },
+        { "math": [ "u_spell_level_sum('school': 'MAGUS') >= u_required_attunement_spell_levels" ] },
+        { "test_eoc": "EOC_CONDITION_ATTUNEMENT_CHECK_PROFICIENCY_MASTERY" }
+      ]
+    },
+    "effect": [
+      { "u_add_trait": "TOXIC_AURA_OFF" },
+      { "u_add_trait": "WITHER_MAGE" },
+      { "run_eocs": "EOC_ATTUNEMENT_SUCCESS_MESSAGE" }
+    ]
+  }
+]

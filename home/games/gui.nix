@@ -184,6 +184,12 @@ in
         src = ./xedra-seedbearer-always;
       };
 
+      magiclysm-non-exclusive-attunements = pkgs.cataclysmDDA.buildMod {
+        modName = "magiclysm-non-exclusive-attunements";
+        version = config.home.file."generation.rev".text;
+        src = ./magiclysm-non-exclusive-attunements;
+      };
+
       stats-through-skills = pkgs.cataclysmDDA.buildMod {
         modName = "StatsThroughSkills";
         version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
@@ -201,6 +207,7 @@ in
         xedra-disable-leveling
         xedra-seedbearer-always
         stats-through-skills
+        magiclysm-non-exclusive-attunements
       ]);
 
       # The customized dwarf fortress to use.
