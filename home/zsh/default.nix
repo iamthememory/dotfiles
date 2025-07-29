@@ -40,7 +40,7 @@ let
     fi
   '';
 
-  dotDir = "${config.home.homeDirectory}/${config.programs.zsh.dotDir}";
+  dotDir = "${config.xdg.configHome}/zsh";
 in
 {
   imports = [
@@ -65,7 +65,7 @@ in
   programs.zsh.autocd = true;
 
   # Put all zsh files in their own directory.
-  programs.zsh.dotDir = ".config/zsh";
+  programs.zsh.dotDir = dotDir;
 
   # Enable completions for command arguments.
   programs.zsh.enableCompletion = true;
@@ -80,9 +80,8 @@ in
   programs.zsh.history.path =
     let
       inherit (config.home) homeDirectory;
-      inherit (config.programs.zsh) dotDir;
     in
-    "${homeDirectory}/${dotDir}/.zsh_history";
+    "${dotDir}/.zsh_history";
 
   # Keep a lot of history.
   programs.zsh.history.save = 1000000;
