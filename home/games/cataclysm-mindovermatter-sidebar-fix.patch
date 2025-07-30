@@ -1,0 +1,14 @@
+diff --git a/data/mods/MindOverMatter/ui/sidebars.json b/data/mods/MindOverMatter/ui/sidebars.json
+index e20abb918ba7..340ec8d3044c 100644
+--- a/data/mods/MindOverMatter/ui/sidebars.json
++++ b/data/mods/MindOverMatter/ui/sidebars.json
+@@ -308,7 +308,8 @@
+         "condition": {
+           "and": [
+             { "not": { "u_has_any_effect": [ "effect_noetic_resilience" ] } },
+-            { "math": [ "u_vitamin('vitamin_psionic_drain') <= 194" ] },
++            { "math": [ "u_vitamin('vitamin_psionic_drain') >= 175" ] },
++            { "math": [ "u_vitamin('vitamin_psionic_drain') < 195" ] },
+             { "u_has_trait": "PSI_TORRENTIAL_CHANNELING_active" }
+           ]
+         }

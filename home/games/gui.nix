@@ -83,11 +83,12 @@ in
 
         patches = [
           ./cataclysm-locale-path.patch
-          #./cataclysm-sky-island-range.patch
+          ./cataclysm-sky-island-range.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-dream-fix.patch
           ./cataclysm-xedra-dream.patch
           ./cataclysm-craft-percent-fix.patch
+          ./cataclysm-mindovermatter-sidebar-fix.patch
         ];
 
         # Enable debugging info.
