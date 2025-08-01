@@ -12,3 +12,17 @@ index e20abb918ba7..340ec8d3044c 100644
              { "u_has_trait": "PSI_TORRENTIAL_CHANNELING_active" }
            ]
          }
+diff --git a/data/mods/MindOverMatter/ui/spacebar.json b/data/mods/MindOverMatter/ui/spacebar.json
+index 8ece7b2571a2..dd79f6360b6a 100644
+--- a/data/mods/MindOverMatter/ui/spacebar.json
++++ b/data/mods/MindOverMatter/ui/spacebar.json
+@@ -290,7 +290,8 @@
+         "condition": {
+           "and": [
+             { "not": { "u_has_any_effect": [ "effect_noetic_resilience" ] } },
+-            { "math": [ "u_vitamin('vitamin_psionic_drain') <= 194" ] },
++            { "math": [ "u_vitamin('vitamin_psionic_drain') >= 175" ] },
++            { "math": [ "u_vitamin('vitamin_psionic_drain') < 195" ] },
+             { "u_has_trait": "PSI_TORRENTIAL_CHANNELING_active" }
+           ]
+         }
