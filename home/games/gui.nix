@@ -83,7 +83,7 @@ in
 
         patches = [
           ./cataclysm-locale-path.patch
-          ./cataclysm-sky-island-range.patch
+          #./cataclysm-sky-island-range.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-dream-fix.patch
           ./cataclysm-xedra-dream.patch
