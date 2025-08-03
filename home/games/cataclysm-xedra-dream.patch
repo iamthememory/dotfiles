@@ -12,3 +12,16 @@ index 29fc04a4a299..2ac6def45154 100644
    },
    {
      "type": "effect_on_condition",
+diff --git a/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json b/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json
+index ca354ca74b92..bb874c029fc9 100644
+--- a/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json
++++ b/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json
+@@ -5,7 +5,7 @@
+     "recurrence": [ "8 h", "16 h" ],
+     "effect": [
+       {
+-        "if": { "math": [ "u_hp('ALL') / 6 == u_hp_max('torso') / 2" ] },
++        "if": { "math": [ "u_hp('ALL') / 6 <= u_hp_max('torso') / 2" ] },
+         "then": [
+           { "math": [ "magic_potential++" ] },
+           {
