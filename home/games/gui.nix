@@ -89,6 +89,7 @@ in
           ./cataclysm-xedra-dream.patch
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
+          ./cataclysm-sky-island-craft-fix.patch
         ];
 
         # Enable debugging info.

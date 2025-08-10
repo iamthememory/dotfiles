@@ -81,6 +81,36 @@
   },
   {
     "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_CLASSLESS_ARTIFACT",
+    "effect": [
+      {
+        "u_spawn_item": "xe_classless_spells_mid",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_DREAMSMITH_ARTIFACT",
+    "effect": [
+      {
+        "u_spawn_item": "xe_dreamsmith_spells_mid",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPAWN_RANDOM_EATER_ARTIFACT",
+    "effect": [
+      {
+        "u_spawn_item": "xe_eater_spells_mid",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
     "id": "EOC_SPAWN_RANDOM_MAGIC_SUPPLIES",
     "effect": [
       {
@@ -95,11 +125,10 @@
       },
       {
         "run_eocs": [
-          "EOC_SPAWN_RANDOM_DREAMER_ARTIFACT"
-        ]
-      },
-      {
-        "run_eocs": [
+          "EOC_SPAWN_RANDOM_DREAMER_ARTIFACT",
+          "EOC_SPAWN_RANDOM_CLASSLESS_ARTIFACT",
+          "EOC_SPAWN_RANDOM_DREAMSMITH_ARTIFACT",
+          "EOC_SPAWN_RANDOM_EATER_ARTIFACT",
           "EOC_SPAWN_RANDOM_INVENTOR_ARTIFACT"
         ]
       }
