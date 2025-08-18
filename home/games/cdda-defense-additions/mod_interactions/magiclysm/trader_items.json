@@ -6,10 +6,10 @@
     "subtype": "collection",
     "extend": {
       "entries": [
-        { "group": "magic_shop_books", "prob": 80 },
-        { "group": "magic_tools_and_loot", "prob": 50 },
-        { "group": "spellbook_loot_2", "prob": 50 },
-        { "group": "forge_vault_items", "prob": 20 },
+        { "group": "magic_shop_books", "prob": 100 },
+        { "group": "magic_tools_and_loot", "prob": 100 },
+        { "group": "spellbook_loot_2", "prob": 100 },
+        { "group": "forge_vault_items", "prob": 100 },
         { "group": "alchemy_items", "prob": 100 }
       ]
     }

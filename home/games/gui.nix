@@ -90,6 +90,7 @@ in
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
           ./cataclysm-sky-island-craft-fix.patch
+          ./cataclysm-spell-ui-widen.patch
         ];
 
         # Enable debugging info.

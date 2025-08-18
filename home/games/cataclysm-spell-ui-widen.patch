@@ -1,0 +1,21 @@
+diff --git a/src/magic.cpp b/src/magic.cpp
+index 3f8be7ea747e..f468d22e198e 100644
+--- a/src/magic.cpp
++++ b/src/magic.cpp
+@@ -2868,7 +2868,7 @@ class spellcasting_callback : public uilist_callback
+
+         float desired_extra_space_right( ) override {
+             return std::clamp( float( EVEN_MINIMUM_TERM_WIDTH * ImGui::CalcTextSize( "X" ).x ),
+-                               ImGui::GetMainViewport()->Size.x * 3 / 8, ImGui::GetMainViewport()->Size.x );
++                               ImGui::GetMainViewport()->Size.x * 1 / 8, ImGui::GetMainViewport()->Size.x );
+         }
+
+         void refresh( uilist *menu ) override {
+@@ -3346,7 +3346,7 @@ spell &known_magic::select_spell( Character &guy )
+     spell_menu.desired_bounds = {
+         -1.0,
+             -1.0,
+-            std::clamp( float( EVEN_MINIMUM_TERM_WIDTH * ImGui::CalcTextSize( "X" ).x ), ImGui::GetMainViewport()->Size.x * 3 / 8, ImGui::GetMainViewport()->Size.x ),
++            std::clamp( float( EVEN_MINIMUM_TERM_WIDTH * ImGui::CalcTextSize( "X" ).x ), ImGui::GetMainViewport()->Size.x * 6 / 8, ImGui::GetMainViewport()->Size.x ),
+             spell_menu_height
+         };

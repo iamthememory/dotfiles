@@ -6,8 +6,8 @@
     "subtype": "collection",
     "extend": {
       "entries": [
-        { "group": "collection_matrix_dust", "prob": 90 },
-        { "group": "dist_matrix_crystals", "prob": 5 }
+        { "group": "collection_matrix_dust", "prob": 100 },
+        { "group": "dist_matrix_crystals", "prob": 100 }
       ]
     }
   }

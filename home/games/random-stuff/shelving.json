@@ -1,0 +1,64 @@
+[
+  {
+    "type": "ITEM",
+    "id": "vehicle_shelving",
+    "name": { "str": "vehicle shelving" },
+    "description": "Several heavy frames retrofitted to be installed together which are outfitted with tie-downs and attachment points gallore for carrying an extended amount of cargo.",
+    "weight": "350000 g",
+    "to_hit": { "grip": "none", "length": "long", "surface": "any", "balance": "clumsy" },
+    "color": "cyan",
+    "symbol": "]",
+    "material": [ "lc_steel", "plastic" ],
+    "volume": "200 L",
+    "category": "veh_parts",
+    "price": "800 USD",
+    "price_postapoc": "10 USD",
+    "melee_damage": { "bash": 2 }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "cargo_rack_extended",
+    "name": { "str": "cargo shelving" },
+    "looks_like": "box",
+    "categories": [ "cargo" ],
+    "color": "light_gray",
+    "broken_color": "dark_gray",
+    "durability": 250,
+    "size": "2000 L",
+    "item": "vehicle_shelving",
+    "location": "center",
+    "requirements": {
+      "install": { "skills": [ [ "mechanics", 1 ] ], "time": "120 m", "using": [ [ "welding_standard", 5 ] ] },
+      "removal": { "skills": [ [ "mechanics", 2 ] ], "time": "60 m", "using": [ [ "vehicle_weld_removal", 1 ] ] },
+      "repair": { "skills": [ [ "mechanics", 2 ] ], "time": "120 m", "using": [ [ "welding_standard", 5 ] ] }
+    },
+    "flags": [ "OBSTACLE", "CARGO", "COVERED" ],
+    "breaks_into": [
+      { "item": "steel_lump", "count": [ 6, 16 ] },
+      { "item": "steel_chunk", "count": [ 6, 16 ] },
+      { "item": "scrap", "count": [ 6, 16 ] }
+    ],
+    "damage_reduction": { "all": 28 },
+    "variants": [ { "symbols": "=", "symbols_broken": "#" } ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "ACTIVE_EXERCISE",
+    "result": "vehicle_shelving",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_PARTS",
+    "skill_used": "fabrication",
+    "skills_required": [ "mechanics", 4 ],
+    "difficulty": 4,
+    "time": "6 h",
+    "autolearn": true,
+    "using": [ [ "rope_natural", 4 ], [ "welding_standard", 15 ] ],
+    "qualities": [
+      { "id": "SCREW", "level": 1 },
+      { "id": "HAMMER", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "WRENCH", "level": 1 }
+    ],
+    "components": [ [ [ "cargo_rack", 4 ] ], [ [ "pipe", 16 ] ], [ [ "sheet_metal", 4 ] ], [ [ "hinge", 10 ] ] ]
+  }
+]
