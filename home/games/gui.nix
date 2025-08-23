@@ -91,6 +91,7 @@ in
           ./cataclysm-mindovermatter-sidebar-fix.patch
           ./cataclysm-sky-island-craft-fix.patch
           ./cataclysm-spell-ui-widen.patch
+          ./cataclysm-more-engines.patch
         ];
 
         # Enable debugging info.

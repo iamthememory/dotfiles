@@ -1,0 +1,30 @@
+diff --git a/src/veh_interact.cpp b/src/veh_interact.cpp
+index 12ad9419ad8e..700fac8db958 100644
+--- a/src/veh_interact.cpp
++++ b/src/veh_interact.cpp
+@@ -845,6 +845,7 @@ bool veh_interact::update_part_requirements( map &here )
+             }
+         }
+     }
++    dif_eng = std::min(dif_eng, 8);
+ 
+     int dif_steering = 0;
+     if( sel_vpart_info->has_flag( "STEERABLE" ) ) {
+@@ -864,6 +865,8 @@ bool veh_interact::update_part_requirements( map &here )
+         }
+     }
+ 
++    dif_steering = std::min(dif_steering, 8);
++
+     const requirement_data reqs = sel_vpart_info->install_requirements();
+ 
+     avatar &player_character = get_avatar();
+@@ -873,7 +876,7 @@ bool veh_interact::update_part_requirements( map &here )
+ 
+     nmsg += _( "<color_white>Additional requirements:</color>\n" );
+ 
+-    bool allow_more_eng = engines < 2 || player_character.has_trait( trait_DEBUG_HS );
++    bool allow_more_eng = true;
+ 
+     if( dif_eng > 0 ) {
+         if( !allow_more_eng || player_character.get_knowledge_level( skill_mechanics ) < dif_eng ) {
