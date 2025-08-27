@@ -1,5 +1,5 @@
 diff --git a/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json b/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json
-index 29fc04a4a299..4c4cb7ae0237 100644
+index 29fc04a4a299..5546de1f5e59 100644
 --- a/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json
 +++ b/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json
 @@ -6,7 +6,7 @@
@@ -21,6 +21,24 @@ index 29fc04a4a299..4c4cb7ae0237 100644
    },
    {
      "type": "effect_on_condition",
+@@ -30,7 +31,7 @@
+             { "not": { "u_has_trait": "DREAMER" } },
+             { "math": [ "allow_sequence == 1" ] },
+             { "math": [ "eater_dreamer_sequence == 0" ] },
+-            { "math": [ "inventor_dreamsmith_sequence == 0" ] }
++            { "math": [ "inventor_dreamsmith_sequence <= 0" ] }
+           ]
+         },
+         "then": [ { "math": [ "allow_sequence = 0" ] }, { "math": [ "eater_dreamer_sequence++" ] } ]
+@@ -41,7 +42,7 @@
+             { "not": { "u_has_trait": "INVENTOR" } },
+             { "not": { "u_has_trait": "DREAMSMITH" } },
+             { "math": [ "allow_sequence == 1" ] },
+-            { "math": [ "eater_dreamer_sequence == 0" ] },
++            { "math": [ "eater_dreamer_sequence <= 0" ] },
+             { "math": [ "inventor_dreamsmith_sequence == 0" ] }
+           ]
+         },
 diff --git a/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json b/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json
 index ca354ca74b92..bb874c029fc9 100644
 --- a/data/mods/Xedra_Evolved/eocs/magic_potential_eoc.json
