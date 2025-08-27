@@ -1,7 +1,16 @@
 diff --git a/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json b/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json
-index 29fc04a4a299..2ac6def45154 100644
+index 29fc04a4a299..4c4cb7ae0237 100644
 --- a/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json
 +++ b/data/mods/Xedra_Evolved/eocs/give_a_class_eoc.json
+@@ -6,7 +6,7 @@
+     "condition": {
+       "and": [
+         {
+-          "and": [
++          "or": [
+             { "math": [ "u_has_trait('EATER') + u_has_trait('DREAMER') == 0" ] },
+             { "math": [ "u_has_trait('INVENTOR') + u_has_trait('DREAMSMITH') == 0" ] }
+           ]
 @@ -15,7 +15,8 @@
          { "not": { "u_has_trait": "DREAMLESS" } },
          { "test_eoc": "EOC_CONDITION_BANNED_DREAM_MAGIC_TRAITS" }
