@@ -82,16 +82,17 @@ in
         src = inputs.cataclysm-dda;
 
         patches = [
-          ./cataclysm-locale-path.patch
-          #./cataclysm-sky-island-range.patch
-          ./cataclysm-seedbearer-fix.patch
-          ./cataclysm-dream-fix.patch
-          ./cataclysm-xedra-dream.patch
           ./cataclysm-craft-percent-fix.patch
+          ./cataclysm-dream-fix.patch
+          ./cataclysm-locale-path.patch
+          ./cataclysm-magiclysm-renewal-height.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
-          ./cataclysm-sky-island-craft-fix.patch
-          ./cataclysm-spell-ui-widen.patch
           ./cataclysm-more-engines.patch
+          ./cataclysm-seedbearer-fix.patch
+          ./cataclysm-sky-island-craft-fix.patch
+          ./cataclysm-sky-island-range.patch
+          ./cataclysm-spell-ui-widen.patch
+          ./cataclysm-xedra-dream.patch
         ];
 
         # Enable debugging info.
