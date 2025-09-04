@@ -1,0 +1,55 @@
+[
+  {
+    "type": "item_group",
+    "id": "lab_bookshelves",
+    "copy-from": "lab_bookshelves",
+    "subtype": "distribution",
+    "extend": {
+      "entries": [
+        { "group": "spellbook_loot_0", "prob": 6 },
+        { "group": "spellbook_loot_1", "prob": 4 },
+        { "group": "spellbook_loot_2", "prob": 3 },
+        { "group": "book_martial", "prob": 2 },
+        { "group": "homebooks", "prob": 2 },
+        { "group": "esoteric_books", "prob": 2 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "science",
+    "copy-from": "science",
+    "extend": {
+      "items": [
+        { "group": "magic_tools_and_loot", "prob": 1 },
+        { "group": "xe_border_patrol_evidence", "prob": 1 },
+        { "group": "collection_matrix_dust", "prob": 1 },
+        { "group": "dist_matrix_crystals", "prob": 1 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "supplies_reagents_lab",
+    "copy-from": "supplies_reagents_lab",
+    "extend": {
+      "items": [
+        { "group": "magic_tools_and_loot", "prob": 10 },
+        { "group": "xe_border_patrol_evidence", "prob": 4 },
+        { "group": "collection_matrix_dust", "prob": 8 },
+        { "group": "dist_matrix_crystals", "prob": 3 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "SUS_evac_shelter_locker_used",
+    "copy-from": "SUS_evac_shelter_locker_used",
+    "subtype": "collection",
+    "extend": {
+      "entries": [
+        { "item": "water_clean", "count": [ 1, 2 ], "prob": 80 }
+      ]
+    }
+  }
+]

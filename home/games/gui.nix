@@ -195,6 +195,12 @@ in
         src = ./magiclysm-non-exclusive-attunements;
       };
 
+      lab-loot-extras = pkgs.cataclysmDDA.buildMod {
+        modName = "lab-loot-extras";
+        version = config.home.file."generation.rev".text;
+        src = ./lab-loot-extras;
+      };
+
       stats-through-skills = pkgs.cataclysmDDA.buildMod {
         modName = "StatsThroughSkills";
         version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
@@ -213,6 +219,7 @@ in
         xedra-seedbearer-always
         stats-through-skills
         magiclysm-non-exclusive-attunements
+        lab-loot-extras
       ]);
 
       # The customized dwarf fortress to use.
