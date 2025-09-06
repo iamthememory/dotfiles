@@ -1,13 +1,17 @@
 diff --git a/data/mods/Magiclysm/Spells/druid.json b/data/mods/Magiclysm/Spells/druid.json
-index 258435d13ca4..65a9e3df4da3 100644
+index 258435d13ca4..6f6b5d93c87c 100644
 --- a/data/mods/Magiclysm/Spells/druid.json
 +++ b/data/mods/Magiclysm/Spells/druid.json
-@@ -1089,7 +1089,7 @@
+@@ -1084,12 +1084,10 @@
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_DRUID_RENEW_FOREST_SPELL",
+-    "condition": "u_is_outside",
+     "effect": {
        "run_eocs": [
          {
            "id": "EOC_DRUID_RENEW_FOREST_SPELL_2",
 -          "condition": { "math": [ "u_val('pos_z') == 0" ] },
-+          "condition": { "math": [ "u_val('pos_z') >= 0" ] },
            "effect": [
              { "math": [ "u_renew_forest_hp_cost = max( (25 - (u_spell_level('druid_renew_forest_spell') / 2 ) ), 15 )" ] },
              {
