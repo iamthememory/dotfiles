@@ -93,6 +93,7 @@ in
           ./cataclysm-sky-island-range.patch
           ./cataclysm-spell-ui-widen.patch
           ./cataclysm-xedra-dream.patch
+          ./cataclysm-mindovermatter-contemplation.patch
         ];
 
         # Enable debugging info.

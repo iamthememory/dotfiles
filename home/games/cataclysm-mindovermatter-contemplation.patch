@@ -1,0 +1,17 @@
+diff --git a/data/mods/MindOverMatter/powers/learning_eocs/overall.json b/data/mods/MindOverMatter/powers/learning_eocs/overall.json
+index 4868342a2d66..bc56f9df9195 100644
+--- a/data/mods/MindOverMatter/powers/learning_eocs/overall.json
++++ b/data/mods/MindOverMatter/powers/learning_eocs/overall.json
+@@ -12,8 +12,10 @@
+             "id": "EOC_PSI_STUDYING_POWER_INTEGER_TICK_OVER",
+             "condition": { "math": [ "u_psi_studying_tick_experience_counter >= 1" ] },
+             "effect": [
+-              { "math": [ "u_spell_exp(u_latest_studied_power_name) += 1" ] },
+-              { "math": [ "u_psi_studying_tick_experience_counter -= 1" ] }
++              { "math": [ "u_spell_exp(u_latest_studied_power_name) += floor(u_psi_studying_tick_experience_counter)" ] },
++              {
++                "math": [ "u_psi_studying_tick_experience_counter -= floor(u_psi_studying_tick_experience_counter)" ]
++              }
+             ]
+           }
+         ]
