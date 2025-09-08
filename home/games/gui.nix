@@ -94,6 +94,7 @@ in
           ./cataclysm-spell-ui-widen.patch
           ./cataclysm-xedra-dream.patch
           ./cataclysm-mindovermatter-contemplation.patch
+          ./cataclysm-magiclysm-artificer.patch
         ];
 
         # Enable debugging info.
