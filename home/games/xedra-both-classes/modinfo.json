@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "xedra-both-classes",
+    "name": "Both XEDRA Classes",
+    "authors": [ "iamthememory" ],
+    "description": "Make the XEDRA classes non-exclusive.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "xedra_evolved" ]
+  }
+]

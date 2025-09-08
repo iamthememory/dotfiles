@@ -6,6 +6,6 @@
     "authors": [ "iamthememory" ],
     "description": "Disable the dream-based spell learning, to try to avoid a weird issue with spells de-leveling.",
     "category": "rebalance",
-    "dependencies": [ "dda" ]
+    "dependencies": [ "dda", "xedra_evolved" ]
   }
 ]

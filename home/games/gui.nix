@@ -202,6 +202,12 @@ in
         src = ./lab-loot-extras;
       };
 
+      xedra-both-classes = pkgs.cataclysmDDA.buildMod {
+        modName = "xedra-both-classes";
+        version = config.home.file."generation.rev".text;
+        src = ./xedra-both-classes;
+      };
+
       stats-through-skills = pkgs.cataclysmDDA.buildMod {
         modName = "StatsThroughSkills";
         version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
@@ -221,6 +227,7 @@ in
         stats-through-skills
         magiclysm-non-exclusive-attunements
         lab-loot-extras
+        xedra-both-classes
       ]);
 
       # The customized dwarf fortress to use.
