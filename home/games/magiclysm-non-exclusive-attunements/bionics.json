@@ -1,0 +1,14 @@
+[
+  {
+    "id": "bio_sneeze_beam",
+    "type": "bionic",
+    "copy-from": "bio_sneeze_beam",
+    "mutation_conflicts": [ ]
+  },
+  {
+    "id": "bio_mana_to_bionic_power",
+    "type": "bionic",
+    "copy-from": "bio_mana_to_bionic_power",
+    "mutation_conflicts": [ ]
+  }
+]
