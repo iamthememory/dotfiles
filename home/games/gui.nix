@@ -221,7 +221,7 @@ in
         magiclysm-no-class-limit
         mining-mod
         mining-enchanced
-        grow-more-drugs
+        #grow-more-drugs
         cdda-defense-additions
         random-stuff
         xedra-disable-leveling
