@@ -1,0 +1,16 @@
+diff --git a/data/mods/Xedra_Evolved/spells/eater_spells.json b/data/mods/Xedra_Evolved/spells/eater_spells.json
+index bff6b75951a6..7f804e6a20bd 100644
+--- a/data/mods/Xedra_Evolved/spells/eater_spells.json
++++ b/data/mods/Xedra_Evolved/spells/eater_spells.json
+@@ -105,8 +105,9 @@
+     "description": { "str": "Restore some mana when you consume a whole dreamdross ingot.", "//~": "NO_I18N" },
+     "teachable": false,
+     "valid_targets": [ "self" ],
+-    "min_damage": 5000,
+-    "max_damage": 5000,
++    "min_damage": 7500,
++    "damage_increment": 600,
++    "max_damage": 11000,
+     "effect": "recover_energy",
+     "effect_str": "MANA",
+     "shape": "blast",

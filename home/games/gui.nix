@@ -85,7 +85,9 @@ in
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-dream-fix.patch
           ./cataclysm-locale-path.patch
+          ./cataclysm-magiclysm-artificer.patch
           ./cataclysm-magiclysm-renewal-height.patch
+          ./cataclysm-mindovermatter-contemplation.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
           ./cataclysm-more-engines.patch
           ./cataclysm-seedbearer-fix.patch
@@ -93,8 +95,7 @@ in
           ./cataclysm-sky-island-range.patch
           ./cataclysm-spell-ui-widen.patch
           ./cataclysm-xedra-dream.patch
-          ./cataclysm-mindovermatter-contemplation.patch
-          ./cataclysm-magiclysm-artificer.patch
+          ./cataclysm-xedra-dreamdross.patch
         ];
 
         # Enable debugging info.
