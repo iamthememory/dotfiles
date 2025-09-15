@@ -1,0 +1,14 @@
+diff --git a/data/mods/Xedra_Evolved/items/spell_learning_items/spell_learning_items_dreamer.json b/data/mods/Xedra_Evolved/items/spell_learning_items/spell_learning_items_dreamer.json
+index 52579ad0698d..4304461338c7 100644
+--- a/data/mods/Xedra_Evolved/items/spell_learning_items/spell_learning_items_dreamer.json
++++ b/data/mods/Xedra_Evolved/items/spell_learning_items/spell_learning_items_dreamer.json
+@@ -197,7 +197,8 @@
+     "price_postapoc": "10 cent",
+     "material": [ "plastic" ],
+     "symbol": ")",
+-    "color": "dark_gray"
++    "color": "dark_gray",
++    "use_action": { "type": "learn_spell", "spells": [ "teleport_coin" ] }
+   },
+   {
+     "id": "artifact_ophanim",

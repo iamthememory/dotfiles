@@ -184,5 +184,21 @@
       },
       { "reveal_map": { "context_val": "forge_location" }, "radius": 4 }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "FORCE_FIX_GIVE_EXP",
+    "effect": [
+      { "math": [ "u_val('exp') = u_val('exp') + 404" ] },
+      { "run_eocs": "FORCE_FIX_GIVE_EXP_UPDATE" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "FORCE_FIX_GIVE_EXP_UPDATE",
+    "effect": [
+      { "run_eocs": "EOC_on_kill_check_exp" },
+      { "run_eocs": "EOC_perk_ma_kill_check_exp" }
+    ]
   }
 ]

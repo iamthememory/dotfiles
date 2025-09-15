@@ -1,0 +1,24 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GLAND_FLUSH",
+    "eoc_type": "EVENT",
+    "required_event": "gains_mutation",
+    "//": "Purge built up stores of mutagen post mutation and don't build up again for a period of time",
+    "condition": { "and": [ { "not": { "test_eoc": "EOC_TRAIT_IS_GLAND" } }, { "math": [ "has_var(u_mutagen_gland_vitamin)" ] } ] },
+    "effect": [
+      { "u_message": "You gained the <context_val:trait> mutation and your mutagen gland has stopped producing mutagen for now." },
+      { "math": [ "u_recently_mutated_cooldown = 36 + u_mutations_gained" ] },
+      { "math": [ "u_mutations_gained++" ] },
+      { "math": [ "u_vitamin('mutagen') = max( 0, u_vitamin('mutagen') - u_mutagen_gland_surplus )" ] },
+      {
+        "math": [ "u_vitamin(u_mutagen_gland_vitamin) = max( 0, u_vitamin(u_mutagen_gland_vitamin) - u_mutagen_gland_surplus )" ]
+      },
+      {
+        "math": [ "u_val('thirst') = min( 400, u_val('thirst') + u_mutagen_gland_surplus )" ],
+        "//TODO": "Add simulants/depressants based on whether it was a gland line/not or positive/negative trait or some similar effect?"
+      },
+      { "math": [ "u_mutagen_gland_surplus = 0" ] }
+    ]
+  }
+]

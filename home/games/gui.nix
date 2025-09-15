@@ -96,6 +96,7 @@ in
           ./cataclysm-spell-ui-widen.patch
           ./cataclysm-xedra-dream.patch
           ./cataclysm-xedra-dreamdross.patch
+          ./cataclysm-xedra-wallet.patch
         ];
 
         # Enable debugging info.
