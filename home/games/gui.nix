@@ -90,12 +90,14 @@ in
           ./cataclysm-mindovermatter-contemplation.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
           ./cataclysm-more-engines.patch
+          ./cataclysm-plant-only-check-now.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-sky-island-craft-fix.patch
           ./cataclysm-sky-island-range.patch
           ./cataclysm-spell-ui-widen.patch
           ./cataclysm-xedra-dream.patch
           ./cataclysm-xedra-dreamdross.patch
+          ./cataclysm-xedra-nail.patch
           ./cataclysm-xedra-wallet.patch
         ];
 

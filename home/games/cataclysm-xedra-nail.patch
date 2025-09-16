@@ -1,0 +1,12 @@
+diff --git a/data/mods/Xedra_Evolved/recipes/components.json b/data/mods/Xedra_Evolved/recipes/components.json
+index 1bcaa28ee40b..865f7e434994 100644
+--- a/data/mods/Xedra_Evolved/recipes/components.json
++++ b/data/mods/Xedra_Evolved/recipes/components.json
+@@ -9,6 +9,7 @@
+     "time": "3 h",
+     "skill_used": "deduction",
+     "difficulty": 2,
++    "result_mult": 100,
+     "flags": [ "SECRET" ],
+     "category": "CC_XEDRA",
+     "subcategory": "CSC_XEDRA_MISC"
