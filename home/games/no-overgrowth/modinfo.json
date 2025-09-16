@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "no-overgrowth",
+    "name": "No Overgrowth",
+    "authors": [ "iamthememory" ],
+    "description": "Prevent crops from overgrowing.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]
