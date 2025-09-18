@@ -1,0 +1,41 @@
+diff --git a/data/mods/extra_mut_scen/EoCs.json b/data/mods/extra_mut_scen/EoCs.json
+index 942381781199..6040e6127e6e 100644
+--- a/data/mods/extra_mut_scen/EoCs.json
++++ b/data/mods/extra_mut_scen/EoCs.json
+@@ -79,13 +79,14 @@
+       { "math": [ "u_mutations_gained++" ] },
+       { "math": [ "u_vitamin('mutagen') = max( 0, u_vitamin('mutagen') - u_mutagen_gland_surplus )" ] },
+       {
+-        "math": [ "u_vitamin(u_mutagen_gland_vitamin) = max( 0, u_vitamin(u_mutagen_gland_vitamin) - u_mutagen_gland_surplus )" ]
++        "math": [ "u_vitamin(u_mutagen_gland_vitamin) = max( 0, u_vitamin(u_mutagen_gland_vitamin) - u_mutagen_gland_surplus_v )" ]
+       },
+       {
+         "math": [ "u_val('thirst') = min( 400, u_val('thirst') + u_mutagen_gland_surplus )" ],
+         "//TODO": "Add simulants/depressants based on whether it was a gland line/not or positive/negative trait or some similar effect?"
+       },
+-      { "math": [ "u_mutagen_gland_surplus = 0" ] }
++      { "math": [ "u_mutagen_gland_surplus = 0" ] },
++      { "math": [ "u_mutagen_gland_surplus_v = 0" ] }
+     ]
+   },
+   {
+@@ -110,6 +111,7 @@
+       { "math": [ "u_mutations_gained = 0" ] },
+       { "math": [ "u_recently_mutated_cooldown = 0" ] },
+       { "math": [ "u_mutagen_gland_surplus = 0" ] },
++      { "math": [ "u_mutagen_gland_surplus_v = 0" ] },
+       {
+         "if": { "compare_string": [ { "context_val": "trait" }, "MUTAGEN_GLAND_ALPHA" ] },
+         "then": [
+@@ -319,9 +321,9 @@
+         "then": {
+           "if": { "math": [ "rng( 0, u_has_trait(u_mutagen_gland_threshold) ? 30 : 5) < 1" ] },
+           "then": [
+-            { "math": [ "u_vitamin(u_mutagen_gland_vitamin) += 50" ] },
++            { "math": [ "u_vitamin(u_mutagen_gland_vitamin) += 75" ] },
+             { "math": [ "u_vitamin('mutagen') += 50" ] },
+-            { "math": [ "u_mutagen_gland_surplus += 50" ] },
++            { "math": [ "u_mutagen_gland_surplus_v += 75" ] },
+             { "math": [ "u_val('thirst') += 50" ] }
+           ]
+         },
