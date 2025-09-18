@@ -90,7 +90,6 @@ in
           ./cataclysm-mindovermatter-contemplation.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
           ./cataclysm-more-engines.patch
-          ./cataclysm-mutagen-gland.patch
           ./cataclysm-plant-only-check-now.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-sky-island-craft-fix.patch

@@ -12,13 +12,39 @@
       { "math": [ "u_mutations_gained++" ] },
       { "math": [ "u_vitamin('mutagen') = max( 0, u_vitamin('mutagen') - u_mutagen_gland_surplus )" ] },
       {
-        "math": [ "u_vitamin(u_mutagen_gland_vitamin) = max( 0, u_vitamin(u_mutagen_gland_vitamin) - u_mutagen_gland_surplus )" ]
+        "math": [ "u_vitamin(u_mutagen_gland_vitamin) = max( 0, u_vitamin(u_mutagen_gland_vitamin) - u_mutagen_gland_surplus_v )" ]
       },
       {
         "math": [ "u_val('thirst') = min( 400, u_val('thirst') + u_mutagen_gland_surplus )" ],
         "//TODO": "Add simulants/depressants based on whether it was a gland line/not or positive/negative trait or some similar effect?"
       },
-      { "math": [ "u_mutagen_gland_surplus = 0" ] }
+      { "math": [ "u_mutagen_gland_surplus = 0" ] },
+      { "math": [ "u_mutagen_gland_surplus_v = 0" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_AM_BECOME_MUTANT",
+    "//": "Counter passive decay and then if haven't mutated recently roll a chance to gain mutagen, lower chance after threshold",
+    "condition": { "math": [ "has_var(u_mutagen_gland_vitamin)" ] },
+    "effect": [
+      { "math": [ "u_vitamin(u_mutagen_gland_vitamin) += 1" ] },
+      { "math": [ "u_vitamin('mutagen') += 1" ] },
+      { "math": [ "u_val('thirst') += 1" ] },
+      {
+        "if": { "math": [ "u_recently_mutated_cooldown <= 0" ] },
+        "then": {
+          "if": { "math": [ "rng( 0, u_has_trait(u_mutagen_gland_threshold) ? 30 : 5) < 1" ] },
+          "then": [
+            { "math": [ "u_vitamin(u_mutagen_gland_vitamin) += 75" ] },
+            { "math": [ "u_vitamin('mutagen') += 50" ] },
+            { "math": [ "u_mutagen_gland_surplus += 50" ] },
+            { "math": [ "u_mutagen_gland_surplus_v += 75" ] },
+            { "math": [ "u_val('thirst') += 50" ] }
+          ]
+        },
+        "else": { "math": [ "u_recently_mutated_cooldown -= 1" ] }
+      }
     ]
   }
 ]
