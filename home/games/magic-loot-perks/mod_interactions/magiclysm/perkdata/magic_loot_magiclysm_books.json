@@ -1,0 +1,38 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_magiclysm_books_find",
+    "condition": { "math": [ "rng(0, 1.0) <= 0.2" ] },
+    "effect": [
+      { "u_message": "You found a spellbook." },
+      { "u_spawn_item": "magic_loot_magiclysm_books", "use_item_group": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_magiclysm_books_on",
+    "//": "Activation effect",
+    "effect": [ { "u_message": "You start looking for books." } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_magiclysm_books_find_off",
+    "//": "Deactivation effect",
+    "effect": [ { "u_message": "You stop looking for books." } ]
+  },
+  {
+    "id": "magic_loot_magiclysm_books",
+    "type": "item_group",
+    "items": [
+      { "group": "spell_scroll_tier_0", "prob": 100 },
+      { "group": "spell_scroll_tier_1", "prob": 70 },
+      { "group": "spell_scroll_tier_2", "prob": 40 },
+      { "group": "spell_scroll_tier_3", "prob": 10 },
+      { "group": "spellbook_tier_0", "prob": 70 },
+      { "group": "spellbook_tier_1", "prob": 50 },
+      { "group": "spellbook_tier_2", "prob": 30 },
+      { "group": "spellbook_tier_3", "prob": 10 },
+      { "group": "spellbook_mana_upgrades", "prob": 10 }
+    ]
+  }
+]

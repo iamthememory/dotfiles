@@ -4,7 +4,7 @@
     "id": "lab-loot-extras",
     "name": "Lab Loot Extras",
     "authors": [ "iamthememory" ],
-    "description": "Extra loot in ",
+    "description": "Extra loot in labs",
     "category": "rebalance",
     "dependencies": [ "dda", "magiclysm", "mindovermatter", "xedra_evolved" ]
   }

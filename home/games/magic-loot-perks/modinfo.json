@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "magic-loot-perks",
+    "name": "Magic Loot Perks",
+    "authors": [ "iamthememory" ],
+    "description": "Perks to periodically find magic items, for worlds where there may not be ways to get them.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "bombastic_perks" ]
+  }
+]

@@ -219,6 +219,12 @@ in
         src = ./no-overgrowth;
       };
 
+      magic-loot-perks = pkgs.cataclysmDDA.buildMod {
+        modName = "magic-loot-perks";
+        version = config.home.file."generation.rev".text;
+        src = ./magic-loot-perks;
+      };
+
       stats-through-skills = pkgs.cataclysmDDA.buildMod {
         modName = "StatsThroughSkills";
         version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
@@ -230,6 +236,7 @@ in
         cc-sounds
         cdda-defense-additions
         lab-loot-extras
+        magic-loot-perks
         magiclysm-no-class-limit
         magiclysm-non-exclusive-attunements
         mining-enchanced
