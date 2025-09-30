@@ -1,0 +1,12 @@
+diff --git a/data/mods/Xedra_Evolved/mutations/chronomancer_traits.json b/data/mods/Xedra_Evolved/mutations/chronomancer_traits.json
+index 8e1662f61b36..6ebeb876cd29 100644
+--- a/data/mods/Xedra_Evolved/mutations/chronomancer_traits.json
++++ b/data/mods/Xedra_Evolved/mutations/chronomancer_traits.json
+@@ -5,7 +5,6 @@
+     "name": "Living Paradox",
+     "points": 0,
+     "description": "You have an intimate sense for the flow of time, and you can use your power to manipulate it.  Activate this trait to spend learned insight.",
+-    "types": [ "HERITAGE" ],
+     "starting_trait": false,
+     "purifiable": false,
+     "valid": false,
