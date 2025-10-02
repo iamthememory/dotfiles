@@ -7,6 +7,11 @@
         "condition": { "not": { "u_has_trait": "perk_magic_loot_xedra" } },
         "text": "Gain [<trait_name:perk_magic_loot_xedra>]",
         "topic": "TALK_PERK_MENU_MAGIC_LOOT_XEDRA"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "XEDRA_CHRONOMANCER" } },
+        "text": "Gain [<trait_name:XEDRA_CHRONOMANCER>]",
+        "topic": "TALK_PERK_XEDRA_CHRONOMANCER"
       }
     ]
   },
@@ -21,6 +26,29 @@
         "condition": { "math": [ "u_num_perks > 0" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [ { "u_add_trait": "perk_magic_loot_xedra" }, { "math": [ "u_num_perks--" ] } ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_XEDRA_CHRONOMANCER",
+    "dynamic_line": "<trait_name:XEDRA_CHRONOMANCER>: \"<trait_description:XEDRA_CHRONOMANCER>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [
+          { "u_add_trait": "XEDRA_CHRONOMANCER" },
+          { "u_add_trait": "XEDRA_CHRONOMANCER_LOOPING_WOUND" },
+          { "u_add_trait": "XEDRA_CHRONOMANCER_TIME_SLOWDOWN" },
+          { "u_add_trait": "XEDRA_CHRONOMANCER_UNSTABLE_POWERS" },
+          { "run_eocs": [ "EOC_CHECK_GAMESTART_CHRONOMANCER" ] },
+          { "math": [ "u_num_perks--" ] }
+        ]
       },
       { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
       { "text": "Quit.", "topic": "TALK_DONE" }

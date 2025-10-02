@@ -14,5 +14,21 @@
     "processed_eocs": [ "EOC_magic_loot_magiclysm_books_find" ],
     "time": 24000,
     "category": [ "perk" ]
+  },
+  {
+    "type": "mutation",
+    "id": "perk_magic_loot_magiclysm_attunement",
+    "name": { "str": "Arcane Attuner" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "You periodically find yourself in front of an altar.",
+    "active": true,
+    "activated_is_setup": true,
+    "activated_eocs": [ "EOC_magic_loot_magiclysm_attunement_on" ],
+    "deactivated_eocs": [ "EOC_magic_loot_magiclysm_attunement_off" ],
+    "processed_eocs": [ "EOC_magic_loot_magiclysm_attunement_find" ],
+    "time": 24000,
+    "category": [ "perk" ]
   }
 ]

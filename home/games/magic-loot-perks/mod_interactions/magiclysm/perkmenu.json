@@ -7,6 +7,11 @@
         "condition": { "not": { "u_has_trait": "perk_magic_loot_magiclysm_books" } },
         "text": "Gain [<trait_name:perk_magic_loot_magiclysm_books>]",
         "topic": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_BOOKS"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_magic_loot_magiclysm_attunement" } },
+        "text": "Gain [<trait_name:perk_magic_loot_magiclysm_attunement>]",
+        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_ATTUNEMENT"
       }
     ]
   },
@@ -21,6 +26,22 @@
         "condition": { "math": [ "u_num_perks > 0" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_books" }, { "math": [ "u_num_perks--" ] } ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_ATTUNEMENT",
+    "dynamic_line": "<trait_name:perk_magic_loot_magiclysm_attunement>: \"<trait_description:perk_magic_loot_magiclysm_attunement>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_attunement" }, { "math": [ "u_num_perks--" ] } ]
       },
       { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
       { "text": "Quit.", "topic": "TALK_DONE" }

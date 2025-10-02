@@ -1,0 +1,32 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_MAIN",
+    "responses": [
+      {
+        "condition": { "not": { "u_has_trait": "MUTAGEN_GLAND_SLIME" } },
+        "text": "Gain [<trait_name:MUTAGEN_GLAND_SLIME>]",
+        "topic": "TALK_PERK_MUTAGEN_GLAND_SLIME"
+      }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MUTAGEN_GLAND_SLIME",
+    "dynamic_line": "<trait_name:MUTAGEN_GLAND_SLIME>: \"<trait_description:MUTAGEN_GLAND_SLIME>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [
+          { "u_add_trait": "MUTAGEN_GLAND_SLIME" },
+          { "math": [ "u_num_perks--" ] }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  }
+]

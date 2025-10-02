@@ -1,0 +1,23 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_magiclysm_attunement_find",
+    "condition": { "math": [ "rng(0, 1.0) <= 0.1" ] },
+    "effect": [
+      { "u_message": "Your hand brushes across an altar that wasn't there before." },
+      { "run_eocs": [ "EOC_CHECK_ATTUNEMENTS" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_magiclysm_attunement_on",
+    "//": "Activation effect",
+    "effect": [ { "u_message": "You open your mind to the world." } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_magiclysm_attunement_find_off",
+    "//": "Deactivation effect",
+    "effect": [ { "u_message": "You close your mind to the world." } ]
+  }
+]
