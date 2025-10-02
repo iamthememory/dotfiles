@@ -189,7 +189,7 @@
     "type": "effect_on_condition",
     "id": "FORCE_FIX_GIVE_EXP",
     "effect": [
-      { "math": [ "u_val('exp') = u_val('exp') + 404" ] },
+      { "math": [ "u_val('exp') = u_val('exp') + 400" ] },
       { "run_eocs": "FORCE_FIX_GIVE_EXP_UPDATE" }
     ]
   },
