@@ -4,7 +4,7 @@
     "id": "EOC_magic_loot_xedra_find",
     "condition": { "math": [ "rng(0, 1.0) <= 0.1" ] },
     "effect": [
-      { "u_message": "You suddenly notice something in your hand that wasn't there before." },
+      { "u_message": "You found something in your hand that wasn't there before." },
       { "u_spawn_item": "magic_loot_xedra", "use_item_group": true }
     ]
   },

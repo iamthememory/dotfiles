@@ -10,17 +10,5 @@
     "id": "f_planter_harvest",
     "copy-from": "f_planter_harvest",
     "plant_data": { "transform": "f_planter_harvest", "base": "f_planter" }
-  },
-  {
-    "type": "furniture",
-    "id": "f_dirtmound_shallow_harvest",
-    "copy-from": "f_dirtmound_shallow_harvest",
-    "plant_data": { "transform": "f_dirtmound_shallow_harvest", "base": "f_dirtmound_shallow" }
-  },
-  {
-    "type": "furniture",
-    "id": "f_dirtmound_pile_harvest",
-    "copy-from": "f_dirtmound_pile_harvest",
-    "plant_data": { "transform": "f_dirtmound_pile_harvest", "base": "f_dirtmound_pile" }
   }
 ]

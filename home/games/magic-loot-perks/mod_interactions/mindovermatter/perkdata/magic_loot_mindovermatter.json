@@ -24,7 +24,8 @@
     "id": "magic_loot_mindovermatter",
     "type": "item_group",
     "items": [
-      { "item": "matrix_crystal_biokinesis", "prob": 100 },
+      { "group": "biokinetic_crystal_awakening_artifact_procgen", "prob": 50 },
+      { "group": "biokinetic_crystal_artifact_procgen", "prob": 50 },
       { "item": "matrix_crystal_clairsentience", "prob": 100 },
       { "item": "matrix_crystal_electrokinesis", "prob": 100 },
       { "item": "matrix_crystal_photokinesis", "prob": 100 },

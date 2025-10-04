@@ -1,11 +1,34 @@
 diff --git a/src/weather.cpp b/src/weather.cpp
-index c09eb96c9ce7..c24a8393603d 100644
+index da135c1c046c..e10d77ac6981 100644
 --- a/src/weather.cpp
 +++ b/src/weather.cpp
-@@ -908,17 +908,21 @@ bool warm_enough_to_plant( const tripoint_abs_omt &pos, const itype_id &it )
+@@ -897,6 +897,7 @@ static units::temperature highest_temp_on_day( time_point &base_date, const trip
+     return highest_temp;
+ }
+
++#if 0
+ static bool has_sunlight_access( const tripoint_bub_ms &pos )
+ {
+     tripoint_bub_ms checked_pnt = pos;
+@@ -915,30 +916,37 @@ static bool has_sunlight_access( const tripoint_bub_ms &pos )
+     }
+     return true;
+ }
++#endif
+
+ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &it )
  {
      std::map<time_point, units::temperature> planting_times;
-     bool okay_to_plant = true;
+
++#if 0
+     if( !has_sunlight_access( pos ) ) {
+         return ret_val<void>::make_failure( _( "Plants need sunlight to grow!  You can't plant there." ) );
+     }
++#endif
+
+     const tripoint_abs_ms abs = get_map().get_abs( pos );
+     const tripoint_abs_omt checked_omt = project_to<coords::omt>( abs );
+
 +#if 0
      const std::vector<std::pair<flag_id, time_duration>> &growth_stages = it->seed->get_growth_stages();
 +#endif
@@ -13,12 +36,13 @@ index c09eb96c9ce7..c24a8393603d 100644
      const weather_generator weather_gen = get_weather().get_cur_weather_gen();
      // initialize the first...
      time_point check_date = calendar::turn;
-     planting_times[check_date] = highest_temp_on_day( check_date, pos, weather_gen );
+     planting_times[check_date] = highest_temp_on_day( check_date, checked_omt, weather_gen );
 +#if 0
      for( const auto &pair : growth_stages ) {
          // TODO: Replace epoch checks with data from a farmer's almanac
          check_date = check_date + pair.second;
-         planting_times[check_date] = highest_temp_on_day( check_date, pos, weather_gen );
+         // The [] operator in std::map inserts an entry if it doesn't already exist.
+         planting_times[check_date] = highest_temp_on_day( check_date, checked_omt, weather_gen );
      }
 +#endif
      for( const std::pair<const time_point, units::temperature> &pair : planting_times ) {
