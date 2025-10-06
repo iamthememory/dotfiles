@@ -37,6 +37,19 @@
   # etc. are kept from being garbage-collected.
   nix.settings.keep-outputs = true;
 
+  # Extra caches.
+  nix.settings.substituters = [
+    # The nix-community cachix, which among other things, has CUDA builds, which
+    # are very slow and expensive to rebuild.
+    "https://nix-community.cachix.org"
+  ];
+
+  # Trusted keys.
+  nix.settings.trusted-public-keys = [
+    # Trust the nix-community cache.
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
+
   # Users who have additional privileges with the Nix daemon.
   nix.settings.trusted-users = [
     # Root should have additional privileges.
