@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildFirefoxXpiAddon {
       pname = "adblock-plus";
-      version = "4.23.2";
+      version = "4.28.0";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4534957/adblock_plus-4.23.2.xpi";
-      sha256 = "0ce5e96d816ac3cc44dd4e37d569f6c8d7dd81b9ad88726846362ec7d70240b3";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4584165/adblock_plus-4.28.0.xpi";
+      sha256 = "00099c3dbccf9e82944517471a4feb9a1db94d6c23704f48b765ac6b7e5c450e";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -26,23 +26,14 @@
           "http://*/*"
           "https://*/*"
           "*://*.youtube.com/*"
-          "*://*.youtube-nocookie.com/embed/*"
-          "https://accounts.adblockplus.org/premium"
-          "https://accounts.adblockplus.org/premium?*"
-          "https://accounts.adblockplus.org/*/premium"
-          "https://accounts.adblockplus.org/*/premium?*"
-          "https://adblockplus.org/*"
           "https://accounts.adblockplus.org/*"
+          "https://*.myaccount.adblockplus.org/*"
+          "https://adblockplus.org/*"
           "https://new.adblockplus.org/*"
           "https://welcome.adblockplus.org/*"
           "https://getadblock.com/*"
           "https://vpn.getadblock.com/*"
-          "https://adblockplus.org/installed"
-          "https://adblockplus.org/installed?*"
-          "https://adblockplus.org/*/installed"
-          "https://adblockplus.org/*/installed?*"
-          "https://welcome.adblockplus.org/*/installed"
-          "https://welcome.adblockplus.org/*/installed?*"
+          "https://*.myaccount.getadblock.com/*"
           "https://btloader.com/trustedIframe.html?o=*"
           "*://*.facebook.com/*"
         ];
@@ -51,10 +42,10 @@
     };
     "adnauseam" = buildFirefoxXpiAddon {
       pname = "adnauseam";
-      version = "3.25.4";
+      version = "3.25.8";
       addonId = "adnauseam@rednoise.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4515352/adnauseam-3.25.4.xpi";
-      sha256 = "8adb4cac231cf6714c0f3af16a84726c2cb9566aedeb872f1f6b11dcb25a1981";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4569515/adnauseam-3.25.8.xpi";
+      sha256 = "656c3a091f1fbcb7d0aae8b394aaac554782570ada48965e166933621f2155c1";
       meta = with lib;
       {
         homepage = "https://adnauseam.io";
