@@ -74,6 +74,12 @@
     #android-studio-full
     #(lib.lowPrio android-studio-full.sdk)
 
+    # Arduino tools.
+    arduino-cli
+    avrdude
+    avrlibc
+    pkgsCross.avr.buildPackages.gcc
+
     # A tool for AWS.
     awscli2
 
