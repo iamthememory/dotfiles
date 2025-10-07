@@ -77,7 +77,6 @@
     # Arduino tools.
     arduino-cli
     avrdude
-    avrlibc
     pkgsCross.avr.buildPackages.gcc
 
     # A tool for AWS.
