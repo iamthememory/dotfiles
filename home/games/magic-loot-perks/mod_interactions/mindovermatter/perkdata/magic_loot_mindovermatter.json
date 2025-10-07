@@ -2,7 +2,7 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_magic_loot_mindovermatter_find",
-    "condition": { "math": [ "rng(0, 1.0) <= 0.25" ] },
+    "condition": { "math": [ "rng(0, 1.0) <= 0.5" ] },
     "effect": [
       { "u_message": "You found something odd." },
       { "u_spawn_item": "magic_loot_mindovermatter", "use_item_group": true }
@@ -34,7 +34,7 @@
       { "item": "matrix_crystal_telepathy", "prob": 100 },
       { "item": "matrix_crystal_teleportation", "prob": 100 },
       { "item": "matrix_crystal_vitakinesis", "prob": 100 },
-      { "item": "matrix_crystal_coruscating", "prob": 10 },
+      { "item": "matrix_crystal_coruscating", "prob": 25 },
       { "item": "matrix_crystal_biokin_dust", "prob": 100 },
       { "item": "matrix_crystal_clair_dust", "prob": 100 },
       { "item": "matrix_crystal_electrokin_dust", "prob": 100 },
