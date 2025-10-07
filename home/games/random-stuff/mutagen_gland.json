@@ -5,7 +5,13 @@
     "eoc_type": "EVENT",
     "required_event": "gains_mutation",
     "//": "Purge built up stores of mutagen post mutation and don't build up again for a period of time",
-    "condition": { "and": [ { "not": { "test_eoc": "EOC_TRAIT_IS_GLAND" } }, { "math": [ "has_var(u_mutagen_gland_vitamin)" ] } ] },
+    "condition": {
+      "and": [
+        { "not": { "test_eoc": "EOC_TRAIT_IS_GLAND" } },
+        { "math": [ "has_var(u_mutagen_gland_vitamin)" ] },
+        { "u_has_trait": { "context_val": "trait" } }
+      ]
+    },
     "effect": [
       { "u_message": "You gained the <context_val:trait> mutation and your mutagen gland has stopped producing mutagen for now." },
       { "math": [ "u_recently_mutated_cooldown = 36 + u_mutations_gained" ] },
