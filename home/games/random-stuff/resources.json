@@ -1,0 +1,21 @@
+[
+  {
+    "id": "scrap_dreamdross",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "category": "spare_parts",
+    "name": { "str": "scrap dreamdross", "str_pl": "scraps of dreamdross" },
+    "description": "A bulky assortment of small bits of scrap dreamdross, useful in all kinds of ephemeral crafting.",
+    "weight": "5 g",
+    "volume": "3 ml",
+    "price": "5 USD",
+    "price_postapoc": "10 cent",
+    "count": 2,
+    "stack_size": 10,
+    "//": "Density 2g/ml.",
+    "material": [ "dreamstuff" ],
+    "symbol": ",",
+    "color": "light_gray",
+    "ammo_type": "scrap_dreamdross"
+  }
+]
