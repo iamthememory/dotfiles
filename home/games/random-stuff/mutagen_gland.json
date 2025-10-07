@@ -1,19 +1,10 @@
 [
   {
     "type": "effect_on_condition",
-    "id": "EOC_GLAND_FLUSH",
-    "eoc_type": "EVENT",
-    "required_event": "gains_mutation",
-    "//": "Purge built up stores of mutagen post mutation and don't build up again for a period of time",
-    "condition": {
-      "and": [
-        { "not": { "test_eoc": "EOC_TRAIT_IS_GLAND" } },
-        { "math": [ "has_var(u_mutagen_gland_vitamin)" ] },
-        { "u_has_trait": { "context_val": "trait" } }
-      ]
-    },
+    "id": "EOC_GLAND_FLUSH_ACTUAL",
+    "condition": { "u_has_trait": { "context_val": "gained_mutation" } },
     "effect": [
-      { "u_message": "You gained the <context_val:trait> mutation and your mutagen gland has stopped producing mutagen for now." },
+      { "u_message": "You gained the <context_val:gained_mutation> mutation and your mutagen gland has stopped producing mutagen for now." },
       { "math": [ "u_recently_mutated_cooldown = 36 + u_mutations_gained" ] },
       { "math": [ "u_mutations_gained++" ] },
       { "math": [ "u_vitamin('mutagen') = max( 0, u_vitamin('mutagen') - u_mutagen_gland_surplus )" ] },
@@ -26,6 +17,27 @@
       },
       { "math": [ "u_mutagen_gland_surplus = 0" ] },
       { "math": [ "u_mutagen_gland_surplus_v = 0" ] }
+    ],
+    "false_effect": [
+      { "u_message": "You didn't gain the <context_val:gained_mutation> mutation, and your mutagen gland is still active." }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_GLAND_FLUSH",
+    "eoc_type": "EVENT",
+    "required_event": "gains_mutation",
+    "//": "Purge built up stores of mutagen post mutation and don't build up again for a period of time",
+    "condition": { "and": [ { "not": { "test_eoc": "EOC_TRAIT_IS_GLAND" } }, { "math": [ "has_var(u_mutagen_gland_vitamin)" ] } ] },
+    "effect": [
+      {
+        "run_eocs": "EOC_GLAND_FLUSH_ACTUAL",
+        "time_in_future": "1 s",
+        "alpha_talker": "u",
+        "variables": {
+          "gained_mutation": { "context_val": "trait" }
+        }
+      }
     ]
   },
   {
