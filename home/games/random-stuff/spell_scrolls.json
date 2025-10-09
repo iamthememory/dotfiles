@@ -8,5 +8,13 @@
     "name": { "str": "Scroll of Lightning Storm", "str_pl": "Scrolls of Lightning Storm" },
     "description": "This scroll details how a spell called 'Lightning Blast' which is commonly used among Stormshapers can be altered to become much more powerful, at a much higher mana cost.",
     "use_action": { "type": "learn_spell", "spells": [ "lightning_storm" ] }
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "id": "plant_spellbook",
+    "copy-from": "plant_spellbook",
+    "name": { "ctxt": "spellbook", "str": "The Elven Path", "str_pl": "copies of The Elven Path" },
+    "category": "manuals"
   }
 ]
