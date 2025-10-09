@@ -1,0 +1,13 @@
+[
+  {
+    "type": "mutation",
+    "id": "perk_haulers_aura",
+    "name": { "str": "Hauler's Aura" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "You have a pocket dimension that can fit a single item.",
+    "category": [ "perk" ],
+    "integrated_armor": [ "integrated_haulers_aura" ]
+  }
+]

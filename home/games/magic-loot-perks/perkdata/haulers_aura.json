@@ -1,0 +1,48 @@
+[
+  {
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "id": "integrated_haulers_aura",
+    "name": { "str": "hauler's aura" },
+    "description": "A pocket dimension that is slow to access, but can fit a single item.",
+    "symbol": "x",
+    "color": "magenta",
+    "material": [ "flesh" ],
+    "looks_like": "backpack",
+    "flags": [
+      "ALLOWS_NATURAL_ATTACKS",
+      "INTEGRATED",
+      "NO_REPAIR",
+      "NO_SALVAGE",
+      "OVERSIZE",
+      "PADDED",
+      "PERSONAL",
+      "SEMITANGIBLE",
+      "TARDIS",
+      "UNBREAKABLE"
+    ],
+    "warmth": 0,
+    "volume": "10 L",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "8000 L",
+        "max_contains_weight": "8000 kg",
+        "max_item_length": "10 meter",
+        "weight_multiplier": 0.5,
+        "moves": 2000,
+        "rigid": true,
+        "holster": true
+      }
+    ],
+    "armor": [
+      {
+        "coverage": 0,
+        "covers": [ "torso" ],
+        "material": [ "flesh" ],
+        "material_thickness": 1,
+        "environmental_protection": 0
+      }
+    ]
+  }
+]
