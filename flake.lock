@@ -16,6 +16,38 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-arcana": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759954547,
+        "narHash": "sha256-qwaNjzxlL0R3tuxV1QmmJ1ZUSih6Eu2p0/dznxMWwaA=",
+        "owner": "chaosvolt",
+        "repo": "cdda-arcana-mod",
+        "rev": "3f815188ea32930b70d0d5f9d0db7383fcbb1475",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chaosvolt",
+        "repo": "cdda-arcana-mod",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-e85-engines": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750701328,
+        "narHash": "sha256-vy6aZKP/lPXOkzTbEdq4ZhovR20a4ZTj4VFaUZwFUkc=",
+        "owner": "Tvoqalega",
+        "repo": "E85-Engines",
+        "rev": "135e67958b2712c1456be4f7cbaafca432b819d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Tvoqalega",
+        "repo": "E85-Engines",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-grow-more-drugs": {
       "flake": false,
       "locked": {
@@ -29,6 +61,38 @@
       "original": {
         "owner": "jackledead",
         "repo": "grow_more_drugs",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-medieval": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757826643,
+        "narHash": "sha256-FWbcO3FQebTflWq/FAQepV+Ctbt+Q6/kCMShUPYRUks=",
+        "owner": "chaosvolt",
+        "repo": "cdda_medieval_mod_reborn",
+        "rev": "959b56aa3402d49401b03644126fe0c07ae5c206",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chaosvolt",
+        "repo": "cdda_medieval_mod_reborn",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-minimods": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758744407,
+        "narHash": "sha256-fWl8QxjXv2EOEg2+u3SVSEEQ4B+h45HlW35hOv7jm50=",
+        "owner": "John-Candlebury",
+        "repo": "CDDA-Minimods",
+        "rev": "b298d60716a28b128bf8650b9ef9749f244af186",
+        "type": "github"
+      },
+      "original": {
+        "owner": "John-Candlebury",
+        "repo": "CDDA-Minimods",
         "type": "github"
       }
     },
@@ -64,6 +128,38 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-mom-submods": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757435022,
+        "narHash": "sha256-nmjrgcgWYE19kyeNOogu9PQCqfQMybQp2ELGCij8D8A=",
+        "owner": "Standing-Storm",
+        "repo": "mind-over-matter-submods",
+        "rev": "f76c24ec8b8b779d0cebad55bff9454e75772d80",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Standing-Storm",
+        "repo": "mind-over-matter-submods",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-mst-extra": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759185702,
+        "narHash": "sha256-PB/ck8DutOHyWdwGY3CiiS9FHcMfHI8y0N0NQG/zhBU=",
+        "owner": "chaosvolt",
+        "repo": "MST_Extra_Mod",
+        "rev": "8079d624aee9303aa3235b49d83ab7cb0b3f7257",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chaosvolt",
+        "repo": "MST_Extra_Mod",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-no-class-limit": {
       "flake": false,
       "locked": {
@@ -80,6 +176,54 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-nocts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759997050,
+        "narHash": "sha256-qANpvE9Q5qxXfI+QMW8dfVQS/NHgM5HJE8KguRln/OY=",
+        "owner": "Noctifer-de-Mortem",
+        "repo": "nocts_cata_mod",
+        "rev": "2fc63c26d46af0ebf8e2eaaaead6edf0aafd3414",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Noctifer-de-Mortem",
+        "repo": "nocts_cata_mod",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-pm-world": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751814718,
+        "narHash": "sha256-KWmrbVS9rjW7W2stCeajUwbPbPO2gqz4bQvp1h0cGDs=",
+        "owner": "Sliperr34",
+        "repo": "PM_World",
+        "rev": "3b85f8bd0b07852f98f3f3e6f0dba4a44532754e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Sliperr34",
+        "repo": "PM_World",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-sleepscumming": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1735252645,
+        "narHash": "sha256-kiXVN9Qb3XZZpn4X8Pktho4EL6GytNTQ6pBn4q2UCPI=",
+        "owner": "Standing-Storm",
+        "repo": "sleepscumming",
+        "rev": "82550ada773846bb8b5250dda078f3858f9019b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Standing-Storm",
+        "repo": "sleepscumming",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-stats-through-skills": {
       "flake": false,
       "locked": {
@@ -93,6 +237,22 @@
       "original": {
         "owner": "Erin105",
         "repo": "StatsThroughSkills",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-tankmod": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757979851,
+        "narHash": "sha256-6uR9833FttgUWEr5som3QMjsqxlEsPJkxxBwHx3WZgU=",
+        "owner": "chaosvolt",
+        "repo": "cdda-tankmod-revived-mod",
+        "rev": "2213fedf14cf58f8a8e3f9731d12c1a5313822ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chaosvolt",
+        "repo": "cdda-tankmod-revived-mod",
         "type": "github"
       }
     },
@@ -411,11 +571,21 @@
     "root": {
       "inputs": {
         "cataclysm-dda": "cataclysm-dda",
+        "cataclysm-dda-arcana": "cataclysm-dda-arcana",
+        "cataclysm-dda-e85-engines": "cataclysm-dda-e85-engines",
         "cataclysm-dda-grow-more-drugs": "cataclysm-dda-grow-more-drugs",
+        "cataclysm-dda-medieval": "cataclysm-dda-medieval",
+        "cataclysm-dda-minimods": "cataclysm-dda-minimods",
         "cataclysm-dda-mining-enchanced": "cataclysm-dda-mining-enchanced",
         "cataclysm-dda-mining-mod": "cataclysm-dda-mining-mod",
+        "cataclysm-dda-mom-submods": "cataclysm-dda-mom-submods",
+        "cataclysm-dda-mst-extra": "cataclysm-dda-mst-extra",
         "cataclysm-dda-no-class-limit": "cataclysm-dda-no-class-limit",
+        "cataclysm-dda-nocts": "cataclysm-dda-nocts",
+        "cataclysm-dda-pm-world": "cataclysm-dda-pm-world",
+        "cataclysm-dda-sleepscumming": "cataclysm-dda-sleepscumming",
         "cataclysm-dda-stats-through-skills": "cataclysm-dda-stats-through-skills",
+        "cataclysm-dda-tankmod": "cataclysm-dda-tankmod",
         "cdda-sounds": "cdda-sounds",
         "dircolors-solarized": "dircolors-solarized",
         "flake-utils": "flake-utils",

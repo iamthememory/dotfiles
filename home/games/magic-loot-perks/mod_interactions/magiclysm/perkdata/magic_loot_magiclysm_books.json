@@ -2,7 +2,7 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_magic_loot_magiclysm_books_find",
-    "condition": { "math": [ "rng(0, 1.0) <= 0.2" ] },
+    "condition": { "math": [ "rng(0, 1.0) <= 0.1" ] },
     "effect": [
       { "u_message": "You found a spellbook." },
       { "u_spawn_item": "magic_loot_magiclysm_books", "use_item_group": true }
@@ -16,7 +16,7 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_magic_loot_magiclysm_books_find_off",
+    "id": "EOC_magic_loot_magiclysm_books_off",
     "//": "Deactivation effect",
     "effect": [ { "u_message": "You stop looking for books." } ]
   },
@@ -25,14 +25,14 @@
     "type": "item_group",
     "items": [
       { "group": "spell_scroll_tier_0", "prob": 100 },
-      { "group": "spell_scroll_tier_1", "prob": 70 },
-      { "group": "spell_scroll_tier_2", "prob": 40 },
-      { "group": "spell_scroll_tier_3", "prob": 10 },
-      { "group": "spellbook_tier_0", "prob": 70 },
-      { "group": "spellbook_tier_1", "prob": 50 },
-      { "group": "spellbook_tier_2", "prob": 30 },
-      { "group": "spellbook_tier_3", "prob": 10 },
-      { "group": "spellbook_mana_upgrades", "prob": 10 }
+      { "group": "spell_scroll_tier_1", "prob": 80 },
+      { "group": "spell_scroll_tier_2", "prob": 60 },
+      { "group": "spell_scroll_tier_3", "prob": 40 },
+      { "group": "spellbook_tier_0", "prob": 100 },
+      { "group": "spellbook_tier_1", "prob": 80 },
+      { "group": "spellbook_tier_2", "prob": 60 },
+      { "group": "spellbook_tier_3", "prob": 40 },
+      { "group": "spellbook_mana_upgrades", "prob": 40 }
     ]
   }
 ]

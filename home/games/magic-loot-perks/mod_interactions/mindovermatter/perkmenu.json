@@ -4,23 +4,65 @@
     "id": "TALK_PERK_MENU_MAIN",
     "responses": [
       {
-        "condition": { "not": { "u_has_trait": "perk_magic_loot_mindovermatter" } },
-        "text": "Gain [<trait_name:perk_magic_loot_mindovermatter>]",
-        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER"
+        "condition": { "not": { "u_has_trait": "perk_magic_loot_mindovermatter_crystals" } },
+        "text": "Gain [<trait_name:perk_magic_loot_mindovermatter_crystals>]",
+        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_CRYSTALS"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_magic_loot_mindovermatter_dust" } },
+        "text": "Gain [<trait_name:perk_magic_loot_mindovermatter_dust>]",
+        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_DUST"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_magic_loot_mindovermatter_knowledge" } },
+        "text": "Gain [<trait_name:perk_magic_loot_mindovermatter_knowledge>]",
+        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_KNOWLEDGE"
       }
     ]
   },
   {
     "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER",
-    "dynamic_line": "<trait_name:perk_magic_loot_mindovermatter>: \"<trait_description:perk_magic_loot_mindovermatter>\"",
+    "id": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_CRYSTALS",
+    "dynamic_line": "<trait_name:perk_magic_loot_mindovermatter_crystals>: \"<trait_description:perk_magic_loot_mindovermatter>\"_crystals",
     "responses": [
       {
         "text": "Select Perk.",
         "topic": "TALK_PERK_MENU_MAIN",
         "condition": { "math": [ "u_num_perks > 0" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_mindovermatter" }, { "math": [ "u_num_perks--" ] } ]
+        "effect": [ { "u_add_trait": "perk_magic_loot_mindovermatter_crystals" }, { "math": [ "u_num_perks--" ] } ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_DUST",
+    "dynamic_line": "<trait_name:perk_magic_loot_mindovermatter_dust>: \"<trait_description:perk_magic_loot_mindovermatter_dust>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [ { "u_add_trait": "perk_magic_loot_mindovermatter_dust" }, { "math": [ "u_num_perks--" ] } ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_KNOWLEDGE",
+    "dynamic_line": "<trait_name:perk_magic_loot_mindovermatter_knowledge>: \"<trait_description:perk_magic_loot_mindovermatter_knowledge>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [ { "u_add_trait": "perk_magic_loot_mindovermatter_knowledge" }, { "math": [ "u_num_perks--" ] } ]
       },
       { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
       { "text": "Quit.", "topic": "TALK_DONE" }

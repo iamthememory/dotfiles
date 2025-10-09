@@ -77,18 +77,13 @@
       flake = false;
     };
 
-    cataclysm-dda-no-class-limit = {
-      url = "github:martinrhan/Magiclysm_No_Class_Limit";
+    cataclysm-dda-arcana = {
+      url = "github:chaosvolt/cdda-arcana-mod";
       flake = false;
     };
 
-    cataclysm-dda-mining-mod = {
-      url = "github:DangerNoodle/mining-mod";
-      flake = false;
-    };
-
-    cdda-sounds = {
-      url = "git+https://github.com/Fris0uman/CDDA-Soundpacks?submodules=1";
+    cataclysm-dda-e85-engines = {
+      url = "github:Tvoqalega/E85-Engines";
       flake = false;
     };
 
@@ -97,13 +92,68 @@
       flake = false;
     };
 
+    cataclysm-dda-medieval = {
+      url = "github:chaosvolt/cdda_medieval_mod_reborn";
+      flake = false;
+    };
+
     cataclysm-dda-mining-enchanced = {
       url = "github:xGorax/CDDA-Mining-enchanced-Mod";
       flake = false;
     };
 
+    cataclysm-dda-minimods = {
+      url = "github:John-Candlebury/CDDA-Minimods";
+      flake = false;
+    };
+
+    cataclysm-dda-mining-mod = {
+      url = "github:DangerNoodle/mining-mod";
+      flake = false;
+    };
+
+    cataclysm-dda-mom-submods = {
+      url = "github:Standing-Storm/mind-over-matter-submods";
+      flake = false;
+    };
+
+    cataclysm-dda-mst-extra = {
+      url = "github:chaosvolt/MST_Extra_Mod";
+      flake = false;
+    };
+
+    cataclysm-dda-no-class-limit = {
+      url = "github:martinrhan/Magiclysm_No_Class_Limit";
+      flake = false;
+    };
+
+    cataclysm-dda-nocts = {
+      url = "github:Noctifer-de-Mortem/nocts_cata_mod";
+      flake = false;
+    };
+
+    cataclysm-dda-pm-world = {
+      url = "github:Sliperr34/PM_World";
+      flake = false;
+    };
+
+    cataclysm-dda-sleepscumming = {
+      url = "github:Standing-Storm/sleepscumming";
+      flake = false;
+    };
+
     cataclysm-dda-stats-through-skills = {
       url = "github:Erin105/StatsThroughSkills";
+      flake = false;
+    };
+
+    cataclysm-dda-tankmod = {
+      url = "github:chaosvolt/cdda-tankmod-revived-mod";
+      flake = false;
+    };
+
+    cdda-sounds = {
+      url = "git+https://github.com/Fris0uman/CDDA-Soundpacks?submodules=1";
       flake = false;
     };
 

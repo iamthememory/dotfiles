@@ -13,7 +13,6 @@
     "deactivated_eocs": [ "EOC_magic_loot_magiclysm_books_off" ],
     "processed_eocs": [ "EOC_magic_loot_magiclysm_books_find" ],
     "time": 24000,
-    "category": [ "perk" ]
   },
   {
     "type": "mutation",
@@ -29,6 +28,5 @@
     "deactivated_eocs": [ "EOC_magic_loot_magiclysm_attunement_off" ],
     "processed_eocs": [ "EOC_magic_loot_magiclysm_attunement_find" ],
     "time": 24000,
-    "category": [ "perk" ]
   }
 ]

@@ -16,7 +16,7 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_magic_loot_magiclysm_attunement_find_off",
+    "id": "EOC_magic_loot_magiclysm_attunement_off",
     "//": "Deactivation effect",
     "effect": [ { "u_message": "You close your mind to the world." } ]
   }

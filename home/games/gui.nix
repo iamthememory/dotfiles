@@ -109,39 +109,13 @@ in
         tiles = true;
       });
 
-      magiclysm-no-class-limit = pkgs.cataclysmDDA.buildMod {
-        modName = "Magiclysm_No_Class_Limit";
-        version = inputs.cataclysm-dda-no-class-limit.lastModifiedDate;
-        src = pkgs.applyPatches {
-          name = "cataclysm-dda-no-class-limit";
-          src = inputs.cataclysm-dda-no-class-limit;
-          patches = [
-            ./cataclysm-magiclysm-no-class-limit.patch
-          ];
-        };
-      };
+      # CDDA mods.
 
-      mining-mod = pkgs.cataclysmDDA.buildMod {
-        modName = "Mining_Mod";
-        version = inputs.cataclysm-dda-mining-mod.lastModifiedDate;
-        src = pkgs.applyPatches {
-          name = "cataclysm-dda-mining-mod-patched";
-          src = inputs.cataclysm-dda-mining-mod;
-        };
-        modRoot = "Mining_Mod";
-      };
-
-      mining-enchanced = pkgs.cataclysmDDA.buildMod {
-        modName = "Mining_enchanced_Mod";
-        version = inputs.cataclysm-dda-mining-enchanced.lastModifiedDate;
-        src = pkgs.applyPatches {
-          name = "cataclysm-dda-mining-enchanced-patched";
-          src = inputs.cataclysm-dda-mining-enchanced;
-          patches = [
-            ./cataclysm-mining-enchanced.patch
-          ];
-        };
-        modRoot = "Mining_Enchanced_0.2.1";
+      arcana = pkgs.cataclysmDDA.buildMod {
+        modName = "Arcana";
+        version = inputs.cataclysm-dda-arcana.lastModifiedDate;
+        src = inputs.cataclysm-dda-arcana;
+        modRoot = "Arcana";
       };
 
       cc-sounds = pkgs.cataclysmDDA.buildSoundPack {
@@ -149,6 +123,20 @@ in
         version = inputs.cdda-sounds.lastModifiedDate;
         src = inputs.cdda-sounds;
         modRoot = "sound/CC-Sounds";
+      };
+
+      elf-crops-src = pkgs.applyPatches {
+        name = "elfcrops-patched";
+        src = inputs.cataclysm-dda-elf-crops;
+        patches = [
+          ./cataclysm-elfcrops-fixdup.patch
+        ];
+      };
+
+      e85-engines = pkgs.cataclysmDDA.buildMod {
+        modName = "E85_Engines";
+        version = inputs.cataclysm-dda-e85-engines.lastModifiedDate;
+        src = inputs.cataclysm-dda-e85-engines;
       };
 
       grow-more-drugs = pkgs.cataclysmDDA.buildMod {
@@ -164,13 +152,163 @@ in
         modRoot = "mods/grow_more_drugs";
       };
 
-      elf-crops-src = pkgs.applyPatches {
-        name = "elfcrops-patched";
-        src = inputs.cataclysm-dda-elf-crops;
-        patches = [
-          ./cataclysm-elfcrops-fixdup.patch
-        ];
+      magiclysm-no-class-limit = pkgs.cataclysmDDA.buildMod {
+        modName = "Magiclysm_No_Class_Limit";
+        version = inputs.cataclysm-dda-no-class-limit.lastModifiedDate;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-no-class-limit";
+          src = inputs.cataclysm-dda-no-class-limit;
+          patches = [
+            ./cataclysm-magiclysm-no-class-limit.patch
+          ];
+        };
       };
+
+      medieval = pkgs.cataclysmDDA.buildMod {
+        modName = "Medieval_Mod_Reborn";
+        version = inputs.cataclysm-dda-medieval.lastModifiedDate;
+        src = inputs.cataclysm-dda-medieval;
+        modRoot = "Medieval_Mod_Reborn";
+      };
+
+      minimods =
+        let
+          mini-mod = modRoot: modName: pkgs.cataclysmDDA.buildMod {
+            inherit modName modRoot;
+            version = inputs.cataclysm-dda-minimods.lastModifiedDate;
+            src = inputs.cataclysm-dda-minimods;
+          };
+        in
+        builtins.attrValues (builtins.mapAttrs mini-mod {
+          "Augmented_survivor" = "minimod_augmented_survivor";
+          "Elemental_bionic_weapons" = "minimod_elemental_bionic_weapons";
+          "No_rust" = "minimod_no_rust";
+          "No_zombie_revival" = "minimod_no_zombie_revival";
+          "Unpersoned" = "minimod_unpersoned";
+          "Wandering_castle" = "minimod_wandering_castle";
+          "War-Grappling_hook" = "war-grappling_hook";
+        });
+
+      mining-enchanced = pkgs.cataclysmDDA.buildMod {
+        modName = "Mining_enchanced_Mod";
+        version = inputs.cataclysm-dda-mining-enchanced.lastModifiedDate;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-mining-enchanced-patched";
+          src = inputs.cataclysm-dda-mining-enchanced;
+          patches = [
+            ./cataclysm-mining-enchanced.patch
+          ];
+        };
+        modRoot = "Mining_Enchanced_0.2.1";
+      };
+
+      mining-mod = pkgs.cataclysmDDA.buildMod {
+        modName = "Mining_Mod";
+        version = inputs.cataclysm-dda-mining-mod.lastModifiedDate;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-mining-mod-patched";
+          src = inputs.cataclysm-dda-mining-mod;
+        };
+        modRoot = "Mining_Mod";
+      };
+
+      mom-submods =
+        let
+          mom-mod = modRoot: modName: pkgs.cataclysmDDA.buildMod {
+            inherit modName modRoot;
+            version = inputs.cataclysm-dda-mom-submods.lastModifiedDate;
+            src = inputs.cataclysm-dda-mom-submods;
+          };
+        in
+        builtins.attrValues (builtins.mapAttrs mom-mod {
+          "MoM_Always_Awaken" = "mom_always_awaken";
+          "MoM_Awakening_Is_Rarer" = "mom_awakening_is_rarer";
+          "MoM_Calorie_Cost_Does_Not_Cause_Weariness" =
+            "mom_calorie_cost_does_not_cause_weariness";
+          "MoM_Experience_Edits/Double_Experience" =
+            "mom_channeling_double_experience";
+          "MoM_Experience_Edits/Quadruple_Experience" =
+            "mom_channeling_quadruple_experience";
+          "MoM_Experience_Edits/Ten_Times_Experience" =
+            "mom_channeling_ten_times_experience";
+          "MoM_Feral_Psions_Always_Drop_Crystals" =
+            "mom_feral_psions_always_crystals";
+          "MoM_Harsher_Nether_Attunement_Scaling" =
+            "mom_harsher_nether_attunement_scaling";
+          "MoM_Harsher_Nether_Attunement_Scaling_No_Negative" =
+            "mom_harsher_nether_attunement_scaling_no_negative";
+          "MoM_Head_Explode" = "mom_head_explode";
+          "MoM_Increase_Random_Power_Delay" = "mom_increase_power_learn_delay";
+          "MoM_Infinite_Concentration" = "mom_infinite_concentration";
+          "MoM_No_Calorie_Cost" = "mom_no_calorie_cost";
+          "MoM_No_Negative_Nether_Attunement" =
+            "mom_no_negative_nether_attunement";
+          "MoM_No_Nether_Attunement" = "mom_no_nether_attunement";
+          "MoM_No_Overload" = "mom_no_overload";
+          "MoM_Power_Learning_Is_Automatic" = "mom_power_learning_is_automatic";
+          "MoM_Power_Learning_Is_Harder" = "mom_power_learning_is_harder";
+          "MoM_Power_Learning_Is_Instant" = "mom_power_learning_is_instant";
+          "MoM_Raise_Pain_Disabling_Psi_Limit" =
+            "mom_raise_pain_disables_psi_limit";
+          "MoM_Remove_Learn_Path_Power_Checks_Delay" =
+            "mom_no_power_path_check_learn_delay";
+          "MoM_Remove_Learn_Power_Delay" = "mom_no_power_learn_delay";
+          "MoM_Remove_Observed_Nether_Effects" =
+            "mom_remove_observed_nether_effects";
+          "MoM_Remove_Pain_Disabling_Psi_Limit" =
+            "mom_remove_pain_disables_psi_limit";
+          "MoM_Remove_Teleport_Volume_Limit" =
+            "mom_remove_teleporter_volume_limits";
+        });
+
+      mst-extra = pkgs.cataclysmDDA.buildMod {
+        modName = "MST_Extra";
+        version = inputs.cataclysm-dda-mst-extra.lastModifiedDate;
+        src = inputs.cataclysm-dda-mst-extra;
+        modRoot = "MST_Extra";
+      };
+
+      nocts = pkgs.cataclysmDDA.buildMod {
+        modName = "Cata++";
+        version = inputs.cataclysm-dda-nocts.lastModifiedDate;
+        src = inputs.cataclysm-dda-nocts;
+        modRoot = "nocts_cata_mod_DDA";
+      };
+
+      pm-world = pkgs.cataclysmDDA.buildMod {
+        modName = "pm_world";
+        version = inputs.cataclysm-dda-pm-world.lastModifiedDate;
+        src = inputs.cataclysm-dda-pm-world;
+      };
+
+      sleepscumming-keep = pkgs.cataclysmDDA.buildMod {
+        modName = "sleepscumming_keep_your_stuff";
+        version = inputs.cataclysm-dda-sleepscumming.lastModifiedDate;
+        src = inputs.cataclysm-dda-sleepscumming;
+        modRoot = "sleepscumming_keep_stuff";
+      };
+
+      sleepscumming-lose = pkgs.cataclysmDDA.buildMod {
+        modName = "sleepscumming_lose_your_stuff";
+        version = inputs.cataclysm-dda-sleepscumming.lastModifiedDate;
+        src = inputs.cataclysm-dda-sleepscumming;
+        modRoot = "sleepscuming-lose-your-stuff";
+      };
+
+      stats-through-skills = pkgs.cataclysmDDA.buildMod {
+        modName = "StatsThroughSkills";
+        version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
+        src = inputs.cataclysm-dda-stats-through-skills;
+      };
+
+      tankmod = pkgs.cataclysmDDA.buildMod {
+        modName = "Tankmod_Revived";
+        version = inputs.cataclysm-dda-tankmod.lastModifiedDate;
+        src = inputs.cataclysm-dda-tankmod;
+        modRoot = "Tankmod_Revived";
+      };
+
+      # My mods.
 
       cdda-defense-additions = pkgs.cataclysmDDA.buildMod {
         modName = "cdda-defense-additions";
@@ -178,10 +316,40 @@ in
         src = ./cdda-defense-additions;
       };
 
+      lab-loot-extras = pkgs.cataclysmDDA.buildMod {
+        modName = "lab-loot-extras";
+        version = config.home.file."generation.rev".text;
+        src = ./lab-loot-extras;
+      };
+
+      magiclysm-non-exclusive-attunements = pkgs.cataclysmDDA.buildMod {
+        modName = "magiclysm-non-exclusive-attunements";
+        version = config.home.file."generation.rev".text;
+        src = ./magiclysm-non-exclusive-attunements;
+      };
+
+      magic-loot-perks = pkgs.cataclysmDDA.buildMod {
+        modName = "magic-loot-perks";
+        version = config.home.file."generation.rev".text;
+        src = ./magic-loot-perks;
+      };
+
+      no-overgrowth = pkgs.cataclysmDDA.buildMod {
+        modName = "no-overgrowth";
+        version = config.home.file."generation.rev".text;
+        src = ./no-overgrowth;
+      };
+
       random-stuff = pkgs.cataclysmDDA.buildMod {
         modName = "random-stuff";
         version = config.home.file."generation.rev".text;
         src = ./random-stuff;
+      };
+
+      xedra-both-classes = pkgs.cataclysmDDA.buildMod {
+        modName = "xedra-both-classes";
+        version = config.home.file."generation.rev".text;
+        src = ./xedra-both-classes;
       };
 
       xedra-disable-leveling = pkgs.cataclysmDDA.buildMod {
@@ -196,59 +364,37 @@ in
         src = ./xedra-seedbearer-always;
       };
 
-      magiclysm-non-exclusive-attunements = pkgs.cataclysmDDA.buildMod {
-        modName = "magiclysm-non-exclusive-attunements";
-        version = config.home.file."generation.rev".text;
-        src = ./magiclysm-non-exclusive-attunements;
-      };
-
-      lab-loot-extras = pkgs.cataclysmDDA.buildMod {
-        modName = "lab-loot-extras";
-        version = config.home.file."generation.rev".text;
-        src = ./lab-loot-extras;
-      };
-
-      xedra-both-classes = pkgs.cataclysmDDA.buildMod {
-        modName = "xedra-both-classes";
-        version = config.home.file."generation.rev".text;
-        src = ./xedra-both-classes;
-      };
-
-      no-overgrowth = pkgs.cataclysmDDA.buildMod {
-        modName = "no-overgrowth";
-        version = config.home.file."generation.rev".text;
-        src = ./no-overgrowth;
-      };
-
-      magic-loot-perks = pkgs.cataclysmDDA.buildMod {
-        modName = "magic-loot-perks";
-        version = config.home.file."generation.rev".text;
-        src = ./magic-loot-perks;
-      };
-
-      stats-through-skills = pkgs.cataclysmDDA.buildMod {
-        modName = "StatsThroughSkills";
-        version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
-        src = inputs.cataclysm-dda-stats-through-skills;
-      };
-
+      # CDDA with extra mods.
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
-        #grow-more-drugs
+        arcana
         cc-sounds
         cdda-defense-additions
+        e85-engines
+        #grow-more-drugs
         lab-loot-extras
         magic-loot-perks
         magiclysm-no-class-limit
         magiclysm-non-exclusive-attunements
+        medieval
         mining-enchanced
         mining-mod
+        mom-submods
+        mst-extra
         no-overgrowth
+        nocts
+        pm-world
         random-stuff
+        sleepscumming-keep
+        sleepscumming-lose
         stats-through-skills
+        tankmod
         xedra-both-classes
         xedra-disable-leveling
         xedra-seedbearer-always
-      ]);
+      ]
+      ++ minimods
+      ++ mom-submods
+      );
 
       # The customized dwarf fortress to use.
       dwarf-fortress-custom = (pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {

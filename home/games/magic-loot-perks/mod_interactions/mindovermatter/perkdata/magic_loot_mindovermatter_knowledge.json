@@ -1,0 +1,49 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_mindovermatter_knowledge_find",
+    "condition": { "math": [ "rng(0, 1.0) <= 0.04" ] },
+    "effect": [
+      { "u_message": "You found something a note." },
+      { "u_spawn_item": "magic_loot_mindovermatter_knowledge", "use_item_group": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_mindovermatter_knowledge_on",
+    "//": "Activation effect",
+    "effect": [ { "u_message": "You start looking for strange notes." } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_mindovermatter_knowledge_off",
+    "//": "Deactivation effect",
+    "effect": [ { "u_message": "You stop looking for strange notes." } ]
+  },
+  {
+    "id": "magic_loot_mindovermatter",
+    "type": "item_group",
+    "items": [
+      { "item": "manual_psionic_ritual", "prob": 5 },
+      { "item": "phavian_psionic_martial_power_book", "prob": 5 },
+      { "item": "phavian_psionic_telepathic_mental_engineering_book", "prob": 5 },
+      { "item": "phavian_psionic_teleportation_combat_book", "prob": 5 },
+      { "item": "phavian_report_psionic_drain", "prob": 5 },
+      { "item": "schematics_anchoring_crown", "prob": 5 },
+      { "item": "schematics_everglow_lamp", "prob": 5 },
+      { "item": "schematics_everglow_lamp", "prob": 5 },
+      { "item": "schematics_grenade_inferno", "prob": 5 },
+      { "item": "schematics_instability_remover", "prob": 5 },
+      { "item": "schematics_matrix_aligning", "prob": 5 },
+      { "item": "schematics_matrix_channeling", "prob": 5 },
+      { "item": "schematics_matrix_crystal_ground", "prob": 5 },
+      { "item": "schematics_noetic_resilience", "prob": 5 },
+      { "item": "schematics_panaceus", "prob": 5 },
+      { "item": "schematics_psionic_purifier", "prob": 5 },
+      { "item": "schematics_reactant_liquid_base", "prob": 5 },
+      { "item": "schematics_telepathic_dampener", "prob": 5 },
+      { "item": "schematics_telepathic_focusing_tool", "prob": 5 },
+      { "item": "schematics_transporters", "prob": 5 }
+    ]
+  }
+]
