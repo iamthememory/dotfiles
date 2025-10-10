@@ -1,0 +1,849 @@
+diff --git a/MST_Extra/furniture_and_terrain/furniture.json b/MST_Extra/furniture_and_terrain/furniture.json
+index 293b5d0f3974..c69a6ba3cb38 100644
+--- a/MST_Extra/furniture_and_terrain/furniture.json
++++ b/MST_Extra/furniture_and_terrain/furniture.json
+@@ -171,7 +171,7 @@
+       "items": [ { "item": "2x4", "count": [ 2, 5 ] }, { "item": "splinter", "count": 3 } ]
+     },
+     "examine_action": "workbench",
+-    "workbench": { "multiplier": 1.1, "mass": 200000, "volume": "75L" }
++    "workbench": { "multiplier": 1.1, "mass": "200 kg", "volume": "75L" }
+   },
+   {
+     "type": "furniture",
+@@ -195,7 +195,7 @@
+       "items": [ { "item": "2x4", "count": [ 2, 4 ] }, { "item": "splinter", "count": 3 } ]
+     },
+     "examine_action": "workbench",
+-    "workbench": { "multiplier": 1.1, "mass": 200000, "volume": "75L" }
++    "workbench": { "multiplier": 1.1, "mass": "200 kg", "volume": "75L" }
+   },
+   {
+     "type": "furniture",
+diff --git a/MST_Extra/items/ammo.json b/MST_Extra/items/ammo.json
+index fc84351b1d87..98a604bed913 100644
+--- a/MST_Extra/items/ammo.json
++++ b/MST_Extra/items/ammo.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "bearing_lead",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "lead pellet" },
+     "description": "Hefty round projectiles cast from lead, useful as ammunition for slings.",
+     "weight": "12 g",
+@@ -24,7 +24,7 @@
+     "id": "atlatl_dart_wood",
+     "looks_like": "javelin",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "wooden atlatl dart" },
+     "description": "A long, flexible dart for a spear-thrower, with a fire-hardened sharpened point.",
+     "weight": "70 g",
+@@ -51,7 +51,7 @@
+     "copy-from": "atlatl_dart_wood",
+     "looks_like": "javelin_iron",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "iron atlatl dart" },
+     "description": "A long, flexible dart for a spear-thrower, with an iron spear point.",
+     "weight": "170 g",
+@@ -68,7 +68,7 @@
+     "copy-from": "atlatl_dart_wood",
+     "looks_like": "javelin_stone",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "stone atlatl dart" },
+     "description": "A long, flexible dart for a spear-thrower, with a small stone spearhead.",
+     "weight": "150 g",
+@@ -85,7 +85,7 @@
+     "copy-from": "atlatl_dart_wood",
+     "looks_like": "javelin_copper",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "copper atlatl dart" },
+     "description": "A long, flexible dart for a spear-thrower, with a copper spear point.",
+     "weight": "200 g",
+@@ -99,7 +99,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "id": "pitch_wood",
+     "category": "spare_parts",
+     "symbol": ",",
+diff --git a/MST_Extra/items/armor.json b/MST_Extra/items/armor.json
+index 62086aaa5606..567de852877e 100644
+--- a/MST_Extra/items/armor.json
++++ b/MST_Extra/items/armor.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "armwrap_leather",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "pair of leather armwraps", "str_pl": "pairs of leather armwraps" },
+     "description": "Leather patches wrapped around the arms, better than nothing in a pinch.",
+     "weight": "137 g",
+@@ -19,7 +19,7 @@
+   {
+     "id": "armwrap_fur",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "pair of fur armwraps", "str_pl": "pairs of fur armwraps" },
+     "description": "Fur pelts wrapped around the arms, better than nothing in a pinch.",
+     "weight": "154 g",
+@@ -36,7 +36,7 @@
+   {
+     "id": "legwrap_leather",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "pair of leather legwraps", "str_pl": "pairs of leather legwraps" },
+     "description": "Leather patches wrapped around the legs, as improvised leggings.",
+     "weight": "137 g",
+@@ -53,7 +53,7 @@
+   {
+     "id": "legwrap_fur",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "pair of fur legwraps", "str_pl": "pairs of fur legwraps" },
+     "description": "Fur pelts wrapped around the legs, as improvised leggings.",
+     "weight": "154 g",
+@@ -70,7 +70,7 @@
+   {
+     "id": "cloak_makeshift_sheet",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "makeshift sheet cloak" },
+     "description": "A bedsheet draped around the shoulders and pinned in place to wear like a cloak.  Less encumbering since it leaves your hands free, and won't trip you up.",
+     "weight": "771 g",
+@@ -92,7 +92,7 @@
+     "id": "cloak_makeshift_blanket",
+     "copy-from": "cloak_makeshift_sheet",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "makeshift blanket cloak" },
+     "description": "A blanket draped around the shoulders and pinned in place to wear like a cloak.  Less encumbering since it leaves your hands free, and won't trip you up.",
+     "weight": "1123 g",
+@@ -111,7 +111,7 @@
+     "id": "cloak_makeshift_down_blanket",
+     "copy-from": "cloak_makeshift_sheet",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "makeshift down-filled blanket cloak" },
+     "description": "A warm blanket draped around the shoulders and pinned in place to wear like a cloak.  Less encumbering since it leaves your hands free, and won't trip you up.",
+     "weight": "3500 g",
+@@ -131,7 +131,7 @@
+     "id": "cloak_makeshift_fur_blanket",
+     "copy-from": "cloak_makeshift_sheet",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "makeshift fur blanket cloak" },
+     "description": "A heavy fur blanket draped around the shoulders and pinned in place to wear like a cloak.  Less encumbering since it leaves your hands free, and won't trip you up.",
+     "weight": "3500 g",
+@@ -151,7 +151,7 @@
+     "id": "cloak_makeshift_quilt",
+     "copy-from": "cloak_makeshift_sheet",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "makeshift quilt cloak" },
+     "description": "A comfy wool quilt, draped around the shoulders and pinned in place to wear like a cloak.  Less encumbering since it leaves your hands free, and won't trip you up.",
+     "weight": "1814 g",
+@@ -169,7 +169,7 @@
+     "id": "cloak_makeshift_quilt_patchwork",
+     "copy-from": "cloak_makeshift_quilt",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "makeshift patchwork quilt cloak" },
+     "description": "A huge patchwork quilt, draped around the shoulders and pinned in place to wear like a cloak.  Less encumbering since it leaves your hands free, and won't trip you up.",
+     "looks_like": "quilt_patchwork",
+@@ -181,7 +181,7 @@
+     "id": "quiver_atlatl",
+     "copy-from": "quiver",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "atlatl dart quiver" },
+     "description": "A leather quiver worn at the waist, lengthened to hold atlatl darts.  Activate to store up to 10 darts.",
+     "weight": "400 g",
+@@ -201,7 +201,7 @@
+     "id": "quiver_birchbark_atlatl",
+     "copy-from": "quiver_birchbark",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "birchbark atlatl dart quiver" },
+     "description": "A quiver woven from strips of birch bark, worn at the waist, lengthened to hold atlatl darts.  Activate to store up to 10 darts.",
+     "weight": "800 g",
+diff --git a/MST_Extra/items/comestibles.json b/MST_Extra/items/comestibles.json
+index db16eb1b1fad..1a161cbe3b8f 100644
+--- a/MST_Extra/items/comestibles.json
++++ b/MST_Extra/items/comestibles.json
+@@ -1,7 +1,7 @@
+ [
+   {
+     "type": "ITEM",
+-	"subtype": ["COMESTIBLE"],
++	"subtypes": ["COMESTIBLE"],
+     "id": "oil_garlic",
+     "name": { "str_sp": "garlic oil" },
+     "weight": "25 g",
+@@ -24,7 +24,7 @@
+   {
+     "id": "makeshift_poultice",
+     "type": "ITEM",
+-	"subtype": ["COMESTIBLE"],
++	"subtypes": ["COMESTIBLE"],
+     "comestible_type": "MED",
+     "name": { "str": "makeshift poultice" },
+     "description": "A primitive poultice using improvised antiseptic, held in place by a cloth or leather wrap.  Applied loosely, it is designed to stave off infection but can still help staunch bleeding.",
+@@ -38,7 +38,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["COMESTIBLE"],
++	"subtypes": ["COMESTIBLE"],
+     "id": "posca",
+     "comestible_type": "DRINK",
+     "name": { "str_sp": "posca" },
+@@ -62,7 +62,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["COMESTIBLE"],
++	"subtypes": ["COMESTIBLE"],
+     "id": "posca_hard",
+     "copy-from": "posca",
+     "name": { "str_sp": "hard posca" },
+@@ -83,7 +83,7 @@
+     "id": "jerky_offal",
+     "copy-from": "jerky",
+     "type": "ITEM",
+-	"subtype": ["COMESTIBLE"],
++	"subtypes": ["COMESTIBLE"],
+     "name": { "str_sp": "jerked offal" },
+     "description": "Salty dried organ meat.  Smells a bit like dog food, but will last a long time.",
+     "fun": -2,
+diff --git a/MST_Extra/items/containers.json b/MST_Extra/items/containers.json
+index e026e399d41c..3e79f2c1d2c7 100644
+--- a/MST_Extra/items/containers.json
++++ b/MST_Extra/items/containers.json
+@@ -1,7 +1,8 @@
+ [
+   {
+     "id": "canteen_birchbark",
+-    "type": "GENERIC",
++    "type": "ITEM",
++    "subtypes": [ "ARMOR" ],
+     "category": "container",
+     "name": { "str": "birchbark canteen" },
+     "description": "A small container make from pieces of birchbark stitched together, sealed with pitch or similar material.  Holds 1.5 liters and has a simple carry strap.",
+@@ -21,23 +22,21 @@
+         "max_contains_weight": "3 kg"
+       }
+     ],
+-    "armor_data": {
+-      "sided": true,
+-      "armor": [
+-        {
+-          "material": [ { "type": "wood", "covered_by_mat": 100, "thickness": 1.0 } ],
+-          "coverage": 10,
+-          "encumbrance": 4,
+-          "covers": [ "leg_l", "leg_r" ],
+-          "specifically_covers": [ "leg_hip_r", "leg_hip_l" ]
+-        }
+-      ]
+-    },
++    "armor": [
++      {
++        "material": [ { "type": "wood", "covered_by_mat": 100, "thickness": 1.0 } ],
++        "coverage": 10,
++        "encumbrance": 4,
++        "covers": [ "leg_l", "leg_r" ],
++        "specifically_covers": [ "leg_hip_r", "leg_hip_l" ]
++      }
++    ],
++    "sided": true,
+     "flags": [ "BELTED", "OVERSIZE", "WATER_FRIENDLY" ]
+   },
+   {
+     "id": "jar_clay",
+-    "type": "GENERIC",
++    "type": "ITEM",
+     "category": "container",
+     "name": { "str": "clay jar" },
+     "description": "A half-liter clay jar, glazed for waterproofing with a tight-fitting wooden stopper.",
+@@ -61,7 +60,7 @@
+   },
+   {
+     "id": "bucket_log",
+-    "type": "GENERIC",
++    "type": "ITEM",
+     "category": "container",
+     "name": { "str": "makeshift wooden bucket" },
+     "description": "A large bucket for holding water, made from hollowing out a log and adding handles made of natural cordage.  Can hold 7 liters.",
+diff --git a/MST_Extra/items/generic.json b/MST_Extra/items/generic.json
+index 684fe24ec8c8..9a2d3abbf22a 100644
+--- a/MST_Extra/items/generic.json
++++ b/MST_Extra/items/generic.json
+@@ -3,7 +3,7 @@
+     "id": "javelin_stone",
+     "copy-from": "javelin",
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "name": { "str": "stone javelin" },
+     "description": "A throwing spear with a stone spearhead.",
+     "material": [ "wood", "stone" ],
+@@ -18,7 +18,7 @@
+     "id": "javelin_copper",
+     "copy-from": "javelin_iron",
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "name": { "str": "copper javelin" },
+     "description": "A copper-tipped throwing spear.",
+     "material": [ "wood", "copper" ],
+@@ -33,7 +33,7 @@
+     "id": "log_frame_item",
+     "category": "veh_parts",
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "name": { "str": "log frame" },
+     "description": "A heavy section of frame carved from a log, can be used for making sturdy wooden vehicle structures.  Also usable for a raft, log canoe, outriggers for a boat, etc due to its buoyancy.",
+     "weight": "12 kg",
+@@ -47,7 +47,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "id": "makeshift_sled_frame_item",
+     "sub": "frame_wood_light",
+     "name": { "str": "light woven frame" },
+@@ -65,7 +65,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "makeshift_sled_basket_item",
+     "name": { "str": "woven storage basket" },
+     "description": "A folding basket made from woven straw or birchbark, supported by a wooden framework.",
+@@ -81,7 +81,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "birchbark_panel",
+     "symbol": "o",
+     "color": "brown",
+@@ -99,7 +99,7 @@
+     "id": "cordage_6_leather",
+     "copy-from": "string_6",
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "name": { "str": "short leather cord" },
+     "description": "A 6-inch (or about 15 cm) long piece of rawhide or leather cord.  Useful for some purposes, but not as strong or flexible as proper string.",
+     "proportional": { "price": 0.5 },
+@@ -109,7 +109,7 @@
+     "id": "cordage_36_leather",
+     "copy-from": "string_36",
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "name": { "str": "long leather cord" },
+     "description": "A 3-foot (or about 90 cm) long piece of rawhide or leather cord.  Useful for some purposes, but not as strong or flexible as proper string.",
+     "proportional": { "price": 0.5 },
+diff --git a/MST_Extra/items/item_overrides.json b/MST_Extra/items/item_overrides.json
+index f972d340151f..41439ee86166 100644
+--- a/MST_Extra/items/item_overrides.json
++++ b/MST_Extra/items/item_overrides.json
+@@ -3,103 +3,109 @@
+     "id": "rubber_slug",
+     "copy-from": "rubber_slug",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "rubber slug" },
+     "ammo_type": "pebble",
+     "damage": { "damage_type": "bullet", "amount": 2 },
+     "range": 10,
+     "dispersion": 7,
+-    "extend": { "effects": [ "BEANBAG", "NEVER_MISFIRES", "NON_FOULING", "RECOVER_2" ] }
++    "recovery_chance": 2,
++    "effects": [ "BEANBAG", "NEVER_MISFIRES", "NON_FOULING" ]
+   },
+   {
+     "id": "petrified_eye",
+     "copy-from": "petrified_eye",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "petrified eye" },
+     "ammo_type": "rock",
+     "damage": { "damage_type": "stab", "amount": 7 },
+     "range": 10,
+     "dispersion": 14,
+-    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_80" ] }
++    "recovery_chance": 80,
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING" ]
+   },
+   {
+     "id": "spiral_stone",
+     "copy-from": "spiral_stone",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "spiral stone" },
+     "ammo_type": "rock",
+     "damage": { "damage_type": "stab", "amount": 7 },
+     "range": 10,
+     "dispersion": 14,
+-    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_80" ] }
++    "recovery_chance": 80,
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING" ]
+   },
+   {
+     "id": "chunk_sulfur",
+     "copy-from": "chunk_sulfur",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "chunk of sulfur" },
+     "ammo_type": "rock",
+     "damage": { "damage_type": "stab", "amount": 7 },
+     "range": 10,
+     "dispersion": 14,
+-    "extend": { "effects": [ "BLINDS_EYES", "NEVER_MISFIRES", "NON_FOULING" ] }
++    "effects": [ "BLINDS_EYES", "NEVER_MISFIRES", "NON_FOULING" ]
+   },
+   {
+     "id": "material_limestone",
+     "copy-from": "material_limestone",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "limestone" },
+     "ammo_type": "pebble",
+     "damage": { "damage_type": "bullet", "amount": 2 },
+     "range": 10,
+     "dispersion": 14,
+-    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING" ] }
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING" ]
+   },
+   {
+     "id": "golf_ball",
+     "copy-from": "golf_ball",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "golf ball" },
+     "ammo_type": "rock",
+     "damage": { "damage_type": "stab", "amount": 3 },
+     "range": 12,
+     "dispersion": 14,
+-    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ] }
++    "recovery_chance": 60,
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ]
+   },
+   {
+     "id": "pool_ball",
+     "copy-from": "pool_ball",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "pool ball" },
+     "ammo_type": "rock",
+     "damage": { "damage_type": "stab", "amount": 6 },
+     "range": 12,
+     "dispersion": 14,
+-    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ] }
++    "recovery_chance": 60,
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ]
+   },
+   {
+     "id": "baseball",
+     "copy-from": "baseball",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "name": { "str": "baseball" },
+     "ammo_type": "rock",
+     "damage": { "damage_type": "stab", "amount": 5 },
+     "range": 14,
+     "dispersion": 14,
+-    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ] }
++    "recovery_chance": 60,
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ]
+   },
+   {
+     "id": "tarp",
+     "copy-from": "tarp",
+     "type": "ITEM",
+-	  "subtype": ["armor"],
++	  "subtypes": ["armor"],
+     "name": { "str": "tarpaulin" },
+     "qualities": [ [ "SURFACE", 3 ] ]
+   }
+diff --git a/MST_Extra/items/ranged.json b/MST_Extra/items/ranged.json
+index 52b94fdd5e8e..ab48b7194027 100644
+--- a/MST_Extra/items/ranged.json
++++ b/MST_Extra/items/ranged.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "atlatl",
+     "type": "ITEM",
+-    "subtype": ["GUN"],
++    "subtypes": ["GUN"],
+     "name": { "str": "atlatl" },
+     "description": "A wooden tool for supporting a javelin, to throw it more effectively than by hand.",
+     "weight": "116 g",
+@@ -27,7 +27,7 @@
+   {
+     "id": "crossbow_makeshift",
+     "type": "ITEM",
+-    "subtype": ["GUN"],
++    "subtypes": ["GUN"],
+     "name": { "str": "makeshift crossbow" },
+     "description": "A simple, handmade crossbow of the Skane style, with a wooden peg that is pushed up from underneath to loose the bowstring.  Not as powerful as other crossbow designs, but it is easier to draw the bow back.  Bolts fired from this weapon have a good chance of remaining intact for re-use.",
+     "weight": "2185 g",
+diff --git a/MST_Extra/items/tool_armor.json b/MST_Extra/items/tool_armor.json
+index 07a8f1ddf4ff..4ae61c567cb4 100644
+--- a/MST_Extra/items/tool_armor.json
++++ b/MST_Extra/items/tool_armor.json
+@@ -1,6 +1,7 @@
+ [
+   {
+-    "type": "TOOL_ARMOR",
++    "type": "ITEM",
++    "subtypes": [ "TOOL", "ARMOR" ],
+     "id": "side_drum_makeshift",
+     "name": { "str": "side drum" },
+     "category": "tools",
+@@ -36,7 +37,8 @@
+   },
+   {
+     "id": "mask_gas_makeshift",
+-    "type": "TOOL_ARMOR",
++    "type": "ITEM",
++    "subtypes": [ "TOOL", "ARMOR" ],
+     "name": { "str": "makeshift gas hood" },
+     "looks_like": "balclava",
+     "category": "clothing",
+@@ -53,15 +55,17 @@
+     "material_thickness": 2,
+     "environmental_protection": 1,
+     "environmental_protection_with_filter": 15,
+-    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "gasfilter_m": 100 } } ],
+-    "ammo": [ "gasfilter_m" ],
++    "pocket_data": [ { "pocket_type": "MAGAZINE_WELL", "flag_restriction": [ "GASFILTER_MED" ], "default_magazine": "gasfilter_med" } ],
++    "tool_ammo": "gasfilter_m",
+     "use_action": "GASMASK_ACTIVATE",
++    "tick_action": [ "GASMASK" ],
+     "flags": [ "OUTER" ],
+     "armor": [ { "encumbrance": 20, "coverage": 100, "covers": [ "head", "mouth", "eyes" ] } ]
+   },
+   {
+     "id": "straw_bed_rollmat",
+-    "type": "TOOL_ARMOR",
++    "type": "ITEM",
++    "subtypes": [ "TOOL", "ARMOR" ],
+     "name": { "str_sp": "woven straw bedding" },
+     "description": "A thick mat of tightly-woven straw or pine boughs.  It could be worn as a thick blanket, or used to deploy it as a mat to sleep on.",
+     "weight": "1500 g",
+diff --git a/MST_Extra/items/tools.json b/MST_Extra/items/tools.json
+index 863581224fdc..e18ceec0761e 100644
+--- a/MST_Extra/items/tools.json
++++ b/MST_Extra/items/tools.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "heavy_snare_kit",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "heavy snare kit" },
+     "description": "This is a kit for a simple trap consisting of a rope noose and a snare trigger.  It requires a tree nearby.  It is effective at trapping monsters.",
+     "weight": "1066 g",
+@@ -24,7 +24,7 @@
+   {
+     "id": "light_snare_kit",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "light snare kit" },
+     "description": "This is a kit for a simple trap consisting of a string noose and a snare trigger.  It requires a young tree nearby.  It is effective at trapping and killing some small animals.",
+     "weight": "886 g",
+@@ -46,7 +46,7 @@
+   {
+     "id": "snare_trigger",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "snare trigger" },
+     "description": "This is a stick that has been cut into a trigger mechanism for a snare trap.",
+     "weight": "850 g",
+@@ -58,7 +58,7 @@
+   {
+     "id": "primitive_hoe",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "stone hoe" },
+     "description": "This is a farming implement made with a broad stone blade, that can be used to till earth.",
+     "weight": "1300 g",
+@@ -75,7 +75,7 @@
+   {
+     "id": "makeshift_sled_item",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "symbol": "0",
+     "color": "light_gray",
+     "name": { "str": "makeshift sled" },
+@@ -95,7 +95,7 @@
+   {
+     "id": "log_canoe_item",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "symbol": "0",
+     "color": "brown",
+     "name": { "str": "log canoe" },
+@@ -115,7 +115,7 @@
+   {
+     "id": "mound_distillation",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "copy-from": "fake_item",
+     "name": { "str_sp": "makeshift distillation" },
+     "weight": "1 g",
+@@ -126,7 +126,7 @@
+   {
+     "id": "pulley lifting",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "copy-from": "fake_item",
+     "name": { "str_sp": "pulley lifting" },
+     "weight": "1 g",
+@@ -136,7 +136,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "id": "tarp_raincatcher_leather",
+     "copy-from": "tarp_raincatcher",
+     "name": { "str": "leather tarp raincatcher" },
+@@ -157,7 +157,7 @@
+     "id": "tanning_hide_small",
+     "copy-from": "tanning_hide",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "scrap of tanning leather", "str_pl": "scraps of tanning leather" },
+     "description": "A small piece of treated animal hide, undergoing the chemical processes required to become leather.  You will be able to activate it to unroll and make use of it when it is done.",
+     "weight": "80 g",
+@@ -176,7 +176,7 @@
+     "id": "tanning_pelt_small",
+     "copy-from": "tanning_pelt",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "scrap of tanning fur", "str_pl": "scraps of tanning fur" },
+     "description": "A small piece of treated animal pelt, undergoing the chemical processes required to become fur.  You will be able to activate it to unroll and make use of it when it is done.",
+     "weight": "80 g",
+@@ -196,7 +196,7 @@
+     "copy-from": "tinderbox",
+     "sub": "tinderbox",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "clay ember carrier" },
+     "description": "This is a small ceramic fire pot, with a lid and small holes for controlled airflow.  It can nurture a smoldering ember for a long time, to start fires without modern tools.",
+     "material": "clay",
+@@ -218,7 +218,7 @@
+     "copy-from": "tinderbox_on",
+     "sub": "tinderbox_on",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "clay ember carrier (lit)", "str_pl": "clay ember carriers (lit)" },
+     "description": "This is a small ceramic fire pot, with a lid and small holes for controlled airflow.  An ember is smoldering inside it, and can be used to start a campfire.",
+     "material": "clay",
+@@ -240,7 +240,7 @@
+     "id": "hobo_stove_clay",
+     "looks_like": "clay_pot",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "clay oven" },
+     "description": "This is a ancient style of portable ceramic oven.  Use it to place on the ground, allowing you to keep a small fire safe from wind and rain.",
+     "weight": "2500 g",
+@@ -257,7 +257,7 @@
+     "id": "misc_repairkit_makeshift",
+     "looks_like": "misc_repairkit",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "makeshift repair kit" },
+     "description": "This is a portable toolkit, consisting of a primitive knife for carving replacement parts, an adze for more heavy-duty wood cutting, and a patch of soft material for cleaning surfaces.  It can be used to repair certain items if supplied with pitch, though it isn't ideal for complex work.",
+     "weight": "1800 g",
+@@ -268,7 +268,7 @@
+     "material": [ "stone", "wood" ],
+     "symbol": ";",
+     "color": "light_gray",
+-    "ammo": [ "pitch_wood" ],
++    "tool_ammo": [ "pitch_wood" ],
+     "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "pitch_wood": 100 } } ],
+     "charges_per_use": 1,
+     "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 11 ], [ "SAW_W", 1 ] ],
+@@ -289,7 +289,7 @@
+     "id": "hand_drill_makeshift",
+     "copy-from": "hand_drill",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "flint drill" },
+     "description": "A prehistoric woodworking tool, little more than a fine sharp blade tipping a makeshift bow drill.  It's rather limited in usage, primarily meant to be used on wood.",
+     "price": "2 USD",
+@@ -299,7 +299,7 @@
+   {
+     "id": "fire_plough",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "fire plough" },
+     "description": "A simple form of primitive firemaking, little more than two pieces of wood with a groove worn into one of them, to light an ember through friction.  Starting a fire with this will be laborious and slow, but it's better than nothing.",
+     "weight": "1040 g",
+@@ -317,7 +317,7 @@
+   {
+     "id": "char_purifier_fake",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "makeshift water purifier" },
+     "description": "This is a pseudo item.",
+     "material": [ "wood", "cotton" ],
+@@ -326,7 +326,7 @@
+     "symbol": ";",
+     "color": "light_gray",
+     "sub": "water_purifier",
+-    "ammo": "charcoal",
++    "tool_ammo": "charcoal",
+     "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "charcoal": 500 } } ],
+     "charges_per_use": 1,
+     "flags": [ "ALLOWS_REMOTE_USE" ]
+@@ -334,7 +334,7 @@
+   {
+     "id": "pot_canning_clay",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "clay canning pot" },
+     "sub": "pot_canning",
+     "looks_like": "pot_canning",
+diff --git a/MST_Extra/items/wheels.json b/MST_Extra/items/wheels.json
+index e7311cb152de..2d52c455fc0d 100644
+--- a/MST_Extra/items/wheels.json
++++ b/MST_Extra/items/wheels.json
+@@ -3,7 +3,7 @@
+     "id": "makeshift_sled_runners_item",
+     "category": "veh_parts",
+     "type": "ITEM",
+-	"subtype": ["wheel"],
++	"subtypes": ["WHEEL"],
+     "name": { "str_sp": "sled runners" },
+     "description": "Simple wooden runners for a hand-pulled sled.",
+     "weight": "2500 g",
+diff --git a/MST_Extra/recipes/recipe_other.json b/MST_Extra/recipes/recipe_other.json
+index df73f54db383..7dda99b951de 100644
+--- a/MST_Extra/recipes/recipe_other.json
++++ b/MST_Extra/recipes/recipe_other.json
+@@ -11,7 +11,7 @@
+     "time": "30 m",
+     "autolearn": true,
+     "book_learn": [ [ "textbook_survival", 2 ], [ "mag_survival", 3 ] ],
+-    "using": [ [ "forging_standard", 1 ], [ "steel_tiny", 1 ] ],
++    "using": [ [ "forging_standard", 1 ], [ "steel_chunk_any", 1 ] ],
+     "//": "The knapping would only require a hammering quality of 1, but forging the firesteel requires a hammering quality of 3.",
+     "qualities": [
+       { "id": "HAMMER", "level": 3 },
+diff --git a/MST_Extra/recipes/recipe_overrides.json b/MST_Extra/recipes/recipe_overrides.json
+index bab0a3f21234..cf6ff53b9a7c 100644
+--- a/MST_Extra/recipes/recipe_overrides.json
++++ b/MST_Extra/recipes/recipe_overrides.json
+@@ -121,8 +121,11 @@
+     "type": "recipe",
+     "result": "pemmican",
+     "copy-from": "pemmican",
++    "qualities": [ { "id": "CUT", "level": 2 } ],
++    "tools": [ [ [ "surface_heat", 40, "LIST" ] ] ],
++    "proficiencies": [ { "proficiency": "prof_food_prep" }, { "proficiency": "prof_preservation" } ],
+     "components": [
+-      [ [ "edible_tallow_lard", 2, "LIST" ], [ "ghee", 2 ] ],
++      [ [ "edible_tallow", 5, "LIST" ], [ "ghee", 2 ] ],
+       [
+         [ "jerky", 2 ],
+         [ "dry_meat", 2 ],
+@@ -131,6 +134,7 @@
+         [ "fish_smoked", 2 ],
+         [ "dry_lobster", 2 ],
+         [ "lobster_smoked", 2 ],
++        [ "poultry_smoked", 2 ],
+         [ "jerky_offal", 2 ],
+         [ "salted_fish", 2 ]
+       ],
+@@ -140,19 +144,13 @@
+         [ "dry_fruit", 2 ],
+         [ "dry_mushroom", 2 ],
+         [ "juice_pulp", 4 ],
+-        [ "irradiated_strawberries", 1 ],
+         [ "strawberries", 1 ],
+-        [ "irradiated_blueberries", 1 ],
+         [ "blueberries", 1 ],
+-        [ "irradiated_cherries", 1 ],
+         [ "cherries", 1 ],
+-        [ "irradiated_cranberries", 1 ],
+         [ "cranberries", 1 ],
+-        [ "irradiated_raspberries", 1 ],
+         [ "raspberries", 1 ],
+         [ "wintergreen_berry", 4 ],
+         [ "m_stellatum_berries", 4 ],
+-        [ "irradiated_blackberries", 1 ],
+         [ "blackberries", 1 ]
+       ]
+     ]
+@@ -161,8 +159,11 @@
+     "type": "recipe",
+     "result": "pemmican_meat",
+     "copy-from": "pemmican_meat",
++    "qualities": [ { "id": "CUT", "level": 2 } ],
++    "tools": [ [ [ "surface_heat", 36, "LIST" ] ] ],
++    "proficiencies": [ { "proficiency": "prof_food_prep" }, { "proficiency": "prof_preservation" } ],
+     "components": [
+-      [ [ "edible_tallow_lard", 2, "LIST" ], [ "ghee", 2 ] ],
++      [ [ "edible_tallow", 5, "LIST" ], [ "ghee", 2 ] ],
+       [
+         [ "jerky", 2 ],
+         [ "dry_meat", 2 ],

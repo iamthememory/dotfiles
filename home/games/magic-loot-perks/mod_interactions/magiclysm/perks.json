@@ -12,7 +12,7 @@
     "activated_eocs": [ "EOC_magic_loot_magiclysm_books_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_magiclysm_books_off" ],
     "processed_eocs": [ "EOC_magic_loot_magiclysm_books_find" ],
-    "time": 24000,
+    "time": 24000
   },
   {
     "type": "mutation",
@@ -27,6 +27,6 @@
     "activated_eocs": [ "EOC_magic_loot_magiclysm_attunement_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_magiclysm_attunement_off" ],
     "processed_eocs": [ "EOC_magic_loot_magiclysm_attunement_find" ],
-    "time": 24000,
+    "time": 24000
   }
 ]

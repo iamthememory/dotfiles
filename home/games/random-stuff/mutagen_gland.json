@@ -5,7 +5,7 @@
     "condition": { "u_has_trait": { "context_val": "gained_mutation" } },
     "effect": [
       { "u_message": "You gained the <context_val:gained_mutation> mutation and your mutagen gland has stopped producing mutagen for now." },
-      { "math": [ "u_recently_mutated_cooldown = 36 + u_mutations_gained" ] },
+      { "math": [ "u_recently_mutated_cooldown = 36" ] },
       { "math": [ "u_mutations_gained++" ] },
       { "math": [ "u_vitamin('mutagen') = max( 0, u_vitamin('mutagen') - u_mutagen_gland_surplus )" ] },
       {

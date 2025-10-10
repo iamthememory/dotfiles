@@ -114,7 +114,13 @@ in
       arcana = pkgs.cataclysmDDA.buildMod {
         modName = "Arcana";
         version = inputs.cataclysm-dda-arcana.lastModifiedDate;
-        src = inputs.cataclysm-dda-arcana;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-arcana-patched";
+          src = inputs.cataclysm-dda-arcana;
+          patches = [
+            ./cataclysm-arcana-fix.patch
+          ];
+        };
         modRoot = "Arcana";
       };
 
@@ -136,7 +142,13 @@ in
       e85-engines = pkgs.cataclysmDDA.buildMod {
         modName = "E85_Engines";
         version = inputs.cataclysm-dda-e85-engines.lastModifiedDate;
-        src = inputs.cataclysm-dda-e85-engines;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-e85-engines-patched";
+          src = inputs.cataclysm-dda-e85-engines;
+          patches = [
+            ./cataclysm-e85-fix.patch
+          ];
+        };
       };
 
       grow-more-drugs = pkgs.cataclysmDDA.buildMod {
@@ -167,16 +179,30 @@ in
       medieval = pkgs.cataclysmDDA.buildMod {
         modName = "Medieval_Mod_Reborn";
         version = inputs.cataclysm-dda-medieval.lastModifiedDate;
-        src = inputs.cataclysm-dda-medieval;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-medieval-patched";
+          src = inputs.cataclysm-dda-medieval;
+          patches = [
+            ./cataclysm-medieval-fix.patch
+          ];
+        };
         modRoot = "Medieval_Mod_Reborn";
       };
 
       minimods =
         let
+          patched-src = pkgs.applyPatches {
+            name = "cataclysm-dda-minimods-patched";
+            src = inputs.cataclysm-dda-minimods;
+            patches = [
+              ./cataclysm-minimods-fix.patch
+            ];
+          };
+
           mini-mod = modRoot: modName: pkgs.cataclysmDDA.buildMod {
             inherit modName modRoot;
             version = inputs.cataclysm-dda-minimods.lastModifiedDate;
-            src = inputs.cataclysm-dda-minimods;
+            src = patched-src;
           };
         in
         builtins.attrValues (builtins.mapAttrs mini-mod {
@@ -264,21 +290,39 @@ in
       mst-extra = pkgs.cataclysmDDA.buildMod {
         modName = "MST_Extra";
         version = inputs.cataclysm-dda-mst-extra.lastModifiedDate;
-        src = inputs.cataclysm-dda-mst-extra;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-mst-extra-patched";
+          src = inputs.cataclysm-dda-mst-extra;
+          patches = [
+            ./cataclysm-mst-fix.patch
+          ];
+        };
         modRoot = "MST_Extra";
       };
 
       nocts = pkgs.cataclysmDDA.buildMod {
         modName = "Cata++";
         version = inputs.cataclysm-dda-nocts.lastModifiedDate;
-        src = inputs.cataclysm-dda-nocts;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-nocts-patched";
+          src = inputs.cataclysm-dda-nocts;
+          patches = [
+            ./cataclysm-nocts-fix.patch
+          ];
+        };
         modRoot = "nocts_cata_mod_DDA";
       };
 
       pm-world = pkgs.cataclysmDDA.buildMod {
         modName = "pm_world";
         version = inputs.cataclysm-dda-pm-world.lastModifiedDate;
-        src = inputs.cataclysm-dda-pm-world;
+        src = pkgs.applyPatches {
+          name = "cataclysm-dda-pm-world-patched";
+          src = inputs.cataclysm-dda-pm-world;
+          patches = [
+            ./cataclysm-pm-fix.patch
+          ];
+        };
       };
 
       sleepscumming-keep = pkgs.cataclysmDDA.buildMod {

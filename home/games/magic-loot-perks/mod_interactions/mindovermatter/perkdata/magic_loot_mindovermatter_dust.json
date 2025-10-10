@@ -32,7 +32,7 @@
       { "item": "matrix_crystal_telekin_dust", "prob": 100 },
       { "item": "matrix_crystal_telepath_dust", "prob": 100 },
       { "item": "matrix_crystal_teleport_dust", "prob": 100 },
-      { "item": "matrix_crystal_vitakin_dust", "prob": 100 },
+      { "item": "matrix_crystal_vitakin_dust", "prob": 100 }
     ]
   }
 ]

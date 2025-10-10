@@ -33,7 +33,7 @@
       { "item": "matrix_crystal_telepathy", "prob": 100 },
       { "item": "matrix_crystal_teleportation", "prob": 100 },
       { "item": "matrix_crystal_vitakinesis", "prob": 100 },
-      { "item": "matrix_crystal_coruscating", "prob": 25 },
+      { "item": "matrix_crystal_coruscating", "prob": 25 }
     ]
   }
 ]

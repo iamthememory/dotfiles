@@ -12,6 +12,6 @@
     "activated_eocs": [ "EOC_magic_loot_xedra_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_xedra_off" ],
     "processed_eocs": [ "EOC_magic_loot_xedra_find" ],
-    "time": 24000,
+    "time": 24000
   }
 ]

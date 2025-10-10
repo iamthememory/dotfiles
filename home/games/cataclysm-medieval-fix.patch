@@ -1,0 +1,187 @@
+diff --git a/Medieval_Mod_Reborn/items/ammo.json b/Medieval_Mod_Reborn/items/ammo.json
+index 8e2e67aa839f..63f469b3278d 100644
+--- a/Medieval_Mod_Reborn/items/ammo.json
++++ b/Medieval_Mod_Reborn/items/ammo.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "lance_charge",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "fire lance charge" },
+     "description": "Little more than an incendiary charge of gunpowder for a basic firearm.  Despite the minimal range, it packs a punch.",
+     "weight": "3 g",
+@@ -21,7 +21,7 @@
+   {
+     "id": "lance_charge_shot",
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++    "subtypes": ["AMMO"],
+     "name": { "str": "fire lance shot" },
+     "description": "Little more than an incendiary charge of gunpowder for a basic firearm, with small pellets as shot.  Despite the minimal range, it packs a punch.",
+     "weight": "5 g",
+diff --git a/Medieval_Mod_Reborn/items/armor.json b/Medieval_Mod_Reborn/items/armor.json
+index 3a9ab33b2184..bc545c912dc0 100644
+--- a/Medieval_Mod_Reborn/items/armor.json
++++ b/Medieval_Mod_Reborn/items/armor.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "shield_wooden",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "wooden shield" },
+     "category": "armor",
+     "description": "A crude wooden shield, lacking any metal or leather reinforcement.  Tolerable weight but not very tough.",
+@@ -24,7 +24,7 @@
+   {
+     "id": "shield_wooden_large",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "large wooden shield" },
+     "category": "armor",
+     "description": "An crude wooden tower shield, lacking any metal or leather reinforcement.  Bulky, but offers a decent amount of protection.",
+@@ -46,7 +46,7 @@
+   {
+     "id": "shield_leather",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "leather-reinforced shield" },
+     "category": "armor",
+     "description": "A simple round shield made of wood with leather reinforcement.  Sturdier and stronger than a simple wooden shield, and less encumbering than a metal one.",
+@@ -70,7 +70,7 @@
+   {
+     "id": "shield_banded",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "banded shield" },
+     "category": "armor",
+     "description": "A simple round shield made of wood with bands of steel reinforcing it.  Stronger than a simple wooden shield, but also more encumbering.",
+@@ -95,7 +95,7 @@
+     "copy-from": "shield_leather",
+     "looks_like": "shield_wooden_large",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "large leather-reinforced shield" },
+     "description": "A large shield made of wood with leather reinforcement.  Sturdier and stronger than a basic wooden shield, and less encumbering than a metal one.",
+     "volume": "5 L",
+@@ -112,7 +112,7 @@
+     "copy-from": "shield_banded",
+     "looks_like": "shield_wooden_large",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "large banded shield" },
+     "description": "A large shield made of wood with steel bands reinforcing it.  Stronger than a simple wooden shield, but also more encumbering.",
+     "volume": "5 L",
+@@ -127,7 +127,7 @@
+   {
+     "id": "shield_hoplon",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "hoplon" },
+     "category": "armor",
+     "description": "A convex round shield from ancient Greece, made of wood reinforced with bronze.  Heavy but effective.",
+@@ -150,7 +150,7 @@
+   {
+     "id": "shield_buckler",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "buckler" },
+     "category": "armor",
+     "description": "A small metal shield historically used for dueling rather than protection from arrows.  It's small and light enough to not hinder the use of your hands.",
+@@ -173,7 +173,7 @@
+   {
+     "id": "helmet_szyszak",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "category": "armor",
+     "name": { "str": "szyszak", "str_pl": "szyszaki" },
+     "description": "A post-Renaissance type of lobster-tailed helmet with an ornate crest, short brim, and well-decorated protection for the eyes and nose.",
+@@ -194,7 +194,7 @@
+   {
+     "id": "wings_ornamental",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "name": { "str": "ornamental wings", "str_pl": "ornamental wings" },
+     "description": "A wooden frame richly decorated with feathers, with harness securing them at the waist.  Looks badass and provides minor protection, but not very practical overall.",
+     "weight": "933 g",
+@@ -212,7 +212,7 @@
+   {
+     "id": "armor_samurai_tosei",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "category": "armor",
+     "name": { "str_sp": "Tosei-gusoku" },
+     "description": "Japanese samurai armor of the 16th Century, incorporating then-modern designs to provide greater protection.",
+@@ -233,7 +233,7 @@
+   {
+     "id": "sabatons_plate",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "category": "armor",
+     "name": { "str": "pair of sabatons", "str_pl": "pairs of sabatons" },
+     "description": "A Swedish power me- no, a component of medieval plate armor, covering the feet.  Can be worn over other boots.",
+@@ -255,7 +255,7 @@
+   {
+     "id": "demigloves_plate",
+     "type": "ITEM",
+-	"subtype": ["ARMOR"],
++	"subtypes": ["ARMOR"],
+     "category": "armor",
+     "name": { "str": "pair of armored demi-gauntlets", "str_pl": "pairs of armored demi-gauntlets" },
+     "description": "A robust set of fingerless armor-plated gloves, offering less coverage in exchange for solid construction and greater dexterity.",
+diff --git a/Medieval_Mod_Reborn/items/ranged.json b/Medieval_Mod_Reborn/items/ranged.json
+index 73f246ceca49..4ceeb90f68cb 100644
+--- a/Medieval_Mod_Reborn/items/ranged.json
++++ b/Medieval_Mod_Reborn/items/ranged.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "fire_lance",
+     "type": "ITEM",
+-	"subtype": ["GUN"],
++	"subtypes": ["GUN"],
+     "name": "fire lance",
+     "description": "A steel spear with a small tube attached, to hold an incendiary charge of gunpowder.  While it has an extremely short range, it gives a powerful edge in close combat.",
+     "weight": "1538 g",
+@@ -32,7 +32,7 @@
+   {
+     "id": "fire_lance_crude",
+     "type": "ITEM",
+-	"subtype": ["GUN"],
++	"subtypes": ["GUN"],
+     "name": "makeshift fire lance",
+     "description": "Little more than a small tube capable of holding a charge of gunpowder, secured to a stick.  While it has an extremely short range, it gives a powerful edge in close combat.",
+     "weight": "1038 g",
+diff --git a/Medieval_Mod_Reborn/items/tools.json b/Medieval_Mod_Reborn/items/tools.json
+index d3ac78421617..d3c62814c3e7 100644
+--- a/Medieval_Mod_Reborn/items/tools.json
++++ b/Medieval_Mod_Reborn/items/tools.json
+@@ -3,7 +3,7 @@
+     "id": "dusksword",
+     "copy-from": "longsword",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str_sp": "Dusk" },
+     "//": "This was an old, debug-only item that someone asked me to add a long time ago, in response to getting ideas and advice from them.",
+     "description": "A longsword, made out of a very dark, almost black metal.  It seems to hold a greater edge than usual steel blades and feels …more comfortable in the hand.  While the blade is made out of this dark metal, the crossguard and the pommel seem to be made out of a brighter material, which feels abnormally cool to the touch.",
+@@ -18,7 +18,7 @@
+   {
+     "id": "sword_gladius",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "category": "weapons",
+     "looks_like": "sword_forged",
+     "name": { "str": "gladius", "str_pl": "gladii" },

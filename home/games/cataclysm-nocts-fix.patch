@@ -1,0 +1,74 @@
+diff --git a/nocts_cata_mod_DDA/Surv_help/c_armor.json b/nocts_cata_mod_DDA/Surv_help/c_armor.json
+index 01f755b34d85..2fd4f0483777 100644
+--- a/nocts_cata_mod_DDA/Surv_help/c_armor.json
++++ b/nocts_cata_mod_DDA/Surv_help/c_armor.json
+@@ -444,7 +444,8 @@
+     "material_thickness": 4,
+     "environmental_protection": 5,
+     "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "C_RADIOGENIC_GOGGLES" ] } ],
+-    "flags": [ "GNV_EFFECT", "WATERPROOF", "STURDY", "RADIOACTIVE", "LIGHT_25", "PADDED" ],
++    "light": 25,
++    "flags": [ "GNV_EFFECT", "WATERPROOF", "STURDY", "RADIOACTIVE", "PADDED" ],
+     "armor": [ { "encumbrance": 30, "coverage": 100, "covers": [ "eyes" ] } ]
+   },
+   {
+diff --git a/nocts_cata_mod_DDA/Surv_help/c_tools.json b/nocts_cata_mod_DDA/Surv_help/c_tools.json
+index 696d9e2be2c0..050b324a51b5 100644
+--- a/nocts_cata_mod_DDA/Surv_help/c_tools.json
++++ b/nocts_cata_mod_DDA/Surv_help/c_tools.json
+@@ -43,7 +43,8 @@
+     "price": "8 USD",
+     "price_postapoc": "2 USD",
+     "material": [ "plastic", "aluminum" ],
+-    "flags": [ "LIGHT_450", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
++    "light": 450,
++    "flags": [ "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
+     "weight": "400 g",
+     "volume": "500 ml",
+     "melee_damage": { "bash": 1 },
+@@ -114,7 +115,8 @@
+     "price": "8 USD",
+     "price_postapoc": "2 USD",
+     "material": [ "plastic", "aluminum" ],
+-    "flags": [ "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS", "LIGHT_450", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
++    "light": 450,
++    "flags": [ "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
+     "weight": "400 g",
+     "volume": "500 ml",
+     "melee_damage": { "bash": 1 },
+@@ -206,7 +208,8 @@
+     "name": { "str": "solar torch (lit)", "str_pl": "solar torches (lit)" },
+     "description": "A mysterious torch that uses the power of the sun (and blob goo) to light itself.  Somehow, the gasoline synthesized goo produces gasoline when in the sun continuously soaking the rag making it \"rechargeable\" in a sense.  It is burning, producing plenty of light until it runs out of fuel.",
+     "material": [ "wood" ],
+-    "flags": [ "FIRE", "LIGHT_310", "CHARGEDIM", "FLAMING", "NO_UNLOAD", "NO_RELOAD" ],
++    "light": 310,
++    "flags": [ "FIRE", "CHARGEDIM", "FLAMING", "NO_UNLOAD", "NO_RELOAD" ],
+     "weight": "942 g",
+     "volume": "1 L",
+     "melee_damage": { "bash": 8 },
+diff --git a/nocts_cata_mod_DDA/Terrain/regional_overlay.json b/nocts_cata_mod_DDA/Terrain/regional_overlay.json
+deleted file mode 100644
+index 4462c911e3e3..000000000000
+--- a/nocts_cata_mod_DDA/Terrain/regional_overlay.json
++++ /dev/null
+@@ -1,20 +0,0 @@
+-[
+-   {
+-      "type": "region_overlay",
+-      "regions": [ "all" ],
+-      "map_extras": {
+-        "surv_encamp": {
+-          "chance": 10,
+-          "extras": {
+-            "mx_crater": 25,
+-            "mx_portal": 15,
+-            "mx_portal_in": 10,
+-            "mx_spider": 25,
+-            "mx_jabberwock": 10,
+-            "mx_supplydrop": 3,
+-            "mx_helicopter": 2
+-          }
+-        }
+-      }
+-   }
+-]

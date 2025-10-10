@@ -19,15 +19,15 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1759954547,
-        "narHash": "sha256-qwaNjzxlL0R3tuxV1QmmJ1ZUSih6Eu2p0/dznxMWwaA=",
-        "owner": "chaosvolt",
+        "lastModified": 1759985298,
+        "narHash": "sha256-dqay1eAPXsIKf73vyhPWeJr3at5K46WdrzwWLkPkhdQ=",
+        "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "3f815188ea32930b70d0d5f9d0db7383fcbb1475",
+        "rev": "6f657092861f5999653052185d51d546f3f4b79a",
         "type": "github"
       },
       "original": {
-        "owner": "chaosvolt",
+        "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
         "type": "github"
       }

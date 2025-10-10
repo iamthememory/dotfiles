@@ -12,7 +12,7 @@
     "activated_eocs": [ "EOC_magic_loot_mindovermatter_crystals_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_mindovermatter_crystals_off" ],
     "processed_eocs": [ "EOC_magic_loot_mindovermatter_crystals_find" ],
-    "time": 24000,
+    "time": 24000
   },
   {
     "type": "mutation",
@@ -27,7 +27,7 @@
     "activated_eocs": [ "EOC_magic_loot_mindovermatter_dust_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_mindovermatter_dust_off" ],
     "processed_eocs": [ "EOC_magic_loot_mindovermatter_dust_find" ],
-    "time": 24000,
+    "time": 24000
   },
   {
     "type": "mutation",
@@ -42,6 +42,6 @@
     "activated_eocs": [ "EOC_magic_loot_mindovermatter_knowledge_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_mindovermatter_knowledge_off" ],
     "processed_eocs": [ "EOC_magic_loot_mindovermatter_knowledge_find" ],
-    "time": 24000,
+    "time": 24000
   }
 ]

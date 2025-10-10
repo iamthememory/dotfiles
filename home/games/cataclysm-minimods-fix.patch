@@ -1,0 +1,139 @@
+diff --git a/Elemental_bionic_weapons/modinfo.json b/Elemental_bionic_weapons/modinfo.json
+index e8318ad7cdcc..c3d692e56207 100644
+--- a/Elemental_bionic_weapons/modinfo.json
++++ b/Elemental_bionic_weapons/modinfo.json
+@@ -12,46 +12,48 @@
+   {
+     "id": "afs_bio_blade_fire",
+     "copy-from": "bionic_general_npc_usable",
+-    "type": "BIONIC_ITEM",
++    "type": "ITEM",
++    "subtypes": [ "BIONIC_ITEM" ],
+     "name": { "str_sp": "Bioweapon Thermal Conduits" },
+     "looks_like": "bio_int_enhancer",
+     "description": "An improved ulnar sheath equipped with thermal inductors allows for the super heating of all types of implanted bladed weaponry.  While this bionic is active, any deployed bionic blades will deal additional fire damage to targets.",
+-    "price": 8000,
+-    "price_postapoc": 3500,
++    "price": "80 USD",
++    "price_postapoc": "35 USD",
+     "weight": "250 g",
+     "difficulty": 8
+   },
+   {
+     "id": "afs_bio_blade_electric",
+     "copy-from": "bionic_general_npc_usable",
+-    "type": "BIONIC_ITEM",
++    "type": "ITEM",
++    "subtypes": [ "BIONIC_ITEM" ],
+     "name": { "str_sp": "Bioweapon Superconductive Channels" },
+     "looks_like": "bio_int_enhancer",
+     "description": "Paired capacitor banks maintain implanted bladed weaponry under constant electrical charge.  While this bionic is active, any deployed bionic blades will deal additional electric damage with a chance of the damage arcing to other nearby targets.",
+-    "price": 8000,
+-    "price_postapoc": 3500,
++    "price": "80 USD",
++    "price_postapoc": "35 USD",
+     "weight": "250 g",
+     "difficulty": 8
+   },
+   {
+     "id": "eoc_bio_superheater_on",
+     "type": "effect_on_condition",
+-    "effect": { "u_add_var": "on", "type": "bio", "context": "superheater", "value": "yes" }
++    "effect": { "math": [ "u_bio_superheater_on = 1" ] }
+   },
+   {
+     "id": "eoc_bio_superheater_off",
+     "type": "effect_on_condition",
+-    "effect": { "u_lose_var": "on", "type": "bio", "context": "superheater" }
++    "effect": { "math": [ "u_bio_superheater_on = 0" ] }
+   },
+   {
+     "id": "eoc_bio_blade_electric_on",
+     "type": "effect_on_condition",
+-    "effect": { "u_add_var": "on", "type": "bio", "context": "blade_electric", "value": "yes" }
++    "effect": { "math": [ "u_bio_blade_electric_on = 1" ] }
+   },
+   {
+     "id": "eoc_bio_blade_electric_off",
+     "type": "effect_on_condition",
+-    "effect": { "u_lose_var": "on", "type": "bio", "context": "blade_electric" }
++    "effect": { "math": [ "u_bio_blade_electric_on = 0" ] }
+   },
+   {
+     "id": "afs_bio_blade_fire",
+@@ -71,11 +73,11 @@
+         "description": "The superheated bionic weapon cuts and burns with ease.",
+         "condition": {
+           "and": [
+-            { "u_has_var": "on", "type": "bio", "context": "superheater", "value": "yes" },
++            { "math": [ "u_bio_superheater_on > 0" ] },
+             { "u_has_wielded_with_flag": "BIONIC_WEAPON_MELEE" }
+           ]
+         },
+-        "values": [ { "value": "ITEM_DAMAGE_HEAT", "add": 35 } ]
++        "melee_damage_bonus": [ { "type": "heat", "add": 35 } ]
+       }
+     ]
+   },
+@@ -97,12 +99,12 @@
+         "description": "Your bionic weapon sparks under constant electrical charge.",
+         "condition": {
+           "and": [
+-            { "u_has_var": "on", "type": "bio", "context": "blade_electric", "value": "yes" },
++            { "math": [ "u_bio_blade_electric_on > 0" ] },
+             { "u_has_wielded_with_flag": "BIONIC_WEAPON_MELEE" }
+           ]
+         },
+         "hit_you_effect": [ { "id": "bio_blade_electric_arc" } ],
+-        "values": [ { "value": "ITEM_DAMAGE_ELEC", "add": 10 } ]
++        "melee_damage_bonus": [ { "type": "elec", "add": 10 } ]
+       }
+     ]
+   },
+@@ -158,5 +160,16 @@
+         [ "afs_bio_blade_electric", 16 ]
+       ]
+     }
++  },
++  {
++    "id": "EXODII_CBM_unlocks_weapons_medium",
++    "type": "item_group",
++    "copy-from": "EXODII_CBM_unlocks_weapons_medium",
++    "extend": {
++      "items": [
++        [ "afs_bio_blade_fire", 16 ],
++        [ "afs_bio_blade_electric", 16 ]
++      ]
++    }
+   }
+ ]
+diff --git a/Wandering_castle/modinfo.json b/Wandering_castle/modinfo.json
+index 0238adc7d138..38947e10969b 100644
+--- a/Wandering_castle/modinfo.json
++++ b/Wandering_castle/modinfo.json
+@@ -31,7 +31,7 @@
+     "difficulty": 1,
+     "value": 0,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "exodii_base_x0y3z0", "om_special": "exodii_base", "reveal_radius": 5, "search_range": 30 }
++      "assign_mission_target": { "om_terrain": "exodii_base_x0y3z0", "om_special": "exodii_base", "reveal_radius": 5 }
+     },
+     "origins": [ "ORIGIN_GAME_START" ]
+   },
+diff --git a/War-Grappling_hook/modinfo.json b/War-Grappling_hook/modinfo.json
+index 33d6a20d4f36..75253b752366 100644
+--- a/War-Grappling_hook/modinfo.json
++++ b/War-Grappling_hook/modinfo.json
+@@ -12,10 +12,10 @@
+   {
+     "id": "grapnel",
+     "copy-from": "grapnel",
+-    "type": "GENERIC",
++    "type": "ITEM",
+     "name": { "str": "grappling hook" },
+     "to_hit": -3,
+-    "techniques": [ "WBLOCK_1", "WIDE", "SPIN", "RAPID" ],
++    "techniques": [ "WBLOCK_1", "WIDE", "SPIN", "RAPID", "WRAP" ],
+     "qualities": [ [ "COOK", 1 ], [ "ROPE", 2 ] ],
+     "flags": [ "REACH_ATTACK", "REACH3", "DURABLE_MELEE", "NONCONDUCTIVE" ]
+   }

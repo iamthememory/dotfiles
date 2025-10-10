@@ -78,7 +78,7 @@
     };
 
     cataclysm-dda-arcana = {
-      url = "github:chaosvolt/cdda-arcana-mod";
+      url = "github:Standing-Storm/cdda-arcana-mod";
       flake = false;
     };
 
