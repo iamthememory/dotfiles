@@ -141,6 +141,10 @@
       url = "github:Standing-Storm/sleepscumming";
       flake = false;
     };
+    cataclysm-dda-stats-through-kills = {
+      url = "github:KamikazieBoater/StatsThroughKills-EOC";
+      flake = false;
+    };
 
     cataclysm-dda-stats-through-skills = {
       url = "github:Erin105/StatsThroughSkills";

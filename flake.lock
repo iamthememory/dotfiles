@@ -224,6 +224,22 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-stats-through-kills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758064230,
+        "narHash": "sha256-HELp6bDExO/Rse/cdC8XsQF+tOBAUTd+UuLiOuNFAi4=",
+        "owner": "KamikazieBoater",
+        "repo": "StatsThroughKills-EOC",
+        "rev": "db9805e365b9f9025ca838ab615fe89c8e49109d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KamikazieBoater",
+        "repo": "StatsThroughKills-EOC",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-stats-through-skills": {
       "flake": false,
       "locked": {
@@ -584,6 +600,7 @@
         "cataclysm-dda-nocts": "cataclysm-dda-nocts",
         "cataclysm-dda-pm-world": "cataclysm-dda-pm-world",
         "cataclysm-dda-sleepscumming": "cataclysm-dda-sleepscumming",
+        "cataclysm-dda-stats-through-kills": "cataclysm-dda-stats-through-kills",
         "cataclysm-dda-stats-through-skills": "cataclysm-dda-stats-through-skills",
         "cataclysm-dda-tankmod": "cataclysm-dda-tankmod",
         "cdda-sounds": "cdda-sounds",

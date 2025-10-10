@@ -339,6 +339,12 @@ in
         modRoot = "sleepscuming-lose-your-stuff";
       };
 
+      stats-through-kills = pkgs.cataclysmDDA.buildMod {
+        modName = "stk_eoc";
+        version = inputs.cataclysm-dda-stats-through-kills.lastModifiedDate;
+        src = inputs.cataclysm-dda-stats-through-kills;
+      };
+
       stats-through-skills = pkgs.cataclysmDDA.buildMod {
         modName = "StatsThroughSkills";
         version = inputs.cataclysm-dda-stats-through-skills.lastModifiedDate;
@@ -430,6 +436,7 @@ in
         random-stuff
         sleepscumming-keep
         sleepscumming-lose
+        stats-through-kills
         stats-through-skills
         tankmod
         xedra-both-classes
