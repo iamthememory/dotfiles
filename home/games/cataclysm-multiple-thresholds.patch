@@ -1,0 +1,17 @@
+diff --git a/src/mutation.cpp b/src/mutation.cpp
+index 69e123ee05fc..ae54f4402d39 100644
+--- a/src/mutation.cpp
++++ b/src/mutation.cpp
+@@ -2431,10 +2431,12 @@ void Character::try_crossing_threshold( const mutation_category_id &mutation_cat
+ bool Character::can_cross_threshold( const mutation_category_id &mutation_category )
+ {
+     // Threshold-check.  You only get to cross once!
++#if 0
+     if( crossed_threshold() ) {
+         add_msg_debug( debugmode::DF_MUTATION, "can_cross_threshold failed: already post-threshold" );
+         return false;
+     }
++#endif
+
+     if( mutation_category == mutation_category_ANY ) {
+         add_msg_debug( debugmode::DF_MUTATION,
