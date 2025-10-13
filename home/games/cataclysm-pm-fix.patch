@@ -267,6 +267,35 @@ index e77d4cd7394f..534673756ca3 100644
 +    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "TRADER_AVOID", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE", "INTERNET_ACCESS" ]
    }
  ]
+diff --git a/Items/internet/internet_missions.json b/Items/internet/internet_missions.json
+index 79d5255385a6..f0f44b10429d 100644
+--- a/Items/internet/internet_missions.json
++++ b/Items/internet/internet_missions.json
+@@ -90,8 +90,8 @@
+     "origins": [ "ORIGIN_COMPUTER" ],
+     "destination": "w_station_mb1"
+   },
+-  
+-  
++
++
+   {
+     "id": "MISSION_CLEAN_UP_9",
+     "type": "mission_definition",
+@@ -143,10 +143,10 @@
+     "monster_kill_goal": 9,
+     "invisible_on_complete": false,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "road_four_way", "random": true, "search_range": 800, "min_distance": 20, "z": 0 },
++      "assign_mission_target": { "om_terrain": "road", "random": true, "search_range": 800, "min_distance": 20, "z": 0 },
+       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 9, "target": true } ] }
+     },
+     "origins": [ "ORIGIN_COMPUTER" ],
+     "end": { "effect": [ { "math": [ "u_credit += 25000" ] }, { "u_message": "Your account is credited with the reward." } ] }
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/difficulty_options.json b/difficulty_options.json
 index 1e57bf41d39b..54079698fb4a 100644
 --- a/difficulty_options.json

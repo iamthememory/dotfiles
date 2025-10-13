@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1759857575,
-        "narHash": "sha256-1IZahznxGpogDTogI6k21P2OaVUH5BKinG3z+hLR/54=",
+        "lastModified": 1760387932,
+        "narHash": "sha256-Frn5MmU8CPDR+DJPjJjPw8eN+iE+w01fOs4WsrYISIE=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "7733086fc02fa2cd587ac12b67bb0a267bb02b45",
+        "rev": "b791d389ca905534d83df3dc00f2f5447a628138",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1759985298,
-        "narHash": "sha256-dqay1eAPXsIKf73vyhPWeJr3at5K46WdrzwWLkPkhdQ=",
+        "lastModified": 1760233816,
+        "narHash": "sha256-hrRqli6lftoV6ZxfxDpeaU1rtc0iRx6xNqXfmpwJGj0=",
         "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "6f657092861f5999653052185d51d546f3f4b79a",
+        "rev": "8497bf67f57a8720d1f61cef34d053e047650318",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
     "cataclysm-dda-nocts": {
       "flake": false,
       "locked": {
-        "lastModified": 1759997050,
-        "narHash": "sha256-qANpvE9Q5qxXfI+QMW8dfVQS/NHgM5HJE8KguRln/OY=",
+        "lastModified": 1760134726,
+        "narHash": "sha256-ME96g9DX4Srz2M3/botoJSGyk3tqbzx1mh544hwfe8M=",
         "owner": "Noctifer-de-Mortem",
         "repo": "nocts_cata_mod",
-        "rev": "2fc63c26d46af0ebf8e2eaaaead6edf0aafd3414",
+        "rev": "09ca2ba3ee5adf4f451b8588bc5364dc5800400b",
         "type": "github"
       },
       "original": {

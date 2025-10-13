@@ -23,7 +23,7 @@
   {
     "type": "talk_topic",
     "id": "TALK_PERK_MENU_MAGIC_LOOT_MINDOVERMATTER_CRYSTALS",
-    "dynamic_line": "<trait_name:perk_magic_loot_mindovermatter_crystals>: \"<trait_description:perk_magic_loot_mindovermatter>\"_crystals",
+    "dynamic_line": "<trait_name:perk_magic_loot_mindovermatter_crystals>: \"<trait_description:perk_magic_loot_mindovermatter_crystals>\"",
     "responses": [
       {
         "text": "Select Perk.",
