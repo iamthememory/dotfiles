@@ -1,0 +1,16 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_on_kill_award_chrono_exp",
+    "eoc_type": "EVENT",
+    "required_event": "character_kills_monster",
+    "condition": { "u_has_trait": "XEDRA_CHRONOMANCER" },
+    "effect": [
+      { "math": [ "u_vitamin('xedra_chronomancer_insight') += 1" ] },
+      {
+        "if": { "math": [ "global_xedra_chronomancy_setting_hide_insight_messages != 1" ] },
+        "then": { "u_message": "You gain a tiny amount of insight into the workings of time.", "type": "info" }
+      }
+    ]
+  }
+]
