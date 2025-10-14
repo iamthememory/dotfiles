@@ -1,0 +1,16 @@
+diff --git a/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json b/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
+index 462b75d6b8bf..dc3057dcf894 100644
+--- a/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
++++ b/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
+@@ -59,6 +59,11 @@
+     "id": "EOC_PSIONICS_NETHER_ATTUNEMENT_CONSEQUENCES_SETUP",
+     "effect": [  ]
+   },
++  {
++    "type": "effect_on_condition",
++    "id": "EOC_PSIONICS_NETHER_ATTUNEMENT_CONSEQUENCES",
++    "effect": [  ]
++  },
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_PSIONICS_NETHER_AREA_CHECK",

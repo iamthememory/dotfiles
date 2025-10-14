@@ -241,10 +241,18 @@ in
 
       mom-submods =
         let
+          mom-src = pkgs.applyPatches {
+            name = "cataclysm-dda-mom-submods-patched";
+            src = inputs.cataclysm-dda-mom-submods;
+            patches = [
+              ./cataclysm-mom-submods-fix.patch
+            ];
+          };
+
           mom-mod = modRoot: modName: pkgs.cataclysmDDA.buildMod {
             inherit modName modRoot;
             version = inputs.cataclysm-dda-mom-submods.lastModifiedDate;
-            src = inputs.cataclysm-dda-mom-submods;
+            src = mom-src;
           };
         in
         builtins.attrValues (builtins.mapAttrs mom-mod {
