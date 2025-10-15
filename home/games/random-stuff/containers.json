@@ -32,7 +32,6 @@
     "activity_level": "LIGHT_EXERCISE",
     "result": "box_massive_metal",
     "category": "CC_*",
-    "subcategory": "CSC_*_NESTED",
     "skill_used": "fabrication",
     "difficulty": 4,
     "time": "600 m",

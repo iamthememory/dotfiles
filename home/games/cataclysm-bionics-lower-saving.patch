@@ -1,0 +1,28 @@
+diff --git a/src/bionics.cpp b/src/bionics.cpp
+index 9065cbf78330..4f861f183512 100644
+--- a/src/bionics.cpp
++++ b/src/bionics.cpp
+@@ -3043,7 +3043,9 @@ void bionic::toggle_safe_fuel_mod()
+         tmenu.addentry( 4, true, '4', _( "50 %%" ) );
+         tmenu.addentry( 5, true, '5', _( "30 %%" ) );
+         tmenu.addentry( 6, true, '6', _( "10 %%" ) );
+-        tmenu.addentry( 7, true, 'd', _( "Disabled" ) );
++        tmenu.addentry( 7, true, '7', _( "5 %%" ) );
++        tmenu.addentry( 8, true, '8', _( "1 %%" ) );
++        tmenu.addentry( 9, true, 'd', _( "Disabled" ) );
+         tmenu.query();
+
+         switch( tmenu.ret ) {
+@@ -3066,6 +3068,12 @@ void bionic::toggle_safe_fuel_mod()
+                 set_safe_fuel_thresh( 0.10f );
+                 break;
+             case 7:
++                set_safe_fuel_thresh( 0.05f );
++                break;
++            case 8:
++                set_safe_fuel_thresh( 0.01f );
++                break;
++            case 9:
+                 set_safe_fuel_thresh( -1.0f );
+                 break;
+             default:
