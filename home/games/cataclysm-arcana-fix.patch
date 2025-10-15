@@ -1,5 +1,5 @@
 diff --git a/Arcana/item_groups/item_groups_vanilla.json b/Arcana/item_groups/item_groups_vanilla.json
-index be4e4e91ccfa..cec64220d8be 100644
+index be4e4e91ccfa..a8d99d8c035a 100644
 --- a/Arcana/item_groups/item_groups_vanilla.json
 +++ b/Arcana/item_groups/item_groups_vanilla.json
 @@ -325,5 +325,20 @@
@@ -18,7 +18,7 @@ index be4e4e91ccfa..cec64220d8be 100644
 +        [ "bio_essence_surge_cell", 10 ],
 +        [ "bio_temporal_stimulation", 10 ],
 +        [ "bio_life_sign_suppression", 10 ],
-+        [ "bio_kinetic_amplifier", 10 ],
++        [ "bio_kinetic_amplifier", 10 ]
 +      ]
 +    }
    }

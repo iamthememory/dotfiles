@@ -29,7 +29,7 @@
         "max_contains_volume": "8000 L",
         "max_contains_weight": "8000 kg",
         "max_item_length": "10 meter",
-        "weight_multiplier": 0.5,
+        "weight_multiplier": 0.25,
         "rigid": true,
         "holster": true
       }
