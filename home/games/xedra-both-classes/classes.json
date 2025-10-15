@@ -22,5 +22,207 @@
     "id": "INVENTOR",
     "copy-from": "INVENTOR",
     "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "NATIVE_SHAPESHIFTER",
+    "copy-from": "NATIVE_SHAPESHIFTER",
+    "cancels": [  ],
+    "types": [  ],
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "GRACKEN",
+    "copy-from": "GRACKEN",
+    "cancels": [  ],
+    "types": [  ],
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "DHAMPIR_TRAIT",
+    "copy-from": "DHAMPIR_TRAIT",
+    "cancels": [  ],
+    "types": [  ],
+    "delete": { "flags": [ "HERITAGE" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "VAMPIRE",
+    "copy-from": "VAMPIRE",
+    "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "BLOODTHORNE_DRUID",
+    "copy-from": "BLOODTHORNE_DRUID",
+    "cancels": [  ],
+    "types": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "BLOODTHORNE_DRUID_SYMBIOTIC_PLANT",
+    "copy-from": "BLOODTHORNE_DRUID_SYMBIOTIC_PLANT",
+    "delete": { "flags": [ "NO_CBM_INSTALLATION" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "LILIN_TRAITS",
+    "copy-from": "LILIN_TRAITS",
+    "cancels": [  ],
+    "types": [  ],
+    "delete": { "flags": [ "HERITAGE" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "FAIR_FOLK_COMMONER_SELECTOR",
+    "copy-from": "FAIR_FOLK_COMMONER_SELECTOR",
+    "types": [  ],
+    "delete": { "flags": [ "NO_CBM_INSTALLATION" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "UNKNOWING_CHANGELING_NOBLE",
+    "copy-from": "UNKNOWING_CHANGELING_NOBLE",
+    "types": [  ],
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "CHANGELING_MAGIC",
+    "copy-from": "CHANGELING_MAGIC",
+    "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "CHANGELING_SEASONAL_MAGIC_SPRING",
+    "copy-from": "CHANGELING_SEASONAL_MAGIC_SPRING",
+    "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "CHANGELING_SEASONAL_MAGIC_SUMMER",
+    "copy-from": "CHANGELING_SEASONAL_MAGIC_SUMMER",
+    "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "CHANGELING_SEASONAL_MAGIC_AUTUMN",
+    "copy-from": "CHANGELING_SEASONAL_MAGIC_AUTUMN",
+    "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "CHANGELING_SEASONAL_MAGIC_WINTER",
+    "copy-from": "CHANGELING_SEASONAL_MAGIC_WINTER",
+    "cancels": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "IERDE",
+    "copy-from": "IERDE",
+    "types": [  ],
+    "delete": {
+      "cancels": [
+        "DREAMER",
+        "DREAMSMITH",
+        "EATER",
+        "INVENTOR"
+      ],
+      "flags": [
+        "HERITAGE",
+        "NO_CBM_INSTALLATION"
+      ]
+    }
+  },
+  {
+    "type": "mutation",
+    "id": "ARVORE",
+    "copy-from": "ARVORE",
+    "types": [  ],
+    "delete": {
+      "cancels": [
+        "DREAMER",
+        "DREAMSMITH",
+        "EATER",
+        "INVENTOR"
+      ],
+      "flags": [
+        "HERITAGE",
+        "NO_CBM_INSTALLATION"
+      ]
+    }
+  },
+  {
+    "type": "mutation",
+    "id": "SALAMANDER",
+    "copy-from": "SALAMANDER",
+    "types": [  ],
+    "delete": {
+      "cancels": [
+        "DREAMER",
+        "DREAMSMITH",
+        "EATER",
+        "INVENTOR"
+      ],
+      "flags": [
+        "HERITAGE",
+        "NO_CBM_INSTALLATION"
+      ]
+    }
+  },
+  {
+    "type": "mutation",
+    "id": "UNDINE",
+    "copy-from": "UNDINE",
+    "types": [  ],
+    "delete": {
+      "cancels": [
+        "DREAMER",
+        "DREAMSMITH",
+        "EATER",
+        "INVENTOR"
+      ],
+      "flags": [
+        "HERITAGE",
+        "NO_CBM_INSTALLATION"
+      ]
+    }
+  },
+  {
+    "type": "mutation",
+    "id": "HOMULLUS",
+    "copy-from": "HOMULLUS",
+    "types": [  ],
+    "delete": {
+      "cancels": [
+        "DREAMER",
+        "DREAMSMITH",
+        "EATER",
+        "INVENTOR"
+      ],
+      "flags": [
+        "HERITAGE"
+      ]
+    }
+  },
+  {
+    "type": "mutation",
+    "id": "SYLPH",
+    "copy-from": "SYLPH",
+    "types": [  ],
+    "delete": {
+      "cancels": [
+        "DREAMER",
+        "DREAMSMITH",
+        "EATER",
+        "INVENTOR"
+      ],
+      "flags": [
+        "HERITAGE",
+        "NO_CBM_INSTALLATION"
+      ]
+    }
   }
 ]
