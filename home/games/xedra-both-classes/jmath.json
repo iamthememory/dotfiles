@@ -1,0 +1,8 @@
+[
+  {
+    "type": "jmath_function",
+    "id": "xedra_dream_casting_xp_formula",
+    "num_args": 0,
+    "return": "100"
+  }
+]
