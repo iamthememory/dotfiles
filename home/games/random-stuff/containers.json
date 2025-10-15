@@ -1,0 +1,46 @@
+[
+  {
+    "id": "box_massive_metal",
+    "type": "ITEM",
+    "category": "container",
+    "name": { "str": "massive metal box", "str_pl": "massive metal boxes" },
+    "looks_like": "box_small_metal",
+    "description": "A massive metal box.  It's far too big to be practical.",
+    "ascii_picture": "box_large_metal",
+    "weight": "192 kg",
+    "//": "This should be 2640 L, but that's above the maximum size.",
+    "volume": "1000 L",
+    "flags": [ "TARDIS" ],
+    "longest_side": "182 cm",
+    "price": "160 USD",
+    "price_postapoc": "80 cent",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "2592000 ml",
+        "max_contains_weight": "4000 kg",
+        "max_item_length": "180 cm"
+      }
+    ],
+    "material": [ "steel" ],
+    "symbol": ")",
+    "color": "light_gray"
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "box_massive_metal",
+    "category": "CC_*",
+    "subcategory": "CSC_*_NESTED",
+    "skill_used": "fabrication",
+    "difficulty": 4,
+    "time": "600 m",
+    "autolearn": true,
+    "reversible": true,
+    "using": [ [ "welding_standard", 2000 ] ],
+    "proficiencies": [ { "proficiency": "prof_metalworking" }, { "proficiency": "prof_welding_basic" }, { "proficiency": "prof_welding" } ],
+    "qualities": [ { "id": "SAW_M", "level": 1 } ],
+    "components": [ [ [ "sheet_metal", 32 ] ] ]
+  }
+]

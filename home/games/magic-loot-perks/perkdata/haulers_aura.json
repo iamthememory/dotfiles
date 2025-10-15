@@ -4,7 +4,7 @@
     "subtypes": [ "ARMOR" ],
     "id": "integrated_haulers_aura",
     "name": { "str": "hauler's aura" },
-    "description": "A pocket dimension that is slow to access, but can fit a single item.",
+    "description": "A pocket dimension that can fit a single item.",
     "symbol": "x",
     "color": "magenta",
     "material": [ "flesh" ],
@@ -26,10 +26,10 @@
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
-        "max_contains_volume": "8000 L",
-        "max_contains_weight": "8000 kg",
-        "max_item_length": "10 meter",
-        "weight_multiplier": 0.25,
+        "max_contains_volume": "10000 L",
+        "max_contains_weight": "10000 kg",
+        "max_item_length": "20 meter",
+        "weight_multiplier": 0.0,
         "rigid": true,
         "holster": true
       }
