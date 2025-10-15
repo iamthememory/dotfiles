@@ -1,0 +1,14 @@
+diff --git a/data/json/npcs/exodii/exodii_merchant_definitions.json b/data/json/npcs/exodii/exodii_merchant_definitions.json
+index 487e380c1265..27fed9e7105a 100644
+--- a/data/json/npcs/exodii/exodii_merchant_definitions.json
++++ b/data/json/npcs/exodii/exodii_merchant_definitions.json
+@@ -35,7 +35,8 @@
+       { "group": "EXODII_CBM_Store_Tier2", "rigid": true, "trust": 10 },
+       { "group": "EXODII_CBM_Store_Tier3", "rigid": true, "trust": 20, "strict": true },
+       { "group": "EXODII_Store_Salvage_Tech", "rigid": true, "trust": 20 },
+-      { "group": "EXODII_CBM_Store_Tier4", "rigid": true, "trust": 40, "strict": true }
++      { "group": "EXODII_CBM_Store_Tier4", "rigid": true, "trust": 40, "strict": true },
++      { "group": "bionics", "rigid": true, "trust": 40, "strict": true }
+     ],
+     "shopkeeper_consumption_rates": "basic_shop_rates",
+     "weapon_override": "NC_EXODII_TYPE_1_carried",

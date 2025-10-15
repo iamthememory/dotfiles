@@ -315,7 +315,7 @@ index 1e57bf41d39b..54079698fb4a 100644
        {
          "set_item_category_spawn_rates": [
 diff --git a/emotion.json b/emotion.json
-index d9d8f2be698e..e78c9dd6eb08 100644
+index d9d8f2be698e..6583797ee991 100644
 --- a/emotion.json
 +++ b/emotion.json
 @@ -27,14 +27,14 @@
@@ -405,19 +405,19 @@ index d9d8f2be698e..e78c9dd6eb08 100644
              { "and": [ { "math": [ "_pos == 1" ] }, { "math": [ "u_val('morale') > (-1 * _total_control)" ] } ] },
              { "and": [ { "math": [ "_pos == -1" ] }, { "math": [ "u_val('morale') < _total_control" ] } ] }
            ]
-@@ -204,9 +204,9 @@
+@@ -204,19 +204,11 @@
          "else": { "math": [ "_morale_change = _pos * _total_control" ] }
        },
        { "u_add_morale": "morale_self_control", "bonus": { "math": [ "_morale_change"] }, "capped": true, "max_bonus": 100, "duration": "5 seconds" },
 -      { 
-+      {
-         "if": { "and": [ { "math": [ "_zeroed == 1" ] }, { "math": [ "u_val('morale') != 0" ] } ] },
+-        "if": { "and": [ { "math": [ "_zeroed == 1" ] }, { "math": [ "u_val('morale') != 0" ] } ] },
 -        "then": [ 
-+        "then": [
-           { "u_lose_morale": "morale_self_control" },
-           { "u_add_morale": "morale_self_control", "bonus": 1000, "max_bonus": 1000, "capped": true, "duration": "5 seconds" },
-           { "u_add_morale": "morale_self_control_1", "bonus": -1000, "max_bonus": -1000, "capped": true, "duration": "5 seconds" }
-@@ -216,7 +216,7 @@
+-          { "u_lose_morale": "morale_self_control" },
+-          { "u_add_morale": "morale_self_control", "bonus": 1000, "max_bonus": 1000, "capped": true, "duration": "5 seconds" },
+-          { "u_add_morale": "morale_self_control_1", "bonus": -1000, "max_bonus": -1000, "capped": true, "duration": "5 seconds" }
+-        ]
+-      },
+       { "run_eocs": [ "EOC_self_control_focus" ] },
        {
          "if": { "math": [ "_zeroed == 1" ] },
          "then": { "run_eocs": [ "EOC_self_control_shin" ] },
@@ -426,7 +426,7 @@ index d9d8f2be698e..e78c9dd6eb08 100644
        }
      ]
    },
-@@ -228,9 +228,9 @@
+@@ -228,9 +220,9 @@
         "x_in_y_chance": { "x": { "math": [ "11 - u_skill('self-control')" ] }, "y": { "math": [ "110 - u_val('focus')" ] } }
      },
      "effect": [
@@ -438,7 +438,7 @@ index d9d8f2be698e..e78c9dd6eb08 100644
        }
      ]
    },
-@@ -268,12 +268,12 @@
+@@ -268,12 +260,12 @@
      "active": true,
      "no_empathize_with": [ "HUMAN" ],
      "time": 0,
@@ -454,7 +454,7 @@ index d9d8f2be698e..e78c9dd6eb08 100644
        "active": false,
        "moves": 0
      }
-@@ -289,8 +289,8 @@
+@@ -289,8 +281,8 @@
      "valid": false,
      "active": true,
      "transform": {
@@ -465,7 +465,7 @@ index d9d8f2be698e..e78c9dd6eb08 100644
        "active": true,
        "moves": 0
      }
-@@ -305,4 +305,4 @@
+@@ -305,4 +297,4 @@
        { "u_add_trait": "mut_self_control_off" }
      ]
    }

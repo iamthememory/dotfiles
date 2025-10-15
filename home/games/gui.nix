@@ -84,6 +84,7 @@ in
         patches = [
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-dream-fix.patch
+          ./cataclysm-exodii-bionics.patch
           ./cataclysm-locale-path.patch
           ./cataclysm-magiclysm-artificer.patch
           ./cataclysm-magiclysm-renewal-height.patch
