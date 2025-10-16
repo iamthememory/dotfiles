@@ -6,12 +6,12 @@
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "group": "spellbook_loot_0", "prob": 10 },
-        { "group": "spellbook_loot_1", "prob": 8 },
-        { "group": "spellbook_loot_2", "prob": 6 },
-        { "group": "book_martial", "prob": 8 },
-        { "group": "homebooks", "prob": 8 },
-        { "group": "esoteric_books", "prob": 8 }
+        { "group": "spellbook_loot_0", "prob": 1 },
+        { "group": "spellbook_loot_1", "prob": 1 },
+        { "group": "spellbook_loot_2", "prob": 1 },
+        { "group": "book_martial", "prob": 1 },
+        { "group": "homebooks", "prob": 1 },
+        { "group": "esoteric_books", "prob": 1 }
       ]
     }
   },
@@ -21,10 +21,10 @@
     "copy-from": "science",
     "extend": {
       "items": [
-        { "group": "magic_tools_and_loot", "prob": 4 },
-        { "group": "xe_border_patrol_evidence", "prob": 4 },
-        { "group": "collection_matrix_dust", "prob": 4 },
-        { "group": "dist_matrix_crystals", "prob": 4 }
+        { "group": "magic_tools_and_loot", "prob": 1 },
+        { "group": "xe_border_patrol_evidence", "prob": 1 },
+        { "group": "collection_matrix_dust", "prob": 1 },
+        { "group": "dist_matrix_crystals", "prob": 1 }
       ]
     }
   },
@@ -34,13 +34,13 @@
     "copy-from": "supplies_reagents_lab",
     "extend": {
       "items": [
-        { "group": "magic_tools_and_loot", "prob": 5 },
-        { "group": "spellbook_loot_0", "prob": 5 },
-        { "group": "spellbook_loot_1", "prob": 5 },
-        { "group": "spellbook_loot_2", "prob": 5 },
-        { "group": "xe_border_patrol_evidence", "prob": 8 },
-        { "group": "collection_matrix_dust", "prob": 8 },
-        { "group": "dist_matrix_crystals", "prob": 6 }
+        { "group": "magic_tools_and_loot", "prob": 1 },
+        { "group": "spellbook_loot_0", "prob": 1 },
+        { "group": "spellbook_loot_1", "prob": 1 },
+        { "group": "spellbook_loot_2", "prob": 1 },
+        { "group": "xe_border_patrol_evidence", "prob": 1 },
+        { "group": "collection_matrix_dust", "prob": 1 },
+        { "group": "dist_matrix_crystals", "prob": 1 }
       ]
     }
   },

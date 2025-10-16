@@ -2,9 +2,9 @@
   {
     "type": "ITEM",
     "subtypes": [ "ARMOR" ],
-    "id": "integrated_haulers_aura",
-    "name": { "str": "hauler's aura" },
-    "description": "A pocket dimension that can fit a large amount.",
+    "id": "integrated_haulers_holster",
+    "name": { "str": "hauler's holster" },
+    "description": "A pocket dimension that can fit a single item.",
     "symbol": "x",
     "color": "magenta",
     "material": [ "flesh" ],
@@ -30,7 +30,8 @@
         "max_contains_weight": "8000 kg",
         "max_item_length": "20 meter",
         "weight_multiplier": 0.0,
-        "rigid": true
+        "rigid": true,
+        "holster": true
       }
     ],
     "armor": [

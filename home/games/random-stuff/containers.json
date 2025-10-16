@@ -8,10 +8,10 @@
     "description": "A massive metal box.  It's far too big to be practical.",
     "ascii_picture": "box_large_metal",
     "weight": "192 kg",
-    "//": "This should be 2640 L, but that's above the maximum size.",
+    "//": "This should be 2640 L, but that's above the maximum size, and was originally 182/180 cm.",
     "volume": "1000 L",
     "flags": [ "TARDIS" ],
-    "longest_side": "182 cm",
+    "longest_side": "252 cm",
     "price": "160 USD",
     "price_postapoc": "80 cent",
     "pocket_data": [
@@ -20,7 +20,7 @@
         "rigid": true,
         "max_contains_volume": "2592000 ml",
         "max_contains_weight": "4000 kg",
-        "max_item_length": "180 cm"
+        "max_item_length": "250 cm"
       }
     ],
     "material": [ "steel" ],
