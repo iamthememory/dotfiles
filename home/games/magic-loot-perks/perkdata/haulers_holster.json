@@ -30,6 +30,7 @@
         "max_contains_weight": "8000 kg",
         "max_item_length": "20 meter",
         "weight_multiplier": 0.0,
+        "spoil_multiplier": 0.0,
         "rigid": true,
         "holster": true
       }

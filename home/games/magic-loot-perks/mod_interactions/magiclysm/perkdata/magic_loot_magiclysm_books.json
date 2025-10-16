@@ -32,7 +32,9 @@
       { "group": "spellbook_tier_1", "prob": 80 },
       { "group": "spellbook_tier_2", "prob": 60 },
       { "group": "spellbook_tier_3", "prob": 40 },
-      { "group": "spellbook_mana_upgrades", "prob": 40 }
+      { "group": "spellbook_mana_upgrades", "prob": 40 },
+      { "group": "magic_recipe_basic", "prob": 60 },
+      { "group": "magic_recipe_advanced", "prob": 60 }
     ]
   }
 ]
