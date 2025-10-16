@@ -21,7 +21,7 @@ index 293b5d0f3974..c69a6ba3cb38 100644
    {
      "type": "furniture",
 diff --git a/MST_Extra/items/ammo.json b/MST_Extra/items/ammo.json
-index fc84351b1d87..98a604bed913 100644
+index fc84351b1d87..e1de44b75ef5 100644
 --- a/MST_Extra/items/ammo.json
 +++ b/MST_Extra/items/ammo.json
 @@ -2,7 +2,7 @@
@@ -42,6 +42,15 @@ index fc84351b1d87..98a604bed913 100644
      "name": { "str": "wooden atlatl dart" },
      "description": "A long, flexible dart for a spear-thrower, with a fire-hardened sharpened point.",
      "weight": "70 g",
+@@ -40,7 +40,7 @@
+     "dispersion": 80,
+     "loudness": 0,
+     "thrown_damage": [ { "damage_type": "bash", "amount": 2 }, { "damage_type": "stab", "amount": 6 } ],
+-    "effects": [ "RECOVER_25" ],
++    "recovery_chance": 25,
+     "flags": [ "SPEAR" ],
+     "price": "10 USD",
+     "price_postapoc": "75 cent",
 @@ -51,7 +51,7 @@
      "copy-from": "atlatl_dart_wood",
      "looks_like": "javelin_iron",
@@ -51,7 +60,15 @@ index fc84351b1d87..98a604bed913 100644
      "name": { "str": "iron atlatl dart" },
      "description": "A long, flexible dart for a spear-thrower, with an iron spear point.",
      "weight": "170 g",
-@@ -68,7 +68,7 @@
+@@ -61,14 +61,14 @@
+     "thrown_damage": [ { "damage_type": "bash", "amount": 3 }, { "damage_type": "stab", "amount": 9 } ],
+     "price": "25 USD",
+     "price_postapoc": "1 USD",
+-    "effects": [ "RECOVER_40" ]
++    "recovery_chance": 40
+   },
+   {
+     "id": "atlatl_dart_stone",
      "copy-from": "atlatl_dart_wood",
      "looks_like": "javelin_stone",
      "type": "ITEM",
@@ -60,7 +77,15 @@ index fc84351b1d87..98a604bed913 100644
      "name": { "str": "stone atlatl dart" },
      "description": "A long, flexible dart for a spear-thrower, with a small stone spearhead.",
      "weight": "150 g",
-@@ -85,7 +85,7 @@
+@@ -78,14 +78,14 @@
+     "thrown_damage": [ { "damage_type": "bash", "amount": 1 }, { "damage_type": "stab", "amount": 7 } ],
+     "price": "15 USD",
+     "price_postapoc": "80 cent",
+-    "effects": [ "RECOVER_30" ]
++    "recovery_chance": 30
+   },
+   {
+     "id": "atlatl_dart_copper",
      "copy-from": "atlatl_dart_wood",
      "looks_like": "javelin_copper",
      "type": "ITEM",
@@ -69,7 +94,12 @@ index fc84351b1d87..98a604bed913 100644
      "name": { "str": "copper atlatl dart" },
      "description": "A long, flexible dart for a spear-thrower, with a copper spear point.",
      "weight": "200 g",
-@@ -99,7 +99,7 @@
+@@ -95,11 +95,11 @@
+     "thrown_damage": [ { "damage_type": "bash", "amount": 3 }, { "damage_type": "stab", "amount": 8 } ],
+     "price": "20 USD",
+     "price_postapoc": "90 cent",
+-    "effects": [ "RECOVER_35" ]
++    "recovery_chance": 35
    },
    {
      "type": "ITEM",
@@ -374,7 +404,7 @@ index 684fe24ec8c8..9a2d3abbf22a 100644
      "description": "A 3-foot (or about 90 cm) long piece of rawhide or leather cord.  Useful for some purposes, but not as strong or flexible as proper string.",
      "proportional": { "price": 0.5 },
 diff --git a/MST_Extra/items/item_overrides.json b/MST_Extra/items/item_overrides.json
-index f972d340151f..41439ee86166 100644
+index f972d340151f..3720e891f247 100644
 --- a/MST_Extra/items/item_overrides.json
 +++ b/MST_Extra/items/item_overrides.json
 @@ -3,103 +3,109 @@
@@ -463,7 +493,7 @@ index f972d340151f..41439ee86166 100644
      "dispersion": 14,
 -    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ] }
 +    "recovery_chance": 60,
-+    "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ]
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING" ]
    },
    {
      "id": "pool_ball",
@@ -478,7 +508,7 @@ index f972d340151f..41439ee86166 100644
      "dispersion": 14,
 -    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ] }
 +    "recovery_chance": 60,
-+    "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ]
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING" ]
    },
    {
      "id": "baseball",
@@ -493,7 +523,7 @@ index f972d340151f..41439ee86166 100644
      "dispersion": 14,
 -    "extend": { "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ] }
 +    "recovery_chance": 60,
-+    "effects": [ "NEVER_MISFIRES", "NON_FOULING", "RECOVER_60" ]
++    "effects": [ "NEVER_MISFIRES", "NON_FOULING" ]
    },
    {
      "id": "tarp",
