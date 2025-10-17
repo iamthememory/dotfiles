@@ -237,6 +237,9 @@ in
         src = pkgs.applyPatches {
           name = "cataclysm-dda-mining-mod-patched";
           src = inputs.cataclysm-dda-mining-mod;
+          patches = [
+            ./cataclysm-mining-mod-fix.patch
+          ];
         };
         modRoot = "Mining_Mod";
       };

@@ -1,0 +1,102 @@
+diff --git a/Mining_Mod/items.json b/Mining_Mod/items.json
+index 80a68bae3eb6..96b3e6657f07 100644
+--- a/Mining_Mod/items.json
++++ b/Mining_Mod/items.json
+@@ -1,7 +1,7 @@
+ [
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_copper",
+     "category": "spare_parts",
+     "price": "1 USD",
+@@ -17,7 +17,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_silver",
+     "category": "spare_parts",
+     "price": "5 USD",
+@@ -33,7 +33,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_gold",
+     "category": "spare_parts",
+     "price": "15 USD",
+@@ -49,7 +49,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_aluminum",
+     "category": "spare_parts",
+     "price": "1 USD",
+@@ -65,7 +65,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_cassiterite",
+     "category": "spare_parts",
+     "price": "3 USD",
+@@ -81,7 +81,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_galena",
+     "category": "spare_parts",
+     "price": "250 cent",
+@@ -97,7 +97,7 @@
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["GENERIC"],
++	"subtypes": ["GENERIC"],
+     "id": "chunk_hematite",
+     "category": "spare_parts",
+     "price": "250 cent",
+@@ -114,7 +114,7 @@
+   {
+     "id": "pickaxe_copper",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "copper pickaxe" },
+     "description": "This is a handmade copper pickaxe, suitable for breaking up hard things or (with enough skill) hard targets.  Strike the earth!",
+     "sub": "pickaxe",
+@@ -132,7 +132,7 @@
+   {
+     "id": "pickaxe_bone",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "name": { "str": "bone pickaxe" },
+     "description": "This is a primitive pickaxe, traditionally made from antler or bone, and fire-hardened for greater hardness.  Less than ideal, but still suitable for striking the earth.",
+     "sub": "pickaxe",
+@@ -150,14 +150,14 @@
+   {
+     "id": "boulder_anvil_leveled",
+     "type": "ITEM",
+-	"subtype": ["TOOL"],
++	"subtypes": ["TOOL"],
+     "copy-from": "fake_item",
+     "name": { "str": "leveled boulder anvil" },
+     "qualities": [ [ "ANVIL", 3 ] ]
+   },
+   {
+     "type": "ITEM",
+-	"subtype": ["AMMO"],
++	"subtypes": ["AMMO"],
+     "id": "material_sand_black",
+     "category": "spare_parts",
+     "name": { "str_sp": "black sand" },

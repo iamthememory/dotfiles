@@ -108,7 +108,7 @@
     };
 
     cataclysm-dda-mining-mod = {
-      url = "github:DangerNoodle/mining-mod";
+      url = "github:chaosvolt/mining-mod";
       flake = false;
     };
 

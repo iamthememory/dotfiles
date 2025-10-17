@@ -115,15 +115,15 @@
     "cataclysm-dda-mining-mod": {
       "flake": false,
       "locked": {
-        "lastModified": 1757985759,
-        "narHash": "sha256-NovEgMSevD9uTNafYR69fG4XAJfC/Y5ScPASPpOg2mk=",
-        "owner": "DangerNoodle",
+        "lastModified": 1757987878,
+        "narHash": "sha256-vG1HhdBUyhWZKA50TbqxHRKJkysorihehfDNqFRGg40=",
+        "owner": "chaosvolt",
         "repo": "mining-mod",
-        "rev": "e1a8bb46218201e0a0d854c64a1a7076fce002c4",
+        "rev": "1953d5d0ede34d13e4167937cb1a5e4b7587388f",
         "type": "github"
       },
       "original": {
-        "owner": "DangerNoodle",
+        "owner": "chaosvolt",
         "repo": "mining-mod",
         "type": "github"
       }
