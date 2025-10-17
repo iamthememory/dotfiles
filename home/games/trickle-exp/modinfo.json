@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "trickle-exp",
+    "name": "Trickle EXP",
+    "authors": [ "iamthememory" ],
+    "description": "Give some EXP every day.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "xedra_evolved", "stk_eoc", "bombastic_perks", "perk_melee_system" ]
+  }
+]

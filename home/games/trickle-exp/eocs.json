@@ -1,0 +1,43 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_TRICKLE_EXP_DAILY",
+    "recurrence": "1 day",
+    "effect": [
+      {
+        "run_eocs": [
+          "EOC_TRICKLE_EXP_DAILY_EXP",
+          "EOC_TRICKLE_EXP_DAILY_CHRONOMANCER",
+          "EOC_TRICKLE_EXP_DAILY_UPDATE"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_TRICKLE_EXP_DAILY_EXP",
+    "effect": [
+      { "math": [ "u_stk_exp_current += 50" ] },
+      { "math": [ "u_val('exp') += 50" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_TRICKLE_EXP_DAILY_CHRONOMANCER",
+    "condition": { "u_has_trait": "XEDRA_CHRONOMANCER" },
+    "effect": [ { "math": [ "u_vitamin('xedra_chronomancer_insight') += 10" ] } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_TRICKLE_EXP_DAILY_UPDATE",
+    "effect": [
+      {
+        "run_eocs": [
+          "EOC_on_kill_check_exp",
+          "EOC_perk_ma_kill_check_exp",
+          "EOC_stk_level_up"
+        ]
+      }
+    ]
+  }
+]

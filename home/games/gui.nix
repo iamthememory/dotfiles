@@ -407,6 +407,12 @@ in
         src = ./random-stuff;
       };
 
+      trickle-exp = pkgs.cataclysmDDA.buildMod {
+        modName = "trickle-exp";
+        version = config.home.file."generation.rev".text;
+        src = ./trickle-exp;
+      };
+
       xedra-both-classes = pkgs.cataclysmDDA.buildMod {
         modName = "xedra-both-classes";
         version = config.home.file."generation.rev".text;
@@ -450,6 +456,7 @@ in
         stats-through-kills
         stats-through-skills
         tankmod
+        trickle-exp
         xedra-both-classes
         xedra-disable-leveling
         xedra-seedbearer-always
