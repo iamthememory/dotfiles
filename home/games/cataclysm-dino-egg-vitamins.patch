@@ -1,0 +1,84 @@
+diff --git a/data/mods/DinoMod/items/egg.json b/data/mods/DinoMod/items/egg.json
+index 4111c9975a84..90cd3b993192 100644
+--- a/data/mods/DinoMod/items/egg.json
++++ b/data/mods/DinoMod/items/egg.json
+@@ -20,7 +20,7 @@
+     "fun": -6,
+     "flags": [ "FREEZERBURN" ],
+     "rot_spawn": { "group": "GROUP_EGG_DINO", "chance": 70 },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "33 mg" ], [ "calcium", "1025 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -38,7 +38,7 @@
+     "material": [ "egg" ],
+     "volume": "12 ml",
+     "rot_spawn": { "group": "GROUP_EGG_DINO_SMALL" },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "940 μg" ], [ "calcium", "29 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -54,7 +54,7 @@
+     "material": [ "egg" ],
+     "volume": "3400 ml",
+     "rot_spawn": { "group": "GROUP_EGG_DINO_LARGE" },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "66 mg" ], [ "calcium", "2050 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -77,7 +77,7 @@
+     "fun": -6,
+     "flags": [ "FREEZERBURN" ],
+     "rot_spawn": { "group": "GROUP_EGG_THEROPOD", "chance": 70 },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "33 mg" ], [ "calcium", "1025 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -90,7 +90,7 @@
+     "description": "Pale, football-shaped egg laid by a smaller dinosaur.",
+     "material": [ "egg" ],
+     "rot_spawn": { "group": "GROUP_EGG_THEROPOD_SMALL" },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "940 μg" ], [ "calcium", "29 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -106,7 +106,7 @@
+     "material": [ "egg" ],
+     "volume": "3400 ml",
+     "rot_spawn": { "group": "GROUP_EGG_THEROPOD_LARGE" },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "66 mg" ], [ "calcium", "2050 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -932,7 +932,7 @@
+     "fun": 2,
+     "flags": [ "FREEZERBURN" ],
+     "rot_spawn": { "group": "GROUP_NULL", "chance": 0 },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "940 μg" ], [ "calcium", "29 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -950,7 +950,7 @@
+     "fun": 10,
+     "flags": [ "FREEZERBURN" ],
+     "rot_spawn": { "group": "GROUP_NULL", "chance": 0 },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "33 mg" ], [ "calcium", "1025 mg" ], [ "egg_allergen", 1 ] ]
+   },
+   {
+     "type": "ITEM",
+@@ -968,6 +968,6 @@
+     "fun": 20,
+     "flags": [ "FREEZERBURN" ],
+     "rot_spawn": { "group": "GROUP_NULL", "chance": 0 },
+-    "vitamins": [ [ "egg_allergen", 1 ] ]
++    "vitamins": [ [ "iron", "66 mg" ], [ "calcium", "2050 mg" ], [ "egg_allergen", 1 ] ]
+   }
+ ]

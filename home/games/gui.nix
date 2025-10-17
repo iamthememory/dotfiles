@@ -84,6 +84,7 @@ in
         patches = [
           ./cataclysm-bionics-lower-saving.patch
           ./cataclysm-craft-percent-fix.patch
+          ./cataclysm-dino-egg-vitamins.patch
           ./cataclysm-dream-fix.patch
           ./cataclysm-exodii-bionics.patch
           ./cataclysm-locale-path.patch
