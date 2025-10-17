@@ -100,3 +100,360 @@ index 80a68bae3eb6..96b3e6657f07 100644
      "id": "material_sand_black",
      "category": "spare_parts",
      "name": { "str_sp": "black sand" },
+diff --git a/Mining_Mod/mapgen_deep.json b/Mining_Mod/mapgen_deep.json
+index e3460b60e9c8..cc46ad20b39b 100644
+--- a/Mining_Mod/mapgen_deep.json
++++ b/Mining_Mod/mapgen_deep.json
+@@ -2,7 +2,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+     "weight": 188,
+     "//": "Absolutely nothing about 25 percent of the time, try again.",
+     "object": {
+@@ -38,7 +37,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+     "weight": 50,
+     "//": "Cassiterite vein.",
+     "object": {
+@@ -74,7 +72,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+     "weight": 100,
+     "//": "Native copper vein.",
+     "object": {
+@@ -110,7 +107,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+     "weight": 100,
+     "//": "Native silver vein.",
+     "object": {
+@@ -146,7 +142,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+     "weight": 33,
+     "//": "Native gold vein.",
+     "object": {
+@@ -182,7 +177,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+     "weight": 133,
+     "//": "Galena vein.",
+     "object": {
+@@ -218,8 +212,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_maybe" ],
+-    "method": "json",
+-    "weight": 150,
+     "//": "Hematite vein.",
+     "object": {
+       "rows": [
+diff --git a/Mining_Mod/mapgen_shallow.json b/Mining_Mod/mapgen_shallow.json
+index 35f9f25c9c8f..fcb0ded685f8 100644
+--- a/Mining_Mod/mapgen_shallow.json
++++ b/Mining_Mod/mapgen_shallow.json
+@@ -2,7 +2,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 100,
+     "//": "Coal vein.",
+     "object": {
+@@ -38,7 +37,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 110,
+     "//": "Rock salt, technically a cluster.",
+     "object": {
+@@ -74,7 +72,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 100,
+     "//": "Niter, technically a cluster.",
+     "object": {
+@@ -110,7 +107,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 110,
+     "//": "Brimstone, technically a cluster.",
+     "object": {
+@@ -146,7 +142,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 110,
+     "//": "Native copper vein.",
+     "object": {
+@@ -182,7 +177,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 75,
+     "//": "Native silver vein.",
+     "object": {
+@@ -218,7 +212,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 50,
+     "//": "Native gold vein.",
+     "object": {
+@@ -254,7 +247,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 25,
+     "//": "Native aluminum cluster, which is highly rare.",
+     "object": {
+@@ -290,7 +282,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 110,
+     "//": "Galena vein.",
+     "object": {
+@@ -326,7 +317,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_rock" ],
+-    "method": "json",
+     "weight": 200,
+     "//": "Hematite vein.",
+     "object": {
+@@ -362,7 +352,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "vein_hematite" ],
+-    "method": "json",
+     "weight": 400,
+     "//": "Hematite vein, set aside for bog iron.  Realistically should be limonite.",
+     "object": {
+diff --git a/Mining_Mod/mapgen_surface.json b/Mining_Mod/mapgen_surface.json
+index 616c57aa3a01..04b4b1e78e4d 100644
+--- a/Mining_Mod/mapgen_surface.json
++++ b/Mining_Mod/mapgen_surface.json
+@@ -14,7 +14,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "field_shallow" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Rocky outcropping, indicative of surface erosion exposing bedrock.",
+     "object": {
+@@ -117,7 +116,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "field_shallow" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Suspisciously dead patch of ground, with small hints of fragmenta.",
+     "object": {
+@@ -216,7 +214,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "field_shallow" ],
+-    "method": "json",
+     "weight": 500,
+     "//": "Rocky hill, with some degree of rocky outcropping and fragmenta around it.",
+     "object": {
+@@ -316,7 +313,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "field_deep" ],
+-    "method": "json",
+     "weight": 500,
+     "//": "Rocky outcropping, indicative of surface erosion exposing bedrock.",
+     "object": {
+@@ -419,7 +415,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "field_deep" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Suspisciously dead patch of ground, with small hints of fragmenta.",
+     "object": {
+@@ -518,7 +513,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "field_deep" ],
+-    "method": "json",
+     "weight": 750,
+     "//": "Rocky hill, with some degree of rocky outcropping and fragmenta around it.",
+     "object": {
+@@ -618,7 +612,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "forest_vein" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Rocky outcropping, indicative of surface erosion exposing bedrock.  Treeline is severely thinned and growing poorly.",
+     "object": {
+@@ -724,7 +717,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "forest_vein" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Suspisciously dead patch of forest, with small hints of fragmenta.",
+     "object": {
+@@ -820,7 +812,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "swamp_vein" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Suspisciously dry, dead patch of ground, with small hints of fragmenta.",
+     "object": {
+@@ -953,7 +944,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "swamp_hematite" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Suspiciously dry, dead patch of ground, with small hints of fragmenta.  Some chance of bog iron.",
+     "object": {
+@@ -1089,7 +1079,6 @@
+   {
+     "type": "mapgen",
+     "om_terrain": [ "alluvial_deposit" ],
+-    "method": "json",
+     "weight": 1000,
+     "//": "Ground is more barren and signs of water flow, leaving alluvial deposits in the form of black sand.",
+     "object": {
+diff --git a/Mining_Mod/overmap_specials.json b/Mining_Mod/overmap_specials.json
+index 5373cda106bd..b60243776a38 100644
+--- a/Mining_Mod/overmap_specials.json
++++ b/Mining_Mod/overmap_specials.json
+@@ -6,7 +6,7 @@
+     "locations": [ "forest" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+-    "occurrences": [ 0, 20 ],
++    "occurrences": [ 0, 2000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -17,7 +17,7 @@
+     "locations": [ "wilderness" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 12 ],
+-    "occurrences": [ 0, 20 ],
++    "occurrences": [ 0, 2000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -28,7 +28,7 @@
+     "locations": [ "swamp" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 12 ],
+-    "occurrences": [ 0, 20 ],
++    "occurrences": [ 0, 2000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -46,7 +46,7 @@
+     "locations": [ "forest" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 12 ],
+-    "occurrences": [ 0, 20 ],
++    "occurrences": [ 0, 2000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -64,7 +64,7 @@
+     "locations": [ "wilderness" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 12 ],
+-    "occurrences": [ 0, 20 ],
++    "occurrences": [ 0, 2000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -82,7 +82,7 @@
+     "locations": [ "swamp" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 12 ],
+-    "occurrences": [ 0, 20 ],
++    "occurrences": [ 0, 2000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -91,7 +91,7 @@
+     "id": "Alluvial Deposit",
+     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "alluvial_deposit_north" } ],
+     "locations": [ "water", "swamp" ],
+-    "occurrences": [ 0, 100 ],
++    "occurrences": [ 0, 10000 ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+@@ -103,7 +103,7 @@
+     "locations": [ "land", "water" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+-    "occurrences": [ 0, 50 ],
++    "occurrences": [ 0, 5000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -114,7 +114,7 @@
+     "locations": [ "land", "water" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+-    "occurrences": [ 0, 50 ],
++    "occurrences": [ 0, 5000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -125,7 +125,7 @@
+     "locations": [ "land", "water" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+-    "occurrences": [ 0, 50 ],
++    "occurrences": [ 0, 5000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -136,7 +136,7 @@
+     "locations": [ "land", "water" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+-    "occurrences": [ 0, 50 ],
++    "occurrences": [ 0, 5000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   },
+@@ -147,7 +147,7 @@
+     "locations": [ "land", "water" ],
+     "city_distance": [ 5, -1 ],
+     "city_sizes": [ 0, 20 ],
+-    "occurrences": [ 0, 50 ],
++    "occurrences": [ 0, 5000 ],
+     "rotate": false,
+     "flags": [ "CLASSIC", "WILDERNESS" ]
+   }
