@@ -1,0 +1,26 @@
+diff --git a/data/mods/BombasticPerks/corefiles/core_eocs.json b/data/mods/BombasticPerks/corefiles/core_eocs.json
+index 60420bb5bfb1..36126590c9e6 100644
+--- a/data/mods/BombasticPerks/corefiles/core_eocs.json
++++ b/data/mods/BombasticPerks/corefiles/core_eocs.json
+@@ -7,7 +7,7 @@
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_level_up",
+-    "condition": { "math": [ "u_available_exp > u_exp_to_perk" ] },
++    "condition": { "math": [ "u_available_exp >= u_exp_to_perk" ] },
+     "effect": [
+       { "run_eocs": "EOC_give_perk_point" },
+       { "math": [ "u_used_exp += u_exp_to_perk" ] },
+diff --git a/data/mods/Perk_melee/EOC/leveling.json b/data/mods/Perk_melee/EOC/leveling.json
+index 79512afdc6ef..c8eaefb58767 100644
+--- a/data/mods/Perk_melee/EOC/leveling.json
++++ b/data/mods/Perk_melee/EOC/leveling.json
+@@ -7,7 +7,7 @@
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_perk_ma_level_up",
+-    "condition": { "math": [ "u_ma_available_exp > u_ma_exp_to_perk" ] },
++    "condition": { "math": [ "u_ma_available_exp >= u_ma_exp_to_perk" ] },
+     "effect": [
+       { "u_message": "Your experience with martial arts has increased!" },
+       { "run_eocs": "EOC_give_ma_perk_point" },

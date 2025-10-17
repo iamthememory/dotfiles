@@ -93,6 +93,7 @@ in
           ./cataclysm-mindovermatter-sidebar-fix.patch
           ./cataclysm-more-engines.patch
           ./cataclysm-multiple-thresholds.patch
+          ./cataclysm-perks-fix.patch
           ./cataclysm-plant-only-check-now.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-sky-island-craft-fix.patch
