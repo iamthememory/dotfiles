@@ -8,7 +8,7 @@
     "symbol": "x",
     "color": "magenta",
     "material": [ "flesh" ],
-    "looks_like": "backpack",
+    "looks_like": "ragpouch",
     "flags": [
       "ALLOWS_NATURAL_ATTACKS",
       "INTEGRATED",
