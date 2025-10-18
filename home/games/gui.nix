@@ -85,8 +85,10 @@ in
           ./cataclysm-bionics-lower-saving.patch
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-dino-egg-vitamins.patch
+          ./cataclysm-disable-warning.patch
           ./cataclysm-dream-fix.patch
           ./cataclysm-exodii-bionics.patch
+          ./cataclysm-homullus-fix.patch
           ./cataclysm-locale-path.patch
           ./cataclysm-magiclysm-artificer.patch
           ./cataclysm-magiclysm-renewal-height.patch

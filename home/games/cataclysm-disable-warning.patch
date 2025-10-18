@@ -1,0 +1,27 @@
+diff --git a/src/requirements.cpp b/src/requirements.cpp
+index 8f3cc0d5b700..85c2df332e31 100644
+--- a/src/requirements.cpp
++++ b/src/requirements.cpp
+@@ -1715,7 +1715,7 @@ deduped_requirement_data::deduped_requirement_data( const requirement_data &in,
+         // sanity check to prevent things getting too far out of control.
+         // The worst case in the core game currently is boots_fur
+         // with 104 alternatives.
+-        static constexpr size_t max_alternatives = 105;
++        static constexpr size_t max_alternatives = 130;
+         if( alternatives_.size() + pending.size() > max_alternatives ) {
+             debugmsg( "Construction of deduped_requirement_data generated too many alternatives.  "
+                       "The recipe %1s should be simplified.  See the Recipe section in "
+diff --git a/src/scenario.cpp b/src/scenario.cpp
+index c9f04b20d84b..bc9285b5e225 100644
+--- a/src/scenario.cpp
++++ b/src/scenario.cpp
+@@ -259,7 +259,9 @@ void scenario::check() const
+     std::unordered_set<string_id<profession>> professions_set;
+     for( const auto &p : professions ) {
+         if( professions_set.count( p ) == 1 ) {
++#if 0
+             debugmsg( "Duplicate profession %s in scenario %s.", p.c_str(), this->id.c_str() );
++#endif
+         } else {
+             professions_set.insert( p );
+         }

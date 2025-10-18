@@ -1,0 +1,12 @@
+diff --git a/data/mods/Xedra_Evolved/mutations/paraclesians/homullus_eocs.json b/data/mods/Xedra_Evolved/mutations/paraclesians/homullus_eocs.json
+index 49f1d51bb1c7..2db5176aba9b 100644
+--- a/data/mods/Xedra_Evolved/mutations/paraclesians/homullus_eocs.json
++++ b/data/mods/Xedra_Evolved/mutations/paraclesians/homullus_eocs.json
+@@ -4,7 +4,6 @@
+     "id": "EOC_CONDITION_CHECK_HOMULLUS_IN_CIVILIZATION_ON_OMT_ENTER",
+     "eoc_type": "EVENT",
+     "required_event": "avatar_enters_omt",
+-    "condition": { "u_has_trait": "HOMULLUS" },
+     "effect": [
+       { "u_location_variable": { "context_val": "check_loc" } },
+       {

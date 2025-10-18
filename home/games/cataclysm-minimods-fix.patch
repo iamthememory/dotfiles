@@ -107,6 +107,18 @@ index e8318ad7cdcc..c3d692e56207 100644
 +    }
    }
  ]
+diff --git a/No_zombie_revival/modinfo.json b/No_zombie_revival/modinfo.json
+index 17392c4b3944..3cd9e3919028 100644
+--- a/No_zombie_revival/modinfo.json
++++ b/No_zombie_revival/modinfo.json
+@@ -17,7 +17,6 @@
+   {
+     "type": "EXTERNAL_OPTION",
+     "name": "ZOMBIFY_INTO_ENABLED",
+-    "info": "Enables the functionality of the \"zombify_into\" JSON field in monster definitions.",
+     "stype": "bool",
+     "value": false
+   }
 diff --git a/Wandering_castle/modinfo.json b/Wandering_castle/modinfo.json
 index 0238adc7d138..38947e10969b 100644
 --- a/Wandering_castle/modinfo.json
