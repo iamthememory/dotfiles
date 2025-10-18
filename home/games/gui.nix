@@ -387,7 +387,7 @@ in
       innawoods-compat = pkgs.cataclysmDDA.buildMod {
         modName = "innawoods-compat";
         version = config.home.file."generation.rev".text;
-        src = ./innwoods-compat;
+        src = ./innawoods-compat;
       };
 
       lab-loot-extras = pkgs.cataclysmDDA.buildMod {
