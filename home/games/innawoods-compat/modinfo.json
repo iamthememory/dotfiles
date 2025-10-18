@@ -1,0 +1,15 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "innawood-compat",
+    "name": "Innawood (Compat)",
+    "authors": [ "Lightwave" ],
+    "maintainers": [ "Lightwave" ],
+    "description": "A version of Innawood in a normal world.",
+    "category": "content",
+    "conflicts": [ "aftershock_exoplanet", "backrooms", "desertpack", "tropicata", "classic_zombies", "Isolation_Protocol", "no_hope", "innawoods" ],
+    "dependencies": [ "dda" ],
+    "loading_images": [ "innawoods1.png" ],
+    "obsolete": false
+  }
+]

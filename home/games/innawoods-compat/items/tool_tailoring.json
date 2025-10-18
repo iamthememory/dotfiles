@@ -1,0 +1,84 @@
+[
+  {
+    "id": "kevlar_shears",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "pair of Kevlar cutters", "str_pl": "pairs of Kevlar cutters" },
+    "copy-from": "kevlar_shears",
+    "extend": { "qualities": [ [ "SHEAR", 1 ] ] }
+  },
+  {
+    "id": "tailors_kit",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "tailor's kit" },
+    "description": "This is a high quality kit consisting of a variety of needles, some wooden spools for thread, some small scissors, and an awl.  Use a tailor's kit to customize your clothing and armor.  This uses your tailoring skill.",
+    "copy-from": "tailors_kit",
+    "extend": {
+      "use_action": [
+        {
+          "type": "sew_advanced",
+          "materials": [
+            "cotton",
+            "leather",
+            "lycra",
+            "nylon",
+            "wool",
+            "fur",
+            "faux_fur",
+            "nomex",
+            "kevlar",
+            "kevlar_layered",
+            "neoprene",
+            "gutskin",
+            "denim",
+            "canvas",
+            "plastic",
+            "kevlar_rigid"
+          ],
+          "skill": "tailor",
+          "clothing_mods": [ "leather_padded", "steel_padded", "kevlar_padded", "furred", "wooled" ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "sheet_fibercloth",
+    "type": "ITEM",
+    "category": "spare_parts",
+    "name": { "str": "fibercloth sheet" },
+    "description": "A 12 inch by 24 inch sheet of fabric woven from plant fiber, suitable for making clothing.",
+    "weight": "38 g",
+    "volume": "47 ml",
+    "price": "10 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "fibercloth" ],
+    "symbol": "=",
+    "color": "green"
+  },
+  {
+    "id": "fibercloth_patchwork",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "category": "spare_parts",
+    "name": { "str": "fibercloth patch", "str_pl": "fibercloth patches" },
+    "description": "A 6 inch square fibercloth patch, suitable for use in repairing and tailoring of clothing.",
+    "weight": "5 g",
+    "volume": "6 ml",
+    "price": "2 USD",
+    "price_postapoc": "2 cent",
+    "material": [ "fibercloth" ],
+    "symbol": ",",
+    "color": "green",
+    "use_action": [
+      {
+        "type": "heal",
+        "move_cost": 200,
+        "bleed": 1,
+        "used_up_item": { "id": "fibercloth_patchwork", "quantity": 1, "flags": [ "FILTHY" ] }
+      },
+      "WASH_HARD_ITEMS"
+    ],
+    "flags": [ "NO_SALVAGE" ]
+  }
+]

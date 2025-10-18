@@ -384,6 +384,12 @@ in
         src = ./cdda-defense-additions;
       };
 
+      innawoods-compat = pkgs.cataclysmDDA.buildMod {
+        modName = "innawoods-compat";
+        version = config.home.file."generation.rev".text;
+        src = ./innwoods-compat;
+      };
+
       lab-loot-extras = pkgs.cataclysmDDA.buildMod {
         modName = "lab-loot-extras";
         version = config.home.file."generation.rev".text;
@@ -445,6 +451,7 @@ in
         cdda-defense-additions
         e85-engines
         #grow-more-drugs
+        innawoods-compat
         lab-loot-extras
         magic-loot-perks
         magiclysm-no-class-limit
