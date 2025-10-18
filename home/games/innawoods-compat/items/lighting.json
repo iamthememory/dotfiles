@@ -18,5 +18,5 @@
     "name": { "str": "clay oil lamp" },
     "description": "This is a specialized small clay container with a wick, an ancient form of oil lamp.  Unlike newer designs, it isn't windproof, so the flame is likely to be extinguished if exposed to wind; better use it indoors.  It does not provide much light, but lasts a long time.  It is lit, consuming oil and providing light.  Use it to extinguish the flame.",
     "light": 20
-  },
+  }
 ]
