@@ -1,3 +1,51 @@
+diff --git a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json
+index 67c0785fcc3e..ebd290512ec6 100644
+--- a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	
++++ b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	
+@@ -6,19 +6,19 @@
+     "required_event": "character_wakes_up",
+     "condition": {
+       "and": [
+-        { "math": [ "time_since('cataclysm', 'unit':'days') >= 18" ] },
++        { "math": [ "time_since('cataclysm', 'unit':'days') >= 20" ] },
+         { "not": { "compare_string": [ "yes", { "u_val": "u_ordeal_lock" } ] } },
+-        { "math": [ "time_since('cataclysm', 'unit':'days') <= 42" ] },
+-        "u_is_avatar" 
++        { "math": [ "rng(0, 1.0) <= 0.05" ] },
++        "u_is_avatar"
+       ]
+     },
+     "effect": [
+       { "u_add_var": "u_ordeal_lock", "value": "yes" },
+       { "run_eocs": "EOC_green_dawn_wave", "time_in_future": "10 seconds" },
+-      { "run_eocs": "EOC_green_dawn_elite", "time_in_future": "15 seconds" },
+-      { "run_eocs": "EOC_green_dawn_wave", "time_in_future": [ "5 minutes", "10 minutes" ] },
++      { "run_eocs": "EOC_green_dawn_elite", "time_in_future": "5 minutes" },
+       { "run_eocs": "EOC_green_dawn_wave", "time_in_future": [ "10 minutes", "20 minutes" ] },
+-      { "run_eocs": "EOC_remove_ordeal_lock", "time_in_future": [ "14 days", "20 days" ] },
++      { "run_eocs": "EOC_green_dawn_wave", "time_in_future": [ "20 minutes", "30 minutes" ] },
++      { "run_eocs": "EOC_remove_ordeal_lock", "time_in_future": [ "20 days", "40 days" ] },
+       { "run_eocs": "EOC_green_dawn_flavour", "time_in_future": [ "5 minutes", "10 minutes" ] },
+       {
+         "message": "<color_green>     The Dawn of Green\n\n          DOUBT\n\nTo live was a process full of pain.</color>",
+@@ -40,7 +40,7 @@
+         "min_radius": [ 7, 9 ],
+         "max_radius": [ 14, 24 ]
+       },
+-      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "1 minutes", "2 minutes" ] },
++      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "10 minutes", "20 minutes" ] },
+       { "run_eocs": "EOC_green_dawn_flavour", "time_in_future": [ "5 minutes", "10 minutes" ] }
+     ]
+   },
+@@ -73,7 +73,7 @@
+         "min_radius": [ 7, 9 ],
+         "max_radius": [ 14, 24 ]
+       },
+-      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "1 minutes", "2 minutes" ] }
++      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "10 minutes", "20 minutes" ] }
+     ]
+   },
+   {
 diff --git a/Items/StigmaWorkshop/weapons.json b/Items/StigmaWorkshop/weapons.json
 index bf02b36cb71b..69150a8d7fea 100644
 --- a/Items/StigmaWorkshop/weapons.json
