@@ -7,7 +7,7 @@ index 8f3cc0d5b700..85c2df332e31 100644
          // The worst case in the core game currently is boots_fur
          // with 104 alternatives.
 -        static constexpr size_t max_alternatives = 105;
-+        static constexpr size_t max_alternatives = 130;
++        static constexpr size_t max_alternatives = 150;
          if( alternatives_.size() + pending.size() > max_alternatives ) {
              debugmsg( "Construction of deduped_requirement_data generated too many alternatives.  "
                        "The recipe %1s should be simplified.  See the Recipe section in "

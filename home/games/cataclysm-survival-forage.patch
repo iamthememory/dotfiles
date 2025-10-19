@@ -1,0 +1,13 @@
+diff --git a/src/iexamine.cpp b/src/iexamine.cpp
+index 5a57392a4660..3661de1e0ebe 100644
+--- a/src/iexamine.cpp
++++ b/src/iexamine.cpp
+@@ -7779,7 +7779,7 @@ iexamine_functions iexamine_functions_from_string( const std::string &function_n
+ void iexamine::practice_survival_while_foraging( Character &who )
+ {
+     ///\EFFECT_INT Intelligence caps survival skill gains from foraging
+-    const int max_forage_skill = who.int_cur / 3 + 1;
++    const int max_forage_skill = who.int_cur / 2 + 1;
+     ///\EFFECT_SURVIVAL decreases survival skill gain from foraging (NEGATIVE)
+     const int max_exp = 2 * ( max_forage_skill - static_cast<int>( who.get_skill_level(
+                                   skill_survival ) ) );

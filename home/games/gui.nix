@@ -102,6 +102,7 @@ in
           ./cataclysm-sky-island-craft-fix.patch
           ./cataclysm-sky-island-range.patch
           ./cataclysm-spell-ui-widen.patch
+          ./cataclysm-survival-forage.patch
           ./cataclysm-xedra-chronomancer-heritage.patch
           ./cataclysm-xedra-dream.patch
           ./cataclysm-xedra-dreamdross.patch
