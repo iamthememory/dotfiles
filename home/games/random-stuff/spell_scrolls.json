@@ -16,5 +16,13 @@
     "copy-from": "plant_spellbook",
     "name": { "ctxt": "spellbook", "str": "The Elven Path", "str_pl": "copies of The Elven Path" },
     "category": "manuals"
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "id": "forbidden_tome",
+    "copy-from": "forbidden_tome",
+    "name": { "ctxt": "spellbook", "str": "Forbidden Tome" },
+    "category": "manuals"
   }
 ]
