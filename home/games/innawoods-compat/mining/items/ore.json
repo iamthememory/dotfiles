@@ -139,7 +139,7 @@
     "id": "chunk_cinnabar",
     "category": "spare_parts",
     "price": "2 USD 50 cent",
-    "name": { "str": "chunk of cinnabar ", "str_pl": "chunks of cinnabar" },
+    "name": { "str": "chunk of cinnabar", "str_pl": "chunks of cinnabar" },
     "symbol": "*",
     "color": "brown",
     "description": "A large chunk of cinnabar, an ore of mercury.  It is also the historic source for vermilion pigment.",
