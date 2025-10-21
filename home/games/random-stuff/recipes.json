@@ -13,10 +13,9 @@
     "proficiencies": [
       { "proficiency": "prof_metalworking" }
     ],
-    "using": [ [ "forging_standard", 2 ], [ "bronzesmithing_tools", 1 ] ],
+    "using": [ [ "forging_standard", 2 ], [ "bronzesmithing_tools", 1 ], [ "steel_standard", 7 ] ],
     "tools": [ [ [ "casting_mold", -1 ] ] ],
     "components": [
-      [ [ "steel_standard", 7 ] ],
       [ [ "coal_lump", 120 ], [ "charcoal", 91 ] ]
     ]
   }

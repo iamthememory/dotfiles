@@ -4,7 +4,7 @@
     "id": "EOC_magic_loot_mindovermatter_knowledge_find",
     "condition": { "math": [ "rng(0, 1.0) <= 0.04" ] },
     "effect": [
-      { "u_message": "You found something a note." },
+      { "u_message": "You found a note." },
       { "u_spawn_item": "magic_loot_mindovermatter_knowledge", "use_item_group": true }
     ]
   },
@@ -21,7 +21,7 @@
     "effect": [ { "u_message": "You stop looking for strange notes." } ]
   },
   {
-    "id": "magic_loot_mindovermatter",
+    "id": "magic_loot_mindovermatter_knowledge",
     "type": "item_group",
     "items": [
       { "item": "manual_psionic_ritual", "prob": 5 },
