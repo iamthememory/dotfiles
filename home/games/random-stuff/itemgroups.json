@@ -1,0 +1,14 @@
+[
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "EXODII_Shop_Tier0",
+    "copy-from": "EXODII_Shop_Tier0",
+    "extend": {
+      "items": [
+        { "item": "anesthetic_kit", "charges": [ 0, 6000 ] },
+        { "item": "anesthetic", "charges": [ 1, 400 ], "container-item": "bottle_glass" }
+      ]
+    }
+  }
+]
