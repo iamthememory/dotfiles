@@ -1,0 +1,23 @@
+[
+  {
+    "id": "pickaxe_bone",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "//": "From the mining mod.",
+    "name": { "str": "bone pickaxe" },
+    "description": "A primitive pickaxe, able to mine, if not the best tool for the job.",
+    "weight": "760 g",
+    "volume": "10 L",
+    "price": "8 USD",
+    "price_postapoc": "50 cent",
+    "to_hit": { "grip": "solid", "length": "short", "surface": "point", "balance": "uneven" },
+    "melee_damage": { "bash": 10, "stab": 3 },
+    "material": [ "wood", "bone" ],
+    "symbol": "/",
+    "color": "white",
+    "use_action": [ "PICKAXE" ],
+    "techniques": [ "WBLOCK_1" ],
+    "flags": [ "FRAGILE_MELEE", "NONCONDUCTIVE", "DIG_TOOL", "SHEATH_AXE" ],
+    "weapon_category": [ "HOOKING_WEAPONRY" ]
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "fast-craft-slow-skill",
+    "name": "Fast Craft, Slow Skill",
+    "authors": [ "iamthememory" ],
+    "description": "Make crafting significantly faster, but significantly slow down the rate of learning skills.",
+    "category": "rebalance",
+    "dependencies": [ "dda" ]
+  }
+]

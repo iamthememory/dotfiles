@@ -1,0 +1,20 @@
+[
+  {
+    "type": "mutation",
+    "id": "very_fast_crafting",
+    "name": { "str": "Very Fast Crafting" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "Bonus crafting speed, slower learning.",
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "values": [
+          { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 4.0 },
+          { "value": "LEARNING_FOCUS", "multiply": -0.8 }
+        ]
+      }
+    ]
+  }
+]

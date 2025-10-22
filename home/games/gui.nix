@@ -385,6 +385,12 @@ in
         src = ./cdda-defense-additions;
       };
 
+      fast-craft-slow-skill = pkgs.cataclysmDDA.buildMod {
+        modName = "fast-craft-slow-skill";
+        version = config.home.file."generation.rev".text;
+        src = ./fast-craft-slow-skill;
+      };
+
       innawoods-compat = pkgs.cataclysmDDA.buildMod {
         modName = "innawoods-compat";
         version = config.home.file."generation.rev".text;
@@ -451,6 +457,7 @@ in
         cc-sounds
         cdda-defense-additions
         e85-engines
+        fast-craft-slow-skill
         #grow-more-drugs
         innawoods-compat
         lab-loot-extras

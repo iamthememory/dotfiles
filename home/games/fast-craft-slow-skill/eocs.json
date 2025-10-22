@@ -1,0 +1,10 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_FAST_CRAFT_SLOW_SKILL_INIT",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": { "not": { "u_has_trait": "very_fast_crafting" } },
+    "effect": [ { "u_add_trait": "very_fast_crafting" } ]
+  }
+]
