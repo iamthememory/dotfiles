@@ -29,7 +29,7 @@
     "name": "LATITUDE",
     "//": "Be somewhere further north to make it colder.",
     "stype": "float",
-    "value": 60.0
+    "value": 70.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -49,6 +49,6 @@
     "name": "SKILL_TRAINING_SPEED",
     "//": "Scales experience gained from practicing skills and reading books.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables skill training except for NPC training.",
     "stype": "float",
-    "value": 0.2
+    "value": 0.35
   }
 ]

@@ -26,7 +26,7 @@
     "category": "CC_OTHER",
     "subcategory": "CSC_OTHER_TOOLS",
     "skill_used": "fabrication",
-    "difficulty": 5,
+    "difficulty": 3,
     "skills_required": [ "survival", 3 ],
     "time": "15 m",
     "autolearn": true,
