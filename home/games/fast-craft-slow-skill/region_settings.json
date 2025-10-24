@@ -9,6 +9,6 @@
     "type": "weather_generator",
     "id": "default_fast_craft_slow_skill",
     "copy-from": "default",
-    "base_temperature": -15.0
+    "base_temperature": -8.0
   }
 ]

@@ -17,6 +17,16 @@
         "condition": { "not": { "u_has_trait": "perk_animal_hauler" } },
         "text": "Gain [<trait_name:perk_animal_hauler>]",
         "topic": "TALK_PERK_MENU_ANIMAL_HAULER"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_cbm_integrator" } },
+        "text": "Gain [<trait_name:perk_cbm_integrator>]",
+        "topic": "TALK_PERK_MENU_CBM_INTEGRATOR"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_cbm_hunter" } },
+        "text": "Gain [<trait_name:perk_cbm_hunter>]",
+        "topic": "TALK_PERK_MENU_CBM_HUNTER"
       }
     ]
   },
@@ -66,6 +76,43 @@
           { "u_add_trait": "perk_animal_hauler" },
           { "math": [ "u_num_perks--" ] },
           { "u_add_effect": "effect_perk_animal_hauler_available", "duration": "PERMANENT" }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_CBM_INTEGRATOR",
+    "dynamic_line": "<trait_name:perk_cbm_integrator>: \"<trait_description:perk_cbm_integrator>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [
+          { "u_add_trait": "CBM_Interface" },
+          { "u_add_trait": "perk_cbm_integrator" }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_CBM_HUNTER",
+    "dynamic_line": "<trait_name:perk_cbm_hunter>: \"<trait_description:perk_cbm_hunter>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [
+          { "u_add_trait": "perk_cbm_hunter" }
         ]
       },
       { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },

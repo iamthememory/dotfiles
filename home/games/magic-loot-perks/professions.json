@@ -1,0 +1,29 @@
+[
+  {
+    "type": "profession",
+    "id": "bionic_magic_survivor",
+    "name": "Bionic Magic Survivor",
+    "description": "You are a survivor, ready to do whatever you need to survive in an arctic environment...or wherever you ended up.  You're not sure where your clothes went though.",
+    "points": 12,
+    "traits": [
+      "CBM_Interface",
+      "ROBUST",
+      "UNSTABLE",
+      "perk_cbm_hunter",
+      "perk_cbm_integrator",
+      "perk_haulers_aura"
+    ],
+    "CBMs": [
+      "bio_climate",
+      "bio_metabolics",
+      "bio_power_storage_mkII"
+    ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "eshaper_spellbook_tool" }
+        ]
+      }
+    }
+  }
+]

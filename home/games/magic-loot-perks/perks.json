@@ -32,5 +32,30 @@
     "cost": 500,
     "activation_msg": "",
     "activated_eocs": [ "EOC_PERK_ANIMAL_HAULER_ACTIVATED" ]
+  },
+  {
+    "type": "mutation",
+    "id": "perk_cbm_integrator",
+    "name": { "str": "CBM Integrator" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "Your body allows you to add CBMs without equipment.",
+    "flags": [ "MANUAL_CBM_INSTALLATION" ]
+  },
+  {
+    "type": "mutation",
+    "id": "perk_cbm_hunter",
+    "name": { "str": "CBM Hunter" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "You periodically find CBMs.",
+    "active": true,
+    "activated_is_setup": true,
+    "activated_eocs": [ "EOC_magic_loot_cbm_hunter_on" ],
+    "deactivated_eocs": [ "EOC_magic_loot_cbm_hunter_off" ],
+    "processed_eocs": [ "EOC_magic_loot_cbm_hunter_find" ],
+    "time": 24000
   }
 ]
