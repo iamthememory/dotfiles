@@ -97,6 +97,7 @@ in
           ./cataclysm-more-engines.patch
           ./cataclysm-multiple-thresholds.patch
           ./cataclysm-perks-fix.patch
+          ./cataclysm-plant-in-cold.patch
           ./cataclysm-plant-only-check-now.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-sky-island-craft-fix.patch

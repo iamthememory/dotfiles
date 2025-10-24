@@ -1,0 +1,13 @@
+diff --git a/src/item_factory.cpp b/src/item_factory.cpp
+index 9230ba67bc11..1ef572c54a37 100644
+--- a/src/item_factory.cpp
++++ b/src/item_factory.cpp
+@@ -3440,7 +3440,7 @@ void islot_seed::deserialize( const JsonObject &jo )
+     mandatory( jo, was_loaded, "fruit", fruit_id );
+     mandatory( jo, was_loaded, "growth_stages", growth_stages,
+                pair_reader<flag_id, time_duration> {} );
+-    optional( jo, was_loaded, "growth_temp", growth_temp, 10_C );
++    optional( jo, was_loaded, "growth_temp", growth_temp, -100_C );
+     optional( jo, was_loaded, "seeds", spawn_seeds, true );
+     optional( jo, was_loaded, "byproducts", byproducts );
+     optional( jo, was_loaded, "required_terrain_flag", required_terrain_flag,
