@@ -1,0 +1,9 @@
+[
+  {
+    "type": "mutation",
+    "id": "UNSTABLE",
+    "copy-from": "UNSTABLE",
+    "name": { "str": "Genetically Unstable" },
+    "starting_trait": true
+  }
+]

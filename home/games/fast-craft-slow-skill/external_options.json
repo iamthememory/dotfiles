@@ -49,6 +49,6 @@
     "name": "SKILL_TRAINING_SPEED",
     "//": "Scales experience gained from practicing skills and reading books.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables skill training except for NPC training.",
     "stype": "float",
-    "value": 0.35
+    "value": 0.75
   }
 ]
