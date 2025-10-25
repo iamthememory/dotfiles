@@ -5,7 +5,7 @@
     "condition": { "math": [ "rng(0, 1.0) <= 0.1" ] },
     "effect": [
       { "u_message": "You found a CBM." },
-      { "u_spawn_item": "bionics", "use_item_group": true }
+      { "u_spawn_item": "magic_loot_cbm_bionics", "use_item_group": true }
     ]
   },
   {
@@ -19,5 +19,22 @@
     "id": "EOC_magic_loot_cbm_hunter_off",
     "//": "Deactivation effect",
     "effect": [ { "u_message": "You stop looking for bionics." } ]
+  },
+  {
+    "id": "magic_loot_cbm_bionics",
+    "type": "item_group",
+    "items": [
+      { "group": "bionics", "prob": 60 },
+      { "item": "bio_power_storage", "prob": 25 },
+      { "item": "bio_power_storage_mkII", "prob": 15 },
+      { "group": "EXODII_CBM_Store_Tier1", "prob": 50 },
+      { "group": "EXODII_CBM_Store_Tier2", "prob": 45 },
+      { "group": "EXODII_CBM_Store_Tier3", "prob": 40 },
+      { "group": "EXODII_CBM_Store_Tier4", "prob": 35 },
+      { "group": "EXODII_CBM_unlocks_weapons_light", "prob": 30 },
+      { "group": "EXODII_CBM_unlocks_weapons_medium", "prob": 25 },
+      { "group": "EXODII_CBM_unlocks_weapons_heavy", "prob": 20 },
+      { "group": "EXODII_Store_Salvage_Tech", "prob": 30 }
+    ]
   }
 ]
