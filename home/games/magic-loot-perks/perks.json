@@ -57,5 +57,15 @@
     "deactivated_eocs": [ "EOC_magic_loot_cbm_hunter_off" ],
     "processed_eocs": [ "EOC_magic_loot_cbm_hunter_find" ],
     "time": 24000
+  },
+  {
+    "type": "mutation",
+    "id": "perk_pocket_world",
+    "name": { "str": "Pocket World" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "You know how to teleport to a pocket dimension of endless grass.",
+    "spells_learned": [ [ "perk_pocket_world_teleport_spell", 1 ] ]
   }
 ]

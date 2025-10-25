@@ -27,6 +27,11 @@
         "condition": { "not": { "u_has_trait": "perk_cbm_hunter" } },
         "text": "Gain [<trait_name:perk_cbm_hunter>]",
         "topic": "TALK_PERK_MENU_CBM_HUNTER"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_pocket_world" } },
+        "text": "Gain [<trait_name:perk_pocket_world>]",
+        "topic": "TALK_PERK_MENU_POCKET_WORLD"
       }
     ]
   },
@@ -94,7 +99,8 @@
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "CBM_Interface" },
-          { "u_add_trait": "perk_cbm_integrator" }
+          { "u_add_trait": "perk_cbm_integrator" },
+          { "math": [ "u_num_perks--" ] }
         ]
       },
       { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
@@ -112,7 +118,27 @@
         "condition": { "math": [ "u_num_perks > 0" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "perk_cbm_hunter" }
+          { "u_add_trait": "perk_cbm_hunter" },
+          { "math": [ "u_num_perks--" ] }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_POCKET_WORLD",
+    "dynamic_line": "<trait_name:perk_pocket_world>: \"<trait_description:perk_pocket_world>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [
+          { "u_add_trait": "perk_pocket_world" },
+          { "math": [ "u_num_perks--" ] }
         ]
       },
       { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },

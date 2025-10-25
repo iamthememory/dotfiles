@@ -1,0 +1,202 @@
+[
+  {
+    "type": "region_settings",
+    "id": "dimension_perk_pocket_world_settings",
+    "rivers": null,
+    "lakes": null,
+    "ocean": null,
+    "ravines": null,
+    "forests": null,
+    "forest_trails": null,
+    "highways": null,
+    "cities": null,
+    "forest_composition": "no_forests",
+    "map_extras": "no_map_extras",
+    "terrain_furniture": "default",
+    "weather": "default",
+    "place_roads": false,
+    "place_specials": false,
+    "neighbor_connections": false,
+    "default_oter": [
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "perk_pocket_world_grass_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "perk_pocket_world_rock_area",
+      "closetland_nether_glass"
+    ],
+    "default_groundcover": [ [ "t_grass", 1 ] ],
+    "feature_flag_settings": { "blacklist": [ "CLASSIC", "LAB", "MAN_MADE", "MILITARY", "URBAN", "FARM", "EXODII" ], "whitelist": [  ] },
+    "connections": {
+      "intra_city_road_connection": "local_road",
+      "inter_city_road_connection": "local_road",
+      "trail_connection": "forest_trail",
+      "sewer_connection": "sewer_tunnel",
+      "subway_connection": "subway_tunnel",
+      "rail_connection": "local_railroad"
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "perk_pocket_world_grass_area" ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................"
+      ],
+      "terrain": { ".": "t_grass" }
+    }
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "perk_pocket_world_grass_area",
+    "name": "endless grass",
+    "sym": "G",
+    "color": "green",
+    "see_cost": "none"
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "perk_pocket_world_rock_area" ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................",
+        "........................"
+      ],
+      "terrain": { ".": "t_rock" }
+    }
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "perk_pocket_world_rock_area",
+    "name": "endless rock",
+    "sym": "R",
+    "color": "light_gray",
+    "see_cost": "full_high"
+  },
+  {
+    "id": "perk_pocket_world_teleport_spell",
+    "type": "SPELL",
+    "name": "Teleport to pocket_world",
+    "description": "Teleport to an endless grassland floating in a void.",
+    "valid_targets": [ "self" ],
+    "spell_class": "NONE",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_LEGS", "NO_HANDS", "VERBAL" ],
+    "difficulty": 0,
+    "min_damage": 1,
+    "max_damage": 1,
+    "duration_increment": 1,
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_pocket_world_teleport_initiate",
+    "shape": "blast",
+    "energy_source": "NONE",
+    "base_energy_cost": 500,
+    "base_casting_time": 30000
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_pocket_world_teleport_initiate",
+    "condition": { "current_dimension": "dimension_perk_pocket_world" },
+    "effect": [
+      { "u_location_variable": { "u_val": "pocket_world_arrival_point" }, "min_radius": 0, "max_radius": 0 },
+      { "u_add_effect": "blind", "duration": 0 },
+      { "u_add_effect": "effect_perk_closetland_temp_levitation", "duration": 0 },
+      {
+        "u_travel_to_dimension": "default",
+        "npc_travel_radius": 0
+      },
+      { "u_teleport": { "u_val": "pocket_world_departure_point" } },
+      { "u_lose_effect": "blind" }
+    ],
+    "false_effect": [
+      { "u_location_variable": { "u_val": "pocket_world_departure_point" }, "min_radius": 0, "max_radius": 0 },
+      { "u_add_effect": "blind", "duration": 0 },
+      { "u_add_effect": "effect_perk_closetland_temp_levitation", "duration": 0 },
+      {
+        "u_travel_to_dimension": "dimension_perk_pocket_world",
+        "npc_travel_radius": 0,
+        "region_type": "dimension_perk_pocket_world_settings"
+      },
+      {
+        "if": { "not": { "math": [ "has_var(u_pocket_world_arrival_point)" ] } },
+        "then": { "run_eocs": "EOC_pocket_world_teleport_initial" },
+        "else": [ { "u_teleport": { "u_val": "pocket_world_arrival_point" } }, { "u_lose_effect": "blind" } ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_pocket_world_teleport_initial",
+    "effect": [
+      {
+        "u_location_variable": { "u_val": "pocket_world_arrival_point" },
+        "terrain": "t_grass",
+        "target_min_radius": 24,
+        "target_max_radius": 24
+      },
+      { "u_teleport": { "u_val": "pocket_world_arrival_point" } },
+      { "u_lose_effect": "blind" }
+    ]
+  }
+]
