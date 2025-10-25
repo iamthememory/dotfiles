@@ -1,0 +1,7 @@
+[
+  {
+    "id": "pickaxe_list",
+    "type": "requirement",
+    "extend": { "tools": [ [ [ "pickaxe_bone", -1 ] ] ] }
+  }
+]
