@@ -9,5 +9,87 @@
       }
     },
     "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_TREE_SINGING_LEARN_RECIPES",
+    "recurrence": [ "6 h", "36 h" ],
+    "condition": {
+      "and": [
+        { "math": [ "u_spell_level('arvore_tree_singing_spell') >= 1" ] },
+        {
+          "or": [
+            { "not": { "u_know_recipe": "create_chair_wood_treesung" } },
+            { "not": { "u_know_recipe": "create_wardrobe_wood_treesung" } },
+            { "not": { "u_know_recipe": "create_table_wood_treesung" } },
+            { "not": { "u_know_recipe": "create_bedframe_wood_treesung" } },
+            { "not": { "u_know_recipe": "create_verdant_helm" } },
+            { "not": { "u_know_recipe": "create_verdant_cuirass" } },
+            { "not": { "u_know_recipe": "create_verdant_gauntlets" } },
+            { "not": { "u_know_recipe": "create_verdant_leg_guards" } },
+            { "not": { "u_know_recipe": "create_verdant_boots" } },
+            { "not": { "u_know_recipe": "create_verdant_cloak" } },
+            { "not": { "u_know_recipe": "create_shortbow_treesung" } },
+            { "not": { "u_know_recipe": "create_greatbow_treesung" } },
+            { "not": { "u_know_recipe": "create_arrow_treesung" } },
+            { "not": { "u_know_recipe": "create_spear_treesung" } },
+            { "not": { "u_know_recipe": "create_pike_treesung" } },
+            { "not": { "u_know_recipe": "create_mace_treesung" } },
+            { "not": { "u_know_recipe": "create_q_staff_treesung" } },
+            { "not": { "u_know_recipe": "create_naginata_treesung" } },
+            { "not": { "u_know_recipe": "create_baselard_treesung" } }
+          ]
+        },
+        {
+          "or": [
+            {
+              "and": [
+                "u_is_outside",
+                { "not": { "math": [ "u_val('pos_z') <= -1" ] } },
+                { "u_near_om_location": "forest", "range": 2 },
+                { "not": { "u_at_om_location": "field" } }
+              ]
+            },
+            {
+              "and": [
+                "u_is_outside",
+                { "not": { "math": [ "u_val('pos_z') <= -1" ] } },
+                { "u_near_om_location": "forest_thick", "range": 2 },
+                { "not": { "u_at_om_location": "field" } }
+              ]
+            },
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_FOREST" }
+          ]
+        }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "create_chair_wood_treesung",
+          "create_wardrobe_wood_treesung",
+          "create_table_wood_treesung",
+          "create_bedframe_wood_treesung",
+          "create_verdant_helm",
+          "create_verdant_cuirass",
+          "create_verdant_gauntlets",
+          "create_verdant_leg_guards",
+          "create_verdant_boots",
+          "create_verdant_cloak",
+          "create_shortbow_treesung",
+          "create_greatbow_treesung",
+          "create_arrow_treesung",
+          "create_spear_treesung",
+          "create_pike_treesung",
+          "create_mace_treesung",
+          "create_q_staff_treesung",
+          "create_naginata_treesung",
+          "create_baselard_treesung"
+        ],
+        "type": "recipe"
+      },
+      { "u_message": "The trees whisper their knowledge of a recipe to you", "type": "good" }
+    ]
   }
 ]
