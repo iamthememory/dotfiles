@@ -13,7 +13,7 @@
     "forest_composition": "no_forests",
     "map_extras": "no_map_extras",
     "terrain_furniture": "default",
-    "weather": "default",
+    "weather": "default_pocket_world",
     "place_roads": false,
     "place_specials": false,
     "neighbor_connections": false,
@@ -50,6 +50,12 @@
       "subway_connection": "subway_tunnel",
       "rail_connection": "local_railroad"
     }
+  },
+  {
+    "type": "weather_generator",
+    "id": "default_pocket_world",
+    "copy-from": "default",
+    "base_temperature": 0.5
   },
   {
     "type": "mapgen",
@@ -96,7 +102,7 @@
     "effect": "effect_on_condition",
     "effect_str": "EOC_pocket_world_teleport_initiate",
     "shape": "blast",
-    "energy_source": "NONE",
+    "energy_source": "MANA",
     "base_energy_cost": 500,
     "base_casting_time": 30000
   },
