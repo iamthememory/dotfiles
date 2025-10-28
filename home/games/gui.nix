@@ -1,6 +1,7 @@
 # GUI-based games and their configurations.
 { config
 , inputs
+, lib
 , pkgs
 , ...
 }:
@@ -139,6 +140,29 @@ in
         src = inputs.cdda-sounds;
         modRoot = "sound/CC-Sounds";
       };
+
+      cdda-tilesets =
+        let
+          tileset-packages-unfiltered =
+            inputs.cdda-tilesets.outputs.packages."${pkgs.system}";
+
+          # Ultica_iso fails as a flakedue to symlinks outside of its directory.
+          tileset-packages =
+            lib.attrsets.filterAttrs
+              (n: v: n != "Ultica_iso")
+              tileset-packages-unfiltered;
+
+          makeTileset = modName: deriv: pkgs.cataclysmDDA.buildTileSet {
+            inherit modName;
+            version = deriv.version;
+            src = deriv;
+          };
+
+          tilesetSet = builtins.mapAttrs makeTileset tileset-packages;
+
+          tilesets = builtins.attrValues tilesetSet;
+        in
+        tilesets;
 
       elf-crops-src = pkgs.applyPatches {
         name = "elfcrops-patched";
@@ -457,6 +481,7 @@ in
         arcana
         cc-sounds
         cdda-defense-additions
+        cdda-tilesets
         e85-engines
         fast-craft-slow-skill
         #grow-more-drugs

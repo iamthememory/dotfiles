@@ -161,6 +161,10 @@
       flake = false;
     };
 
+    cdda-tilesets = {
+      url = "github:I-am-Erk/CDDA-Tilesets";
+    };
+
     # Nightly Rust builds.
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
