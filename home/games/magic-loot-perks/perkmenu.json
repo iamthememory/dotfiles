@@ -32,6 +32,11 @@
         "condition": { "not": { "u_has_trait": "perk_pocket_world" } },
         "text": "Gain [<trait_name:perk_pocket_world>]",
         "topic": "TALK_PERK_MENU_POCKET_WORLD"
+      },
+      {
+        "condition": { "not": { "u_has_trait": "perk_forced_genetic_instability" } },
+        "text": "Gain [<trait_name:perk_forced_genetic_instability>]",
+        "topic": "TALK_PERK_MENU_FORCED_GENETIC_INSTABILITY"
       }
     ]
   },
@@ -140,6 +145,25 @@
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "perk_pocket_world" },
+          { "math": [ "u_num_perks--" ] }
+        ]
+      },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Quit.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_PERK_MENU_FORCED_GENETIC_INSTABILITY",
+    "dynamic_line": "<trait_name:perk_forced_genetic_instability>: \"<trait_description:perk_forced_genetic_instability>\"",
+    "responses": [
+      {
+        "text": "Select Perk.",
+        "topic": "TALK_PERK_MENU_MAIN",
+        "condition": { "math": [ "u_num_perks > 0" ] },
+        "failure_topic": "TALK_PERK_MENU_FAIL",
+        "effect": [
+          { "u_add_trait": "perk_forced_genetic_instability" },
           { "math": [ "u_num_perks--" ] }
         ]
       },

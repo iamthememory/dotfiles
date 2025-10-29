@@ -8,6 +8,7 @@
     "valid": false,
     "description": "You periodically find unusual artifacts..",
     "active": true,
+    "starts_active": true,
     "activated_is_setup": true,
     "activated_eocs": [ "EOC_magic_loot_xedra_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_xedra_off" ],

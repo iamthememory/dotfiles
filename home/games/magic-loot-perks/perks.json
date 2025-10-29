@@ -50,6 +50,7 @@
     "points": 0,
     "purifiable": false,
     "valid": false,
+    "starts_active": true,
     "description": "You periodically find CBMs.",
     "active": true,
     "activated_is_setup": true,
@@ -67,5 +68,15 @@
     "valid": false,
     "description": "You know how to teleport to a pocket dimension of endless grass.",
     "spells_learned": [ [ "perk_pocket_world_teleport_spell", 1 ] ]
+  },
+  {
+    "type": "mutation",
+    "id": "perk_forced_genetic_instability",
+    "name": { "str": "Forced Genetic Instability" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "mixed_effect": true,
+    "description": "You periodically mutate, but at least it's usually helpful."
   }
 ]
