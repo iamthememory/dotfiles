@@ -99,6 +99,8 @@
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "CBM_Interface" },
+          { "u_add_bionic": "bio_power_storage" },
+          { "u_add_bionic": "bio_cable" },
           { "u_add_trait": "perk_cbm_integrator" },
           { "math": [ "u_num_perks--" ] }
         ]

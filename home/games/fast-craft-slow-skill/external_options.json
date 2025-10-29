@@ -22,14 +22,14 @@
     "name": "CONSTRUCTION_SCALING",
     "stub": true,
     "stype": "int",
-    "value": 20
+    "value": 25
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "LATITUDE",
     "//": "Be somewhere further north to make it colder.",
     "stype": "float",
-    "value": 70.0
+    "value": 65.0
   },
   {
     "type": "EXTERNAL_OPTION",
