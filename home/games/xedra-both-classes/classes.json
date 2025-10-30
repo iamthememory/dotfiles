@@ -37,6 +37,7 @@
     "copy-from": "GRACKEN",
     "cancels": [  ],
     "types": [  ],
+    "allowed_category": [  ],
     "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] }
   },
   {
@@ -86,6 +87,7 @@
     "id": "UNKNOWING_CHANGELING_NOBLE",
     "copy-from": "UNKNOWING_CHANGELING_NOBLE",
     "types": [  ],
+    "allowed_category": [  ],
     "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] }
   },
   {
@@ -123,6 +125,7 @@
     "id": "IERDE",
     "copy-from": "IERDE",
     "types": [  ],
+    "allowed_category": [  ],
     "delete": {
       "cancels": [
         "DREAMER",
@@ -141,6 +144,7 @@
     "id": "ARVORE",
     "copy-from": "ARVORE",
     "types": [  ],
+    "allowed_category": [  ],
     "delete": {
       "cancels": [
         "DREAMER",
@@ -159,6 +163,7 @@
     "id": "SALAMANDER",
     "copy-from": "SALAMANDER",
     "types": [  ],
+    "allowed_category": [  ],
     "delete": {
       "cancels": [
         "DREAMER",
@@ -177,6 +182,7 @@
     "id": "UNDINE",
     "copy-from": "UNDINE",
     "types": [  ],
+    "allowed_category": [  ],
     "delete": {
       "cancels": [
         "DREAMER",
@@ -195,6 +201,7 @@
     "id": "HOMULLUS",
     "copy-from": "HOMULLUS",
     "types": [  ],
+    "allowed_category": [  ],
     "delete": {
       "cancels": [
         "DREAMER",
@@ -211,6 +218,7 @@
     "type": "mutation",
     "id": "SYLPH",
     "copy-from": "SYLPH",
+    "allowed_category": [  ],
     "types": [  ],
     "delete": {
       "cancels": [
@@ -224,5 +232,41 @@
         "NO_CBM_INSTALLATION"
       ]
     }
+  },
+  {
+    "type": "mutation",
+    "id": "UNKNOWING_CHANGELING_COMMONER_BROWNIE",
+    "copy-from": "UNKNOWING_CHANGELING_COMMONER_BROWNIE",
+    "allowed_category": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "UNKNOWING_CHANGELING_COMMONER_POOKA",
+    "copy-from": "UNKNOWING_CHANGELING_COMMONER_POOKA",
+    "allowed_category": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "UNKNOWING_CHANGELING_COMMONER_SELKIE",
+    "copy-from": "UNKNOWING_CHANGELING_COMMONER_SELKIE",
+    "allowed_category": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "UNKNOWING_CHANGELING_COMMONER_TROW",
+    "copy-from": "UNKNOWING_CHANGELING_COMMONER_TROW",
+    "allowed_category": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "HOMULLUS_MINIMIZED_MUTATIONS",
+    "copy-from": "HOMULLUS_MINIMIZED_MUTATIONS",
+    "allowed_category": [  ]
+  },
+  {
+    "type": "mutation",
+    "id": "HOMULLUS_NO_DOLL_MUTATIONS",
+    "copy-from": "HOMULLUS_NO_DOLL_MUTATIONS",
+    "allowed_category": [  ]
   }
 ]

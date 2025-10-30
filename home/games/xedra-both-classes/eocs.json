@@ -91,5 +91,18 @@
       },
       { "u_message": "The trees whisper their knowledge of a recipe to you", "type": "good" }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_HOMULLUS_CUT_OFF_FURTHER_HOMULLUS_MUTATIONS",
+    "eoc_type": "EVENT",
+    "required_event": "character_consumes_item",
+    "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_HOMULLUS_CUT_OFF_FURTHER_HOMULLUS_MUTATIONS_2",
+    "recurrence": "10 m",
+    "effect": [  ]
   }
 ]
