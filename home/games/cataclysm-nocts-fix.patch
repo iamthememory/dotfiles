@@ -72,3 +72,43 @@ index 4462c911e3e3..000000000000
 -      }
 -   }
 -]
+diff --git a/nocts_cata_mod_DDA/Weapons/c_ranged.json b/nocts_cata_mod_DDA/Weapons/c_ranged.json
+index 6a691468b5d3..60c7ab64cab7 100644
+--- a/nocts_cata_mod_DDA/Weapons/c_ranged.json
++++ b/nocts_cata_mod_DDA/Weapons/c_ranged.json
+@@ -478,7 +478,7 @@
+   },
+   {
+     "id": "surv_full_223",
+-    "copy-from": "rifle_base",
++    "copy-from": "gun_base_223_semi_rifle",
+     "type": "ITEM",
+     "subtypes": [ "GUN" ],
+     "looks_like": "surv_carbine_223",
+@@ -512,7 +512,7 @@
+   },
+   {
+     "id": "surv_full_22",
+-    "copy-from": "smg_base",
++    "copy-from": "gun_base_rifle_semi",
+     "type": "ITEM",
+     "subtypes": [ "GUN" ],
+     "looks_like": "sten",
+@@ -666,7 +666,7 @@
+   },
+   {
+     "id": "surv_full_12",
+-    "copy-from": "shotgun_base",
++    "copy-from": "gun_base_shotgun_semi",
+     "type": "ITEM",
+     "subtypes": [ "GUN" ],
+     "looks_like": "saiga_12",
+@@ -1605,7 +1605,7 @@
+   },
+   {
+     "id": "flamethrower_surv",
+-    "copy-from": "flamethrower_base",
++    "copy-from": "flamethrower",
+     "looks_like": "flamethrower",
+     "type": "ITEM",
+     "subtypes": [ "GUN" ],

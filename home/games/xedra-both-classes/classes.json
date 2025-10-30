@@ -50,6 +50,12 @@
   },
   {
     "type": "mutation",
+    "id": "HUMAN_CHRONOMANCER_BUILD",
+    "copy-from": "HUMAN_CHRONOMANCER_BUILD",
+    "delete": { "flags": [ "HERITAGE" ] }
+  },
+  {
+    "type": "mutation",
     "id": "VAMPIRE",
     "copy-from": "VAMPIRE",
     "cancels": [  ]

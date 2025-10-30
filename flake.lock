@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1761604857,
-        "narHash": "sha256-AQFbSrKRof2MsD6euyyGHAW/zKpSkm1TFxwLVPkB9Ko=",
+        "lastModified": 1761855873,
+        "narHash": "sha256-4QbZIYt125DDkXCBjjVDH799K28hfx1z00IygWQGGoo=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "f2b0cde46178f9fc7541b6ab911aa504df57366f",
+        "rev": "623714c803621a22fa09bfcecb92f450057256ef",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1760984586,
-        "narHash": "sha256-qgkgOzQAl8WDlX4GqwzgI/+Rv0ToRA2X4wGYvKGHuyE=",
+        "lastModified": 1761680071,
+        "narHash": "sha256-p973e/GdNyvkHAXr0TnUKrIal1st3MbvdzXy+WB1fB8=",
         "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "0ae10798896d544a7a739adbb0e29c5ed21251d1",
+        "rev": "1fb07f6653f10109a657adb51b0b65291e705048",
         "type": "github"
       },
       "original": {
@@ -296,11 +296,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1760946879,
-        "narHash": "sha256-kE3p95hB288KD8pscSVgZofCjY4+qOfOQDizVCUoOBA=",
+        "lastModified": 1761644081,
+        "narHash": "sha256-CnGH94a24yHE8HFfRSHBHLz1ewnnRfVGy/wAacoYDr4=",
         "owner": "I-am-Erk",
         "repo": "CDDA-Tilesets",
-        "rev": "a03e0aeabe665880c89a481b916edac13c4466b2",
+        "rev": "0e17c3b63a7ed50cecdde83cfc8979cbdcb59fd9",
         "type": "github"
       },
       "original": {
