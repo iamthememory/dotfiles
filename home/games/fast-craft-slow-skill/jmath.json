@@ -1,0 +1,8 @@
+[
+  {
+    "type": "jmath_function",
+    "id": "paraclesian_passive_spell_exp",
+    "num_args": 1,
+    "return": "u_skill('deduction') * 200 + _0"
+  }
+]

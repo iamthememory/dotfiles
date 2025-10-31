@@ -4,5 +4,29 @@
     "id": "xedra_dream_casting_xp_formula",
     "num_args": 0,
     "return": "100"
+  },
+  {
+    "type": "jmath_function",
+    "id": "int_to_level",
+    "num_args": 1,
+    "return": "floor((u_val('intelligence') * 1.5) * (_0))"
+  },
+  {
+    "type": "jmath_function",
+    "id": "dex_to_level",
+    "num_args": 1,
+    "return": "floor((u_val('dexterity') * 1.5) * (_0))"
+  },
+  {
+    "type": "jmath_function",
+    "id": "per_to_level",
+    "num_args": 1,
+    "return": "floor((u_val('perception') * 1.5) * (_0))"
+  },
+  {
+    "type": "jmath_function",
+    "id": "str_to_level",
+    "num_args": 1,
+    "return": "floor((u_val('strength') * 1.5) * (_0))"
   }
 ]
