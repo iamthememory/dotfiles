@@ -1,5 +1,18 @@
+diff --git a/AnomalousThings/Birdo/Items.json b/AnomalousThings/Birdo/Items.json
+index d760cff0ba46..c19f08812d78 100644
+--- a/AnomalousThings/Birdo/Items.json
++++ b/AnomalousThings/Birdo/Items.json
+@@ -112,7 +112,7 @@
+   },
+   {
+     "id": "ego_weapon_beak",
+-    "copy-from": "pistol_base",
++    "copy-from": "gun_base_handgun_semi",
+     "looks_like": "ego_teth",
+     "type": "ITEM",
+     "subtypes": [ "GUN", "ARTIFACT" ],
 diff --git a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json
-index 67c0785fcc3e..ebd290512ec6 100644
+index 67c0785fcc3e..424d92c2c5cf 100644
 --- a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	
 +++ b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	
 @@ -6,19 +6,19 @@
@@ -11,7 +24,7 @@ index 67c0785fcc3e..ebd290512ec6 100644
          { "not": { "compare_string": [ "yes", { "u_val": "u_ordeal_lock" } ] } },
 -        { "math": [ "time_since('cataclysm', 'unit':'days') <= 42" ] },
 -        "u_is_avatar" 
-+        { "math": [ "rng(0, 1.0) <= 0.05" ] },
++        { "math": [ "rng(0, 1.0) <= 0.01" ] },
 +        "u_is_avatar"
        ]
      },
@@ -46,6 +59,19 @@ index 67c0785fcc3e..ebd290512ec6 100644
      ]
    },
    {
+diff --git a/AnomalousThings/Wellcheers/Egocheers.json b/AnomalousThings/Wellcheers/Egocheers.json
+index 88eabfd7d059..8949d5c202ce 100644
+--- a/AnomalousThings/Wellcheers/Egocheers.json
++++ b/AnomalousThings/Wellcheers/Egocheers.json
+@@ -71,7 +71,7 @@
+   },
+   {
+     "id": "ego_weapon_soda",
+-    "copy-from": "pistol_base",
++    "copy-from": "gun_base_handgun_semi",
+     "looks_like": "glock_17",
+     "type": "ITEM",
+     "subtypes": [ "GUN", "ARTIFACT" ],
 diff --git a/Items/StigmaWorkshop/weapons.json b/Items/StigmaWorkshop/weapons.json
 index bf02b36cb71b..69150a8d7fea 100644
 --- a/Items/StigmaWorkshop/weapons.json
