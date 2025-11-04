@@ -19,5 +19,40 @@
     "techniques": [ "WBLOCK_1" ],
     "flags": [ "FRAGILE_MELEE", "NONCONDUCTIVE", "DIG_TOOL", "SHEATH_AXE" ],
     "weapon_category": [ "HOOKING_WEAPONRY" ]
+  },
+  {
+    "id": "magazine_battery_mod",
+    "copy-from": "magazine_battery_mod",
+    "type": "ITEM",
+    "subtypes": [ "TOOLMOD" ],
+    "name": { "str": "battery compartment mod" },
+    "pocket_mods": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "item_restriction": [
+          "small_storage_battery",
+          "medium_storage_battery",
+          "storage_battery",
+          "large_storage_battery",
+          "battery_car",
+          "battery_motorbike",
+          "battery_motorbike_small"
+        ]
+      }
+    ],
+    "magazine_adaptor": [
+      [
+        "battery",
+        [
+          "small_storage_battery",
+          "medium_storage_battery",
+          "storage_battery",
+          "large_storage_battery",
+          "battery_car",
+          "battery_motorbike",
+          "battery_motorbike_small"
+        ]
+      ]
+    ]
   }
 ]
