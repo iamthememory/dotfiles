@@ -3,5 +3,10 @@
     "id": "pickaxe_list",
     "type": "requirement",
     "extend": { "tools": [ [ [ "pickaxe_bone", -1 ] ] ] }
+  },
+  {
+    "id": "eggs_bird",
+    "type": "requirement",
+    "extend": { "components": [ [ [ "rehydrated_eggs", 1 ] ] ] }
   }
 ]
