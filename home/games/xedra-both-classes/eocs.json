@@ -292,5 +292,10 @@
         [ "EOC_LEVELER_ARVORE_MAKE_GOSSAMER", 4 ]
       ]
     }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_SEED_BEARER_GIVE_SEEDS",
+    "effect": { "u_spawn_item": "arvore_seeds", "use_item_group": true }
   }
 ]

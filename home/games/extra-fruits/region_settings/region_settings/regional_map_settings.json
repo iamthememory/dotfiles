@@ -1,0 +1,163 @@
+[
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_shrub_forest",
+    "copy-from": "default_t_region_shrub_forest",
+    "ter_id": "t_region_shrub_forest",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_shrub_hydrangea", 2 ],
+        [ "t_shrub_lilac", 2 ],
+        [ "t_cholla_cactus", 1 ],
+        [ "t_nopal_cactus", 1 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_shrub_fruit",
+    "copy-from": "default_t_region_shrub_fruit",
+    "ter_id": "t_region_shrub_fruit",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_shrub_avellanita", 1 ],
+        [ "t_cholla_cactus", 1 ],
+        [ "t_nopal_cactus", 1 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_tree_forest_dense",
+    "copy-from": "default_t_region_tree_forest_dense",
+    "ter_id": "t_region_tree_forest_dense",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_tree_ceiba", 9 ],
+        [ "t_tree_acacia", 9 ],
+        [ "t_tree_huizache", 9 ],
+        [ "t_tree_parajubea", 7 ],
+        [ "t_tree_guayacan", 7 ],
+        [ "t_tree_ficus", 7 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_tree_forest_other",
+    "copy-from": "default_t_region_tree_forest_other",
+    "ter_id": "t_region_tree_forest_other",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_tree_pachira", 10 ],
+        [ "t_tree_gevuina", 10 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_tree",
+    "copy-from": "default_t_region_tree",
+    "ter_id": "t_region_tree",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_tree_pachira", 8 ],
+        [ "t_tree_gevuina", 2 ],
+        [ "t_tree_ceiba", 8 ],
+        [ "t_tree_acacia", 8 ],
+        [ "t_tree_huizache", 8 ],
+        [ "t_tree_parajubea", 8 ],
+        [ "t_tree_guayacan", 8 ],
+        [ "t_tree_ficus", 8 ],
+        [ "t_tree_mango", 2 ],
+        [ "t_tree_papaya", 2 ],
+        [ "t_tree_pomegranate", 2 ],
+        [ "t_tree_coconut", 2 ],
+        [ "t_tree_orange", 2 ],
+        [ "t_tree_lemon", 2 ],
+        [ "t_tree_grapefruit", 2 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_tree_shade",
+    "copy-from": "default_t_region_tree_shade",
+    "ter_id": "t_region_tree_shade",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_tree_pachira", 8 ],
+        [ "t_tree_ceiba", 8 ],
+        [ "t_tree_mango", 2 ],
+        [ "t_tree_papaya", 2 ],
+        [ "t_tree_pomegranate", 2 ],
+        [ "t_tree_coconut", 2 ],
+        [ "t_tree_orange", 2 ],
+        [ "t_tree_lemon", 2 ],
+        [ "t_tree_grapefruit", 2 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_tree_fruit",
+    "copy-from": "default_t_region_tree_fruit",
+    "ter_id": "t_region_tree_fruit",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_tree_mango", 2 ],
+        [ "t_tree_papaya", 2 ],
+        [ "t_tree_pomegranate", 2 ],
+        [ "t_tree_coconut", 2 ],
+        [ "t_tree_orange", 2 ],
+        [ "t_tree_lemon", 2 ],
+        [ "t_tree_grapefruit", 2 ]
+      ]
+    }
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "default_t_region_tree_nut",
+    "copy-from": "default_t_region_tree_nut",
+    "ter_id": "t_region_tree_nut",
+    "extend": {
+      "replace_with_terrain": [
+        [ "t_tree_pachira", 8 ],
+        [ "t_tree_gevuina", 2 ],
+        [ "t_tree_coconut", 2 ]
+      ]
+    }
+  },
+  {
+    "type": "forest_biome_component",
+    "id": "trees_forest_thick",
+    "copy-from": "trees_forest_thick",
+    "extend": {
+      "types": [
+        [ "t_tree_mango", 2 ],
+        [ "t_tree_papaya", 2 ],
+        [ "t_tree_pomegranate", 2 ],
+        [ "t_tree_coconut", 2 ],
+        [ "t_tree_orange", 2 ],
+        [ "t_tree_lemon", 2 ],
+        [ "t_tree_grapefruit", 2 ]
+      ]
+    }
+  },
+  {
+    "type": "forest_biome_component",
+    "id": "trees_forest_water",
+    "copy-from": "trees_forest_water",
+    "extend": {
+      "types": [
+        [ "t_tree_mango", 2 ],
+        [ "t_tree_papaya", 2 ],
+        [ "t_tree_pomegranate", 2 ],
+        [ "t_tree_coconut", 2 ],
+        [ "t_tree_orange", 2 ],
+        [ "t_tree_lemon", 2 ],
+        [ "t_tree_grapefruit", 2 ]
+      ]
+    }
+  }
+]

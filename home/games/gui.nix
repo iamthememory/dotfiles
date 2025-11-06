@@ -410,6 +410,12 @@ in
         src = ./cdda-defense-additions;
       };
 
+      extra-fruits = pkgs.cataclysmDDA.buildMod {
+        modName = "extra-fruits";
+        version = config.home.file."generation.rev".text;
+        src = ./extra-fruits;
+      };
+
       fast-craft-slow-skill = pkgs.cataclysmDDA.buildMod {
         modName = "fast-craft-slow-skill";
         version = config.home.file."generation.rev".text;
@@ -483,6 +489,7 @@ in
         cdda-defense-additions
         cdda-tilesets
         e85-engines
+        extra-fruits
         fast-craft-slow-skill
         #grow-more-drugs
         innawoods-compat

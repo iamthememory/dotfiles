@@ -1,0 +1,10 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "extra-fruits",
+    "name": "Extra Fruits",
+    "description": "Crops from TropiCataclysm and Aftershock, in a normal world.",
+    "category": "content",
+    "dependencies": [ "dda" ]
+  }
+]

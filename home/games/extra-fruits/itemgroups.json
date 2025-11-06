@@ -1,0 +1,34 @@
+[
+  {
+    "type": "item_group",
+    "id": "farming_seeds",
+    "copy-from": "farming_seeds",
+    "extend": {
+      "items": [
+        [ "seed_melon", 60 ],
+        [ "seed_banana", 60 ],
+        [ "seed_kiwi", 60 ],
+        [ "seed_pineapple", 10 ],
+        [ "seed_melon", 10 ],
+        [ "seed_orange", 10 ],
+        [ "seed_lemon", 10 ],
+        [ "seed_coconut", 10 ]
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "hydro",
+    "copy-from": "hydro",
+    "extend": {
+      "items": [
+        [ "melon", 2 ],
+        [ "banana", 6 ],
+        [ "kiwi", 4 ],
+        [ "seed_melon", 1 ],
+        [ "seed_banana", 1 ],
+        [ "seed_kiwi", 1 ]
+      ]
+    }
+  }
+]

@@ -11,5 +11,148 @@
       }
     ],
     "furniture": [ { "result": "f_null", "valid_flags": [ "TRANSPARENT", "WALL" ] } ]
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "ter_druid_renew_forest",
+    "terrain": [
+      {
+        "result": [
+          [ "t_tree", 50 ],
+          [ "t_tree_acacia", 53 ],
+          [ "t_tree_alder", 125 ],
+          [ "t_tree_apple", 57 ],
+          [ "t_tree_apricot", 57 ],
+          [ "t_tree_basswood", 109 ],
+          [ "t_tree_beech", 602 ],
+          [ "t_tree_birch", 108 ],
+          [ "t_tree_blackjack", 83 ],
+          [ "t_tree_butternut", 58 ],
+          [ "t_tree_ceiba", 79 ],
+          [ "t_tree_cherry", 68 ],
+          [ "t_tree_chestnut", 173 ],
+          [ "t_tree_coconut", 84 ],
+          [ "t_tree_coffee", 38 ],
+          [ "t_tree_cottonwood", 95 ],
+          [ "t_tree_crabapple", 53 ],
+          [ "t_tree_dead", 19 ],
+          [ "t_tree_dead_warped", 5 ],
+          [ "t_tree_deadpine", 5 ],
+          [ "t_tree_deadpine_warped", 5 ],
+          [ "t_tree_elderberry", 90 ],
+          [ "t_tree_elm", 95 ],
+          [ "t_tree_ficus", 44 ],
+          [ "t_tree_gevuina", 29 ],
+          [ "t_tree_grapefruit", 58 ],
+          [ "t_tree_guayacan", 44 ],
+          [ "t_tree_hazelnut", 61 ],
+          [ "t_tree_hickory", 363 ],
+          [ "t_tree_hickory_dead", 24 ],
+          [ "t_tree_huizache", 53 ],
+          [ "t_tree_juniper", 19 ],
+          [ "t_tree_lemon", 58 ],
+          [ "t_tree_mango", 58 ],
+          [ "t_tree_maple", 185 ],
+          [ "t_tree_mulberry", 90 ],
+          [ "t_tree_nannyberry", 84 ],
+          [ "t_tree_orange", 58 ],
+          [ "t_tree_pachira", 141 ],
+          [ "t_tree_papaya", 58 ],
+          [ "t_tree_parajubea", 44 ],
+          [ "t_tree_peach", 54 ],
+          [ "t_tree_pear", 54 ],
+          [ "t_tree_pine", 92 ],
+          [ "t_tree_plum", 59 ],
+          [ "t_tree_pomegranate", 58 ],
+          [ "t_tree_sassafras", 25 ],
+          [ "t_tree_walnut", 115 ],
+          [ "t_tree_willow", 201 ]
+        ],
+        "valid_flags": [ "YOUNG" ],
+        "message": "Wood creaks as the tree's limbs grow and stretch toward the sky."
+      },
+      {
+        "result": [
+          [ "t_bamboo_long", 44 ],
+          [ "t_cholla_cactus", 23 ],
+          [ "t_fern", 445 ],
+          [ "t_grass", 1000 ],
+          [ "t_grass_long", 1000 ],
+          [ "t_grass_tall", 1000 ],
+          [ "t_nopal_cactus", 23 ],
+          [ "t_shrub", 1229 ],
+          [ "t_shrub_autumn_olive", 307 ],
+          [ "t_shrub_blackberry", 351 ],
+          [ "t_shrub_blueberry", 687 ],
+          [ "t_shrub_chokeberry", 441 ],
+          [ "t_shrub_grape", 212 ],
+          [ "t_shrub_hobblebush", 452 ],
+          [ "t_shrub_huckleberry", 349 ],
+          [ "t_shrub_hydrangea", 224 ],
+          [ "t_shrub_lilac", 224 ],
+          [ "t_shrub_peanut", 22 ],
+          [ "t_shrub_raspberry", 452 ],
+          [ "t_shrub_rose", 638 ],
+          [ "t_shrub_spicebush", 154 ],
+          [ "t_shrub_strawberry", 256 ],
+          [ "t_tree_nannyberry", 133 ],
+          [ "t_tree_young", 6000 ],
+          [ "t_underbrush", 1025 ]
+        ],
+        "valid_flags": [ "DIGGABLE", "SHRUB" ],
+        "message": "Soil churns as roots quest through it and grass and bushes spring forth from the ground."
+      },
+      {
+        "result": [ [ "t_grass", 9 ], [ "t_moss", 3 ], [ "t_forestfloor", 4 ] ],
+        "valid_terrain": [ "t_grass" ],
+        "message": ""
+      },
+      {
+        "result": [ [ "t_floor", 9 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_floor" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_floor_noroof", 9 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_floor_noroof" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_floor_primitive", 6 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_floor_primitive" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_pavement", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_pavement" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_pavement_y", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_pavement_y" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_zebra", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_zebra" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_sidewalk", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_sidewalk" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_concrete", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_concrete" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_concrete_y", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_concrete_y" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      }
+    ],
+    "furniture": [ { "result": "f_null", "valid_flags": [ "MOUNTABLE", "BLOCK_WIND", "ORGANIC" ] } ]
   }
 ]

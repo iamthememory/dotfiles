@@ -1,0 +1,17 @@
+[
+  {
+    "type": "item_group",
+    "id": "arvore_seeds",
+    "copy-from": "arvore_seeds",
+    "extend": {
+      "items": [
+        [ "seed_pineapple", 1],
+        [ "seed_melon", 1],
+        [ "seed_bananas", 1],
+        [ "seed_orange", 1],
+        [ "seed_lemon", 1],
+        [ "seed_coconut", 1]
+      ]
+    }
+  }
+]
