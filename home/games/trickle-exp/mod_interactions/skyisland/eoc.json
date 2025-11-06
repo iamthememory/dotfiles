@@ -1,0 +1,11 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_TRICKLE_EXP_DAILY_MATERIAL_TOKENS",
+    "recurrence": "1 day",
+    "effect": [
+      { "u_spawn_item": "warptoken_material", "count": 50 },
+      { "u_spawn_item": "warptoken", "count": 1 }
+    ]
+  }
+]
