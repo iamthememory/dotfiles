@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1762246782,
-        "narHash": "sha256-4o9SBGGLe9Mqn8BnIIBeKZCAXnK0HDzD9FLBd6azigI=",
+        "lastModified": 1762376052,
+        "narHash": "sha256-HPpl+x8glpODqGORCYniIwbkjJCmRAuOzzScq0d4FR0=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "01884d5ee1281d4c209b3ce6fe526b984efe3425",
+        "rev": "3eeda3735db440a4cdfec45e13186ba57155990e",
         "type": "github"
       },
       "original": {
@@ -131,11 +131,11 @@
     "cataclysm-dda-mom-submods": {
       "flake": false,
       "locked": {
-        "lastModified": 1757435022,
-        "narHash": "sha256-nmjrgcgWYE19kyeNOogu9PQCqfQMybQp2ELGCij8D8A=",
+        "lastModified": 1762348876,
+        "narHash": "sha256-D5avRKj7DhBg11X+F7xXx9GsC8SM2BjtkSOdbcq5euM=",
         "owner": "Standing-Storm",
         "repo": "mind-over-matter-submods",
-        "rev": "f76c24ec8b8b779d0cebad55bff9454e75772d80",
+        "rev": "8b313edd90775bc05712cb39b82993ccba996b4e",
         "type": "github"
       },
       "original": {
