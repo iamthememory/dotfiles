@@ -547,13 +547,13 @@ index d9d8f2be698e..6583797ee991 100644
 \ No newline at end of file
 +]
 diff --git a/region_overlay.json b/region_overlay.json
-index fb40bce95e5b..6dc848815276 100644
+index fb40bce95e5b..a5c0bcbdf14e 100644
 --- a/region_overlay.json
 +++ b/region_overlay.json
-@@ -1,44 +1,62 @@
+@@ -1,44 +1,50 @@
  [
    {
-     "type": "region_overlay",
+-    "type": "region_overlay",
 -    "regions": [ "all" ],
 -    "map_extras": {
 -      "field": {
@@ -592,63 +592,51 @@ index fb40bce95e5b..6dc848815276 100644
 -    "overmap_feature_flag_settings": { "blacklist": [ "MILITARY", "SOURCE_GUN", "SOURCE_AMMO" ] },
 -    "city": {
 -      "shops": { "s_hunting": 0, "s_gun_a": 0, "s_gun_b": 0, "mil_surplus": 0, "mil_surplus_1": 0, "mil_surplus_2": 0 }
--    }
-+    "id": "default_pm",
-+    "apply_to_tags": [ "all" ],
-+    "map_extras": "default_pm"
-+  },
-+  {
-+    "type": "region_settings_map_extras",
-+    "id": "default_pm",
-+    "extras": [
-+      "field_pm",
-+      "forest_pm",
-+      "forest_thick_pm",
-+      "road_pm"
-+    ]
++    "type": "map_extra_collection",
++    "id": "field",
++    "copy-from": "field",
++    "extend": {
++      "extras": [
++        [ "mx_kk_rc", 12 ],
++        [ "mx_incident_fixer", 15 ],
++        [ "mx_incident_zwei", 15 ]
++      ]
++    }
 +  },
 +  {
 +    "type": "map_extra_collection",
-+    "id": "field_pm",
-+    "overlay_id": "field",
-+    "chance": 8,
-+    "extras": [
-+      [ "mx_kk_rc", 12 ],
-+      [ "mx_incident_fixer", 15 ],
-+      [ "mx_incident_zwei", 15 ]
-+    ]
++    "id": "road",
++    "copy-from": "road",
++    "extend": {
++      "extras": [
++        [ "mx_kk_rc", 6 ],
++        [ "mx_incident_fixer", 15 ],
++        [ "mx_incident_zwei", 15 ]
++      ]
++    }
 +  },
 +  {
 +    "type": "map_extra_collection",
-+    "id": "road_pm",
-+    "overlay_id": "road",
-+    "chance": 12,
-+    "extras": [
-+      [ "mx_kk_rc", 6 ],
-+      [ "mx_incident_fixer", 15 ],
-+      [ "mx_incident_zwei", 15 ]
-+    ]
++    "id": "forest_thick",
++    "copy-from": "forest_thick",
++    "extend": {
++      "extras": [
++        [ "mx_kk_rc", 15 ],
++        [ "mx_incident_fixer", 4 ],
++        [ "mx_incident_zwei", 4 ]
++      ]
++    }
 +  },
 +  {
 +    "type": "map_extra_collection",
-+    "id": "forest_thick_pm",
-+    "overlay_id": "forest_thick",
-+    "chance": 2,
-+    "extras": [
-+      [ "mx_kk_rc", 15 ],
-+      [ "mx_incident_fixer", 4 ],
-+      [ "mx_incident_zwei", 4 ]
-+    ]
-+  },
-+  {
-+    "type": "map_extra_collection",
-+    "id": "forest_pm",
-+    "overlay_id": "forest",
-+    "chance": 4,
-+    "extras": [
-+      [ "mx_kk_rc", 15 ],
-+      [ "mx_incident_fixer", 8 ],
-+      [ "mx_incident_zwei", 8 ]
-+    ]
++    "id": "forest",
++    "copy-from": "forest",
++    "extend": {
++      "extras": [
++        [ "mx_kk_rc", 15 ],
++        [ "mx_incident_fixer", 8 ],
++        [ "mx_incident_zwei", 8 ]
++      ]
+     }
    }
  ]

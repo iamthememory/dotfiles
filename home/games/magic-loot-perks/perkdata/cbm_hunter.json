@@ -2,7 +2,7 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_magic_loot_cbm_hunter_find",
-    "condition": { "math": [ "rng(0, 1.0) <= 0.1" ] },
+    "condition": { "math": [ "rng(0, 1.0) <= 0.02" ] },
     "effect": [
       { "u_message": "You found a CBM." },
       { "u_spawn_item": "magic_loot_cbm_bionics", "use_item_group": true }

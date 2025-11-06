@@ -1,0 +1,23 @@
+[
+  {
+    "type": "construction_group",
+    "id": "build_elemental_altar",
+    "name": "Build altar of elements"
+  },
+  {
+    "type": "construction",
+    "id": "constr_elemental_altar",
+    "group": "build_elemental_altar",
+    "category": "FURN",
+    "required_skills": [ [ "fabrication", 5 ], [ "deduction", 5 ] ],
+    "time": "240 m",
+    "qualities": [
+      [ { "id": "DIG", "level": 2 } ],
+      [ { "id": "HAMMER", "level": 3 } ],
+      [ { "id": "CHISEL", "level": 3 } ]
+    ],
+    "components": [ [ [ "rock", 40 ] ] ],
+    "pre_special": "check_empty",
+    "post_terrain": "f_elemental_altar"
+  }
+]

@@ -7,11 +7,5 @@
     "description": "Make crafting significantly faster, but significantly slow down the rate of learning skills.",
     "category": "rebalance",
     "dependencies": [ "dda" ]
-  },
-  {
-    "type": "EXTERNAL_OPTION",
-    "name": "DEFAULT_REGION",
-    "stype": "string_input",
-    "value": "default_fast_craft_slow_skill"
   }
 ]

@@ -1,0 +1,15 @@
+[
+  {
+    "type": "ter_furn_transform",
+    "id": "earthshaper_pillar",
+    "//": "Furniture alteration has to be able to reasonably check for most intervening furniture and remove it.",
+    "terrain": [
+      {
+        "result": "t_rock",
+        "valid_flags": [ "DIGGABLE", "FLAT" ],
+        "message": "The ground shakes, a section of unnaturally smooth stone wall rising up."
+      }
+    ],
+    "furniture": [ { "result": "f_null", "valid_flags": [ "TRANSPARENT", "WALL" ] } ]
+  }
+]
