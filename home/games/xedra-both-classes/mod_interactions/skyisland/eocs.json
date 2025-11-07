@@ -271,5 +271,58 @@
         ]
       }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_CONDITION_CHECK_ARVORE_IS_IN_FOREST_ON_OMT_ENTER",
+    "eoc_type": "EVENT",
+    "required_event": "avatar_enters_omt",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_CONDITION_CHECK_ARVORE_IS_IN_FOREST_ON_OMT_ENTER_2",
+            "condition": {
+              "or": [
+                { "u_at_om_location": "forest" },
+                { "u_at_om_location": "forest_thick" },
+                { "u_at_om_location": "arvore_genius_loci_NW" },
+                { "u_at_om_location": "arvore_genius_loci_NE" },
+                { "u_at_om_location": "arvore_genius_loci_SW" },
+                { "u_at_om_location": "arvore_genius_loci_SE" },
+                { "u_near_om_location": "great_tree_z0_nw", "range": 2 },
+                { "u_near_om_location": "great_tree_z0_se", "range": 2 },
+                { "u_near_om_location": "great_tree_z1_nw", "range": 2 },
+                { "u_near_om_location": "great_tree_z1_se", "range": 2 },
+                { "u_near_om_location": "great_tree_z2_nw", "range": 2 },
+                { "u_near_om_location": "great_tree_z2_se", "range": 2 },
+                { "u_near_om_location": "great_tree_z3_06", "range": 2 },
+                { "u_near_om_location": "great_tree_z3_11", "range": 2 },
+                { "u_near_om_location": "great_tree_z4_06", "range": 2 },
+                { "u_near_om_location": "great_tree_z4_11", "range": 2 },
+                { "u_near_om_location": "great_tree_z5_06", "range": 2 },
+                { "u_near_om_location": "great_tree_z5_11", "range": 2 },
+                { "u_near_om_location": "great_tree_z6_nw", "range": 2 },
+                { "u_near_om_location": "great_tree_z6_se", "range": 2 },
+                { "u_near_om_location": "great_tree_z6_n2", "range": 2 },
+                { "u_near_om_location": "great_tree_z6_se", "range": 2 },
+                { "u_near_om_location": "great_tree_z7_nw", "range": 2 },
+                { "u_near_om_location": "great_tree_z7_se", "range": 2 },
+                { "u_near_om_location": "great_tree_crown_06", "range": 2 },
+                { "u_near_om_location": "great_tree_crown_11", "range": 2 },
+                { "u_near_om_location": "great_tree_crown_top_01", "range": 2 },
+                { "u_near_om_location": "great_tree_crown_top_04", "range": 2 },
+                { "u_near_om_location": "great_tree_roots", "range": 2 },
+                { "u_near_om_location": "great_tree_roots_se", "range": 2 },
+                { "u_near_om_location": "great_tree_roots_nw", "range": 2 },
+                { "test_eoc": "EOC_CONDITION_SKY_ISLAND_ON_THE_ISLAND" }
+              ]
+            },
+            "effect": [ { "math": [ "u_arvore_is_in_forest = 1" ] } ],
+            "false_effect": [ { "math": [ "u_arvore_is_in_forest = 0" ] } ]
+          }
+        ]
+      }
+    ]
   }
 ]
