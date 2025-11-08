@@ -65,6 +65,7 @@
           [ "t_tree_plum", 59 ],
           [ "t_tree_pomegranate", 58 ],
           [ "t_tree_sassafras", 25 ],
+          [ "t_tree_tupelo", 115 ],
           [ "t_tree_walnut", 115 ],
           [ "t_tree_willow", 201 ]
         ],
@@ -148,11 +149,299 @@
         "message": "The works of civilization crack as plants force their way through to the sun."
       },
       {
+        "result": [ [ "t_rock_floor", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_rock_floor" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
         "result": [ [ "t_concrete_y", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
         "valid_terrain": [ "t_concrete_y" ],
         "message": "The works of civilization crack as plants force their way through to the sun."
       }
     ],
     "furniture": [ { "result": "f_null", "valid_flags": [ "MOUNTABLE", "BLOCK_WIND", "ORGANIC" ] } ]
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "ter_arvore_plant_growth",
+    "terrain": [
+      {
+        "result": [
+          [ "t_tree", 50 ],
+          [ "t_tree_acacia", 53 ],
+          [ "t_tree_alder", 125 ],
+          [ "t_tree_apple", 57 ],
+          [ "t_tree_apricot", 57 ],
+          [ "t_tree_basswood", 109 ],
+          [ "t_tree_beech", 602 ],
+          [ "t_tree_birch", 108 ],
+          [ "t_tree_blackjack", 83 ],
+          [ "t_tree_butternut", 58 ],
+          [ "t_tree_ceiba", 79 ],
+          [ "t_tree_cherry", 68 ],
+          [ "t_tree_chestnut", 173 ],
+          [ "t_tree_coconut", 84 ],
+          [ "t_tree_coffee", 38 ],
+          [ "t_tree_cottonwood", 95 ],
+          [ "t_tree_crabapple", 53 ],
+          [ "t_tree_dead", 19 ],
+          [ "t_tree_dead_warped", 5 ],
+          [ "t_tree_deadpine", 5 ],
+          [ "t_tree_deadpine_warped", 5 ],
+          [ "t_tree_elderberry", 90 ],
+          [ "t_tree_elm", 95 ],
+          [ "t_tree_ficus", 44 ],
+          [ "t_tree_gevuina", 29 ],
+          [ "t_tree_grapefruit", 58 ],
+          [ "t_tree_guayacan", 44 ],
+          [ "t_tree_hazelnut", 61 ],
+          [ "t_tree_hickory", 363 ],
+          [ "t_tree_hickory_dead", 24 ],
+          [ "t_tree_huizache", 53 ],
+          [ "t_tree_juniper", 19 ],
+          [ "t_tree_lemon", 58 ],
+          [ "t_tree_mango", 58 ],
+          [ "t_tree_maple", 185 ],
+          [ "t_tree_mulberry", 90 ],
+          [ "t_tree_nannyberry", 84 ],
+          [ "t_tree_orange", 58 ],
+          [ "t_tree_pachira", 141 ],
+          [ "t_tree_papaya", 58 ],
+          [ "t_tree_parajubea", 44 ],
+          [ "t_tree_peach", 54 ],
+          [ "t_tree_pear", 54 ],
+          [ "t_tree_pine", 92 ],
+          [ "t_tree_plum", 59 ],
+          [ "t_tree_pomegranate", 58 ],
+          [ "t_tree_sassafras", 25 ],
+          [ "t_tree_tupelo", 115 ],
+          [ "t_tree_walnut", 115 ],
+          [ "t_tree_willow", 201 ]
+        ],
+        "valid_terrain": [ "t_tree_young" ],
+        "message": "The young tree creaks as its limbs begin growing, first slowly and then with increasing speed.  Roots churn through the soil and leaves stretch toward the sun, and in moments, before you is a tree that could have stood for a human lifetime."
+      },
+      {
+        "result": "t_grass_long",
+        "valid_terrain": [ "t_grass" ],
+        "message": "Fresh green grass grows longer and longer until it stands as tall as your knees."
+      },
+      {
+        "result": "t_grass_tall",
+        "valid_terrain": [ "t_grass_long" ],
+        "message": "The tall grass grows and grows until a child could easily hide themselves within it."
+      }
+    ],
+    "furniture": [
+      {
+        "result": "f_plant_harvest",
+        "valid_furniture": [ "f_plant_mature", "f_plant_seedling", "f_plant_seed" ],
+        "message": "The plant grows in moments, leaves unfurling, roots churning the soil, and flowers opening toward the sun.  Before you even lower your hands, it's ripe and ready for the harvest."
+      }
+    ]
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "ter_arvore_overgrowth",
+    "terrain": [
+      {
+        "result": [
+          [ "t_tree", 50 ],
+          [ "t_tree_acacia", 53 ],
+          [ "t_tree_alder", 125 ],
+          [ "t_tree_apple", 57 ],
+          [ "t_tree_apricot", 57 ],
+          [ "t_tree_basswood", 109 ],
+          [ "t_tree_beech", 602 ],
+          [ "t_tree_birch", 108 ],
+          [ "t_tree_blackjack", 83 ],
+          [ "t_tree_butternut", 58 ],
+          [ "t_tree_ceiba", 79 ],
+          [ "t_tree_cherry", 68 ],
+          [ "t_tree_chestnut", 173 ],
+          [ "t_tree_coconut", 84 ],
+          [ "t_tree_coffee", 38 ],
+          [ "t_tree_cottonwood", 95 ],
+          [ "t_tree_crabapple", 53 ],
+          [ "t_tree_dead", 19 ],
+          [ "t_tree_dead_warped", 5 ],
+          [ "t_tree_deadpine", 5 ],
+          [ "t_tree_deadpine_warped", 5 ],
+          [ "t_tree_elderberry", 90 ],
+          [ "t_tree_elm", 95 ],
+          [ "t_tree_ficus", 44 ],
+          [ "t_tree_gevuina", 29 ],
+          [ "t_tree_grapefruit", 58 ],
+          [ "t_tree_guayacan", 44 ],
+          [ "t_tree_hazelnut", 61 ],
+          [ "t_tree_hickory", 363 ],
+          [ "t_tree_hickory_dead", 24 ],
+          [ "t_tree_huizache", 53 ],
+          [ "t_tree_juniper", 19 ],
+          [ "t_tree_lemon", 58 ],
+          [ "t_tree_mango", 58 ],
+          [ "t_tree_maple", 185 ],
+          [ "t_tree_mulberry", 90 ],
+          [ "t_tree_nannyberry", 84 ],
+          [ "t_tree_orange", 58 ],
+          [ "t_tree_pachira", 141 ],
+          [ "t_tree_papaya", 58 ],
+          [ "t_tree_parajubea", 44 ],
+          [ "t_tree_peach", 54 ],
+          [ "t_tree_pear", 54 ],
+          [ "t_tree_pine", 92 ],
+          [ "t_tree_plum", 59 ],
+          [ "t_tree_pomegranate", 58 ],
+          [ "t_tree_sassafras", 25 ],
+          [ "t_tree_tupelo", 115 ],
+          [ "t_tree_walnut", 115 ],
+          [ "t_tree_willow", 201 ]
+        ],
+        "valid_flags": [ "YOUNG" ],
+        "message": "Wood creaks as the tree's limbs grow and stretch toward the sky."
+      },
+      {
+        "result": [
+          [ "t_grass", 150 ],
+          [ "t_grass_long", 50 ],
+          [ "t_grass_tall", 20 ],
+          [ "t_shrub", 30 ],
+          [ "t_underbrush", 65 ],
+          [ "t_shrub_hobblebush_harvested", 10 ],
+          [ "t_shrub_autumn_olive_harvested", 10 ],
+          [ "t_shrub_spicebush_harvested", 10 ],
+          [ "t_shrub_chokeberry_harvested", 10 ],
+          [ "t_shrub_rose", 5 ],
+          [ "t_shrub_blackberry_harvested", 5 ],
+          [ "t_shrub_grape_harvested", 5 ],
+          [ "t_shrub_lilac_harvested", 5 ],
+          [ "t_shrub_blueberry_harvested", 5 ],
+          [ "t_shrub_raspberry_harvested", 5 ],
+          [ "t_shrub_hydrangea_harvested", 5 ],
+          [ "t_shrub_huckleberry_harvested", 5 ],
+          [ "t_tree_young", 35 ]
+        ],
+        "valid_flags": [ "DIGGABLE", "SHRUB" ],
+        "message": "Soil churns as roots quest through it and grass and bushes spring forth from the ground."
+      },
+      {
+        "result": [ [ "t_grass", 9 ], [ "t_moss", 3 ], [ "t_forestfloor", 4 ] ],
+        "valid_terrain": [ "t_grass" ],
+        "message": ""
+      },
+      {
+        "result": [ [ "t_floor", 9 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_floor" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_floor_noroof", 9 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_floor_noroof" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_floor_primitive", 6 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_floor_primitive" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_pavement", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_pavement" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_pavement_y", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_pavement_y" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_zebra", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_zebra" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_sidewalk", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_sidewalk" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_concrete", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_concrete" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_rock_floor", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_rock_floor" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      },
+      {
+        "result": [ [ "t_concrete_y", 12 ], [ "t_grass", 6 ], [ "t_grass_long", 2 ], [ "t_grass_tall", 1 ] ],
+        "valid_terrain": [ "t_concrete_y" ],
+        "message": "The works of civilization crack as plants force their way through to the sun."
+      }
+    ],
+    "furniture": [ { "result": "f_null", "valid_flags": [ "MOUNTABLE", "BLOCK_WIND", "ORGANIC" ] } ]
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "ter_arvore_verdant_tree_transform",
+    "terrain": [
+      {
+        "result": [
+          [ "t_tree", 50 ],
+          [ "t_tree_acacia", 53 ],
+          [ "t_tree_alder", 125 ],
+          [ "t_tree_apple", 57 ],
+          [ "t_tree_apricot", 57 ],
+          [ "t_tree_basswood", 109 ],
+          [ "t_tree_beech", 602 ],
+          [ "t_tree_birch", 108 ],
+          [ "t_tree_blackjack", 83 ],
+          [ "t_tree_butternut", 58 ],
+          [ "t_tree_ceiba", 79 ],
+          [ "t_tree_cherry", 68 ],
+          [ "t_tree_chestnut", 173 ],
+          [ "t_tree_coconut", 84 ],
+          [ "t_tree_coffee", 38 ],
+          [ "t_tree_cottonwood", 95 ],
+          [ "t_tree_crabapple", 53 ],
+          [ "t_tree_dead", 19 ],
+          [ "t_tree_dead_warped", 5 ],
+          [ "t_tree_deadpine", 5 ],
+          [ "t_tree_deadpine_warped", 5 ],
+          [ "t_tree_elderberry", 90 ],
+          [ "t_tree_elm", 95 ],
+          [ "t_tree_ficus", 44 ],
+          [ "t_tree_gevuina", 29 ],
+          [ "t_tree_grapefruit", 58 ],
+          [ "t_tree_guayacan", 44 ],
+          [ "t_tree_hazelnut", 61 ],
+          [ "t_tree_hickory", 363 ],
+          [ "t_tree_hickory_dead", 24 ],
+          [ "t_tree_huizache", 53 ],
+          [ "t_tree_juniper", 19 ],
+          [ "t_tree_lemon", 58 ],
+          [ "t_tree_mango", 58 ],
+          [ "t_tree_maple", 185 ],
+          [ "t_tree_mulberry", 90 ],
+          [ "t_tree_nannyberry", 84 ],
+          [ "t_tree_orange", 58 ],
+          [ "t_tree_pachira", 141 ],
+          [ "t_tree_papaya", 58 ],
+          [ "t_tree_parajubea", 44 ],
+          [ "t_tree_peach", 54 ],
+          [ "t_tree_pear", 54 ],
+          [ "t_tree_pine", 92 ],
+          [ "t_tree_plum", 59 ],
+          [ "t_tree_pomegranate", 58 ],
+          [ "t_tree_sassafras", 25 ],
+          [ "t_tree_tupelo", 115 ],
+          [ "t_tree_walnut", 115 ],
+          [ "t_tree_willow", 201 ]
+        ],
+        "valid_flags": [ "BURROWABLE", "DIGGABLE", "COLLAPSES", "DOOR", "FLAT_SURF", "FUNGUS", "PLANTABLE", "ROAD", "ROUGH", "SHALLOW_WATER" ],
+        "message": "The target's limbs begin stretching and spreading toward the sky as their body elongates, and in moments, a tree that could have stood for a hundred years stands in their place."
+      }
+    ]
   }
 ]
