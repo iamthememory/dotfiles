@@ -1,7 +1,16 @@
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_armor.json b/nocts_cata_mod_DDA/Surv_help/c_armor.json
-index 01f755b34d85..2fd4f0483777 100644
+index 01f755b34d85..9affada1bcd8 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_armor.json
 +++ b/nocts_cata_mod_DDA/Surv_help/c_armor.json
+@@ -216,7 +216,7 @@
+   },
+   {
+     "id": "legguard_lightplate_surv",
+-    "copy-from": "legguard_lightplate",
++    "copy-from": "armor_lc_leg_guard",
+     "type": "ITEM",
+     "subtypes": [ "ARMOR" ],
+     "name": { "str": "survivor steel leg guards", "str_pl": "survivor steel leg guards" },
 @@ -444,7 +444,8 @@
      "material_thickness": 4,
      "environmental_protection": 5,

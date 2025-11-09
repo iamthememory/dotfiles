@@ -281,7 +281,7 @@
   {
     "type": "recipe",
     "activity_level": "NO_EXERCISE",
-    "result": "malting_grain",
+    "result": "malting_grain_active",
     "id_suffix": "innawoods",
     "category": "CC_FOOD",
     "subcategory": "CSC_FOOD_BREW",
@@ -300,7 +300,7 @@
   {
     "type": "recipe",
     "activity_level": "NO_EXERCISE",
-    "result": "soaking_dandelion",
+    "result": "soaking_dandelion_active",
     "id_suffix": "innawoods",
     "category": "CC_FOOD",
     "subcategory": "CSC_FOOD_BREW",
