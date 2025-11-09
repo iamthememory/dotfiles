@@ -86,6 +86,9 @@
     # A small tool to dump info about the nix environment.
     nix-info
 
+    # A tool to show info about nix builds.
+    nix-output-monitor
+
     # A tool to review nixpkgs pull requests.
     nixpkgs-review
 
