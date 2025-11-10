@@ -1,0 +1,185 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_sky_island_search_range_initializer",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": { "not": { "math": [ "has_var(sky_island_search_range)" ] } },
+    "effect": [ { "math": [ "sky_island_search_range = 1200" ] } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_sky_island_search_range_min_initializer",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": { "not": { "math": [ "has_var(sky_island_search_range_min)" ] } },
+    "effect": [ { "math": [ "sky_island_search_range_min = 100" ] } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Location1w",
+    "//": "Picks a random field.",
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": 0,
+          "random": true
+        }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Location2w",
+    "//": "Picks a random forest.",
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "forest",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": 0,
+          "random": true
+        }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Location3w",
+    "//": "Picks a random house.",
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "house",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": 0,
+          "random": true
+        }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Random_Loc_Warp",
+    "//": "Picks a random location of any kind and activates the actual teleport EOC.",
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": 0,
+          "random": true
+        }
+      },
+      { "run_eocs": [ "EOC_initiate_randomport" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Field_Loc_Warp",
+    "//": "Picks a random field and activates the actual teleport EOC.",
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": 0,
+          "random": true
+        }
+      },
+      { "run_eocs": [ "EOC_initiate_randomport" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Basement_Loc_Warp",
+    "//": "Picks a random basement and activates the actual teleport EOC.",
+    "condition": { "math": [ "basementsunlocked == 1" ] },
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "basement",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": -1,
+          "random": true
+        },
+        "terrain": "t_thconc_floor",
+        "target_max_radius": 20
+      },
+      { "run_eocs": [ "EOC_initiate_randomport" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Rooftop_Loc_Warp",
+    "//": "Picks a random rooftop and activates the actual teleport EOC.",
+    "condition": { "math": [ "roofsunlocked == 1" ] },
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "roof",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": 1,
+          "random": true
+        },
+        "terrain": "t_gutter",
+        "target_max_radius": 20
+      },
+      { "run_eocs": [ "EOC_initiate_randomport" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_Lab_Loc_Warp",
+    "//": "Picks a random underground lab and activates the actual teleport EOC.",
+    "condition": { "and": [ { "math": [ "labsunlocked == 1" ] }, { "u_has_items": { "item": "warp_labs_catalyst", "count": 1 } } ] },
+    "effect": [
+      {
+        "u_location_variable": { "global_val": "OM_missionspot" },
+        "target_params": {
+          "om_terrain": "lab_stairs",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": { "global_val": "sky_island_search_range", "default": 1200 },
+          "min_distance": { "global_val": "sky_island_search_range_min", "default": 200 },
+          "reveal_radius": { "global_val": "scoutingdistancelanding", "default": 0 },
+          "z": -2,
+          "random": true
+        },
+        "terrain": "t_thconc_floor",
+        "target_max_radius": 20
+      },
+      { "math": [ "goingtolabs = 1" ] },
+      { "run_eocs": [ "EOC_initiate_randomport" ] }
+    ]
+  }
+]
