@@ -113,7 +113,8 @@ in
         ];
 
         # Enable debugging info.
-        #separateDebugInfo = true;
+        dontStrip = true;
+        env.NIX_CFLAGS_COMPILE = toString (oldAttrs.env.NIX_CFLAGS_COMPILE or "") + " -ggdb";
 
         # Enable tiles.
         tiles = true;
