@@ -1,0 +1,40 @@
+diff --git a/src/mutation.cpp b/src/mutation.cpp
+index 69e123ee05fc..026ce862147c 100644
+--- a/src/mutation.cpp
++++ b/src/mutation.cpp
+@@ -161,27 +161,35 @@ bool Character::has_trait_variant( const trait_and_var &test ) const
+
+ bool Character::has_trait_flag( const json_character_flag &b ) const
+ {
++#if 0
+     auto iter = trait_flag_cache.find( b );
+     if( iter != trait_flag_cache.end() ) {
+         return iter->second;
+     }
++#endif
+
+     for( const trait_id &mut : get_functioning_mutations() ) {
+         const mutation_branch &mut_data = mut.obj();
+         if( mut_data.flags.count( b ) > 0 ) {
++#if 0
+             trait_flag_cache[b] = true;
++#endif
+             return true;
+         } else if( mut_data.activated ) {
+             Character &player = get_player_character();
+             if( ( mut_data.active_flags.count( b ) > 0 && player.has_active_mutation( mut ) ) ||
+                 ( mut_data.inactive_flags.count( b ) > 0 && !player.has_active_mutation( mut ) ) ) {
++#if 0
+                 trait_flag_cache[b] = true;
++#endif
+                 return true;
+             }
+         }
+     }
+
++#if 0
+     trait_flag_cache[b] = false;
++#endif
+     return false;
+ }
+
