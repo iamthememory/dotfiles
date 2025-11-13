@@ -1,0 +1,22 @@
+[
+  {
+    "id": "arvore_growing_wood_walls_branch",
+    "type": "SPELL",
+    "name": { "str": "The Forest Offers Shelter (Branches)", "//~": "NO_I18N" },
+    "description": {
+      "str": "The branches part of the Forest Offers Shelter spell.  It's a bug if you have it directly.",
+      "//~": "NO_I18N"
+    },
+    "flags": [ "SILENT" ],
+    "valid_targets": [ "ground" ],
+    "skill": "deduction",
+    "max_level": 20,
+    "difficulty": 6,
+    "effect": "ter_transform",
+    "effect_str": "ter_arvore_wood_branch",
+    "shape": "blast",
+    "min_range": 1,
+    "max_range": 4,
+    "range_increment": 0.25
+  }
+]
