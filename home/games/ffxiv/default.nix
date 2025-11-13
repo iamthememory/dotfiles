@@ -40,7 +40,7 @@ in
           xiv = builtins.elemAt (lib.sort versionCompare xivlaunchers) 0;
           traceMsg = "Using xivlauncher version " + xiv.pkg.name + " from " + xiv.source + ".";
         in
-        builtins.trace traceMsg xiv.pkg;
+        builtins.traceVerbose traceMsg xiv.pkg;
     in
     [
       # XIVLauncher.
