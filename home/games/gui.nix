@@ -100,7 +100,7 @@ in
           ./cataclysm-multiple-thresholds.patch
           ./cataclysm-perks-fix.patch
           ./cataclysm-plant-in-cold.patch
-          ./cataclysm-plant-only-check-now.patch
+          #./cataclysm-plant-only-check-now.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-sky-island-craft-fix.patch
           ./cataclysm-sky-island-range.patch

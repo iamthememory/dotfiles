@@ -7,7 +7,7 @@ index 9230ba67bc11..1ef572c54a37 100644
      mandatory( jo, was_loaded, "growth_stages", growth_stages,
                 pair_reader<flag_id, time_duration> {} );
 -    optional( jo, was_loaded, "growth_temp", growth_temp, 10_C );
-+    optional( jo, was_loaded, "growth_temp", growth_temp, -100_C );
++    optional( jo, was_loaded, "growth_temp", growth_temp, 2_C );
      optional( jo, was_loaded, "seeds", spawn_seeds, true );
      optional( jo, was_loaded, "byproducts", byproducts );
      optional( jo, was_loaded, "required_terrain_flag", required_terrain_flag,
