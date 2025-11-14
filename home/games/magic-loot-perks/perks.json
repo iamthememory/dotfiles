@@ -78,5 +78,19 @@
     "valid": false,
     "mixed_effect": true,
     "description": "You periodically mutate, but at least it's usually helpful."
+  },
+  {
+    "type": "mutation",
+    "id": "perk_animal_finder",
+    "name": { "str": "Animal Finder" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "You periodically attract domesticated animals.",
+    "active": true,
+    "mana": true,
+    "cost": 500,
+    "activation_msg": "",
+    "activated_eocs": [ "EOC_PERK_ANIMAL_FINDER_ACTIVATED" ]
   }
 ]

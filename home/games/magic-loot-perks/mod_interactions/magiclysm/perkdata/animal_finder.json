@@ -1,0 +1,14 @@
+[
+  {
+    "id": "perk_animal_finder_monsters",
+    "type": "monstergroup",
+    "extend": {
+      "monsters": [
+        { "monster": "mon_cockatrice_chick", "weight": 1 },
+        { "monster": "mon_pigeon_passenger_chick", "weight": 1 },
+        { "monster": "mon_giant_heron_ridable", "weight": 1 },
+        { "monster": "mon_nightmare_sheep", "weight": 1 }
+      ]
+    }
+  }
+]
