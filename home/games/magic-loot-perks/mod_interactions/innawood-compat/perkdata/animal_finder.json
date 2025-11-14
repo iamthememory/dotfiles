@@ -2,10 +2,8 @@
   {
     "id": "perk_animal_finder_monsters",
     "type": "monstergroup",
-    "extend": {
-      "monsters": [
-        { "monster": "mon_aphid", "weight": 1 }
-      ]
-    }
+    "monsters": [
+      { "monster": "mon_aphid", "weight": 1 }
+    ]
   }
 ]

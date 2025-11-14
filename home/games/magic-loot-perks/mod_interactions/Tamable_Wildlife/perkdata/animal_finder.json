@@ -2,11 +2,9 @@
   {
     "id": "perk_animal_finder_monsters",
     "type": "monstergroup",
-    "extend": {
-      "monsters": [
-        { "group": "perk_animal_finder_monsters_tamablewildlife", "weight": 8 }
-      ]
-    }
+    "monsters": [
+      { "group": "perk_animal_finder_monsters_tamablewildlife", "weight": 8 }
+    ]
   },
   {
     "id": "perk_animal_finder_monsters_tamablewildlife",
@@ -29,7 +27,7 @@
       { "monster": "mon_coot_chick", "weight": 1 },
       { "monster": "mon_cormorant_chick", "weight": 1 },
       { "monster": "mon_moorhen_chick", "weight": 1 },
-      { "monster": "mon_brebe_chick", "weight": 1 },
+      { "monster": "mon_grebe_chick", "weight": 1 },
       { "monster": "mon_bat", "weight": 1 },
       { "monster": "mon_bear_cub", "weight": 1 },
       { "monster": "mon_beaver", "weight": 1 },
