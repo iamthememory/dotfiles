@@ -6,8 +6,7 @@
     "description": "You are the spirit of a place that slowly gained sentience, a genius loci, born alone in the wilderness.  With no parents, no kin, and no guidance, it's up to you to make your own way in the world.",
     "points": 5,
     "traits": [ "IERDE" ],
-    "recipes": [ "mutagen_earthkin", "cthonic_poultice" ],
-    "flags": [ "SCEN_ONLY" ]
+    "recipes": [ "mutagen_earthkin", "cthonic_poultice" ]
   },
   {
     "type": "profession",
@@ -16,8 +15,7 @@
     "description": "You are the spirit of a place that slowly gained sentience, a genius loci, born alone in the wilderness.  With no parents, no kin, and no guidance, it's up to you to make your own way in the world.",
     "points": 5,
     "traits": [ "ARVORE" ],
-    "recipes": [ "mutagen_plantkin", "verdant_poultice" ],
-    "flags": [ "SCEN_ONLY" ]
+    "recipes": [ "mutagen_plantkin", "verdant_poultice" ]
   },
   {
     "type": "profession",
@@ -26,8 +24,7 @@
     "description": "You are the spirit of a place that slowly gained sentience, a genius loci, born alone in the wilderness.  With no parents, no kin, and no guidance, it's up to you to make your own way in the world.",
     "points": 5,
     "traits": [ "UNDINE" ],
-    "recipes": [ "mutagen_waterkin", "cerulean_poultice" ],
-    "flags": [ "SCEN_ONLY" ]
+    "recipes": [ "mutagen_waterkin", "cerulean_poultice" ]
   },
   {
     "type": "profession",
@@ -36,8 +33,7 @@
     "description": "You are the spirit of a place that slowly gained sentience, a genius loci, born alone in the wilderness.  With no parents, no kin, and no guidance, it's up to you to make your own way in the world.",
     "points": 5,
     "traits": [ "SALAMANDER" ],
-    "recipes": [ "mutagen_flamekin", "charred_sacrifice" ],
-    "flags": [ "SCEN_ONLY" ]
+    "recipes": [ "mutagen_flamekin", "charred_sacrifice" ]
   },
   {
     "type": "profession",
@@ -46,8 +42,7 @@
     "description": "You are the spirit of a place that slowly gained sentience, a genius loci, born alone in the wilderness.  With no parents, no kin, and no guidance, it's up to you to make your own way in the world.",
     "points": 5,
     "traits": [ "HOMULLUS", "HOMULLUS_MINIMIZED_MUTATIONS" ],
-    "recipes": [ "mutagen_dollkin", "doll_repair_paste" ],
-    "flags": [ "SCEN_ONLY" ]
+    "recipes": [ "mutagen_dollkin", "doll_repair_paste" ]
   },
   {
     "type": "profession",
@@ -56,7 +51,6 @@
     "description": "You are the spirit of a place that slowly gained sentience, a genius loci, born alone in the wilderness.  With no parents, no kin, and no guidance, it's up to you to make your own way in the world.",
     "points": 5,
     "traits": [ "SYLPH" ],
-    "recipes": [ "mutagen_airkin", "ethereal_draught" ],
-    "flags": [ "SCEN_ONLY" ]
+    "recipes": [ "mutagen_airkin", "ethereal_draught" ]
   }
 ]
