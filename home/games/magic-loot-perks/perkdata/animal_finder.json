@@ -45,7 +45,7 @@
         "u_spawn_monster": "perk_animal_finder_monsters",
         "real_count": 1,
         "group": true,
-        "max_radius": 8
+        "max_radius": 8,
         "true_eocs": [
           {
             "id": "EOC_PERK_ANIMAL_FINDER_SPAWN_ANIMAL_START_COOLDOWN",
