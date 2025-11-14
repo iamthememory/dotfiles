@@ -1,7 +1,7 @@
 [
   {
     "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
+    "id": "TALK_PERK_MENU_PLAYSTYLE",
     "responses": [
       {
         "condition": { "not": { "u_has_trait": "perk_magic_loot_xedra" } },
@@ -22,12 +22,12 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_xedra" }, { "math": [ "u_num_perks--" ] } ]
+        "effect": [ { "u_add_trait": "perk_magic_loot_xedra" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -38,8 +38,8 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "XEDRA_CHRONOMANCER" },
@@ -47,10 +47,10 @@
           { "u_add_trait": "XEDRA_CHRONOMANCER_TIME_SLOWDOWN" },
           { "u_add_trait": "XEDRA_CHRONOMANCER_UNSTABLE_POWERS" },
           { "run_eocs": [ "EOC_CHECK_GAMESTART_CHRONOMANCER" ] },
-          { "math": [ "u_num_perks--" ] }
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   }

@@ -1,7 +1,7 @@
 [
   {
     "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
+    "id": "TALK_PERK_MENU_PLAYSTYLE",
     "responses": [
       {
         "condition": { "not": { "u_has_trait": "perk_magic_loot_magiclysm_books" } },
@@ -22,12 +22,12 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_books" }, { "math": [ "u_num_perks--" ] } ]
+        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_books" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -38,12 +38,12 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_attunement" }, { "math": [ "u_num_perks--" ] } ]
+        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_attunement" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   }

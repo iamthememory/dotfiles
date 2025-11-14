@@ -1,7 +1,7 @@
 [
   {
     "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAIN",
+    "id": "TALK_PERK_MENU_PLAYSTYLE",
     "responses": [
       {
         "condition": { "not": { "u_has_trait": "perk_haulers_aura" } },
@@ -52,12 +52,12 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_haulers_aura" }, { "math": [ "u_num_perks--" ] } ]
+        "effect": [ { "u_add_trait": "perk_haulers_aura" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -68,12 +68,12 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_haulers_holster" }, { "math": [ "u_num_perks--" ] } ]
+        "effect": [ { "u_add_trait": "perk_haulers_holster" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -84,16 +84,16 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "perk_animal_hauler" },
-          { "math": [ "u_num_perks--" ] },
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] },
           { "u_add_effect": "effect_perk_animal_hauler_available", "duration": "PERMANENT" }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -104,16 +104,16 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "perk_animal_finder" },
-          { "math": [ "u_num_perks--" ] },
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] },
           { "u_add_effect": "effect_perk_animal_finder_available", "duration": "PERMANENT" }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -124,18 +124,18 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "CBM_Interface" },
           { "u_add_bionic": "bio_power_storage" },
           { "u_add_bionic": "bio_cable" },
           { "u_add_trait": "perk_cbm_integrator" },
-          { "math": [ "u_num_perks--" ] }
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -146,15 +146,15 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "perk_cbm_hunter" },
-          { "math": [ "u_num_perks--" ] }
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -165,15 +165,15 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "perk_pocket_world" },
-          { "math": [ "u_num_perks--" ] }
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   },
@@ -184,15 +184,15 @@
     "responses": [
       {
         "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_MAIN",
-        "condition": { "math": [ "u_num_perks > 0" ] },
+        "topic": "TALK_PERK_MENU_PLAYSTYLE",
+        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
         "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
           { "u_add_trait": "perk_forced_genetic_instability" },
-          { "math": [ "u_num_perks--" ] }
+          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
         ]
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_MAIN" },
+      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
       { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   }
