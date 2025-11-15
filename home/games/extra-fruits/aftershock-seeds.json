@@ -13,10 +13,10 @@
     "fruit": "pineapple",
     "byproducts": [ "straw_pile" ],
     "growth_stages": [
-      { "GROWTH_SEED": "70 days" },
-      { "GROWTH_SEEDLING": "70 days" },
-      { "GROWTH_MATURE": "70 days" },
-      { "GROWTH_HARVEST": "70 days" },
+      { "GROWTH_SEED": "40 days" },
+      { "GROWTH_SEEDLING": "40 days" },
+      { "GROWTH_MATURE": "40 days" },
+      { "GROWTH_HARVEST": "40 days" },
       { "GROWTH_OVERGROWN": "1 hour" }
     ]
   },
