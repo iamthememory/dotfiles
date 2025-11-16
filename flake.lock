@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1763122869,
-        "narHash": "sha256-ZyHYU+DnUNL7awB0JpQIrGcye7ioBJKfdJzJJseyyfc=",
+        "lastModified": 1763194620,
+        "narHash": "sha256-889u3Kuh0izZpqmDq/id22jY9+0w/ch/MJ9LOSbOkjo=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "7f5e9202404f79c5e80fa5a468126dfc516dc45b",
+        "rev": "310fa55d6894fd80dec6f990f9ba7f58dbda0852",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
     "cataclysm-dda-nocts": {
       "flake": false,
       "locked": {
-        "lastModified": 1761104730,
-        "narHash": "sha256-WZFqNSkFBOKbRZxZvJZuZO0a7iMQoeqD/5B8SKPGhJs=",
+        "lastModified": 1763175367,
+        "narHash": "sha256-2c/fXVf0BYdLrDo1H6GEoQCOy+kaWXYG2Y4fsKVoVio=",
         "owner": "Noctifer-de-Mortem",
         "repo": "nocts_cata_mod",
-        "rev": "1fc9531069b1b58fadd2bc8c6a16a4d9275ee6d4",
+        "rev": "9e597fa234d9f52013503b2c31ba2d5761b9d153",
         "type": "github"
       },
       "original": {
@@ -275,11 +275,11 @@
     "cdda-sounds": {
       "flake": false,
       "locked": {
-        "lastModified": 1743750946,
-        "narHash": "sha256-GgVRmSaozYzC93/VN25u7b5OKLSv7lm5mR9k7yO4a8U=",
+        "lastModified": 1763229311,
+        "narHash": "sha256-DBeh3yymB4izWHT8gUwlPLSiTUxBbLo1rT0xqLLbmF8=",
         "ref": "refs/heads/main",
-        "rev": "f2f531e7601e8474998df1998274073ecf9b9b42",
-        "revCount": 89,
+        "rev": "cff999de7bf64f68c381a966d0267f88a3f661a5",
+        "revCount": 101,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/Fris0uman/CDDA-Soundpacks"
@@ -296,11 +296,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1763129254,
-        "narHash": "sha256-EhJwcAggmalfKJl6fz5qMZFJ5oyxb+2v9PcupAe46XQ=",
+        "lastModified": 1763305301,
+        "narHash": "sha256-UNRkQA50vHLMJqwI0VxuTzC8eG4JhPiSSUukzHO+ehM=",
         "owner": "I-am-Erk",
         "repo": "CDDA-Tilesets",
-        "rev": "f56fd18361be20de392874b8eea4edcd0d111500",
+        "rev": "af922500ca455ef9b9993205ff0e06b938f98482",
         "type": "github"
       },
       "original": {
