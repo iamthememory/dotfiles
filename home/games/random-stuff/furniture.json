@@ -1,0 +1,9 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_stook_empty",
+    "copy-from": "f_stook_empty",
+    "name": "stooking spot",
+    "max_volume": "100 L"
+  }
+]
