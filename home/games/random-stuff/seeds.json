@@ -1,0 +1,13 @@
+[
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_potato_raw",
+    "copy-from": "seed_potato_raw",
+    "name": { "str_sp": "seed potatoes" },
+    "spoils_in": "360 days",
+    "delete": {
+      "flags": [ "FREEZERBURN" ]
+    }
+  }
+]
