@@ -41,7 +41,7 @@ index 60751d6a8f58..3326ab182230 100644
 \ No newline at end of file
 +]
 diff --git a/Plant Crops/items.json b/Plant Crops/items.json
-index 5386a978c9f8..bb9e6d595c2c 100644
+index 5386a978c9f8..eb589f9e9b81 100644
 --- a/Plant Crops/items.json	
 +++ b/Plant Crops/items.json	
 @@ -1,6 +1,7 @@
@@ -53,7 +53,7 @@ index 5386a978c9f8..bb9e6d595c2c 100644
      "id": "rc_rice",
      "name": { "str_sp": "brown rice" },
      "//": "a tenth of what the dried rice will be",
-@@ -12,14 +13,13 @@
+@@ -12,14 +13,21 @@
      "calories": 90,
      "quench": -6,
      "description": "Freshly harvested rice. You need to thresh and dry it.",
@@ -68,6 +68,14 @@ index 5386a978c9f8..bb9e6d595c2c 100644
 -    "charges": 1,
      "vitamins": [ [ "iron", 3 ] ],
      "fun": -8
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "MILLING", "COMESTIBLE" ],
++    "id": "dry_rice",
++    "copy-from": "dry_rice",
++    "name": { "str_sp": "dried rice" },
++    "extend": { "flags": [ "NUTRIENT_OVERRIDE" ] }
    }
 -]
 \ No newline at end of file
