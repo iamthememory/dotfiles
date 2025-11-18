@@ -5,13 +5,13 @@
     "copy-from": "arvore_seeds",
     "extend": {
       "items": [
-        [ "seed_pineapple", 1],
-        [ "seed_orange", 1],
-        [ "seed_lemon", 1],
-        [ "seed_coconut", 1],
-        [ "seed_melon", 1],
-        [ "seed_banana", 1],
-        [ "seed_kiwi", 1]
+        [ "seed_pineapple", 10],
+        [ "seed_orange", 10],
+        [ "seed_lemon", 10],
+        [ "seed_coconut", 10],
+        [ "seed_melon", 10],
+        [ "seed_banana", 10],
+        [ "seed_kiwi", 10]
       ]
     }
   }

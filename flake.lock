@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-elf-crops": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1616184902,
+        "narHash": "sha256-6+tOTN6eb7atEVFcLiZt75qgRRhPGMov/uj4nbRDLns=",
+        "owner": "OromisElf",
+        "repo": "ElfCrops",
+        "rev": "55a9fbd4ff04295c9d1ac58826457048d37cb9ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OromisElf",
+        "repo": "ElfCrops",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-grow-more-drugs": {
       "flake": false,
       "locked": {
@@ -624,6 +640,7 @@
         "cataclysm-dda": "cataclysm-dda",
         "cataclysm-dda-arcana": "cataclysm-dda-arcana",
         "cataclysm-dda-e85-engines": "cataclysm-dda-e85-engines",
+        "cataclysm-dda-elf-crops": "cataclysm-dda-elf-crops",
         "cataclysm-dda-grow-more-drugs": "cataclysm-dda-grow-more-drugs",
         "cataclysm-dda-medieval": "cataclysm-dda-medieval",
         "cataclysm-dda-minimods": "cataclysm-dda-minimods",

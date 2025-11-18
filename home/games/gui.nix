@@ -166,13 +166,28 @@ in
         in
         tilesets;
 
-      elf-crops-src = pkgs.applyPatches {
-        name = "elfcrops-patched";
-        src = inputs.cataclysm-dda-elf-crops;
-        patches = [
-          ./cataclysm-elfcrops-fixdup.patch
-        ];
-      };
+
+      elfmods =
+        let
+          patched-src = pkgs.applyPatches {
+            name = "elfcrops-patched";
+            src = inputs.cataclysm-dda-elf-crops;
+            patches = [
+              ./cataclysm-elfcrops-fixdup.patch
+            ];
+          };
+
+          elfmod = modRoot: modName: pkgs.cataclysmDDA.buildMod {
+            inherit modName modRoot;
+            version = inputs.cataclysm-dda-elf-crops.lastModifiedDate;
+            src = patched-src;
+          };
+        in
+        builtins.attrValues (builtins.mapAttrs elfmod {
+          "Plant Crops" = "resource_crops_plants";
+          "Resource Crops" = "resource_crops";
+          "Resource Crops Magiclysm addon" = "resource_cropsMagic";
+        });
 
       e85-engines = pkgs.cataclysmDDA.buildMod {
         modName = "E85_Engines";
@@ -520,6 +535,7 @@ in
       ]
       ++ minimods
       ++ mom-submods
+      ++ elfmods
       );
 
       # The customized dwarf fortress to use.
