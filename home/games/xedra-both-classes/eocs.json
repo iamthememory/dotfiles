@@ -295,6 +295,21 @@
   },
   {
     "type": "effect_on_condition",
+    "id": "EOC_LEVELER_ARVORE_CLIMBING_VINE_SPELL",
+    "condition": {
+      "and": [
+        { "math": [ "u_spell_level('arvore_climbing_vine_spell') >= 0" ] },
+        { "math": [ "u_spell_level('arvore_climbing_vine_spell') < int_to_level(1)" ] }
+      ]
+    },
+    "effect": [
+      { "run_eocs": "EOC_ARVORE_SUCCESSFUL_LEVELER_MESSAGE" },
+      { "math": [ "u_spell_exp('arvore_climbing_vine_spell') += paraclesian_passive_spell_exp(1)" ] }
+    ],
+    "false_effect": [ { "run_eocs": "EOC_ARVORE_SPELL_EXPERIENCE_INCREASER_SELECTOR" } ]
+  },
+  {
+    "type": "effect_on_condition",
     "id": "EOC_ARVORE_SEED_BEARER_GIVE_SEEDS",
     "effect": { "u_spawn_item": "arvore_seeds", "use_item_group": true }
   }
