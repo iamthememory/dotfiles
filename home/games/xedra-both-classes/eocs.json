@@ -322,5 +322,227 @@
     "type": "effect_on_condition",
     "id": "EOC_XE_IRON_INTOLERANCE_WEARING_IRON_FOLLOWUP",
     "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_ELEMENTAL_MAGIC_ADJUSTMENT_IN_THE_WILDERNESS",
+    "copy-from": "EOC_ARVORE_ELEMENTAL_MAGIC_ADJUSTMENT_IN_THE_WILDERNESS",
+    "eoc_type": "EVENT",
+    "required_event": "opens_spellbook",
+    "condition": {
+      "and": [
+        {
+          "and": [
+            {
+              "or": [
+                "u_is_outside",
+                { "u_is_on_terrain": "t_barkfloor" },
+                { "u_is_on_terrain": "t_barkfloor_no_roof" },
+                { "u_is_on_terrain": "t_bramble_door_o" }
+              ]
+            },
+            { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
+            { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
+          ]
+        },
+        { "u_has_trait": "ARVORE" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_COMMUNE_WITH_NATURE",
+    "copy-from": "EOC_COMMUNE_WITH_NATURE",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_SEED_BEARER_activated",
+    "copy-from": "EOC_ARVORE_SEED_BEARER_activated",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_GOBLIN_FRUIT",
+    "copy-from": "EOC_ARVORE_GOBLIN_FRUIT",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_SUMMON_PRESERVATION_CONTAINER_CHECK",
+    "copy-from": "EOC_ARVORE_SUMMON_PRESERVATION_CONTAINER_CHECK",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_SUN_FOODS_ON_KCAL",
+    "copy-from": "EOC_ARVORE_SUN_FOODS_ON_KCAL",
+    "recurrence": [ "1 minutes", "1 minutes" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "ARVORE_SUN_FOODS" },
+        "is_day",
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        }
+      ]
+    },
+    "deactivate_condition": { "not": { "u_has_trait": "ARVORE_SUN_FOODS" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_OVERGROWTH",
+    "condition": {
+      "or": [
+        "u_is_outside",
+        { "u_is_on_terrain": "t_barkfloor" },
+        { "u_is_on_terrain": "t_barkfloor_no_roof" },
+        { "u_is_on_terrain": "t_bramble_door_o" }
+      ]
+    },
+    "effect": {
+      "run_eocs": [
+        {
+          "id": "EOC_ARVORE_OVERGROWTH_2",
+          "effect": [
+            {
+              "u_transform_radius": {
+                "math": [
+                  "( ( (u_spell_level('arvore_overgrowth_spell') * rng(0.8,1.2)) + rng(1.5,4)) * (scaling_factor(u_val('intelligence') ) ) )"
+                ]
+              },
+              "ter_furn_transform": "ter_arvore_overgrowth"
+            }
+          ]
+        }
+      ]
+    },
+    "false_effect": [ { "u_message": "You must be outside to cast Overgrowth!", "type": "bad" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_TREE_FORM_ON",
+    "copy-from": "EOC_ARVORE_TREE_FORM_ON",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_VERDANT_IMPRISONMENT",
+    "copy-from": "EOC_ARVORE_VERDANT_IMPRISONMENT",
+    "condition": {
+      "or": [
+        "u_is_outside",
+        { "u_is_on_terrain": "t_barkfloor" },
+        { "u_is_on_terrain": "t_barkfloor_no_roof" },
+        { "u_is_on_terrain": "t_bramble_door_o" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_ROOT_TO_ROOT_TRANSLOCATE_CHECK",
+    "copy-from": "EOC_ARVORE_ROOT_TO_ROOT_TRANSLOCATE_CHECK",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_FOREST" },
+        { "not": { "u_at_om_location": "field" } }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_ARVORE_ROOT_TO_ROOT_ATTUNEMENT_CHECK",
+    "copy-from": "EOC_ARVORE_ROOT_TO_ROOT_ATTUNEMENT_CHECK",
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "u_is_outside",
+            { "u_is_on_terrain": "t_barkfloor" },
+            { "u_is_on_terrain": "t_barkfloor_no_roof" },
+            { "u_is_on_terrain": "t_bramble_door_o" }
+          ]
+        },
+        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_FOREST" },
+        { "not": { "u_at_om_location": "field" } }
+      ]
+    }
   }
 ]

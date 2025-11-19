@@ -1,0 +1,163 @@
+[
+  {
+    "type": "mutation",
+    "id": "ARVORE_SUN_NUTRIENTS",
+    "name": { "str": "Solar Rejuvenation" },
+    "points": 3,
+    "visibility": 0,
+    "ugliness": 0,
+    "description": "Like a tree, you are fueled by the sun.  When standing in the sunlight, you will absorb its energy as nutrients and heal slightly faster.",
+    "category": [ "ARVORE", "ARVORE_ALCHEMY" ],
+    "purifiable": false,
+    "types": [ "METABOLISM" ],
+    "changes_to": [ "ARVORE_SUN_NUTRIENTS_AND_MANA" ],
+    "enchantments": [
+      {
+        "condition": {
+          "and": [
+            "is_day",
+            {
+              "or": [
+                "u_is_outside",
+                { "u_is_on_terrain": "t_barkfloor" },
+                { "u_is_on_terrain": "t_barkfloor_no_roof" },
+                { "u_is_on_terrain": "t_bramble_door_o" }
+              ]
+            }
+          ]
+        },
+        "values": [
+          { "value": "REGEN_HP", "multiply": 0.5 },
+          { "value": "REGEN_HP_AWAKE", "multiply": 0.2 },
+          { "value": "MENDING_MODIFIER", "multiply": 1 }
+        ],
+        "ench_effects": [ { "effect": "effect_arvore_vitamin_bonus", "intensity": 1 } ]
+      }
+    ],
+    "//": "No messages so you aren't constantly spammed while you're walking in and out of buildings.  Being a fae spirit, the arvore doesn't need uncovered arms or head or anything--simply being in the sun is enough."
+  },
+  {
+    "type": "mutation",
+    "id": "ARVORE_SUN_NUTRIENTS_AND_MANA",
+    "name": { "str": "Solar Revitalization" },
+    "points": 3,
+    "visibility": 0,
+    "ugliness": 0,
+    "description": "Like a tree, you are fueled by the sun.  When standing in the sunlight, you will absorb its energy as nutrients, heal slightly faster, and your mana regenerates much quicker.",
+    "category": [ "ARVORE", "ARVORE_ALCHEMY" ],
+    "purifiable": false,
+    "types": [ "METABOLISM" ],
+    "prereqs": [ "ARVORE_SUN_NUTRIENTS" ],
+    "changes_to": [ "ARVORE_SUN_MANA_BONUS" ],
+    "enchantments": [
+      {
+        "condition": {
+          "and": [
+            "is_day",
+            {
+              "or": [
+                "u_is_outside",
+                { "u_is_on_terrain": "t_barkfloor" },
+                { "u_is_on_terrain": "t_barkfloor_no_roof" },
+                { "u_is_on_terrain": "t_bramble_door_o" }
+              ]
+            }
+          ]
+        },
+        "values": [
+          { "value": "REGEN_HP", "multiply": 0.5 },
+          { "value": "REGEN_HP_AWAKE", "multiply": 0.2 },
+          { "value": "REGEN_MANA", "multiply": 0.5 },
+          { "value": "MENDING_MODIFIER", "multiply": 1 }
+        ],
+        "ench_effects": [ { "effect": "effect_arvore_vitamin_bonus", "intensity": 1 } ]
+      }
+    ],
+    "//": "No messages so you aren't constantly spammed while you're walking in and out of buildings.  Being a fae spirit, the arvore doesn't need uncovered arms or head or anything--simply being in the sun is enough."
+  },
+  {
+    "type": "mutation",
+    "id": "ARVORE_SUN_MANA_BONUS",
+    "name": { "str": "Solar Empowerment" },
+    "points": 10,
+    "visibility": 0,
+    "ugliness": 0,
+    "description": "Like a tree, you are fueled by the sun.  When standing in the sunlight, you will absorb its energy as nutrients, heal slightly faster, your mana regenerates much quicker, and you gain a bonus to your maximum mana.",
+    "category": [ "ARVORE" ],
+    "purifiable": false,
+    "threshreq": [ "THRESH_ARVORE" ],
+    "types": [ "METABOLISM" ],
+    "prereqs": [ "ARVORE_SUN_NUTRIENTS_AND_MANA" ],
+    "changes_to": [ "ARVORE_SUN_POWER_MANA_STATS" ],
+    "enchantments": [
+      {
+        "condition": {
+          "and": [
+            "is_day",
+            {
+              "or": [
+                "u_is_outside",
+                { "u_is_on_terrain": "t_barkfloor" },
+                { "u_is_on_terrain": "t_barkfloor_no_roof" },
+                { "u_is_on_terrain": "t_bramble_door_o" }
+              ]
+            }
+          ]
+        },
+        "values": [
+          { "value": "REGEN_HP", "multiply": 0.5 },
+          { "value": "REGEN_HP_AWAKE", "multiply": 0.2 },
+          { "value": "REGEN_MANA", "multiply": 0.5 },
+          { "value": "MAX_MANA", "multiply": 0.5 },
+          { "value": "MENDING_MODIFIER", "multiply": 1 }
+        ],
+        "ench_effects": [ { "effect": "effect_arvore_vitamin_bonus", "intensity": 1 } ]
+      }
+    ],
+    "//": "No messages so you aren't constantly spammed while you're walking in and out of buildings.  Being a fae spirit, the arvore doesn't need uncovered arms or head or anything--simply being in the sun is enough."
+  },
+  {
+    "type": "mutation",
+    "id": "ARVORE_SUN_POWER_MANA_STATS",
+    "name": { "str": "Solar Ascendancy" },
+    "points": 10,
+    "visibility": 0,
+    "ugliness": 0,
+    "description": "Like a tree, you are fueled by the sun.  When standing in the sunlight, you will absorb its energy as nutrients, heal slightly faster, your mana regenerates much quicker, you gain a bonus to your maximum mana, and you gain a +2 bonus to all stats.",
+    "category": [ "ARVORE" ],
+    "purifiable": false,
+    "threshreq": [ "THRESH_ARVORE" ],
+    "types": [ "METABOLISM" ],
+    "prereqs": [ "ARVORE_SUN_MANA_BONUS" ],
+    "enchantments": [
+      {
+        "condition": {
+          "and": [
+            "is_day",
+            {
+              "or": [
+                "u_is_outside",
+                { "u_is_on_terrain": "t_barkfloor" },
+                { "u_is_on_terrain": "t_barkfloor_no_roof" },
+                { "u_is_on_terrain": "t_bramble_door_o" }
+              ]
+            }
+          ]
+        },
+        "values": [
+          { "value": "REGEN_HP", "multiply": 0.5 },
+          { "value": "REGEN_HP_AWAKE", "multiply": 0.2 },
+          { "value": "REGEN_MANA", "multiply": 0.5 },
+          { "value": "MAX_MANA", "multiply": 0.5 },
+          { "value": "MENDING_MODIFIER", "multiply": 1 },
+          { "value": "STRENGTH", "add": 2 },
+          { "value": "DEXTERITY", "add": 2 },
+          { "value": "INTELLIGENCE", "add": 2 },
+          { "value": "PERCEPTION", "add": 2 }
+        ],
+        "ench_effects": [ { "effect": "effect_arvore_vitamin_bonus", "intensity": 1 } ]
+      }
+    ],
+    "//": "No messages so you aren't constantly spammed while you're walking in and out of buildings.  Being a fae spirit, the arvore doesn't need uncovered arms or head or anything--simply being in the sun is enough."
+  }
+]
