@@ -108,6 +108,289 @@ index 88eabfd7d059..8949d5c202ce 100644
      "looks_like": "glock_17",
      "type": "ITEM",
      "subtypes": [ "GUN", "ARTIFACT" ],
+diff --git a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json
+index 346319ba81de..596040627fb9 100644
+--- a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json	
++++ b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json	
+@@ -91,17 +91,17 @@
+       { "value": "RANGED_DAMAGE", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
+       { "value": "THROW_DAMAGE", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } }
+     ],
+-    "melee_damage_bonus": [ 
++    "melee_damage_bonus": [
+         { "type": "bash", "add": { "math": [ "3" ] } },
+         { "type": "bash", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
+         { "type": "stab", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
+         { "type": "cut", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } }
+     ],
+-    "incoming_damage_mod": [ 
++    "incoming_damage_mod": [
+       { "type": "bash", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } },
+       { "type": "stab", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } },
+       { "type": "cut", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } },
+-      { "type": "bullet", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } } 
++      { "type": "bullet", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } }
+     ]
+   },
+   {
+@@ -134,34 +134,34 @@
+     "eoc_type": "ACTIVATION",
+     "condition": { "u_has_proficiency": "prof_mang_0" },
+     "effect": [
+-      { 
+-        "if": { "math": [ "u_mang > 0" ] },
+-        "then": [
+-          { "u_message": "In a blaze of power, <u_val:mang> Mang explode into a existance around your attack!", "type": "mixed" }
+-        ]
+-      },
+       { "math": [ "_max_mang = ( u_vitamin('trauma') - 10) / 15" ] },
+       { "if": { "math": [ "u_skill('self-control') > 8" ] }, "then": { "math": [ "_max_mang += 1" ] } },
+       { "if": { "and": [ { "not": { "u_has_proficiency": "prof_mang_1" } }, { "math": [ "_max_mang > 2" ] } ] }, "then": { "math": [ "_max_mang = 2" ] } },
+       { "if": { "and": [ { "not": { "u_has_proficiency": "prof_mang_2" } }, { "math": [ "_max_mang > 4" ] } ] }, "then": { "math": [ "_max_mang = 4" ] } },
+-      { "math": [ "u_mang = rand( _max_mang )" ] }
++      { "math": [ "u_mang = rand( _max_mang )" ] },
++      {
++        "if": { "math": [ "u_mang > 0" ] },
++        "then": [
++          { "u_message": "In a blaze of power, <u_val:mang> Mang explode into a existance around your attack!", "type": "mixed" }
++        ]
++      }
+     ]
+   },
+-  
+-  
+-  
++
++
++
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_control_wake_0",
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [ 
+-        { "math": [ "u_skill('self-control') < 2" ] }, 
+-        { "not": { "u_know_recipe": "prac_control_0" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 4 } }, 
+-        { "math": [ "u_vitamin('trauma') > 5" ] } 
+-      ] 
++      "and": [
++        { "math": [ "u_skill('self-control') < 2" ] },
++        { "not": { "u_know_recipe": "prac_control_0" } },
++        { "x_in_y_chance": { "x": 1, "y": 4 } },
++        { "math": [ "u_vitamin('trauma') > 5" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_0" },
+@@ -174,13 +174,13 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [ 
+-        { "math": [ "u_skill('self-control') > 0" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 0" ] },
+         { "u_know_recipe": "prac_control_0" },
+-        { "not": { "u_know_recipe": "prac_control_1" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 4 } }, 
+-        { "math": [ "u_vitamin('trauma') > 7" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_1" } },
++        { "x_in_y_chance": { "x": 1, "y": 4 } },
++        { "math": [ "u_vitamin('trauma') > 7" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_1" },
+@@ -193,13 +193,13 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 2" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 2" ] },
+         { "u_know_recipe": "prac_control_1" },
+-        { "not": { "u_know_recipe": "prac_control_2" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 6 } }, 
+-        { "math": [ "u_vitamin('trauma') > 10" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_2" } },
++        { "x_in_y_chance": { "x": 1, "y": 6 } },
++        { "math": [ "u_vitamin('trauma') > 10" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_2" },
+@@ -212,13 +212,13 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 4" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 4" ] },
+         { "u_know_recipe": "prac_control_2" },
+-        { "not": { "u_know_recipe": "prac_control_3" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 6 } }, 
+-        { "math": [ "u_vitamin('trauma') > 12" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_3" } },
++        { "x_in_y_chance": { "x": 1, "y": 6 } },
++        { "math": [ "u_vitamin('trauma') > 12" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_3" },
+@@ -231,13 +231,13 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 5" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 5" ] },
+         { "u_know_recipe": "prac_control_3" },
+-        { "not": { "u_know_recipe": "prac_control_4" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 10 } }, 
+-        { "math": [ "u_vitamin('trauma') > 16" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_4" } },
++        { "x_in_y_chance": { "x": 1, "y": 10 } },
++        { "math": [ "u_vitamin('trauma') > 16" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_4" },
+@@ -250,13 +250,13 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 7" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 7" ] },
+         { "u_know_recipe": "prac_control_4" },
+-        { "not": { "u_know_recipe": "prac_control_5" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 10 } }, 
+-        { "math": [ "u_vitamin('trauma') > 20" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_5" } },
++        { "x_in_y_chance": { "x": 1, "y": 10 } },
++        { "math": [ "u_vitamin('trauma') > 20" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_5" },
+@@ -269,13 +269,13 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 8" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 8" ] },
+         { "u_know_recipe": "prac_control_5" },
+-        { "not": { "u_know_recipe": "prac_control_6" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 12 } }, 
+-        { "math": [ "u_vitamin('trauma') > 24" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_6" } },
++        { "x_in_y_chance": { "x": 1, "y": 12 } },
++        { "math": [ "u_vitamin('trauma') > 24" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_6" },
+@@ -288,27 +288,27 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_wakes_up",
+     "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 9" ] }, 
++      "and": [
++        { "math": [ "u_skill('self-control') > 9" ] },
+         { "u_know_recipe": "prac_control_6" },
+-        { "not": { "u_know_recipe": "prac_control_7" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 12 } }, 
+-        { "math": [ "u_vitamin('trauma') > 30" ] } 
+-      ] 
++        { "not": { "u_know_recipe": "prac_control_7" } },
++        { "x_in_y_chance": { "x": 1, "y": 12 } },
++        { "math": [ "u_vitamin('trauma') > 30" ] }
++      ]
+     },
+     "effect": [
+       { "u_learn_recipe": "prac_control_7" },
+       { "u_message": "Soon, there will only be perfect focus. You can do anything you need to, even worries are merely things to be deflected, imperfections in your midst.", "popup": true }
+     ]
+   },
+-  
++
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_shin_learn_damage",
+     "eoc_type": "EVENT",
+     "required_event": "character_takes_damage",
+     "condition": {
+-      "and": [ 
++      "and": [
+         { "u_has_trait": "mut_self_control_on" },
+         { "not": { "u_know_recipe": "prac_shin_0" } },
+         { "math": [ "u_skill('self-control') > 3" ] },
+@@ -327,7 +327,7 @@
+     "eoc_type": "EVENT",
+     "required_event": "broken_bone",
+     "condition": {
+-      "and": [ 
++      "and": [
+         { "u_has_item": "SHIN_aura" },
+         { "u_has_proficiency": "prac_shin_0" },
+         { "not": { "u_know_recipe": "prac_shin_1" } },
+@@ -345,7 +345,7 @@
+     "id": "EOC_shin_learn_death",
+     "eoc_type": "PREVENT_DEATH",
+     "condition": {
+-      "and": [ 
++      "and": [
+         { "u_has_item": "SHIN_aura" },
+         { "u_has_proficiency": "prac_shin_1" },
+         { "not": { "u_know_recipe": "prac_shin_2" } },
+@@ -389,14 +389,14 @@
+       { "u_lose_effect": "bleed" }
+     ]
+   },
+-  
++
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_mang_learn_attack",
+     "eoc_type": "EVENT",
+     "required_event": "character_melee_attacks_character",
+     "condition": {
+-      "and": [ 
++      "and": [
+         { "u_has_item": "SHIN_aura" },
+         { "not": { "u_know_recipe": "prac_mang_0" } },
+         { "math": [ "u_skill('self-control') > 4" ] },
+@@ -416,7 +416,7 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_kills_character",
+     "condition": {
+-      "and": [ 
++      "and": [
+         { "u_has_item": "SHIN_aura" },
+         { "u_has_proficiency": "prac_mang_0" },
+         { "not": { "u_know_recipe": "prac_mang_1" } },
+@@ -431,4 +431,4 @@
+       { "u_message": "One more blow comes down, this time it's not just a single Mang that radiates outwards- it's two. No, three. With a great crack, your opponent is no more.", "popup": true }
+     ]
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/Items/Item_group.json b/Items/Item_group.json
 index 2a377eaa4343..c0cf0a953f49 100644
 --- a/Items/Item_group.json
@@ -666,7 +949,7 @@ index 1e57bf41d39b..54079698fb4a 100644
        {
          "set_item_category_spawn_rates": [
 diff --git a/emotion.json b/emotion.json
-index d9d8f2be698e..6583797ee991 100644
+index d9d8f2be698e..102c6a63582e 100644
 --- a/emotion.json
 +++ b/emotion.json
 @@ -27,14 +27,14 @@
@@ -736,6 +1019,15 @@ index d9d8f2be698e..6583797ee991 100644
     {
      "id": "trauma",
      "type": "vitamin",
+@@ -123,7 +123,7 @@
+     "name": { "str": "Trauma" },
+     "min": 0,
+     "max": 100,
+-    "rate": "0 t",
++    "rate": "0 m",
+     "excess": "trauma",
+     "flags": [ "NO_DISPLAY" ],
+     "disease_excess": [ [ 20, 49 ], [ 50, 79 ], [ 80, 100 ] ]
 @@ -146,7 +146,7 @@
      "eoc_type": "EVENT",
      "required_event": "character_wakes_up",
@@ -745,7 +1037,17 @@ index d9d8f2be698e..6583797ee991 100644
      },
      "effect": [
        { "u_lose_morale": "morale_trauma" },
-@@ -194,8 +194,8 @@
+@@ -159,8 +159,7 @@
+     "eoc_type": "EVENT",
+     "required_event": "game_avatar_new",
+     "effect": [
+-      { "math": [ "u_vitamin('trauma') = 5" ] },
+-      { "math": [ "u_mang = 0" ] }
++      { "math": [ "u_vitamin('trauma') = max(u_vitamin('trauma'), 5)" ] }
+     ]
+   },
+   {
+@@ -194,8 +193,8 @@
        },
        { "math": [ "_total_control = (12 * u_skill('self-control')) / (1 + (u_vitamin('emotion') / 50))" ] },
        {
@@ -756,7 +1058,7 @@ index d9d8f2be698e..6583797ee991 100644
              { "and": [ { "math": [ "_pos == 1" ] }, { "math": [ "u_val('morale') > (-1 * _total_control)" ] } ] },
              { "and": [ { "math": [ "_pos == -1" ] }, { "math": [ "u_val('morale') < _total_control" ] } ] }
            ]
-@@ -204,19 +204,11 @@
+@@ -204,19 +203,11 @@
          "else": { "math": [ "_morale_change = _pos * _total_control" ] }
        },
        { "u_add_morale": "morale_self_control", "bonus": { "math": [ "_morale_change"] }, "capped": true, "max_bonus": 100, "duration": "5 seconds" },
@@ -770,14 +1072,15 @@ index d9d8f2be698e..6583797ee991 100644
 -      },
        { "run_eocs": [ "EOC_self_control_focus" ] },
        {
-         "if": { "math": [ "_zeroed == 1" ] },
+-        "if": { "math": [ "_zeroed == 1" ] },
++        "if": { "math": [ "u_val('morale') == 0" ] },
          "then": { "run_eocs": [ "EOC_self_control_shin" ] },
 -        "else": { "run_eocs": [ "EOC_remove_shin" ] } 
 +        "else": { "run_eocs": [ "EOC_remove_shin" ] }
        }
      ]
    },
-@@ -228,9 +220,9 @@
+@@ -228,9 +219,9 @@
         "x_in_y_chance": { "x": { "math": [ "11 - u_skill('self-control')" ] }, "y": { "math": [ "110 - u_val('focus')" ] } }
      },
      "effect": [
@@ -789,7 +1092,7 @@ index d9d8f2be698e..6583797ee991 100644
        }
      ]
    },
-@@ -268,12 +260,12 @@
+@@ -268,12 +259,12 @@
      "active": true,
      "no_empathize_with": [ "HUMAN" ],
      "time": 0,
@@ -805,7 +1108,7 @@ index d9d8f2be698e..6583797ee991 100644
        "active": false,
        "moves": 0
      }
-@@ -289,8 +281,8 @@
+@@ -289,8 +280,8 @@
      "valid": false,
      "active": true,
      "transform": {
@@ -816,7 +1119,7 @@ index d9d8f2be698e..6583797ee991 100644
        "active": true,
        "moves": 0
      }
-@@ -305,4 +297,4 @@
+@@ -305,4 +296,4 @@
        { "u_add_trait": "mut_self_control_off" }
      ]
    }

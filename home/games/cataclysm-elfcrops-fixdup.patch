@@ -220,10 +220,10 @@ index e50a8e4141d3..153103f94205 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/items/summoners.json b/Resource Crops Magiclysm addon/items/summoners.json
-index 9d7a999b9de1..c806a927b916 100644
+index 9d7a999b9de1..8bbb35a73d74 100644
 --- a/Resource Crops Magiclysm addon/items/summoners.json	
 +++ b/Resource Crops Magiclysm addon/items/summoners.json	
-@@ -1,13 +1,14 @@
+@@ -1,15 +1,17 @@
  [
    {
      "id": "rc_spawn_animistfungus",
@@ -240,8 +240,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -19,13 +20,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_animist_fungus",
+@@ -19,15 +21,17 @@
    },
    {
      "id": "rc_spawn_biomancerfungus",
@@ -258,8 +261,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -37,13 +39,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_biomancer_fungus",
+@@ -37,15 +41,17 @@
    },
    {
      "id": "rc_spawn_druidfungus",
@@ -276,8 +282,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -55,13 +58,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_druid_fungus",
+@@ -55,15 +61,17 @@
    },
    {
      "id": "rc_spawn_earthshaperfungus",
@@ -294,8 +303,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -73,13 +77,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_earthshaper_fungus",
+@@ -73,15 +81,17 @@
    },
    {
      "id": "rc_spawn_kelvinistfungus",
@@ -312,8 +324,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -91,13 +96,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_kelvinist_fungus",
+@@ -91,15 +101,17 @@
    },
    {
      "id": "rc_spawn_magusfungus",
@@ -330,8 +345,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -109,13 +115,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_magus_fungus",
+@@ -109,15 +121,17 @@
    },
    {
      "id": "rc_spawn_stormshaperfungus",
@@ -348,8 +366,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -127,13 +134,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_stormshaper_fungus",
+@@ -127,15 +141,17 @@
    },
    {
      "id": "rc_spawn_technomancerfungus",
@@ -366,8 +387,11 @@ index 9d7a999b9de1..c806a927b916 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -143,4 +151,4 @@
+       "type": "place_monster",
+       "monster_id": "rc_technomancer_fungus",
+@@ -143,4 +159,4 @@
        "difficulty": 100
      }
    }
@@ -1261,10 +1285,10 @@ index fccd89aa02a2..17a56e88c258 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..1052f62fdf64 100644
+index ce70e9badaf0..b7f7224c64e3 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,13 +1,14 @@
+@@ -1,15 +1,17 @@
  [
    {
      "id": "rc_spawn_moneyfungus",
@@ -1281,8 +1305,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -19,13 +20,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_money_fungus",
+@@ -19,15 +21,17 @@
    },
    {
      "id": "rc_spawn_22fungus",
@@ -1299,8 +1326,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -37,13 +39,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_22_fungus",
+@@ -37,15 +41,17 @@
    },
    {
      "id": "rc_spawn_10mmfungus",
@@ -1317,8 +1347,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -55,13 +58,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_10mm_fungus",
+@@ -55,15 +61,17 @@
    },
    {
      "id": "rc_spawn_12mmfungus",
@@ -1335,8 +1368,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -71,33 +75,16 @@
+       "type": "place_monster",
+       "monster_id": "rc_12mm_fungus",
+@@ -71,35 +79,19 @@
        "difficulty": 100
      }
    },
@@ -1373,8 +1409,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -109,13 +96,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_223_fungus",
+@@ -109,15 +101,17 @@
    },
    {
      "id": "rc_spawn_270winfungus",
@@ -1391,8 +1430,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -127,13 +115,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_270win_fungus",
+@@ -127,15 +121,17 @@
    },
    {
      "id": "rc_spawn_300winfungus",
@@ -1409,8 +1451,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -145,13 +134,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_300win_fungus",
+@@ -145,15 +141,17 @@
    },
    {
      "id": "rc_spawn_3006springfungus",
@@ -1427,8 +1472,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -163,13 +153,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_3006spring_fungus",
+@@ -163,15 +161,17 @@
    },
    {
      "id": "rc_spawn_300blkfungus",
@@ -1445,8 +1493,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -181,13 +172,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_300blk_fungus",
+@@ -181,15 +181,17 @@
    },
    {
      "id": "rc_spawn_308winfungus",
@@ -1463,8 +1514,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -199,13 +191,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_308win_fungus",
+@@ -199,15 +201,17 @@
    },
    {
      "id": "rc_spawn_32acpfungus",
@@ -1481,8 +1535,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -217,13 +210,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_32acp_fungus",
+@@ -217,15 +221,17 @@
    },
    {
      "id": "rc_spawn_357magfungus",
@@ -1499,8 +1556,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -235,13 +229,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_357mag_fungus",
+@@ -235,15 +241,17 @@
    },
    {
      "id": "rc_spawn_357sigfungus",
@@ -1517,8 +1577,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -253,13 +248,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_357sig_fungus",
+@@ -253,15 +261,17 @@
    },
    {
      "id": "rc_spawn_36navyfungus",
@@ -1535,8 +1598,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -271,13 +267,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_36navy_fungus",
+@@ -271,15 +281,17 @@
    },
    {
      "id": "rc_spawn_38specfungus",
@@ -1553,8 +1619,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -289,13 +286,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_38spec_fungus",
+@@ -289,15 +301,17 @@
    },
    {
      "id": "rc_spawn_380acpfungus",
@@ -1571,8 +1640,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -307,13 +305,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_380acp_fungus",
+@@ -307,15 +321,17 @@
    },
    {
      "id": "rc_spawn_40swfungus",
@@ -1589,8 +1661,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -325,13 +324,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_40sw_fungus",
+@@ -325,15 +341,17 @@
    },
    {
      "id": "rc_spawn_40x46grenfungus",
@@ -1607,8 +1682,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -343,13 +343,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_40x46gren_fungus",
+@@ -343,15 +361,17 @@
    },
    {
      "id": "rc_spawn_40x53grenfungus",
@@ -1625,8 +1703,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -361,13 +362,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_40x53gren_fungus",
+@@ -361,15 +381,17 @@
    },
    {
      "id": "rc_spawn_410000fungus",
@@ -1643,8 +1724,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -379,13 +381,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_410000_fungus",
+@@ -379,15 +401,17 @@
    },
    {
      "id": "rc_spawn_44magfungus",
@@ -1661,8 +1745,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -397,13 +400,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_44mag_fungus",
+@@ -397,15 +421,17 @@
    },
    {
      "id": "rc_spawn_44armyfungus",
@@ -1679,8 +1766,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -415,13 +419,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_44army_fungus",
+@@ -415,15 +441,17 @@
    },
    {
      "id": "rc_spawn_45acpfungus",
@@ -1697,8 +1787,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -433,13 +438,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_45acp_fungus",
+@@ -433,15 +461,17 @@
    },
    {
      "id": "rc_spawn_454casufungus",
@@ -1715,8 +1808,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -451,13 +457,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_454casu_fungus",
+@@ -451,15 +481,17 @@
    },
    {
      "id": "rc_spawn_4570fungus",
@@ -1733,8 +1829,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -469,13 +476,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_4570_fungus",
+@@ -469,15 +501,17 @@
    },
    {
      "id": "rc_spawn_45coltfungus",
@@ -1751,8 +1850,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -487,13 +495,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_45colt_fungus",
+@@ -487,15 +521,17 @@
    },
    {
      "id": "rc_spawn_46mmfungus",
@@ -1769,8 +1871,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -505,13 +514,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_46mm_fungus",
+@@ -505,15 +541,17 @@
    },
    {
      "id": "rc_spawn_460rowfungus",
@@ -1787,8 +1892,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -523,13 +533,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_460row_fungus",
+@@ -523,15 +561,17 @@
    },
    {
      "id": "rc_spawn_50bmgfungus",
@@ -1805,8 +1913,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -541,13 +552,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_50bmg_fungus",
+@@ -541,15 +581,17 @@
    },
    {
      "id": "rc_spawn_500magfungus",
@@ -1823,8 +1934,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -559,13 +571,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_500mag_fungus",
+@@ -559,15 +601,17 @@
    },
    {
      "id": "rc_spawn_545x39fungus",
@@ -1841,8 +1955,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -577,13 +590,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_545x39_fungus",
+@@ -577,15 +621,17 @@
    },
    {
      "id": "rc_spawn_57x28fungus",
@@ -1859,8 +1976,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -595,13 +609,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_57x28_fungus",
+@@ -595,15 +641,17 @@
    },
    {
      "id": "rc_spawn_5x40fungus",
@@ -1877,8 +1997,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -613,13 +628,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_5x40_fungus",
+@@ -613,15 +661,17 @@
    },
    {
      "id": "rc_spawn_66rockfungus",
@@ -1895,8 +2018,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -629,33 +645,16 @@
+       "type": "place_monster",
+       "monster_id": "rc_66rock_fungus",
+@@ -629,35 +679,19 @@
        "difficulty": 100
      }
    },
@@ -1933,8 +2059,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -667,13 +666,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_762x39_fungus",
+@@ -667,15 +701,17 @@
    },
    {
      "id": "rc_spawn_762x54fungus",
@@ -1951,8 +2080,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -685,13 +685,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_762x54_fungus",
+@@ -685,15 +721,17 @@
    },
    {
      "id": "rc_spawn_762x25fungus",
@@ -1969,8 +2101,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -703,13 +704,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_762x25_fungus",
+@@ -703,15 +741,17 @@
    },
    {
      "id": "rc_spawn_84x246fungus",
@@ -1987,8 +2122,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -721,13 +723,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_84x246_fungus",
+@@ -721,15 +761,17 @@
    },
    {
      "id": "rc_spawn_8x40fungus",
@@ -2005,8 +2143,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -739,13 +742,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_8x40_fungus",
+@@ -739,15 +781,17 @@
    },
    {
      "id": "rc_spawn_9x19fungus",
@@ -2023,8 +2164,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -757,13 +761,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_9x19_fungus",
+@@ -757,15 +801,17 @@
    },
    {
      "id": "rc_spawn_9x18makafungus",
@@ -2041,8 +2185,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -775,13 +780,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_9x18maka_fungus",
+@@ -775,15 +821,17 @@
    },
    {
      "id": "rc_spawn_atgmfungus",
@@ -2059,8 +2206,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -793,13 +799,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_atgm_fungus",
+@@ -793,15 +841,17 @@
    },
    {
      "id": "rc_spawn_barbparafungus",
@@ -2077,8 +2227,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -811,13 +818,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_barbpara_fungus",
+@@ -811,15 +861,17 @@
    },
    {
      "id": "rc_spawn_cannonfungus",
@@ -2095,8 +2248,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -829,13 +837,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_cannon_fungus",
+@@ -829,15 +881,17 @@
    },
    {
      "id": "rc_spawn_gasfungus",
@@ -2113,8 +2269,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -847,13 +856,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_gas_fungus",
+@@ -847,15 +901,17 @@
    },
    {
      "id": "rc_spawn_1231nfungus",
@@ -2131,8 +2290,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -865,13 +875,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_1231n_fungus",
+@@ -865,15 +921,17 @@
    },
    {
      "id": "rc_spawn_flintlockfungus",
@@ -2149,8 +2311,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -883,13 +894,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_flintlock_fungus",
+@@ -883,15 +941,17 @@
    },
    {
      "id": "rc_spawn_rebarrailfungus",
@@ -2167,8 +2332,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -901,13 +913,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_rebarrail_fungus",
+@@ -901,15 +961,17 @@
    },
    {
      "id": "rc_spawn_paintballfungus",
@@ -2185,8 +2353,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -919,13 +932,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_paintball_fungus",
+@@ -919,15 +981,17 @@
    },
    {
      "id": "rc_spawn_rpgfungus",
@@ -2203,8 +2374,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -937,13 +951,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_rpg_fungus",
+@@ -937,15 +1001,17 @@
    },
    {
      "id": "rc_spawn_shotgunfungus",
@@ -2221,8 +2395,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -955,13 +970,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_shotgun_fungus",
+@@ -955,15 +1021,17 @@
    },
    {
      "id": "rc_spawn_flarefungus",
@@ -2239,8 +2416,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -973,13 +989,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_flare_fungus",
+@@ -973,15 +1041,17 @@
    },
    {
      "id": "rc_spawn_cbmfungus",
@@ -2257,8 +2437,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -991,13 +1008,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_cbm_fungus",
+@@ -991,15 +1061,17 @@
    },
    {
      "id": "rc_spawn_batterydisposfungus",
@@ -2275,8 +2458,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -1009,13 +1027,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_batterydispos_fungus",
+@@ -1009,15 +1081,17 @@
    },
    {
      "id": "rc_spawn_lab_libraryfungus",
@@ -2293,8 +2479,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -1027,13 +1046,14 @@
+       "type": "place_monster",
+       "monster_id": "rc_lab_library_fungus",
+@@ -1027,15 +1101,17 @@
    },
    {
      "id": "rc_spawn_exotic_books_fungus",
@@ -2311,8 +2500,11 @@ index ce70e9badaf0..1052f62fdf64 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -1043,4 +1063,4 @@
+       "type": "place_monster",
+       "monster_id": "rc_exotic_books_fungus",
+@@ -1043,4 +1119,4 @@
        "difficulty": 100
      }
    }
@@ -2395,10 +2587,10 @@ index 80c1f283148a..7565929e8853 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/obsolete.json b/Resource Crops/obsolete.json
-index d2e40675584b..8ba3f198e9ec 100644
+index d2e40675584b..4cca00b5dff9 100644
 --- a/Resource Crops/obsolete.json	
 +++ b/Resource Crops/obsolete.json	
-@@ -1,14 +1,15 @@
+@@ -1,16 +1,18 @@
  [
    {
 -		"//": "old name do not use",
@@ -2417,8 +2609,11 @@ index d2e40675584b..8ba3f198e9ec 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -20,7 +21,8 @@
+       "type": "place_monster",
+       "monster_id": "rc_money_fungus",
+@@ -20,7 +22,8 @@
    },
    {
      "id": "rc_oxyacetylene_solid",
@@ -2428,7 +2623,7 @@ index d2e40675584b..8ba3f198e9ec 100644
      "copy-from": "oxyacetylene",
      "name": "oxyacetylene fruit",
      "description": "A fruit filled with oxyacetylene.",
-@@ -48,13 +50,14 @@
+@@ -48,15 +51,17 @@
    },
    {
      "id": "rc_spawn_oxyacetylenefungus",
@@ -2445,8 +2640,11 @@ index d2e40675584b..8ba3f198e9ec 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
      "use_action": {
-@@ -64,4 +67,4 @@
+       "type": "place_monster",
+       "monster_id": "rc_oxyacetylene_fungus",
+@@ -64,4 +69,4 @@
        "difficulty": 100
      }
    }

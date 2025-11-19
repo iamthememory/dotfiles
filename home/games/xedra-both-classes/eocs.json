@@ -312,5 +312,15 @@
     "type": "effect_on_condition",
     "id": "EOC_ARVORE_SEED_BEARER_GIVE_SEEDS",
     "effect": { "u_spawn_item": "arvore_seeds", "use_item_group": true }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XE_IRON_INTOLERANCE_WEARING_STEEL_FOLLOWUP",
+    "effect": [  ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XE_IRON_INTOLERANCE_WEARING_IRON_FOLLOWUP",
+    "effect": [  ]
   }
 ]
