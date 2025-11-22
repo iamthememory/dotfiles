@@ -54,5 +54,35 @@
         ]
       ]
     ]
+  },
+  {
+    "id": "druid_quiver",
+    "copy-from": "druid_quiver",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "Woodquiver" },
+    "pocket_data": [
+      {
+        "ammo_restriction": { "arrow": 90, "bolt": 90, "arrow_orichalcum": 90 },
+        "weight_multiplier": 0.33333,
+        "volume_multiplier": 0.33333,
+        "moves": 20
+      }
+    ]
+  },
+  {
+    "id": "druid_quiver_plus",
+    "copy-from": "druid_quiver_plus",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "Woodquiver" },
+    "pocket_data": [
+      {
+        "ammo_restriction": { "arrow": 180, "bolt": 180, "arrow_orichalcum": 180 },
+        "weight_multiplier": 0.16667,
+        "volume_multiplier": 0.16667,
+        "moves": 20
+      }
+    ]
   }
 ]
