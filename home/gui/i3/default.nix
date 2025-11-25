@@ -40,6 +40,11 @@
     "9:misc" = [ ];
   };
 
+  # Don't change window focus to follow the mouse.
+  # Steam doesn't like this, and leaving the mouse over where notifications
+  # appear can lead to unexpected focus switching.
+  xsession.windowManager.i3.config.focus.followMouse = false;
+
   # Don't move the mouse to the new window if switching focus between monitors.
   xsession.windowManager.i3.config.focus.mouseWarping = false;
 

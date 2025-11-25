@@ -229,7 +229,8 @@
 
     # Steam.
     "10:steam" = [
-      { class = "^Steam$"; }
+      { class = "^[Ss]team$"; }
+      { class = "^steamwebhelper$"; }
     ];
   };
 
