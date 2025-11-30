@@ -566,6 +566,9 @@ in
       # A game overlay.
       mangohud
 
+      # A mod manager.
+      nexusmods-app-unfree
+
       # A Minecraft launcher and manager.
       prismlauncher
 
