@@ -1,5 +1,6 @@
 # Curses-like terminal utilities.
 { config
+, lib
 , pkgs
 , ...
 }: {
@@ -30,7 +31,7 @@
     # etc. are provided directly by ncurses.
     # This is set to low priority so that any terminfo files installed by
     # terminals like st override the ones provided in ncurses.
-    (pkgs.lowPrio ncurses)
+    (lib.lowPrio ncurses)
 
     # A color-enabled info viewer.
     pinfo

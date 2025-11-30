@@ -5,7 +5,7 @@
 
   # Allow installing packages even if the system is unsupported and may not
   # work properly.
-  allowUnsupportedSystem = true;
+  #allowUnsupportedSystem = true;
 
   # Accept the Android SDK license.
   android_sdk.accept_license = true;

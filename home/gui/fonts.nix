@@ -33,8 +33,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
-    noto-fonts-emoji
-    noto-fonts-extra
+    noto-fonts-color-emoji
 
     # A set of monospaced fonts patched with extra glyphs, although I believe
     # less extensive than nerdfonts.

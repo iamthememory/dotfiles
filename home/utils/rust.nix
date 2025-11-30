@@ -64,7 +64,7 @@
       cargo-semver-checks
       cargo-supply-chain
       cargo-udeps
-      cargo-valgrind
+      #cargo-valgrind
     ];
 
   # Rustfmt settings.

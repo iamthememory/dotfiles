@@ -366,7 +366,7 @@
                   '';
               in
               [
-                gitAndTools.git-crypt
+                git-crypt
                 nix-output-monitor
                 nixos-unstable-manual
                 stable-pkgs.nur.repos.rycee.mozilla-addons-to-nix

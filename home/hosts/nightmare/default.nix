@@ -108,7 +108,7 @@
     nitrogen
 
     # A tool for running binaries on NixOS.
-    inputs.nix-alien.packages."${pkgs.system}".nix-alien
+    inputs.nix-alien.packages."${pkgs.stdenv.hostPlatform.system}".nix-alien
 
     # xinput, for the touchpad keybindings below.
     xorg.xinput
@@ -135,11 +135,11 @@
 
   # Set the default GitHub username for any programs or (neo)vim plugins that
   # expect it.
-  programs.git.extraConfig.github.user = "iamthememory";
+  programs.git.settings.github.user = "iamthememory";
 
   # Enable automatic git maintenance.
   programs.git.maintenance.enable = true;
-  programs.git.extraConfig.maintenance.strategy = "incremental";
+  programs.git.settings.maintenance.strategy = "incremental";
 
   # Select the default gpg signing subkey.
   programs.gpg.settings.default-key = "0x34915A26CE416A5CDF500247D226B54765D868B7";
@@ -229,8 +229,7 @@
 
     # Steam.
     "10:steam" = [
-      { class = "^[Ss]team$"; }
-      { class = "^steamwebhelper$"; }
+      { class = "^Steam$"; }
     ];
   };
 

@@ -105,7 +105,7 @@
     libreoffice-fresh
 
     # This provides pdftotext, along with a couple other PDF utilities.
-    poppler_utils
+    poppler-utils
 
     # A utility to check if running in X11.
     runningx

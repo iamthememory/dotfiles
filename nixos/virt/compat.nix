@@ -1,6 +1,6 @@
 # Configuration for various compatibility features.
 { lib
-, system
+, pkgs
 , ...
 }: {
   # Extra platforms to provide userspace emulation for via QEMU.
@@ -71,7 +71,7 @@
         in
         builtins.filter isNonNative archList;
     in
-    filterNative system arches;
+    filterNative pkgs.stdenv.hostPlatform.system arches;
 
   # Load the KVM module in the kernel for faster native VMs.
   boot.kernelModules = [

@@ -9,7 +9,7 @@ in
 {
   home.packages = with pkgs; [
     # A small script-friendly MPD client.
-    mpc-cli
+    mpc
   ];
 
   # Enable ncmpcpp as a MPD client.

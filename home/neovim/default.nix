@@ -42,8 +42,8 @@ in
   };
 
   # Use neovim for resolving git merges.
-  programs.git.extraConfig.merge.tool = "nvimdiff3";
-  programs.git.extraConfig.mergetool.nvim3diff.cmd =
+  programs.git.settings.merge.tool = "nvimdiff3";
+  programs.git.settings.mergetool.nvim3diff.cmd =
     let
       cmd = "${neovim} -f -c \\\"Gdiff\\\" \\\"$MERGED\\\"";
     in

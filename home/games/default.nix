@@ -18,13 +18,15 @@
 
       # Patch nixpkgs to tweak the bottles FHS environment to share IPC and PID
       # namespaces.
-      bottles-nixpkgs = import (pkgs.applyPatches {
-        name = "nixpkgs-bottles-patch";
-        src = inputs.nixos-unstable;
-        patches = [ ./bottles-namespace.patch ];
-      }) {
-        inherit (pkgs) system;
-      };
+      bottles-nixpkgs = import
+        (pkgs.applyPatches {
+          name = "nixpkgs-bottles-patched";
+          src = inputs.nixos-unstable;
+          patches = [ ./bottles-namespace.patch ];
+        })
+        {
+          inherit (pkgs.stdenv.hostPlatform) system;
+        };
     in
     [
       # A tool for running appimages.
@@ -34,7 +36,7 @@
       bottles
 
       # A tool for showing OpenGL info for testing and debugging.
-      glxinfo
+      mesa-demos
 
       # A tool for easily running games on Linux.
       lutris

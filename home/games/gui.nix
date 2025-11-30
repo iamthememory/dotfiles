@@ -146,7 +146,7 @@ in
       cdda-tilesets =
         let
           tileset-packages-unfiltered =
-            inputs.cdda-tilesets.outputs.packages."${pkgs.system}";
+            inputs.cdda-tilesets.outputs.packages."${pkgs.stdenv.hostPlatform.system}";
 
           # Ultica_iso fails as a flakedue to symlinks outside of its directory.
           tileset-packages =
@@ -573,7 +573,7 @@ in
       prismlauncher
 
       # An emulator.
-      retroarchFull
+      retroarch-full
 
       # An old-school Runescape client.
       runelite

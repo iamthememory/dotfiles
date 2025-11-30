@@ -8,7 +8,7 @@
 let
   # Add libsecret to gitFull, so that it can use things like gnome-keyring
   # for credentials.
-  gitFull = pkgs.gitAndTools.gitFull.override {
+  gitFull = pkgs.gitFull.override {
     withLibsecret = true;
   };
 
@@ -45,18 +45,18 @@ in
   # Add git-related tools and documentation.
   home.packages = with pkgs; [
     # A tool to transparently encrypt and decrypt files in a git repo.
-    gitAndTools.git-crypt
+    git-crypt
 
     # Additional convenient git tools.
-    gitAndTools.git-extras
+    git-extras
 
     # A tool for helping with the git flow workflow.
-    gitAndTools.gitflow
+    gitflow
 
     # A tool that adds commands to interact with GitHub from the terminal.
     # Mostly superseded by the newer GitHub CLI tool, but still used for older
     # scripts and (neo)vim plugins.
-    gitAndTools.hub
+    hub
   ];
 
   # Enable the GitHub CLI tool.
@@ -74,66 +74,8 @@ in
   # Enable git.
   programs.git.enable = true;
 
-  # Git alias commands.
-  programs.git.aliases =
-    let
-      # Show the log, ordered by date, and with a graph and some extra stat
-      # info.
-      logg = "log --date-order --graph --stat";
-    in
-    {
-      inherit logg;
-
-      # Show a log of all changes since the last pull/ref change, and their
-      # patches.
-      lastpatch = "${logg} -p @{1}..HEAD";
-
-      # logg, but show PGP signatures too.
-      loggs = "${logg} --show-signature";
-
-      # logg, but show all commits, not just those reachable from the current
-      # HEAD.
-      logga = "${logg} --all";
-
-      # logga and loggs combined.
-      loggas = "${logg} --all --show-signature";
-
-      # Show the absolute path of the top-level directory of the repo we're
-      # in.
-      root = "rev-parse --show-toplevel";
-
-      # Serve the local repo quickly on the network for ad hoc sharing.
-      # NOTE: This uses ! as a prefix to make this a shell command, since all
-      # shell aliases are run directly in the top-level of the repository,
-      # simplifying things.
-      serve =
-        let
-          args = builtins.concatStringsSep " " [
-            # Serve from the top-level .git directory, rather than the working
-            # tree.
-            "--base-path=.git"
-
-            # Export the repository, even if not marked as a repo that should be
-            # exported, since this is for ad-hoc sharing without much setup.
-            "--export-all"
-
-            # Reuse the address without waiting for old connections to timeout.
-            "--reuseaddr"
-
-            # Strictly match paths, and don't allow access to any directories not
-            # specified.
-            "--strict-paths"
-
-            # Show all connections, since this'll probably be used for ad-hoc
-            # sharing then killed, so this makes it easy to see when it finishes.
-            "--verbose"
-          ];
-        in
-        "!${config.programs.git.package}/bin/git daemon ${args} .git/";
-    };
-
   # Extra configuration options for git.
-  programs.git.extraConfig =
+  programs.git.settings =
     let
       inherit (inputs.lib) defaultOrNull filterNullOrEmpty;
       inherit (lib) recursiveUpdate;
@@ -155,6 +97,64 @@ in
     in
     recursiveUpdate
       {
+        # Git alias commands.
+        aliases =
+          let
+            # Show the log, ordered by date, and with a graph and some extra stat
+            # info.
+            logg = "log --date-order --graph --stat";
+          in
+          {
+            inherit logg;
+
+            # Show a log of all changes since the last pull/ref change, and their
+            # patches.
+            lastpatch = "${logg} -p @{1}..HEAD";
+
+            # logg, but show PGP signatures too.
+            loggs = "${logg} --show-signature";
+
+            # logg, but show all commits, not just those reachable from the current
+            # HEAD.
+            logga = "${logg} --all";
+
+            # logga and loggs combined.
+            loggas = "${logg} --all --show-signature";
+
+            # Show the absolute path of the top-level directory of the repo we're
+            # in.
+            root = "rev-parse --show-toplevel";
+
+            # Serve the local repo quickly on the network for ad hoc sharing.
+            # NOTE: This uses ! as a prefix to make this a shell command, since all
+            # shell aliases are run directly in the top-level of the repository,
+            # simplifying things.
+            serve =
+              let
+                args = builtins.concatStringsSep " " [
+                  # Serve from the top-level .git directory, rather than the working
+                  # tree.
+                  "--base-path=.git"
+
+                  # Export the repository, even if not marked as a repo that should be
+                  # exported, since this is for ad-hoc sharing without much setup.
+                  "--export-all"
+
+                  # Reuse the address without waiting for old connections to timeout.
+                  "--reuseaddr"
+
+                  # Strictly match paths, and don't allow access to any directories not
+                  # specified.
+                  "--strict-paths"
+
+                  # Show all connections, since this'll probably be used for ad-hoc
+                  # sharing then killed, so this makes it easy to see when it finishes.
+                  "--verbose"
+                ];
+              in
+              "!${config.programs.git.package}/bin/git daemon ${args} .git/";
+          };
+
         # Use color if available.
         color.ui = "auto";
 
@@ -199,6 +199,12 @@ in
           insteadOf = "gh:";
           pushInsteadOf = "gh:";
         };
+
+        # Set the default git name and email to the primary account's name and email.
+        # These should default to null if there is no primary account.
+        # NOTE: These are overrideable.
+        user.email = mkDefault (primary-mail.address or null);
+        user.name = mkDefault (primary-mail.realName or null);
       }
       optionalValues;
 
@@ -241,10 +247,4 @@ in
 
   # Sign commits by default.
   programs.git.signing.signByDefault = true;
-
-  # Set the default git name and email to the primary account's name and email.
-  # These should default to null if there is no primary account.
-  # NOTE: These are overrideable.
-  programs.git.userEmail = mkDefault (primary-mail.address or null);
-  programs.git.userName = mkDefault (primary-mail.realName or null);
 }
