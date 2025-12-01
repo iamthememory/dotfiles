@@ -2,7 +2,7 @@
 { ...
 }: {
   # Enable regularly performing garbage collection.
-  nix.gc.automatic = true;
+  #nix.gc.automatic = true;
 
   # Run the garbage collector at 05:35 daily, rather than the default 03:15.
   nix.gc.dates = "05:35";
