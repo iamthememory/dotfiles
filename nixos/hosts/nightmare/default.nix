@@ -109,9 +109,6 @@
   # Enable postgresql.
   services.postgresql.enable = true;
 
-  # Use postgresql 13.
-  services.postgresql.package = pkgs.postgresql_13;
-
   # Enable the sysprof daemon to allow profiling multiple processes at once.
   services.sysprof.enable = true;
 
