@@ -13,7 +13,8 @@
   # Add fast-syntax-highlighting to ZSH.
   programs.zsh.plugins = [{
     name = "fast-syntax-highlighting";
-    src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/site-functions";
+    src =
+      "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
     file = "fast-syntax-highlighting.plugin.zsh";
   }];
 
