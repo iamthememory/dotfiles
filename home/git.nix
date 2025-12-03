@@ -98,7 +98,7 @@ in
     recursiveUpdate
       {
         # Git alias commands.
-        aliases =
+        alias =
           let
             # Show the log, ordered by date, and with a graph and some extra stat
             # info.
