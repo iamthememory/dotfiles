@@ -26,19 +26,6 @@
   },
   {
     "type": "EXTERNAL_OPTION",
-    "name": "LATITUDE",
-    "//": "Be somewhere further north to make it colder.",
-    "stype": "float",
-    "value": 65.0
-  },
-  {
-    "type": "EXTERNAL_OPTION",
-    "name": "LONGITUDE",
-    "stype": "float",
-    "value": -71.06
-  },
-  {
-    "type": "EXTERNAL_OPTION",
     "name": "CAPITALISM",
     "//": "NPCs will accept your bank balance as payment in trades.",
     "stype": "bool",
@@ -50,5 +37,19 @@
     "//": "Scales experience gained from practicing skills and reading books.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables skill training except for NPC training.",
     "stype": "float",
     "value": 1.0
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "UNSTABLE_TRAIT_MUTATION_TIME",
+    "//": "The average hours between mutations with the unstable trait.",
+    "stype": "int",
+    "value": 336
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "CHAOTIC_TRAIT_MUTATION_TIME",
+    "//": "The average hours between mutations with the chaotic trait.",
+    "stype": "int",
+    "value": 168
   }
 ]

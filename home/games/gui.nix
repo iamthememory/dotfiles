@@ -85,6 +85,7 @@ in
         patches = [
           ./cataclysm-bionics-lower-saving.patch
           ./cataclysm-craft-percent-fix.patch
+          ./cataclysm-custom-unstable.patch
           ./cataclysm-dino-egg-vitamins.patch
           ./cataclysm-disable-trait-flag-cache.patch
           ./cataclysm-disable-warning.patch

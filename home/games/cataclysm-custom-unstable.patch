@@ -1,0 +1,40 @@
+diff --git a/data/core/external_options.json b/data/core/external_options.json
+index 52b4263204f4..b74229cfdcee 100644
+--- a/data/core/external_options.json
++++ b/data/core/external_options.json
+@@ -520,5 +520,19 @@
+     "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
+     "stype": "int",
+     "value": 2
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "UNSTABLE_TRAIT_MUTATION_TIME",
++    "//": "The average hours between mutations with the unstable trait.",
++    "stype": "int",
++    "value": 48
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "CHAOTIC_TRAIT_MUTATION_TIME",
++    "//": "The average hours between mutations with the chaotic trait.",
++    "stype": "int",
++    "value": 12
+   }
+ ]
+diff --git a/src/suffer.cpp b/src/suffer.cpp
+index f0c234fac297..b35c7f978ebd 100644
+--- a/src/suffer.cpp
++++ b/src/suffer.cpp
+@@ -1112,9 +1112,9 @@ void suffer::from_other_mutations( Character &you )
+     }
+ 
+     bool should_mutate = you.has_trait( trait_UNSTABLE ) && !you.has_trait( trait_CHAOTIC_BAD ) &&
+-                         one_turn_in( 48_hours );
++                         one_turn_in( 1_hours * ::get_option<int>( "UNSTABLE_TRAIT_MUTATION_TIME" ) );
+     should_mutate |= ( you.has_trait( trait_CHAOTIC ) || you.has_trait( trait_CHAOTIC_BAD ) ) &&
+-                     one_turn_in( 12_hours );
++                     one_turn_in( 1_hours * ::get_option<int>( "CHAOTIC_TRAIT_MUTATION_TIME" ) );
+     if( should_mutate ) {
+         you.mutate();
+     }
