@@ -456,10 +456,18 @@ index 2a377eaa4343..c0cf0a953f49 100644
    {
      "id": "doubt_drop",
 diff --git a/Items/StigmaWorkshop/weapons.json b/Items/StigmaWorkshop/weapons.json
-index bf02b36cb71b..69150a8d7fea 100644
+index bf02b36cb71b..54db44244657 100644
 --- a/Items/StigmaWorkshop/weapons.json
 +++ b/Items/StigmaWorkshop/weapons.json
-@@ -119,9 +119,9 @@
+@@ -57,7 +57,6 @@
+       "type": "transform",
+       "msg": "You flick the switch on the bat, a fwoosh of flame igniting around it.",
+       "target": "stigma_bat_on",
+-      "active": true,
+       "need_charges": 1,
+       "need_charges_msg": "The bat's batteries are dead."
+     },
+@@ -119,12 +118,13 @@
      "tool_ammo": [
        "battery"
      ],
@@ -469,8 +477,21 @@ index bf02b36cb71b..69150a8d7fea 100644
 -      "LIGHT_80",
        "CHARGEDIM",
        "TRADER_AVOID",
-       "WATER_BREAK"
-@@ -308,9 +308,9 @@
+-      "WATER_BREAK"
++      "WATER_BREAK",
++      "SPAWN_ACTIVE"
+     ],
+     "use_action": {
+       "menu_text": "Turn off",
+@@ -235,7 +235,6 @@
+       "type": "transform",
+       "msg": "You flick the switch on the sword, a fwoosh of flame igniting around it.",
+       "target": "stigma_shortsword_on",
+-      "active": true,
+       "need_charges": 1,
+       "need_charges_msg": "The sword's batteries are dead."
+     },
+@@ -308,14 +307,15 @@
      "tool_ammo": [
        "battery"
      ],
@@ -481,7 +502,22 @@ index bf02b36cb71b..69150a8d7fea 100644
        "CHARGEDIM",
        "TRADER_AVOID",
        "WATER_BREAK",
-@@ -474,9 +474,9 @@
+       "CONDUCTIVE",
+-      "SHEATH_SWORD"
++      "SHEATH_SWORD",
++      "SPAWN_ACTIVE"
+     ],
+     "use_action": {
+       "menu_text": "Turn off",
+@@ -403,7 +403,6 @@
+       "type": "transform",
+       "msg": "You flick the switch on the axe, a fwoosh of flame igniting around it.",
+       "target": "stigma_axe_on",
+-      "active": true,
+       "need_charges": 1,
+       "need_charges_msg": "The axe's batteries are dead."
+     },
+@@ -474,13 +473,14 @@
      "tool_ammo": [
        "battery"
      ],
@@ -492,6 +528,12 @@ index bf02b36cb71b..69150a8d7fea 100644
        "CHARGEDIM",
        "TRADER_AVOID",
        "WATER_BREAK",
+-      "NONCONDUCTIVE"
++      "NONCONDUCTIVE",
++      "SPAWN_ACTIVE"
+     ],
+     "use_action": {
+       "menu_text": "Turn off",
 @@ -501,4 +501,4 @@
      "power_draw": "600 kW",
      "revert_to": "stigma_axe_u"
@@ -500,10 +542,10 @@ index bf02b36cb71b..69150a8d7fea 100644
 \ No newline at end of file
 +]
 diff --git a/Items/internet/internet_access.json b/Items/internet/internet_access.json
-index e77d4cd7394f..534673756ca3 100644
+index e77d4cd7394f..01f9272a6340 100644
 --- a/Items/internet/internet_access.json
 +++ b/Items/internet/internet_access.json
-@@ -41,7 +41,12 @@
+@@ -41,14 +41,18 @@
        "E_FILE_DEVICE",
        "EBOOKSAVE",
        "CAMERA",
@@ -517,7 +559,14 @@ index e77d4cd7394f..534673756ca3 100644
        "CALORIES_INTAKE_TRACKER",
        "PORTABLE_GAME",
        {
-@@ -60,17 +65,8 @@
+         "target": "smart_phone_internet_flashlight",
+         "msg": "You activate the flashlight app.",
+         "menu_text": "Turn on flashlight",
+-        "active": true,
+         "need_charges": 1,
+         "need_charges_msg": "The smartphone's charge is too low.",
+         "type": "transform"
+@@ -60,17 +64,8 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -537,7 +586,7 @@ index e77d4cd7394f..534673756ca3 100644
      "pocket_data": [
        { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 56 } },
        {
-@@ -78,33 +74,43 @@
+@@ -78,33 +73,43 @@
          "rigid": true,
          "max_contains_volume": "1 ml",
          "max_contains_weight": "1 g",
@@ -599,7 +648,7 @@ index e77d4cd7394f..534673756ca3 100644
      "use_action": [
        "E_FILE_DEVICE",
        "EBOOKSAVE",
-@@ -123,48 +129,16 @@
+@@ -123,48 +128,16 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -631,7 +680,7 @@ index e77d4cd7394f..534673756ca3 100644
 -    "power_draw": "1500 mW",
 -    "revert_to": "smart_phone"
 +    "light": 20,
-+    "extend": { "flags": [ "CHARGEDIM", "TRADER_AVOID" ] }
++    "extend": { "flags": [ "CHARGEDIM", "TRADER_AVOID", "SPAWN_ACTIVE" ] }
    },
    {
 -    "type": "ITEM",
@@ -653,7 +702,15 @@ index e77d4cd7394f..534673756ca3 100644
      "description": "A portable computer, a ubiquitous tool both before and after the cataclysm.  Now that you have internet access, you can download it with books and other useful software.",
      "//": "https://www.amazon.com/dp/B0D6Z664QC, battery is FRANGWAT01",
      "symbol": ",",
-@@ -194,6 +168,7 @@
+@@ -182,7 +155,6 @@
+         "target": "laptop_screen_internet_lit",
+         "msg": "You light up the screen.",
+         "menu_text": "Light up the screen",
+-        "active": true,
+         "need_charges": 1,
+         "need_charges_msg": "The laptop's batteries need more charge.",
+         "type": "transform"
+@@ -194,6 +166,7 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -661,7 +718,7 @@ index e77d4cd7394f..534673756ca3 100644
      "pocket_data": [
        { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 200 } },
        {
-@@ -201,34 +176,19 @@
+@@ -201,34 +174,19 @@
          "rigid": true,
          "max_contains_volume": "1 ml",
          "max_contains_weight": "1 g",
@@ -701,7 +758,7 @@ index e77d4cd7394f..534673756ca3 100644
      "use_action": [
        "E_FILE_DEVICE",
        "EBOOKSAVE",
-@@ -247,19 +207,8 @@
+@@ -247,19 +205,8 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -721,7 +778,7 @@ index e77d4cd7394f..534673756ca3 100644
 -    "tick_action": [ "EPIC_MUSIC" ]
 +    "faults": [ { "fault_group": "electronic_general" } ],
 +    "light": 10,
-+    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "TRADER_AVOID", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE", "INTERNET_ACCESS" ]
++    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "TRADER_AVOID", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE", "INTERNET_ACCESS", "SPAWN_ACTIVE" ]
    }
  ]
 diff --git a/Items/internet/internet_missions.json b/Items/internet/internet_missions.json

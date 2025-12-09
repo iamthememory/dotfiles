@@ -601,7 +601,7 @@ index 07a8f1ddf4ff..4ae61c567cb4 100644
      "description": "A thick mat of tightly-woven straw or pine boughs.  It could be worn as a thick blanket, or used to deploy it as a mat to sleep on.",
      "weight": "1500 g",
 diff --git a/MST_Extra/items/tools.json b/MST_Extra/items/tools.json
-index 863581224fdc..e18ceec0761e 100644
+index 863581224fdc..efb3ea84d04d 100644
 --- a/MST_Extra/items/tools.json
 +++ b/MST_Extra/items/tools.json
 @@ -2,7 +2,7 @@
@@ -712,7 +712,15 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "clay ember carrier" },
      "description": "This is a small ceramic fire pot, with a lid and small holes for controlled airflow.  It can nurture a smoldering ember for a long time, to start fires without modern tools.",
      "material": "clay",
-@@ -218,7 +218,7 @@
+@@ -205,7 +205,6 @@
+     "use_action": {
+       "target": "tinderbox_clay_on",
+       "msg": "You light the tinder.",
+-      "active": true,
+       "need_fire": 1,
+       "need_fire_msg": "You need a lighter or fire to light this.",
+       "need_charges": 1,
+@@ -218,18 +217,18 @@
      "copy-from": "tinderbox_on",
      "sub": "tinderbox_on",
      "type": "ITEM",
@@ -721,7 +729,19 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "clay ember carrier (lit)", "str_pl": "clay ember carriers (lit)" },
      "description": "This is a small ceramic fire pot, with a lid and small holes for controlled airflow.  An ember is smoldering inside it, and can be used to start a campfire.",
      "material": "clay",
-@@ -240,7 +240,7 @@
+     "color": "brown",
+     "revert_to": "tinderbox_clay",
++    "extend": { "flags": [ "SPAWN_ACTIVE" ] },
+     "use_action": [
+       { "type": "firestarter", "moves": 200, "moves_slow": 2000 },
+       {
+         "target": "tinderbox_clay",
+         "msg": "The ember is extinguished.",
+-        "active": false,
+         "menu_text": "Extinguish",
+         "type": "transform",
+         "ammo_scale": 0
+@@ -240,7 +239,7 @@
      "id": "hobo_stove_clay",
      "looks_like": "clay_pot",
      "type": "ITEM",
@@ -730,7 +750,7 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "clay oven" },
      "description": "This is a ancient style of portable ceramic oven.  Use it to place on the ground, allowing you to keep a small fire safe from wind and rain.",
      "weight": "2500 g",
-@@ -257,7 +257,7 @@
+@@ -257,7 +256,7 @@
      "id": "misc_repairkit_makeshift",
      "looks_like": "misc_repairkit",
      "type": "ITEM",
@@ -739,7 +759,7 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "makeshift repair kit" },
      "description": "This is a portable toolkit, consisting of a primitive knife for carving replacement parts, an adze for more heavy-duty wood cutting, and a patch of soft material for cleaning surfaces.  It can be used to repair certain items if supplied with pitch, though it isn't ideal for complex work.",
      "weight": "1800 g",
-@@ -268,7 +268,7 @@
+@@ -268,7 +267,7 @@
      "material": [ "stone", "wood" ],
      "symbol": ";",
      "color": "light_gray",
@@ -748,7 +768,7 @@ index 863581224fdc..e18ceec0761e 100644
      "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "pitch_wood": 100 } } ],
      "charges_per_use": 1,
      "qualities": [ [ "CUT", 1 ], [ "BUTCHER", 11 ], [ "SAW_W", 1 ] ],
-@@ -289,7 +289,7 @@
+@@ -289,7 +288,7 @@
      "id": "hand_drill_makeshift",
      "copy-from": "hand_drill",
      "type": "ITEM",
@@ -757,7 +777,7 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "flint drill" },
      "description": "A prehistoric woodworking tool, little more than a fine sharp blade tipping a makeshift bow drill.  It's rather limited in usage, primarily meant to be used on wood.",
      "price": "2 USD",
-@@ -299,7 +299,7 @@
+@@ -299,7 +298,7 @@
    {
      "id": "fire_plough",
      "type": "ITEM",
@@ -766,7 +786,7 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "fire plough" },
      "description": "A simple form of primitive firemaking, little more than two pieces of wood with a groove worn into one of them, to light an ember through friction.  Starting a fire with this will be laborious and slow, but it's better than nothing.",
      "weight": "1040 g",
-@@ -317,7 +317,7 @@
+@@ -317,7 +316,7 @@
    {
      "id": "char_purifier_fake",
      "type": "ITEM",
@@ -775,7 +795,7 @@ index 863581224fdc..e18ceec0761e 100644
      "name": { "str": "makeshift water purifier" },
      "description": "This is a pseudo item.",
      "material": [ "wood", "cotton" ],
-@@ -326,7 +326,7 @@
+@@ -326,7 +325,7 @@
      "symbol": ";",
      "color": "light_gray",
      "sub": "water_purifier",
@@ -784,7 +804,7 @@ index 863581224fdc..e18ceec0761e 100644
      "pocket_data": [ { "pocket_type": "MAGAZINE", "ammo_restriction": { "charcoal": 500 } } ],
      "charges_per_use": 1,
      "flags": [ "ALLOWS_REMOTE_USE" ]
-@@ -334,7 +334,7 @@
+@@ -334,7 +333,7 @@
    {
      "id": "pot_canning_clay",
      "type": "ITEM",

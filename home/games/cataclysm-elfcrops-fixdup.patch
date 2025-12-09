@@ -4874,7 +4874,7 @@ index e3b40b6e648a..69439dba0663 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/food seeds.json b/Resource Crops/seeds/food seeds.json
-index 4b6a9ff1343e..84b18eff914b 100644
+index 4b6a9ff1343e..5454e46c5a54 100644
 --- a/Resource Crops/seeds/food seeds.json	
 +++ b/Resource Crops/seeds/food seeds.json	
 @@ -2,289 +2,361 @@
@@ -5408,7 +5408,7 @@ index 4b6a9ff1343e..84b18eff914b 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "toastem bush",
-+    "fruit": "toastem2",
++    "fruit": "toastem",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

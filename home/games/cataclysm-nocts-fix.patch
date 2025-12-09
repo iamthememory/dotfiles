@@ -1,5 +1,5 @@
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_armor.json b/nocts_cata_mod_DDA/Surv_help/c_armor.json
-index 01f755b34d85..9affada1bcd8 100644
+index 01f755b34d85..dcd99ca8a9c1 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_armor.json
 +++ b/nocts_cata_mod_DDA/Surv_help/c_armor.json
 @@ -216,7 +216,7 @@
@@ -11,6 +11,22 @@ index 01f755b34d85..9affada1bcd8 100644
      "type": "ITEM",
      "subtypes": [ "ARMOR" ],
      "name": { "str": "survivor steel leg guards", "str_pl": "survivor steel leg guards" },
+@@ -356,7 +356,6 @@
+       "type": "transform",
+       "msg": "The cloak shimmers and emits an intense light-disrupting field.",
+       "target": "acs_74_stealth_cloak_on",
+-      "active": true,
+       "need_worn": true,
+       "need_charges": 1,
+       "need_charges_msg": "The cloak is out of power."
+@@ -373,6 +372,7 @@
+     "description": "An experimental cloak with a destructive interference system, creating pitch-black darkness around you.  Creatures that can see in the dark will still spot you, but it will fool most things.  A network of miniature alphavolatics make it self-charging but only able to sustain short bursts of use.  It's currently on, activate to turn it back off.",
+     "turns_per_charge": 1,
+     "revert_to": "acs_74_stealth_cloak",
++    "extend": { "flags": [ "SPAWN_ACTIVE" ] },
+     "use_action": {
+       "ammo_scale": 0,
+       "type": "transform",
 @@ -444,7 +444,8 @@
      "material_thickness": 4,
      "environmental_protection": 5,
@@ -21,37 +37,107 @@ index 01f755b34d85..9affada1bcd8 100644
      "armor": [ { "encumbrance": 30, "coverage": 100, "covers": [ "eyes" ] } ]
    },
    {
+@@ -751,7 +752,6 @@
+       "type": "transform",
+       "msg": "The carapace comes to life, spiracles dilating as environmental seals close.",
+       "target": "c_mi_go_carapace_salvaged_on",
+-      "active": true,
+       "need_worn": true,
+       "need_charges": 1,
+       "need_charges_msg": "The carapace suit doesn't respond, evidently out of energy."
+@@ -800,7 +800,7 @@
+       "type": "transform",
+       "ammo_scale": 0
+     },
+-    "extend": { "flags": [ "WATERPROOF", "RAINPROOF", "GAS_PROOF", "REBREATHER", "NO_TAKEOFF" ] },
++    "extend": { "flags": [ "WATERPROOF", "RAINPROOF", "GAS_PROOF", "REBREATHER", "NO_TAKEOFF", "SPAWN_ACTIVE" ] },
+     "material": [ "alien_resin", "flesh", "steel" ],
+     "warmth": 0,
+     "material_thickness": 4,
+@@ -844,7 +844,6 @@
+       "type": "transform",
+       "msg": "The exo-wings whir to life, becoming a fluttering blur of green and gray.",
+       "target": "c_mi_go_wings_salvaged_on",
+-      "active": true,
+       "need_worn": true,
+       "need_charges": 1,
+       "need_charges_msg": "The exo-wings don't respond, evidently out of energy."
+@@ -877,7 +876,7 @@
+       "type": "transform",
+       "ammo_scale": 0
+     },
+-    "extend": { "flags": [ "NO_TAKEOFF" ] },
++    "extend": { "flags": [ "NO_TAKEOFF", "SPAWN_ACTIVE" ] },
+     "armor": [ { "encumbrance": 0, "coverage": 40, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
+   },
+   {
+diff --git a/nocts_cata_mod_DDA/Surv_help/c_martialarts.json b/nocts_cata_mod_DDA/Surv_help/c_martialarts.json
+index aa137e953a79..d35186c4e54e 100644
+--- a/nocts_cata_mod_DDA/Surv_help/c_martialarts.json
++++ b/nocts_cata_mod_DDA/Surv_help/c_martialarts.json
+@@ -190,7 +190,6 @@
+       "elec_chainsaw_off",
+       "elec_chainsaw_on",
+       "greatbow_makeshift",
+-      "homewrecker",
+       "lajatang",
+       "masonrysaw_off",
+       "masonrysaw_on",
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_tools.json b/nocts_cata_mod_DDA/Surv_help/c_tools.json
-index 696d9e2be2c0..050b324a51b5 100644
+index 696d9e2be2c0..e85f08f6d662 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_tools.json
 +++ b/nocts_cata_mod_DDA/Surv_help/c_tools.json
-@@ -43,7 +43,8 @@
+@@ -25,7 +25,6 @@
+       "type": "transform",
+       "msg": "You turn the flashlight on.",
+       "target": "solar_flashlight_on",
+-      "active": true,
+       "need_charges": 1,
+       "need_charges_msg": "The flashlight's batteries are dead."
+     }
+@@ -43,7 +42,8 @@
      "price": "8 USD",
      "price_postapoc": "2 USD",
      "material": [ "plastic", "aluminum" ],
 -    "flags": [ "LIGHT_450", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
 +    "light": 450,
-+    "flags": [ "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
++    "flags": [ "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD", "SPAWN_ACTIVE" ],
      "weight": "400 g",
      "volume": "500 ml",
      "melee_damage": { "bash": 1 },
-@@ -114,7 +115,8 @@
+@@ -87,7 +87,6 @@
+       "type": "transform",
+       "msg": "You turn the flashlight on.",
+       "target": "wear_solar_flashlight_on",
+-      "active": true,
+       "need_charges": 1,
+       "need_charges_msg": "The flashlight's batteries are dead."
+     },
+@@ -114,7 +113,8 @@
      "price": "8 USD",
      "price_postapoc": "2 USD",
      "material": [ "plastic", "aluminum" ],
 -    "flags": [ "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS", "LIGHT_450", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
 +    "light": 450,
-+    "flags": [ "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD" ],
++    "flags": [ "OVERSIZE", "BELTED", "ALLOWS_NATURAL_ATTACKS", "CHARGEDIM", "NO_UNLOAD", "NO_RELOAD", "SPAWN_ACTIVE" ],
      "weight": "400 g",
      "volume": "500 ml",
      "melee_damage": { "bash": 1 },
-@@ -206,7 +208,8 @@
+@@ -190,7 +190,6 @@
+       "need_fire": 1,
+       "need_fire_msg": "You need a source of fire to light this.",
+       "menu_text": "Light torch",
+-      "active": true,
+       "msg": "You light the torch."
+     }
+   },
+@@ -206,7 +205,8 @@
      "name": { "str": "solar torch (lit)", "str_pl": "solar torches (lit)" },
      "description": "A mysterious torch that uses the power of the sun (and blob goo) to light itself.  Somehow, the gasoline synthesized goo produces gasoline when in the sun continuously soaking the rag making it \"rechargeable\" in a sense.  It is burning, producing plenty of light until it runs out of fuel.",
      "material": [ "wood" ],
 -    "flags": [ "FIRE", "LIGHT_310", "CHARGEDIM", "FLAMING", "NO_UNLOAD", "NO_RELOAD" ],
 +    "light": 310,
-+    "flags": [ "FIRE", "CHARGEDIM", "FLAMING", "NO_UNLOAD", "NO_RELOAD" ],
++    "flags": [ "FIRE", "CHARGEDIM", "FLAMING", "NO_UNLOAD", "NO_RELOAD", "SPAWN_ACTIVE" ],
      "weight": "942 g",
      "volume": "1 L",
      "melee_damage": { "bash": 8 },
