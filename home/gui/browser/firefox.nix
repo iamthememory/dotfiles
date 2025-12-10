@@ -6,6 +6,12 @@
   # Enable Firefox.
   programs.firefox.enable = true;
 
+  # Use the binary to avoid having to do an expensive firefox build, since CUDA
+  # support means we have to build onnxruntime.
+  # Firefox builds (and especially the linking step) seem to take dozens of
+  # gigabytes of memory.
+  programs.firefox.package = pkgs.firefox-bin;
+
   # Extensions for Firefox.
   programs.firefox.profiles.default.extensions.packages =
     let
