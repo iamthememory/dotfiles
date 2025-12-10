@@ -38,25 +38,3 @@ index edac5a4fe388..a046f4a3c469 100644
      "//": "Weights follow the same conventions as defined in Cata++ for this itemgroup.",
      "type": "item_group",
      "extend": { "items": [ [ "bio_temporal_stimulation", 1 ], [ "bio_life_sign_suppression", 1 ], [ "bio_kinetic_amplifier", 1 ] ] }
-diff --git a/Arcana/mod_interactions/package_bionic_professions/recipe_magitech.json b/Arcana/mod_interactions/package_bionic_professions/recipe_magitech.json
-index a50a3ff04347..f9bc5f91b4ba 100644
---- a/Arcana/mod_interactions/package_bionic_professions/recipe_magitech.json
-+++ b/Arcana/mod_interactions/package_bionic_professions/recipe_magitech.json
-@@ -19,7 +19,7 @@
-       [ [ "salt", 5 ] ],
-       [ [ "copper", 3 ] ],
-       [ [ "lye_powder", 2 ] ],
--      [ [ "steel_chunk_any", 1 ], [ "scrap", 2 ] ]
-+      [ [ "steel_chunk_any", 1, "LIST" ], [ "scrap", 2 ] ]
-     ]
-   },
-   {
-@@ -650,7 +650,7 @@
-     "using": [ [ "surface_heat", 25 ] ],
-     "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW", "level": 1 }, { "id": "CHEM", "level": 2 } ],
-     "components": [
--      [ [ "essence_pure", 10 ], [ "arcana_essence_any", 100 ] ],
-+      [ [ "essence_pure", 10 ], [ "arcana_essence_any", 100, "LIST" ] ],
-       [ [ "salt", 300 ] ],
-       [ [ "copper", 180 ] ],
-       [ [ "lye_powder", 120 ] ],
