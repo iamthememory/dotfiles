@@ -51,5 +51,12 @@
     "//": "The average hours between mutations with the chaotic trait.",
     "stype": "int",
     "value": 168
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "BASE_MANA_REGEN_TIME",
+    "//": "How many hours it should take to regenerate all mana at base mana regen.",
+    "stype": "float",
+    "value": 2.0
   }
 ]
