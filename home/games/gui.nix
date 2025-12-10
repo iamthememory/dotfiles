@@ -453,6 +453,12 @@ in
         src = ./lab-loot-extras;
       };
 
+      magiclysm-linear-leveling = pkgs.cataclysmDDA.buildMod {
+        modName = "magiclysm-linear-leveling";
+        version = config.home.file."generation.rev".text;
+        src = ./magiclysm-linear-leveling;
+      };
+
       magiclysm-non-exclusive-attunements = pkgs.cataclysmDDA.buildMod {
         modName = "magiclysm-non-exclusive-attunements";
         version = config.home.file."generation.rev".text;
@@ -514,6 +520,7 @@ in
         innawoods-compat
         lab-loot-extras
         magic-loot-perks
+        magiclysm-linear-leveling
         magiclysm-no-class-limit
         magiclysm-non-exclusive-attunements
         medieval

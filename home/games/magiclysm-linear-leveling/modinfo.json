@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "magiclysm-linear-leveling",
+    "name": "Magiclysm Linear Leveling",
+    "authors": [ "iamthememory" ],
+    "description": "Make Magiclysm spell leveling linear.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "magiclysm" ]
+  }
+]

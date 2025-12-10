@@ -1,0 +1,101 @@
+[
+  {
+    "id": "magiclysm_generic_magic",
+    "copy-from": "magiclysm_generic_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_evocation_magic",
+    "copy-from": "magiclysm_evocation_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_channeling_magic",
+    "copy-from": "magiclysm_channeling_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_conjuration_magic",
+    "copy-from": "magiclysm_conjuration_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_enhancement_magic",
+    "copy-from": "magiclysm_enhancement_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_enervation_magic",
+    "copy-from": "magiclysm_enervation_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_conveyance_magic",
+    "copy-from": "magiclysm_conveyance_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_restoration_magic",
+    "copy-from": "magiclysm_restoration_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "magiclysm_transformation_magic",
+    "copy-from": "magiclysm_transformation_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  }
+]
