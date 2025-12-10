@@ -110,5 +110,19 @@
 
     # Set the system UI to dark themed.
     "ui.systemUsesDarkTheme" = 1;
+
+    # Disable machine learning features.
+    "browser.ml.enable" = false;
+    "browser.ml.chat.enabled" = false;
+    "browser.ml.chat.menu" = false;
+    "browser.ml.chat.page" = false;
+    "browser.ml.chat.page.footerBadge" = false;
+    "browser.ml.chat.page.menuBadge" = false;
+    "browser.ml.linkPreview.enabled" = false;
+    "browser.ml.pageAssist.enabled" = false;
+    "browser.tabs.groups.smart.enabled" = false;
+    "browser.tabs.groups.smart.userEnabled" = false;
+    "extensions.ml.enabled" = false;
+    "browser.search.visualSearch.featureGate" = false;
   };
 }
