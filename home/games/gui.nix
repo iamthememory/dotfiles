@@ -94,6 +94,7 @@ in
           ./cataclysm-homullus-fix.patch
           ./cataclysm-locale-path.patch
           ./cataclysm-magiclysm-artificer.patch
+          ./cataclysm-magiclysm-okay-potions.patch
           ./cataclysm-magiclysm-renewal-height.patch
           ./cataclysm-mindovermatter-contemplation.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch

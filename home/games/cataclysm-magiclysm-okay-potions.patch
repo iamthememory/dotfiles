@@ -1,0 +1,13 @@
+diff --git a/data/mods/Magiclysm/items/cast_spell_items.json b/data/mods/Magiclysm/items/cast_spell_items.json
+index 8597437ceac7..079d215dd3aa 100644
+--- a/data/mods/Magiclysm/items/cast_spell_items.json
++++ b/data/mods/Magiclysm/items/cast_spell_items.json
+@@ -11,7 +11,7 @@
+     "calories": 0,
+     "volume": "250ml",
+     "charges": 1,
+-    "fun": -1,
++    "fun": 0,
+     "symbol": "~",
+     "container": "flask_glass",
+     "color": "light_blue",
