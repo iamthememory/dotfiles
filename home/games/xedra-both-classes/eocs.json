@@ -371,7 +371,6 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_ARVORE_SEED_BEARER_activated",
-    "copy-from": "EOC_ARVORE_SEED_BEARER_activated",
     "condition": {
       "and": [
         {
@@ -385,7 +384,30 @@
         { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
         { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
       ]
-    }
+    },
+    "effect": [
+      {
+        "if": { "and": [ { "not": { "u_has_effect": "effect_arvore_seedbearer_cooldown" } }, { "not": { "is_season": "winter" } } ] },
+        "then": [
+          { "u_lose_effect": "effect_arvore_seedbearer_available" },
+          { "u_message": "You bring forth seeds.", "type": "good" },
+          {
+            "math": [ "u_arvore_seedbearer_iterations", "=", "2 + ( u_sum_traits_of_category_char_has('ARVORE') / 2)" ]
+          },
+          {
+            "run_eocs": "EOC_ARVORE_SEED_BEARER_GIVE_SEEDS",
+            "iterations": { "math": [ "u_arvore_seedbearer_iterations" ] }
+          },
+          { "u_add_effect": "effect_arvore_seedbearer_cooldown", "duration": { "math": [ "259200 + rand(259200)" ] } }
+        ],
+        "else": {
+          "if": { "is_season": "winter" },
+          "then": { "u_message": "Your seeds slumber and dream of spring.", "type": "mixed" },
+          "else": [ { "u_message": "You need more time before you can summon seeds again.", "type": "bad" } ]
+        }
+      }
+    ],
+    "false_effect": [ { "u_message": "You must be surrounded by the wild to call forth regional seeds.", "type": "bad" } ]
   },
   {
     "type": "effect_on_condition",
