@@ -2,7 +2,7 @@
   {
     "type": "ITEM",
     "subtypes": [ "SEED", "COMESTIBLE" ],
-    "id": "seed_melon",
+    "id": "seed_melon_melon",
     "copy-from": "seed",
     "name": { "str_sp": "melon seeds" },
     "weight": "2 g",

@@ -1,0 +1,410 @@
+[
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "raw_beans",
+    "copy-from": "raw_beans",
+    "name": { "str": "handful of raw beans", "str_pl": "handfuls of raw beans" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "dry_corn",
+    "copy-from": "dry_corn",
+    "name": { "str_sp": "dehydrated corn kernels" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "dry_beans",
+    "copy-from": "dry_beans",
+    "name": { "str_sp": "dried beans" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "soybean",
+    "copy-from": "soybean",
+    "name": { "str_sp": "raw soybeans" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "dry_soybean",
+    "copy-from": "dry_soybean",
+    "name": { "str_sp": "dried soybeans" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "corn_kernels",
+    "copy-from": "corn_kernels",
+    "name": { "str_sp": "corn kernels" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "popcorn_raw",
+    "copy-from": "popcorn_raw",
+    "name": { "str_sp": "raw popcorn" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "kernels",
+    "copy-from": "kernels",
+    "name": { "str_sp": "popcorn kernels" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "wheat",
+    "copy-from": "wheat",
+    "name": { "str_sp": "wheat" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "barley",
+    "copy-from": "barley",
+    "name": { "str_sp": "barley" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "oats",
+    "copy-from": "oats",
+    "name": { "str_sp": "oats" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "wild_rice",
+    "copy-from": "wild_rice",
+    "name": { "str_sp": "wild rice" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "buckwheat",
+    "copy-from": "buckwheat",
+    "name": { "str_sp": "buckwheat" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_canola",
+    "copy-from": "seed_canola",
+    "name": { "str_sp": "canola seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "dry_lentils",
+    "copy-from": "dry_lentils",
+    "name": { "str_sp": "dried lentils" },
+    "seeds": true
+  },
+  {
+    "id": "seed_blackberries",
+    "copy-from": "seed_blackberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "blackberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_blueberries",
+    "copy-from": "seed_blueberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "blueberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_cranberries",
+    "copy-from": "seed_cranberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "cranberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_huckleberries",
+    "copy-from": "seed_huckleberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "huckleberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_mulberries",
+    "copy-from": "seed_mulberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "mulberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_elderberries",
+    "copy-from": "seed_elderberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "elderberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_raspberries",
+    "copy-from": "seed_raspberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "raspberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_strawberries",
+    "copy-from": "seed_strawberries",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "strawberry seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_grapes",
+    "copy-from": "seed_grapes",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "name": { "str_sp": "grape seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_rose",
+    "copy-from": "seed_rose",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "name": { "str_sp": "rose seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_barley",
+    "copy-from": "seed_barley",
+    "name": { "str_sp": "barley seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_tomato",
+    "copy-from": "seed_tomato",
+    "name": { "str_sp": "tomato seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_zucchini",
+    "copy-from": "seed_zucchini",
+    "name": { "str_sp": "zucchini seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_corn",
+    "copy-from": "seed_corn",
+    "name": { "str_sp": "corn seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_chili_pepper",
+    "copy-from": "seed_chili_pepper",
+    "name": { "str_sp": "chili pepper seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_potato_raw",
+    "copy-from": "seed_potato_raw",
+    "name": { "str_sp": "seed potatoes" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_poppy_bud",
+    "copy-from": "seed_poppy_bud",
+    "name": { "str_sp": "poppy seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_beans",
+    "copy-from": "seed_beans",
+    "name": { "str_sp": "bean seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "soybean_seed",
+    "copy-from": "soybean_seed",
+    "name": { "str_sp": "soybean seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_lentils",
+    "copy-from": "seed_lentils",
+    "name": { "str_sp": "lentil seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_watermelon",
+    "copy-from": "seed_watermelon",
+    "name": { "str_sp": "watermelon seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_melon",
+    "copy-from": "seed_melon",
+    "name": { "str_sp": "cantaloupe melon seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_pumpkin",
+    "copy-from": "seed_pumpkin",
+    "name": { "str_sp": "pumpkin seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_buckwheat",
+    "copy-from": "seed_buckwheat",
+    "name": { "str_sp": "buckwheat seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_wild_rice",
+    "copy-from": "seed_wild_rice",
+    "name": { "str_sp": "wild rice seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_maianthemum_stellatum",
+    "copy-from": "seed_maianthemum_stellatum",
+    "name": { "str_sp": "starry false Solomon's seal seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_mayapple",
+    "copy-from": "seed_mayapple",
+    "name": { "str_sp": "mayapple seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_wintergreen",
+    "copy-from": "seed_wintergreen",
+    "name": { "str_sp": "wintergreen seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_mushroom",
+    "copy-from": "seed_mushroom",
+    "name": { "str_sp": "mushroom spores" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_mushroom_morel",
+    "copy-from": "seed_mushroom_morel",
+    "name": { "str_sp": "morel mushroom spores" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "id": "seed_oats",
+    "copy-from": "seed_oats",
+    "name": { "str_sp": "oat seeds" },
+    "seeds": true
+  },
+  {
+    "id": "seed_wheat",
+    "copy-from": "seed_wheat",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "name": { "str_sp": "wheat seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_popcorn",
+    "copy-from": "seed_popcorn",
+    "name": { "str_sp": "seed popcorn" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_bell_pepper",
+    "copy-from": "seed_bell_pepper",
+    "name": { "str_sp": "bell pepper seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_bottle_gourd",
+    "copy-from": "seed_bottle_gourd",
+    "name": { "str_sp": "bottle gourd seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_eggplant",
+    "copy-from": "seed_eggplant",
+    "name": { "str_sp": "eggplant seeds" },
+    "seeds": true
+  }
+]
