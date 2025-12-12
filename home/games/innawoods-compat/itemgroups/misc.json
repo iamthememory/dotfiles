@@ -6,6 +6,9 @@
     "items": [
       { "item": "rock", "count": [ 17, 37 ] },
       { "item": "rock_large", "count": [ 0, 2 ] },
+      { "item": "sharp_rock", "count": [ 0, 2 ], "prob": 50 },
+      { "item": "rock_flaking", "count": [ 0, 2 ], "prob": 25 },
+      { "item": "flint", "count": [ 0, 2 ], "prob": 25 },
       { "item": "coal_lump", "charges": [ 250, 500 ], "prob": 10 },
       { "item": "material_limestone", "charges": [ 10, 25 ], "prob": 80 },
       { "item": "material_rocksalt", "count": [ 0, 2 ], "prob": 20 },
