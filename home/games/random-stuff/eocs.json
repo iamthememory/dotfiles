@@ -200,5 +200,15 @@
       { "run_eocs": "EOC_on_kill_check_exp" },
       { "run_eocs": "EOC_perk_ma_kill_check_exp" }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "GIVE_A_LOT_OF_ARVORE_SEEDS",
+    "effect": [
+      {
+        "run_eocs": "EOC_ARVORE_SEED_BEARER_GIVE_SEEDS",
+        "iterations": [8, 12]
+      }
+    ]
   }
 ]
