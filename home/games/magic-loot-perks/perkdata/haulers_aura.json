@@ -26,6 +26,7 @@
     "pocket_data": [
       {
         "pocket_type": "CONTAINER",
+        "watertight": true,
         "max_contains_volume": "80000 L",
         "max_contains_weight": "80000 kg",
         "max_item_length": "20 meter",
