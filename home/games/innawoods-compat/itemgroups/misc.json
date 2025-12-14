@@ -29,7 +29,23 @@
       { "item": "chunk_borax", "count": [ 0, 2 ], "prob": 10 },
       { "item": "chunk_feldspar", "count": [ 1, 3 ], "prob": 20 },
       { "item": "chunk_graphite", "count": [ 0, 1 ], "prob": 5 },
-      { "item": "chunk_caco3", "count": [ 0, 1 ], "prob": 30 }
+      { "item": "chunk_caco3", "count": [ 0, 1 ], "prob": 30 },
+      { "item": "citrine", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "diamond", "count": [ 0, 1 ], "prob": 2 },
+      { "item": "emerald", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "peridot", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "amethyst", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "sapphire", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "aquamarine", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "blue_topaz", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "tourmaline", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "alexandrite", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "malachite", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "pearl", "count": [ 0, 1 ], "prob": 2 },
+      { "item": "onyx", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "opal", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "ruby", "count": [ 0, 1 ], "prob": 1 },
+      { "item": "garnet", "count": [ 0, 1 ], "prob": 1 }
     ]
   }
 ]
