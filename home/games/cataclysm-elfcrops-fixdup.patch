@@ -1106,7 +1106,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..7af4c0b245bd 100644
+index df4ffa673168..48de847ccc91 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1201,10 +1201,27 @@ index df4ffa673168..7af4c0b245bd 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -619,5 +572,48 @@
-       { "item": "medium_disposable_cell"},
-       { "item": "heavy_disposable_cell"}
-     ]
+@@ -615,9 +568,159 @@
+     "subtype": "distribution",
+     "id": "rc_drop_batterydispos",
+     "items": [
+-      { "item": "light_disposable_cell"},
+-      { "item": "medium_disposable_cell"},
+-      { "item": "heavy_disposable_cell"}
++      { "item": "light_minus_disposable_cell"},
++      { "item": "light_minus_battery_cell"},
++      { "item": "light_battery_cell"},
++      { "item": "light_cell_rechargeable"},
++      { "item": "medium_battery_cell"},
++      { "item": "heavy_battery_cell"},
++      { "item": "heavy_plus_battery_cell"},
++      { "item": "heavy_atomic_battery_cell"},
++      { "item": "huge_atomic_battery_cell"},
++      { "item": "battery_car"},
++      { "item": "battery_motorbike"},
++      { "item": "medium_storage_battery"},
++      { "item": "small_storage_battery"}
++    ]
 +  },
 +  {
 +    "type": "item_group",
@@ -1248,6 +1265,103 @@ index df4ffa673168..7af4c0b245bd 100644
 +      { "group": "tailorbooks", "prob": 10 },
 +      { "group": "textbooks", "prob": 10 }
 +    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gunmods",
++    "items": [
++      { "group": "gunmod_common", "prob": 10 },
++      { "group": "gunmod_rare", "prob": 5 },
++      { "group": "archery_mods", "prob": 4 },
++      { "group": "conversion_kits", "prob": 1 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_guns",
++    "items": [
++      { "group": "guns_pistol_common", "prob": 10 },
++      { "group": "guns_pistol_common_everyday_carry", "prob": 10 },
++      { "group": "guns_pistol_common_display", "prob": 10 },
++      { "group": "guns_pistol_hunting_display", "prob": 10 },
++      { "group": "guns_pistol_milspec", "prob": 10 },
++      { "group": "guns_pistol_display_pieces", "prob": 10 },
++      { "group": "guns_pistol_collectible", "prob": 10 },
++      { "group": "guns_nfa", "prob": 10 },
++      { "group": "guns_smg_milspec", "prob": 10 },
++      { "group": "guns_smg_improvised", "prob": 10 },
++      { "group": "guns_rifle_common", "prob": 10 },
++      { "group": "guns_rifle_common_worn", "prob": 10 },
++      { "group": "guns_rifle_common_display", "prob": 10 },
++      { "group": "guns_rifle_display_pieces", "prob": 10 },
++      { "group": "guns_rifle_collectible", "prob": 10 },
++      { "group": "guns_rifle_hunting_display", "prob": 10 },
++      { "group": "guns_rifle_milspec", "prob": 10 },
++      { "group": "guns_energy", "prob": 10 },
++      { "group": "guns_rifle_improvised", "prob": 10 },
++      { "group": "guns_shotgun_common", "prob": 10 },
++      { "group": "guns_shotgun_common_worn", "prob": 10 },
++      { "group": "guns_shotgun_common_display", "prob": 10 },
++      { "group": "guns_shotgun_milspec", "prob": 10 },
++      { "group": "guns_shotgun_improvised", "prob": 10 },
++      { "group": "guns_launcher_flame", "prob": 10 },
++      { "group": "guns_launcher_flame_xedra", "prob": 10 },
++      { "group": "guns_launcher_grenade", "prob": 10 },
++      { "group": "guns_launcher_rocket", "prob": 10 },
++      { "group": "guns_launcher_milspec", "prob": 10 },
++      { "group": "guns_common", "prob": 10 },
++      { "group": "guns_common_display", "prob": 10 },
++      { "group": "guns_milspec", "prob": 10 },
++      { "group": "guns_display_pieces", "prob": 10 },
++      { "group": "guns_collectible", "prob": 10 },
++      { "group": "guns_improvised", "prob": 10 },
++      { "group": "longguns_cop", "prob": 10 },
++      { "group": "longguns_cop_loaded", "prob": 10 },
++      { "group": "longguns_cop_in_field", "prob": 10 },
++      { "group": "longguns_cop_in_field_no_gun", "prob": 10 },
++      { "group": "sidearms_cop", "prob": 10 },
++      { "group": "sidearms_cop_in_field", "prob": 10 },
++      { "group": "sidearms_cop_in_field_no_gun", "prob": 10 },
++      { "group": "guns_swat", "prob": 10 },
++      { "group": "guns_cop", "prob": 10 },
++      { "group": "longguns_operator_in_field", "prob": 10 },
++      { "group": "longguns_operator", "prob": 10 },
++      { "group": "sidearms_operator", "prob": 10 },
++      { "group": "sidearms_operator_in_field", "prob": 10 },
++      { "group": "sidearms_operator_in_field_no_gun", "prob": 10 },
++      { "group": "guns_survival", "prob": 10 },
++      { "group": "archery_common", "prob": 10 },
++      { "group": "archery_rare", "prob": 10 },
++      { "group": "archery", "prob": 10 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gunmags",
++    "items": [
++      { "group": "mags_milspec", "prob": 10 },
++      { "group": "mags_surplus", "prob": 10 },
++      { "group": "mags_cop", "prob": 10 },
++      { "group": "mags_swat", "prob": 10 },
++      { "group": "stanag_30_random", "prob": 10 },
++      { "group": "stanag_10_random", "prob": 10 },
++      { "group": "uncommon_magazines", "prob": 10 },
++      { "group": "mags_common", "prob": 10 },
++      { "group": "mags_common_restricted", "prob": 10 },
++      { "group": "mags_common_restricted_packaged", "prob": 10 },
++      { "group": "mags_collector", "prob": 10 },
++      { "group": "mags_pistol_hunting", "prob": 10 },
++      { "group": "mags_rifle_hunting", "prob": 10 },
++      { "group": "mags_shotgun_makeshift", "prob": 10 },
++      { "group": "mags_other_common", "prob": 10 },
++      { "group": "mags_other_makeshift", "prob": 10 },
++      { "group": "mags_flamethrower", "prob": 10 },
++      { "group": "mags_flamethrower_xedra", "prob": 10 },
++      { "group": "mags_hunting", "prob": 10 }
+     ]
    }
 -]
 \ No newline at end of file
@@ -1367,7 +1481,7 @@ index fccd89aa02a2..51ab54943297 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..811da780d30e 100644
+index ce70e9badaf0..98faba522e83 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,15 +1,17 @@
@@ -2565,7 +2679,7 @@ index ce70e9badaf0..811da780d30e 100644
      "use_action": {
        "type": "place_monster",
        "monster_id": "rc_lab_library_fungus",
-@@ -1027,20 +1101,42 @@
+@@ -1027,20 +1101,102 @@
    },
    {
      "id": "rc_spawn_exotic_books_fungus",
@@ -2609,6 +2723,66 @@ index ce70e9badaf0..811da780d30e 100644
 +      "moves": 50,
 +      "difficulty": 100
 +    }
++  },
++  {
++    "id": "rc_spawn_gunmods_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon gun mods fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of gun attachments in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_gunmods_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
++  },
++  {
++    "id": "rc_spawn_guns_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon gun fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of guns in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_guns_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
++  },
++  {
++    "id": "rc_spawn_gunmags_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon gun magazine fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of magazines in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_gunmags_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
    }
 -]
 \ No newline at end of file
@@ -2633,7 +2807,7 @@ index d893e6888f4b..7c79f692eb68 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/monsters/funguspouches.json b/Resource Crops/monsters/funguspouches.json
-index 80c1f283148a..3e6bc8d4609d 100644
+index 80c1f283148a..5dc2d49b8a70 100644
 --- a/Resource Crops/monsters/funguspouches.json	
 +++ b/Resource Crops/monsters/funguspouches.json	
 @@ -15,12 +15,10 @@
@@ -2681,7 +2855,7 @@ index 80c1f283148a..3e6bc8d4609d 100644
    {
      "id": "rc_762x39_fungus",
      "type": "MONSTER",
-@@ -470,5 +452,13 @@
+@@ -470,5 +452,37 @@
      "description": "A fungaloid that supposedly has exotic books in its body.",
      "copy-from": "rc_money_fungus",
      "death_drops": "exotic_books"
@@ -2693,6 +2867,30 @@ index 80c1f283148a..3e6bc8d4609d 100644
 +    "description": "A fungaloid that supposedly has a wide array of books in its body.",
 +    "copy-from": "rc_money_fungus",
 +    "death_drops": "rc_drop_many_books"
++	},
++  {
++    "id": "rc_gunmods_fungus",
++    "type": "MONSTER",
++    "name": { "str": "gun mod fungus"},
++    "description": "A fungaloid that supposedly has a wide array of gun attachments in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_gunmods"
++	},
++  {
++    "id": "rc_guns_fungus",
++    "type": "MONSTER",
++    "name": { "str": "gun fungus"},
++    "description": "A fungaloid that supposedly has a wide array of guns in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_guns"
++	},
++  {
++    "id": "rc_gunmags_fungus",
++    "type": "MONSTER",
++    "name": { "str": "gun magazine fungus"},
++    "description": "A fungaloid that supposedly has a wide array of magazines in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_gunmags"
  	}
 -]
 \ No newline at end of file
@@ -3035,10 +3233,10 @@ index 056d35917941..1adaffb26b3b 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..5a1f2c6ee0c9 100644
+index fa98ccf57c19..6d0c62701325 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
-@@ -48,5 +48,30 @@
+@@ -48,5 +48,96 @@
          [ "paper", 100 ]
        ]
      ]
@@ -3065,6 +3263,72 @@ index fa98ccf57c19..5a1f2c6ee0c9 100644
 +      ],
 +      [
 +        [ "paper", 100 ]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_gunmods",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "gun mod seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_guns",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "gun seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_gunmags",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "gun magazine seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
 +      ]
 +    ]
    }
@@ -6003,10 +6267,10 @@ index 4b6a9ff1343e..13d0a7550e3b 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..9a2bb0960c3a 100644
+index 83c7aca5e180..d2975fc96cd8 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,61 @@
+@@ -2,33 +2,121 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -6083,6 +6347,66 @@ index 83c7aca5e180..9a2bb0960c3a 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "books bush",
 +    "fruit": "rc_spawn_many_books_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_gunmods",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "gun mod seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of gun attachments.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "gun mod bush",
++    "fruit": "rc_spawn_gunmods_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_guns",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "gun seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of guns.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "gun bush",
++    "fruit": "rc_spawn_guns_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_gunmags",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "gun magazine seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of gun magazines.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "gun magazine bush",
++    "fruit": "rc_spawn_gunmags_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

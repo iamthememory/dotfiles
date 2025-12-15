@@ -5,9 +5,9 @@
     "copy-from": "arvore_seeds",
     "extend": {
       "items": [
-        [ "seed_melon", 10],
-        [ "seed_banana", 10],
-        [ "seed_kiwi", 10]
+        [ "seed_melon", 10 ],
+        [ "seed_banana", 10 ],
+        [ "seed_kiwi", 10 ]
       ]
     }
   }
