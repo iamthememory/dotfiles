@@ -1106,7 +1106,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..69a4a052e412 100644
+index df4ffa673168..7af4c0b245bd 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1201,18 +1201,62 @@ index df4ffa673168..69a4a052e412 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -620,4 +573,4 @@
+@@ -619,5 +572,48 @@
+       { "item": "medium_disposable_cell"},
        { "item": "heavy_disposable_cell"}
      ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_many_books",
++    "items": [
++      { "group": "book_gunref", "prob": 10 },
++      { "group": "book_mag_combat", "prob": 10 },
++      { "group": "book_mag_gen", "prob": 10 },
++      { "group": "book_mag_interests", "prob": 10 },
++      { "group": "book_mag_surv", "prob": 10 },
++      { "group": "book_mag_tech", "prob": 10 },
++      { "group": "book_manual_combat", "prob": 10 },
++      { "group": "book_military", "prob": 10 },
++      { "group": "book_school", "prob": 10 },
++      { "group": "book_survival", "prob": 10 },
++      { "group": "boxing_books", "prob": 10 },
++      { "group": "bulletin_public", "prob": 10 },
++      { "group": "carpentrybooks", "prob": 10 },
++      { "group": "doctors_books", "prob": 10 },
++      { "group": "dojo_manuals", "prob": 10 },
++      { "group": "esoteric_books", "prob": 10 },
++      { "group": "exotic_books", "prob": 10 },
++      { "group": "fabricationbooks", "prob": 10 },
++      { "group": "fireman_doc", "prob": 10 },
++      { "group": "hardware_books", "prob": 10 },
++      { "group": "homebooks", "prob": 10 },
++      { "group": "kids_books", "prob": 10 },
++      { "group": "lab_bookshelves", "prob": 10 },
++      { "group": "literature", "prob": 10 },
++      { "group": "magazines", "prob": 10 },
++      { "group": "mansion_books", "prob": 10 },
++      { "group": "manuals", "prob": 10 },
++      { "group": "missing_poster_all", "prob": 10 },
++      { "group": "newspaper", "prob": 10 },
++      { "group": "novels", "prob": 10 },
++      { "group": "pamphlets", "prob": 10 },
++      { "group": "religious_books", "prob": 10 },
++      { "group": "stand_flyer", "prob": 10 },
++      { "group": "stand_flyer_maps", "prob": 10 },
++      { "group": "tailorbooks", "prob": 10 },
++      { "group": "textbooks", "prob": 10 }
++    ]
    }
 -]
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..17a56e88c258 100644
+index fccd89aa02a2..51ab54943297 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
-@@ -1,57 +1,43 @@
+@@ -1,35 +1,39 @@
  [
    {
      "id": "rc_textbook_infseeds",
@@ -1260,10 +1304,10 @@ index fccd89aa02a2..17a56e88c258 100644
      "copy-from": "anesthetic",
      "name": "Blackout fruit",
      "description": "A fruit filled with anesthetic. Smells like chloroform.",
-     "phase": "solid",
+@@ -37,21 +41,43 @@
      "count": 100
--  },
--  {
+   },
+   {
 -    "id": "rc_spawn_moneyfungus",
 -    "type": "TOOL",
 -    "name": "summon money fungus",
@@ -1280,12 +1324,50 @@ index fccd89aa02a2..17a56e88c258 100644
 -      "moves": 50,
 -      "difficulty": 100
 -    }
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "raw_milk_berry",
++    "name": { "str": "raw milkberries" },
++    "weight": "600 g",
++    "color": "white",
++    "spoils_in": "30 days",
++    "comestible_type": "INVALID",
++    "symbol": "%",
++    "quench": 10,
++    "calories": 100,
++    "description": "Several hard, inedible berries filled with raw milk.",
++    "price": "1 USD",
++    "price_postapoc": "1 USD",
++    "material": [ "fruit" ],
++    "volume": "600 ml",
++    "vitamins": [ [ "fruit_allergen", 1 ] ],
++    "melee_damage": { "bash": 2 }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "maple_sap_berry",
++    "name": { "str": "maple sap berries" },
++    "weight": "2750 g",
++    "color": "brown",
++    "spoils_in": "30 days",
++    "comestible_type": "INVALID",
++    "symbol": "%",
++    "quench": 10,
++    "calories": 100,
++    "description": "Several hard, inedible berries filled with maple sap.",
++    "price": "1 USD",
++    "price_postapoc": "1 USD",
++    "material": [ "fruit" ],
++    "volume": "2750 ml",
++    "vitamins": [ [ "fruit_allergen", 1 ] ],
++    "melee_damage": { "bash": 2 }
    }
 -]
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..b7f7224c64e3 100644
+index ce70e9badaf0..811da780d30e 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,15 +1,17 @@
@@ -2483,7 +2565,7 @@ index ce70e9badaf0..b7f7224c64e3 100644
      "use_action": {
        "type": "place_monster",
        "monster_id": "rc_lab_library_fungus",
-@@ -1027,15 +1101,17 @@
+@@ -1027,20 +1101,42 @@
    },
    {
      "id": "rc_spawn_exotic_books_fungus",
@@ -2504,9 +2586,29 @@ index ce70e9badaf0..b7f7224c64e3 100644
      "use_action": {
        "type": "place_monster",
        "monster_id": "rc_exotic_books_fungus",
-@@ -1043,4 +1119,4 @@
+       "moves": 50,
        "difficulty": 100
      }
++  },
++  {
++    "id": "rc_spawn_many_books_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon book fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of books in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_many_books_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
    }
 -]
 \ No newline at end of file
@@ -2531,7 +2633,7 @@ index d893e6888f4b..7c79f692eb68 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/monsters/funguspouches.json b/Resource Crops/monsters/funguspouches.json
-index 80c1f283148a..7565929e8853 100644
+index 80c1f283148a..3e6bc8d4609d 100644
 --- a/Resource Crops/monsters/funguspouches.json	
 +++ b/Resource Crops/monsters/funguspouches.json	
 @@ -15,12 +15,10 @@
@@ -2579,9 +2681,18 @@ index 80c1f283148a..7565929e8853 100644
    {
      "id": "rc_762x39_fungus",
      "type": "MONSTER",
-@@ -471,4 +453,4 @@
+@@ -470,5 +452,13 @@
+     "description": "A fungaloid that supposedly has exotic books in its body.",
      "copy-from": "rc_money_fungus",
      "death_drops": "exotic_books"
++	},
++  {
++    "id": "rc_many_books_fungus",
++    "type": "MONSTER",
++    "name": { "str": "book fungus"},
++    "description": "A fungaloid that supposedly has a wide array of books in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_many_books"
  	}
 -]
 \ No newline at end of file
@@ -2766,8 +2877,202 @@ index 66efe4b1c652..ac82c2301c66 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/Resource Crops/recipes/food recipes.json b/Resource Crops/recipes/food recipes.json
+index 056d35917941..1adaffb26b3b 100644
+--- a/Resource Crops/recipes/food recipes.json	
++++ b/Resource Crops/recipes/food recipes.json	
+@@ -114,6 +114,75 @@
+       ]
+     ]
+   },
++  {
++    "type": "recipe",
++    "result": "rc_seed_fish",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "fillet of fish seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_roe",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "roe seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_butter",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "butter seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
+   {
+     "type": "recipe",
+     "result": "rc_seed_pizzaSup",
+@@ -430,5 +499,74 @@
+         [ "toastem", 10 ], [ "toastem2", 10 ], [ "toastem3", 10 ]
+       ]
+     ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_raw_milk_berry",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "milkberry seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_chocolate",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "chocolate bar seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_maple_sap",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "maple sap seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
+index fa98ccf57c19..5a1f2c6ee0c9 100644
+--- a/Resource Crops/recipes/lootbox recipes.json	
++++ b/Resource Crops/recipes/lootbox recipes.json	
+@@ -48,5 +48,30 @@
+         [ "paper", 100 ]
+       ]
+     ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_many_books",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "book seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ],
++      [
++        [ "paper", 100 ]
++      ]
++    ]
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/Resource Crops/recipes/recipes.json b/Resource Crops/recipes/recipes.json
-index acefc75df0a2..c54e85b593b5 100644
+index acefc75df0a2..5cc0a388e8d7 100644
 --- a/Resource Crops/recipes/recipes.json	
 +++ b/Resource Crops/recipes/recipes.json	
 @@ -16,7 +16,7 @@
@@ -2788,9 +3093,165 @@ index acefc75df0a2..c54e85b593b5 100644
        }
      },
      "difficulty": 3,
-@@ -659,4 +659,4 @@
+@@ -498,7 +498,7 @@
        ]
      ]
+   },
+-	  {
++  {
+     "type": "recipe",
+     "result": "rc_seed_glassTemp",
+     "category": "CC_FOOD",
+@@ -521,7 +521,7 @@
+       ]
+     ]
+   },
+-	  {
++  {
+     "type": "recipe",
+     "result": "rc_seed_glassReinf",
+     "category": "CC_FOOD",
+@@ -544,7 +544,7 @@
+       ]
+     ]
+   },
+-	  {
++  {
+     "type": "recipe",
+     "result": "rc_seed_plank",
+     "category": "CC_FOOD",
+@@ -567,7 +567,7 @@
+       ]
+     ]
+   },
+-	{
++  {
+     "type": "recipe",
+     "result": "rc_seed_longstout",
+     "category": "CC_FOOD",
+@@ -590,7 +590,7 @@
+       ]
+     ]
+   },
+-	{
++  {
+     "type": "recipe",
+     "result": "rc_seed_woodpanel",
+     "category": "CC_FOOD",
+@@ -613,7 +613,7 @@
+       ]
+     ]
+   },
+-	{
++  {
+     "type": "recipe",
+     "result": "rc_seed_log",
+     "category": "CC_FOOD",
+@@ -636,7 +636,7 @@
+       ]
+     ]
+   },
+-	{
++  {
+     "type": "recipe",
+     "result": "rc_seed_woodbeam",
+     "category": "CC_FOOD",
+@@ -658,5 +658,97 @@
+         [ "rc_seed_mat", 1]
+       ]
+     ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_rocksalt",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "rock salt seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_tallow",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "tallow seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_honeycomb",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "honey comb seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_wax",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "beeswax seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
    }
 -]
 \ No newline at end of file
@@ -4874,10 +5335,10 @@ index e3b40b6e648a..69439dba0663 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/food seeds.json b/Resource Crops/seeds/food seeds.json
-index 4b6a9ff1343e..5454e46c5a54 100644
+index 4b6a9ff1343e..13d0a7550e3b 100644
 --- a/Resource Crops/seeds/food seeds.json	
 +++ b/Resource Crops/seeds/food seeds.json	
-@@ -2,289 +2,361 @@
+@@ -2,289 +2,481 @@
    {
      "id": "rc_seed_meatMut",
      "copy-from": "seed",
@@ -5019,6 +5480,66 @@ index 4b6a9ff1343e..5454e46c5a54 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "demihuman meat bush",
 +    "fruit": "demihuman_flesh",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_fish",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "fillet of fish seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with juicy fish meat hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "fillet of fish bush",
++    "fruit": "fish",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_roe",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "roe seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with unfertilized roe hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "roe bush",
++    "fruit": "egg_fish",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_butter",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "butter seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with butter hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "butter bush",
++    "fruit": "butter",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -5417,15 +5938,75 @@ index 4b6a9ff1343e..5454e46c5a54 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
++  },
++  {
++    "id": "rc_seed_raw_milk_berry",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "milkberry seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with berries full of raw milk hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "milkberry bush",
++    "fruit": "raw_milk_berry",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_chocolate",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "chocolate bar seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with chocolate bars hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "chocolate bar bush",
++    "fruit": "chocolate",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_maple_sap",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "maple sap seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with berries full of raw maple sap hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "maple sap bush",
++    "fruit": "maple_sap_berry",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
    }
 -]
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..9978db499187 100644
+index 83c7aca5e180..9a2bb0960c3a 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,41 @@
+@@ -2,33 +2,61 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -5482,6 +6063,26 @@ index 83c7aca5e180..9978db499187 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "exotic books bush",
 +    "fruit": "rc_spawn_exotic_books_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_many_books",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "book seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of books.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "books bush",
++    "fruit": "rc_spawn_many_books_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -6915,10 +7516,10 @@ index bd3cb009fb17..379fae489a0b 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/seed.json b/Resource Crops/seeds/seed.json
-index b11153388c60..96333c99073f 100644
+index b11153388c60..c41c1be03da2 100644
 --- a/Resource Crops/seeds/seed.json	
 +++ b/Resource Crops/seeds/seed.json	
-@@ -2,417 +2,521 @@
+@@ -2,417 +2,601 @@
    {
      "id": "rc_seed_mat",
      "copy-from": "seed",
@@ -6936,8 +7537,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "INFUSED",
@@ -6950,8 +7549,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_bsting",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -6968,8 +7567,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "Bee stinger bush",
@@ -6982,8 +7579,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_bpoison",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7000,8 +7597,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "Bee venom bush",
@@ -7014,8 +7609,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_wpoison",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7032,8 +7627,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "Wasp venom bush",
@@ -7046,8 +7639,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_honey",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7064,8 +7657,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "honey bush",
@@ -7078,8 +7669,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_gunpowder",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7096,8 +7687,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "gunpowder flower",
@@ -7110,8 +7699,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_pu244",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7128,8 +7717,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "plutonium bush",
@@ -7142,8 +7729,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_bombFungicid",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7160,8 +7747,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "fungicidal gas grenade bush",
@@ -7174,8 +7759,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_bombTear",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7192,8 +7777,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "tear gas grenade bush",
@@ -7206,8 +7789,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_bombInsecticid",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7224,8 +7807,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "insecticidal gas grenade bush",
@@ -7238,8 +7819,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_purifier",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7256,8 +7837,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "purifier fruit bush",
@@ -7270,8 +7849,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_anesthetic",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7288,8 +7867,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "anesthetic fruit bush",
@@ -7302,8 +7879,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_rubber",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7320,8 +7897,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "rubber chunk bush",
@@ -7334,8 +7909,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_cashcard",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7352,8 +7927,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "cash card bush",
@@ -7366,8 +7939,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_chicken",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7384,8 +7957,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "chicken egg bush",
@@ -7398,8 +7969,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_reptile",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7417,8 +7988,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "painted turtle egg bush",
@@ -7431,8 +8000,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_ant",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7449,8 +8018,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "ant egg bush",
@@ -7463,8 +8030,8 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+   {
      "id": "rc_seed_spider",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7481,8 +8048,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--  {  
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "spider egg bush",
@@ -7495,8 +8060,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+{
+   },
+-  {  
++  {
      "id": "rc_seed_glass",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7513,8 +8079,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }  
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "glass sheet bush",
@@ -7527,8 +8091,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_glassTemp",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7545,8 +8110,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "tempered glass sheet bush",
@@ -7559,8 +8122,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_glassReinf",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7577,8 +8141,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "reinforced glass pane bush",
@@ -7591,8 +8153,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_plank",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7609,8 +8172,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "plank bush",
@@ -7623,8 +8184,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_longstout",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7641,8 +8203,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "long stout branch bush",
@@ -7655,8 +8215,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_woodpanel",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7673,8 +8234,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "wooden panel bush",
@@ -7687,8 +8246,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_log",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7705,8 +8265,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  },
--	{
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "log bush",
@@ -7719,8 +8277,9 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+},
-+      {
+   },
+-	{
++  {
      "id": "rc_seed_woodbeam",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
@@ -7737,9 +8296,6 @@ index b11153388c60..96333c99073f 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  }
--]
-\ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "wooden beam bush",
@@ -7752,5 +8308,87 @@ index b11153388c60..96333c99073f 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+}
++  },
++  {
++    "id": "rc_seed_rocksalt",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "rock salt seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush covered in rock salt.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "rock salt bush",
++    "fruit": "material_rocksalt",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_tallow",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "tallow seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush covered in tallow.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "tallow bush",
++    "fruit": "tallow",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_honeycomb",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "honey comb seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush covered in honey combs.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "honey comb bush",
++    "fruit": "honeycomb",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  },
++  {
++    "id": "rc_seed_wax",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "beeswax seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush covered in beeswax.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "beeswax bush",
++    "fruit": "wax",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
+   }
+-]
+\ No newline at end of file
 +]

@@ -160,7 +160,18 @@
         [ "rc_seed_longstout", 5 ],
         [ "rc_seed_woodpanel", 5 ],
         [ "rc_seed_log", 5 ],
-        [ "rc_seed_woodbeam", 5 ]
+        [ "rc_seed_woodbeam", 5 ],
+        [ "rc_seed_chocolate", 5 ],
+        [ "rc_seed_raw_milk_berry", 5 ],
+        [ "rc_seed_fish", 5 ],
+        [ "rc_seed_roe", 5 ],
+        [ "rc_seed_butter", 5 ],
+        [ "rc_seed_rocksalt", 5 ],
+        [ "rc_seed_tallow", 5 ],
+        [ "rc_seed_maple_sap", 5 ],
+        [ "rc_seed_honeycomb", 5 ],
+        [ "rc_seed_wax", 5 ],
+        [ "rc_seed_many_books", 5 ]
       ]
     }
   }
