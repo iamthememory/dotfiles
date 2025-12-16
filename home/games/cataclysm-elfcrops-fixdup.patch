@@ -1367,7 +1367,7 @@ index df4ffa673168..48de847ccc91 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..51ab54943297 100644
+index fccd89aa02a2..a905a22fcae5 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
 @@ -1,35 +1,39 @@
@@ -1418,7 +1418,7 @@ index fccd89aa02a2..51ab54943297 100644
      "copy-from": "anesthetic",
      "name": "Blackout fruit",
      "description": "A fruit filled with anesthetic. Smells like chloroform.",
-@@ -37,21 +41,43 @@
+@@ -37,21 +41,114 @@
      "count": 100
    },
    {
@@ -1475,6 +1475,77 @@ index fccd89aa02a2..51ab54943297 100644
 +    "material": [ "fruit" ],
 +    "volume": "2750 ml",
 +    "vitamins": [ [ "fruit_allergen", 1 ] ],
++    "melee_damage": { "bash": 2 }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "AMMO" ],
++    "id": "material_sand_clump",
++    "category": "spare_parts",
++    "name": { "str": "sand clump" },
++    "weight": "400 g",
++    "color": "dark_gray",
++    "symbol": "=",
++    "description": "A clump of sand.",
++    "price": "0 cent",
++    "price_postapoc": "0 cent",
++    "material": [ "sand" ],
++    "volume": "250 ml",
++    "ammo_type": "components",
++    "count": 1
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "AMMO" ],
++    "id": "nail_bundle",
++    "category": "spare_parts",
++    "name": { "str": "nail bundle" },
++    "weight": "1000 g",
++    "color": "cyan",
++    "symbol": "=",
++    "description": "A bundle of nails.",
++    "price": "0 cent",
++    "price_postapoc": "0 cent",
++    "material": [ "lc_steel" ],
++    "volume": "150 ml",
++    "ammo_type": "components",
++    "count": 1
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "AMMO" ],
++    "id": "duct_tape_bundle",
++    "category": "spare_parts",
++    "name": { "str": "duct tape bundle" },
++    "weight": "400 g",
++    "color": "light_gray",
++    "symbol": "=",
++    "description": "A bundle of duct tape.",
++    "price": "0 cent",
++    "price_postapoc": "0 cent",
++    "material": [ "plastic" ],
++    "volume": "400 ml",
++    "ammo_type": "components",
++    "count": 1
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "flour_clump",
++    "name": { "str": "flour clump" },
++    "weight": "125 g",
++    "color": "white",
++    "spoils_in": "360 days",
++    "comestible_type": "INVALID",
++    "symbol": "%",
++    "quench": -1,
++    "calories": 10,
++    "description": "Several hard clumps of flour.",
++    "price": "0 USD",
++    "price_postapoc": "0 USD",
++    "material": [ "wheat", "powder" ],
++    "volume": "240 ml",
++    "vitamins": [ [ "wheat_allergen", 1 ] ],
 +    "melee_damage": { "bash": 2 }
    }
 -]
@@ -3336,7 +3407,7 @@ index fa98ccf57c19..6d0c62701325 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/recipes.json b/Resource Crops/recipes/recipes.json
-index acefc75df0a2..5cc0a388e8d7 100644
+index acefc75df0a2..545c27f5fcdf 100644
 --- a/Resource Crops/recipes/recipes.json	
 +++ b/Resource Crops/recipes/recipes.json	
 @@ -16,7 +16,7 @@
@@ -3420,7 +3491,7 @@ index acefc75df0a2..5cc0a388e8d7 100644
      "type": "recipe",
      "result": "rc_seed_woodbeam",
      "category": "CC_FOOD",
-@@ -658,5 +658,97 @@
+@@ -658,5 +658,74 @@
          [ "rc_seed_mat", 1]
        ]
      ]
@@ -3459,29 +3530,6 @@ index acefc75df0a2..5cc0a388e8d7 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "tallow seeds"
-+      }
-+    },
-+    "difficulty": 3,
-+    "time": "20 m",
-+    "autolearn": true,
-+    "activity_level": "NO_EXERCISE",
-+    "components": [
-+      [
-+        [ "rc_seed_mat", 1]
-+      ]
-+    ]
-+  },
-+  {
-+    "type": "recipe",
-+    "result": "rc_seed_honeycomb",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
-+    "skill_used": "fabrication",
-+    "skills_required": [["cooking", 5], ["fabrication", 5]],
-+    "book_learn": {
-+      "rc_textbook_infseeds": {
-+        "skill_level": 5,
-+        "recipe_name": "honey comb seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -5599,7 +5647,7 @@ index e3b40b6e648a..69439dba0663 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/food seeds.json b/Resource Crops/seeds/food seeds.json
-index 4b6a9ff1343e..13d0a7550e3b 100644
+index 4b6a9ff1343e..88e62dabe0dd 100644
 --- a/Resource Crops/seeds/food seeds.json	
 +++ b/Resource Crops/seeds/food seeds.json	
 @@ -2,289 +2,481 @@
@@ -5953,7 +6001,7 @@ index 4b6a9ff1343e..13d0a7550e3b 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "flour bush",
-+    "fruit": "flour",
++    "fruit": "flour_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -6418,7 +6466,7 @@ index 83c7aca5e180..d2975fc96cd8 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
-index f2819e545949..3a93097cab91 100644
+index f2819e545949..3582afafe1e1 100644
 --- a/Resource Crops/seeds/metal seeds.json	
 +++ b/Resource Crops/seeds/metal seeds.json	
 @@ -2,385 +2,481 @@
@@ -6796,7 +6844,7 @@ index f2819e545949..3a93097cab91 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "nail bush",
-+    "fruit": "nail",
++    "fruit": "nail_bundle",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -7193,7 +7241,7 @@ index f2819e545949..3a93097cab91 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/misc seeds.json b/Resource Crops/seeds/misc seeds.json
-index bd3cb009fb17..379fae489a0b 100644
+index bd3cb009fb17..5d9992feecbb 100644
 --- a/Resource Crops/seeds/misc seeds.json	
 +++ b/Resource Crops/seeds/misc seeds.json	
 @@ -2,321 +2,401 @@
@@ -7219,7 +7267,7 @@ index bd3cb009fb17..379fae489a0b 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "duct tape bush",
-+    "fruit": "duct_tape",
++    "fruit": "duct_tape_bundle",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -7795,7 +7843,7 @@ index bd3cb009fb17..379fae489a0b 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "sand bush",
-+    "fruit": "material_sand",
++    "fruit": "material_sand_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -7840,10 +7888,10 @@ index bd3cb009fb17..379fae489a0b 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/seed.json b/Resource Crops/seeds/seed.json
-index b11153388c60..c41c1be03da2 100644
+index b11153388c60..e7f2e83b37e8 100644
 --- a/Resource Crops/seeds/seed.json	
 +++ b/Resource Crops/seeds/seed.json	
-@@ -2,417 +2,601 @@
+@@ -2,417 +2,581 @@
    {
      "id": "rc_seed_mat",
      "copy-from": "seed",
@@ -8664,26 +8712,6 @@ index b11153388c60..c41c1be03da2 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "tallow bush",
 +    "fruit": "tallow",
-+    "byproducts": [ "withered" ],
-+    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
-+      { "GROWTH_OVERGROWN": "1 hour" }
-+    ]
-+  },
-+  {
-+    "id": "rc_seed_honeycomb",
-+    "copy-from": "seed",
-+    "type": "ITEM",
-+    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "honey comb seeds" },
-+    "description": "Infused seeds prepared in such a way that they grow into a bush covered in honey combs.",
-+    "price": "1000 cent",
-+    "price_postapoc": "250 cent",
-+    "plant_name": "honey comb bush",
-+    "fruit": "honeycomb",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

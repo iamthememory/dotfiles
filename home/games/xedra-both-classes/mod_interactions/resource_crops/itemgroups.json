@@ -169,7 +169,6 @@
         [ "rc_seed_rocksalt", 10 ],
         [ "rc_seed_tallow", 10 ],
         [ "rc_seed_maple_sap", 10 ],
-        [ "rc_seed_honeycomb", 10 ],
         [ "rc_seed_wax", 10 ],
         [ "rc_seed_many_books", 10 ],
         [ "rc_seed_gunmods", 10 ],
