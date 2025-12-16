@@ -8895,3 +8895,67 @@ index b11153388c60..e7f2e83b37e8 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/Resource Crops/uncraft/comestibles/fruit.json b/Resource Crops/uncraft/comestibles/fruit.json
+new file mode 100644
+index 000000000000..e7241d4c6893
+--- /dev/null
++++ b/Resource Crops/uncraft/comestibles/fruit.json	
+@@ -0,0 +1,26 @@
++[
++  {
++    "result": "raw_milk_berry",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "milk_raw", 2 ] ] ]
++  },
++  {
++    "result": "maple_sap_berry",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "maple_sap", 10 ] ] ]
++  },
++  {
++    "result": "flour_clump",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "flour", 10 ] ] ]
++  }
++]
+diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
+new file mode 100644
+index 000000000000..481023e49ec6
+--- /dev/null
++++ b/Resource Crops/uncraft/other.json	
+@@ -0,0 +1,26 @@
++[
++  {
++    "result": "material_sand_clump",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "material_sand", 50 ] ] ]
++  },
++  {
++    "result": "nail_bundle",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "CUT", "level": 1 } ],
++    "components": [ [ [ "nail", 50 ] ] ]
++  },
++  {
++    "result": "duct_tape_bundle",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "CUT", "level": 1 } ],
++    "components": [ [ [ "duct_tape", 200 ] ] ]
++  }
++]
