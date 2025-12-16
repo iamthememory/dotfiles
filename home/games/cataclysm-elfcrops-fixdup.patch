@@ -1106,7 +1106,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..48de847ccc91 100644
+index df4ffa673168..db798f05ca62 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1201,7 +1201,7 @@ index df4ffa673168..48de847ccc91 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,159 @@
+@@ -615,9 +568,183 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -1361,6 +1361,30 @@ index df4ffa673168..48de847ccc91 100644
 +      { "group": "mags_flamethrower", "prob": 10 },
 +      { "group": "mags_flamethrower_xedra", "prob": 10 },
 +      { "group": "mags_hunting", "prob": 10 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_homejunk",
++    "items": [
++      { "group": "SUS_bathroom_cabinet", "prob": 10 },
++      { "group": "SUS_bathroom_medicine", "prob": 10 },
++      { "group": "SUS_bathroom_sink", "prob": 10 },
++      { "group": "SUS_hair_drawer", "prob": 10 },
++      { "group": "SUS_junk_drawer", "prob": 10 },
++      { "group": "SUS_junk_drawer_artsy", "prob": 10 },
++      { "group": "SUS_junk_drawer_handy", "prob": 10 },
++      { "group": "SUS_junk_drawer_messy", "prob": 10 },
++      { "group": "SUS_junk_drawer_tidy", "prob": 10 },
++      { "group": "SUS_office_desk", "prob": 10 },
++      { "group": "SUS_office_filing_cabinet", "prob": 10 },
++      { "group": "SUS_office_mess", "prob": 10 },
++      { "group": "SUS_office_supplies", "prob": 10 },
++      { "group": "bedroom", "prob": 10 },
++      { "group": "kitchen", "prob": 10 },
++      { "group": "livingroom", "prob": 10 },
++      { "group": "nightstand", "prob": 10 }
      ]
    }
 -]
@@ -1552,7 +1576,7 @@ index fccd89aa02a2..a905a22fcae5 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..98faba522e83 100644
+index ce70e9badaf0..ef34b74a9968 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,15 +1,17 @@
@@ -2750,7 +2774,7 @@ index ce70e9badaf0..98faba522e83 100644
      "use_action": {
        "type": "place_monster",
        "monster_id": "rc_lab_library_fungus",
-@@ -1027,20 +1101,102 @@
+@@ -1027,20 +1101,122 @@
    },
    {
      "id": "rc_spawn_exotic_books_fungus",
@@ -2854,6 +2878,26 @@ index ce70e9badaf0..98faba522e83 100644
 +      "moves": 50,
 +      "difficulty": 100
 +    }
++  },
++  {
++    "id": "rc_spawn_homejunk_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon junk fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of domestic junk in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_homejunk_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
    }
 -]
 \ No newline at end of file
@@ -2878,7 +2922,7 @@ index d893e6888f4b..7c79f692eb68 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/monsters/funguspouches.json b/Resource Crops/monsters/funguspouches.json
-index 80c1f283148a..5dc2d49b8a70 100644
+index 80c1f283148a..ae84008a1ad5 100644
 --- a/Resource Crops/monsters/funguspouches.json	
 +++ b/Resource Crops/monsters/funguspouches.json	
 @@ -15,12 +15,10 @@
@@ -2926,7 +2970,7 @@ index 80c1f283148a..5dc2d49b8a70 100644
    {
      "id": "rc_762x39_fungus",
      "type": "MONSTER",
-@@ -470,5 +452,37 @@
+@@ -470,5 +452,45 @@
      "description": "A fungaloid that supposedly has exotic books in its body.",
      "copy-from": "rc_money_fungus",
      "death_drops": "exotic_books"
@@ -2962,6 +3006,14 @@ index 80c1f283148a..5dc2d49b8a70 100644
 +    "description": "A fungaloid that supposedly has a wide array of magazines in its body.",
 +    "copy-from": "rc_money_fungus",
 +    "death_drops": "rc_drop_gunmags"
++	},
++  {
++    "id": "rc_homejunk_fungus",
++    "type": "MONSTER",
++    "name": { "str": "junk fungus"},
++    "description": "A fungaloid that supposedly has a wide array of domestic junk in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_homejunk"
  	}
 -]
 \ No newline at end of file
@@ -3341,10 +3393,10 @@ index 056d35917941..1adaffb26b3b 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..6d0c62701325 100644
+index fa98ccf57c19..c5bbedf99003 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
-@@ -48,5 +48,96 @@
+@@ -48,5 +48,118 @@
          [ "paper", 100 ]
        ]
      ]
@@ -3429,6 +3481,28 @@ index fa98ccf57c19..6d0c62701325 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "gun magazine seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_homejunk",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "junk seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -6372,10 +6446,10 @@ index 4b6a9ff1343e..88e62dabe0dd 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..d2975fc96cd8 100644
+index 83c7aca5e180..af0cb177c412 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,121 @@
+@@ -2,33 +2,141 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -6512,6 +6586,26 @@ index 83c7aca5e180..d2975fc96cd8 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "gun magazine bush",
 +    "fruit": "rc_spawn_gunmags_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_homejunk",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "junk seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of domestic junk.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "junk bush",
++    "fruit": "rc_spawn_homejunk_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
