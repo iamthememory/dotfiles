@@ -3518,7 +3518,7 @@ index fa98ccf57c19..c5bbedf99003 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/recipes.json b/Resource Crops/recipes/recipes.json
-index acefc75df0a2..545c27f5fcdf 100644
+index acefc75df0a2..dd6bdf1715d0 100644
 --- a/Resource Crops/recipes/recipes.json	
 +++ b/Resource Crops/recipes/recipes.json	
 @@ -16,7 +16,7 @@
@@ -3602,7 +3602,7 @@ index acefc75df0a2..545c27f5fcdf 100644
      "type": "recipe",
      "result": "rc_seed_woodbeam",
      "category": "CC_FOOD",
-@@ -658,5 +658,74 @@
+@@ -658,5 +658,92 @@
          [ "rc_seed_mat", 1]
        ]
      ]
@@ -3674,6 +3674,24 @@ index acefc75df0a2..545c27f5fcdf 100644
 +      [
 +        [ "rc_seed_mat", 1]
 +      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
++    "result": "duct_tape",
++    "id_suffix": "from_plant_bundle",
++    "name": "%s from bundle",
++    "category": "CC_OTHER",
++    "subcategory": "CSC_OTHER_MATERIALS",
++    "skill_used": "fabrication",
++    "difficulty": 0,
++    "time": "2 m",
++    "charges": 200,
++    "autolearn": true,
++    "qualities": [ { "id": "CUT", "level": 1 } ],
++    "components": [
++      [ [ "duct_tape_bundle", 1 ] ]
 +    ]
    }
 -]
@@ -8929,10 +8947,10 @@ index 000000000000..e7241d4c6893
 +]
 diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
 new file mode 100644
-index 000000000000..481023e49ec6
+index 000000000000..34b0733f8519
 --- /dev/null
 +++ b/Resource Crops/uncraft/other.json	
-@@ -0,0 +1,26 @@
+@@ -0,0 +1,18 @@
 +[
 +  {
 +    "result": "material_sand_clump",
@@ -8949,13 +8967,5 @@ index 000000000000..481023e49ec6
 +    "time": "2 m",
 +    "qualities": [ { "id": "CUT", "level": 1 } ],
 +    "components": [ [ [ "nail", 50 ] ] ]
-+  },
-+  {
-+    "result": "duct_tape_bundle",
-+    "type": "uncraft",
-+    "activity_level": "LIGHT_EXERCISE",
-+    "time": "2 m",
-+    "qualities": [ { "id": "CUT", "level": 1 } ],
-+    "components": [ [ [ "duct_tape", 200 ] ] ]
 +  }
 +]
