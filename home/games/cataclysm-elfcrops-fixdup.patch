@@ -3146,6 +3146,43 @@ index 66efe4b1c652..ac82c2301c66 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/Resource Crops/recipes/electrical recipes.json b/Resource Crops/recipes/electrical recipes.json
+index c90d1db823f3..418ff246db42 100644
+--- a/Resource Crops/recipes/electrical recipes.json	
++++ b/Resource Crops/recipes/electrical recipes.json	
+@@ -123,5 +123,30 @@
+         [ "solar_cell", 10 ]
+       ]
+     ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_magnetron",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "magnetron seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ],
++      [
++        [ "magnetron", 10 ]
++      ]
++    ]
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/Resource Crops/recipes/food recipes.json b/Resource Crops/recipes/food recipes.json
 index 056d35917941..1adaffb26b3b 100644
 --- a/Resource Crops/recipes/food recipes.json	
@@ -5480,10 +5517,10 @@ index 2ba932551057..3c13e4f28958 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/electrical seeds.json b/Resource Crops/seeds/electrical seeds.json
-index e3b40b6e648a..69439dba0663 100644
+index e3b40b6e648a..1110a23b3350 100644
 --- a/Resource Crops/seeds/electrical seeds.json	
 +++ b/Resource Crops/seeds/electrical seeds.json	
-@@ -2,81 +2,101 @@
+@@ -2,81 +2,121 @@
    {
      "id": "rc_seed_amplifier",
      "copy-from": "seed",
@@ -5636,6 +5673,26 @@ index e3b40b6e648a..69439dba0663 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "solar cell bush",
 +    "fruit": "solar_cell",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_magnetron",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "magnetron seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with magnetron hanging from it.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "magnetron bush",
++    "fruit": "magnetron",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

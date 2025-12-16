@@ -173,7 +173,8 @@
         [ "rc_seed_many_books", 10 ],
         [ "rc_seed_gunmods", 10 ],
         [ "rc_seed_guns", 10 ],
-        [ "rc_seed_gunmags", 10 ]
+        [ "rc_seed_gunmags", 10 ],
+        [ "rc_seed_magnetron", 10 ]
       ]
     }
   }
