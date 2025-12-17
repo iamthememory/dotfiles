@@ -175,7 +175,15 @@
         [ "rc_seed_guns", 10 ],
         [ "rc_seed_gunmags", 10 ],
         [ "rc_seed_magnetron", 10 ],
-        [ "rc_seed_homejunk", 10 ]
+        [ "rc_seed_homejunk", 10 ],
+        [ "rc_seed_water_berry", 10 ],
+        [ "rc_seed_forage", 10 ],
+        [ "rc_seed_harvest", 10 ],
+        [ "rc_seed_mineral", 10 ],
+        [ "rc_seed_feather", 10 ],
+        [ "rc_seed_bodypart", 10 ],
+        [ "rc_seed_wool", 10 ],
+        [ "rc_seed_sugar", 10 ]
       ]
     }
   }

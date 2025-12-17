@@ -25,7 +25,11 @@
         [ "rc_seed_mithLump", 10 ],
         [ "rc_seed_mithIngot", 10 ],
         [ "rc_seed_oriFrame", 10 ],
-        [ "rc_seed_oriFrameLight", 10 ]
+        [ "rc_seed_oriFrameLight", 10 ],
+        [ "rc_seed_all_spell_books", 10 ],
+        [ "rc_seed_various_magic_items", 10 ],
+        [ "rc_seed_mana_crystal", 10 ],
+        [ "rc_seed_parabolan_wool", 10 ]
       ]
     }
   }

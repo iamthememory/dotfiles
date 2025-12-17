@@ -43,27 +43,34 @@
     "name": "UNSTABLE_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the unstable trait.",
     "stype": "int",
-    "value": 336
+    "value": 168
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CHAOTIC_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the chaotic trait.",
     "stype": "int",
-    "value": 168
+    "value": 84
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "BASE_MANA_REGEN_TIME",
     "//": "How many hours it should take to regenerate all mana at base mana regen.",
     "stype": "float",
-    "value": 2.0
+    "value": 4.0
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 0.25
+    "value": 0.1
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "SHELF_LIFE_MULTIPLIER",
+    "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
+    "stype": "float",
+    "value": 4.0
   }
 ]

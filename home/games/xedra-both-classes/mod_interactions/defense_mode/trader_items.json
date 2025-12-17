@@ -1,0 +1,13 @@
+[
+  {
+    "type": "item_group",
+    "id": "NC_DM_MERCHANT_stock",
+    "copy-from": "NC_DM_MERCHANT_stock",
+    "subtype": "collection",
+    "extend": {
+      "entries": [
+        { "group": "arvore_seeds", "prob": 100, "count": [ 4, 8 ] }
+      ]
+    }
+  }
+]

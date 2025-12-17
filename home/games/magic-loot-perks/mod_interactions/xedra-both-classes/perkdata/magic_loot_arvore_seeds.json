@@ -1,0 +1,23 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_arvore_seeds_find",
+    "condition": { "math": [ "rng(0, 1.0) <= 0.25" ] },
+    "effect": [
+      { "u_message": "You found something in your hand that wasn't there before." },
+      { "u_spawn_item": "arvore_seeds", "use_item_group": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_arvore_seeds_on",
+    "//": "Activation effect",
+    "effect": [ { "u_message": "You start looking for seeds." } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_magic_loot_arvore_seeds_off",
+    "//": "Deactivation effect",
+    "effect": [ { "u_message": "You stop looking for seeds." } ]
+  }
+]

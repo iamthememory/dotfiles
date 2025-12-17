@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 52b4263204f4..b83374f336c5 100644
+index 52b4263204f4..0d39c9e6d181 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,40 @@
+@@ -520,5 +520,47 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -41,8 +41,63 @@ index 52b4263204f4..b83374f336c5 100644
 +    "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
 +    "stype": "float",
 +    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "SHELF_LIFE_MULTIPLIER",
++    "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
++    "stype": "float",
++    "value": 1.0
    }
  ]
+diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
+index 6f72daac2f7b..1dbad53cfe8c 100644
+--- a/src/activity_item_handling.cpp
++++ b/src/activity_item_handling.cpp
+@@ -4389,8 +4389,9 @@ static int get_comestible_order( Character &you, const item_location &loc,
+ static time_duration get_comestible_time_left( const item_location &loc )
+ {
+     time_duration time_left = 0_turns;
+-    const time_duration shelf_life = loc->is_comestible() ? loc->get_comestible()->spoils :
+-                                     calendar::INDEFINITELY_LONG_DURATION;
++    const time_duration shelf_life =
++        loc->is_comestible() ? loc->get_comestible()->spoils  * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" ):
++                calendar::INDEFINITELY_LONG_DURATION;
+     if( shelf_life > 0_turns ) {
+         const item &it = *loc;
+         const double relative_rot = it.get_relative_rot();
+diff --git a/src/game_inventory.cpp b/src/game_inventory.cpp
+index 37313fe176b8..651851bf93cc 100644
+--- a/src/game_inventory.cpp
++++ b/src/game_inventory.cpp
+@@ -710,8 +710,9 @@ class comestible_inventory_preset : public inventory_selector_preset
+             }, _( "HEALTH" ) );
+ 
+             append_cell( []( const item_location & loc ) {
+-                const time_duration spoils = loc->is_comestible() ? loc->get_comestible()->spoils :
+-                                             calendar::INDEFINITELY_LONG_DURATION;
++                const time_duration spoils =
++                        loc->is_comestible() ? loc->get_comestible()->spoils * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" ) :
++                                calendar::INDEFINITELY_LONG_DURATION;
+                 if( spoils > 0_turns ) {
+                     return to_string_clipped( spoils );
+                 }
+diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
+index bb187070940f..919f369adb88 100644
+--- a/src/item_degrade.cpp
++++ b/src/item_degrade.cpp
+@@ -429,9 +429,9 @@ time_duration item::get_shelf_life() const
+ {
+     if( goes_bad() ) {
+         if( is_comestible() ) {
+-            return get_comestible()->spoils;
++            return get_comestible()->spoils * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" );
+         } else if( is_corpse() ) {
+-            return 24_hours;
++            return 24_hours * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" );
+         }
+     }
+     return 0_turns;
 diff --git a/src/magic.cpp b/src/magic.cpp
 index 27f9f39a42cf..2ece788f73c9 100644
 --- a/src/magic.cpp

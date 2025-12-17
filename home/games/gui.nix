@@ -86,6 +86,7 @@ in
           ./cataclysm-bionics-lower-saving.patch
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-custom-options.patch
+          ./cataclysm-defense-real-world.patch
           ./cataclysm-dino-egg-vitamins.patch
           ./cataclysm-disable-trait-flag-cache.patch
           ./cataclysm-disable-warning.patch

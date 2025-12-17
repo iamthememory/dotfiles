@@ -7,19 +7,64 @@
     ]
   },
   {
-    "copy-from": "DEFENSE_MODE_FORTRESS_TRAP",
     "type": "effect_on_condition",
     "id": "DEFENSE_MODE_FORTRESS_TRAP",
-    "condition": {
-      "compare_string": [ "foo", "bar" ]
-    },
+    "global": true,
+    "recurrence": 100,
     "effect": [ ]
   },
   {
-    "copy-from": "DEFENSE_MODE_WAVE_CONTROL",
     "type": "effect_on_condition",
     "id": "DEFENSE_MODE_WAVE_CONTROL",
-    "recurrence": [ "12 hours", "4 days" ]
+    "recurrence": [ "12 hours", "4 day" ],
+    "global": true,
+    "effect": [ ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_WAVE_CONTROL_REMIX",
+    "//": "I have no idea why the waves are running exactly every 24 hours, so let's see if this helps?",
+    "recurrence": [ "12 hours", "4 day" ],
+    "global": true,
+    "effect": [
+      { "u_teleport": { "global_val": "your_spawnpoint" } },
+      { "math": [ "wave_number++" ] },
+      { "u_message": "Welcome to wave <global_val:wave_number>!", "type": "bad", "popup": false },
+      { "run_eocs": "DEFENSE_MODE_WAVE_SPECIAL_DECIDER" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "DEFENSE_MODE_RANDOM_EVENT",
+    "recurrence": [ "2 days", "8 days" ],
+    "//": "A general EOC for selecting a random event.  Can and should be expanded.",
+    "condition": {
+      "and": [
+        { "math": [ "random_events_allowed == 0" ] },
+        { "not": { "is_weather": "portal_storm" } },
+        { "x_in_y_chance": { "x": 7, "y": 10 } }
+      ]
+    },
+    "effect": [
+      {
+        "weighted_list_eocs": [
+          [ "EOC_DEFENSE_MODE_RANDOM_NPC", 10 ],
+          [ "EOC_DEFENSE_MODE_RANDOM_NPC_ROBBER", 6 ],
+          [ "EOC_DEFENSE_MODE_BANDIT_ATTACK", 1 ]
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "defense_mode_caravan_spawn",
+    "recurrence": [ "2 days", "4 days" ],
+    "global": true,
+    "condition": { "math": [ "u_monsters_nearby('radius': u_search_radius == 3) <= 0" ] },
+    "effect": [
+      { "u_spawn_npc": "defense_mode_merchant", "lifespan": "4 hours", "real_count": 1, "min_radius": 2, "max_radius": 3 },
+      { "u_message": "A caravan approaches!", "type": "good", "popup": false }
+    ]
   },
   {
     "type": "effect_on_condition",
