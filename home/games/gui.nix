@@ -99,6 +99,7 @@ in
           ./cataclysm-magiclysm-renewal-height.patch
           ./cataclysm-mindovermatter-contemplation.patch
           ./cataclysm-mindovermatter-sidebar-fix.patch
+          ./cataclysm-mom-defense.patch
           ./cataclysm-more-engines.patch
           ./cataclysm-multiple-thresholds.patch
           ./cataclysm-perks-fix.patch

@@ -18,14 +18,6 @@
     "id": "DEFENSE_MODE_WAVE_CONTROL",
     "recurrence": [ "12 hours", "4 day" ],
     "global": true,
-    "effect": [ ]
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "DEFENSE_MODE_WAVE_CONTROL_REMIX",
-    "//": "I have no idea why the waves are running exactly every 24 hours, so let's see if this helps?",
-    "recurrence": [ "12 hours", "4 day" ],
-    "global": true,
     "effect": [
       { "u_teleport": { "global_val": "your_spawnpoint" } },
       { "math": [ "wave_number++" ] },
@@ -58,11 +50,11 @@
   {
     "type": "effect_on_condition",
     "id": "defense_mode_caravan_spawn",
-    "recurrence": [ "2 days", "4 days" ],
+    "recurrence": [ "1 days", "4 days" ],
     "global": true,
     "condition": { "math": [ "u_monsters_nearby('radius': u_search_radius == 3) <= 0" ] },
     "effect": [
-      { "u_spawn_npc": "defense_mode_merchant", "lifespan": "4 hours", "real_count": 1, "min_radius": 2, "max_radius": 3 },
+      { "u_spawn_npc": "defense_mode_merchant", "lifespan": "8 hours", "real_count": 1, "min_radius": 2, "max_radius": 3 },
       { "u_message": "A caravan approaches!", "type": "good", "popup": false }
     ]
   },
