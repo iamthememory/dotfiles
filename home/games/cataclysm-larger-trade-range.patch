@@ -1,0 +1,13 @@
+diff --git a/src/trade_ui.cpp b/src/trade_ui.cpp
+index f28095b4b780..282e1f550749 100644
+--- a/src/trade_ui.cpp
++++ b/src/trade_ui.cpp
+@@ -126,7 +126,7 @@ trade_ui::trade_ui( party_t &you, npc &trader, currency_t cost, std::string titl
+ 
+ {
+     _panes[_you]->add_character_items( you );
+-    _panes[_you]->add_nearby_items( 1 );
++    _panes[_you]->add_nearby_items( 8 );
+     _panes[_trader]->add_character_items( trader );
+     if( trader.is_shopkeeper() ) {
+         _panes[_trader]->categorize_map_items( true );

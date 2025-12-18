@@ -93,6 +93,7 @@ in
           ./cataclysm-dream-fix.patch
           ./cataclysm-exodii-bionics.patch
           ./cataclysm-homullus-fix.patch
+          ./cataclysm-larger-trade-range.patch
           ./cataclysm-locale-path.patch
           ./cataclysm-magiclysm-artificer.patch
           ./cataclysm-magiclysm-okay-potions.patch
