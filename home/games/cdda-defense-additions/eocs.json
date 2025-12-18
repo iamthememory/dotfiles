@@ -57,7 +57,7 @@
       { "u_spawn_npc": "defense_mode_merchant", "lifespan": "4 hours", "real_count": 1, "min_radius": 2, "max_radius": 3 },
       { "u_message": "A caravan approaches!", "type": "good", "popup": true },
       { "u_make_sound": "a caravan approaching", "type": "movement", "volume": 20 },
-      { "u_sound_effect": "walk_tarmac", "id": "plmove" }
+      { "sound_effect": "walk_tarmac", "id": "plmove" }
     ]
   },
   {
