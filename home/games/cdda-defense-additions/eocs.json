@@ -16,7 +16,7 @@
   {
     "type": "effect_on_condition",
     "id": "DEFENSE_MODE_WAVE_CONTROL",
-    "recurrence": [ "12 hours", "4 day" ],
+    "recurrence": [ "12 hours", "1 day" ],
     "global": true,
     "effect": [
       { "u_teleport": { "global_val": "your_spawnpoint" } },
@@ -50,7 +50,7 @@
   {
     "type": "effect_on_condition",
     "id": "defense_mode_caravan_spawn",
-    "recurrence": [ "1 days", "4 days" ],
+    "recurrence": [ "1 days", "2 days" ],
     "global": true,
     "condition": { "math": [ "u_monsters_nearby('radius': u_search_radius == 3) <= 0" ] },
     "effect": [
