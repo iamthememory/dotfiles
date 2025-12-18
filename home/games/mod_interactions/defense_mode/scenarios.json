@@ -1,0 +1,8 @@
+[
+  {
+    "type": "scenario",
+    "id": "defense_mode_fortified"
+    "copy-from": "defense_mode_fortified",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] },
+  },
+]
