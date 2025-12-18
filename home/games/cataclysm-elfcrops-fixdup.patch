@@ -1580,7 +1580,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..2d2b81f8bcff 100644
+index df4ffa673168..f72db391f46b 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1675,7 +1675,7 @@ index df4ffa673168..2d2b81f8bcff 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,433 @@
+@@ -615,9 +568,457 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2109,13 +2109,37 @@ index df4ffa673168..2d2b81f8bcff 100644
 +      { "item": "venom_wasp", "prob": 330, "count": [ 2, 4 ] },
 +      { "item": "wasp_sting", "prob": 20, "count": [ 0, 1 ] },
 +      { "item": "wool_staple", "prob": 460, "count": [ 1, 3 ] }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_fuel",
++    "items": [
++      { "item": "chem_ethanol_ball", "prob": 10 },
++      { "item": "methed_alcohol_ball", "prob": 10 },
++      { "item": "denat_alcohol_ball", "prob": 10 },
++      { "item": "chem_methanol_ball", "prob": 10 },
++      { "item": "diesel_ball", "prob": 10 },
++      { "item": "jp8_ball", "prob": 10 },
++      { "item": "avgas_ball", "prob": 10 },
++      { "item": "gasoline_ball", "prob": 10 },
++      { "item": "lamp_oil_ball", "prob": 10 },
++      { "item": "motor_oil_ball", "prob": 10 },
++      { "item": "crude_oil_ball", "prob": 10 },
++      { "item": "chem_turpentine_ball", "prob": 10 },
++      { "item": "camphine_ball", "prob": 10 },
++      { "item": "crude_lamp_oil_ball", "prob": 10 },
++      { "item": "small_propane_tank", "prob": 10 },
++      { "item": "small_biogas_tank", "prob": 10 },
++      { "item": "tinyweldtank", "prob": 10 }
      ]
    }
 -]
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..3bd5eabae1c8 100644
+index fccd89aa02a2..fc0f88046ed6 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
 @@ -1,35 +1,39 @@
@@ -2166,7 +2190,7 @@ index fccd89aa02a2..3bd5eabae1c8 100644
      "copy-from": "anesthetic",
      "name": "Blackout fruit",
      "description": "A fruit filled with anesthetic. Smells like chloroform.",
-@@ -37,21 +41,272 @@
+@@ -37,21 +41,370 @@
      "count": 100
    },
    {
@@ -2321,8 +2345,8 @@ index fccd89aa02a2..3bd5eabae1c8 100644
 +    "subtypes": [ "COMESTIBLE" ],
 +    "id": "abstract_liquid_ball",
 +    "name": { "str": "liquid ball" },
-+    "weight": "100 g",
-+    "color": "red",
++    "weight": "250 g",
++    "color": "white",
 +    "spoils_in": "90 days",
 +    "comestible_type": "INVALID",
 +    "symbol": "~",
@@ -2453,12 +2477,110 @@ index fccd89aa02a2..3bd5eabae1c8 100644
 +    "price_postapoc": "0 USD",
 +    "material": [ "sugar" ],
 +    "volume": "70 ml"
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "chem_ethanol_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "ethanol ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "methed_alcohol_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "methylated spirits ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "denat_alcohol_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "denatured alcohol ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "chem_methanol_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "methanol ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "diesel_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "diesel ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "jp8_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "JP8 fuel ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "avgas_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "avgas fuel ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "gasoline_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "gasoline ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "lamp_oil_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "kerosene ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "motor_oil_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "motor oil ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "crude_oil_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "crude oil ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "chem_turpentine_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "turpentine ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "camphine_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "camphine ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "crude_lamp_oil_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "crude lamp oil ball" }
    }
 -]
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..effaff6bac77 100644
+index ce70e9badaf0..1cedac8fc005 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,15 +1,17 @@
@@ -3656,7 +3778,7 @@ index ce70e9badaf0..effaff6bac77 100644
      "use_action": {
        "type": "place_monster",
        "monster_id": "rc_lab_library_fungus",
-@@ -1027,20 +1101,222 @@
+@@ -1027,20 +1101,242 @@
    },
    {
      "id": "rc_spawn_exotic_books_fungus",
@@ -3880,6 +4002,26 @@ index ce70e9badaf0..effaff6bac77 100644
 +      "moves": 50,
 +      "difficulty": 100
 +    }
++  },
++  {
++    "id": "rc_spawn_fuel_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon fuel fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with fuel in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_fuel_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
    }
 -]
 \ No newline at end of file
@@ -3904,7 +4046,7 @@ index d893e6888f4b..7c79f692eb68 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/monsters/funguspouches.json b/Resource Crops/monsters/funguspouches.json
-index 80c1f283148a..350f80b48c20 100644
+index 80c1f283148a..2f98977aba3e 100644
 --- a/Resource Crops/monsters/funguspouches.json	
 +++ b/Resource Crops/monsters/funguspouches.json	
 @@ -15,12 +15,10 @@
@@ -3952,7 +4094,7 @@ index 80c1f283148a..350f80b48c20 100644
    {
      "id": "rc_762x39_fungus",
      "type": "MONSTER",
-@@ -470,5 +452,85 @@
+@@ -470,5 +452,93 @@
      "description": "A fungaloid that supposedly has exotic books in its body.",
      "copy-from": "rc_money_fungus",
      "death_drops": "exotic_books"
@@ -4036,6 +4178,14 @@ index 80c1f283148a..350f80b48c20 100644
 +    "description": "A fungaloid that supposedly has an assortment of body parts and meat in its body.",
 +    "copy-from": "rc_money_fungus",
 +    "death_drops": "rc_drop_bodypart"
++	},
++  {
++    "id": "rc_fuel_fungus",
++    "type": "MONSTER",
++    "name": { "str": "fuel fungus"},
++    "description": "A fungaloid that supposedly has an assortment of fuel in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_fuel"
  	}
 -]
 \ No newline at end of file
@@ -4460,10 +4610,10 @@ index 056d35917941..af64bf9f3ee2 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..f580b54d36ea 100644
+index fa98ccf57c19..953a2ed53979 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
-@@ -48,5 +48,228 @@
+@@ -48,5 +48,250 @@
          [ "paper", 100 ]
        ]
      ]
@@ -4680,6 +4830,28 @@ index fa98ccf57c19..f580b54d36ea 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "body part seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_fuel",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "fuel seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -7704,10 +7876,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..214f9fe5b6a9 100644
+index 83c7aca5e180..0d62e5a6836e 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,241 @@
+@@ -2,33 +2,261 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -7964,6 +8136,26 @@ index 83c7aca5e180..214f9fe5b6a9 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "body part bush",
 +    "fruit": "rc_spawn_bodypart_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_fuel",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "fuel seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with fuel.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "fuel bush",
++    "fruit": "rc_spawn_fuel_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -10323,10 +10515,10 @@ index 000000000000..280a4da3d544
 +]
 diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
 new file mode 100644
-index 000000000000..7d539c8bba3e
+index 000000000000..ce5a77750242
 --- /dev/null
 +++ b/Resource Crops/uncraft/other.json	
-@@ -0,0 +1,114 @@
+@@ -0,0 +1,234 @@
 +[
 +  {
 +    "result": "material_sand_clump",
@@ -10439,5 +10631,125 @@ index 000000000000..7d539c8bba3e
 +    "time": "30 s",
 +    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
 +    "components": [ [ [ "blood_mi-go", 1 ] ] ]
++  },
++  {
++    "result": "chem_ethanol_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "chem_ethanol", 250 ] ] ]
++  },
++  {
++    "result": "methed_alcohol_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "methed_alcohol", 250 ] ] ]
++  },
++  {
++    "result": "denat_alcohol_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "denat_alcohol", 250 ] ] ]
++  },
++  {
++    "result": "chem_methanol_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "chem_methanol", 250 ] ] ]
++  },
++  {
++    "result": "diesel_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "diesel", 250 ] ] ]
++  },
++  {
++    "result": "jp8_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "jp8", 250 ] ] ]
++  },
++  {
++    "result": "avgas_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "avgas", 250 ] ] ]
++  },
++  {
++    "result": "biodiesel_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "biodiesel", 250 ] ] ]
++  },
++  {
++    "result": "gasoline_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "gasoline", 250 ] ] ]
++  },
++  {
++    "result": "lamp_oil_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "lamp_oil", 250 ] ] ]
++  },
++  {
++    "result": "motor_oil_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "motor_oil", 250 ] ] ]
++  },
++  {
++    "result": "crude_oil_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "crude_oil", 250 ] ] ]
++  },
++  {
++    "result": "chem_turpentine_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "chem_turpentine", 200 ] ] ]
++  },
++  {
++    "result": "camphine_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "camphine", 200 ] ] ]
++  },
++  {
++    "result": "crude_lamp_oil_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "crude_lamp_oil", 250 ] ] ]
 +  }
 +]
