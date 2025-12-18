@@ -22,9 +22,11 @@
   # Custom keybindings for mpv.
   programs.mpv.bindings =
     let
-      # The speed multiplier to use.
-      # This is a quarter of a semitone.
-      speedMultiplier = 1.0145453349375237;
+      # The speed multiplier to use, in terms of semitones.
+      speedMultiplierQuarterSemitone = 1.0145453349375237;
+      speedMultiplierHalfSemitone = 1.029302236643492;
+      speedMultiplierSemitone = 1.0594630943592953;
+      speedMultiplier = speedMultiplierSemitone;
 
     in
     {
