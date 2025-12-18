@@ -1580,7 +1580,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..f72db391f46b 100644
+index df4ffa673168..a8c4b56668da 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1675,7 +1675,7 @@ index df4ffa673168..f72db391f46b 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,457 @@
+@@ -615,9 +568,458 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2123,6 +2123,7 @@ index df4ffa673168..f72db391f46b 100644
 +      { "item": "diesel_ball", "prob": 10 },
 +      { "item": "jp8_ball", "prob": 10 },
 +      { "item": "avgas_ball", "prob": 10 },
++      { "item": "biodiesel_ball", "prob": 10 },
 +      { "item": "gasoline_ball", "prob": 10 },
 +      { "item": "lamp_oil_ball", "prob": 10 },
 +      { "item": "motor_oil_ball", "prob": 10 },
@@ -2139,7 +2140,7 @@ index df4ffa673168..f72db391f46b 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..fc0f88046ed6 100644
+index fccd89aa02a2..91f6eb49f111 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
 @@ -1,35 +1,39 @@
@@ -2190,7 +2191,7 @@ index fccd89aa02a2..fc0f88046ed6 100644
      "copy-from": "anesthetic",
      "name": "Blackout fruit",
      "description": "A fruit filled with anesthetic. Smells like chloroform.",
-@@ -37,21 +41,370 @@
+@@ -37,21 +41,377 @@
      "count": 100
    },
    {
@@ -2526,6 +2527,13 @@ index fccd89aa02a2..fc0f88046ed6 100644
 +    "id": "avgas_ball",
 +    "copy-from": "abstract_liquid_ball",
 +    "name": { "str": "avgas fuel ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "biodiesel_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "biodiesel ball" }
 +  },
 +  {
 +    "type": "ITEM",
