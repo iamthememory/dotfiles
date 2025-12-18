@@ -3,7 +3,7 @@
     "type": "mapgen",
     "om_terrain": "island_field_big_center",
     "object": {
-      "predecessor_mapgen": "island_field"
+      "predecessor_mapgen": "field"
     }
   },
   {
@@ -41,47 +41,47 @@
       { "point": [ 8, 1, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, 2, 0 ], "overmap": "lake_surface" },
       { "point": [ 1, 2, 0 ], "overmap": "lake_shore" },
-      { "point": [ 2, 2, 0 ], "overmap": "island_forest" },
-      { "point": [ 3, 2, 0 ], "overmap": "island_field" },
-      { "point": [ 4, 2, 0 ], "overmap": "island_field" },
-      { "point": [ 5, 2, 0 ], "overmap": "island_field" },
-      { "point": [ 6, 2, 0 ], "overmap": "island_forest" },
+      { "point": [ 2, 2, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 3, 2, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 4, 2, 0 ], "overmap": "island_field_north" },
+      { "point": [ 5, 2, 0 ], "overmap": "island_forest_thick_north" },
+      { "point": [ 6, 2, 0 ], "overmap": "island_forest_north" },
       { "point": [ 7, 2, 0 ], "overmap": "lake_shore" },
       { "point": [ 8, 2, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, 3, 0 ], "overmap": "lake_surface" },
       { "point": [ 1, 3, 0 ], "overmap": "lake_shore" },
-      { "point": [ 2, 3, 0 ], "overmap": "island_field" },
-      { "point": [ 3, 3, 0 ], "overmap": "island_field" },
-      { "point": [ 4, 3, 0 ], "overmap": "island_field" },
-      { "point": [ 5, 3, 0 ], "overmap": "island_field" },
-      { "point": [ 6, 3, 0 ], "overmap": "island_forest" },
+      { "point": [ 2, 3, 0 ], "overmap": "island_field_north" },
+      { "point": [ 3, 3, 0 ], "overmap": "island_field_north" },
+      { "point": [ 4, 3, 0 ], "overmap": "island_field_north" },
+      { "point": [ 5, 3, 0 ], "overmap": "island_field_north" },
+      { "point": [ 6, 3, 0 ], "overmap": "island_field_north" },
       { "point": [ 7, 3, 0 ], "overmap": "lake_shore" },
       { "point": [ 8, 3, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, 4, 0 ], "overmap": "lake_surface" },
       { "point": [ 1, 4, 0 ], "overmap": "lake_shore" },
-      { "point": [ 2, 4, 0 ], "overmap": "island_field" },
-      { "point": [ 3, 4, 0 ], "overmap": "island_field" },
-      { "point": [ 4, 4, 0 ], "overmap": "island_field_big_center" },
-      { "point": [ 5, 4, 0 ], "overmap": "island_field" },
-      { "point": [ 6, 4, 0 ], "overmap": "island_field" },
+      { "point": [ 2, 4, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 3, 4, 0 ], "overmap": "island_field_north" },
+      { "point": [ 4, 4, 0 ], "overmap": "island_field_big_center_north" },
+      { "point": [ 5, 4, 0 ], "overmap": "island_field_north" },
+      { "point": [ 6, 4, 0 ], "overmap": "island_forest_thick_north" },
       { "point": [ 7, 4, 0 ], "overmap": "lake_shore" },
       { "point": [ 8, 4, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, 5, 0 ], "overmap": "lake_surface" },
       { "point": [ 1, 5, 0 ], "overmap": "lake_shore" },
-      { "point": [ 2, 5, 0 ], "overmap": "island_field" },
-      { "point": [ 3, 5, 0 ], "overmap": "island_field" },
-      { "point": [ 4, 5, 0 ], "overmap": "island_field" },
-      { "point": [ 5, 5, 0 ], "overmap": "island_field" },
-      { "point": [ 6, 5, 0 ], "overmap": "island_field" },
+      { "point": [ 2, 5, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 3, 5, 0 ], "overmap": "island_field_north" },
+      { "point": [ 4, 5, 0 ], "overmap": "island_field_north" },
+      { "point": [ 5, 5, 0 ], "overmap": "island_field_north" },
+      { "point": [ 6, 5, 0 ], "overmap": "island_forest_north" },
       { "point": [ 7, 5, 0 ], "overmap": "lake_shore" },
       { "point": [ 8, 5, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, 6, 0 ], "overmap": "lake_surface" },
       { "point": [ 1, 6, 0 ], "overmap": "lake_shore" },
-      { "point": [ 2, 6, 0 ], "overmap": "island_field" },
-      { "point": [ 3, 6, 0 ], "overmap": "island_forest" },
-      { "point": [ 4, 6, 0 ], "overmap": "island_field" },
-      { "point": [ 5, 6, 0 ], "overmap": "island_field" },
-      { "point": [ 6, 6, 0 ], "overmap": "island_field" },
+      { "point": [ 2, 6, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 3, 6, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 4, 6, 0 ], "overmap": "island_forest_north" },
+      { "point": [ 5, 6, 0 ], "overmap": "island_forest_thick_north" },
+      { "point": [ 6, 6, 0 ], "overmap": "island_forest_thick_north" },
       { "point": [ 7, 6, 0 ], "overmap": "lake_shore" },
       { "point": [ 8, 6, 0 ], "overmap": "lake_surface" },
       { "point": [ 0, 7, 0 ], "overmap": "lake_surface" },
@@ -235,29 +235,28 @@
     "flags": [ "CLASSIC", "LAKE", "WILDERNESS" ]
   },
   {
-    "type": "region_settings_lake",
-    "id": "default",
-    "copy-from": "default",
-    "shore_extendable_overmap_terrain": [ "forest", "forest_thick", "forest_water", "field" ],
-    "shore_extendable_overmap_terrain_aliases": [
-      { "om_terrain": "island_forest", "om_terrain_match_type": "TYPE", "alias": "forest" },
-      { "om_terrain": "island_forest_thick", "om_terrain_match_type": "TYPE", "alias": "forest_thick" },
-      { "om_terrain": "island_forest_water", "om_terrain_match_type": "TYPE", "alias": "forest_water" },
-      { "om_terrain": "island_field", "om_terrain_match_type": "TYPE", "alias": "field" },
-      { "om_terrain": "island_field_big_center", "om_terrain_match_type": "TYPE", "alias": "field" }
-    ]
-  },
-  {
-    "type": "start_location",
-    "id": "sloc_desert_island",
-    "name": "Desert Island",
-    "extend": { "terrain": [ "island_field_big_center" ] },
-    "flags": [ "ALLOW_OUTSIDE" ]
-  },
-  {
     "type": "start_location",
     "id": "sloc_desert_island_field_big",
     "name": "Large Deserted Island",
-    "terrain": [ "island_field_big_center" ]
+    "terrain": [ "island_field_big_center" ],
+    "flags": [ "ALLOW_OUTSIDE" ]
+  },
+  {
+    "type": "scenario",
+    "id": "wilderness",
+    "copy-from": "wilderness",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "heli_crash",
+    "id": "heli_crash",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "portal_dependent",
+    "id": "portal_dependent",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "type": "scenario",
+    "copy-from": "paraclesian_birth_naked_afraid",
+    "id": "paraclesian_birth_naked_afraid",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "werewolf_native_naked_unafraid",
+    "id": "werewolf_native_naked_unafraid",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "xe_lilin_scenario_naked_afraid",
+    "id": "xe_lilin_scenario_naked_afraid",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "once_bitten_naked_and_afraid",
+    "id": "once_bitten_naked_and_afraid",
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+  }
+]
