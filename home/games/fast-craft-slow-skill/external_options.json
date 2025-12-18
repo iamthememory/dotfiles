@@ -72,5 +72,19 @@
     "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
     "stype": "float",
     "value": 4.0
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "TRADER_AVOID_ITEMS",
+    "//": "Whether traders will respect the TRADER_AVOID flag and refuse to buy items marked with it.",
+    "stype": "bool",
+    "value": false
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "TRADER_AVOID_FILTHY",
+    "//": "Whether traders will refuse to buy filthy items or not.",
+    "stype": "bool",
+    "value": false
   }
 ]
