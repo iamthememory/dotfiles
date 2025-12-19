@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "backrooms-tweaks",
+    "name": "Backrooms Tweaks",
+    "authors": [ "iamthememory" ],
+    "description": "Various tweaks to the backrooms mod.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "backrooms" ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "type": "overmap_special",
+    "id": "backroom_stairs_z1",
+    "copy-from": "backroom_stairs_z1",
+    "occurrences": [ 0, 0 ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "backroom_stairs_z2",
+    "copy-from": "backroom_stairs_z2",
+    "occurrences": [ 0, 0 ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "backroom_stairs_z-2",
+    "copy-from": "backroom_stairs_z-2",
+    "occurrences": [ 0, 0 ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "backroom_stairs_z-3",
+    "copy-from": "backroom_stairs_z-3",
+    "occurrences": [ 0, 0 ]
+  }
+]

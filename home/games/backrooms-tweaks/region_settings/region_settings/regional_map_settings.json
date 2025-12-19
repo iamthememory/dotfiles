@@ -1,0 +1,30 @@
+[
+  {
+    "type": "region_settings",
+    "id": "default_backrooms",
+    "copy-from": "default_backrooms",
+    "default_oter": [
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backfloorchamber_north",
+      "backfloorchamber_north",
+      "backfloorchamber_north",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border",
+      "backroom_border"
+    ]
+  }
+]

@@ -426,6 +426,12 @@ in
 
       # My mods.
 
+      backrooms-tweaks = pkgs.cataclysmDDA.buildMod {
+        modName = "backrooms-tweaks";
+        version = config.home.file."generation.rev".text;
+        src = ./backrooms-tweaks;
+      };
+
       cdda-defense-additions = pkgs.cataclysmDDA.buildMod {
         modName = "cdda-defense-additions";
         version = config.home.file."generation.rev".text;
@@ -513,6 +519,7 @@ in
       # CDDA with extra mods.
       cataclysm-dda-git-with-mods = pkgs.cataclysmDDA.wrapCDDA cataclysm-dda-git-latest (mods: [
         arcana
+        backrooms-tweaks
         cc-sounds
         cdda-defense-additions
         cdda-tilesets

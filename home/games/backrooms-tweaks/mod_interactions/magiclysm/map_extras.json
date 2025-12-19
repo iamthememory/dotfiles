@@ -1,0 +1,9 @@
+[
+  {
+    "id": "mx_catoblepas_lair",
+    "copy-from": "mx_catoblepas_lair",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  }
+]

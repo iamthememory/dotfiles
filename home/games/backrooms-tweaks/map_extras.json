@@ -1,0 +1,303 @@
+[
+  {
+    "id": "mx_dormant",
+    "copy-from": "mx_dormant",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_mayhem",
+    "copy-from": "mx_mayhem",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_mayhem_crash_start",
+    "copy-from": "mx_mayhem_crash_start",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_roadblock",
+    "copy-from": "mx_roadblock",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_roadblock_mil",
+    "copy-from": "mx_roadblock_mil",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_exocrash_1",
+    "copy-from": "mx_exocrash_1",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_exocrash_2",
+    "copy-from": "mx_exocrash_2",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_golden_monoliths",
+    "copy-from": "mx_golden_monoliths",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_house_spider",
+    "copy-from": "mx_house_spider",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_bugout",
+    "copy-from": "mx_bugout",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_Trapdoor_spider_den",
+    "copy-from": "mx_Trapdoor_spider_den",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_pond_forest",
+    "copy-from": "mx_pond_forest",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_pond_forest_2",
+    "copy-from": "mx_pond_forest_2",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_trees",
+    "copy-from": "mx_trees",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_trees2",
+    "copy-from": "mx_trees2",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_blackberry_patch",
+    "copy-from": "mx_blackberry_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_strawberry_patch",
+    "copy-from": "mx_strawberry_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_blueberry_patch",
+    "copy-from": "mx_blueberry_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_raspberry_patch",
+    "copy-from": "mx_raspberry_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_huckleberry_patch",
+    "copy-from": "mx_huckleberry_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_hobblebush_patch",
+    "copy-from": "mx_hobblebush_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_autumn_olive_patch",
+    "copy-from": "mx_autumn_olive_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_knotweed_patch",
+    "copy-from": "mx_knotweed_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_grass",
+    "copy-from": "mx_grass",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_grass2",
+    "copy-from": "mx_grass2",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_fallen_shed",
+    "copy-from": "mx_fallen_shed",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_clay_deposit",
+    "copy-from": "mx_clay_deposit",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_sand_patch",
+    "copy-from": "mx_sand_patch",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_dead_vegetation",
+    "copy-from": "mx_dead_vegetation",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_point_dead_vegetation",
+    "copy-from": "mx_point_dead_vegetation",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_burned_ground",
+    "copy-from": "mx_burned_ground",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_point_burned_ground",
+    "copy-from": "mx_point_burned_ground",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_marloss_pilgrimage",
+    "copy-from": "mx_marloss_pilgrimage",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_prison_bus",
+    "copy-from": "mx_prison_bus",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_mass_grave",
+    "copy-from": "mx_mass_grave",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_mass_grave_jabberwock",
+    "copy-from": "mx_mass_grave_jabberwock",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_grave",
+    "copy-from": "mx_grave",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_city_trap",
+    "copy-from": "mx_city_trap",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_laststand",
+    "copy-from": "mx_laststand",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_toxic_waste",
+    "copy-from": "mx_toxic_waste",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_prison_van",
+    "copy-from": "mx_prison_van",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_beehive_natural",
+    "copy-from": "mx_beehive_natural",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_worm_sign",
+    "copy-from": "mx_worm_sign",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  }
+]

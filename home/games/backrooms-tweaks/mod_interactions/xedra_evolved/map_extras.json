@@ -1,0 +1,100 @@
+[
+  {
+    "id": "mx_golden_monolith",
+    "copy-from": "mx_golden_monolith",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_spider_shimmering",
+    "copy-from": "mx_spider_shimmering",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_goblin_spider",
+    "copy-from": "mx_goblin_spider",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_trees_map_salamander",
+    "copy-from": "mx_trees_map_salamander",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_trees_map_sylph",
+    "copy-from": "mx_trees_map_sylph",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_trees_map_ierde",
+    "copy-from": "mx_trees_map_ierde",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_homelesscamp_homullus",
+    "copy-from": "mx_homelesscamp_homullus",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_forest_pond_avore",
+    "copy-from": "mx_forest_pond_avore",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_forest_pond_salamander_avore",
+    "copy-from": "mx_forest_pond_salamander_avore",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_pond_forest_undine",
+    "copy-from": "mx_pond_forest_undine",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_pond_forest_undine_ierde",
+    "copy-from": "mx_pond_forest_undine_ierde",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_goblin_fruits",
+    "copy-from": "mx_goblin_fruits",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_ring_of_mushrooms",
+    "copy-from": "mx_ring_of_mushrooms",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_dreamwound_shadow",
+    "copy-from": "mx_dreamwound_shadow",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  }
+]

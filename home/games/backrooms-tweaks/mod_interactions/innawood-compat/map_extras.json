@@ -1,0 +1,16 @@
+[
+  {
+    "id": "mx_pond_swamp",
+    "copy-from": "mx_pond_swamp",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  },
+  {
+    "id": "mx_pond_swamp_2",
+    "copy-from": "mx_pond_swamp_2",
+    "type": "map_extra",
+    "min_max_zlevel": [ -3, 3 ],
+    "extend": { "flags": [ "BACKROOMS" ] }
+  }
+]

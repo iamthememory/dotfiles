@@ -1,0 +1,12 @@
+[
+  {
+    "type": "map_extra_collection",
+    "id": "backrooms",
+    "copy-from": "backrooms",
+    "extend": {
+      "extras": [
+        [ "mx_catoblepas_lair", 1 ]
+      ]
+    }
+  }
+]

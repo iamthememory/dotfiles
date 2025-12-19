@@ -1,0 +1,25 @@
+[
+  {
+    "type": "map_extra_collection",
+    "id": "backrooms",
+    "copy-from": "backrooms",
+    "extend": {
+      "extras": [
+        [ "mx_golden_monolith", 50 ],
+        [ "mx_spider_shimmering", 50 ],
+        [ "mx_goblin_spider", 50 ],
+        [ "mx_trees_map_salamander", 50 ],
+        [ "mx_trees_map_sylph", 50 ],
+        [ "mx_trees_map_ierde", 50 ],
+        [ "mx_homelesscamp_homullus", 50 ],
+        [ "mx_forest_pond_avore", 50 ],
+        [ "mx_forest_pond_salamander_avore", 50 ],
+        [ "mx_pond_forest_undine", 50 ],
+        [ "mx_pond_forest_undine_ierde", 50 ],
+        [ "mx_goblin_fruits", 50 ],
+        [ "mx_ring_of_mushrooms", 50 ],
+        [ "mx_dreamwound_shadow", 50 ]
+      ]
+    }
+  }
+]
