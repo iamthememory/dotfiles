@@ -184,7 +184,8 @@
         [ "rc_seed_bodypart", 10 ],
         [ "rc_seed_wool", 10 ],
         [ "rc_seed_sugar", 10 ],
-        [ "rc_seed_fuel", 10 ]
+        [ "rc_seed_fuel", 10 ],
+        [ "rc_seed_ammo", 10 ]
       ]
     }
   }

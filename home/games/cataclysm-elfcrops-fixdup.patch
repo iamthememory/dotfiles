@@ -1580,7 +1580,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..a8c4b56668da 100644
+index df4ffa673168..b4220f3222a3 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1675,7 +1675,7 @@ index df4ffa673168..a8c4b56668da 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,458 @@
+@@ -615,9 +568,486 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2134,6 +2134,34 @@ index df4ffa673168..a8c4b56668da 100644
 +      { "item": "small_propane_tank", "prob": 10 },
 +      { "item": "small_biogas_tank", "prob": 10 },
 +      { "item": "tinyweldtank", "prob": 10 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_ammo",
++    "items": [
++      { "group": "ammo_common_boxed", "prob": 10 },
++      { "group": "ammo_common_boxed_used", "prob": 10 },
++      { "group": "ammo_common_boxed_looted", "prob": 10 },
++      { "group": "ammo_common_loose", "prob": 10 },
++      { "group": "ammo_hunting", "prob": 10 },
++      { "group": "ammo_pistol_milspec", "prob": 10 },
++      { "group": "ammo_smg_milspec", "prob": 10 },
++      { "group": "ammo_rifle_milspec", "prob": 10 },
++      { "group": "ammo_shotgun_rare_collection", "prob": 10 },
++      { "group": "ammo_shotgun_milspec", "prob": 10 },
++      { "group": "ammo_shotgun_reloaded", "prob": 10 },
++      { "group": "ammo_launcher_grenade", "prob": 10 },
++      { "group": "ammo_launcher_grenade_adapter", "prob": 10 },
++      { "group": "ammo_milspec", "prob": 10 },
++      { "group": "ammo_parts", "prob": 100 },
++      { "group": "ammo_cop", "prob": 10 },
++      { "group": "ammo_swat", "prob": 10 },
++      { "group": "ammo_any_batteries", "prob": 10 },
++      { "group": "ammo_any_batteries_full", "prob": 10 },
++      { "group": "ammo_cannon", "prob": 10 },
++      { "group": "milspec_arsenal_group_only_ammo", "prob": 10 }
      ]
    }
 -]
@@ -2588,7 +2616,7 @@ index fccd89aa02a2..91f6eb49f111 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..1cedac8fc005 100644
+index ce70e9badaf0..2d6131b331a7 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,15 +1,17 @@
@@ -3786,7 +3814,7 @@ index ce70e9badaf0..1cedac8fc005 100644
      "use_action": {
        "type": "place_monster",
        "monster_id": "rc_lab_library_fungus",
-@@ -1027,20 +1101,242 @@
+@@ -1027,20 +1101,262 @@
    },
    {
      "id": "rc_spawn_exotic_books_fungus",
@@ -4030,6 +4058,26 @@ index ce70e9badaf0..1cedac8fc005 100644
 +      "moves": 50,
 +      "difficulty": 100
 +    }
++  },
++  {
++    "id": "rc_spawn_ammo_fungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon ammo fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with ammo in its body.",
++    "weight": "1 g",
++    "volume": "10 ml",
++    "price": "20000 cent",
++    "price_postapoc": "1000 cent",
++    "material": [ "veggy" ],
++    "symbol": "$",
++    "flags": [ "SINGLE_USE" ],
++    "use_action": {
++      "type": "place_monster",
++      "monster_id": "rc_ammo_fungus",
++      "moves": 50,
++      "difficulty": 100
++    }
    }
 -]
 \ No newline at end of file
@@ -4054,7 +4102,7 @@ index d893e6888f4b..7c79f692eb68 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/monsters/funguspouches.json b/Resource Crops/monsters/funguspouches.json
-index 80c1f283148a..2f98977aba3e 100644
+index 80c1f283148a..109bdc6f2da3 100644
 --- a/Resource Crops/monsters/funguspouches.json	
 +++ b/Resource Crops/monsters/funguspouches.json	
 @@ -15,12 +15,10 @@
@@ -4102,7 +4150,7 @@ index 80c1f283148a..2f98977aba3e 100644
    {
      "id": "rc_762x39_fungus",
      "type": "MONSTER",
-@@ -470,5 +452,93 @@
+@@ -470,5 +452,101 @@
      "description": "A fungaloid that supposedly has exotic books in its body.",
      "copy-from": "rc_money_fungus",
      "death_drops": "exotic_books"
@@ -4194,6 +4242,14 @@ index 80c1f283148a..2f98977aba3e 100644
 +    "description": "A fungaloid that supposedly has an assortment of fuel in its body.",
 +    "copy-from": "rc_money_fungus",
 +    "death_drops": "rc_drop_fuel"
++	},
++  {
++    "id": "rc_ammo_fungus",
++    "type": "MONSTER",
++    "name": { "str": "ammo fungus"},
++    "description": "A fungaloid that supposedly has an assortment of ammo in its body.",
++    "copy-from": "rc_money_fungus",
++    "death_drops": "rc_drop_ammo"
  	}
 -]
 \ No newline at end of file
@@ -4618,10 +4674,10 @@ index 056d35917941..af64bf9f3ee2 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..953a2ed53979 100644
+index fa98ccf57c19..5858ad462c6c 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
-@@ -48,5 +48,250 @@
+@@ -48,5 +48,272 @@
          [ "paper", 100 ]
        ]
      ]
@@ -4860,6 +4916,28 @@ index fa98ccf57c19..953a2ed53979 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "fuel seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_ammo",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "ammo seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -7884,10 +7962,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..0d62e5a6836e 100644
+index 83c7aca5e180..f4447ad3e5a1 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,261 @@
+@@ -2,33 +2,281 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -8164,6 +8242,26 @@ index 83c7aca5e180..0d62e5a6836e 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "fuel bush",
 +    "fruit": "rc_spawn_fuel_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_ammo",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "ammo seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with ammo.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "ammo bush",
++    "fruit": "rc_spawn_ammo_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
