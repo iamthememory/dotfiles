@@ -11,7 +11,7 @@
       {
         "condition": "ALWAYS",
         "values": [
-          { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 0.0 }
+          { "value": "CRAFTING_SPEED_MULTIPLIER", "multiply": 1.0 }
         ]
       }
     ]
