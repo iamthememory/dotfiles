@@ -28,7 +28,7 @@
       { "group": "clairsentient_matrix_crystals_group", "prob": 100 },
       { "group": "electrokinetic_matrix_crystals_group", "prob": 100 },
       { "group": "photokinetic_matrix_crystals_group", "prob": 100 },
-      { "item": "matrix_crystal_pyrokinesis", "prob": 100 },
+      { "group": "pyrokinetic_matrix_crystals_group", "prob": 100 },
       { "item": "matrix_crystal_telekinesis", "prob": 100 },
       { "item": "matrix_crystal_telepathy", "prob": 100 },
       { "item": "matrix_crystal_teleportation", "prob": 100 },
