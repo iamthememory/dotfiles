@@ -109,6 +109,10 @@ in
   # defeating the purpose of a lockscreen.
   services.picom.settings.mark-ovredir-focused = true;
 
+  # Try to fix tearing.
+  services.picom.settings.vsync = true;
+  services.picom.settings.use-damage = false;
+
   # Enable the redshift daemon to shift color to red at night.
   services.redshift.enable = true;
 
