@@ -57,14 +57,14 @@
     "name": "BASE_MANA_REGEN_TIME",
     "//": "How many hours it should take to regenerate all mana at base mana regen.",
     "stype": "float",
-    "value": 4.0
+    "value": 1.0
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 0.025
+    "value": 0.01
   },
   {
     "type": "EXTERNAL_OPTION",
