@@ -1,0 +1,44 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_vending_reinforced",
+    "copy-from": "f_vending_reinforced",
+    "name": "reinforced vending machine",
+    "extend": { "flags": [ "NO_SPOIL" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_vending_reinforced_networked",
+    "copy-from": "f_vending_reinforced_networked",
+    "name": "reinforced vending machine",
+    "extend": { "flags": [ "NO_SPOIL" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_vending_reinforced_off",
+    "copy-from": "f_vending_reinforced_off",
+    "name": "reinforced vending machine (off)",
+    "extend": { "flags": [ "NO_SPOIL" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_vending_c",
+    "copy-from": "f_vending_c",
+    "name": "vending machine",
+    "extend": { "flags": [ "NO_SPOIL" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_vending_c_networked",
+    "copy-from": "f_vending_c_networked",
+    "name": "vending machine",
+    "extend": { "flags": [ "NO_SPOIL" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_vending_c_off",
+    "copy-from": "f_vending_c_off",
+    "name": "vending machine (off)",
+    "extend": { "flags": [ "NO_SPOIL" ] }
+  }
+]
