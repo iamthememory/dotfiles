@@ -9,11 +9,17 @@
   ];
 
   home.packages = with pkgs; [
+    # A resource monitor.
+    bottom
+
     # A tool for making project directories from templates.
     cookiecutter
 
     # An ncurses TUI for seeing what files take up how much space on disk.
     gdu
+
+    # A resource monitor.
+    glances
 
     # A tool that's like top for I/O.
     iotop
