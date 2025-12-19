@@ -782,7 +782,7 @@ index e77d4cd7394f..01f9272a6340 100644
    }
  ]
 diff --git a/Items/internet/internet_missions.json b/Items/internet/internet_missions.json
-index 79d5255385a6..f0f44b10429d 100644
+index 79d5255385a6..c481fac38c96 100644
 --- a/Items/internet/internet_missions.json
 +++ b/Items/internet/internet_missions.json
 @@ -90,8 +90,8 @@
@@ -796,12 +796,30 @@ index 79d5255385a6..f0f44b10429d 100644
    {
      "id": "MISSION_CLEAN_UP_9",
      "type": "mission_definition",
+@@ -105,7 +105,7 @@
+     "monster_kill_goal": 3,
+     "invisible_on_complete": false,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "field", "random": true, "search_range": 60, "min_distance": 8, "z": 0 },
++      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 8, "z": 0 },
+       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 3, "target": true } ] }
+     },
+     "origins": [ "ORIGIN_COMPUTER" ],
+@@ -124,7 +124,7 @@
+     "monster_kill_goal": 5,
+     "invisible_on_complete": false,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "road", "random": true, "search_range": 60, "min_distance": 14, "z": 0 },
++      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 14, "z": 0 },
+       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 5, "target": true } ] }
+     },
+     "origins": [ "ORIGIN_COMPUTER" ],
 @@ -143,10 +143,10 @@
      "monster_kill_goal": 9,
      "invisible_on_complete": false,
      "start": {
 -      "assign_mission_target": { "om_terrain": "road_four_way", "random": true, "search_range": 800, "min_distance": 20, "z": 0 },
-+      "assign_mission_target": { "om_terrain": "road", "random": true, "search_range": 800, "min_distance": 20, "z": 0 },
++      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 20, "z": 0 },
        "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 9, "target": true } ] }
      },
      "origins": [ "ORIGIN_COMPUTER" ],
