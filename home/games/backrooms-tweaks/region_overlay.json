@@ -3,7 +3,6 @@
     "type": "map_extra_collection",
     "id": "backrooms",
     "copy-from": "backrooms",
-    "chance": 25,
     "extend": {
       "extras": [
         [ "mx_dormant", 50 ],
