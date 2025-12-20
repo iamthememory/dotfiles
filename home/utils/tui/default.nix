@@ -1,5 +1,6 @@
 # Curses-like terminal utilities.
 { config
+, inputs
 , lib
 , pkgs
 , ...
@@ -9,9 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    # A resource monitor.
-    bottom
-
     # A tool for making project directories from templates.
     cookiecutter
 
@@ -64,6 +62,71 @@
 
   # Use less as the default pager.
   home.sessionVariables.PAGER = "${config.home.profileDirectory}/bin/less";
+
+  # Enable bottom, a system monitor.
+  programs.bottom.enable = true;
+
+  # The settings for bottom.
+  programs.bottom.settings = with inputs.lib.solarized.colorNames; {
+    flags.battery = true;
+    flags.network_use_binary_prefix = true;
+    flags.enable_cache_memory = true;
+
+    # CPU colors.
+    styles.cpu.all_entry_color = base01;
+    styles.cpu.avg_entry_color = base1;
+    styles.cpu.cpu_core_colors = [
+      yellow
+      orange
+      red
+      magenta
+      violet
+      blue
+      cyan
+      green
+    ];
+
+    # Memory colors.
+    styles.memory.ram_color = magenta;
+    styles.memory.cache_color = red;
+    styles.memory.swap_color = yellow;
+    styles.memory.arc_color = cyan;
+    styles.memory.gpu_colors = [
+      violet
+      blue
+      green
+      orange
+    ];
+
+    # Network colors.
+    styles.network.rx_color = blue;
+    styles.network.rx_total_color = green;
+    styles.network.tx_color = yellow;
+    styles.network.tx_total_color = red;
+
+    # Battery colors.
+    styles.battery.high_battery_color = green;
+    styles.battery.medium_battery_color = yellow;
+    styles.battery.low_battery_color = red;
+
+    # Table style.
+    styles.tables.headers.color = blue;
+    styles.tables.headers.bold = true;
+
+    # Graph style.
+    styles.graphs.graph_color = base0;
+    styles.graphs.legend_color = base1;
+
+    # Widget style.
+    styles.widgets.border_color = base02;
+    styles.widgets.selected_border_color = violet;
+    styles.widgets.widget_title.color = base2;
+    styles.widgets.text.color = base1;
+    styles.widgets.selected_text.color = violet;
+    styles.widgets.selected_text.bg_color = base03;
+    styles.widgets.disabled_text.color = base0;
+    styles.widgets.thread_text.color = green;
+  };
 
   # Enable fastfetch, a way of showing system information.
   programs.fastfetch.enable = true;
