@@ -84,5 +84,13 @@
         "moves": 20
       }
     ]
+  },
+  {
+    "id": "powder_eggs",
+    "copy-from": "powder_eggs",
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "powdered egg" },
+    "extend": { "flags": [ "NUTRIENT_OVERRIDE" ] }
   }
 ]
