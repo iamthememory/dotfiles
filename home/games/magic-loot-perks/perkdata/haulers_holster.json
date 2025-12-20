@@ -11,15 +11,17 @@
     "looks_like": "ragpouch",
     "flags": [
       "ALLOWS_NATURAL_ATTACKS",
-      "INTEGRATED",
+      "AURA",
       "NO_REPAIR",
       "NO_SALVAGE",
+      "NO_TAKEOFF",
       "OVERSIZE",
       "PADDED",
       "PERSONAL",
       "SEMITANGIBLE",
       "TARDIS",
-      "UNBREAKABLE"
+      "UNBREAKABLE",
+      "UNRESTRICTED"
     ],
     "warmth": 0,
     "volume": "10 L",
