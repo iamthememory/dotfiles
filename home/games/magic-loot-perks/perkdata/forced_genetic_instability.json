@@ -8,7 +8,12 @@
       {
         "run_eocs": [
           "EOC_perk_forced_genetic_instability_check_robust",
-          "EOC_perk_forced_genetic_instability_check_unstable"
+          "EOC_perk_forced_genetic_instability_check_unstable",
+          "EOC_perk_forced_genetic_instability_check_chaotic_bad",
+          "EOC_perk_forced_genetic_instability_check_chaotic",
+          "EOC_perk_forced_genetic_instability_check_restricted",
+          "EOC_perk_forced_genetic_instability_check_resistant_genetics",
+          "EOC_perk_forced_genetic_instability_check_makayla_mutator"
         ]
       }
     ]
@@ -24,5 +29,35 @@
     "id": "EOC_perk_forced_genetic_instability_check_unstable",
     "condition": { "not": { "u_has_trait": "UNSTABLE" } },
     "effect": { "u_add_trait": "UNSTABLE" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_perk_forced_genetic_instability_check_chaotic_bad",
+    "condition": { "u_has_trait": "CHAOTIC_BAD" },
+    "effect": { "u_lose_trait": "CHAOTIC_BAD" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_perk_forced_genetic_instability_check_chaotic",
+    "condition": { "u_has_trait": "CHAOTIC" },
+    "effect": { "u_lose_trait": "CHAOTIC" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_perk_forced_genetic_instability_check_restricted",
+    "condition": { "u_has_trait": "RESTRICTED" },
+    "effect": { "u_lose_trait": "RESTRICTED" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_perk_forced_genetic_instability_check_resistant_genetics",
+    "condition": { "u_has_trait": "RESISTANT_GENETICS" },
+    "effect": { "u_lose_trait": "RESISTANT_GENETICS" }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_perk_forced_genetic_instability_check_makayla_mutator",
+    "condition": { "u_has_trait": "MAKAYLA_MUTATOR" },
+    "effect": { "u_lose_trait": "MAKAYLA_MUTATOR" }
   }
 ]
