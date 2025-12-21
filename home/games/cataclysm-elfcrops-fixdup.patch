@@ -351,7 +351,7 @@ index 000000000000..d937100f9ca2
 +  }
 +]
 diff --git a/Resource Crops Magiclysm addon/items/summoners.json b/Resource Crops Magiclysm addon/items/summoners.json
-index 9d7a999b9de1..3727a8a5f24e 100644
+index 9d7a999b9de1..bf85645525c8 100644
 --- a/Resource Crops Magiclysm addon/items/summoners.json	
 +++ b/Resource Crops Magiclysm addon/items/summoners.json	
 @@ -1,146 +1,200 @@
@@ -380,7 +380,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_animistfungus",
-+          "effect": { "u_spawn_item": "animist_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "animist_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -409,7 +409,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_biomancerfungus",
-+          "effect": { "u_spawn_item": "biomancer_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "biomancer_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -438,7 +438,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_druidfungus",
-+          "effect": { "u_spawn_item": "druid_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "druid_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -467,7 +467,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_earthshaperfungus",
-+          "effect": { "u_spawn_item": "earthshaper_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "earthshaper_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -496,7 +496,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_kelvinistfungus",
-+          "effect": { "u_spawn_item": "kelvinist_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "kelvinist_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -525,7 +525,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_magusfungus",
-+          "effect": { "u_spawn_item": "magus_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "magus_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -554,7 +554,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_stormshaperfungus",
-+          "effect": { "u_spawn_item": "stormshaper_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "stormshaper_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -583,7 +583,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_technomancerfungus",
-+          "effect": { "u_spawn_item": "technomancer_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "technomancer_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -601,7 +601,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_all_spell_books_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_all_spell_books", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_all_spell_books", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -619,7 +619,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_various_magic_items_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_various_magic_items", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_various_magic_items", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -637,7 +637,7 @@ index 9d7a999b9de1..3727a8a5f24e 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_mana_crystal_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_mana_crystal", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_mana_crystal", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2709,7 +2709,7 @@ index fccd89aa02a2..91f6eb49f111 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..7257f67a8ccf 100644
+index ce70e9badaf0..3be6528fd18c 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,1046 +1,1240 @@
@@ -2751,7 +2751,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_moneyfungus",
-+          "effect": { "u_spawn_item": "rc_drop_cashcard", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_cashcard", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2780,7 +2780,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_22fungus",
-+          "effect": { "u_spawn_item": "rc_drop_22", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_22", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2809,7 +2809,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_10mmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_10mm", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_10mm", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2856,7 +2856,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_12mmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_12mm", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_12mm", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2885,7 +2885,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_223fungus",
-+          "effect": { "u_spawn_item": "rc_drop_223", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_223", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2914,7 +2914,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_270winfungus",
-+          "effect": { "u_spawn_item": "rc_drop_270win", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_270win", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2943,7 +2943,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_300winfungus",
-+          "effect": { "u_spawn_item": "rc_drop_300win", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_300win", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -2972,7 +2972,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_3006springfungus",
-+          "effect": { "u_spawn_item": "rc_drop_3006spring", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_3006spring", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3001,7 +3001,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_300blkfungus",
-+          "effect": { "u_spawn_item": "rc_drop_300blk", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_300blk", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3030,7 +3030,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_308winfungus",
-+          "effect": { "u_spawn_item": "rc_drop_308win", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_308win", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3059,7 +3059,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_32acpfungus",
-+          "effect": { "u_spawn_item": "rc_drop_32acp", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_32acp", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3088,7 +3088,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_357magfungus",
-+          "effect": { "u_spawn_item": "rc_drop_357mag", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_357mag", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3117,7 +3117,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_357sigfungus",
-+          "effect": { "u_spawn_item": "rc_drop_357sig", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_357sig", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3146,7 +3146,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_36navyfungus",
-+          "effect": { "u_spawn_item": "rc_drop_36navy", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_36navy", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3175,7 +3175,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_38specfungus",
-+          "effect": { "u_spawn_item": "rc_drop_38spec", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_38spec", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3204,7 +3204,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_380acpfungus",
-+          "effect": { "u_spawn_item": "rc_drop_380acp", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_380acp", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3233,7 +3233,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_40swfungus",
-+          "effect": { "u_spawn_item": "rc_drop_40sw", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_40sw", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3262,7 +3262,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_40x46grenfungus",
-+          "effect": { "u_spawn_item": "rc_drop_40x46gren", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_40x46gren", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3291,7 +3291,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_40x53grenfungus",
-+          "effect": { "u_spawn_item": "rc_drop_40x53gren", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_40x53gren", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3320,7 +3320,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_410000fungus",
-+          "effect": { "u_spawn_item": "rc_drop_410000", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_410000", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3349,7 +3349,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_44magfungus",
-+          "effect": { "u_spawn_item": "rc_drop_44mag", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_44mag", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3378,7 +3378,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_44armyfungus",
-+          "effect": { "u_spawn_item": "rc_drop_44army", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_44army", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3407,7 +3407,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_45acpfungus",
-+          "effect": { "u_spawn_item": "rc_drop_45acp", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_45acp", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3436,7 +3436,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_454casufungus",
-+          "effect": { "u_spawn_item": "rc_drop_454casu", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_454casu", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3465,7 +3465,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_4570fungus",
-+          "effect": { "u_spawn_item": "rc_drop_4570", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_4570", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3494,7 +3494,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_45coltfungus",
-+          "effect": { "u_spawn_item": "rc_drop_45cold", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_45cold", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3523,7 +3523,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_46mmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_46mm", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_46mm", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3552,7 +3552,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_460rowfungus",
-+          "effect": { "u_spawn_item": "rc_drop_460row", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_460row", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3581,7 +3581,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_50bmgfungus",
-+          "effect": { "u_spawn_item": "rc_drop_50bmg", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_50bmg", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3610,7 +3610,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_500magfungus",
-+          "effect": { "u_spawn_item": "rc_drop_500mag", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_500mag", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3639,7 +3639,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_545x39fungus",
-+          "effect": { "u_spawn_item": "rc_drop_545x39", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_545x39", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3668,7 +3668,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_57x28fungus",
-+          "effect": { "u_spawn_item": "rc_drop_57x28", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_57x28", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3697,7 +3697,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_5x40fungus",
-+          "effect": { "u_spawn_item": "rc_drop_5x40", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_5x40", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3744,7 +3744,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_66rockfungus",
-+          "effect": { "u_spawn_item": "rc_drop_66rock", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_66rock", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3773,7 +3773,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_762x39fungus",
-+          "effect": { "u_spawn_item": "rc_drop_762x39", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_762x39", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3802,7 +3802,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_762x54fungus",
-+          "effect": { "u_spawn_item": "rc_drop_762x54", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_762x54", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3831,7 +3831,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_762x25fungus",
-+          "effect": { "u_spawn_item": "rc_drop_762x25", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_762x25", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3860,7 +3860,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_84x246fungus",
-+          "effect": { "u_spawn_item": "rc_drop_84x246", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_84x246", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3889,7 +3889,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_8x40fungus",
-+          "effect": { "u_spawn_item": "rc_drop_8x40", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_8x40", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3918,7 +3918,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_9x19fungus",
-+          "effect": { "u_spawn_item": "rc_drop_9x19", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_9x19", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3947,7 +3947,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_9x18makafungus",
-+          "effect": { "u_spawn_item": "rc_drop_9x18maka", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_9x18maka", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -3976,7 +3976,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_atgmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_atgm", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_atgm", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4005,7 +4005,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_barbparafungus",
-+          "effect": { "u_spawn_item": "rc_drop_barbpara", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_barbpara", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4034,7 +4034,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_cannonfungus",
-+          "effect": { "u_spawn_item": "rc_drop_cannon", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_cannon", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4063,7 +4063,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gasfungus",
-+          "effect": { "u_spawn_item": "rc_drop_gas", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_gas", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4092,7 +4092,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_1231nfungus",
-+          "effect": { "u_spawn_item": "rc_drop_1231n", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_1231n", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4121,7 +4121,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_flintlockfungus",
-+          "effect": { "u_spawn_item": "rc_drop_flintlock", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_flintlock", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4150,7 +4150,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_rebarrailfungus",
-+          "effect": { "u_spawn_item": "rc_droprebarrail_", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_droprebarrail_", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4179,7 +4179,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_paintballfungus",
-+          "effect": { "u_spawn_item": "rc_drop_paintball", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_paintball", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4208,7 +4208,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_rpgfungus",
-+          "effect": { "u_spawn_item": "rc_drop_rpg", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_rpg", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4237,7 +4237,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_shotgunfungus",
-+          "effect": { "u_spawn_item": "rc_drop_shotgun", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_shotgun", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4266,7 +4266,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_flarefungus",
-+          "effect": { "u_spawn_item": "rc_drop_flare", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_flare", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4295,7 +4295,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_cbmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_cbm2", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_cbm2", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4324,7 +4324,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_batterydisposfungus",
-+          "effect": { "u_spawn_item": "rc_drop_batterydispos", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_batterydispos", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4353,7 +4353,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_lab_libraryfungus",
-+          "effect": { "u_spawn_item": "lab_bookshelves", "use_item_group": true }
++          "effect": { "u_spawn_item": "lab_bookshelves", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -4382,7 +4382,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_exotic_books_fungus",
-+          "effect": { "u_spawn_item": "exotic_books", "use_item_group": true }
++          "effect": { "u_spawn_item": "exotic_books", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4400,7 +4400,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_many_books_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_many_books", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_many_books", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4418,7 +4418,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gunmods_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_gunmods", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_gunmods", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4436,7 +4436,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_guns_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_guns", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_guns", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4454,7 +4454,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gunmags_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_gunmags", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_gunmags", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4472,7 +4472,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_homejunk_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_homejunk", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_homejunk", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4490,7 +4490,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_forage_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_forage", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_forage", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4508,7 +4508,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_harvest_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_harvests", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_harvests", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4526,7 +4526,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_mineral_fungus",
-+          "effect": { "u_spawn_item": "mining_rock", "use_item_group": true }
++          "effect": { "u_spawn_item": "mining_rock", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4544,7 +4544,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_feather_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_feather", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_feather", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4562,7 +4562,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_bodypart_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_bodypart", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_bodypart", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4580,7 +4580,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_fuel_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_fuel", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_fuel", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
 +    }
@@ -4598,7 +4598,7 @@ index ce70e9badaf0..7257f67a8ccf 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_ammo_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_ammo", "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_ammo", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
