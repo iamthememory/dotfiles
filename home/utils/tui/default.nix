@@ -80,7 +80,7 @@
     # Disk settings.
     disk.mount_filter.is_list_ignored = true;
     disk.mount_filter.case_sensitive = true;
-    disk.mount_filter.list = "\.zfs/snapshot";
+    disk.mount_filter.list = [ "\.zfs/snapshot" ];
 
     # CPU colors.
     styles.cpu.all_entry_color = base01;
