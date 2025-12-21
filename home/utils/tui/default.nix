@@ -68,9 +68,19 @@
 
   # The settings for bottom.
   programs.bottom.settings = with inputs.lib.solarized.colorNames; {
+    # Flags
+    flags.average_cpu_row = true;
+    flags.unnormalized_cpu = true;
     flags.battery = true;
+    flags.process_memory_as_value = true;
     flags.network_use_binary_prefix = true;
+    flags.network_use_log = true;
     flags.enable_cache_memory = true;
+
+    # Disk settings.
+    disk.mount_filter.is_list_ignored = true;
+    disk.mount_filter.case_sensitive = true;
+    disk.mount_filter.list = "\.zfs/snapshot";
 
     # CPU colors.
     styles.cpu.all_entry_color = base01;
