@@ -11,42 +11,48 @@
           { "item": "pants_army" },
           { "item": "combat_shirt" },
           { "item": "socks" },
-          { "item": "sweatshirt" },
           { "item": "boots" },
           { "item": "elbow_pads" },
           { "item": "molle_large_rucksack" },
-          { "item": "kevlar" },
-          { "item": "kevlar" },
           { "item": "ballistic_vest_heavy" },
           { "item": "webbing_belt" },
           { "group": "charged_cigs" },
           { "item": "knee_pads" },
-          { "item": "wristwatch" },
           { "item": "water_clean", "container-item": "thermos" },
           { "item": "water_clean", "container-item": "thermos" },
           { "group": "starter_wallet_full" },
           { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
           { "item": "knife_KABAR", "container-item": "sheath" },
           { "item": "m9", "ammo-item": "9mm", "charges": 15, "container-item": "holster" },
-          { "item": "chestrig", "contents-group": "army_mags_m4" },
           { "group": "modular_ar15", "ammo-item": "223", "charges": 30, "contents-item": [ "shoulder_strap" ] },
           { "group": "charged_ref_lighter" },
           { "group": "full_ifak" },
           { "group": "charged_smart_phone" },
           { "group": "charged_laptop" },
-          { "group": "charged_flashlight" },
+          { "group": "charged_heavy_flashlight" },
+          { "group": "charged_smart_watch_adv" },
+          { "group": "new_eink_tablet_pcs" },
+          { "group": "army_mags_m4" },
+          { "item": "m9mag", "ammo-item": "9mm", "charges": 15 },
+          { "item": "m9mag", "ammo-item": "9mm", "charges": 15 },
           { "item": "rc_seed_seeds" },
           { "item": "rc_seed_9x19" },
+          { "item": "rc_seed_223" },
           { "item": "e_tool" },
           { "item": "rollmat" },
-          { "item": "sleeping_bag_roll" },
-          { "item": "rope_30" },
+          { "item": "sleeping_bag_roll", "custom-flags": [ "no_auto_equip" ] },
+          { "item": "rope_30", "custom-flags": [ "no_auto_equip" ] },
           { "item": "survivor_mess_kit" },
           { "item": "oil_lamp" },
-          { "item": "lamp_oil", "container-item": "fuel_tin", "charges": 4750 },
-          { "item": "internet_sim_card" },
-          { "item": "9mm", "charges": 30 },
-          { "item": "223", "charges": 60 }
+          { "item": "lamp_oil", "container-item": "fuel_tin" },
+          { "item": "internet_sim_card", "count": 2 },
+          { "item": "small_storage_battery" },
+          { "item": "hand_crank_charger" },
+          { "item": "magazine_battery_mod" },
+          { "item": "power_cord" },
+          { "item": "9mm", "charges": 60 },
+          { "item": "223", "charges": 120 },
+          { "item": "thorazine", "container-item": "null", "entry-wrapper": "bottle_plastic_pill_prescription", "count": 60 }
         ]
       },
       "male": {
@@ -58,11 +64,11 @@
         "entries": [
           { "item": "sports_bra" },
           { "item": "panties" },
-          { "item": "estrogen", "container-item": "bottle_plastic_pill_prescription", "count": 240 },
-          { "item": "estrogen", "container-item": "bottle_plastic_pill_prescription", "count": 240 }
+          { "item": "estrogen", "container-item": "null", "entry-wrapper": "bottle_plastic_pill_prescription", "count": 240 }
         ]
       }
     },
-    "spells": [ { "id": "planter_maker_spell", "level": 0 } ]
+    "spells": [ { "id": "planter_maker_spell", "level": 0 } ],
+    "traits": [ "SCHIZOPHRENIC", "perk_forced_genetic_instability", "ROBUST", "UNSTABLE" ]
   }
 ]
