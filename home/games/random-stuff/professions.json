@@ -62,6 +62,7 @@
           { "item": "estrogen", "container-item": "bottle_plastic_pill_prescription", "count": 240 }
         ]
       }
-    }
+    },
+    "spells": [ { "id": "planter_maker_spell", "level": 0 } ]
   }
 ]

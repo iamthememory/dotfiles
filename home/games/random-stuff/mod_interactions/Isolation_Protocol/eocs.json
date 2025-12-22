@@ -1,0 +1,9 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "ISO_DANGER_CLOCK",
+    "copy-from": "ISO_DANGER_CLOCK",
+    "recurrence": "5 minutes",
+    "global": true
+  }
+]

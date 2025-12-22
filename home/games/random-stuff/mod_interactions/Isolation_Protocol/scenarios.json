@@ -1,0 +1,19 @@
+[
+  {
+    "type": "scenario",
+    "id": "fractal_facility",
+    "copy-from": "fractal_facility",
+    "delete": {
+      "professions": [
+        "iso_deliveryboy",
+        "iso_cop",
+        "iso_paramedic",
+        "iso_hacker",
+        "iso_geas_knight",
+        "iso_bionic_vampire",
+        "iso_last_scion"
+      ],
+      "forbidden_traits": [ "ROBUST", "XS", "XXXL", "CHAOTIC_BAD", "QUICK", "NOMAD", "WAYFARER", "NYCTOPHOBIA" ]
+    }
+  }
+]

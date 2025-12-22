@@ -18,5 +18,30 @@
     "min_range": 1,
     "max_range": 4,
     "range_increment": 0.25
+  },
+  {
+    "id": "planter_maker_transform",
+    "type": "ter_furn_transform",
+    "furniture": [ { "result": "f_planter", "valid_furniture": [ "f_null" ], "message": "Some dirt forms into a planter." } ]
+  },
+  {
+    "id": "planter_maker_spell",
+    "type": "SPELL",
+    "name": "Form Magic Planter",
+    "description": "Will a planter into existence.",
+    "valid_targets": [ "ground" ],
+    "spell_class": "NONE",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_LEGS", "NO_HANDS" ],
+    "difficulty": 0,
+    "min_damage": 1,
+    "max_damage": 1,
+    "min_range": 5,
+    "max_range": 5,
+    "shape": "blast",
+    "energy_source": "MANA",
+    "base_energy_cost": 0,
+    "base_casting_time": 360000,
+    "effect": "ter_transform",
+    "effect_str": "planter_maker_transform"
   }
 ]
