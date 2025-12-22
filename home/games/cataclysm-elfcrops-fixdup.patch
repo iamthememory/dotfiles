@@ -221,10 +221,10 @@ index e50a8e4141d3..153103f94205 100644
 +]
 diff --git a/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json b/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json
 new file mode 100644
-index 000000000000..d937100f9ca2
+index 000000000000..9de64b1b4821
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json	
-@@ -0,0 +1,125 @@
+@@ -0,0 +1,133 @@
 +[
 +  {
 +    "type": "item_group",
@@ -250,7 +250,9 @@ index 000000000000..d937100f9ca2
 +    "id": "rc_drop_various_magic_items",
 +    "items": [
 +      { "group": "alchemy_items", "prob": 10 },
++      { "group": "altered_object_i", "prob": 10 },
 +      { "group": "animist_items", "prob": 10 },
++      { "group": "art_book", "prob": 10 },
 +      { "group": "biomancer_items", "prob": 10 },
 +      { "group": "boss_treasure_items", "prob": 10 },
 +      { "group": "classless_items", "prob": 10 },
@@ -293,6 +295,7 @@ index 000000000000..d937100f9ca2
 +      { "group": "items_of_elvenkind", "prob": 10 },
 +      { "group": "kelvinist_items", "prob": 10 },
 +      { "group": "lair_black_dragon_treasure", "prob": 10 },
++      { "group": "magic_and_esoteric_books", "prob": 10 },
 +      { "group": "magic_plants_common", "prob": 10, "count": [ 1, 5 ] },
 +      { "group": "magic_plants_rare", "prob": 10, "count": [ 1, 5 ] },
 +      { "group": "magic_plants_uncommon", "prob": 10, "count": [ 1, 5 ] },
@@ -306,13 +309,17 @@ index 000000000000..d937100f9ca2
 +      { "group": "magic_tools_and_loot", "prob": 10 },
 +      { "group": "magical_reagents", "prob": 10 },
 +      { "group": "magus_items", "prob": 10 },
-+      { "group": "magic_and_esoteric_books", "prob": 10 },
 +      { "group": "mana_leech_shackle_and_unlock_scroll", "prob": 4 },
++      { "group": "microlab_artifacts", "prob": 10 },
 +      { "group": "organic_materials", "count": [ 1, 10 ] },
 +      { "group": "parabolan_armor", "prob": 10 },
++      { "group": "portalmancy_i", "prob": 10 },
 +      { "group": "potions_common", "prob": 10 },
 +      { "group": "potions_rare", "prob": 10 },
 +      { "group": "potions_uncommon", "prob": 10 },
++      { "group": "ps_artifact_medium", "prob": 10 },
++      { "group": "ps_artifact_strong", "prob": 10 },
++      { "group": "ps_artifact_weak", "prob": 10 },
 +      { "group": "ravenfolk_jewelry", "prob": 10 },
 +      { "group": "spell_scroll_tier_0", "prob": 10 },
 +      { "group": "spell_scroll_tier_1", "prob": 10 },
@@ -326,6 +333,7 @@ index 000000000000..d937100f9ca2
 +      { "group": "spellbook_tier_3", "prob": 10 },
 +      { "group": "spellcraft_books", "prob": 10 },
 +      { "group": "stormshaper_items", "prob": 10 },
++      { "group": "strange_temple_artifacts", "prob": 10 },
 +      { "group": "technomancer_items", "prob": 10 },
 +      { "group": "xedra_thaumaturgical_lab_secret_spells", "prob": 10 },
 +      { "item": "bracken_eye", "prob": 10, "count": [ 1, 5 ] },
@@ -708,6 +716,155 @@ index 000000000000..31ea245747ba
 +        { "group": "sanguine_cult_consumables", "prob": 10 },
 +        { "group": "sanguine_cult_crafting", "prob": 10 },
 +        { "group": "sanguine_ritual", "prob": 10 }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json
+new file mode 100644
+index 000000000000..774ceb3f5075
+--- /dev/null
++++ b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json	
+@@ -0,0 +1,73 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_all_spell_books",
++    "extend": {
++      "items": [
++        { "group": "dist_matrix_crystals", "prob": 10 },
++        { "group": "dist_meditation_books_begin", "prob": 20 },
++        { "group": "dist_meditation_books_int", "prob": 10 },
++        { "group": "psionic_recipes_advanced", "prob": 4 },
++        { "group": "psionic_recipes_armor", "prob": 4 },
++        { "group": "psionic_recipes_beginner", "prob": 4 },
++        { "group": "psionic_recipes_medicine", "plob": 4 },
++        { "group": "psionic_recipes_powers", "prob": 4 },
++        { "group": "psionic_recipes_tools", "prob": 4 },
++        { "group": "psionic_recipes_weapons", "prob": 4 },
++        { "group": "survivor_matrix_crystal_recipes", "prob": 2 },
++        { "item": "manual_psionics_advan", "prob": 2 }
++      ]
++    }
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_various_magic_items",
++    "extend": {
++      "items": [
++        { "group": "clairsentience_telepathy_matrix_technology", "prob": 2 },
++        { "group": "collection_force_field_and_note", "prob": 1 },
++        { "group": "collection_matrix_dust", "prob": 10 },
++        { "group": "concentrated_matrix_elixirs", "prob": 10 },
++        { "group": "dist_electronoetic_batteries", "prob": 5 },
++        { "group": "dist_matrix_crystals", "prob": 10 },
++        { "group": "dist_matrix_tools", "prob": 4 },
++        { "group": "dist_matrix_translocation_items", "prob": 2 },
++        { "group": "dist_psionic_shield_belts", "prob": 2 },
++        { "group": "dist_pulse_rifles_heavy_prototype", "prob": 2 },
++        { "group": "matrix_crystal_biokin_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_clair_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_drained_dust", "prob": 10 },
++        { "group": "matrix_crystal_electrokin_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_photokin_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_pyrokin_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_telekin_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_telepath_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_teleport_dust_group", "prob": 10 },
++        { "group": "matrix_crystal_vitakin_dust_group", "prob": 10 },
++        { "group": "psi_lab", "prob": 4 },
++        { "group": "psi_lab_no_recipes", "prob": 4 },
++        { "group": "psi_testing_materials", "prob": 4 },
++        { "group": "psionic_recipes_advanced", "prob": 4 },
++        { "group": "psionic_recipes_armor", "prob": 4 },
++        { "group": "psionic_recipes_beginner", "prob": 4 },
++        { "group": "psionic_recipes_medicine", "plob": 4 },
++        { "group": "psionic_recipes_powers", "prob": 4 },
++        { "group": "psionic_recipes_tools", "prob": 4 },
++        { "group": "psionic_recipes_weapons", "prob": 4 },
++        { "group": "survivor_matrix_crystal_recipes", "prob": 2 }
++      ]
++    }
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_mana_crystal",
++    "extend": {
++      "items": [
++        { "group": "collection_matrix_dust", "prob": 4 }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops Magiclysm addon/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops Magiclysm addon/mod_interactions/xedra_evolved/fungusdrops.json
+new file mode 100644
+index 000000000000..9320548c16bf
+--- /dev/null
++++ b/Resource Crops Magiclysm addon/mod_interactions/xedra_evolved/fungusdrops.json	
+@@ -0,0 +1,64 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_various_magic_items",
++    "copy-from": "rc_drop_various_magic_items",
++    "extend": {
++      "items": [
++        { "group": "spell_spawned_goblin_fruit", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_ierde", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_arvore", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_homullus", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_salamander", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_sylph", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_undine", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_brownie", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_selkie", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_pooka", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_trow", "prob": 10 },
++        { "group": "spell_spawned_goblin_fruit_noble", "prob": 10 },
++        { "group": "xed_cubical_office", "prob": 10 },
++        { "group": "xed_office", "prob": 10 },
++        { "group": "deduction_books", "prob": 10 },
++        { "group": "softdrugs", "prob": 10 },
++        { "group": "drugs_pharmacy", "prob": 10 },
++        { "group": "harddrugs", "prob": 10 },
++        { "group": "xed_notes", "prob": 10 },
++        { "group": "xed_books_crafting", "prob": 10 },
++        { "group": "hedge_magic_books", "prob": 10 },
++        { "group": "nether_cabin_ritual_cult_meeting_room", "prob": 10 },
++        { "group": "nether_cabin_ritual_ingredients", "prob": 10 },
++        { "group": "map_extra_fae", "prob": 10 },
++        { "group": "xe_nether_cult_artifact", "prob": 10 },
++        { "group": "mon_dream_shadow_death_drops", "prob": 10 },
++        { "group": "mon_dream_shadowbeast_death_drops", "prob": 10 },
++        { "group": "mon_dream_shadowman_death_drops", "prob": 10 },
++        { "group": "xe_shadowman_spell_drops", "prob": 10 },
++        { "group": "hedge_magick_materials", "prob": 10 },
++        { "group": "alchemical_materials", "prob": 10 },
++        { "group": "alchemy_mutagen_samples", "prob": 10 },
++        { "group": "alchemical_recipes", "prob": 10 },
++        { "group": "xe_classless_spells_low", "prob": 10 },
++        { "group": "xe_classless_spells_mid", "prob": 10 },
++        { "group": "xe_classless_spells_high", "prob": 10 },
++        { "group": "xe_dreamer_spells_low", "prob": 10 },
++        { "group": "xe_dreamer_spells_mid", "prob": 10 },
++        { "group": "xe_dreamer_spells_high", "prob": 10 },
++        { "group": "xe_dreamsmith_spells_low", "prob": 10 },
++        { "group": "xe_dreamsmith_spells_mid", "prob": 10 },
++        { "group": "xe_dreamsmith_spells_high", "prob": 10 },
++        { "group": "xe_eater_spells_low", "prob": 10 },
++        { "group": "xe_eater_spells_mid", "prob": 10 },
++        { "group": "xe_eater_spells_high", "prob": 10 },
++        { "group": "xe_inventor_spells_low", "prob": 10 },
++        { "group": "xe_inventor_spells_mid", "prob": 10 },
++        { "group": "xe_inventor_spells_high", "prob": 10 },
++        { "group": "xe_all_spells_low", "prob": 10 },
++        { "group": "xe_all_spells_mid", "prob": 10 },
++        { "group": "xe_all_spells_high", "prob": 10 },
++        { "group": "xe_border_patrol_evidence", "prob": 10 }
 +      ]
 +    }
 +  }
@@ -1673,7 +1830,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..b4220f3222a3 100644
+index df4ffa673168..26de12553e9a 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -1768,7 +1925,7 @@ index df4ffa673168..b4220f3222a3 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,486 @@
+@@ -615,9 +568,505 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -1935,19 +2092,36 @@ index df4ffa673168..b4220f3222a3 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_homejunk",
 +    "items": [
++      { "group": "SUS_appliances_cupboard", "prob": 10 },
 +      { "group": "SUS_bathroom_cabinet", "prob": 10 },
 +      { "group": "SUS_bathroom_medicine", "prob": 10 },
++      { "group": "SUS_bathroom_medicine", "prob": 10 },
 +      { "group": "SUS_bathroom_sink", "prob": 10 },
++      { "group": "SUS_cookware", "prob": 10 },
++      { "group": "SUS_dishes", "prob": 10 },
++      { "group": "SUS_dishwasher", "prob": 10 },
 +      { "group": "SUS_hair_drawer", "prob": 10 },
 +      { "group": "SUS_junk_drawer", "prob": 10 },
 +      { "group": "SUS_junk_drawer_artsy", "prob": 10 },
 +      { "group": "SUS_junk_drawer_handy", "prob": 10 },
 +      { "group": "SUS_junk_drawer_messy", "prob": 10 },
 +      { "group": "SUS_junk_drawer_tidy", "prob": 10 },
++      { "group": "SUS_kitchen_sink", "prob": 10 },
++      { "group": "SUS_knife_drawer", "prob": 10 },
 +      { "group": "SUS_office_desk", "prob": 10 },
 +      { "group": "SUS_office_filing_cabinet", "prob": 10 },
 +      { "group": "SUS_office_mess", "prob": 10 },
 +      { "group": "SUS_office_supplies", "prob": 10 },
++      { "group": "SUS_oven", "prob": 10 },
++      { "group": "SUS_silverware", "prob": 10 },
++      { "group": "SUS_trash_dumpster", "prob": 10 },
++      { "group": "SUS_trash_floor", "prob": 10 },
++      { "group": "SUS_trash_hardware", "prob": 10 },
++      { "group": "SUS_trash_roof", "prob": 10 },
++      { "group": "SUS_trash_sewing", "prob": 10 },
++      { "group": "SUS_trash_trashcan", "prob": 10 },
++      { "group": "SUS_trash_trashcan_public", "prob": 10 },
++      { "group": "SUS_utensils", "prob": 10 },
 +      { "group": "bedroom", "prob": 10 },
 +      { "group": "kitchen", "prob": 10 },
 +      { "group": "livingroom", "prob": 10 },
@@ -2028,7 +2202,9 @@ index df4ffa673168..b4220f3222a3 100644
 +      { "item": "pomegranate", "prob": 10, "count": [ 2, 5 ] },
 +      { "item": "grapefruit", "prob": 10, "count": [ 2, 5 ] },
 +      { "item": "cholla_bud", "prob": 10, "count": [ 2, 5 ] },
-+      { "item": "cactus_pad", "prob": 10, "count": [ 1, 2 ] }
++      { "item": "cactus_pad", "prob": 10, "count": [ 1, 2 ] },
++      { "item": "twig", "prob": 10, "count": [ 2, 10 ] },
++      { "item": "leaves", "prob": 10, "count": [ 10, 50 ] }
 +    ]
 +  },
 +  {
@@ -2044,7 +2220,7 @@ index df4ffa673168..b4220f3222a3 100644
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
-+    "//": "At a high survival skill, the goal is about 2kg per harvest. At a skill of 7, you harvest on average 5.25 fungus, so every one of these drops should be 380 g, or about 400 grams.",
++    "//": "At a high survival skill, the goal is about 2kg per harvest. At a skill of 7, you harvest on average 5.25 fungus, so every one of these drops should be 380 g, or about 400 grams. The probabilities were the mass ratios multiplied by 2000 for all the possible corpses, and added together. Single-count drops were given a ratio of 0.01.",
 +    "items": [
 +      { "item": "acidchitin_piece", "prob": 260, "count": [ 4, 5 ] },
 +      { "item": "animal_blood_ball", "prob": 420, "count": [ 1, 2 ] },
@@ -2085,7 +2261,7 @@ index df4ffa673168..b4220f3222a3 100644
 +      { "item": "fat", "prob": 2920, "count": [ 17, 19 ] },
 +      { "item": "fat_tainted", "prob": 1060, "count": [ 2, 2 ] },
 +      { "item": "fat_tainted_human", "prob": 1140, "count": [ 2, 2 ] },
-+      { "item": "feather", "prob": 140, "count": [ 380, 40 ] },
++      { "item": "feather", "prob": 140, "count": [ 380, 400 ] },
 +      { "item": "fish", "prob": 2680, "count": [ 2, 3 ] },
 +      { "item": "fish_scrap", "prob": 420, "count": [ 25, 28 ] },
 +      { "item": "flesh_golem_heart", "prob": 10, "count": [ 0, 1 ] },
@@ -2157,7 +2333,7 @@ index df4ffa673168..b4220f3222a3 100644
 +      { "item": "sheet_kevlar", "prob": 40, "count": [ 14, 16 ] },
 +      { "item": "sheet_kevlar_layered", "prob": 40, "count": [ 1, 1 ] },
 +      { "item": "sheet_nomex", "prob": 20, "count": [ 11, 13 ] },
-+      { "item": "sinew", "prob": 649.9, "count": [ 380, 400 ] },
++      { "item": "sinew", "prob": 650, "count": [ 380, 400 ] },
 +      { "item": "skull_bear", "prob": 80, "count": [ 0, 1 ] },
 +      { "item": "skull_beaver", "prob": 40, "count": [ 1, 2 ] },
 +      { "item": "skull_beaver_huge", "prob": 20, "count": [ 0, 1 ] },
@@ -2261,7 +2437,7 @@ index df4ffa673168..b4220f3222a3 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..91f6eb49f111 100644
+index fccd89aa02a2..960a8d538b91 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
 @@ -1,35 +1,39 @@
@@ -2312,7 +2488,7 @@ index fccd89aa02a2..91f6eb49f111 100644
      "copy-from": "anesthetic",
      "name": "Blackout fruit",
      "description": "A fruit filled with anesthetic. Smells like chloroform.",
-@@ -37,21 +41,377 @@
+@@ -37,21 +41,376 @@
      "count": 100
    },
    {
@@ -2469,7 +2645,6 @@ index fccd89aa02a2..91f6eb49f111 100644
 +    "name": { "str": "liquid ball" },
 +    "weight": "250 g",
 +    "color": "white",
-+    "spoils_in": "90 days",
 +    "comestible_type": "INVALID",
 +    "symbol": "~",
 +    "quench": 0,
@@ -4605,6 +4780,572 @@ index ce70e9badaf0..3be6528fd18c 100644
    }
 -]
 \ No newline at end of file
++]
+diff --git a/Resource Crops/mod_interactions/Arcana/fungusdrops.json b/Resource Crops/mod_interactions/Arcana/fungusdrops.json
+new file mode 100644
+index 000000000000..141aed0e20e3
+--- /dev/null
++++ b/Resource Crops/mod_interactions/Arcana/fungusdrops.json	
+@@ -0,0 +1,61 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "group": "arcana_hunt_random", "prob": 103, "count": [ 1, 1 ] },
++        { "group": "biollante", "prob": 16, "count": [ 1, 1 ] },
++        { "group": "fungal_sting", "prob": 17, "count": [ 1, 1 ] },
++        { "group": "ps_artifact_medium", "prob": 20, "count": [ 1, 1 ] },
++        { "group": "ps_artifact_strong", "prob": 20, "count": [ 1, 1 ] },
++        { "group": "ps_artifact_weak", "prob": 20, "count": [ 1, 1 ] },
++        { "item": "amplifier", "prob": 20, "count": [ 3, 4 ] },
++        { "item": "amulet_exotic", "prob": 15, "count": [ 1, 1 ] },
++        { "item": "amulet_exotic_empowered", "prob": 5, "count": [ 1, 1 ] },
++        { "item": "arcana_mech_shem", "prob": 20, "count": [ 1, 1 ] },
++        { "item": "ash", "prob": 20, "count": [ 380, 400 ] },
++        { "item": "blob_gem", "prob": 72, "count": [ 1, 1 ] },
++        { "item": "bone_tainted", "prob": 500, "count": [ 1, 2 ] },
++        { "item": "bone_twisted", "prob": 150, "count": [ 1, 2 ] },
++        { "item": "copper", "prob": 20, "count": [ 76, 80 ] },
++        { "item": "dermatik_sting", "prob": 126, "count": [ 1, 1 ] },
++        { "item": "draconic_heart", "prob": 20, "count": [ 1, 1 ] },
++        { "item": "e_scrap", "prob": 20, "count": [ 27, 29 ] },
++        { "item": "engraved_stone", "prob": 67, "count": [ 4, 5 ] },
++        { "item": "essence", "prob": 169, "count": [ 1, 10 ] },
++        { "item": "essence_blood", "prob": 69, "count": [ 3, 30 ] },
++        { "item": "essence_dull", "prob": 15507, "count": [ 15, 150 ] },
++        { "item": "essence_pure", "prob": 90, "count": [ 1, 5 ] },
++        { "item": "fat_tainted", "prob": 100, "count": [ 2, 2 ] },
++        { "item": "graboid_fang", "prob": 75, "count": [ 1, 1 ] },
++        { "item": "gracken_knuckles", "prob": 70, "count": [ 1, 2 ] },
++        { "item": "inflorescent_root", "prob": 100, "count": [ 3, 4 ] },
++        { "item": "iridescent_plate", "prob": 197, "count": [ 4, 5 ] },
++        { "item": "iron_thorn", "prob": 67, "count": [ 1, 1 ] },
++        { "item": "leaves", "prob": 120, "count": [ 12, 14 ] },
++        { "item": "living_bramble", "prob": 35, "count": [ 19, 20 ] },
++        { "item": "meat_tainted", "prob": 200, "count": [ 1, 2 ] },
++        { "item": "monster_fang", "prob": 100, "count": [ 1, 1 ] },
++        { "item": "monster_tear", "prob": 94, "count": [ 1, 2 ] },
++        { "item": "plant_fibre", "prob": 800, "count": [ 380, 400 ] },
++        { "item": "raw_tainted_leather", "prob": 100, "count": [ 4, 4 ] },
++        { "item": "scourge_staff", "prob": 20, "count": [ 1, 1 ] },
++        { "item": "scrap", "prob": 20, "count": [ 7, 8 ] },
++        { "item": "shadow_gem", "prob": 149, "count": [ 3, 4 ] },
++        { "item": "sinew", "prob": 2, "count": [ 380, 400 ] },
++        { "item": "slime_sample", "prob": 40, "count": [ 3, 4 ] },
++        { "item": "stick", "prob": 154, "count": [ 0, 1 ] },
++        { "item": "triffid_queen_flower", "prob": 100, "count": [ 6, 7 ] },
++        { "item": "veggy", "prob": 563, "count": [ 3, 4 ] },
++        { "item": "veggy_tainted", "prob": 500, "count": [ 3, 4 ] },
++        { "item": "vine_30", "prob": 40, "count": [ 0, 1 ] },
++        { "item": "vortex_shard", "prob": 84, "count": [ 1, 3 ] },
++        { "item": "wire", "prob": 20, "count": [ 2, 3 ] },
++        { "item": "withered", "prob": 583, "count": [ 19, 20 ] },
++        { "item": "wyrmskin_piece", "prob": 176, "count": [ 3, 4 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/Cata++/fungusdrops.json b/Resource Crops/mod_interactions/Cata++/fungusdrops.json
+new file mode 100644
+index 000000000000..3342ec797179
+--- /dev/null
++++ b/Resource Crops/mod_interactions/Cata++/fungusdrops.json	
+@@ -0,0 +1,24 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "item": "alloy_sheet", "prob": 210, "count": [ 0, 1 ] },
++        { "item": "blood_tainted_ball", "prob": 1200, "count": [ 1, 2 ] },
++        { "item": "bone_human", "prob": 480, "count": [ 1, 2 ] },
++        { "item": "bone_tainted", "prob": 1200, "count": [ 1, 2 ] },
++        { "item": "fat_tainted", "prob": 3360, "count": [ 2, 2 ] },
++        { "item": "hstomach_large", "prob": 40, "count": [ 2, 3 ] },
++        { "item": "meat_tainted", "prob": 7800, "count": [ 1, 2 ] },
++        { "item": "mutant_blood_ball", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "mutant_human_fat", "prob": 400, "count": [ 17, 19 ] },
++        { "item": "mutant_human_flesh", "prob": 800, "count": [ 1, 2 ] },
++        { "item": "raw_hleather", "prob": 40, "count": [ 4, 4 ] },
++        { "item": "raw_tainted_leather", "prob": 20, "count": [ 4, 4 ] },
++        { "item": "sinew", "prob": 4, "count": [ 380, 400 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/DinoMod/fungusdrops.json b/Resource Crops/mod_interactions/DinoMod/fungusdrops.json
+new file mode 100644
+index 000000000000..d62afaedd95a
+--- /dev/null
++++ b/Resource Crops/mod_interactions/DinoMod/fungusdrops.json	
+@@ -0,0 +1,40 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "item": "blood_acid_ball", "prob": 400, "count": [ 2, 2 ] },
++        { "item": "blood_tainted_ball", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "bone", "prob": 1700, "count": [ 1, 2 ] },
++        { "item": "bone_tainted", "prob": 800, "count": [ 1, 2 ] },
++        { "item": "down_feather", "prob": 22, "count": [ 380, 400 ] },
++        { "item": "fat_tainted", "prob": 640, "count": [ 2, 2 ] },
++        { "item": "feather", "prob": 44, "count": [ 380, 400 ] },
++        { "item": "large_bone", "prob": 3400, "count": [ 0, 1 ] },
++        { "item": "meat_tainted", "prob": 2000, "count": [ 1, 2 ] },
++        { "item": "raw_tainted_leather", "prob": 160, "count": [ 4, 4 ] },
++        { "item": "sinew", "prob": 3, "count": [ 380, 400 ] },
++        { "item": "skull_acrocanthosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_allosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_centrosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_large", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_med", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_med", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_pred_large", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_pred_large", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_pred_med", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_pred_small", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_dino_small", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_giganotosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_lokiceratops", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_styracosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_torosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_triceratops", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_tyrannosaurus", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "stomach_sauropod", "prob": 20, "count": [ 1, 2 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/magiclysm/fungusdrops.json b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json
+new file mode 100644
+index 000000000000..f7ec35fac554
+--- /dev/null
++++ b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json	
+@@ -0,0 +1,69 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "item": "adrenal_gland_large", "prob": 440, "count": [ 1, 2 ] },
++        { "item": "black_dragon_hide_raw", "prob": 200, "count": [ 0, 1 ] },
++        { "item": "blood_ball", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "blood_tainted_ball", "prob": 1000, "count": [ 1, 2 ] },
++        { "item": "bone", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "bone_demihuman", "prob": 200, "count": [ 1, 2 ] },
++        { "item": "bone_tainted", "prob": 300, "count": [ 1, 2 ] },
++        { "item": "brain", "prob": 6, "count": [ 8, 9 ] },
++        { "item": "bulette_pearl", "prob": 50, "count": [ 3, 4 ] },
++        { "item": "bulette_plate", "prob": 70, "count": [ 0, 1 ] },
++        { "item": "demihuman_blood_ball", "prob": 200, "count": [ 1, 1 ] },
++        { "item": "demihuman_brain", "prob": 10, "count": [ 8, 9 ] },
++        { "item": "demihuman_fat", "prob": 360, "count": [ 17, 19 ] },
++        { "item": "demihuman_flesh", "prob": 580, "count": [ 1, 2 ] },
++        { "item": "demihuman_heart", "prob": 20, "count": [ 6, 8 ] },
++        { "item": "demihuman_kidney", "prob": 4, "count": [ 8, 9 ] },
++        { "item": "demihuman_liver", "prob": 20, "count": [ 8, 9 ] },
++        { "item": "demihuman_lung", "prob": 7, "count": [ 8, 9 ] },
++        { "item": "demihuman_marrow", "prob": 10, "count": [ 6, 7 ] },
++        { "item": "demihuman_meat_scrap", "prob": 20, "count": [ 14, 15 ] },
++        { "item": "demihuman_stomach", "prob": 60, "count": [ 5, 6 ] },
++        { "item": "demihuman_sweetbread", "prob": 4, "count": [ 8, 9 ] },
++        { "item": "demon_chitin_piece", "prob": 200, "count": [ 4, 5 ] },
++        { "item": "demon_spider_fang", "prob": 40, "count": [ 1, 2 ] },
++        { "item": "down_feather", "prob": 56, "count": [ 380, 400 ] },
++        { "item": "dragon_black_scale", "prob": 100, "count": [ 1, 1 ] },
++        { "item": "dragon_blood_ball", "prob": 200, "count": [ 1, 1 ] },
++        { "item": "fat", "prob": 360, "count": [ 17, 19 ] },
++        { "item": "fat_tainted", "prob": 500, "count": [ 2, 2 ] },
++        { "item": "feather", "prob": 150, "count": [ 380, 400 ] },
++        { "item": "hairball", "prob": 60, "count": [ 25, 27 ] },
++        { "item": "heart", "prob": 20, "count": [ 6, 8 ] },
++        { "item": "kidney", "prob": 4, "count": [ 8, 9 ] },
++        { "item": "liver", "prob": 20, "count": [ 8, 9 ] },
++        { "item": "lung", "prob": 7, "count": [ 8, 9 ] },
++        { "item": "meat", "prob": 1000, "count": [ 1, 2 ] },
++        { "item": "meat_dragon", "prob": 360, "count": [ 1, 2 ] },
++        { "item": "meat_mutant_tainted", "prob": 640, "count": [ 1, 2 ] },
++        { "item": "meat_tainted", "prob": 1200, "count": [ 1, 2 ] },
++        { "item": "mutant_fat", "prob": 200, "count": [ 17, 19 ] },
++        { "item": "mutant_meat", "prob": 660, "count": [ 1, 2 ] },
++        { "item": "owlbear_stone", "prob": 60, "count": [ 0, 1 ] },
++        { "item": "parabolan_wool_staple", "prob": 140, "count": [ 3, 4 ] },
++        { "item": "plant_sac", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "poultry", "prob": 600, "count": [ 3, 4 ] },
++        { "item": "poultry_scrap", "prob": 80, "count": [ 18, 20 ] },
++        { "item": "raw_demihumanleather", "prob": 140, "count": [ 4, 4 ] },
++        { "item": "raw_fur", "prob": 60, "count": [ 3, 4 ] },
++        { "item": "raw_hleather", "prob": 40, "count": [ 4, 4 ] },
++        { "item": "raw_leather", "prob": 20, "count": [ 4, 4 ] },
++        { "item": "raw_tainted_fur", "prob": 30, "count": [ 3, 4 ] },
++        { "item": "scream_mush", "prob": 12000, "count": [ 5, 6 ] },
++        { "item": "sinew", "prob": 22, "count": [ 380, 400 ] },
++        { "item": "stick_fiber", "prob": 200, "count": [ 4, 5 ] },
++        { "item": "stirge_proboscis", "prob": 20, "count": [ 3, 4 ] },
++        { "item": "tainted_innards", "prob": 60, "count": [ 1, 2 ] },
++        { "item": "tainted_marrow", "prob": 200, "count": [ 6, 7 ] },
++        { "item": "veggy", "prob": 800, "count": [ 3, 4 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/magiclysm/items.json b/Resource Crops/mod_interactions/magiclysm/items.json
+new file mode 100644
+index 000000000000..c646be6f327f
+--- /dev/null
++++ b/Resource Crops/mod_interactions/magiclysm/items.json	
+@@ -0,0 +1,9 @@
++[
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "dragon_blood_ball",
++    "copy-from": "abstract_blood_ball",
++    "name": { "str": "dragon blood ball" }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/magiclysm/uncraft.json b/Resource Crops/mod_interactions/magiclysm/uncraft.json
+new file mode 100644
+index 000000000000..21337ed537b0
+--- /dev/null
++++ b/Resource Crops/mod_interactions/magiclysm/uncraft.json	
+@@ -0,0 +1,10 @@
++[
++  {
++    "result": "dragon_blood_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "dragon_blood", 400 ] ] ]
++  }
++]
+diff --git a/Resource Crops/mod_interactions/my_sweet_cataclysm/fungusdrops.json b/Resource Crops/mod_interactions/my_sweet_cataclysm/fungusdrops.json
+new file mode 100644
+index 000000000000..c69f43d801bf
+--- /dev/null
++++ b/Resource Crops/mod_interactions/my_sweet_cataclysm/fungusdrops.json	
+@@ -0,0 +1,23 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "item": "blood_chocolate_ball", "prob": 100, "count": [ 1, 2 ] },
++        { "item": "bone_sugar", "prob": 1300, "count": [ 0, 1 ] },
++        { "item": "caff_gum_flesh", "prob": 1400, "count": [ 1, 2 ] },
++        { "item": "candy3_flesh", "prob": 1400, "count": [ 2, 4 ] },
++        { "item": "cookie_flesh", "prob": 1400, "count": [ 2, 4 ] },
++        { "item": "cow_candy_flesh", "prob": 1400, "count": [ 2, 3 ] },
++        { "item": "grahmcrackers_shell", "prob": 1500, "count": [ 4, 5 ] },
++        { "item": "gum_flesh", "prob": 1400, "count": [ 1, 2 ] },
++        { "item": "licorice_flesh", "prob": 1400, "count": [ 0, 1 ] },
++        { "item": "marshmallow_flesh", "prob": 1400, "count": [ 7, 8 ] },
++        { "item": "smores_flesh", "prob": 1300, "count": [ 2, 3 ] },
++        { "item": "syrup_corn_ball", "prob": 400, "count": [ 1, 1 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/my_sweet_cataclysm/items.json b/Resource Crops/mod_interactions/my_sweet_cataclysm/items.json
+new file mode 100644
+index 000000000000..27c9b4accf75
+--- /dev/null
++++ b/Resource Crops/mod_interactions/my_sweet_cataclysm/items.json	
+@@ -0,0 +1,16 @@
++[
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "blood_chocolate_ball",
++    "copy-from": "abstract_blood_ball",
++    "name": { "str": "chocolate ichor ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "syrup_corn_ball",
++    "copy-from": "abstract_liquid_ball",
++    "name": { "str": "corn syrup ball" }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/my_sweet_cataclysm/uncraft.json b/Resource Crops/mod_interactions/my_sweet_cataclysm/uncraft.json
+new file mode 100644
+index 000000000000..97d6e8b5de25
+--- /dev/null
++++ b/Resource Crops/mod_interactions/my_sweet_cataclysm/uncraft.json	
+@@ -0,0 +1,18 @@
++[
++  {
++    "result": "blood_chocolate_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "blood_chocolate", 1 ] ] ]
++  },
++  {
++    "result": "syrup_corn_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "syrup_corn", 20 ] ] ]
++  }
++]
+diff --git a/Resource Crops/mod_interactions/pm_world/fungusdrops.json b/Resource Crops/mod_interactions/pm_world/fungusdrops.json
+new file mode 100644
+index 000000000000..b7cb8666d030
+--- /dev/null
++++ b/Resource Crops/mod_interactions/pm_world/fungusdrops.json	
+@@ -0,0 +1,18 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "item": "blood_ball", "prob": 1000, "count": [ 1, 2 ] },
++        { "item": "bone_human", "prob": 1000, "count": [ 1, 2 ] },
++        { "item": "corrupted_distortion_organ", "prob": 5, "count": [ 1, 1 ] },
++        { "item": "mutant_fat", "prob": 1000, "count": [ 17, 19 ] },
++        { "item": "mutant_meat", "prob": 3320, "count": [ 1, 2 ] },
++        { "item": "sinew", "prob": 4, "count": [ 380, 400 ] },
++        { "item": "tainted_distortion_organ", "prob": 8, "count": [ 1, 1 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra-both-classs/items.json b/Resource Crops/mod_interactions/xedra-both-classs/items.json
+new file mode 100644
+index 000000000000..3ec3b71d2779
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra-both-classs/items.json	
+@@ -0,0 +1,20 @@
++[
++  {
++    "id": "rc_spawn_seed_fungus",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon seed fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with seeds in its body.",
++    "use_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_seed_fungus",
++          "effect": { "u_spawn_item": "arvore_seeds", "suppress_message": true, "use_item_group": true }
++        }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra-both-classs/recipes.json b/Resource Crops/mod_interactions/xedra-both-classs/recipes.json
+new file mode 100644
+index 000000000000..4dcaf798ddeb
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra-both-classs/recipes.json	
+@@ -0,0 +1,24 @@
++[
++  {
++    "type": "recipe",
++    "result": "rc_seed_seeds",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "seed seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra-both-classs/seeds.json b/Resource Crops/mod_interactions/xedra-both-classs/seeds.json
+new file mode 100644
+index 000000000000..22311df99ffc
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra-both-classs/seeds.json	
+@@ -0,0 +1,22 @@
++[
++  {
++    "id": "rc_seed_seeds",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "seed seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with other seeds.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "seed bush",
++    "fruit": "rc_spawn_seed_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json
+new file mode 100644
+index 000000000000..d69445b879ae
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json	
+@@ -0,0 +1,67 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_bodypart",
++    "extend": {
++      "items": [
++        { "item": "ant_stomach", "prob": 40, "count": [ 3, 4 ] },
++        { "item": "ash", "prob": 800, "count": [ 380, 400 ] },
++        { "item": "birchbark", "prob": 80, "count": [ 1, 2 ] },
++        { "item": "blank_blood_ball", "prob": 200, "count": [ 1, 2 ] },
++        { "item": "blood_tainted_ball", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "bone", "prob": 900, "count": [ 1, 2 ] },
++        { "item": "bone_demihuman", "prob": 240, "count": [ 1, 2 ] },
++        { "item": "bone_marrow", "prob": 10, "count": [ 6, 7 ] },
++        { "item": "brain", "prob": 10, "count": [ 8, 9 ] },
++        { "item": "carnivore_stomach", "prob": 80, "count": [ 5, 6 ] },
++        { "item": "chitin_piece", "prob": 200, "count": [ 4, 5 ] },
++        { "item": "demihuman_brain", "prob": 10, "count": [ 8, 9 ] },
++        { "item": "demihuman_fat", "prob": 200, "count": [ 17, 19 ] },
++        { "item": "demihuman_flesh", "prob": 400, "count": [ 1, 2 ] },
++        { "item": "demihuman_heart", "prob": 20, "count": [ 6, 8 ] },
++        { "item": "demihuman_kidney", "prob": 4, "count": [ 8, 9 ] },
++        { "item": "demihuman_liver", "prob": 20, "count": [ 8, 9 ] },
++        { "item": "demihuman_lung", "prob": 7, "count": [ 8, 9 ] },
++        { "item": "demihuman_marrow", "prob": 10, "count": [ 6, 7 ] },
++        { "item": "demihuman_meat_scrap", "prob": 20, "count": [ 14, 15 ] },
++        { "item": "demihuman_stomach", "prob": 20, "count": [ 5, 6 ] },
++        { "item": "demihuman_sweetbread", "prob": 4, "count": [ 8, 9 ] },
++        { "item": "endochitin", "prob": 20, "count": [ 4, 5 ] },
++        { "item": "fae_blood_ball", "prob": 1200, "count": [ 1, 2 ] },
++        { "item": "fae_fur", "prob": 120, "count": [ 3, 4 ] },
++        { "item": "fae_meat", "prob": 3160, "count": [ 1, 2 ] },
++        { "item": "fae_meat_scrap", "prob": 1140, "count": [ 12, 14 ] },
++        { "item": "fae_organs", "prob": 476, "count": [ 1, 2 ] },
++        { "item": "fat", "prob": 300, "count": [ 17, 19 ] },
++        { "item": "fat_tainted", "prob": 320, "count": [ 2, 2 ] },
++        { "item": "grappler_sinew", "prob": 1, "count": [ 380, 400 ] },
++        { "item": "herbivore_stomach", "prob": 20, "count": [ 5, 6 ] },
++        { "item": "material_sand", "prob": 200, "count": [ 47, 50 ] },
++        { "item": "meat_tainted", "prob": 1000, "count": [ 1, 2 ] },
++        { "item": "omnivore_stomach", "prob": 80, "count": [ 5, 6 ] },
++        { "item": "pebble", "prob": 200, "count": [ 5, 7 ] },
++        { "item": "raw_demihumanleather", "prob": 20, "count": [ 4, 4 ] },
++        { "item": "rock", "prob": 800, "count": [ 0, 1 ] },
++        { "item": "ruminant_stomach", "prob": 140, "count": [ 2, 3 ] },
++        { "item": "runner_sinew", "prob": 1, "count": [ 380, 400 ] },
++        { "item": "sinew", "prob": 10, "count": [ 380, 400 ] },
++        { "item": "skull_bear", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_march_lord", "prob": 20, "count": [ 0, 1 ] },
++        { "item": "skull_rodent", "prob": 20, "count": [ 126, 134 ] },
++        { "item": "small_carnivore_stomach", "prob": 20, "count": [ 10, 12 ] },
++        { "item": "small_herbivore_stomach", "prob": 20, "count": [ 10, 12 ] },
++        { "item": "small_omnivore_stomach", "prob": 80, "count": [ 10, 12 ] },
++        { "item": "stick", "prob": 300, "count": [ 0, 1 ] },
++        { "item": "stick_fiber", "prob": 1000, "count": [ 4, 5 ] },
++        { "item": "stomach_large", "prob": 20, "count": [ 2, 3 ] },
++        { "item": "tainted_innards", "prob": 600, "count": [ 1, 2 ] },
++        { "item": "tainted_marrow", "prob": 20, "count": [ 6, 7 ] },
++        { "item": "triffid_heart_chunk", "prob": 400, "count": [ 0, 1 ] },
++        { "item": "underdeveloped_sinew", "prob": 1, "count": [ 380, 400 ] },
++        { "item": "vampire_blood_ball_rc", "prob": 40, "count": [ 1, 2 ] },
++        { "item": "veggy", "prob": 680, "count": [ 3, 4 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra_evolved/items.json b/Resource Crops/mod_interactions/xedra_evolved/items.json
+new file mode 100644
+index 000000000000..4de3e6003e98
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra_evolved/items.json	
+@@ -0,0 +1,23 @@
++[
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "blank_blood_ball",
++    "copy-from": "abstract_blood_ball",
++    "name": { "str": "blank blood ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "fae_blood_ball",
++    "copy-from": "abstract_blood_ball",
++    "name": { "str": "fae blood ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "id": "vampire_blood_ball_rc",
++    "copy-from": "abstract_blood_ball",
++    "name": { "str": "vampire blood ball" }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra_evolved/uncraft.json b/Resource Crops/mod_interactions/xedra_evolved/uncraft.json
+new file mode 100644
+index 000000000000..b0e01df09ad8
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra_evolved/uncraft.json	
+@@ -0,0 +1,26 @@
++[
++  {
++    "result": "blank_blood_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "blank_blood", 1 ] ] ]
++  },
++  {
++    "result": "fae_blood_ball",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "fae_blood", 1 ] ] ]
++  },
++  {
++    "result": "vampire_blood_ball_rc",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "30 s",
++    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "vampire_blood", 1 ] ] ]
++  }
 +]
 diff --git a/Resource Crops/modinfo.json b/Resource Crops/modinfo.json
 index d893e6888f4b..7c79f692eb68 100644
