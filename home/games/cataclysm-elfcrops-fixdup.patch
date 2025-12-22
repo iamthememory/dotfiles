@@ -722,7 +722,7 @@ index 000000000000..31ea245747ba
 +]
 diff --git a/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json
 new file mode 100644
-index 000000000000..774ceb3f5075
+index 000000000000..f4992b0657ec
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json	
 @@ -0,0 +1,73 @@
@@ -739,7 +739,7 @@ index 000000000000..774ceb3f5075
 +        { "group": "psionic_recipes_advanced", "prob": 4 },
 +        { "group": "psionic_recipes_armor", "prob": 4 },
 +        { "group": "psionic_recipes_beginner", "prob": 4 },
-+        { "group": "psionic_recipes_medicine", "plob": 4 },
++        { "group": "psionic_recipes_medicine", "prob": 4 },
 +        { "group": "psionic_recipes_powers", "prob": 4 },
 +        { "group": "psionic_recipes_tools", "prob": 4 },
 +        { "group": "psionic_recipes_weapons", "prob": 4 },
@@ -780,7 +780,7 @@ index 000000000000..774ceb3f5075
 +        { "group": "psionic_recipes_advanced", "prob": 4 },
 +        { "group": "psionic_recipes_armor", "prob": 4 },
 +        { "group": "psionic_recipes_beginner", "prob": 4 },
-+        { "group": "psionic_recipes_medicine", "plob": 4 },
++        { "group": "psionic_recipes_medicine", "prob": 4 },
 +        { "group": "psionic_recipes_powers", "prob": 4 },
 +        { "group": "psionic_recipes_tools", "prob": 4 },
 +        { "group": "psionic_recipes_weapons", "prob": 4 },
@@ -5129,11 +5129,11 @@ index 000000000000..b7cb8666d030
 +    }
 +  }
 +]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classs/items.json b/Resource Crops/mod_interactions/xedra-both-classs/items.json
+diff --git a/Resource Crops/mod_interactions/xedra-both-classes/items.json b/Resource Crops/mod_interactions/xedra-both-classes/items.json
 new file mode 100644
 index 000000000000..3ec3b71d2779
 --- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classs/items.json	
++++ b/Resource Crops/mod_interactions/xedra-both-classes/items.json	
 @@ -0,0 +1,20 @@
 +[
 +  {
@@ -5155,11 +5155,11 @@ index 000000000000..3ec3b71d2779
 +    }
 +  }
 +]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classs/recipes.json b/Resource Crops/mod_interactions/xedra-both-classs/recipes.json
+diff --git a/Resource Crops/mod_interactions/xedra-both-classes/recipes.json b/Resource Crops/mod_interactions/xedra-both-classes/recipes.json
 new file mode 100644
 index 000000000000..4dcaf798ddeb
 --- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classs/recipes.json	
++++ b/Resource Crops/mod_interactions/xedra-both-classes/recipes.json	
 @@ -0,0 +1,24 @@
 +[
 +  {
@@ -5185,11 +5185,11 @@ index 000000000000..4dcaf798ddeb
 +    ]
 +  }
 +]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classs/seeds.json b/Resource Crops/mod_interactions/xedra-both-classs/seeds.json
+diff --git a/Resource Crops/mod_interactions/xedra-both-classes/seeds.json b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json
 new file mode 100644
 index 000000000000..22311df99ffc
 --- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classs/seeds.json	
++++ b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json	
 @@ -0,0 +1,22 @@
 +[
 +  {
