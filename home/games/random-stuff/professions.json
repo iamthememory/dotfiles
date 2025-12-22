@@ -1,0 +1,67 @@
+[
+  {
+    "type": "profession",
+    "id": "unskilled_militia",
+    "name": "Equipped Savior",
+    "description": "You were never anything special, but as the world ended, you heard a voice promise you to prepare you for what was to come, in exchange for you doing your part in the chaos to kill everything that didn't belong, and were given a gun.  You think that's what happened, at least.  You keep seeing things lately.",
+    "points": 8,
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "pants_army" },
+          { "item": "combat_shirt" },
+          { "item": "socks" },
+          { "item": "sweatshirt" },
+          { "item": "boots" },
+          { "item": "elbow_pads" },
+          { "item": "molle_large_rucksack" },
+          { "item": "kevlar" },
+          { "item": "kevlar" },
+          { "item": "ballistic_vest_heavy" },
+          { "item": "webbing_belt" },
+          { "group": "charged_cigs" },
+          { "item": "knee_pads" },
+          { "item": "wristwatch" },
+          { "item": "water_clean", "container-item": "thermos" },
+          { "item": "water_clean", "container-item": "thermos" },
+          { "group": "starter_wallet_full" },
+          { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
+          { "item": "knife_KABAR", "container-item": "sheath" },
+          { "item": "m9", "ammo-item": "9mm", "charges": 15, "container-item": "holster" },
+          { "item": "chestrig", "contents-group": "army_mags_m4" },
+          { "group": "modular_ar15", "ammo-item": "223", "charges": 30, "contents-item": [ "shoulder_strap" ] },
+          { "group": "charged_ref_lighter" },
+          { "group": "full_ifak" },
+          { "group": "charged_smart_phone" },
+          { "group": "charged_laptop" },
+          { "group": "charged_flashlight" },
+          { "item": "rc_seed_seeds" },
+          { "item": "rc_seed_9x19" },
+          { "item": "e_tool" },
+          { "item": "rollmat" },
+          { "item": "sleeping_bag_roll" },
+          { "item": "rope_30" },
+          { "item": "survivor_mess_kit" },
+          { "item": "oil_lamp" },
+          { "item": "lamp_oil", "container-item": "fuel_tin", "charges": 4750 },
+          { "item": "internet_sim_card" },
+          { "item": "9mm", "charges": 30 },
+          { "item": "223", "charges": 60 }
+        ]
+      },
+      "male": {
+        "entries": [
+          { "item": "boxer_shorts" }
+        ]
+      },
+      "female": {
+        "entries": [
+          { "item": "sports_bra" },
+          { "item": "panties" },
+          { "item": "estrogen", "container-item": "bottle_plastic_pill_prescription", "count": 240 },
+          { "item": "estrogen", "container-item": "bottle_plastic_pill_prescription", "count": 240 }
+        ]
+      }
+    }
+  }
+]
