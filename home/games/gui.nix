@@ -83,6 +83,7 @@ in
         src = inputs.cataclysm-dda;
 
         patches = [
+          ./cataclysm-84297.patch
           ./cataclysm-bionics-lower-saving.patch
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-custom-options.patch
