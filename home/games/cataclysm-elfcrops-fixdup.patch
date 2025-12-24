@@ -2147,7 +2147,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..26de12553e9a 100644
+index df4ffa673168..f30a58b47a85 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -2717,8 +2717,8 @@ index df4ffa673168..26de12553e9a 100644
 +      { "item": "chem_turpentine_ball", "prob": 10 },
 +      { "item": "camphine_ball", "prob": 10 },
 +      { "item": "crude_lamp_oil_ball", "prob": 10 },
-+      { "item": "small_propane_tank", "prob": 10 },
-+      { "item": "small_biogas_tank", "prob": 10 },
++      { "item": "small_propane_tank", "prob": 10, "charges": 3000 },
++      { "item": "biogas", "container-item": "small_biogas_tank", "prob": 10 },
 +      { "item": "tinyweldtank", "prob": 10 }
 +    ]
 +  },
