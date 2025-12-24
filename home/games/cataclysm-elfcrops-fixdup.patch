@@ -2147,7 +2147,7 @@ index d52300a7328b..6378c3b592e4 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..f30a58b47a85 100644
+index df4ffa673168..ee9ae03bd8a3 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -2249,19 +2249,19 @@ index df4ffa673168..f30a58b47a85 100644
 -      { "item": "light_disposable_cell"},
 -      { "item": "medium_disposable_cell"},
 -      { "item": "heavy_disposable_cell"}
-+      { "item": "light_minus_disposable_cell"},
-+      { "item": "light_minus_battery_cell"},
-+      { "item": "light_battery_cell"},
-+      { "item": "light_cell_rechargeable"},
-+      { "item": "medium_battery_cell"},
-+      { "item": "heavy_battery_cell"},
-+      { "item": "heavy_plus_battery_cell"},
-+      { "item": "heavy_atomic_battery_cell"},
-+      { "item": "huge_atomic_battery_cell"},
-+      { "item": "battery_car"},
-+      { "item": "battery_motorbike"},
-+      { "item": "medium_storage_battery"},
-+      { "item": "small_storage_battery"}
++      { "item": "light_minus_disposable_cell", "charges": 200000 },
++      { "item": "light_minus_battery_cell", "charges": 200000 },
++      { "item": "light_battery_cell", "charges": 200000 },
++      { "item": "light_cell_rechargeable", "charges": 200000 },
++      { "item": "medium_battery_cell", "charges": 200000 },
++      { "item": "heavy_battery_cell", "charges": 200000 },
++      { "item": "heavy_plus_battery_cell", "charges": 200000 },
++      { "item": "heavy_atomic_battery_cell", "charges": 200000 },
++      { "item": "huge_atomic_battery_cell", "charges": 200000 },
++      { "item": "battery_car", "charges": 200000 },
++      { "item": "battery_motorbike", "charges": 200000 },
++      { "item": "medium_storage_battery", "charges": 200000 },
++      { "item": "small_storage_battery", "charges": 200000 }
 +    ]
 +  },
 +  {
