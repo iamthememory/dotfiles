@@ -6110,7 +6110,7 @@ index d31c70211938..2dd0bb90ca23 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/cloth recipes.json b/Resource Crops/recipes/cloth recipes.json
-index 66efe4b1c652..ac82c2301c66 100644
+index 66efe4b1c652..d9f4764bfd33 100644
 --- a/Resource Crops/recipes/cloth recipes.json	
 +++ b/Resource Crops/recipes/cloth recipes.json	
 @@ -25,32 +25,6 @@
@@ -6146,9 +6146,180 @@ index 66efe4b1c652..ac82c2301c66 100644
    {
      "type": "recipe",
      "result": "rc_seed_thread",
-@@ -259,4 +233,4 @@
+@@ -243,7 +217,7 @@
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+-        "recipe_name": "mattress seeds"
++        "recipe_name": "fur pelt seeds"
+       }
+     },
+     "difficulty": 3,
+@@ -258,5 +232,166 @@
+         [ "fur", 10]
        ]
      ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_nylon",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "synthetic fabric seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_canvas_patch",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "canvas patch seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_lycra_patch",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "Lycra patch seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_denim_patch",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "denim patch seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_neoprene",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "neoprene patch seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_faux_fur",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "faux fur seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_kevlar_patch",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "kevlar patch seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
    }
 -]
 \ No newline at end of file
@@ -8475,10 +8646,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/cloth seeds.json b/Resource Crops/seeds/cloth seeds.json
-index 2ba932551057..3c13e4f28958 100644
+index 2ba932551057..c0571a30dfa1 100644
 --- a/Resource Crops/seeds/cloth seeds.json	
 +++ b/Resource Crops/seeds/cloth seeds.json	
-@@ -2,161 +2,181 @@
+@@ -2,161 +2,321 @@
  	{
      "id": "rc_seed_sheet",
      "copy-from": "seed",
@@ -8775,6 +8946,146 @@ index 2ba932551057..3c13e4f28958 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "fur pelt bush",
 +    "fruit": "fur",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_nylon",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "synthetic fabric seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow synthetic fabric.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "synthetic fabric bush",
++    "fruit": "nylon",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_canvas_patch",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "canvas patch seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow canvas.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "canvas patch bush",
++    "fruit": "canvas_patch",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_lycra_patch",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "Lycra patch seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow Lycra.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "Lycra patch bush",
++    "fruit": "lycra_patch",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_denim_patch",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "denim patch seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow denim.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "denim bush",
++    "fruit": "denim_patch",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_neoprene",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "neoprene patch seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow neoprene.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "neoprene patch bush",
++    "fruit": "neoprene",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_faux_fur",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "faux fur patch seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow faux fur.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "faux fur patch bush",
++    "fruit": "faux_fur",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_kevlar_patch",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "kevlar patch seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow kevlar.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "kevlar patch bush",
++    "fruit": "kevlar_patch",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
