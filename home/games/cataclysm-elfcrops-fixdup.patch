@@ -961,11 +961,229 @@ index 585163e93996..000000000000
 -  }
 -]
 \ No newline at end of file
+diff --git a/Resource Crops Magiclysm addon/recipes/alchemy recipes.json b/Resource Crops Magiclysm addon/recipes/alchemy recipes.json
+index d51f51330ff0..fd7cf31c00d6 100644
+--- a/Resource Crops Magiclysm addon/recipes/alchemy recipes.json	
++++ b/Resource Crops Magiclysm addon/recipes/alchemy recipes.json	
+@@ -2,10 +2,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_bulettePlate",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -27,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_alumentum",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -52,10 +54,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_manadust",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -74,4 +77,4 @@
+       ]
+     ]
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Resource Crops Magiclysm addon/recipes/butchering recipes.json b/Resource Crops Magiclysm addon/recipes/butchering recipes.json
+index ab5923a8de5d..05cf31201dba 100644
+--- a/Resource Crops Magiclysm addon/recipes/butchering recipes.json	
++++ b/Resource Crops Magiclysm addon/recipes/butchering recipes.json	
+@@ -2,10 +2,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_blackScale",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -27,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_blackHide",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -52,10 +54,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_demonchitinPiece",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -74,4 +77,4 @@
+       ]
+     ]
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/Resource Crops Magiclysm addon/recipes/lootbox recipes.json b/Resource Crops Magiclysm addon/recipes/lootbox recipes.json
-index b6918cb84a69..7393e2dda131 100644
+index b6918cb84a69..1803b69de692 100644
 --- a/Resource Crops Magiclysm addon/recipes/lootbox recipes.json	
 +++ b/Resource Crops Magiclysm addon/recipes/lootbox recipes.json	
-@@ -198,5 +198,93 @@
+@@ -2,10 +2,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_animist",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -27,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_biomancer",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -52,10 +54,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_druid",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -77,10 +80,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_earthshaper",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -102,10 +106,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_kelvinist",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -127,10 +132,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_magus",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -152,10 +158,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_stormshaper",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -177,10 +184,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_technomancer",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -198,5 +206,97 @@
          [ "rune_technomancer", 10 ]
        ]
      ]
@@ -973,10 +1191,11 @@ index b6918cb84a69..7393e2dda131 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_all_spell_books",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -995,10 +1214,11 @@ index b6918cb84a69..7393e2dda131 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_various_magic_items",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -1017,10 +1237,11 @@ index b6918cb84a69..7393e2dda131 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_mana_crystal",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -1039,10 +1260,11 @@ index b6918cb84a69..7393e2dda131 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_parabolan_wool",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -1057,6 +1279,101 @@ index b6918cb84a69..7393e2dda131 100644
 +        [ "rc_seed_mat", 1]
 +      ]
 +    ]
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Resource Crops Magiclysm addon/recipes/metal recipes.json b/Resource Crops Magiclysm addon/recipes/metal recipes.json
+index 0e346e119eeb..d670b333c57f 100644
+--- a/Resource Crops Magiclysm addon/recipes/metal recipes.json	
++++ b/Resource Crops Magiclysm addon/recipes/metal recipes.json	
+@@ -2,10 +2,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_oriLump",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -27,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_oriIngot",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -52,10 +54,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_mithLump",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -77,10 +80,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_mithIngot",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -102,10 +106,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_oriFrame",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -127,10 +132,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_oriFrameLight",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -149,4 +155,4 @@
+       ]
+     ]
    }
 -]
 \ No newline at end of file
@@ -6039,10 +6356,43 @@ index d2e40675584b..000000000000
 -]
 \ No newline at end of file
 diff --git a/Resource Crops/recipes/ammo recipes.json b/Resource Crops/recipes/ammo recipes.json
-index d31c70211938..2dd0bb90ca23 100644
+index d31c70211938..bf9f9151a3b0 100644
 --- a/Resource Crops/recipes/ammo recipes.json	
 +++ b/Resource Crops/recipes/ammo recipes.json	
-@@ -68,29 +68,6 @@
+@@ -2,8 +2,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_22",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -25,8 +25,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_10mm",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -48,8 +48,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_12mm",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -68,34 +68,11 @@
        ]
      ]
    },
@@ -6072,7 +6422,333 @@ index d31c70211938..2dd0bb90ca23 100644
    {
      "type": "recipe",
      "result": "rc_seed_223",
-@@ -781,29 +758,6 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -117,8 +94,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_270win",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -140,8 +117,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_300win",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -163,8 +140,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_3006spring",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -186,8 +163,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_300blk",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -209,8 +186,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_308win",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -232,8 +209,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_32acp",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -255,8 +232,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_357mag",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -278,8 +255,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_357sig",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -301,8 +278,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_36navy",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -324,8 +301,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_38spec",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -347,8 +324,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_380acp",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -370,8 +347,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_40sw",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -393,8 +370,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_40x46gren",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -416,8 +393,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_40x53gren",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -439,8 +416,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_410000",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -462,8 +439,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_44mag",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -485,8 +462,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_44army",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -508,8 +485,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_45acp",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -531,8 +508,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_454casu",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -554,8 +531,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_4570",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -577,8 +554,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_45colt",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -600,8 +577,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_46mm",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -623,8 +600,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_460row",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -646,8 +623,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_50bmg",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -669,8 +646,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_500mag",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -692,8 +669,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_545x39",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -715,8 +692,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_57x28",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -738,8 +715,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_5x40",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -761,8 +738,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_66rock",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -781,34 +758,11 @@
        ]
      ]
    },
@@ -6102,6 +6778,211 @@ index d31c70211938..2dd0bb90ca23 100644
    {
      "type": "recipe",
      "result": "rc_seed_762x39",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -830,8 +784,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_762x54",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -853,8 +807,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_762x25",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -876,8 +830,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_84x246",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -899,8 +853,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_8x40",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -922,8 +876,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_9x19",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -945,8 +899,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_9x18maka",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -968,8 +922,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_atgm",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -991,8 +945,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_barbpara",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1014,8 +968,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cannon",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1037,8 +991,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_gas",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1060,8 +1014,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_1231n",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1083,8 +1037,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_flintlock",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1106,8 +1060,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_rebarrail",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1129,8 +1083,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_paintball",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1152,8 +1106,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_rpg",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1175,8 +1129,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_shotgun",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1198,8 +1152,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_flare",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -1221,8 +1175,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_oxyacetylene",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
 @@ -1241,4 +1195,4 @@
        ]
      ]
@@ -6109,11 +6990,38 @@ index d31c70211938..2dd0bb90ca23 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/Resource Crops/recipes/categories.json b/Resource Crops/recipes/categories.json
+new file mode 100644
+index 000000000000..a5bf879306a7
+--- /dev/null
++++ b/Resource Crops/recipes/categories.json	
+@@ -0,0 +1,10 @@
++[
++  {
++    "type": "recipe_category",
++    "id": "CC_RESOURCE_SEEDS",
++    "recipe_subcategories": [
++      "CSC_ALL",
++      "CSC_RESOURCE_SEEDS_RESOURCE SEEDS"
++    ]
++  }
++]
 diff --git a/Resource Crops/recipes/cloth recipes.json b/Resource Crops/recipes/cloth recipes.json
-index 66efe4b1c652..d9f4764bfd33 100644
+index 66efe4b1c652..9bb1ec87b096 100644
 --- a/Resource Crops/recipes/cloth recipes.json	
 +++ b/Resource Crops/recipes/cloth recipes.json	
-@@ -25,32 +25,6 @@
+@@ -2,8 +2,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_sheet",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -25,37 +25,11 @@
        ]
      ]
    },
@@ -6146,7 +7054,89 @@ index 66efe4b1c652..d9f4764bfd33 100644
    {
      "type": "recipe",
      "result": "rc_seed_thread",
-@@ -243,7 +217,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -80,8 +54,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_longstring",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -106,8 +80,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_longrope",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -132,8 +106,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_leather",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -158,8 +132,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_nomex",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -184,8 +158,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_kevlarlayer",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -210,8 +184,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_mattress",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -236,14 +210,14 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_furpelt",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
@@ -6163,8 +7153,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_nylon",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6186,8 +7176,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_canvas_patch",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6209,8 +7199,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_lycra_patch",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6232,8 +7222,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_denim_patch",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6255,8 +7245,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_neoprene",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6278,8 +7268,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_faux_fur",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6301,8 +7291,8 @@ index 66efe4b1c652..d9f4764bfd33 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_kevlar_patch",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6325,10 +7315,80 @@ index 66efe4b1c652..d9f4764bfd33 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/electrical recipes.json b/Resource Crops/recipes/electrical recipes.json
-index c90d1db823f3..418ff246db42 100644
+index c90d1db823f3..9eb532ba591a 100644
 --- a/Resource Crops/recipes/electrical recipes.json	
 +++ b/Resource Crops/recipes/electrical recipes.json	
-@@ -123,5 +123,30 @@
+@@ -2,10 +2,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_amplifier",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -27,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_powerConv",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -52,10 +54,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_elecScrap",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -77,10 +80,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_circuitBoard",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -102,10 +106,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_solarcell",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -123,5 +128,31 @@
          [ "solar_cell", 10 ]
        ]
      ]
@@ -6336,10 +7396,11 @@ index c90d1db823f3..418ff246db42 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_magnetron",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6362,18 +7423,73 @@ index c90d1db823f3..418ff246db42 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/food recipes.json b/Resource Crops/recipes/food recipes.json
-index 056d35917941..af64bf9f3ee2 100644
+index 056d35917941..5c2772a020f4 100644
 --- a/Resource Crops/recipes/food recipes.json	
 +++ b/Resource Crops/recipes/food recipes.json	
-@@ -114,6 +114,75 @@
+@@ -2,8 +2,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_meat",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -25,8 +25,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_meatMut",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -48,8 +48,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_meatTaint",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -71,8 +71,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_meatHum",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -94,8 +94,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_meatDemHum",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -114,11 +114,80 @@
        ]
      ]
    },
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_fish",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6395,8 +7511,8 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_roe",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6418,8 +7534,8 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_butter",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6441,7 +7557,173 @@ index 056d35917941..af64bf9f3ee2 100644
    {
      "type": "recipe",
      "result": "rc_seed_pizzaSup",
-@@ -430,5 +499,119 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -140,8 +209,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_pizzaMeat",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -163,8 +232,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_pizzaChee",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -186,8 +255,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_pizzaVeg",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -209,10 +278,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_flour",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -234,10 +304,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_biscuit",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -259,10 +330,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_smores",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -284,10 +356,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cookies",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -309,10 +382,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cereal_wheat",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -334,10 +408,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_pemmican",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -359,10 +434,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_marsh",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -384,10 +460,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_graham",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -409,10 +486,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_toastem",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -430,5 +508,120 @@
          [ "toastem", 10 ], [ "toastem2", 10 ], [ "toastem3", 10 ]
        ]
      ]
@@ -6449,8 +7731,8 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_raw_milk_berry",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6472,8 +7754,8 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_chocolate",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6495,8 +7777,8 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_maple_sap",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6518,8 +7800,8 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_water_berry",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6541,10 +7823,11 @@ index 056d35917941..af64bf9f3ee2 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_sugar",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6564,10 +7847,38 @@ index 056d35917941..af64bf9f3ee2 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..5858ad462c6c 100644
+index fa98ccf57c19..4ebe8d78e2b0 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
-@@ -48,5 +48,272 @@
+@@ -2,10 +2,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_lab_library",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -27,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_exotic_books",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -48,5 +50,284 @@
          [ "paper", 100 ]
        ]
      ]
@@ -6575,10 +7886,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_many_books",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6600,10 +7912,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_gunmods",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6622,10 +7935,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_guns",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6644,10 +7958,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_gunmags",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6666,10 +7981,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_homejunk",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6688,10 +8004,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_forage",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6710,10 +8027,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_harvest",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6732,10 +8050,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_mineral",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6754,10 +8073,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_feather",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6776,10 +8096,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_bodypart",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6798,10 +8119,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_fuel",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6820,10 +8142,11 @@ index fa98ccf57c19..5858ad462c6c 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_ammo",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
 +    "book_learn": {
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
@@ -6842,10 +8165,563 @@ index fa98ccf57c19..5858ad462c6c 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/Resource Crops/recipes/metal recipes.json b/Resource Crops/recipes/metal recipes.json
+index 0c07206ed14f..fd40a926193d 100644
+--- a/Resource Crops/recipes/metal recipes.json	
++++ b/Resource Crops/recipes/metal recipes.json	
+@@ -2,8 +2,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_metalsheet",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -28,10 +28,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_metalsheetsmall",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -53,8 +54,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_steellump",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -76,8 +77,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_steelchunk",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -99,8 +100,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_scrapmetal",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -122,8 +123,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_spike",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -145,8 +146,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_pipe",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -168,8 +169,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_steelplating",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -191,8 +192,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_rebar",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -214,8 +215,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_hinge",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -237,8 +238,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_wire",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -260,8 +261,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_nail",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -283,8 +284,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_hdframe",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -306,8 +307,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_frame",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -329,8 +330,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_metaltank",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -352,8 +353,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_copperwire",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -375,8 +376,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_copper",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -398,8 +399,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_lead",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -421,8 +422,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_tin",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -444,8 +445,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_silver",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -467,8 +468,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_gold",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -490,10 +491,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_chain",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -515,10 +517,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_plate_mil",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -540,10 +543,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_solder",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -562,4 +566,4 @@
+       ]
+     ]
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Resource Crops/recipes/misc recipes.json b/Resource Crops/recipes/misc recipes.json
+index 213d70f52239..0f1da066efcc 100644
+--- a/Resource Crops/recipes/misc recipes.json	
++++ b/Resource Crops/recipes/misc recipes.json	
+@@ -2,8 +2,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_ducttape",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -25,8 +25,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_soil",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -48,8 +48,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_clay",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -71,8 +71,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_brick",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -94,8 +94,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_concrete",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -117,8 +117,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_rock",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -140,8 +140,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_resinpod",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -163,8 +163,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_mortar",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -186,8 +186,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_plasticsheet",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -209,8 +209,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cbm",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -232,10 +232,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cbmPow",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -257,10 +258,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cbmPowII",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -283,8 +285,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_batterydispos",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -306,8 +308,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_ferti",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -329,10 +331,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_solarpanel",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -354,10 +357,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_solarpanelv2",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -379,10 +383,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_heatElement",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -404,10 +409,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_plasticChunk",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -429,10 +435,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_sand",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -454,10 +461,11 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cement",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
+     "book_learn": {
+       "rc_textbook_infseeds": {
+         "skill_level": 5,
+@@ -476,4 +484,4 @@
+       ]
+     ]
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/Resource Crops/recipes/recipes.json b/Resource Crops/recipes/recipes.json
-index acefc75df0a2..40f609e76696 100644
+index acefc75df0a2..aae667544787 100644
 --- a/Resource Crops/recipes/recipes.json	
 +++ b/Resource Crops/recipes/recipes.json	
+@@ -2,8 +2,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_mat",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
 @@ -16,7 +16,7 @@
      "time": "20 m",
      "autolearn": true,
@@ -6855,7 +8731,170 @@ index acefc75df0a2..40f609e76696 100644
      "components": [
        [
          [ "seed_blackberries", 4 ],
-@@ -416,7 +416,7 @@
+@@ -87,8 +87,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_bsting",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -110,8 +110,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_bpoison",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -133,8 +133,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_wpoison",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -156,8 +156,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_honey",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -179,8 +179,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_gunpowder",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -202,8 +202,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_pu244",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -225,8 +225,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_bombFungicid",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -248,8 +248,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_bombTear",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -271,8 +271,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_bombInsecticid",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -294,8 +294,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_purifier",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -317,8 +317,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_anesthetic",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -340,8 +340,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_rubber",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -363,8 +363,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_cashcard",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -386,8 +386,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_chicken",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -409,14 +409,14 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_reptile",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
@@ -6864,7 +8903,40 @@ index acefc75df0a2..40f609e76696 100644
        }
      },
      "difficulty": 3,
-@@ -498,7 +498,7 @@
+@@ -432,8 +432,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_ant",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -455,8 +455,8 @@
+   {
+     "type": "recipe",
+     "result": "rc_seed_spider",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -478,8 +478,8 @@
+       {
+     "type": "recipe",
+     "result": "rc_seed_glass",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -498,11 +498,11 @@
        ]
      ]
    },
@@ -6872,8 +8944,14 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_glassTemp",
-     "category": "CC_FOOD",
-@@ -521,7 +521,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -521,11 +521,11 @@
        ]
      ]
    },
@@ -6881,8 +8959,14 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_glassReinf",
-     "category": "CC_FOOD",
-@@ -544,7 +544,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -544,11 +544,11 @@
        ]
      ]
    },
@@ -6890,8 +8974,14 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_plank",
-     "category": "CC_FOOD",
-@@ -567,7 +567,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -567,11 +567,11 @@
        ]
      ]
    },
@@ -6899,8 +8989,14 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_longstout",
-     "category": "CC_FOOD",
-@@ -590,7 +590,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -590,11 +590,11 @@
        ]
      ]
    },
@@ -6908,8 +9004,14 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_woodpanel",
-     "category": "CC_FOOD",
-@@ -613,7 +613,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -613,11 +613,11 @@
        ]
      ]
    },
@@ -6917,8 +9019,14 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_log",
-     "category": "CC_FOOD",
-@@ -636,7 +636,7 @@
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
+@@ -636,11 +636,11 @@
        ]
      ]
    },
@@ -6926,7 +9034,13 @@ index acefc75df0a2..40f609e76696 100644
 +  {
      "type": "recipe",
      "result": "rc_seed_woodbeam",
-     "category": "CC_FOOD",
+-    "category": "CC_FOOD",
+-    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
+     "skill_used": "fabrication",
+     "skills_required": [["cooking", 5], ["fabrication", 5]],
+     "book_learn": {
 @@ -658,5 +658,115 @@
          [ "rc_seed_mat", 1]
        ]
@@ -6935,8 +9049,8 @@ index acefc75df0a2..40f609e76696 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_rocksalt",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6958,8 +9072,8 @@ index acefc75df0a2..40f609e76696 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_tallow",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -6981,8 +9095,8 @@ index acefc75df0a2..40f609e76696 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_wax",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
@@ -7022,8 +9136,8 @@ index acefc75df0a2..40f609e76696 100644
 +  {
 +    "type": "recipe",
 +    "result": "rc_seed_wool",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
 +    "skill_used": "fabrication",
 +    "skills_required": [["cooking", 5], ["fabrication", 5]],
 +    "book_learn": {
