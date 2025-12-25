@@ -221,7 +221,7 @@ index e50a8e4141d3..153103f94205 100644
 +]
 diff --git a/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json b/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json
 new file mode 100644
-index 000000000000..9de64b1b4821
+index 000000000000..c815bc5a4bb5
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json	
 @@ -0,0 +1,133 @@
@@ -352,9 +352,9 @@ index 000000000000..9de64b1b4821
 +    "subtype": "distribution",
 +    "id": "rc_drop_mana_crystal",
 +    "items": [
-+        { "item": "crystallized_mana_raw", "count": [ 4, 8 ] },
-+        { "item": "small_mana_crystal", "count": [ 0, 2 ] },
-+        { "item": "glass_shard", "count": [ 8, 12 ] }
++        { "item": "crystallized_mana_raw", "count": [ 4, 8 ], "prob": 10 },
++        { "item": "small_mana_crystal", "count": [ 0, 2 ], "prob": 10 },
++        { "item": "glass_shard", "count": [ 8, 12 ], "prob": 10 }
 +    ]
 +  }
 +]
