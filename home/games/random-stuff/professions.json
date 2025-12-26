@@ -51,7 +51,7 @@
           { "item": "oil_lamp" },
           { "item": "lamp_oil", "container-item": "fuel_tin" },
           { "item": "internet_sim_card", "count": 2 },
-          { "item": "small_storage_battery" },
+          { "item": "small_storage_battery", "charges": 1000 },
           { "item": "hand_crank_charger" },
           { "item": "magazine_battery_mod" },
           { "item": "power_cord" },
