@@ -1,0 +1,21 @@
+[
+  {
+    "type": "mutation",
+    "id": "perk_metamagic_still",
+    "copy-from": "perk_metamagic_still",
+    "name": { "str": "Metamagic: Still Spell" },
+    "enchantments": [
+      {
+        "condition": "ACTIVE",
+        "ench_effects": [ { "effect": "perk_metamagic_still_subtle", "intensity": 1 } ]
+      }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "perk_metamagic_still_subtle",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "flags": [ "SUBTLE_SPELL" ]
+  }
+]
