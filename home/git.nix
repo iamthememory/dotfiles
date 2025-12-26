@@ -239,6 +239,9 @@ in
   # gnome-keyring can be used for credentials.
   programs.git.package = gitFull;
 
+  # Use PGP commit signing.
+  programs.git.signing.format = "openpgp";
+
   # If gnupg has a default key set, use it for signing git commits.
   # NOTE: This is overrideable if a host should have a separate signing
   # (sub)key for git for some reason.
