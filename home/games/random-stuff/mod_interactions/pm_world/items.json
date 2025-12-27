@@ -1,0 +1,20 @@
+[
+  {
+    "id": "smart_phone_internet",
+    "copy-from": "smart_phone_internet",
+    "name": { "str": "smartphone (SIM)" },
+    "e_ports_banned": [  ]
+  },
+  {
+    "id": "smart_phone_internet_music",
+    "copy-from": "smart_phone_internet_music",
+    "name": { "str": "smartphone (SIM) - music" },
+    "e_ports_banned": [  ]
+  },
+  {
+    "id": "smart_phone_internet_flashlight",
+    "copy-from": "smart_phone_internet_flashlight",
+    "name": { "str": "smartphone (SIM) - Flashlight" },
+    "e_ports_banned": [  ]
+  }
+]
