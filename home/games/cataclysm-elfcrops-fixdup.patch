@@ -7024,7 +7024,7 @@ index 000000000000..a5bf879306a7
 +  }
 +]
 diff --git a/Resource Crops/recipes/cloth recipes.json b/Resource Crops/recipes/cloth recipes.json
-index 66efe4b1c652..9bb1ec87b096 100644
+index 66efe4b1c652..7a1bba570d66 100644
 --- a/Resource Crops/recipes/cloth recipes.json	
 +++ b/Resource Crops/recipes/cloth recipes.json	
 @@ -2,8 +2,8 @@
@@ -7162,7 +7162,7 @@ index 66efe4b1c652..9bb1ec87b096 100644
        }
      },
      "difficulty": 3,
-@@ -258,5 +232,166 @@
+@@ -258,5 +232,212 @@
          [ "fur", 10]
        ]
      ]
@@ -7316,6 +7316,52 @@ index 66efe4b1c652..9bb1ec87b096 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "kevlar patch seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_felt",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "felt seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "autolearn": true,
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_sheet_cotton",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "cotton seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -8470,7 +8516,7 @@ index 0c07206ed14f..fd40a926193d 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/misc recipes.json b/Resource Crops/recipes/misc recipes.json
-index 213d70f52239..0f1da066efcc 100644
+index 213d70f52239..e34f3281bbd9 100644
 --- a/Resource Crops/recipes/misc recipes.json	
 +++ b/Resource Crops/recipes/misc recipes.json	
 @@ -2,8 +2,8 @@
@@ -8717,9 +8763,62 @@ index 213d70f52239..0f1da066efcc 100644
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
-@@ -476,4 +484,4 @@
+@@ -475,5 +483,57 @@
+         [ "material_cement", 10 ]
        ]
      ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_rigid_plastic_sheet",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "rigid plastic seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ],
++      [
++        [ "material_cement", 10 ]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_polycarbonate_sheet",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "polycarbonate sheet seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ],
++      [
++        [ "material_cement", 10 ]
++      ]
++    ]
    }
 -]
 \ No newline at end of file
@@ -10777,10 +10876,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/cloth seeds.json b/Resource Crops/seeds/cloth seeds.json
-index 2ba932551057..c0571a30dfa1 100644
+index 2ba932551057..8546efba5c47 100644
 --- a/Resource Crops/seeds/cloth seeds.json	
 +++ b/Resource Crops/seeds/cloth seeds.json	
-@@ -2,161 +2,321 @@
+@@ -2,161 +2,361 @@
  	{
      "id": "rc_seed_sheet",
      "copy-from": "seed",
@@ -10929,10 +11028,8 @@ index 2ba932551057..c0571a30dfa1 100644
      "id": "rc_seed_leather",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
-+    "type": "ITEM",
-+    "subtypes": [ "SEED", "COMESTIBLE" ],
-     "name": { "str_sp": "leather patch seeds" },
-     "description": "Infused seeds prepared in such a way that they grow into a bush with some leather patches hanging from it.",
+-    "name": { "str_sp": "leather patch seeds" },
+-    "description": "Infused seeds prepared in such a way that they grow into a bush with some leather patches hanging from it.",
 -    "price": 1000,
 -    "price_postapoc": 250,
 -    "charges": 1,
@@ -10944,10 +11041,14 @@ index 2ba932551057..c0571a30dfa1 100644
 -    }
 -  },
 -  {
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "leather seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with some leather hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "leather patch bush",
-+    "fruit": "leather",
++    "plant_name": "leather bush",
++    "fruit": "sheet_leather",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -10961,10 +11062,8 @@ index 2ba932551057..c0571a30dfa1 100644
      "id": "rc_seed_nomex",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
-+    "type": "ITEM",
-+    "subtypes": [ "SEED", "COMESTIBLE" ],
-     "name": { "str_sp": "nomex patch seeds" },
-     "description": "Infused seeds prepared in such a way that they grow into a bush with some nomex patches hanging from it.",
+-    "name": { "str_sp": "nomex patch seeds" },
+-    "description": "Infused seeds prepared in such a way that they grow into a bush with some nomex patches hanging from it.",
 -    "price": 1000,
 -    "price_postapoc": 250,
 -    "charges": 1,
@@ -10976,10 +11075,14 @@ index 2ba932551057..c0571a30dfa1 100644
 -    }
 -  },
 -  {
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "nomex seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with some nomex hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "nomex patch bush",
-+    "fruit": "nomex",
++    "plant_name": "nomex bush",
++    "fruit": "sheet_nomex",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11057,9 +11160,10 @@ index 2ba932551057..c0571a30dfa1 100644
      "id": "rc_seed_furpelt",
      "copy-from": "seed",
 -    "type": "COMESTIBLE",
+-    "name": { "str_sp": "fur pelt seeds" },
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-     "name": { "str_sp": "fur pelt seeds" },
++    "name": { "str_sp": "pelt seeds" },
      "description": "Infused seeds prepared in such a way that their fruits grow fur pelts around them.",
 -    "price": 1000,
 -    "price_postapoc": 250,
@@ -11075,8 +11179,8 @@ index 2ba932551057..c0571a30dfa1 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "fur pelt bush",
-+    "fruit": "fur",
++    "plant_name": "pelt bush",
++    "fruit": "tanned_pelt",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11096,7 +11200,7 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "synthetic fabric bush",
-+    "fruit": "nylon",
++    "fruit": "sheet_nylon",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11111,12 +11215,12 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "copy-from": "seed",
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "canvas patch seeds" },
++    "name": { "str_sp": "canvas seeds" },
 +    "description": "Infused seeds prepared in such a way that their fruits grow canvas.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "canvas patch bush",
-+    "fruit": "canvas_patch",
++    "plant_name": "canvas bush",
++    "fruit": "sheet_canvas",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11131,12 +11235,12 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "copy-from": "seed",
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "Lycra patch seeds" },
++    "name": { "str_sp": "Lycra seeds" },
 +    "description": "Infused seeds prepared in such a way that their fruits grow Lycra.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "Lycra patch bush",
-+    "fruit": "lycra_patch",
++    "plant_name": "Lycra bush",
++    "fruit": "sheet_lycra",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11151,12 +11255,12 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "copy-from": "seed",
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "denim patch seeds" },
++    "name": { "str_sp": "denim seeds" },
 +    "description": "Infused seeds prepared in such a way that their fruits grow denim.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "denim bush",
-+    "fruit": "denim_patch",
++    "fruit": "sheet_denim",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11171,12 +11275,12 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "copy-from": "seed",
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "neoprene patch seeds" },
++    "name": { "str_sp": "neoprene seeds" },
 +    "description": "Infused seeds prepared in such a way that their fruits grow neoprene.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "neoprene patch bush",
-+    "fruit": "neoprene",
++    "plant_name": "neoprene bush",
++    "fruit": "sheet_neoprene",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11191,12 +11295,12 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "copy-from": "seed",
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "faux fur patch seeds" },
++    "name": { "str_sp": "faux fur seeds" },
 +    "description": "Infused seeds prepared in such a way that their fruits grow faux fur.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "faux fur patch bush",
-+    "fruit": "faux_fur",
++    "plant_name": "faux fur bush",
++    "fruit": "sheet_faux_fur",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -11211,12 +11315,52 @@ index 2ba932551057..c0571a30dfa1 100644
 +    "copy-from": "seed",
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "kevlar patch seeds" },
++    "name": { "str_sp": "kevlar seeds" },
 +    "description": "Infused seeds prepared in such a way that their fruits grow kevlar.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "kevlar patch bush",
-+    "fruit": "kevlar_patch",
++    "plant_name": "kevlar bush",
++    "fruit": "sheet_kevlar",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_felt",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "felt seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow felt.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "felt bush",
++    "fruit": "sheet_felt",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_sheet_cotton",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "cotton sheet seeds" },
++    "description": "Infused seeds prepared in such a way that their fruits grow cotton sheets.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "cotton sheet bush",
++    "fruit": "sheet_cotton",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -13209,10 +13353,10 @@ index f2819e545949..3582afafe1e1 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/misc seeds.json b/Resource Crops/seeds/misc seeds.json
-index bd3cb009fb17..103ccf3415ed 100644
+index bd3cb009fb17..47ae1a7b387c 100644
 --- a/Resource Crops/seeds/misc seeds.json	
 +++ b/Resource Crops/seeds/misc seeds.json	
-@@ -2,321 +2,401 @@
+@@ -2,321 +2,441 @@
    {
      "id": "rc_seed_ducttape",
      "copy-from": "seed",
@@ -13845,6 +13989,46 @@ index bd3cb009fb17..103ccf3415ed 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "cement bush",
 +    "fruit": "material_cement_clump",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_rigid_plastic_sheet",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "rigid plastic seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush covered in rigid plastic.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "rigid plastic bush",
++    "fruit": "rigid_plastic_sheet",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_polycarbonate_sheet",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "polycarbonate sheet seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush covered in polycarbonate.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "polycarbonate bush",
++    "fruit": "polycarbonate_sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
