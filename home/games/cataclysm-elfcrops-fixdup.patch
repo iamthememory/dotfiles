@@ -2871,7 +2871,7 @@ index 2000d28c817f..ffa4eca0305d 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..960a8d538b91 100644
+index fccd89aa02a2..a188e4b52c81 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
 @@ -1,35 +1,39 @@
@@ -2922,7 +2922,7 @@ index fccd89aa02a2..960a8d538b91 100644
      "copy-from": "anesthetic",
      "name": "Blackout fruit",
      "description": "A fruit filled with anesthetic. Smells like chloroform.",
-@@ -37,21 +41,376 @@
+@@ -37,21 +41,393 @@
      "count": 100
    },
    {
@@ -3313,6 +3313,23 @@ index fccd89aa02a2..960a8d538b91 100644
 +    "id": "crude_lamp_oil_ball",
 +    "copy-from": "abstract_liquid_ball",
 +    "name": { "str": "crude lamp oil ball" }
++  },
++  {
++    "type": "ITEM",
++    "subtypes": [ "AMMO" ],
++    "id": "material_cement_clump",
++    "category": "spare_parts",
++    "name": { "str": "cement powder clump" },
++    "weight": "20 g",
++    "color": "dark_gray",
++    "symbol": "=",
++    "description": "A clump of cement powder.",
++    "price": "0 cent",
++    "price_postapoc": "0 cent",
++    "material": [ "sand" ],
++    "volume": "250 ml",
++    "ammo_type": "components",
++    "count": 1
    }
 -]
 \ No newline at end of file
@@ -13192,7 +13209,7 @@ index f2819e545949..3582afafe1e1 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/misc seeds.json b/Resource Crops/seeds/misc seeds.json
-index bd3cb009fb17..5d9992feecbb 100644
+index bd3cb009fb17..103ccf3415ed 100644
 --- a/Resource Crops/seeds/misc seeds.json	
 +++ b/Resource Crops/seeds/misc seeds.json	
 @@ -2,321 +2,401 @@
@@ -13827,7 +13844,7 @@ index bd3cb009fb17..5d9992feecbb 100644
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "plant_name": "cement bush",
-+    "fruit": "material_cement",
++    "fruit": "material_cement_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -14765,10 +14782,10 @@ index 000000000000..280a4da3d544
 +]
 diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
 new file mode 100644
-index 000000000000..ce5a77750242
+index 000000000000..39aa29c4227e
 --- /dev/null
 +++ b/Resource Crops/uncraft/other.json	
-@@ -0,0 +1,234 @@
+@@ -0,0 +1,242 @@
 +[
 +  {
 +    "result": "material_sand_clump",
@@ -15001,5 +15018,13 @@ index 000000000000..ce5a77750242
 +    "time": "30 s",
 +    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 1 } ],
 +    "components": [ [ [ "crude_lamp_oil", 250 ] ] ]
++  },
++  {
++    "result": "material_cement_clump",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "material_cement", 50 ] ] ]
 +  }
 +]
