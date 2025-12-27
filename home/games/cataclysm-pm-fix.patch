@@ -1203,83 +1203,265 @@ index d9d8f2be698e..102c6a63582e 100644
 +]
 diff --git a/mod_interactions/aftershock_exoplanet/recipes.json b/mod_interactions/aftershock_exoplanet/recipes.json
 new file mode 100644
-index 000000000000..fefa7907ebd5
+index 000000000000..66d477de7612
 --- /dev/null
 +++ b/mod_interactions/aftershock_exoplanet/recipes.json
-@@ -0,0 +1,20 @@
+@@ -0,0 +1,47 @@
 +[
 +  {
 +    "result": "firmware_subsonic",
-+    "copy-from": "firmware_subsonic",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ], [ "laptop_internet", 100 ] ], [ [ "cable", 2 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_WEAPON",
++    "subcategory": "CSC_WEAPON_MODS",
++    "skill_used": "computer",
++    "skills_required": [ "gun", 4 ],
++    "difficulty": 5,
++    "time": "2 h",
++    "autolearn": [ [ "computer", 5 ] ],
++    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ] ], [ [ "cable", 2 ] ] ],
++    "flags": [ "BLIND_EASY" ],
++    "components": [ [ [ "afs_circuitry_1", 1 ] ] ]
 +  },
 +  {
 +    "result": "firmware_overpressure",
-+    "copy-from": "firmware_overpressure",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ], [ "laptop_internet", 100 ] ], [ [ "cable", 2 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_WEAPON",
++    "subcategory": "CSC_WEAPON_MODS",
++    "skill_used": "computer",
++    "skills_required": [ "gun", 4 ],
++    "difficulty": 5,
++    "time": "2 h",
++    "autolearn": [ [ "computer", 5 ] ],
++    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ] ], [ [ "cable", 2 ] ] ],
++    "flags": [ "BLIND_EASY" ],
++    "components": [ [ [ "afs_circuitry_1", 1 ] ] ]
 +  },
 +  {
 +    "result": "firmware_incendiary",
-+    "copy-from": "firmware_incendiary",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 , [ "laptop_internet", 100 ]] ], [ [ "cable", 2 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_WEAPON",
++    "subcategory": "CSC_WEAPON_MODS",
++    "skill_used": "computer",
++    "skills_required": [ "gun", 4 ],
++    "difficulty": 5,
++    "time": "2 h",
++    "autolearn": [ [ "computer", 5 ] ],
++    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ] ], [ [ "cable", 2 ] ] ],
++    "flags": [ "BLIND_EASY" ],
++    "components": [ [ [ "afs_circuitry_1", 1 ] ] ]
 +  }
 +]
 diff --git a/mod_interactions/mindovermatter/recipes.json b/mod_interactions/mindovermatter/recipes.json
 new file mode 100644
-index 000000000000..783754c579eb
+index 000000000000..5cba786fedea
 --- /dev/null
 +++ b/mod_interactions/mindovermatter/recipes.json
-@@ -0,0 +1,28 @@
+@@ -0,0 +1,151 @@
 +[
 +  {
 +    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
++    "name": "study the Phavian USB documents",
 +    "id": "psi_research_rad_powers",
-+    "copy-from": "psi_research_rad_powers",
-+    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ], [ [ "psi_usb_rad_recipes", -1 ] ] ]
-+  },
-+  {
-+    "type": "recipe",
-+    "id": "psi_research_rad_powers_clair",
-+    "copy-from": "psi_research_rad_powers_clair",
-+    "tools": [
-+      [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ],
-+      [ [ "psi_usb_rad_recipes", -1 ] ],
-+      [ [ "betavoltaic", -1 ], [ "huge_atomic_battery_cell", -1 ] ]
++    "description": "Study the plethora of documents and files found on the Project PHAVIAN USB.  It has something to do with radiation; beyond that, you're not sure.",
++    "category": "CC_PSIONIC",
++    "subcategory": "CSC_PSIONIC_OTHER",
++    "skill_used": "chemistry",
++    "difficulty": 4,
++    "time": "2 h",
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ], [ [ "psi_usb_rad_recipes", -1 ] ] ],
++    "flags": [ "SECRET", "BLIND_HARD" ],
++    "result_eocs": [
++      {
++        "id": "EOC_UNLOCK_RAD_POWERS",
++        "condition": { "or": [ { "u_has_trait": "VITAKINETIC" }, { "u_has_trait": "CLAIRSENTIENT" } ] },
++        "effect": [
++          { "u_learn_recipe": "psi_research_rad_powers_clair" },
++          { "u_learn_recipe": "psi_research_rad_powers_vita" },
++          {
++            "u_message": "There's a lot here, but you've discovered that it's organized into two main tracks.  One has a lot of detailed scans of the body and health data and is labeled HONEY BRAVO, and the other has a series of photos that seem oddly distorted, charts with some kind of waveforms on them, and other documents and is labeled RED SAFARI.",
++            "type": "neutral"
++          }
++        ],
++        "false_effect": [
++          {
++            "u_message": "You can understand the technical principles but the actual processes make no sense.  It must be some aspect of psionics that you don't possess or don't fully grasp.",
++            "type": "bad"
++          }
++        ]
++      }
 +    ]
 +  },
 +  {
 +    "type": "recipe",
-+    "id": "psi_research_rad_powers_vita",
-+    "copy-from": "psi_research_rad_powers_vita",
++    "activity_level": "LIGHT_EXERCISE",
++    "name": "study the RED SAFARI documents",
++    "id": "psi_research_rad_powers_clair",
++    "description": "Study the plethora of documents and files found on the Project PHAVIAN USB relating to RED SAFARI.  It has something to do with radiation detection; beyond that, you're not sure.",
++    "category": "CC_PSIONIC",
++    "subcategory": "CSC_PSIONIC_OTHER",
++    "skill_used": "chemistry",
++    "difficulty": 6,
++    "time": "12 h",
 +    "tools": [
 +      [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ],
 +      [ [ "psi_usb_rad_recipes", -1 ] ],
 +      [ [ "betavoltaic", -1 ], [ "huge_atomic_battery_cell", -1 ] ]
++    ],
++    "proficiencies": [
++      { "proficiency": "prof_intro_chemistry", "required": false },
++      { "proficiency": "prof_intro_biology", "required": false },
++      { "proficiency": "prof_psionic_minimum_requirements", "required": true },
++      { "proficiency": "prof_psionic_basic", "required": true },
++      { "proficiency": "prof_psionic_ritual", "required": false }
++    ],
++    "flags": [ "SECRET", "BLIND_HARD" ],
++    "result_eocs": [
++      {
++        "id": "EOC_UNLOCK_RAD_POWERS_CLAIR",
++        "condition": {
++          "and": [
++            { "roll_contested": { "math": [ "u_skill('metaphysics')" ] }, "difficulty": 10 },
++            { "roll_contested": { "math": [ "u_skill('chemistry')" ] }, "difficulty": 8 },
++            { "math": [ "u_spell_level('clair_spot_weakness') >= 6" ] },
++            { "math": [ "u_spell_level('clair_danger_sense') >= 8" ] },
++            { "math": [ "u_spell_level('clair_voyance') >= 5" ] }
++          ]
++        },
++        "effect": [
++          {
++            "u_message": "This would have been so much easier if you had an actual tutor, but you finally understand.  All the documents, the videos, the reports, they're trying document a method of using clairsentience to detect radiation.  And you're pretty sure you can do it now.",
++            "type": "good"
++          },
++          { "u_roll_remainder": [ "clair_sense_rads" ], "type": "spell" },
++          { "u_learn_recipe": "practice_clair_sense_rads" },
++          { "run_eocs": "EOC_PSI_PRACTICE_FOCUS_MOD" },
++          { "u_forget_recipe": "psi_research_rad_powers" }
++        ],
++        "false_effect": [
++          {
++            "u_message": "There's a lot here.  Maybe you didn't understand it, or maybe your powers aren't advanced enough.  You'll need to try again.",
++            "type": "bad"
++          },
++          { "run_eocs": "EOC_PSI_PRACTICE_FOCUS_MOD" },
++          { "u_forget_recipe": "psi_research_rad_powers" }
++        ]
++      }
++    ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
++    "name": "study the HONEY BRAVO documents",
++    "id": "psi_research_rad_powers_vita",
++    "description": "Study the plethora of documents and files found on the Project PHAVIAN USB relating to HONEY BRAVO.  It has something to do with radiation treatment; beyond that, you're not sure.",
++    "category": "CC_PSIONIC",
++    "subcategory": "CSC_PSIONIC_OTHER",
++    "skill_used": "chemistry",
++    "difficulty": 6,
++    "time": "16 h",
++    "tools": [
++      [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ],
++      [ [ "psi_usb_rad_recipes", -1 ] ],
++      [ [ "betavoltaic", -1 ], [ "huge_atomic_battery_cell", -1 ] ]
++    ],
++    "proficiencies": [
++      { "proficiency": "prof_intro_chemistry", "required": false },
++      { "proficiency": "prof_intro_biology", "required": false },
++      { "proficiency": "prof_pharmaceutical", "required": false },
++      { "proficiency": "prof_psionic_minimum_requirements", "required": true },
++      { "proficiency": "prof_psionic_basic", "required": true },
++      { "proficiency": "prof_psionic_ritual", "required": false }
++    ],
++    "flags": [ "SECRET", "BLIND_HARD" ],
++    "result_eocs": [
++      {
++        "id": "EOC_UNLOCK_RAD_POWERS_VITA",
++        "condition": {
++          "and": [
++            { "roll_contested": { "math": [ "u_skill('metaphysics')" ] }, "difficulty": 11 },
++            { "roll_contested": { "math": [ "u_skill('chemistry')" ] }, "difficulty": 8 },
++            { "math": [ "u_spell_level('vita_concentrated_healing') >= 8" ] },
++            { "math": [ "u_spell_level('vita_stop_infection') >= 6" ] },
++            { "math": [ "u_spell_level('vita_healing_trance') >= 2" ] }
++          ]
++        },
++        "effect": [
++          {
++            "u_message": "This would have been so much easier if you had an actual tutor, but you finally understand.  All the documents, the videos, the reports, they're trying document a method of using vitakinesis to cure radiation poisoning.  And you're pretty sure you can do it now.",
++            "type": "good"
++          },
++          { "u_roll_remainder": [ "vita_purge_rads" ], "type": "spell" },
++          { "run_eocs": "EOC_PSI_PRACTICE_FOCUS_MOD" },
++          { "u_learn_recipe": "practice_vita_purge_rads" },
++          { "u_forget_recipe": "psi_research_rad_powers" }
++        ],
++        "false_effect": [
++          {
++            "u_message": "There's a lot here.  Maybe you didn't understand it, or maybe your powers aren't advanced enough.  You'll need to try again.",
++            "type": "bad"
++          },
++          { "run_eocs": "EOC_PSI_PRACTICE_FOCUS_MOD" },
++          { "u_forget_recipe": "psi_research_rad_powers" }
++        ]
++      }
 +    ]
 +  }
 +]
 diff --git a/mod_interactions/xedra_evolved/recipes.json b/mod_interactions/xedra_evolved/recipes.json
 new file mode 100644
-index 000000000000..dfc24506d30d
+index 000000000000..371039236b17
 --- /dev/null
 +++ b/mod_interactions/xedra_evolved/recipes.json
-@@ -0,0 +1,217 @@
+@@ -0,0 +1,325 @@
 +[
 +  {
 +    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
 +    "result": "xedra_inventor_damage_reversal_device",
-+    "copy-from": "xedra_inventor_damage_reversal_device",
-+    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ]
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ],
++    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 }, { "id": "AI_TOOL", "level": 1 } ],
++    "using": [ [ "soldering_standard", 50 ], [ "welding_standard", 25 ] ],
++    "proficiencies": [
++      { "proficiency": "prof_metalworking", "time_multiplier": 3, "skill_penalty": 0 },
++      { "proficiency": "prof_welding_basic", "time_multiplier": 3, "skill_penalty": 0 },
++      { "proficiency": "prof_welding", "time_multiplier": 2, "skill_penalty": 0 }
++    ],
++    "components": [
++      [ [ "cable", 120 ] ],
++      [ [ "teleporter", 2 ] ],
++      [ [ "e_scrap", 2 ] ],
++      [ [ "power_supply", 4 ] ],
++      [ [ "magnetron", 1 ] ],
++      [ [ "processor", 8 ] ],
++      [ [ "kevlar_patch", 4 ] ],
++      [ [ "pocketwatch", 1 ] ]
++    ],
++    "time": "12 h",
++    "skill_used": "deduction",
++    "difficulty": 10,
++    "skills_required": [ [ "electronics", 8 ], [ "fabrication", 6 ], [ "computer", 8 ] ],
++    "flags": [ "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_ARMOR"
 +  },
 +  {
 +    "result": "software_AI",
-+    "copy-from": "software_AI",
 +    "container": "usb_drive",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 30 ], [ "laptop_internet", 30 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "tools": [ [ [ "laptop", 30 ], [ "laptop_internet", 30 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ],
++    "time": "24 h",
++    "skill_used": "deduction",
++    "difficulty": 4,
++    "skills_required": [ "computer", 6 ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
 +  },
 +  {
 +    "result": "software_math",
@@ -1381,7 +1563,7 @@ index 000000000000..dfc24506d30d
 +    "type": "recipe",
 +    "activity_level": "MODERATE_EXERCISE",
 +    "time": "16 h",
-+    "tools": [ [ [ "laptop", 100 , [ "laptop_internet", 100 ]] ] ],
++    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ] ] ],
 +    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 }, { "id": "AI_TOOL", "level": 1 } ],
 +    "proficiencies": [
 +      { "proficiency": "prof_welding_basic", "time_multiplier": 3, "skill_penalty": 0 },
@@ -1437,59 +1619,135 @@ index 000000000000..dfc24506d30d
 +  },
 +  {
 +    "id": "inventor_research_base_1",
-+    "copy-from": "inventor_research_base_1",
++    "name": "novice research",
++    "//": "this names are ugly, TODO replace it",
++    "description": "Research the unknown parts of your powers, brainstorm the ways to use them.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 20 ], [ "laptop_internet", 20 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_BASE_1" ],
++    "tools": [ [ [ "laptop", 20 ], [ "laptop_internet", 20 ] ] ],
++    "time": "2 h",
++    "skill_used": "deduction",
++    "difficulty": 2,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_base_2",
-+    "copy-from": "inventor_research_base_2",
++    "name": "intermediate research",
++    "description": "Research the unknown parts of your powers, brainstorm the ways to use them.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_BASE_2" ],
++    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ] ],
++    "time": "3 h",
++    "skill_used": "deduction",
++    "difficulty": 4,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_base_3",
-+    "copy-from": "inventor_research_base_3",
++    "name": "difficult research",
++    "description": "Research the unknown parts of your powers, brainstorm the ways to use them.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 60 ], [ "laptop_internet", 60 ] ], [ [ "software_math", -1 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_BASE_3" ],
++    "tools": [ [ [ "laptop", 60 ], [ "laptop_internet", 60 ] ], [ [ "software_math", -1 ] ] ],
++    "time": "4 h",
++    "skill_used": "deduction",
++    "difficulty": 6,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_energy_1",
-+    "copy-from": "inventor_research_energy_1",
++    "name": "novice energy research",
++    "description": "Research an innovative ways to generate and use energy.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 20 ], [ "laptop_internet", 20 ] ], [ [ "software_math", -1 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_ENERGY_1" ],
++    "tools": [ [ [ "laptop", 20 ], [ "laptop_internet", 20 ] ], [ [ "software_math", -1 ] ] ],
++    "time": "3 h",
++    "skill_used": "deduction",
++    "difficulty": 3,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_energy_2",
-+    "copy-from": "inventor_research_energy_2",
++    "name": "intermediate energy research",
++    "description": "Research an innovative ways to generate and use energy.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_ENERGY_2" ],
++    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ],
++    "time": "4 h",
++    "skill_used": "deduction",
++    "difficulty": 5,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_energy_3",
-+    "copy-from": "inventor_research_energy_3",
++    "name": "difficult energy research",
++    "description": "Research an innovative ways to generate and use energy.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 60 ], [ "laptop_internet", 60 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_ENERGY_3" ],
++    "qualities": [ { "id": "AI_TOOL", "level": 1 } ],
++    "tools": [ [ [ "laptop", 60 ], [ "laptop_internet", 60 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ],
++    "time": "5 h",
++    "skill_used": "deduction",
++    "difficulty": 7,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_ai_1",
-+    "copy-from": "inventor_research_ai_1",
++    "name": "intelligent agent research",
++    "description": "Research a practical approaches to use different intelligent agents as a tool or weapon.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_AI_1" ],
++    "qualities": [ { "id": "AI_TOOL", "level": 1 } ],
++    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ],
++    "time": "5 h",
++    "skill_used": "deduction",
++    "difficulty": 8,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  },
 +  {
 +    "id": "inventor_research_dimension_1",
-+    "copy-from": "inventor_research_dimension_1",
++    "name": "dimensionalism research",
++    "description": "Research practical methods of using netherium based physics.",
 +    "type": "recipe",
-+    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "result_eocs": [ "EOC_INVENTOR_RESEARCH_DIMENSION_1" ],
++    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ] ] ],
++    "components": [ [ [ "medium_printout_portal_storm_data", 1 ], [ "small_printout_portal_storm_data", 3 ] ] ],
++    "time": "10 h",
++    "skill_used": "deduction",
++    "difficulty": 10,
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_RESEARCH"
 +  }
 +]
 diff --git a/recipes.json b/recipes.json
 new file mode 100644
-index 000000000000..80569433d330
+index 000000000000..55a50cc42cc3
 --- /dev/null
 +++ b/recipes.json
-@@ -0,0 +1,233 @@
+@@ -0,0 +1,318 @@
 +[
 +  {
 +    "type": "recipe",
@@ -1536,57 +1794,81 @@ index 000000000000..80569433d330
 +  },
 +  {
 +    "id": "prac_computer_beg",
-+    "copy-from": "prac_computer_beg",
 +    "type": "practice",
-+    "tools": [
-+      [
-+        [ "laptop", 10 ],
-+        [ "laptop_internet", 10 ],
-+        [ "eink_tablet_pc", 1 ],
-+        [ "smart_phone", 5 ],
-+        [ "smart_phone_internet", 5 ]
-+      ]
-+    ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_PRACTICE",
++    "subcategory": "CSC_PRACTICE_COMPUTERS",
++    "name": "computer (beginner)",
++    "description": "Practice the basics of using a computing device.",
++    "skill_used": "computer",
++    "time": "1 h",
++    "practice_data": { "min_difficulty": 0, "max_difficulty": 1, "skill_limit": 2 },
++    "autolearn": [ [ "computer", 1 ] ],
++    "book_learn": [ [ "mag_computer", 0 ], [ "howto_computer", 0 ] ],
++    "tools": [ [ [ "laptop", 10 ], [ "laptop_internet", 10 ], [ "eink_tablet_pc", 1 ], [ "smart_phone", 5 ], [ "smart_phone_internet", 5 ] ] ],
++    "flags": [ "BLIND_EASY" ]
 +  },
 +  {
 +    "id": "prac_computer_int",
-+    "copy-from": "prac_computer_int",
 +    "type": "practice",
-+    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_PRACTICE",
++    "subcategory": "CSC_PRACTICE_COMPUTERS",
++    "name": "computer (intermediate)",
++    "description": "Practice using the command line, writing and running scripts making use of common algorithms and data structures.",
++    "skill_used": "computer",
++    "time": "1 h",
++    "practice_data": { "min_difficulty": 2, "max_difficulty": 4, "skill_limit": 5 },
++    "autolearn": [ [ "computer", 4 ] ],
++    "book_learn": [ [ "manual_computer", 2 ], [ "hackerman_computer", 2 ], [ "webbasics_computer", 3 ], [ "computer_science", 3 ] ],
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ],
++    "flags": [ "BLIND_EASY" ]
 +  },
 +  {
 +    "id": "prac_computer_adv",
-+    "copy-from": "prac_computer_adv",
 +    "type": "practice",
-+    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ], [ "software_hacking" ] ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_PRACTICE",
++    "subcategory": "CSC_PRACTICE_COMPUTERS",
++    "name": "computer (advanced)",
++    "description": "Practice the use of software exploits to gain elevated privileges on computer systems.",
++    "skill_used": "computer",
++    "time": "1 h",
++    "practice_data": { "min_difficulty": 5, "max_difficulty": 7 },
++    "autolearn": [ [ "computer", 7 ] ],
++    "book_learn": [ [ "SICP", 5 ], [ "textbook_computer", 6 ] ],
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ], [ "software_hacking" ] ],
++    "flags": [ "BLIND_EASY" ]
 +  },
 +  {
 +    "id": "prac_speech_beg",
-+    "copy-from": "prac_speech_beg",
 +    "type": "practice",
-+    "tools": [
-+      [
-+        [ "mirror", -1 ],
-+        [ "laptop", 10 ],
-+        [ "laptop_internet", 10 ],
-+        [ "smart_phone", 5 ],
-+        [ "smart_phone_internet", 5 ]
-+      ]
-+    ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_PRACTICE",
++    "subcategory": "CSC_PRACTICE_SOCIAL",
++    "name": "social (beginner)",
++    "description": "Practice speaking in front of a mirror or in front of a device with a front-facing camera to improve your poise and eloquence and project confidence.",
++    "skill_used": "speech",
++    "time": "1 h",
++    "practice_data": { "min_difficulty": 0, "max_difficulty": 2, "skill_limit": 3 },
++    "autolearn": [ [ "speech", 2 ] ],
++    "book_learn": [ [ "manual_business", 1 ], [ "manual_speech", 1 ] ],
++    "tools": [ [ [ "mirror", -1 ], [ "laptop", 10 ], [ "laptop_internet", 10 ], [ "smart_phone", 5 ], [ "smart_phone_internet", 5 ] ] ]
 +  },
 +  {
 +    "id": "prac_speech_int",
-+    "copy-from": "prac_speech_int",
 +    "type": "practice",
-+    "tools": [
-+      [
-+        [ "mirror", -1 ],
-+        [ "laptop", 10 ],
-+        [ "laptop_internet", 10 ],
-+        [ "smart_phone", 5 ],
-+        [ "smart_phone_internet", 5 ]
-+      ]
-+    ]
++    "activity_level": "NO_EXERCISE",
++    "category": "CC_PRACTICE",
++    "subcategory": "CSC_PRACTICE_SOCIAL",
++    "name": "social (intermediate)",
++    "description": "Practice advanced persuasion and negotiation techniques while acting out both sides of a dialogue in front of a mirror or in front of a device with a front-facing camera to improve your poise and eloquence and project confidence.",
++    "skill_used": "speech",
++    "time": "1 h",
++    "practice_data": { "min_difficulty": 3, "max_difficulty": 5, "skill_limit": 6 },
++    "autolearn": [ [ "speech", 5 ] ],
++    "book_learn": [ [ "textbook_speech", 4 ] ],
++    "tools": [ [ [ "mirror", -1 ], [ "laptop", 10 ], [ "laptop_internet", 10 ], [ "smart_phone", 5 ], [ "smart_phone_internet", 5 ] ] ]
 +  },
 +  {
 +    "type": "recipe",
@@ -1706,21 +1988,82 @@ index 000000000000..80569433d330
 +  },
 +  {
 +    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
 +    "result": "turret_controls",
-+    "copy-from": "turret_controls",
-+    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ]
++    "category": "CC_OTHER",
++    "subcategory": "CSC_OTHER_VEHICLE",
++    "skill_used": "electronics",
++    "skills_required": [ [ "computer", 5 ], [ "mechanics", 3 ] ],
++    "difficulty": 5,
++    "time": "2 h",
++    "book_learn": [ [ "arduino_experiments", 4 ] ],
++    "using": [ [ "soldering_standard", 10 ] ],
++    "proficiencies": [ { "proficiency": "prof_elec_soldering" } ],
++    "qualities": [ { "id": "SCREW", "level": 1 } ],
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ],
++    "components": [
++      [ [ "targeting_module", 1 ] ],
++      [ [ "ai_module", 1 ] ],
++      [ [ "gun_module", 1 ] ],
++      [ [ "identification_module", 1 ] ],
++      [ [ "cable", 10 ] ],
++      [ [ "camera", 1 ], [ "camera_pro", 1 ], [ "omnicamera", 1 ], [ "sensor_module", 1 ] ],
++      [ [ "robot_controls", 1 ] ]
++    ]
 +  },
 +  {
 +    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
 +    "result": "electrohack",
-+    "copy-from": "electrohack",
-+    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ]
++    "category": "CC_ELECTRONIC",
++    "subcategory": "CSC_ELECTRONIC_TOOLS",
++    "skill_used": "electronics",
++    "skills_required": [ "computer", 5 ],
++    "difficulty": 4,
++    "time": "35 m",
++    "reversible": true,
++    "decomp_learn": 4,
++    "book_learn": [ [ "textbook_anarch", 3 ], [ "advanced_electronics", 5 ] ],
++    "using": [ [ "soldering_standard", 10 ] ],
++    "proficiencies": [
++      { "proficiency": "prof_elec_soldering" },
++      { "proficiency": "prof_elec_circuits" },
++      { "proficiency": "prof_elec_integrated_circuits" }
++    ],
++    "qualities": [ { "id": "SCREW", "level": 1 } ],
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ],
++    "components": [ [ [ "processor", 1 ] ], [ [ "RAM", 1 ] ], [ [ "scrap_aluminum", 4 ] ], [ [ "cable", 10 ] ] ]
 +  },
 +  {
 +    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
 +    "result": "coilgun",
-+    "copy-from": "coilgun",
-+    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ]
++    "category": "CC_WEAPON",
++    "subcategory": "CSC_WEAPON_RANGED",
++    "skill_used": "electronics",
++    "skills_required": [ [ "computer", 3 ], [ "fabrication", 3 ] ],
++    "difficulty": 5,
++    "time": "8 h",
++    "book_learn": [ [ "advanced_electronics", 5 ], [ "textbook_electronics", 5 ], [ "textbook_anarch", 6 ] ],
++    "using": [ [ "soldering_standard", 20 ], [ "plastic_molding", 7 ], [ "glue_any", 1 ] ],
++    "qualities": [ { "id": "SAW_M_FINE", "level": 1 }, { "id": "SCREW", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
++    "proficiencies": [
++      { "proficiency": "prof_elec_soldering" },
++      { "proficiency": "prof_electromagnetics" },
++      { "proficiency": "prof_gunsmithing_improv" },
++      { "proficiency": "prof_plasticworking", "time_multiplier": 1.25, "learning_time_multiplier": 0.1 }
++    ],
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ],
++    "components": [
++      [ [ "plastic_chunk", 10 ] ],
++      [ [ "processor", 1 ] ],
++      [ [ "circuit", 2 ] ],
++      [ [ "power_supply", 2 ] ],
++      [ [ "amplifier", 1 ] ],
++      [ [ "e_scrap", 30 ] ],
++      [ [ "scrap", 10 ] ],
++      [ [ "cable", 100 ] ]
++    ]
 +  }
 +]
 diff --git a/region_overlay.json b/region_overlay.json
