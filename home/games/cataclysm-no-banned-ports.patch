@@ -1,0 +1,32 @@
+diff --git a/data/json/items/tool/electronics.json b/data/json/items/tool/electronics.json
+index 8a71f60395fa..a8b395c3b469 100644
+--- a/data/json/items/tool/electronics.json
++++ b/data/json/items/tool/electronics.json
+@@ -48,7 +48,6 @@
+       "NO_UNLOAD",
+       "NO_RELOAD"
+     ],
+-    "e_ports_banned": [ "USB-A" ],
+     "tool_ammo": [ "battery" ]
+   },
+   {
+@@ -59,7 +58,6 @@
+     "charges_per_use": 1,
+     "etransfer_rate": "30 MB",
+     "e_port": "tablet",
+-    "e_ports_banned": [ "USB-A" ],
+     "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "WATER_BREAK", "ELECTRONIC" ],
+     "faults": [ { "fault_group": "electronic_general" } ],
+     "variables": { "browsed": "false" },
+diff --git a/data/json/items/tool_armor.json b/data/json/items/tool_armor.json
+index 4741efec8023..624276283a8c 100644
+--- a/data/json/items/tool_armor.json
++++ b/data/json/items/tool_armor.json
+@@ -578,7 +578,6 @@
+     "price_postapoc": "10 USD",
+     "etransfer_rate": "30 MB",
+     "e_port": "phone",
+-    "e_ports_banned": [ "USB-A", "memory card", "camera" ],
+     "extend": { "flags": [ "WATER_FRIENDLY", "THERMOMETER", "HYGROMETER", "BAROMETER", "CAN_USE_IN_DARK" ] },
+     "delete": { "flags": [ "WATER_BREAK", "FRAGILE" ] },
+     "use_action": [

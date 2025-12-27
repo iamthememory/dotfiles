@@ -542,10 +542,18 @@ index bf02b36cb71b..54db44244657 100644
 \ No newline at end of file
 +]
 diff --git a/Items/internet/internet_access.json b/Items/internet/internet_access.json
-index e77d4cd7394f..01f9272a6340 100644
+index e77d4cd7394f..3287169b3db2 100644
 --- a/Items/internet/internet_access.json
 +++ b/Items/internet/internet_access.json
-@@ -41,14 +41,18 @@
+@@ -24,7 +24,6 @@
+     "charges_per_use": 1,
+     "etransfer_rate": "30 MB",
+     "e_port": "phone",
+-    "e_ports_banned": [ "USB-A" ],
+     "id": "smart_phone_internet",
+     "copy-from": "abstract_smart_phone",
+     "description": "A popular, fancy smartphone.  Capable of taking photos with its integrated camera and illuminating an area with its flashlight app, assuming it has enough charge.  The smartphone also has a clock app that includes an alarm and an app for tracking consumed calories.  Runs on a small, rechargeable power cell compatible with a Unified Power Supply.\nNow with internet access!",
+@@ -41,14 +40,18 @@
        "E_FILE_DEVICE",
        "EBOOKSAVE",
        "CAMERA",
@@ -566,7 +574,7 @@ index e77d4cd7394f..01f9272a6340 100644
          "need_charges": 1,
          "need_charges_msg": "The smartphone's charge is too low.",
          "type": "transform"
-@@ -60,17 +64,8 @@
+@@ -60,17 +63,8 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -586,7 +594,7 @@ index e77d4cd7394f..01f9272a6340 100644
      "pocket_data": [
        { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 56 } },
        {
-@@ -78,33 +73,43 @@
+@@ -78,33 +72,43 @@
          "rigid": true,
          "max_contains_volume": "1 ml",
          "max_contains_weight": "1 g",
@@ -648,7 +656,7 @@ index e77d4cd7394f..01f9272a6340 100644
      "use_action": [
        "E_FILE_DEVICE",
        "EBOOKSAVE",
-@@ -123,48 +128,16 @@
+@@ -123,48 +127,16 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -702,7 +710,7 @@ index e77d4cd7394f..01f9272a6340 100644
      "description": "A portable computer, a ubiquitous tool both before and after the cataclysm.  Now that you have internet access, you can download it with books and other useful software.",
      "//": "https://www.amazon.com/dp/B0D6Z664QC, battery is FRANGWAT01",
      "symbol": ",",
-@@ -182,7 +155,6 @@
+@@ -182,7 +154,6 @@
          "target": "laptop_screen_internet_lit",
          "msg": "You light up the screen.",
          "menu_text": "Light up the screen",
@@ -710,7 +718,7 @@ index e77d4cd7394f..01f9272a6340 100644
          "need_charges": 1,
          "need_charges_msg": "The laptop's batteries need more charge.",
          "type": "transform"
-@@ -194,6 +166,7 @@
+@@ -194,6 +165,7 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],
@@ -718,7 +726,7 @@ index e77d4cd7394f..01f9272a6340 100644
      "pocket_data": [
        { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 200 } },
        {
-@@ -201,34 +174,19 @@
+@@ -201,34 +173,19 @@
          "rigid": true,
          "max_contains_volume": "1 ml",
          "max_contains_weight": "1 g",
@@ -758,7 +766,7 @@ index e77d4cd7394f..01f9272a6340 100644
      "use_action": [
        "E_FILE_DEVICE",
        "EBOOKSAVE",
-@@ -247,19 +205,8 @@
+@@ -247,19 +204,8 @@
          "effect_on_conditions": [ "EOC_internet_access" ]
        }
      ],

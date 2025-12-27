@@ -104,6 +104,7 @@ in
           ./cataclysm-mom-defense.patch
           ./cataclysm-more-engines.patch
           ./cataclysm-multiple-thresholds.patch
+          ./cataclysm-no-banned-ports.patch
           ./cataclysm-no-moving-sand-grains-with-tweezers.patch
           ./cataclysm-perks-fix.patch
           ./cataclysm-plant-in-cold.patch
