@@ -2,19 +2,22 @@
   {
     "id": "smart_phone_internet",
     "copy-from": "smart_phone_internet",
+    "type": "ITEM",
     "name": { "str": "smartphone (SIM)" },
-    "e_ports_banned": [  ]
+    "delete": { "e_ports_banned": [ "USB-A" ] }
   },
   {
     "id": "smart_phone_internet_music",
     "copy-from": "smart_phone_internet_music",
+    "type": "ITEM",
     "name": { "str": "smartphone (SIM) - music" },
-    "e_ports_banned": [  ]
+    "delete": { "e_ports_banned": [ "USB-A" ] }
   },
   {
     "id": "smart_phone_internet_flashlight",
     "copy-from": "smart_phone_internet_flashlight",
+    "type": "ITEM",
     "name": { "str": "smartphone (SIM) - Flashlight" },
-    "e_ports_banned": [  ]
+    "delete": { "e_ports_banned": [ "USB-A" ] }
   }
 ]
