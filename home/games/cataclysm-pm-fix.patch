@@ -1201,6 +1201,528 @@ index d9d8f2be698e..102c6a63582e 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/mod_interactions/aftershock_exoplanet/recipes.json b/mod_interactions/aftershock_exoplanet/recipes.json
+new file mode 100644
+index 000000000000..fefa7907ebd5
+--- /dev/null
++++ b/mod_interactions/aftershock_exoplanet/recipes.json
+@@ -0,0 +1,20 @@
++[
++  {
++    "result": "firmware_subsonic",
++    "copy-from": "firmware_subsonic",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ], [ "laptop_internet", 100 ] ], [ [ "cable", 2 ] ] ]
++  },
++  {
++    "result": "firmware_overpressure",
++    "copy-from": "firmware_overpressure",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 ], [ "laptop_internet", 100 ] ], [ [ "cable", 2 ] ] ]
++  },
++  {
++    "result": "firmware_incendiary",
++    "copy-from": "firmware_incendiary",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 100 ], [ "afs_bio_deck_jack", 100 ], [ "afs_wrist_computer", 45 , [ "laptop_internet", 100 ]] ], [ [ "cable", 2 ] ] ]
++  }
++]
+diff --git a/mod_interactions/mindovermatter/recipes.json b/mod_interactions/mindovermatter/recipes.json
+new file mode 100644
+index 000000000000..783754c579eb
+--- /dev/null
++++ b/mod_interactions/mindovermatter/recipes.json
+@@ -0,0 +1,28 @@
++[
++  {
++    "type": "recipe",
++    "id": "psi_research_rad_powers",
++    "copy-from": "psi_research_rad_powers",
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ], [ [ "psi_usb_rad_recipes", -1 ] ] ]
++  },
++  {
++    "type": "recipe",
++    "id": "psi_research_rad_powers_clair",
++    "copy-from": "psi_research_rad_powers_clair",
++    "tools": [
++      [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ],
++      [ [ "psi_usb_rad_recipes", -1 ] ],
++      [ [ "betavoltaic", -1 ], [ "huge_atomic_battery_cell", -1 ] ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "id": "psi_research_rad_powers_vita",
++    "copy-from": "psi_research_rad_powers_vita",
++    "tools": [
++      [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ],
++      [ [ "psi_usb_rad_recipes", -1 ] ],
++      [ [ "betavoltaic", -1 ], [ "huge_atomic_battery_cell", -1 ] ]
++    ]
++  }
++]
+diff --git a/mod_interactions/xedra_evolved/recipes.json b/mod_interactions/xedra_evolved/recipes.json
+new file mode 100644
+index 000000000000..dfc24506d30d
+--- /dev/null
++++ b/mod_interactions/xedra_evolved/recipes.json
+@@ -0,0 +1,217 @@
++[
++  {
++    "type": "recipe",
++    "result": "xedra_inventor_damage_reversal_device",
++    "copy-from": "xedra_inventor_damage_reversal_device",
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ]
++  },
++  {
++    "result": "software_AI",
++    "copy-from": "software_AI",
++    "container": "usb_drive",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 30 ], [ "laptop_internet", 30 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++  },
++  {
++    "result": "software_math",
++    "id_suffix": "inventor",
++    "container": "usb_drive",
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "tools": [ [ [ "laptop", 30 ], [ "laptop_internet", 30 ] ] ],
++    "time": "14 h",
++    "skill_used": "deduction",
++    "difficulty": 2,
++    "skills_required": [ "computer", 3 ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
++  },
++  {
++    "result": "software_electronics_reference",
++    "id_suffix": "inventor",
++    "container": "usb_drive",
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "tools": [ [ [ "laptop", 30 ], [ "laptop_internet", 30 ] ], [ [ "software_math", -1 ] ] ],
++    "time": "20 h",
++    "skill_used": "deduction",
++    "difficulty": 3,
++    "skills_required": [ "computer", 5 ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "flags": [ "BLIND_EASY", "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
++  },
++  {
++    "result": "nre_recorder",
++    "id_suffix": "inventor",
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "time": "4 h",
++    "tools": [ [ [ "laptop", 30 ], [ "laptop_internet", 30 ] ] ],
++    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 } ],
++    "proficiencies": [
++      { "proficiency": "prof_welding_basic", "time_multiplier": 3, "skill_penalty": 0 },
++      { "proficiency": "prof_welding", "time_multiplier": 2, "skill_penalty": 0 }
++    ],
++    "using": [ [ "soldering_standard", 60 ], [ "welding_standard", 30 ] ],
++    "components": [
++      [ [ "power_supply", 2 ] ],
++      [ [ "scrap", 20 ] ],
++      [ [ "scrap_aluminum", 10 ] ],
++      [ [ "cable", 80 ] ],
++      [ [ "plastic_chunk", 5 ] ],
++      [ [ "magnetron", 2 ] ],
++      [ [ "processor", 1 ] ],
++      [ [ "lens_small", 1 ] ],
++      [ [ "amplifier", 1 ] ]
++    ],
++    "skill_used": "deduction",
++    "difficulty": 6,
++    "skills_required": [ [ "electronics", 6 ], [ "computer", 2 ] ],
++    "flags": [ "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
++  },
++  {
++    "result": "xedra_inventor_time_pierce_tool",
++    "id_suffix": "inventor",
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "time": "8 h",
++    "tools": [ [ [ "laptop", 200 ], [ "laptop_internet", 200 ] ] ],
++    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 }, { "id": "AI_TOOL", "level": 1 } ],
++    "proficiencies": [
++      { "proficiency": "prof_welding_basic", "time_multiplier": 3, "skill_penalty": 0 },
++      { "proficiency": "prof_welding", "time_multiplier": 2, "skill_penalty": 0 }
++    ],
++    "using": [ [ "soldering_standard", 60 ], [ "welding_standard", 30 ] ],
++    "components": [
++      [ [ "power_supply", 8 ] ],
++      [ [ "teleporter", 1 ] ],
++      [ [ "spike", 1 ] ],
++      [ [ "magnetron", 4 ] ],
++      [ [ "scrap", 20 ] ],
++      [ [ "cable", 80 ] ],
++      [ [ "scrap_aluminum", 10 ] ],
++      [ [ "processor", 1 ] ],
++      [ [ "lens_small", 4 ] ],
++      [ [ "amplifier", 1 ] ]
++    ],
++    "skill_used": "deduction",
++    "difficulty": 10,
++    "skills_required": [ [ "electronics", 6 ], [ "computer", 4 ] ],
++    "flags": [ "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
++  },
++  {
++    "result": "inventor_portal_closer",
++    "type": "recipe",
++    "activity_level": "MODERATE_EXERCISE",
++    "time": "16 h",
++    "tools": [ [ [ "laptop", 100 , [ "laptop_internet", 100 ]] ] ],
++    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 }, { "id": "AI_TOOL", "level": 1 } ],
++    "proficiencies": [
++      { "proficiency": "prof_welding_basic", "time_multiplier": 3, "skill_penalty": 0 },
++      { "proficiency": "prof_welding", "time_multiplier": 2, "skill_penalty": 0 }
++    ],
++    "using": [ [ "soldering_standard", 100 ], [ "welding_standard", 50 ] ],
++    "components": [
++      [ [ "anvil", 2 ] ],
++      [ [ "teleporter", 2 ] ],
++      [ [ "pipe", 32 ] ],
++      [ [ "power_supply", 10 ] ],
++      [ [ "motor_micro", 10 ] ],
++      [ [ "scrap", 100 ] ],
++      [ [ "cable", 400 ] ],
++      [ [ "magnetron", 2 ] ],
++      [ [ "processor", 2 ] ]
++    ],
++    "skill_used": "deduction",
++    "difficulty": 10,
++    "skills_required": [ [ "electronics", 6 ], [ "fabrication", 6 ], [ "computer", 4 ] ],
++    "flags": [ "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
++  },
++  {
++    "result": "teleporter",
++    "id_suffix": "inventor",
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "time": "8 h",
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ],
++    "qualities": [ { "id": "SCREW", "level": 1 }, { "id": "SAW_M", "level": 1 }, { "id": "AI_TOOL", "level": 1 } ],
++    "proficiencies": [
++      { "proficiency": "prof_welding_basic", "time_multiplier": 3, "skill_penalty": 0 },
++      { "proficiency": "prof_welding", "time_multiplier": 2, "skill_penalty": 0 }
++    ],
++    "using": [ [ "soldering_standard", 50 ], [ "welding_standard", 25 ] ],
++    "components": [
++      [ [ "power_supply", 1 ] ],
++      [ [ "diamond", 1 ] ],
++      [ [ "scrap", 5 ] ],
++      [ [ "cable", 10 ] ],
++      [ [ "lens_small", 1 ] ],
++      [ [ "processor", 1 ] ],
++      [ [ "inventor_medium_cell", 1 ] ]
++    ],
++    "skill_used": "deduction",
++    "difficulty": 8,
++    "skills_required": [ [ "electronics", 4 ], [ "computer", 4 ] ],
++    "flags": [ "SECRET" ],
++    "category": "CC_XEDRA",
++    "subcategory": "CSC_XEDRA_TOOLS"
++  },
++  {
++    "id": "inventor_research_base_1",
++    "copy-from": "inventor_research_base_1",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 20 ], [ "laptop_internet", 20 ] ] ]
++  },
++  {
++    "id": "inventor_research_base_2",
++    "copy-from": "inventor_research_base_2",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ] ]
++  },
++  {
++    "id": "inventor_research_base_3",
++    "copy-from": "inventor_research_base_3",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 60 ], [ "laptop_internet", 60 ] ], [ [ "software_math", -1 ] ] ]
++  },
++  {
++    "id": "inventor_research_energy_1",
++    "copy-from": "inventor_research_energy_1",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 20 ], [ "laptop_internet", 20 ] ], [ [ "software_math", -1 ] ] ]
++  },
++  {
++    "id": "inventor_research_energy_2",
++    "copy-from": "inventor_research_energy_2",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++  },
++  {
++    "id": "inventor_research_energy_3",
++    "copy-from": "inventor_research_energy_3",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 60 ], [ "laptop_internet", 60 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++  },
++  {
++    "id": "inventor_research_ai_1",
++    "copy-from": "inventor_research_ai_1",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 40 ], [ "laptop_internet", 40 ] ], [ [ "software_math", -1 ] ], [ [ "software_electronics_reference", -1 ] ] ]
++  },
++  {
++    "id": "inventor_research_dimension_1",
++    "copy-from": "inventor_research_dimension_1",
++    "type": "recipe",
++    "tools": [ [ [ "laptop", 100 ], [ "laptop_internet", 100 ] ] ]
++  }
++]
+diff --git a/recipes.json b/recipes.json
+new file mode 100644
+index 000000000000..80569433d330
+--- /dev/null
++++ b/recipes.json
+@@ -0,0 +1,233 @@
++[
++  {
++    "type": "recipe",
++    "result": "faction_base_radio_tower_fix_tower",
++    "copy-from": "faction_base_radio_tower_fix_tower",
++    "blueprint_needs": {
++      "time": "3 d",
++      "skills": [ [ "fabrication", 3 ], [ "computer", 4 ], [ "electronics", 8 ] ],
++      "inline": {
++        "tools": [ [ [ "laptop", 600 ], [ "laptop_internet", 600 ] ], [ [ "radio_book", -1 ] ] ],
++        "qualities": [
++          [ { "id": "HAMMER", "level": 2 } ],
++          [ { "id": "SAW_M" } ],
++          [ { "id": "SCREW" } ],
++          [ { "id": "SCREW_FINE" } ],
++          [ { "id": "WRENCH", "level": 2 } ],
++          [ { "id": "WRENCH_FINE" } ],
++          [ { "id": "GLARE", "level": 1 } ]
++        ],
++        "components": [
++          [
++            [ "wind_turbine", 16 ],
++            [ "xl_wind_turbine", 4 ],
++            [ "solar_panel", 16 ],
++            [ "reinforced_solar_panel", 16 ],
++            [ "solar_panel_v2", 8 ],
++            [ "reinforced_solar_panel_v2", 8 ]
++          ],
++          [ [ "storage_battery", 4 ], [ "medium_storage_battery", 16 ] ],
++          [ [ "sheet_metal", 8 ], [ "lc_wire", 32 ] ],
++          [ [ "pipe", 24 ] ],
++          [ [ "processor", 16 ] ],
++          [ [ "RAM", 16 ] ],
++          [ [ "e_scrap", 40 ] ],
++          [ [ "frame", 1 ] ],
++          [ [ "circuit", 32 ] ],
++          [ [ "power_supply", 16 ] ],
++          [ [ "amplifier", 16 ] ],
++          [ [ "cable", 400 ] ],
++          [ [ "software_electronics_reference", 1 ] ]
++        ]
++      }
++    }
++  },
++  {
++    "id": "prac_computer_beg",
++    "copy-from": "prac_computer_beg",
++    "type": "practice",
++    "tools": [
++      [
++        [ "laptop", 10 ],
++        [ "laptop_internet", 10 ],
++        [ "eink_tablet_pc", 1 ],
++        [ "smart_phone", 5 ],
++        [ "smart_phone_internet", 5 ]
++      ]
++    ]
++  },
++  {
++    "id": "prac_computer_int",
++    "copy-from": "prac_computer_int",
++    "type": "practice",
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ] ]
++  },
++  {
++    "id": "prac_computer_adv",
++    "copy-from": "prac_computer_adv",
++    "type": "practice",
++    "tools": [ [ [ "laptop", 50 ], [ "laptop_internet", 50 ] ], [ "software_hacking" ] ]
++  },
++  {
++    "id": "prac_speech_beg",
++    "copy-from": "prac_speech_beg",
++    "type": "practice",
++    "tools": [
++      [
++        [ "mirror", -1 ],
++        [ "laptop", 10 ],
++        [ "laptop_internet", 10 ],
++        [ "smart_phone", 5 ],
++        [ "smart_phone_internet", 5 ]
++      ]
++    ]
++  },
++  {
++    "id": "prac_speech_int",
++    "copy-from": "prac_speech_int",
++    "type": "practice",
++    "tools": [
++      [
++        [ "mirror", -1 ],
++        [ "laptop", 10 ],
++        [ "laptop_internet", 10 ],
++        [ "smart_phone", 5 ],
++        [ "smart_phone_internet", 5 ]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "memory_card_unread",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 2,
++    "time": "60 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 2 ] ],
++    "tools": [ [ [ "laptop", 120 ], [ "laptop_internet", 120 ] ] ],
++    "components": [ [ [ "memory_card", 1 ] ] ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "software_useless",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 3,
++    "time": "120 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 3 ] ],
++    "tools": [ [ [ "laptop", 240 ], [ "laptop_internet", 240 ] ] ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "container": "usb_drive"
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "software_math",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 4,
++    "time": "150 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 4 ] ],
++    "tools": [ [ [ "laptop", 300 ], [ "laptop_internet", 300 ] ], [ [ "software_hacking", -1 ] ] ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "container": "usb_drive"
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "memory_card_science",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 5,
++    "time": "180 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 5 ] ],
++    "tools": [ [ [ "laptop", 360 ], [ "laptop_internet", 360 ] ], [ [ "software_hacking", -1 ] ] ],
++    "components": [ [ [ "memory_card", 1 ] ] ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "software_medical",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 5,
++    "time": "210 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 5 ] ],
++    "tools": [ [ [ "laptop", 420 ], [ "laptop_internet", 420 ] ], [ [ "software_hacking", -1 ] ] ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "container": "usb_drive"
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "software_electronics_reference",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 6,
++    "time": "240 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 6 ] ],
++    "tools": [ [ [ "laptop", 480 ], [ "laptop_internet", 480 ] ], [ [ "software_hacking", -1 ] ] ],
++    "components": [ [ [ "usb_drive", 1 ] ] ],
++    "container": "usb_drive"
++  },
++  {
++    "type": "recipe",
++    "activity_level": "NO_EXERCISE",
++    "result": "satellitemap",
++    "id_suffix": "npc_hack",
++    "category": "CC_CAMP",
++    "subcategory": "CSC_CAMP_EXPANSIONS",
++    "skill_used": "computer",
++    "difficulty": 8,
++    "time": "480 m",
++    "autolearn": false,
++    "never_learn": true,
++    "skills_required": [ [ "computer", 8 ] ],
++    "tools": [ [ [ "laptop", 600 ], [ "laptop_internet", 600 ] ], [ [ "pencil", 50 ] ], [ [ "software_hacking", -1 ] ] ],
++    "components": [ [ [ "paper", 25 ] ] ]
++  },
++  {
++    "type": "recipe",
++    "result": "turret_controls",
++    "copy-from": "turret_controls",
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ]
++  },
++  {
++    "type": "recipe",
++    "result": "electrohack",
++    "copy-from": "electrohack",
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ]
++  },
++  {
++    "type": "recipe",
++    "result": "coilgun",
++    "copy-from": "coilgun",
++    "tools": [ [ [ "laptop", -1 ], [ "laptop_internet", -1 ] ] ]
++  }
++]
 diff --git a/region_overlay.json b/region_overlay.json
 index fb40bce95e5b..a5c0bcbdf14e 100644
 --- a/region_overlay.json
