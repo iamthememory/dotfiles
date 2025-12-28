@@ -40,7 +40,7 @@
     "shape": "blast",
     "energy_source": "MANA",
     "base_energy_cost": 0,
-    "base_casting_time": 360000,
+    "base_casting_time": 30000,
     "effect": "ter_transform",
     "effect_str": "planter_maker_transform"
   }

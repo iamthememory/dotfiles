@@ -64,7 +64,7 @@
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 0.01
+    "value": 0.002
   },
   {
     "type": "EXTERNAL_OPTION",
