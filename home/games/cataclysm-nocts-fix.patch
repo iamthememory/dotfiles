@@ -71,6 +71,42 @@ index 01f755b34d85..dcd99ca8a9c1 100644
      "armor": [ { "encumbrance": 0, "coverage": 40, "covers": [ "torso" ], "specifically_covers": [ "torso_waist" ] } ]
    },
    {
+diff --git a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json b/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
+index 97c30a99854e..5d2311bef392 100644
+--- a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
++++ b/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
+@@ -179,19 +179,19 @@
+     "id": "homebooks",
+     "copy-from": "homebooks",
+     "type": "item_group",
+-    "extend": { "items": [ [ "recipe_surv", 1 ], { "group": "survivor_combative_books", "prob": 1 } ] }
++    "extend": { "items": [ [ "recipe_surv", 1 ], { "group": "survivor_combative_books", "prob": 1 }, { "group": "encylopedias_rare", "prob": 1 } ] }
+   },
+   {
+     "id": "manuals",
+     "copy-from": "manuals",
+     "type": "item_group",
+-    "extend": { "items": [ [ "recipe_surv", 1 ], { "group": "survivor_combative_books", "prob": 1 } ] }
++    "extend": { "items": [ [ "recipe_surv", 1 ], { "group": "survivor_combative_books", "prob": 1 }, { "group": "encylopedias_rare", "prob": 1 } ] }
+   },
+   {
+     "id": "mansion_books",
+     "copy-from": "mansion_books",
+     "type": "item_group",
+-    "extend": { "items": [ [ "recipe_surv", 2 ], { "group": "survivor_combative_books", "prob": 3 } ] }
++    "extend": { "items": [ [ "recipe_surv", 2 ], { "group": "survivor_combative_books", "prob": 3 }, { "group": "encylopedias_rare", "prob": 1 } ] }
+   },
+   {
+     "id": "shelter",
+@@ -203,7 +203,7 @@
+     "id": "textbooks",
+     "copy-from": "textbooks",
+     "type": "item_group",
+-    "extend": { "items": [ [ "recipe_surv", 2 ], { "group": "survivor_combative_books", "prob": 1 } ] }
++    "extend": { "items": [ [ "recipe_surv", 2 ], { "group": "survivor_combative_books", "prob": 1 }, { "group": "encylopedias_rare", "prob": 1 } ] }
+   },
+   {
+     "id": "gear_survival",
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_martialarts.json b/nocts_cata_mod_DDA/Surv_help/c_martialarts.json
 index aa137e953a79..d35186c4e54e 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_martialarts.json
@@ -207,3 +243,625 @@ index 6a691468b5d3..60c7ab64cab7 100644
      "looks_like": "flamethrower",
      "type": "ITEM",
      "subtypes": [ "GUN" ],
+diff --git a/nocts_cata_mod_DDA/mod_interactions/Arcana/books.json b/nocts_cata_mod_DDA/mod_interactions/Arcana/books.json
+new file mode 100644
+index 000000000000..07b0bd2e10be
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/Arcana/books.json
+@@ -0,0 +1,135 @@
++[
++  {
++    "id": "encyclopedia_arcana",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Arcana" },
++    "description": "The arcana volume of the Rebuilding Civilization encyclopedia.  This book contains everything from esoteric diagrams to the history of alchemy in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "magic",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_arcana", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_arcana", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_arcana", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "chalice_cult_books",
++    "copy-from": "chalice_cult_books",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 1 }
++      ]
++    }
++  },
++  {
++    "id": "chalice_cult_books_postapoc",
++    "copy-from": "chalice_cult_books_postapoc",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 1 }
++      ]
++    }
++  },
++  {
++    "id": "cleansing_flame_books",
++    "copy-from": "cleansing_flame_books",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 1 }
++      ]
++    }
++  },
++  {
++    "id": "cleansing_flame_books_postapoc",
++    "copy-from": "cleansing_flame_books_postapoc",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 1 }
++      ]
++    }
++  },
++  {
++    "id": "magic_books",
++    "copy-from": "magic_books",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 5 }
++      ]
++    }
++  },
++  {
++    "id": "magic_books_postapoc",
++    "copy-from": "magic_books_postapoc",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 5 }
++      ]
++    }
++  },
++  {
++    "id": "sanguine_cult_books",
++    "copy-from": "sanguine_cult_books",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 1 }
++      ]
++    }
++  },
++  {
++    "id": "sanguine_cult_books_postapoc",
++    "copy-from": "sanguine_cult_books_postapoc",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_arcana", "prob": 1 }
++      ]
++    }
++  }
++]
+diff --git a/nocts_cata_mod_DDA/mod_interactions/Isolation_Protocol/books.json b/nocts_cata_mod_DDA/mod_interactions/Isolation_Protocol/books.json
+new file mode 100644
+index 000000000000..2574e1761ebc
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/Isolation_Protocol/books.json
+@@ -0,0 +1,65 @@
++[
++  {
++    "id": "encyclopedia_spellcraft",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Sorcery" },
++    "description": "The sorcery volume of the Rebuilding Civilization encyclopedia.  This book contains everything from basic mana manipulation to spell design in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "spellcraft",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_survalist",
++    "copy-from": "encylopedias_survalist",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  }
++]
+diff --git a/nocts_cata_mod_DDA/mod_interactions/aftershock_exoplanet/books.json b/nocts_cata_mod_DDA/mod_interactions/aftershock_exoplanet/books.json
+new file mode 100644
+index 000000000000..57da4cbd6ca9
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/aftershock_exoplanet/books.json
+@@ -0,0 +1,81 @@
++[
++  {
++    "id": "encyclopedia_metaphysics",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Metaphysics" },
++    "description": "The metaphysics volume of the Rebuilding Civilization encyclopedia.  This book contains everything from fringe theories on spacetime to meditation techniques in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "metaphysics",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encyclopedia_smartgun",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Smart Guns" },
++    "description": "The smart guns volume of the Rebuilding Civilization encyclopedia.  This book contains everything about the usage, development, and maintenance of smart guns in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "smartgun",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_metaphysics", 1 ],
++        [ "encyclopedia_smartgun", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_metaphysics", 1 ],
++        [ "encyclopedia_smartgun", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_metaphysics", 1 ],
++        [ "encyclopedia_smartgun", 1 ]
++      ]
++    }
++  }
++]
+diff --git a/nocts_cata_mod_DDA/mod_interactions/magiclysm/books.json b/nocts_cata_mod_DDA/mod_interactions/magiclysm/books.json
+new file mode 100644
+index 000000000000..24740c77753f
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/magiclysm/books.json
+@@ -0,0 +1,75 @@
++[
++  {
++    "id": "encyclopedia_spellcraft",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Sorcery" },
++    "description": "The sorcery volume of the Rebuilding Civilization encyclopedia.  This book contains everything from basic mana manipulation to spell design in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "spellcraft",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_survalist",
++    "copy-from": "encylopedias_survalist",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_spellcraft", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "spellcraft_books",
++    "copy-from": "spellcraft_books",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_spellcraft", "prob": 20 }
++      ]
++    }
++  }
++]
+diff --git a/nocts_cata_mod_DDA/mod_interactions/mindovermatter/books.json b/nocts_cata_mod_DDA/mod_interactions/mindovermatter/books.json
+new file mode 100644
+index 000000000000..3c1703d87509
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/mindovermatter/books.json
+@@ -0,0 +1,65 @@
++[
++  {
++    "id": "encyclopedia_metaphysics",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Metaphysics" },
++    "description": "The metaphysics volume of the Rebuilding Civilization encyclopedia.  This book contains everything from fringe theories on spacetime to meditation techniques in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "metaphysics",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_metaphysics", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_metaphysics", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_metaphysics", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "dist_meditation_books_int",
++    "copy-from": "dist_meditation_books_int",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        { "item": "encyclopedia_metaphysics", "prob": 1 }
++      ]
++    }
++  }
++]
+diff --git a/nocts_cata_mod_DDA/mod_interactions/pm_world/books.json b/nocts_cata_mod_DDA/mod_interactions/pm_world/books.json
+new file mode 100644
+index 000000000000..949e849527a0
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/pm_world/books.json
+@@ -0,0 +1,72 @@
++[
++  {
++    "id": "encyclopedia_self-control",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Self-Control" },
++    "description": "The self-control volume of the Rebuilding Civilization encyclopedia.  This book contains everything from coping with a presumed apocalypse to tips on managing depression in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "self-control",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_self-control", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_self-control", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_survalist",
++    "copy-from": "encylopedias_survalist",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_self-control", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_self-control", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "doctors_books",
++    "copy-from": "doctors_books",
++    "type": "item_group",
++    "subtype": "distribution",
++    "extend": { "entries": [ { "item": "encyclopedia_self-control", "prob": 5 } ] }
++  }
++]
+diff --git a/nocts_cata_mod_DDA/mod_interactions/xedra_evolved/books.json b/nocts_cata_mod_DDA/mod_interactions/xedra_evolved/books.json
+new file mode 100644
+index 000000000000..fcca644fcd9a
+--- /dev/null
++++ b/nocts_cata_mod_DDA/mod_interactions/xedra_evolved/books.json
+@@ -0,0 +1,87 @@
++[
++  {
++    "id": "encyclopedia_deduction",
++    "type": "ITEM",
++    "subtypes": [ "BOOK" ],
++    "category": "manuals",
++    "looks_like": "textbook_chemistry",
++    "name": { "str_sp": "Rebuilding Civilization: Deduction" },
++    "description": "The deduction volume of the Rebuilding Civilization encyclopedia.  This book contains everything from puzzle solving tips to cryptid hunting advice in extremely fine detail.  This book is so technical, longwinded and dry that even bookworms and fast readers would find it hard to read.  Literally any other book on the subject would be a more efficient way to learn but if the books you have are missing specific information then this is a good substitute until you find something better.",
++    "weight": "1800 g",
++    "volume": "2000 ml",
++    "price": "100 USD",
++    "price_postapoc": "10 USD",
++    "melee_damage": { "bash": 4 },
++    "material": [ "paper" ],
++    "symbol": "?",
++    "color": "blue",
++    "read_skill": "deduction",
++    "required_level": 0,
++    "max_level": 10,
++    "intelligence": 12,
++    "time": "180 m",
++    "read_fun": -5
++  },
++  {
++    "id": "encylopedias_rare",
++    "copy-from": "encylopedias_rare",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_deduction", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_military",
++    "copy-from": "encylopedias_military",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_deduction", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_survalist",
++    "copy-from": "encylopedias_survalist",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_deduction", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "encylopedias_lab",
++    "copy-from": "encylopedias_lab",
++    "type": "item_group",
++    "extend": {
++      "items": [
++        [ "encyclopedia_deduction", 1 ]
++      ]
++    }
++  },
++  {
++    "id": "deduction_books",
++    "copy-from": "deduction_books",
++    "type": "item_group",
++    "subtype": "distribution",
++    "extend": {
++      "entries": [
++        { "item": "encyclopedia_deduction", "prob": 4 }
++      ]
++    }
++  },
++  {
++    "id": "homebooks",
++    "copy-from": "homebooks",
++    "type": "item_group",
++    "subtype": "distribution",
++    "extend": {
++      "entries": [
++        { "item": "encyclopedia_deduction", "prob": 1 }
++      ]
++    }
++  }
++]
