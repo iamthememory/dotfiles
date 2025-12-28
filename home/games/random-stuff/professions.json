@@ -12,27 +12,24 @@
           { "item": "combat_shirt" },
           { "item": "socks" },
           { "item": "boots" },
-          { "item": "elbow_pads" },
-          { "item": "molle_large_rucksack" },
-          { "item": "ballistic_vest_heavy" },
-          { "item": "webbing_belt" },
+          { "item": "molle_large_rucksack", "contents-group": "molle_large_rucksack_full_sustainment" },
+          { "item": "ballistic_vest_heavy", "contents-group": "ballistic_vest_heavy_full_sustainment" },
+          { "item": "webbing_belt", "contents-group": "webbing_belt_full_sustainment" },
           { "group": "charged_cigs" },
-          { "item": "knee_pads" },
           { "item": "water_clean", "container-item": "thermos" },
           { "item": "water_clean", "container-item": "thermos" },
-          { "group": "starter_wallet_full" },
           { "item": "ear_plugs", "custom-flags": [ "no_auto_equip" ] },
           { "item": "knife_KABAR", "container-item": "sheath" },
           { "item": "m9", "ammo-item": "9mm", "charges": 15, "container-item": "holster" },
           { "group": "modular_ar15", "ammo-item": "223", "charges": 30, "contents-item": [ "shoulder_strap" ] },
           { "group": "charged_ref_lighter" },
           { "group": "full_ifak" },
-          { "group": "charged_smart_phone" },
-          { "group": "charged_laptop" },
           { "group": "charged_heavy_flashlight" },
           { "group": "charged_smart_watch_adv" },
           { "group": "new_eink_tablet_pcs" },
           { "group": "army_mags_m4" },
+          { "item": "laptop_internet", "ammo-item": "battery", "charges": 1000 },
+          { "item": "smart_phone_internet", "ammo-item": "battery", "charges": 1000 },
           { "item": "m9mag", "ammo-item": "9mm", "charges": 15 },
           { "item": "m9mag", "ammo-item": "9mm", "charges": 15 },
           { "item": "rc_seed_seeds" },
@@ -49,12 +46,8 @@
           { "item": "mess_kit" },
           { "item": "oil_cooker" },
           { "item": "oil_lamp" },
+          { "item": "folding_solar_panel" },
           { "item": "lamp_oil", "container-item": "fuel_tin" },
-          { "item": "internet_sim_card", "count": 2 },
-          { "item": "small_storage_battery", "charges": 1000 },
-          { "item": "hand_crank_charger" },
-          { "item": "magazine_battery_mod" },
-          { "item": "power_cord" },
           { "item": "9mm", "charges": 60 },
           { "item": "223", "charges": 120 },
           { "item": "thorazine", "container-item": "null", "entry-wrapper": "bottle_plastic_pill_prescription", "count": 60 }
@@ -75,5 +68,29 @@
     },
     "spells": [ { "id": "planter_maker_spell", "level": 0 } ],
     "traits": [ "SCHIZOPHRENIC", "perk_forced_genetic_instability", "ROBUST", "UNSTABLE" ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "molle_large_rucksack_full_sustainment",
+    "entries": [
+      { "item": "sustainment_pouch", "count": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "ballistic_vest_heavy_full_sustainment",
+    "entries": [
+      { "item": "sustainment_pouch", "count": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "webbing_belt_full_sustainment",
+    "entries": [
+      { "item": "sustainment_pouch", "count": 2 }
+    ]
   }
 ]
