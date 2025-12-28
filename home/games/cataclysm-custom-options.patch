@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 52b4263204f4..c9512f4245b1 100644
+index 52b4263204f4..a11a690c063a 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,75 @@
+@@ -520,5 +520,82 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -76,6 +76,13 @@ index 52b4263204f4..c9512f4245b1 100644
 +    "//": "Whether to prevent autolearning recipes which can be learned via disassembly.",
 +    "stype": "bool",
 +    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "REQUIRE_THEORETICAL_KNOWLEDGE_TO_LEARN",
++    "//": "Learning practical skill will no longer increase your theoretical skill, so you need to learn from books to get any skill.",
++    "stype": "bool",
++    "value": false
    }
  ]
 diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
@@ -94,6 +101,27 @@ index 6f72daac2f7b..1dbad53cfe8c 100644
      if( shelf_life > 0_turns ) {
          const item &it = *loc;
          const double relative_rot = it.get_relative_rot();
+diff --git a/src/character.cpp b/src/character.cpp
+index 6ef44ca17f8b..b2b2381487e1 100644
+--- a/src/character.cpp
++++ b/src/character.cpp
+@@ -2444,6 +2444,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
+         return false;
+     }
+ 
++    if( ::get_option<bool>( "REQUIRE_THEORETICAL_KNOWLEDGE_TO_LEARN" ) ) {
++        int theoretical_level = level.knowledgeLevel() * 100 + std::max( 0, level.knowledgeExperience() );
++        int practical_level = level.level() * 100 + std::max( 0, level.exercise() );
++        if( practical_level >= theoretical_level ) {
++            // Don't practice if we need more theoretical knowledge.
++            return false;
++        }
++    }
++
++
+     // Your ability to "catch up" skill experience to knowledge is mostly a function of intelligence,
+     // but perception also plays a role, representing both memory/attentiveness and catching on to how
+     // the two apply to each other.
 diff --git a/src/game_inventory.cpp b/src/game_inventory.cpp
 index b9e1db47997d..f1e12a3e71c4 100644
 --- a/src/game_inventory.cpp
@@ -179,14 +207,14 @@ index 382fcb6a1f70..0d31b92335f1 100644
 -
 -
 diff --git a/src/recipe.cpp b/src/recipe.cpp
-index 8dfada73352d..aba89a174cf5 100644
+index 8dfada73352d..a32e1ab0401b 100644
 --- a/src/recipe.cpp
 +++ b/src/recipe.cpp
 @@ -38,6 +38,7 @@
  #include "mapgendata.h"
  #include "math_defines.h"
  #include "npc.h"
-+#include "option.h"
++#include "options.h"
  #include "output.h"
  #include "proficiency.h"
  #include "recipe_dictionary.h"
@@ -204,6 +232,23 @@ index 8dfada73352d..aba89a174cf5 100644
      // ensure result name is always in front of the name for searching in crafting menu
      if( !name_.empty() && !is_practice() && !is_nested() && result_ ) {
          name_ = translation::to_translation( string_format( name_, result_->nname( makes_amount() ) ) );
+diff --git a/src/skill.cpp b/src/skill.cpp
+index ccc02127c027..febac736ab75 100644
+--- a/src/skill.cpp
++++ b/src/skill.cpp
+@@ -330,7 +330,11 @@ void SkillLevel::train( int amount, float catchup_modifier, float knowledge_modi
+         return;
+     }
+     _rustAccumulator -= catchup_amount;
+-    _knowledgeExperience += knowledge_amount;
++
++    if( !::get_option<bool>( "REQUIRE_THEORETICAL_KNOWLEDGE_TO_LEARN" ) ) {
++        // Avoid raising theoretical knowledge outside of book learning.
++        _knowledgeExperience += knowledge_amount;
++    }
+ 
+     on_exercise_change( allow_multilevel );
+     practice();
 diff --git a/src/suffer.cpp b/src/suffer.cpp
 index f0c234fac297..b35c7f978ebd 100644
 --- a/src/suffer.cpp

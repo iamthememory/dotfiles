@@ -100,5 +100,12 @@
     "//": "Whether to prevent autolearning recipes which can be learned via disassembly.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "REQUIRE_THEORETICAL_KNOWLEDGE_TO_LEARN",
+    "//": "Learning practical skill will no longer increase your theoretical skill, so you need to learn from books to get any skill.",
+    "stype": "bool",
+    "value": true
   }
 ]
