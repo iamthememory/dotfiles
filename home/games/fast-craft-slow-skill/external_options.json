@@ -86,5 +86,19 @@
     "//": "Whether traders will refuse to buy filthy items or not.",
     "stype": "bool",
     "value": false
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "DONT_AUTOLEARN_BOOK_RECIPES",
+    "//": "Whether to prevent autolearning recipes which can be learned via a book.",
+    "stype": "bool",
+    "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "DONT_AUTOLEARN_DISASSEMBLY_RECIPES",
+    "//": "Whether to prevent autolearning recipes which can be learned via disassembly.",
+    "stype": "bool",
+    "value": true
   }
 ]

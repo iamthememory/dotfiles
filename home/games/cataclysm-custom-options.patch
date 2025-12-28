@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 52b4263204f4..9bc946d78dd0 100644
+index 52b4263204f4..c9512f4245b1 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,61 @@
+@@ -520,5 +520,75 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -62,6 +62,20 @@ index 52b4263204f4..9bc946d78dd0 100644
 +    "//": "Whether traders will refuse to buy filthy items or not.",
 +    "stype": "bool",
 +    "value": true
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "DONT_AUTOLEARN_BOOK_RECIPES",
++    "//": "Whether to prevent autolearning recipes which can be learned via a book.",
++    "stype": "bool",
++    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "DONT_AUTOLEARN_DISASSEMBLY_RECIPES",
++    "//": "Whether to prevent autolearning recipes which can be learned via disassembly.",
++    "stype": "bool",
++    "value": false
    }
  ]
 diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
@@ -81,10 +95,10 @@ index 6f72daac2f7b..1dbad53cfe8c 100644
          const item &it = *loc;
          const double relative_rot = it.get_relative_rot();
 diff --git a/src/game_inventory.cpp b/src/game_inventory.cpp
-index 37313fe176b8..651851bf93cc 100644
+index b9e1db47997d..f1e12a3e71c4 100644
 --- a/src/game_inventory.cpp
 +++ b/src/game_inventory.cpp
-@@ -710,8 +710,9 @@ class comestible_inventory_preset : public inventory_selector_preset
+@@ -717,8 +717,9 @@ class comestible_inventory_preset : public inventory_selector_preset
              }, _( "HEALTH" ) );
  
              append_cell( []( const item_location & loc ) {
@@ -97,10 +111,10 @@ index 37313fe176b8..651851bf93cc 100644
                      return to_string_clipped( spoils );
                  }
 diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
-index bb187070940f..919f369adb88 100644
+index d268dd459534..8473c641c486 100644
 --- a/src/item_degrade.cpp
 +++ b/src/item_degrade.cpp
-@@ -429,9 +429,9 @@ time_duration item::get_shelf_life() const
+@@ -437,9 +437,9 @@ time_duration item::get_shelf_life() const
  {
      if( goes_bad() ) {
          if( is_comestible() ) {
@@ -127,10 +141,10 @@ index 27f9f39a42cf..2ece788f73c9 100644
      mod_mana( guy, std::floor( ratio * std::max( 0.0,
                                 guy.calculate_by_enchantment( static_cast<double>( max_mana(
 diff --git a/src/map.cpp b/src/map.cpp
-index 63660372f817..03b6971e2bc0 100644
+index ea21f3801f08..dc741581f778 100644
 --- a/src/map.cpp
 +++ b/src/map.cpp
-@@ -8611,7 +8611,7 @@ void map::grow_plant( const tripoint_bub_ms &p )
+@@ -8717,7 +8717,7 @@ void map::grow_plant( const tripoint_bub_ms &p )
              target_stage = pair.first;
          } // Don't break the loop for the case where time has been rewound.
          // Advance to the time of the next stage for the next iteration.
@@ -140,10 +154,10 @@ index 63660372f817..03b6971e2bc0 100644
  
      const auto check_flag = []( const std::string & to_check ) {
 diff --git a/src/npc.cpp b/src/npc.cpp
-index ee8fb7979d8c..647c38293e46 100644
+index 382fcb6a1f70..0d31b92335f1 100644
 --- a/src/npc.cpp
 +++ b/src/npc.cpp
-@@ -2069,11 +2069,12 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2061,11 +2061,12 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
  
@@ -158,12 +172,30 @@ index ee8fb7979d8c..647c38293e46 100644
          return ret_val<void>::make_failure( _( "Will not buy filthy items" ) );
      }
  
-@@ -4037,5 +4038,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
+@@ -3998,5 +3999,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
  {
      return std::make_unique<talker_npc>( guy );
  }
 -
 -
+diff --git a/src/recipe.cpp b/src/recipe.cpp
+index 8dfada73352d..fea187f38985 100644
+--- a/src/recipe.cpp
++++ b/src/recipe.cpp
+@@ -689,6 +689,13 @@ void recipe::finalize()
+         }
+     }
+ 
++    if( ( ::get_option<bool>( "DONT_AUTOLEARN_BOOK_RECIPES" ) && !booksets.empty() ) ||
++            ( ::get_option<bool>( "DONT_AUTOLEARN_DISASSEMBLY_RECIPES" ) && !learn_by_disassembly.empty() ) ) {
++        // Prevent autolearning, since there's a way to learn it in the world.
++        autolearn = false;
++        autolearn_requirements.clear();
++    }
++
+     // ensure result name is always in front of the name for searching in crafting menu
+     if( !name_.empty() && !is_practice() && !is_nested() && result_ ) {
+         name_ = translation::to_translation( string_format( name_, result_->nname( makes_amount() ) ) );
 diff --git a/src/suffer.cpp b/src/suffer.cpp
 index f0c234fac297..b35c7f978ebd 100644
 --- a/src/suffer.cpp
