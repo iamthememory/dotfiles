@@ -179,10 +179,18 @@ index 382fcb6a1f70..0d31b92335f1 100644
 -
 -
 diff --git a/src/recipe.cpp b/src/recipe.cpp
-index 8dfada73352d..fea187f38985 100644
+index 8dfada73352d..aba89a174cf5 100644
 --- a/src/recipe.cpp
 +++ b/src/recipe.cpp
-@@ -689,6 +689,13 @@ void recipe::finalize()
+@@ -38,6 +38,7 @@
+ #include "mapgendata.h"
+ #include "math_defines.h"
+ #include "npc.h"
++#include "option.h"
+ #include "output.h"
+ #include "proficiency.h"
+ #include "recipe_dictionary.h"
+@@ -689,6 +690,13 @@ void recipe::finalize()
          }
      }
  
