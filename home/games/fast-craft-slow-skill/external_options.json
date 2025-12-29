@@ -107,5 +107,12 @@
     "//": "Learning practical skill will no longer increase your theoretical skill, so you need to learn from books to get any skill.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "EREADER_DRAIN_INTERVAL_MULTIPLIER",
+    "//": "A multiplier for how often reading ebooks should drain power, where 2.0 means it will take twice as long between power usages, and use half the power.",
+    "stype": "float",
+    "value": 6.0
   }
 ]

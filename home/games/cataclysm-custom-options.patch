@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 52b4263204f4..a11a690c063a 100644
+index 52b4263204f4..6ec0dfde1849 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,82 @@
+@@ -520,5 +520,89 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -83,8 +83,28 @@ index 52b4263204f4..a11a690c063a 100644
 +    "//": "Learning practical skill will no longer increase your theoretical skill, so you need to learn from books to get any skill.",
 +    "stype": "bool",
 +    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "EREADER_DRAIN_INTERVAL_MULTIPLIER",
++    "//": "A multiplier for how often reading ebooks should drain power, where 2.0 means it will take twice as long between power usages, and use half the power.",
++    "stype": "float",
++    "value": 1.0
    }
  ]
+diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
+index fffece316641..056934850d31 100644
+--- a/src/activity_actor.cpp
++++ b/src/activity_actor.cpp
+@@ -2025,7 +2025,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
+         return;
+     }
+ 
+-    if( using_ereader && calendar::once_every( 5_minutes ) ) {
++    if( using_ereader && calendar::once_every( 5_minutes * ::get_option<float>( "EREADER_DRAIN_INTERVAL_MULTIPLIER" ) ) ) {
+         /** Expected battery life while reading with common ereaders:
+                 integrated_ar       - implant                                         = potentially infinite
+                 ar_glasses_advanced - max 300 charges from disposable light battery   = 25 hours of reading
 diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
 index 6f72daac2f7b..1dbad53cfe8c 100644
 --- a/src/activity_item_handling.cpp
