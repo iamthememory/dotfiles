@@ -96,7 +96,6 @@ in
           ./cataclysm-homullus-fix.patch
           ./cataclysm-larger-trade-range.patch
           ./cataclysm-locale-path.patch
-          ./cataclysm-magiclysm-artificer.patch
           ./cataclysm-magiclysm-okay-potions.patch
           ./cataclysm-magiclysm-renewal-height.patch
           ./cataclysm-mindovermatter-contemplation.patch
