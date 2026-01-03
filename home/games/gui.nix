@@ -587,6 +587,9 @@ in
       # A game overlay.
       mangohud
 
+      # A GBA emulator.
+      mgba
+
       # A mod manager.
       nexusmods-app-unfree
 
