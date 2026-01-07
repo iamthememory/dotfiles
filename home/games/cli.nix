@@ -10,7 +10,7 @@
 
   home.packages = with pkgs; [
     # A MUD client written in rust.
-    blightmud
+    inputs.stable.blightmud
 
     # A rogue-like.
     nethack
