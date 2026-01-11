@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1766940033,
-        "narHash": "sha256-jTfBq2kSZasmYiJzLmcjhu7XZpZl3uQTLKJOZxLeoJ4=",
+        "lastModified": 1768146661,
+        "narHash": "sha256-Zj0UOkMblUe7fGPZkM6FG7xr5bhcbIgPoGPRTo+hMj8=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "726cc313bc1a0140b467c34634641c5aa0e1bb2d",
+        "rev": "25cd64989e296a5347bd39be9596afe520ff20ff",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1765336497,
-        "narHash": "sha256-LndOU6NRCC7ThpEHxm1mqavc0phf6xEpxJRDU7boEEk=",
+        "lastModified": 1768156224,
+        "narHash": "sha256-3dLSD9BBWx+TNHnUcc8UrWK/b61utD0kNbfGap7kRDQ=",
         "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "ac40ee45afb364324c53e7d9c0b111eb2e5ec0ab",
+        "rev": "f884d488330953371d954e601a79765836c27006",
         "type": "github"
       },
       "original": {
@@ -147,11 +147,11 @@
     "cataclysm-dda-mom-submods": {
       "flake": false,
       "locked": {
-        "lastModified": 1764709718,
-        "narHash": "sha256-VX7KVyjDmgz0qqTTIPPmvA0CwIobM/Q8Ngci5j/4F18=",
+        "lastModified": 1767800408,
+        "narHash": "sha256-MHOLSF2DhLUtgK60nY0xWGNQH4pa+qelWMVN79e98x0=",
         "owner": "Standing-Storm",
         "repo": "mind-over-matter-submods",
-        "rev": "71d46eb38a7fed38666b0ec6cbb5fadbaad4610a",
+        "rev": "9a0ccfdcc01d91bb6d024b56d53fc120b8f99781",
         "type": "github"
       },
       "original": {
@@ -195,11 +195,11 @@
     "cataclysm-dda-nocts": {
       "flake": false,
       "locked": {
-        "lastModified": 1766348867,
-        "narHash": "sha256-TMLRYLg1SC9vdQ0Yu71/Vkvr3tfAdxs+r6a1JTrRM90=",
+        "lastModified": 1767082884,
+        "narHash": "sha256-828n8WNsoUtQtvI5u6MDEW/Y/qQttMwsK8JlmW9E1jQ=",
         "owner": "Noctifer-de-Mortem",
         "repo": "nocts_cata_mod",
-        "rev": "8abd21d057339e45130662376d3886b2d2a35709",
+        "rev": "9b699b85b489a33a44a1b2c1cbd7152bdae2d237",
         "type": "github"
       },
       "original": {
@@ -291,11 +291,11 @@
     "cdda-sounds": {
       "flake": false,
       "locked": {
-        "lastModified": 1763229311,
-        "narHash": "sha256-DBeh3yymB4izWHT8gUwlPLSiTUxBbLo1rT0xqLLbmF8=",
+        "lastModified": 1767195739,
+        "narHash": "sha256-bMllT8yOs/JqZTGr7Xm6isZ4N90SxYs4OPEDHv/LTJc=",
         "ref": "refs/heads/main",
-        "rev": "cff999de7bf64f68c381a966d0267f88a3f661a5",
-        "revCount": 101,
+        "rev": "88586bb600eae4b053a8928bddbd5371d0b1ecc6",
+        "revCount": 102,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/Fris0uman/CDDA-Soundpacks"
@@ -312,11 +312,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1766575191,
-        "narHash": "sha256-cw/zSFu4ckGAQiZuIJLJ72YxYDCwHUw/4thtxfHiY/k=",
+        "lastModified": 1768149230,
+        "narHash": "sha256-MnO13pj8a62qn0G7G4aPjdKZpoU3MCiGumSvg3eawWc=",
         "owner": "I-am-Erk",
         "repo": "CDDA-Tilesets",
-        "rev": "84d388ca9358ac43e52c3af455a1dde43374f9f3",
+        "rev": "afdbb442d5c28309c6430f1445c92155f281ef98",
         "type": "github"
       },
       "original": {

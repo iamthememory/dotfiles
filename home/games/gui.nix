@@ -83,7 +83,6 @@ in
         src = inputs.cataclysm-dda;
 
         patches = [
-          ./cataclysm-84297.patch
           ./cataclysm-bionics-lower-saving.patch
           ./cataclysm-craft-percent-fix.patch
           ./cataclysm-custom-options.patch
@@ -104,13 +103,11 @@ in
           ./cataclysm-more-engines.patch
           ./cataclysm-multiple-thresholds.patch
           ./cataclysm-no-banned-ports.patch
-          ./cataclysm-no-moving-sand-grains-with-tweezers.patch
           ./cataclysm-perks-fix.patch
           ./cataclysm-plant-in-cold.patch
           ./cataclysm-plant-only-check-now.patch
           ./cataclysm-seedbearer-fix.patch
           ./cataclysm-sky-island-craft-fix.patch
-          ./cataclysm-sky-island-range.patch
           ./cataclysm-spell-ui-widen.patch
           ./cataclysm-survival-forage.patch
           ./cataclysm-xedra-chronomancer-heritage.patch
