@@ -1,5 +1,6 @@
 # NixOS settings for nightmare.
-{ pkgs
+{ config
+, pkgs
 , ...
 }: {
   imports = [
@@ -28,6 +29,23 @@
     ../../zfs.nix
   ];
 
+  # Extra module packages.
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
+
+  # Extra kernel modules.
+  boot.kernelModules = [
+    "v4l2loopback"
+    "snd-aloop"
+  ];
+
+  # Module settings.
+  boot.extraModprobeConfig = ''
+    # exclusive_caps: Skype, Zoom, Teams etc. will only show device when actually streaming
+    # card_label: Name of virtual camera, how it'll show up in Skype, Zoom, Teams
+    # https://github.com/umlaeute/v4l2loopback
+    options v4l2loopback video_nr=9 exclusive_caps=1 card_label="OBS Virtual Camera"
+  '';
+
   # Copy kernels and initrds to the boot partitions.
   boot.loader.grub.copyKernels = true;
 
@@ -41,6 +59,11 @@
 
   # Enable debug info for packages.
   environment.enableDebugInfo = true;
+
+  # Extran system-wide packages.
+  environment.systemPackages = with pkgs; [
+    config.boot.kernelPackages.v4l2loopback.bin
+  ];
 
   # Enable NVIDIA GPU support inside docker containers.
   hardware.nvidia-container-toolkit.enable = true;
