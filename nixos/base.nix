@@ -130,7 +130,7 @@
   services.tuptime.enable = true;
 
   # The revision used to build this configuration.
-  system.configurationRevision = inputs.flake.rev or "dirty";
+  system.configurationRevision = inputs.revision;
 
   # The NixOS release this configuration is compatible with.
   # On new NixOS releases, bump this only after going through the release notes

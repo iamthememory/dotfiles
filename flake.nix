@@ -186,6 +186,8 @@
     , ...
     }@inputs:
     let
+      revision = self.rev or self.dirtyRev;
+
       defaultInputs =
         let
           # Exclude self and the un-initialized nixpkgs when passing inputs to
@@ -197,7 +199,7 @@
 
           notBlacklisted = n: v: !(builtins.elem n blacklist);
         in
-        nixos-stable.lib.filterAttrs notBlacklisted inputs;
+        (nixos-stable.lib.filterAttrs notBlacklisted inputs) // { inherit revision; };
 
       hosts = [
         "nightmare"
@@ -261,7 +263,8 @@
           }).rust-bin;
 
           importedInputs = unimportedInputs // {
-            inherit unstable stable master nur nixpkgs-config overlay rust-bin;
+            inherit unstable stable master nur nixpkgs-config overlay rust-bin
+              revision;
 
             hostname = host;
 
@@ -310,7 +313,7 @@
           ];
         };
 
-      devShells = flake-utils.lib.eachDefaultSystem (
+      systemSpecific = flake-utils.lib.eachDefaultSystem (
         system:
         let
           pkgs = import nixos-unstable {
@@ -375,6 +378,11 @@
             # Make sure nix knows to enable flakes.
             NIX_CONFIG = "experimental-features = nix-command flakes";
           };
+
+          packages = import ./packages {
+            inherit inputs pkgs system stable-pkgs revision;
+            flake = self;
+          };
         }
       );
     in
@@ -386,5 +394,5 @@
       nixosConfigurations = {
         nightmare = mkOSHost { host = "nightmare"; };
       };
-    } // devShells;
+    } // systemSpecific;
 }

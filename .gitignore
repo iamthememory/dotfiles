@@ -4,6 +4,7 @@
 # New generation links.
 /new-generation
 /new-os-generation
+/cataclysm-dda-git-with-mods
 
 # Various build result symlinks.
 /result*
