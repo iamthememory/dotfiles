@@ -10,7 +10,7 @@
     icu
     libbsd
     liberation_ttf
-    libva1
+    #libva1
     libxcrypt-legacy
     mesa
     python3

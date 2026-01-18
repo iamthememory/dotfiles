@@ -60,8 +60,9 @@
   # Enable debug info for packages.
   environment.enableDebugInfo = true;
 
-  # Extran system-wide packages.
+  # Extra system-wide packages.
   environment.systemPackages = with pkgs; [
+    android-tools
     config.boot.kernelPackages.v4l2loopback.bin
   ];
 
@@ -107,9 +108,6 @@
 
   # Set the hostname for nightmare.
   networking.hostName = "nightmare";
-
-  # Add support for adb, including udev rules.
-  programs.adb.enable = true;
 
   # Enable bcc for kernel tracing and such with eBPF.
   programs.bcc.enable = true;
