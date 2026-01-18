@@ -2,10 +2,14 @@
 { applyPatches
 , cataclysm-dda
 , cataclysm-dda-arcana
+, cataclysm-dda-cdda-arcana-technoclysm
+, cataclysm-dda-cdda-extra-lives
+, cataclysm-dda-dorf-life
 , cataclysm-dda-e85-engines
 , cataclysm-dda-elf-crops
 , cataclysm-dda-git-latest
 , cataclysm-dda-grow-more-drugs
+, cataclysm-dda-mana-cores
 , cataclysm-dda-medieval
 , cataclysm-dda-minimods
 , cataclysm-dda-mining-enchanced
@@ -91,6 +95,18 @@ let
     modRoot = "Arcana";
   };
 
+  cdda-arcana-technoclysm = cataclysmDDA.buildMod {
+    modName = "arcana-technoclysm";
+    version = cataclysm-dda-cdda-arcana-technoclysm.lastModifiedDate;
+    src = cataclysm-dda-cdda-arcana-technoclysm;
+  };
+
+  cdda-extra-lives = cataclysmDDA.buildMod {
+    modName = "extra_lives_extended";
+    src = cataclysm-dda-cdda-extra-lives;
+    version = cataclysm-dda-cdda-extra-lives.lastModifiedDate;
+  };
+
   cc-sounds = cataclysmDDA.buildSoundPack {
     modName = "CC-Sounds";
     version = cdda-sounds.lastModifiedDate;
@@ -121,6 +137,12 @@ let
     in
     tilesets;
 
+  dorf-life = cataclysmDDA.buildMod {
+    modName = "Dorf_Life";
+    src = cataclysm-dda-dorf-life;
+    version = cataclysm-dda-dorf-life.lastModifiedDate;
+    modRoot = "Dorf_Life";
+  };
 
   elfmods =
     let
@@ -179,6 +201,19 @@ let
         ./patches/cataclysm-magiclysm-no-class-limit.patch
       ];
     };
+  };
+
+  mana-cores = cataclysmDDA.buildMod {
+    modName = "manacores";
+    version = cataclysm-dda-medieval.lastModifiedDate;
+    src = applyPatches {
+      name = "cataclysm-dda-mana-cores-patched";
+      src = cataclysm-dda-mana-cores;
+      patches = [
+        ./patches/cataclysm-mana-cores.patch
+      ];
+    };
+    modRoot = "Mana-Cores";
   };
 
   medieval = cataclysmDDA.buildMod {
@@ -472,8 +507,11 @@ let
       arcana
       backrooms-tweaks
       cc-sounds
+      cdda-arcana-technoclysm
       cdda-defense-additions
+      cdda-extra-lives
       cdda-tilesets-built
+      dorf-life
       e85-engines
       extra-fruits
       fast-craft-slow-skill
@@ -484,6 +522,7 @@ let
       magiclysm-linear-leveling
       magiclysm-no-class-limit
       magiclysm-non-exclusive-attunements
+      mana-cores
       medieval
       mining-enchanced
       mining-mod

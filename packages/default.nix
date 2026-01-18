@@ -9,12 +9,16 @@
     flake-revision = revision;
     inherit (inputs)
       cataclysm-dda-arcana
+      cataclysm-dda-cdda-arcana-technoclysm
+      cataclysm-dda-cdda-extra-lives
+      cataclysm-dda-dorf-life
       cataclysm-dda-e85-engines
       cataclysm-dda-elf-crops
       cataclysm-dda-grow-more-drugs
+      cataclysm-dda-mana-cores
       cataclysm-dda-medieval
-      cataclysm-dda-mining-enchanced
       cataclysm-dda-minimods
+      cataclysm-dda-mining-enchanced
       cataclysm-dda-mining-mod
       cataclysm-dda-mom-submods
       cataclysm-dda-mst-extra

@@ -82,6 +82,21 @@
       flake = false;
     };
 
+    cataclysm-dda-cdda-arcana-technoclysm = {
+      url = "github:linewriter1024/cdda-arcana-technoclysm";
+      flake = false;
+    };
+
+    cataclysm-dda-cdda-extra-lives = {
+      url = "github:Nebnis/CDDA-Extra-Lives";
+      flake = false;
+    };
+
+    cataclysm-dda-dorf-life = {
+      url = "github:chaosvolt/Dorf-Life-CDDA";
+      flake = false;
+    };
+
     cataclysm-dda-e85-engines = {
       url = "github:Tvoqalega/E85-Engines";
       flake = false;
@@ -94,6 +109,11 @@
 
     cataclysm-dda-grow-more-drugs = {
       url = "github:jackledead/grow_more_drugs";
+      flake = false;
+    };
+
+    cataclysm-dda-mana-cores = {
+      url = "github:Computer-Engineer-Man/cdda-mana-cores";
       flake = false;
     };
 

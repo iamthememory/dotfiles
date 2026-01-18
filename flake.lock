@@ -32,6 +32,54 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-cdda-arcana-technoclysm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1764886863,
+        "narHash": "sha256-jh2NxkUW0Y4ryF3KnmQ0QYex05IEuDguQTcACm5LV18=",
+        "owner": "linewriter1024",
+        "repo": "cdda-arcana-technoclysm",
+        "rev": "e3bd2e5640aea7048a2d4f5d60a7ef915d20cca9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "linewriter1024",
+        "repo": "cdda-arcana-technoclysm",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-cdda-extra-lives": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761494654,
+        "narHash": "sha256-j9ePp29JvfyW5q8gBhBclNsQHU0F0pMO6suLER/EQpc=",
+        "owner": "Nebnis",
+        "repo": "CDDA-Extra-Lives",
+        "rev": "5da804247062d04c3c456485fa1893a96936d821",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Nebnis",
+        "repo": "CDDA-Extra-Lives",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-dorf-life": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767082894,
+        "narHash": "sha256-azXKBCdPsQIQgFk9xeTT5Ji351yP+BLKL2QSoVy1UrU=",
+        "owner": "chaosvolt",
+        "repo": "Dorf-Life-CDDA",
+        "rev": "ec42e832db2557331ce9a6b065db23bdeb1d8aa0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chaosvolt",
+        "repo": "Dorf-Life-CDDA",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-e85-engines": {
       "flake": false,
       "locked": {
@@ -77,6 +125,22 @@
       "original": {
         "owner": "jackledead",
         "repo": "grow_more_drugs",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-mana-cores": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1726601313,
+        "narHash": "sha256-JyVx1GF41fYbMbVslmSlD6F+coj2ElNSoDDG3EspLOQ=",
+        "owner": "Computer-Engineer-Man",
+        "repo": "cdda-mana-cores",
+        "rev": "39c50d458af27322fb7e0326d4c4a7aa79246b8a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Computer-Engineer-Man",
+        "repo": "cdda-mana-cores",
         "type": "github"
       }
     },
@@ -639,9 +703,13 @@
       "inputs": {
         "cataclysm-dda": "cataclysm-dda",
         "cataclysm-dda-arcana": "cataclysm-dda-arcana",
+        "cataclysm-dda-cdda-arcana-technoclysm": "cataclysm-dda-cdda-arcana-technoclysm",
+        "cataclysm-dda-cdda-extra-lives": "cataclysm-dda-cdda-extra-lives",
+        "cataclysm-dda-dorf-life": "cataclysm-dda-dorf-life",
         "cataclysm-dda-e85-engines": "cataclysm-dda-e85-engines",
         "cataclysm-dda-elf-crops": "cataclysm-dda-elf-crops",
         "cataclysm-dda-grow-more-drugs": "cataclysm-dda-grow-more-drugs",
+        "cataclysm-dda-mana-cores": "cataclysm-dda-mana-cores",
         "cataclysm-dda-medieval": "cataclysm-dda-medieval",
         "cataclysm-dda-minimods": "cataclysm-dda-minimods",
         "cataclysm-dda-mining-enchanced": "cataclysm-dda-mining-enchanced",

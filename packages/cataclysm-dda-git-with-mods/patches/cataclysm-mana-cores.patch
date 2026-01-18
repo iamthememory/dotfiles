@@ -1,0 +1,192 @@
+diff --git a/Mana-Cores/eoc.json b/Mana-Cores/eoc.json
+index b618315b7997..403bccbf387d 100644
+--- a/Mana-Cores/eoc.json
++++ b/Mana-Cores/eoc.json
+@@ -15,17 +15,17 @@
+ 			{ "run_eocs": [ "CORE1_DEGRADE_CHECK" ] }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "BEGIN_BREAKTHROUGH",
+ 		"//": "Ensures no bionics, that impurities are low enough, and has a 1 out of 3 chance it succeed",
+-		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "math": [ "u_vitamin('impurities')<=(u_manacoretier*50)" ]   }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
+-		"effect": 
++		"condition": { "and": [ { "math": [ "u_vitamin('impurities')<=(u_manacoretier*50)" ]   }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
++		"effect":
+ 		[
+ 			{ "u_message": "You breakthrough!", "type": "good" },
+ 			{ "switch": { "math": [ "u_manacoretier" ] },
+-			"cases": 
++			"cases":
+ 			[
+ 				{
+ 				"case": 1,
+@@ -102,7 +102,7 @@
+ 			{ "u_message": "You feel your mana core vibrate!", "type": "bad" },
+ 			{ "switch": { "math": [ "u_manacoretier" ] },
+ 			"cases":
+-			[		
++			[
+ 				{
+ 				"case": 1,
+ 				"effect": [
+@@ -142,13 +142,13 @@
+ 			] }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "ATTEMPT_FINAL_BREAKTHROUGH",
+ 		"//": "This is the endgame of this mod, similar to regular breakthroughs with the exception of only a 1 in 10 chance",
+ 		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 10 } }, { "math": [ "u_vitamin('impurities')<=(u_manacoretier*50)" ]   } ] },
+-		"effect": 
++		"effect":
+ 		[
+ 			{ "u_message": "You feel as though the world itself is connected to you. You have broken through what many consider the end.", "type": "good" },
+ 			{ "math": [ "u_manacoretier", "=", "8" ] },
+@@ -164,7 +164,7 @@
+ 		{ "math": [ "u_vitamin('impurities')", "+=", "2250" ] }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE1_DEGRADE_CHECK",
+@@ -180,7 +180,7 @@
+ 			{ "u_lose_trait": "MANACORE1" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE2_DEGRADE_CHECK",
+@@ -196,7 +196,7 @@
+ 			{ "u_lose_trait": "MANACORE2" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE3_DEGRADE_CHECK",
+@@ -212,7 +212,7 @@
+ 			{ "u_lose_trait": "MANACORE3" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE4_DEGRADE_CHECK",
+@@ -228,7 +228,7 @@
+ 			{ "u_lose_trait": "MANACORE4" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE5_DEGRADE_CHECK",
+@@ -244,7 +244,7 @@
+ 			{ "u_lose_trait": "MANACORE5" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE6_DEGRADE_CHECK",
+@@ -260,7 +260,7 @@
+ 			{ "u_lose_trait": "MANACORE6" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE7_DEGRADE_CHECK",
+@@ -276,7 +276,7 @@
+ 			{ "u_lose_trait": "MANACORE7" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "CORE8_DEGRADE_CHECK",
+@@ -292,37 +292,37 @@
+ 			{ "u_lose_trait": "MANACORE8" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "MANA_CORE_SENSATION_GOOD",
+ 		"//": "A random chance every 6 hours to signify that a breakthrough would succeed",
+ 		"recurrence": "6 hours",
+-		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "(u_vitamin('impurities')<=u_manacoretier*50)" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
++		"condition": { "and": [ { "not": { "u_has_effect": "sleep" } }, { "math": [ "(u_vitamin('impurities')<=u_manacoretier*50)" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
+ 		"effect":
+ 		[
+ 			{ "u_message": "You feel your mana core resonate within you.", "type": "good" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "MANA_CORE_SENSATION_BAD",
+ 		"//": "A random chance every 12 hours to signify that you are over the impurity soft cap",
+ 		"recurrence": "12 hours",
+-		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
++		"condition": { "and": [ { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
+ 		"effect":
+ 		[
+ 			{ "u_message": "You feel your mana core is under stress.", "type": "bad" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "MANA_CORE_SENSATION_VERY_BAD",
+ 		"//": "Once you are very close to the limit of cracking your mana core every 6 hours a chance to clear out a lot of impurities",
+ 		"recurrence": "6 hours",
+-		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap*2" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
++		"condition": { "and": [ { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap*2" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
+ 		"effect":
+ 		[
+ 			{ "u_message": "Your mana core suddenly destabilizes and expels impurities!", "type": "bad" },
+@@ -332,7 +332,7 @@
+ 			{ "math": [ "u_val('mana')", "=", "0" ] }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "GENERATE_MANA_EOC",
+@@ -350,7 +350,7 @@
+ 			{ "u_message": "Your Mana Core refuses to expel mana!", "type": "bad" }
+ 		]
+ 	},
+-	
++
+ 	{
+ 		"type": "effect_on_condition",
+ 		"id": "PURGE_IMPURITIES",
+@@ -362,4 +362,4 @@
+ 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] }
+ 		]
+ 	}
+-]
+\ No newline at end of file
++]
