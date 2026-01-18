@@ -171,13 +171,6 @@
     # A plugin for parsing languages.
     {
       plugin = nvim-treesitter.withAllGrammars;
-      config = ''
-        require('nvim-treesitter.configs').setup {
-          highlight = {
-            enable = true,
-          }
-        }
-      '';
       type = "lua";
     }
   ];
