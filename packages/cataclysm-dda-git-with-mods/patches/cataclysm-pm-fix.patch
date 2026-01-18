@@ -1013,6 +1013,37 @@ index 48407488a69b..266e254e4119 100644
        { "item": "deluxe_fried_egg_sandwich", "count-min": 1, "count-max": 3, "prob": 50 },
        { "item": "fish_sandwich", "count-min": 1, "count-max": 2, "prob": 50 },
        { "item": "sandwich_deluxe", "count-min": 1, "count-max": 4, "prob": 100 },
+diff --git a/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json b/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json
+index e3d8b5a23cb8..1decd1a590b0 100644
+--- a/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json
++++ b/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json
+@@ -262,7 +262,7 @@
+     "melee_damage": [ { "damage_type": "bash", "amount": 4 } ],
+     "families": [ "prof_intro_biology", "prof_physiology" ],
+     "special_attacks": [  ],
+-    "regenerates": 0.2,
++    "regenerates": 1,
+     "anger_triggers": [ "FRIEND_ATTACKED" ],
+     "fear_triggers": [ "HURT", "FRIEND_DIED" ],
+     "regen_morale": true,
+@@ -380,7 +380,7 @@
+     "melee_damage": [ { "damage_type": "cut", "amount": 21 } ],
+     "families": [ "prof_intro_biology", "prof_physiology" ],
+     "special_attacks": [  ],
+-    "regenerates": 0.1,
++    "regenerates": 1,
+     "anger_triggers": [ "FRIEND_ATTACKED" ],
+     "fear_triggers": [ "HURT", "FRIEND_DIED" ],
+     "regen_morale": true,
+@@ -419,7 +419,7 @@
+     "melee_damage": [ { "damage_type": "cut", "amount": 21 } ],
+     "families": [ "prof_intro_biology", "prof_physiology" ],
+     "special_attacks": [  ],
+-    "regenerates": 0.2,
++    "regenerates": 1,
+     "anger_triggers": [ "FRIEND_ATTACKED" ],
+     "fear_triggers": [  ],
+     "regen_morale": true,
 diff --git a/difficulty_options.json b/difficulty_options.json
 index 1e57bf41d39b..54079698fb4a 100644
 --- a/difficulty_options.json

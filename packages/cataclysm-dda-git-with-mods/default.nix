@@ -139,7 +139,13 @@ let
 
   dorf-life = cataclysmDDA.buildMod {
     modName = "Dorf_Life";
-    src = cataclysm-dda-dorf-life;
+    src = applyPatches {
+      name = "cataclysm-dda-dorf-life-patched";
+      src = cataclysm-dda-dorf-life;
+      patches = [
+        ./patches/cataclysm-dorf-life-fix.patch
+      ];
+    };
     version = cataclysm-dda-dorf-life.lastModifiedDate;
     modRoot = "Dorf_Life";
   };
@@ -405,7 +411,13 @@ let
   tankmod = cataclysmDDA.buildMod {
     modName = "Tankmod_Revived";
     version = cataclysm-dda-tankmod.lastModifiedDate;
-    src = cataclysm-dda-tankmod;
+    src = applyPatches {
+      name = "cataclysm-dda-tankmod-patched";
+      src = cataclysm-dda-tankmod;
+      patches = [
+        ./patches/cataclysm-tankmod-fix.patch
+      ];
+    };
     modRoot = "Tankmod_Revived";
   };
 

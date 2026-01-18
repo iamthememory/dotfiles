@@ -51,3 +51,25 @@ index e7ee51948bab..a7c593242095 100644
      "qualities": [ { "id": "SCREW_FINE", "level": 1 } ],
      "components": [ [ [ "bio_kinetic_amplifier", 1 ] ] ]
    }
+diff --git a/Arcana/obsolete/terrain.json b/Arcana/obsolete/terrain.json
+index fea20fef3446..04cdd1463ccd 100644
+--- a/Arcana/obsolete/terrain.json
++++ b/Arcana/obsolete/terrain.json
+@@ -5,7 +5,7 @@
+     "oter_ids": {
+       "island_temple_b_1_north": "island_temple_subbasement_1",
+       "island_temple_b_1_west": "island_temple_subbasement_1",
+-      "island_temple_b_1"_east: "island_temple_subbasement_1",
++      "island_temple_b_1_east": "island_temple_subbasement_1",
+       "island_temple_b_1_south": "island_temple_subbasement_1",
+       "island_temple_b_2_north": "island_temple_subbasement_2",
+       "island_temple_b_2_west": "island_temple_subbasement_2",
+@@ -18,7 +18,7 @@
+       "island_temple_b_4_north": "island_temple_subbasement_4",
+       "island_temple_b_4_west": "island_temple_subbasement_4",
+       "island_temple_b_4_east": "island_temple_subbasement_4",
+-      "island_temple_b_4_south": "island_temple_subbasement_4",
++      "island_temple_b_4_south": "island_temple_subbasement_4"
+     }
+   }
+ ]

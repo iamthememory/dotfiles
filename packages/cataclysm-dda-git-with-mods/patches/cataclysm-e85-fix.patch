@@ -195,3 +195,32 @@ index fa7527b0a4df..4129384edcb5 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/materials.json b/materials.json
+index 655b88120960..1de9ad4705a7 100644
+--- a/materials.json
++++ b/materials.json
+@@ -14,7 +14,7 @@
+     "cut_dmg_verb": "damaged",
+     "fuel_data": {
+       "energy": "18390 kJ",
+-      "explosion_data": { "chance_hot": 4.5, "chance_cold": 9.2, "factor": 0.3, "fiery": true, "size_factor": 0.1 }
++      "explosion_data": { "chance_hot": 5, "chance_cold": 9, "factor": 0.3, "fiery": true, "size_factor": 0.1 }
+     },
+     "//": "Despite being set below the cutoff point for non-flammable liquids, burns quite well. 1L adds about 45 minutes to a fire at the lowest intensity bracket.",
+     "burn_data": [
+@@ -39,7 +39,7 @@
+     "cut_dmg_verb": "damaged",
+     "fuel_data": {
+       "energy": "15600 kJ",
+-      "explosion_data": { "chance_hot": 4.5, "chance_cold": 9.2, "factor": 0.3, "fiery": true, "size_factor": 0.1 }
++      "explosion_data": { "chance_hot": 5, "chance_cold": 9, "factor": 0.3, "fiery": true, "size_factor": 0.1 }
+     },
+     "//": "Despite being set below the cutoff point for non-flammable liquids, burns quite well. 1L adds about 45 minutes to a fire at the lowest intensity bracket.",
+     "burn_data": [
+@@ -59,4 +59,4 @@
+       "explosion_data": { "chance_hot": 20, "chance_cold": 1000, "factor": 0.2, "fiery": false, "size_factor": 0.1 }
+     }
+   }
+-]
+\ No newline at end of file
++]

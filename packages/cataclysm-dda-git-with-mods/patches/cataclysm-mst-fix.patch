@@ -221,7 +221,7 @@ index 62086aaa5606..567de852877e 100644
      "description": "A quiver woven from strips of birch bark, worn at the waist, lengthened to hold atlatl darts.  Activate to store up to 10 darts.",
      "weight": "800 g",
 diff --git a/MST_Extra/items/comestibles.json b/MST_Extra/items/comestibles.json
-index db16eb1b1fad..1a161cbe3b8f 100644
+index db16eb1b1fad..ab5f2873d3c6 100644
 --- a/MST_Extra/items/comestibles.json
 +++ b/MST_Extra/items/comestibles.json
 @@ -1,7 +1,7 @@
@@ -260,7 +260,15 @@ index db16eb1b1fad..1a161cbe3b8f 100644
      "id": "posca_hard",
      "copy-from": "posca",
      "name": { "str_sp": "hard posca" },
-@@ -83,7 +83,7 @@
+@@ -76,14 +76,13 @@
+     "stim": -2,
+     "addiction_type": "alcohol",
+     "addiction_potential": 1,
+-    "use_action": "ALCOHOL_WEAK",
+-    "extend": { "flags": [ "NO_AUTO_CONSUME" ] }
++    "extend": { "flags": [ "NO_AUTO_CONSUME", "ALCOHOL_WEAK" ] }
+   },
+   {
      "id": "jerky_offal",
      "copy-from": "jerky",
      "type": "ITEM",

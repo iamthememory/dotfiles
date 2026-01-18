@@ -177,6 +177,19 @@ index 696d9e2be2c0..e85f08f6d662 100644
      "weight": "942 g",
      "volume": "1 L",
      "melee_damage": { "bash": 8 },
+diff --git a/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json b/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json
+index 96edc7e0f7fe..b2da3174bc4d 100644
+--- a/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json
++++ b/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json
+@@ -135,7 +135,7 @@
+         { "item": "556", "x": 18, "y": [ 9, 12 ], "chance": 75, "repeat": 150 },
+         { "item": "m249", "x": 20, "y": 9, "chance": 75, "repeat": 6 },
+         { "item": "m240", "x": 20, "y": 9, "chance": 75, "repeat": 4 },
+-        { "item": "mossberg_930", "variant": "m1014", "x": 20, "y": 10, "chance": 75, "repeat": 10 },
++        { "item": "m1014", "x": 20, "y": 10, "chance": 75, "repeat": 10 },
+         { "item": "mossberg_590", "x": 20, "y": 10, "chance": 75, "repeat": 8 },
+         { "item": "m2010", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 2 },
+         { "item": "m110a1", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 8 },
 diff --git a/nocts_cata_mod_DDA/Terrain/regional_overlay.json b/nocts_cata_mod_DDA/Terrain/regional_overlay.json
 deleted file mode 100644
 index 4462c911e3e3..000000000000
@@ -203,6 +216,33 @@ index 4462c911e3e3..000000000000
 -      }
 -   }
 -]
+diff --git a/nocts_cata_mod_DDA/Vehicles/c_vehicles.json b/nocts_cata_mod_DDA/Vehicles/c_vehicles.json
+index 77880b71ae93..bc6c7670f3ab 100644
+--- a/nocts_cata_mod_DDA/Vehicles/c_vehicles.json
++++ b/nocts_cata_mod_DDA/Vehicles/c_vehicles.json
+@@ -84,7 +84,7 @@
+       {
+         "x": -7,
+         "y": 0,
+-        "parts": [ "hdframe#vertical_2", "veh_table_wood", "atomic_lamp", "hdroof", "reinforced_solar_panel_v2" ]
++        "parts": [ "hdframe#vertical_2", "veh_table_wood", "aisle_lights", "hdroof", "reinforced_solar_panel_v2" ]
+       },
+       {
+         "x": -6,
+diff --git a/nocts_cata_mod_DDA/Weapons/c_ammo_effect.json b/nocts_cata_mod_DDA/Weapons/c_ammo_effect.json
+index 2397d230f265..10018841a010 100644
+--- a/nocts_cata_mod_DDA/Weapons/c_ammo_effect.json
++++ b/nocts_cata_mod_DDA/Weapons/c_ammo_effect.json
+@@ -2,7 +2,7 @@
+   {
+     "id": "C_DAZZLER_BURST",
+     "type": "ammo_effect",
+-    "trail": { "field_type": "fd_dazzling", "intensity_min": 1, "intensity_max": 1 },
+-    "aoe": { "field_type": "fd_dazzling", "intensity_min": 1, "intensity_max": 1, "radius": 1, "chance": 50 }
++    "trail": [ { "field_type": "fd_dazzling", "intensity_min": 1, "intensity_max": 1 } ],
++    "aoe": [ { "field_type": "fd_dazzling", "intensity_min": 1, "intensity_max": 1, "radius": 1, "chance": 50 } ]
+   }
+ ]
 diff --git a/nocts_cata_mod_DDA/Weapons/c_ranged.json b/nocts_cata_mod_DDA/Weapons/c_ranged.json
 index 6a691468b5d3..60c7ab64cab7 100644
 --- a/nocts_cata_mod_DDA/Weapons/c_ranged.json
