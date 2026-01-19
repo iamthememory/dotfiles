@@ -1,0 +1,13 @@
+diff --git a/src/butchery.cpp b/src/butchery.cpp
+index b1ac28651ee7..638087ab2aef 100644
+--- a/src/butchery.cpp
++++ b/src/butchery.cpp
+@@ -941,7 +941,7 @@ bool butchery_drops_harvest( butchery_data bt, Character &you )
+             if( !you.backlog.empty() && you.backlog.front().id() == ACT_MULTIPLE_BUTCHER ) {
+                 ruined_parts.set_var( "activity_var", you.name );
+             }
+-            for( int i = 0; i < item_charges; ++i ) {
++            for( int i = 0; i < std::min(item_charges, 1000); ++i ) {
+                 item_location loc = here.add_item_or_charges_ret_loc( corpse_loc, ruined_parts );
+                 if( loc ) {
+                     you.may_activity_occupancy_after_end_items_loc.push_back( loc );

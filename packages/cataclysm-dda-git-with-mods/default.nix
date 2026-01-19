@@ -49,6 +49,7 @@ let
       ./patches/cataclysm-exodii-bionics.patch
       ./patches/cataclysm-homullus-fix.patch
       ./patches/cataclysm-larger-trade-range.patch
+      ./patches/cataclysm-limit-refuse.patch
       ./patches/cataclysm-locale-path.patch
       ./patches/cataclysm-magiclysm-okay-potions.patch
       ./patches/cataclysm-magiclysm-renewal-height.patch
