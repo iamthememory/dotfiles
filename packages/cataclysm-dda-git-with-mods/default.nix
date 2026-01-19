@@ -39,6 +39,7 @@ let
 
     patches = [
       ./patches/cataclysm-bionics-lower-saving.patch
+      ./patches/cataclysm-butchery-deserialization-fix.patch
       ./patches/cataclysm-craft-percent-fix.patch
       ./patches/cataclysm-custom-options.patch
       ./patches/cataclysm-defense-real-world.patch
