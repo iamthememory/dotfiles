@@ -1,0 +1,7 @@
+[
+  {
+    "id": "seed_melon_melon",
+    "type": "MIGRATION",
+    "replace": "seed_melon"
+  }
+]

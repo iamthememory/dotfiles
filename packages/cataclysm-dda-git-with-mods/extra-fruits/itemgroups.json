@@ -5,12 +5,10 @@
     "copy-from": "farming_seeds",
     "extend": {
       "items": [
-        [ "seed_melon_melon", 60 ],
         [ "seed_melon", 60 ],
         [ "seed_banana", 60 ],
         [ "seed_kiwi", 60 ],
         [ "seed_pineapple", 10 ],
-        [ "seed_melon_melon", 10 ],
         [ "seed_melon", 10 ],
         [ "seed_orange", 10 ],
         [ "seed_lemon", 10 ],
@@ -27,7 +25,6 @@
         [ "melon", 2 ],
         [ "banana", 6 ],
         [ "kiwi", 4 ],
-        [ "seed_melon_melon", 1 ],
         [ "seed_melon", 1 ],
         [ "seed_banana", 1 ],
         [ "seed_kiwi", 1 ]
