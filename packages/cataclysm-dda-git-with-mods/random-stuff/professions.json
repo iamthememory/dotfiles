@@ -113,5 +113,28 @@
     "entries": [
       { "item": "sustainment_pouch", "count": 2 }
     ]
+  },
+  {
+    "type": "profession",
+    "id": "naked_with_seeds",
+    "name": "Naked and Seeded",
+    "description": "The end came suddenly and caught you off-guard, but luckily you found these weird 'magic seeds' that're probably real.",
+    "points": 4,
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "rc_seed_many_books" },
+          { "item": "rc_seed_seeds" },
+          { "item": "rc_seed_water_berry" },
+          { "item": "e_tool" },
+          { "item": "ragpouch" }
+        ]
+      }
+    },
+    "traits": [
+      "ROBUST",
+      "UNSTABLE",
+      "perk_forced_genetic_instability"
+    ]
   }
 ]

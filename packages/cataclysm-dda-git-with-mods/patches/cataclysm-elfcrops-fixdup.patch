@@ -146,7 +146,7 @@ index 61189c799240..fd707b5326ea 100644
 \ No newline at end of file
 +]
 diff --git a/Plant Crops/seed.json b/Plant Crops/seed.json
-index e50a8e4141d3..153103f94205 100644
+index e50a8e4141d3..be752f7cca9c 100644
 --- a/Plant Crops/seed.json	
 +++ b/Plant Crops/seed.json	
 @@ -2,43 +2,37 @@
@@ -209,10 +209,10 @@ index e50a8e4141d3..153103f94205 100644
 +    "fruit": "tinder",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "8 days" },
-+      { "GROWTH_SEEDLING": "8 days" },
-+      { "GROWTH_MATURE": "7 days" },
-+      { "GROWTH_HARVEST": "7 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }
@@ -1379,7 +1379,7 @@ index 0e346e119eeb..d670b333c57f 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/alchemy seeds.json b/Resource Crops Magiclysm addon/seeds/alchemy seeds.json
-index 09f3ce743caa..919e1ba29977 100644
+index 09f3ce743caa..ed3fcde09244 100644
 --- a/Resource Crops Magiclysm addon/seeds/alchemy seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/alchemy seeds.json	
 @@ -2,49 +2,61 @@
@@ -1406,10 +1406,10 @@ index 09f3ce743caa..919e1ba29977 100644
 +    "fruit": "bulette_plate",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -1436,10 +1436,10 @@ index 09f3ce743caa..919e1ba29977 100644
 +    "fruit": "alumentum",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -1466,10 +1466,10 @@ index 09f3ce743caa..919e1ba29977 100644
 +    "fruit": "mana_dust",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }
@@ -1477,7 +1477,7 @@ index 09f3ce743caa..919e1ba29977 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/butchering seeds.json b/Resource Crops Magiclysm addon/seeds/butchering seeds.json
-index f48d47289878..950331a1fffd 100644
+index f48d47289878..fe7aa0e270b4 100644
 --- a/Resource Crops Magiclysm addon/seeds/butchering seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/butchering seeds.json	
 @@ -2,65 +2,81 @@
@@ -1504,10 +1504,10 @@ index f48d47289878..950331a1fffd 100644
 +    "fruit": "dragon_black_scale",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -1534,10 +1534,10 @@ index f48d47289878..950331a1fffd 100644
 +    "fruit": "black_dragon_tanned_hide",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -1564,10 +1564,10 @@ index f48d47289878..950331a1fffd 100644
 +    "fruit": "demon_chitin_piece",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -1594,10 +1594,10 @@ index f48d47289878..950331a1fffd 100644
 +    "fruit": "demon_chitin_plate",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }
@@ -1605,7 +1605,7 @@ index f48d47289878..950331a1fffd 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/lootbox seeds.json b/Resource Crops Magiclysm addon/seeds/lootbox seeds.json
-index 168e6dd7ac6c..c488a096c72d 100644
+index 168e6dd7ac6c..4059b30aad5f 100644
 --- a/Resource Crops Magiclysm addon/seeds/lootbox seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/lootbox seeds.json	
 @@ -2,129 +2,241 @@
@@ -1634,10 +1634,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_animistfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1666,10 +1666,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_biomancerfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1698,10 +1698,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_druidfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1730,10 +1730,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_earthshaperfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1762,10 +1762,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_kelvinistfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1794,10 +1794,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_magusfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1826,10 +1826,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_stormshaperfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1859,10 +1859,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_technomancerfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1879,10 +1879,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_all_spell_books_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1899,10 +1899,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_various_magic_items_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1919,10 +1919,10 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "rc_spawn_mana_crystal_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -1939,16 +1939,16 @@ index 168e6dd7ac6c..c488a096c72d 100644
 +    "fruit": "parabolan_wool_staple",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/metal seeds.json b/Resource Crops Magiclysm addon/seeds/metal seeds.json
-index d52300a7328b..6378c3b592e4 100644
+index d52300a7328b..f01f62aff128 100644
 --- a/Resource Crops Magiclysm addon/seeds/metal seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/metal seeds.json	
 @@ -2,97 +2,121 @@
@@ -1977,10 +1977,10 @@ index d52300a7328b..6378c3b592e4 100644
 +    "fruit": "orichalcum_lump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -2009,10 +2009,10 @@ index d52300a7328b..6378c3b592e4 100644
 +    "fruit": "orichalcum_ingot",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -2041,10 +2041,10 @@ index d52300a7328b..6378c3b592e4 100644
 +    "fruit": "mithril_lump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -2073,10 +2073,10 @@ index d52300a7328b..6378c3b592e4 100644
 +    "fruit": "mithril_ingot",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -2105,10 +2105,10 @@ index d52300a7328b..6378c3b592e4 100644
 +    "fruit": "orichalcum_frame",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -2138,10 +2138,10 @@ index d52300a7328b..6378c3b592e4 100644
 +    "fruit": "light_orichalcum_frame",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
@@ -2871,7 +2871,7 @@ index 2000d28c817f..ffa4eca0305d 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..a188e4b52c81 100644
+index fccd89aa02a2..47d7faa16f5f 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
 @@ -1,35 +1,39 @@
@@ -2949,7 +2949,7 @@ index fccd89aa02a2..a188e4b52c81 100644
 +    "weight": "600 g",
 +    "color": "white",
 +    "spoils_in": "30 days",
-+    "comestible_type": "INVALID",
++    "flags": [ "INEDIBLE" ],
 +    "symbol": "%",
 +    "quench": 10,
 +    "calories": 100,
@@ -2969,7 +2969,7 @@ index fccd89aa02a2..a188e4b52c81 100644
 +    "weight": "2750 g",
 +    "color": "brown",
 +    "spoils_in": "30 days",
-+    "comestible_type": "INVALID",
++    "flags": [ "INEDIBLE" ],
 +    "symbol": "%",
 +    "quench": 10,
 +    "calories": 100,
@@ -3040,7 +3040,7 @@ index fccd89aa02a2..a188e4b52c81 100644
 +    "weight": "125 g",
 +    "color": "white",
 +    "spoils_in": "360 days",
-+    "comestible_type": "INVALID",
++    "flags": [ "INEDIBLE" ],
 +    "symbol": "%",
 +    "quench": -1,
 +    "calories": 10,
@@ -3060,7 +3060,7 @@ index fccd89aa02a2..a188e4b52c81 100644
 +    "weight": "600 g",
 +    "color": "cyan",
 +    "spoils_in": "90 days",
-+    "comestible_type": "INVALID",
++    "flags": [ "INEDIBLE" ],
 +    "symbol": "%",
 +    "quench": 10,
 +    "calories": 100,
@@ -3079,7 +3079,7 @@ index fccd89aa02a2..a188e4b52c81 100644
 +    "name": { "str": "liquid ball" },
 +    "weight": "250 g",
 +    "color": "white",
-+    "comestible_type": "INVALID",
++    "flags": [ "INEDIBLE" ],
 +    "symbol": "~",
 +    "quench": 0,
 +    "calories": 0,
@@ -3199,7 +3199,7 @@ index fccd89aa02a2..a188e4b52c81 100644
 +    "weight": "60 g",
 +    "color": "white",
 +    "spoils_in": "360 days",
-+    "comestible_type": "INVALID",
++    "flags": [ "INEDIBLE" ],
 +    "symbol": "%",
 +    "quench": 0,
 +    "calories": 10,
@@ -5638,7 +5638,7 @@ index 000000000000..4dcaf798ddeb
 +]
 diff --git a/Resource Crops/mod_interactions/xedra-both-classes/seeds.json b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json
 new file mode 100644
-index 000000000000..22311df99ffc
+index 000000000000..f8504a6e8568
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json	
 @@ -0,0 +1,22 @@
@@ -5656,10 +5656,10 @@ index 000000000000..22311df99ffc
 +    "fruit": "rc_spawn_seed_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "3 days" },
++      { "GROWTH_SEEDLING": "3 days" },
++      { "GROWTH_MATURE": "3 days" },
++      { "GROWTH_HARVEST": "3 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  }
@@ -9276,7 +9276,7 @@ index acefc75df0a2..aae667544787 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/ammo seeds.json b/Resource Crops/seeds/ammo seeds.json
-index 04affdd2ac51..eca8b4fe5531 100644
+index 04affdd2ac51..6d8c123ae6fa 100644
 --- a/Resource Crops/seeds/ammo seeds.json	
 +++ b/Resource Crops/seeds/ammo seeds.json	
 @@ -2,865 +2,1041 @@
@@ -9303,10 +9303,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_22fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9333,10 +9333,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_10mmfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9379,10 +9379,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_12mmfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9409,10 +9409,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_223fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9439,10 +9439,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_270winfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9469,10 +9469,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_300winfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9499,10 +9499,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_3006springfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9529,10 +9529,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_300blkfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9559,10 +9559,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_308winfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9589,10 +9589,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_32acpfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9619,10 +9619,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_357magfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9649,10 +9649,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_357sigfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9679,10 +9679,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_36navyfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9709,10 +9709,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_38specfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9739,10 +9739,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_380acpfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9769,10 +9769,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_40swfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9799,10 +9799,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_40x46grenfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9829,10 +9829,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_40x53grenfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9859,10 +9859,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_410000fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9889,10 +9889,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_44magfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9919,10 +9919,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_44armyfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9949,10 +9949,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_45acpfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -9979,10 +9979,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_454casufungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10009,10 +10009,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_4570fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10039,10 +10039,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_45coltfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10069,10 +10069,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_46mmfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10099,10 +10099,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_460rowfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10129,10 +10129,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_50bmgfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10159,10 +10159,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_500magfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10189,10 +10189,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_545x39fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10219,10 +10219,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_57x28fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10249,10 +10249,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_5x40fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10295,10 +10295,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_66rockfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10325,10 +10325,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_762x39fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10355,10 +10355,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_762x54fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10385,10 +10385,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_762x25fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10415,10 +10415,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_84x246fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10445,10 +10445,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_8x40fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10475,10 +10475,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_9x19fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10505,10 +10505,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_9x18makafungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10535,10 +10535,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_atgmfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10565,10 +10565,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_barbparafungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10595,10 +10595,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_cannonfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10625,10 +10625,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_gasfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10655,10 +10655,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_1231nfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10685,10 +10685,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_flintlockfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10715,10 +10715,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_rebarrailfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10745,10 +10745,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_paintballfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10775,10 +10775,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_rpgfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10805,10 +10805,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_shotgunfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10835,10 +10835,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "rc_spawn_flarefungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -10865,10 +10865,10 @@ index 04affdd2ac51..eca8b4fe5531 100644
 +    "fruit": "tinyweldtank",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }
@@ -10876,7 +10876,7 @@ index 04affdd2ac51..eca8b4fe5531 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/cloth seeds.json b/Resource Crops/seeds/cloth seeds.json
-index 2ba932551057..8546efba5c47 100644
+index 2ba932551057..988d704aac91 100644
 --- a/Resource Crops/seeds/cloth seeds.json	
 +++ b/Resource Crops/seeds/cloth seeds.json	
 @@ -2,161 +2,361 @@
@@ -10921,10 +10921,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -10953,10 +10953,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "thread",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -10985,10 +10985,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "string_36",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11017,10 +11017,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "rope_30",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11051,10 +11051,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_leather",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11085,10 +11085,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_nomex",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11117,10 +11117,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_kevlar_layered",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11149,10 +11149,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "mattress",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11183,10 +11183,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "tanned_pelt",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11203,10 +11203,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_nylon",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11223,10 +11223,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_canvas",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11243,10 +11243,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_lycra",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11263,10 +11263,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_denim",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11283,10 +11283,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_neoprene",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11303,10 +11303,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_faux_fur",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11323,10 +11323,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_kevlar",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11343,10 +11343,10 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_felt",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11363,16 +11363,16 @@ index 2ba932551057..8546efba5c47 100644
 +    "fruit": "sheet_cotton",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
 +]
 diff --git a/Resource Crops/seeds/electrical seeds.json b/Resource Crops/seeds/electrical seeds.json
-index e3b40b6e648a..1110a23b3350 100644
+index e3b40b6e648a..e02e702bcd9c 100644
 --- a/Resource Crops/seeds/electrical seeds.json	
 +++ b/Resource Crops/seeds/electrical seeds.json	
 @@ -2,81 +2,121 @@
@@ -11401,10 +11401,10 @@ index e3b40b6e648a..1110a23b3350 100644
 +    "fruit": "amplifier",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11433,10 +11433,10 @@ index e3b40b6e648a..1110a23b3350 100644
 +    "fruit": "power_supply",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11465,10 +11465,10 @@ index e3b40b6e648a..1110a23b3350 100644
 +    "fruit": "e_scrap",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11497,10 +11497,10 @@ index e3b40b6e648a..1110a23b3350 100644
 +    "fruit": "circuit",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11530,10 +11530,10 @@ index e3b40b6e648a..1110a23b3350 100644
 +    "fruit": "solar_cell",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -11550,16 +11550,16 @@ index e3b40b6e648a..1110a23b3350 100644
 +    "fruit": "magnetron",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
 +]
 diff --git a/Resource Crops/seeds/food seeds.json b/Resource Crops/seeds/food seeds.json
-index 4b6a9ff1343e..55e5149f1697 100644
+index 4b6a9ff1343e..004ea40a1bd8 100644
 --- a/Resource Crops/seeds/food seeds.json	
 +++ b/Resource Crops/seeds/food seeds.json	
 @@ -2,289 +2,521 @@
@@ -11586,10 +11586,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "mutant_meat",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11616,10 +11616,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "meat",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11646,10 +11646,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "meat_tainted",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11676,10 +11676,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "human_flesh",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11706,10 +11706,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "demihuman_flesh",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -11726,10 +11726,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "fish",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -11746,10 +11746,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "egg_fish",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -11766,10 +11766,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "butter",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11796,10 +11796,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "pizza_supreme",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11826,10 +11826,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "pizza_cheese",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11856,10 +11856,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "pizza_meat",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11886,10 +11886,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "pizza_veggy",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11916,10 +11916,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "flour_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11946,10 +11946,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "biscuit",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -11976,10 +11976,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "smores",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -12006,10 +12006,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "cookies",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -12036,10 +12036,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "cereal2",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -12066,10 +12066,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "pemmican",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -12096,10 +12096,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "marshmallow",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -12126,10 +12126,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "grahmcrackers",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -12156,10 +12156,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "toastem",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -12176,10 +12176,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "raw_milk_berry",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -12196,10 +12196,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "chocolate",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -12216,10 +12216,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "maple_sap_berry",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -12236,10 +12236,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "water_berry",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -12256,10 +12256,10 @@ index 4b6a9ff1343e..55e5149f1697 100644
 +    "fruit": "sugar_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }
@@ -12267,7 +12267,7 @@ index 4b6a9ff1343e..55e5149f1697 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..f4447ad3e5a1 100644
+index 83c7aca5e180..b296c442e1fa 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
 @@ -2,33 +2,281 @@
@@ -12296,10 +12296,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_lab_libraryfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12329,10 +12329,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_exotic_books_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12349,10 +12349,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_many_books_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12369,10 +12369,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_gunmods_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12389,10 +12389,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_guns_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12409,10 +12409,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_gunmags_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12429,10 +12429,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_homejunk_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12449,10 +12449,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_forage_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12469,10 +12469,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_harvest_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12489,10 +12489,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_mineral_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12509,10 +12509,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_feather_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12529,10 +12529,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_bodypart_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12549,10 +12549,10 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_fuel_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12569,16 +12569,16 @@ index 83c7aca5e180..f4447ad3e5a1 100644
 +    "fruit": "rc_spawn_ammo_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
-index f2819e545949..3582afafe1e1 100644
+index f2819e545949..e334f473fadb 100644
 --- a/Resource Crops/seeds/metal seeds.json	
 +++ b/Resource Crops/seeds/metal seeds.json	
 @@ -2,385 +2,481 @@
@@ -12607,10 +12607,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "sheet_metal",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12639,10 +12639,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "sheet_metal_small",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12671,10 +12671,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "steel_lump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12703,10 +12703,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "steel_chunk",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12735,10 +12735,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "scrap",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12767,10 +12767,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "spike",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12799,10 +12799,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "pipe",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12831,10 +12831,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "steel_plate",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12863,10 +12863,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "rebar",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12895,10 +12895,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "hinge",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12927,10 +12927,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "wire",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12959,10 +12959,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "nail_bundle",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -12991,10 +12991,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "hdframe",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13023,10 +13023,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "frame",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13055,10 +13055,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "metal_tank",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13087,10 +13087,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "cable",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13119,10 +13119,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "copper",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13151,10 +13151,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "lead",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13183,10 +13183,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "tin",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13215,10 +13215,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "silver_small",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13247,10 +13247,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "gold_small",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13279,10 +13279,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "chain",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13311,10 +13311,10 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "mil_plate",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13344,16 +13344,16 @@ index f2819e545949..3582afafe1e1 100644
 +    "fruit": "solder_wire",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
 +]
 diff --git a/Resource Crops/seeds/misc seeds.json b/Resource Crops/seeds/misc seeds.json
-index bd3cb009fb17..47ae1a7b387c 100644
+index bd3cb009fb17..2e4d25c1fd26 100644
 --- a/Resource Crops/seeds/misc seeds.json	
 +++ b/Resource Crops/seeds/misc seeds.json	
 @@ -2,321 +2,441 @@
@@ -13382,10 +13382,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "duct_tape_bundle",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13414,10 +13414,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "material_soil",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13446,10 +13446,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "clay_lump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13478,10 +13478,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "brick",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13510,10 +13510,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "concrete",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13542,10 +13542,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "rock",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13574,10 +13574,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "alien_pod_resin",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13606,10 +13606,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "mortar_build",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13638,10 +13638,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "plastic_sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13670,10 +13670,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "rc_spawn_cbmfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13702,10 +13702,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "bio_power_storage",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13734,10 +13734,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "bio_power_storage_mkII",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13766,10 +13766,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "rc_spawn_batterydisposfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13798,10 +13798,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "fertilizer_commercial",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13830,10 +13830,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "solar_panel",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13862,10 +13862,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "solar_panel_v2",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13894,10 +13894,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "element",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13926,10 +13926,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "plastic_chunk",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13958,10 +13958,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "material_sand_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -13991,10 +13991,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "material_cement_clump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -14011,10 +14011,10 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "rigid_plastic_sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -14031,16 +14031,16 @@ index bd3cb009fb17..47ae1a7b387c 100644
 +    "fruit": "polycarbonate_sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +}
 +]
 diff --git a/Resource Crops/seeds/seed.json b/Resource Crops/seeds/seed.json
-index b11153388c60..4c8398385e22 100644
+index b11153388c60..927ae9e9ab35 100644
 --- a/Resource Crops/seeds/seed.json	
 +++ b/Resource Crops/seeds/seed.json	
 @@ -2,417 +2,601 @@
@@ -14067,10 +14067,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "rc_seed_mat",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14097,10 +14097,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "bee_sting",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14127,10 +14127,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "venom_bee",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14157,10 +14157,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "venom_wasp",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14187,10 +14187,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "honeycomb",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14217,10 +14217,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "gunpowder",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14247,10 +14247,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "plut_cell",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14277,10 +14277,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "fungicidalbomb",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14307,10 +14307,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "gasbomb",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14337,10 +14337,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "insecticidalbomb",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14367,10 +14367,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "rc_purifier_solid",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14397,10 +14397,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "rc_anesthetic_solid",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14427,10 +14427,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "chunk_rubber",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14457,10 +14457,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "rc_spawn_moneyfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14487,10 +14487,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "egg_chicken",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14518,10 +14518,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "egg_turtle_painted",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14548,10 +14548,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "ant_egg",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14578,10 +14578,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "egg_spider_web",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14609,10 +14609,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "glass_sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14640,10 +14640,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "tempered_glass_sheet",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14671,10 +14671,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "reinforced_glass_pane",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14702,10 +14702,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "2x4",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14733,10 +14733,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "stick_long",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14764,10 +14764,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "wood_panel",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14795,10 +14795,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "log",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    },
@@ -14826,10 +14826,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "wood_beam",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -14846,10 +14846,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "material_rocksalt",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -14866,10 +14866,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "tallow",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -14886,10 +14886,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "wax",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -14906,10 +14906,10 @@ index b11153388c60..4c8398385e22 100644
 +    "fruit": "wool_staple",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }

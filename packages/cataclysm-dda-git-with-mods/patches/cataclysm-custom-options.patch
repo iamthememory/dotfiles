@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 52b4263204f4..6ec0dfde1849 100644
+index 52b4263204f4..e6c94f558d96 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,89 @@
+@@ -520,5 +520,96 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -39,6 +39,13 @@ index 52b4263204f4..6ec0dfde1849 100644
 +    "type": "EXTERNAL_OPTION",
 +    "name": "CROP_GROWTH_TIME_SCALER",
 +    "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
++    "stype": "float",
++    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "CROP_YIELD_MULTIPLIER",
++    "//": "How to scale crop yields. 2.0 will double crop yields.",
 +    "stype": "float",
 +    "value": 1.0
 +  },
@@ -93,10 +100,10 @@ index 52b4263204f4..6ec0dfde1849 100644
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
-index fffece316641..056934850d31 100644
+index b9c4d9d769e1..52732cf3606b 100644
 --- a/src/activity_actor.cpp
 +++ b/src/activity_actor.cpp
-@@ -2025,7 +2025,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
+@@ -2068,7 +2068,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
          return;
      }
  
@@ -106,10 +113,10 @@ index fffece316641..056934850d31 100644
                  integrated_ar       - implant                                         = potentially infinite
                  ar_glasses_advanced - max 300 charges from disposable light battery   = 25 hours of reading
 diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
-index 6f72daac2f7b..1dbad53cfe8c 100644
+index 4e947e04c895..ae5300772726 100644
 --- a/src/activity_item_handling.cpp
 +++ b/src/activity_item_handling.cpp
-@@ -4389,8 +4389,9 @@ static int get_comestible_order( Character &you, const item_location &loc,
+@@ -4396,8 +4396,9 @@ static int get_comestible_order( Character &you, const item_location &loc,
  static time_duration get_comestible_time_left( const item_location &loc )
  {
      time_duration time_left = 0_turns;
@@ -122,10 +129,10 @@ index 6f72daac2f7b..1dbad53cfe8c 100644
          const item &it = *loc;
          const double relative_rot = it.get_relative_rot();
 diff --git a/src/character.cpp b/src/character.cpp
-index 6ef44ca17f8b..b2b2381487e1 100644
+index d81c44ed40b0..8051a1628d7c 100644
 --- a/src/character.cpp
 +++ b/src/character.cpp
-@@ -2444,6 +2444,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
+@@ -2446,6 +2446,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
          return false;
      }
  
@@ -143,10 +150,10 @@ index 6ef44ca17f8b..b2b2381487e1 100644
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
 diff --git a/src/game_inventory.cpp b/src/game_inventory.cpp
-index b9e1db47997d..f1e12a3e71c4 100644
+index fd21d509dcea..dfda2ab5f871 100644
 --- a/src/game_inventory.cpp
 +++ b/src/game_inventory.cpp
-@@ -717,8 +717,9 @@ class comestible_inventory_preset : public inventory_selector_preset
+@@ -721,8 +721,9 @@ class comestible_inventory_preset : public inventory_selector_preset
              }, _( "HEALTH" ) );
  
              append_cell( []( const item_location & loc ) {
@@ -158,6 +165,28 @@ index b9e1db47997d..f1e12a3e71c4 100644
                  if( spoils > 0_turns ) {
                      return to_string_clipped( spoils );
                  }
+diff --git a/src/iexamine.cpp b/src/iexamine.cpp
+index 71b2554379ff..56703ae457a7 100644
+--- a/src/iexamine.cpp
++++ b/src/iexamine.cpp
+@@ -2811,10 +2811,15 @@ void iexamine::harvest_plant( Character &you, const tripoint_bub_ms &examp, bool
+ 
+             int skillLevel = round( you.get_skill_level( skill_survival ) );
+             ///\EFFECT_SURVIVAL increases number of plants harvested from a seed
+-            int plant_count = rng( skillLevel / 2, skillLevel );
++            float yield_multiplier = ::get_option<float>( "CROP_YIELD_MULTIPLIER" );
++            int plant_count = rng(
++                    static_cast<int>( skillLevel * yield_multiplier / 2.0 ),
++                    static_cast<int>( skillLevel * yield_multiplier ) );
+             const auto &fp = here.furn( examp )->plant;
+             plant_count *= fp->harvest_multiplier;
+-            plant_count = std::min( std::max( plant_count, 1 ), 12 );
++            plant_count = std::min(
++                    std::max( plant_count, 1 ),
++                    static_cast<int>( 12.0 * yield_multiplier ) );
+             int seedCount = std::max( 1, rng( plant_count / 4, plant_count / 2 ) );
+             for( item &i : get_harvest_items( type, plant_count, seedCount, true ) ) {
+                 if( from_activity ) {
 diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
 index d268dd459534..8473c641c486 100644
 --- a/src/item_degrade.cpp
@@ -175,10 +204,10 @@ index d268dd459534..8473c641c486 100644
      }
      return 0_turns;
 diff --git a/src/magic.cpp b/src/magic.cpp
-index 27f9f39a42cf..2ece788f73c9 100644
+index 3bf239c65b55..e69e5052f6a1 100644
 --- a/src/magic.cpp
 +++ b/src/magic.cpp
-@@ -2477,7 +2477,8 @@ int known_magic::max_mana( const Character &guy ) const
+@@ -2517,7 +2517,8 @@ int known_magic::max_mana( const Character &guy ) const
  void known_magic::update_mana( const Character &guy, float turns )
  {
      // mana should replenish in 8 hours.
@@ -189,10 +218,10 @@ index 27f9f39a42cf..2ece788f73c9 100644
      mod_mana( guy, std::floor( ratio * std::max( 0.0,
                                 guy.calculate_by_enchantment( static_cast<double>( max_mana(
 diff --git a/src/map.cpp b/src/map.cpp
-index ea21f3801f08..dc741581f778 100644
+index 31ba5464a1e2..3b3848dd73d3 100644
 --- a/src/map.cpp
 +++ b/src/map.cpp
-@@ -8717,7 +8717,7 @@ void map::grow_plant( const tripoint_bub_ms &p )
+@@ -8845,7 +8845,7 @@ void map::grow_plant( const tripoint_bub_ms &p )
              target_stage = pair.first;
          } // Don't break the loop for the case where time has been rewound.
          // Advance to the time of the next stage for the next iteration.
@@ -202,10 +231,10 @@ index ea21f3801f08..dc741581f778 100644
  
      const auto check_flag = []( const std::string & to_check ) {
 diff --git a/src/npc.cpp b/src/npc.cpp
-index 382fcb6a1f70..0d31b92335f1 100644
+index 30d4a07148b9..0c006abfd194 100644
 --- a/src/npc.cpp
 +++ b/src/npc.cpp
-@@ -2061,11 +2061,12 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2084,11 +2084,12 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
  
@@ -220,14 +249,14 @@ index 382fcb6a1f70..0d31b92335f1 100644
          return ret_val<void>::make_failure( _( "Will not buy filthy items" ) );
      }
  
-@@ -3998,5 +3999,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
+@@ -4021,5 +4022,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
  {
      return std::make_unique<talker_npc>( guy );
  }
 -
 -
 diff --git a/src/recipe.cpp b/src/recipe.cpp
-index 8dfada73352d..a32e1ab0401b 100644
+index b0dd9f04c349..1a6c8bfdb40c 100644
 --- a/src/recipe.cpp
 +++ b/src/recipe.cpp
 @@ -38,6 +38,7 @@
@@ -251,7 +280,7 @@ index 8dfada73352d..a32e1ab0401b 100644
 +
      // ensure result name is always in front of the name for searching in crafting menu
      if( !name_.empty() && !is_practice() && !is_nested() && result_ ) {
-         name_ = translation::to_translation( string_format( name_, result_->nname( makes_amount() ) ) );
+         name_ = translation::to_translation( string_format( name_.translated(),
 diff --git a/src/skill.cpp b/src/skill.cpp
 index ccc02127c027..febac736ab75 100644
 --- a/src/skill.cpp
