@@ -2902,10 +2902,10 @@ index 2000d28c817f..ffa4eca0305d 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..47d7faa16f5f 100644
+index fccd89aa02a2..461fa36c7b27 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
-@@ -1,35 +1,39 @@
+@@ -1,57 +1,403 @@
  [
    {
      "id": "rc_textbook_infseeds",
@@ -2935,28 +2935,29 @@ index fccd89aa02a2..47d7faa16f5f 100644
    {
      "id": "rc_purifier_solid",
 -    "type": "COMESTIBLE",
+-    "copy-from": "purifier",
+-    "comestible_type": "MED",
 +    "type": "ITEM",
 +    "subtypes": [ "COMESTIBLE" ],
-     "copy-from": "purifier",
-     "comestible_type": "MED",
++    "copy-from": "abstract_liquid_ball",
      "name": "pure fruit",
-     "description": "Let's hope the scientists figured this out and this is really a fruit filled with purifier.",
+-    "description": "Let's hope the scientists figured this out and this is really a fruit filled with purifier.",
 -    "phase": "solid"
-+    "phase": "solid",
-+    "extend": { "flags": [ "CAN_HAVE_CHARGES" ] }
++    "description": "Let's hope the scientists figured this out and this is really a fruit filled with purifier."
    },
    {
      "id": "rc_anesthetic_solid",
 -    "type": "AMMO",
+-    "copy-from": "anesthetic",
 +    "type": "ITEM",
-+    "subtypes": [ "AMMO" ],
-     "copy-from": "anesthetic",
++    "subtypes": [ "COMESTIBLE" ],
++    "copy-from": "abstract_liquid_ball",
      "name": "Blackout fruit",
-     "description": "A fruit filled with anesthetic. Smells like chloroform.",
-@@ -37,21 +41,393 @@
-     "count": 100
-   },
-   {
+-    "description": "A fruit filled with anesthetic. Smells like chloroform.",
+-    "phase": "solid",
+-    "count": 100
+-  },
+-  {
 -    "id": "rc_spawn_moneyfungus",
 -    "type": "TOOL",
 -    "name": "summon money fungus",
@@ -2973,44 +2974,28 @@ index fccd89aa02a2..47d7faa16f5f 100644
 -      "moves": 50,
 -      "difficulty": 100
 -    }
++    "description": "A fruit filled with anesthetic. Smells like chloroform."
++  },
++  {
 +    "type": "ITEM",
 +    "subtypes": [ "COMESTIBLE" ],
 +    "id": "raw_milk_berry",
++    "copy-from": "abstract_liquid_ball",
 +    "name": { "str": "raw milkberries" },
-+    "weight": "600 g",
-+    "color": "white",
-+    "spoils_in": "30 days",
-+    "flags": [ "INEDIBLE" ],
-+    "symbol": "%",
-+    "quench": 10,
-+    "calories": 100,
++    "weight": "500 g",
 +    "description": "Several hard, inedible berries filled with raw milk.",
-+    "price": "1 USD",
-+    "price_postapoc": "1 USD",
-+    "material": [ "fruit" ],
-+    "volume": "600 ml",
-+    "vitamins": [ [ "fruit_allergen", 1 ] ],
-+    "melee_damage": { "bash": 2 }
++    "volume": "500 ml"
 +  },
 +  {
 +    "type": "ITEM",
 +    "subtypes": [ "COMESTIBLE" ],
 +    "id": "maple_sap_berry",
++    "copy-from": "abstract_liquid_ball",
 +    "name": { "str": "maple sap berries" },
-+    "weight": "2750 g",
++    "weight": "2550 g",
 +    "color": "brown",
-+    "spoils_in": "30 days",
-+    "flags": [ "INEDIBLE" ],
-+    "symbol": "%",
-+    "quench": 10,
-+    "calories": 100,
 +    "description": "Several hard, inedible berries filled with maple sap.",
-+    "price": "1 USD",
-+    "price_postapoc": "1 USD",
-+    "material": [ "fruit" ],
-+    "volume": "2750 ml",
-+    "vitamins": [ [ "fruit_allergen", 1 ] ],
-+    "melee_damage": { "bash": 2 }
++    "volume": "2500 ml"
 +  },
 +  {
 +    "type": "ITEM",
@@ -3068,6 +3053,7 @@ index fccd89aa02a2..47d7faa16f5f 100644
 +    "subtypes": [ "COMESTIBLE" ],
 +    "id": "flour_clump",
 +    "name": { "str": "flour clump" },
++    "comestible_type": "INVALID",
 +    "weight": "125 g",
 +    "color": "white",
 +    "spoils_in": "360 days",
@@ -3087,27 +3073,19 @@ index fccd89aa02a2..47d7faa16f5f 100644
 +    "type": "ITEM",
 +    "subtypes": [ "COMESTIBLE" ],
 +    "id": "water_berry",
++    "copy-from": "abstract_liquid_ball",
 +    "name": { "str": "water berries" },
-+    "weight": "600 g",
++    "weight": "500 g",
 +    "color": "cyan",
-+    "spoils_in": "90 days",
-+    "flags": [ "INEDIBLE" ],
-+    "symbol": "%",
-+    "quench": 10,
-+    "calories": 100,
 +    "description": "Several hard, inedible berries filled with water.",
-+    "price": "1 USD",
-+    "price_postapoc": "1 USD",
-+    "material": [ "fruit" ],
-+    "volume": "600 ml",
-+    "vitamins": [ [ "fruit_allergen", 1 ] ],
-+    "melee_damage": { "bash": 2 }
++    "volume": "500 ml"
 +  },
 +  {
 +    "type": "ITEM",
 +    "subtypes": [ "COMESTIBLE" ],
 +    "id": "abstract_liquid_ball",
 +    "name": { "str": "liquid ball" },
++    "comestible_type": "INVALID",
 +    "weight": "250 g",
 +    "color": "white",
 +    "flags": [ "INEDIBLE" ],
@@ -3230,6 +3208,7 @@ index fccd89aa02a2..47d7faa16f5f 100644
 +    "weight": "60 g",
 +    "color": "white",
 +    "spoils_in": "360 days",
++    "comestible_type": "INVALID",
 +    "flags": [ "INEDIBLE" ],
 +    "symbol": "%",
 +    "quench": 0,
@@ -15058,10 +15037,10 @@ index 000000000000..280a4da3d544
 +]
 diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
 new file mode 100644
-index 000000000000..39aa29c4227e
+index 000000000000..5a05701cda55
 --- /dev/null
 +++ b/Resource Crops/uncraft/other.json	
-@@ -0,0 +1,242 @@
+@@ -0,0 +1,258 @@
 +[
 +  {
 +    "result": "material_sand_clump",
@@ -15302,5 +15281,21 @@ index 000000000000..39aa29c4227e
 +    "time": "2 m",
 +    "qualities": [ { "id": "HAMMER", "level": 1 } ],
 +    "components": [ [ [ "material_cement", 50 ] ] ]
++  },
++  {
++    "result": "rc_purifier_solid",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "purifier", 1 ] ] ]
++  },
++  {
++    "result": "rc_anesthetic_solid",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "HAMMER", "level": 1 } ],
++    "components": [ [ [ "anesthetic", 100 ] ] ]
 +  }
 +]
