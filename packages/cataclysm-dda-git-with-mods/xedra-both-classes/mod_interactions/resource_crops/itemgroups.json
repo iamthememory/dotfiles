@@ -132,6 +132,7 @@
         [ "rc_seed_meatHum", 10 ],
         [ "rc_seed_meatMut", 10 ],
         [ "rc_seed_meatTaint", 10 ],
+        [ "rc_seed_medicine", 10 ],
         [ "rc_seed_metalsheet", 10 ],
         [ "rc_seed_metalsheetsmall", 10 ],
         [ "rc_seed_metaltank", 10 ],

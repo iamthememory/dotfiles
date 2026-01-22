@@ -123,8 +123,11 @@
     "items": {
       "both": {
         "entries": [
+          { "item": "rc_seed_all_spell_books" },
           { "item": "rc_seed_many_books" },
+          { "item": "rc_seed_medicine" },
           { "item": "rc_seed_seeds" },
+          { "item": "rc_seed_various_magic_items" },
           { "item": "rc_seed_water_berry" },
           { "item": "e_tool" },
           { "item": "ragpouch" }

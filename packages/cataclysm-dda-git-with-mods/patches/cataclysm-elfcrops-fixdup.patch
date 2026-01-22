@@ -2147,7 +2147,7 @@ index d52300a7328b..f01f62aff128 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..ee9ae03bd8a3 100644
+index df4ffa673168..fc003fbc36cd 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -2242,7 +2242,7 @@ index df4ffa673168..ee9ae03bd8a3 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,505 @@
+@@ -615,9 +568,536 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2748,6 +2748,37 @@ index df4ffa673168..ee9ae03bd8a3 100644
 +      { "group": "ammo_any_batteries_full", "prob": 10 },
 +      { "group": "ammo_cannon", "prob": 10 },
 +      { "group": "milspec_arsenal_group_only_ammo", "prob": 10 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_medicine",
++    "items": [
++      { "group": "magazines", "prob": 10 },
++      { "group": "SUS_fridge_snacks", "prob": 10 },
++      { "group": "snacks", "prob": 10 },
++      { "group": "tools_home", "prob": 10 },
++      { "group": "beauty", "prob": 10 },
++      { "group": "vitamin_shop", "prob": 10 },
++      { "group": "cleaning", "prob": 10 },
++      { "group": "behindcounter", "prob": 10 },
++      { "group": "pet_food_in_container", "prob": 10 },
++      { "group": "drugs_pharmacy", "prob": 10 },
++      { "group": "softdrugs", "prob": 10 },
++      { "group": "harddrugs", "prob": 5 },
++      { "group": "drugs_analgesic", "prob": 5 },
++      { "group": "drugs_rare", "prob": 5 },
++      { "group": "dissection", "prob": 5 },
++      { "group": "surgery", "prob": 5 },
++      { "group": "gear_medical", "prob": 5 },
++      { "group": "autodoc_supplies", "prob": 5 },
++      { "group": "hospital_lab", "prob": 5 },
++      { "group": "virology_lab_fridge", "prob": 5 },
++      { "group": "hospital_medical_items", "prob": 5 },
++      { "group": "tools_medical", "prob": 5 },
++      { "group": "hospital_incubator", "prob": 5 },
++      { "group": "estrogen_hrt", "prob": 10 }
      ]
    }
 -]
@@ -3335,10 +3366,10 @@ index fccd89aa02a2..47d7faa16f5f 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..3be6528fd18c 100644
+index ce70e9badaf0..ae8efa3395b5 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1240 @@
+@@ -1,1046 +1,1258 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -4342,7 +4373,7 @@ index ce70e9badaf0..3be6528fd18c 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
--    "use_action": {
+     "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_66rock_fungus",
 -      "moves": 50,
@@ -4360,7 +4391,7 @@ index ce70e9badaf0..3be6528fd18c 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_700nitro_fungus",
 -      "moves": 50,
@@ -5225,6 +5256,24 @@ index ce70e9badaf0..3be6528fd18c 100644
 +        {
 +          "id": "EOC_rc_spawn_ammo_fungus",
 +          "effect": { "u_spawn_item": "rc_drop_ammo", "suppress_message": true, "use_item_group": true }
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_medicine_fungus",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon medicine fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with medicine in its body.",
++    "use_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_medicine_fungus",
++          "effect": { "u_spawn_item": "rc_drop_medicine", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
@@ -7910,7 +7959,7 @@ index 056d35917941..5c2772a020f4 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..4ebe8d78e2b0 100644
+index fa98ccf57c19..0324dea8835b 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
 @@ -2,10 +2,11 @@
@@ -7941,7 +7990,7 @@ index fa98ccf57c19..4ebe8d78e2b0 100644
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
-@@ -48,5 +50,284 @@
+@@ -48,5 +50,307 @@
          [ "paper", 100 ]
        ]
      ]
@@ -8214,6 +8263,29 @@ index fa98ccf57c19..4ebe8d78e2b0 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "ammo seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_medicine",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "medicine seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -12267,10 +12339,10 @@ index 4b6a9ff1343e..004ea40a1bd8 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..b296c442e1fa 100644
+index 83c7aca5e180..5850baecbe81 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,281 @@
+@@ -2,33 +2,301 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -12567,6 +12639,26 @@ index 83c7aca5e180..b296c442e1fa 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "ammo bush",
 +    "fruit": "rc_spawn_ammo_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_medicine",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "medicine seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with medicine.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "medicine bush",
++    "fruit": "rc_spawn_medicine_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "5 days" },
