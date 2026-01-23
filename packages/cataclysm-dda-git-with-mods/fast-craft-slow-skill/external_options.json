@@ -71,7 +71,7 @@
     "name": "CROP_YIELD_MULTIPLIER",
     "//": "How to scale crop yields. 2.0 will double crop yields.",
     "stype": "float",
-    "value": 4.0
+    "value": 1.5
   },
   {
     "type": "EXTERNAL_OPTION",
