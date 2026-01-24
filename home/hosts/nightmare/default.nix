@@ -104,6 +104,8 @@
     # A game engine.
     godot_4
 
+    nexusmods-app-unfree
+
     # A tool for setting the background.
     nitrogen
 

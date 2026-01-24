@@ -29,5 +29,6 @@
     "dotnet-runtime-7.0.20"
     "dotnet-runtime-wrapped-7.0.20"
     "dotnet-wrapped-7.0.20"
+    "nexusmods-app-unfree-0.21.1"
   ];
 }
