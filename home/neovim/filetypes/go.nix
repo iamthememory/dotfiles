@@ -7,7 +7,7 @@
     gopls
   ];
 
-  programs.neovim.extraLuaConfig = ''
+  programs.neovim.initLua = ''
     vim.lsp.config('gopls', require('coq').lsp_ensure_capabilities())
     vim.lsp.enable('gopls')
   '';

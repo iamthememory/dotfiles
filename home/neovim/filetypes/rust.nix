@@ -36,7 +36,7 @@
   '';
 
   # Lua configuration for rust.
-  programs.neovim.extraLuaConfig = ''
+  programs.neovim.initLua = ''
     vim.lsp.config('rust_analyzer', require('coq').lsp_ensure_capabilities())
     vim.lsp.enable('rust_analyzer')
   '';

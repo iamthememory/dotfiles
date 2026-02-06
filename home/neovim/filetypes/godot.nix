@@ -22,7 +22,7 @@
     \})
   '';
 
-  programs.neovim.extraLuaConfig = ''
+  programs.neovim.initLua = ''
     vim.lsp.config('gdscript',
       require('coq').lsp_ensure_capabilities({
         name = "godot",

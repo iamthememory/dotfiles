@@ -21,7 +21,7 @@
     let g:ale_fixers['nix'] = ['nixpkgs-fmt']
   '';
 
-  programs.neovim.extraLuaConfig = ''
+  programs.neovim.initLua = ''
     vim.lsp.config('nil_ls', require('coq').lsp_ensure_capabilities())
     vim.lsp.enable('nil_ls')
   '';
