@@ -39,7 +39,6 @@ let
 
     patches = [
       ./patches/cataclysm-bionics-lower-saving.patch
-      ./patches/cataclysm-butchery-deserialization-fix.patch
       ./patches/cataclysm-craft-percent-fix.patch
       ./patches/cataclysm-custom-options.patch
       ./patches/cataclysm-defense-real-world.patch
@@ -64,7 +63,6 @@ let
       ./patches/cataclysm-plant-in-cold.patch
       ./patches/cataclysm-plant-only-check-now.patch
       ./patches/cataclysm-seedbearer-fix.patch
-      ./patches/cataclysm-sky-island-craft-fix.patch
       ./patches/cataclysm-spell-ui-widen.patch
       ./patches/cataclysm-survival-forage.patch
       ./patches/cataclysm-xedra-chronomancer-heritage.patch
