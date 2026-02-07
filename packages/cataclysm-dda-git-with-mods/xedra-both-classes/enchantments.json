@@ -4,7 +4,8 @@
     "id": "BONUS_EATER",
     "condition": "ALWAYS",
     "values": [
-      { "value": "MAX_MANA", "add": { "math": [ "u_skill('deduction')*150" ] } }
+      { "value": "MAX_MANA", "add": { "math": [ "u_skill('deduction')*150" ] } },
+      { "value": "REGEN_MANA", "multiply": -0.25 }
     ]
   },
   {

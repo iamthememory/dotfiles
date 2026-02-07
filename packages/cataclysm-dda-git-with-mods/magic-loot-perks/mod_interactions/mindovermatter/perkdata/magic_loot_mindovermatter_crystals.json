@@ -5,7 +5,7 @@
     "condition": { "math": [ "rng(0, 1.0) <= 0.05" ] },
     "effect": [
       { "u_message": "You found a crystal." },
-      { "u_spawn_item": "magic_loot_mindovermatter_crystals", "use_item_group": true }
+      { "u_spawn_item": "dist_matrix_crystals", "use_item_group": true }
     ]
   },
   {
@@ -19,21 +19,5 @@
     "id": "EOC_magic_loot_mindovermatter_crystals_off",
     "//": "Deactivation effect",
     "effect": [ { "u_message": "You stop looking for crystals." } ]
-  },
-  {
-    "id": "magic_loot_mindovermatter_crystals",
-    "type": "item_group",
-    "items": [
-      { "group": "biokinetic_matrix_crystals_group", "prob": 100 },
-      { "group": "clairsentient_matrix_crystals_group", "prob": 100 },
-      { "group": "electrokinetic_matrix_crystals_group", "prob": 100 },
-      { "group": "photokinetic_matrix_crystals_group", "prob": 100 },
-      { "group": "pyrokinetic_matrix_crystals_group", "prob": 100 },
-      { "item": "matrix_crystal_telekinesis", "prob": 100 },
-      { "item": "matrix_crystal_telepathy", "prob": 100 },
-      { "item": "matrix_crystal_teleportation", "prob": 100 },
-      { "item": "matrix_crystal_vitakinesis", "prob": 100 },
-      { "item": "matrix_crystal_coruscating", "prob": 25 }
-    ]
   }
 ]
