@@ -4,7 +4,6 @@
 }:
 let
   inherit (config.home) homeDirectory;
-  inherit (config.xdg) userDirs;
 in
 {
   # Manage the basic xdg directories.
@@ -36,18 +35,9 @@ in
   xdg.userDirs.templates = "${homeDirectory}";
   xdg.userDirs.videos = "${homeDirectory}";
 
-  xdg.userDirs.extraConfig.XDG_MAIL_DIR = "${homeDirectory}/Mail";
+  xdg.userDirs.extraConfig.MAIL = "${homeDirectory}/Mail";
 
-  home.sessionVariables.XDG_DESKTOP_DIR = userDirs.desktop;
-  home.sessionVariables.XDG_DOCUMENTS_DIR = userDirs.documents;
-  home.sessionVariables.XDG_DOWNLOAD_DIR = userDirs.download;
-  home.sessionVariables.XDG_MUSIC_DIR = userDirs.music;
-  home.sessionVariables.XDG_PICTURES_DIR = userDirs.pictures;
-  home.sessionVariables.XDG_PUBLICSHARE_DIR = userDirs.publicShare;
-  home.sessionVariables.XDG_TEMPLATES_DIR = userDirs.templates;
-  home.sessionVariables.XDG_VIDEOS_DIR = userDirs.videos;
-
-  home.sessionVariables.XDG_MAIL_DIR = userDirs.extraConfig.XDG_MAIL_DIR;
+  xdg.userDirs.setSessionVariables = true;
 
   # Add the xdg locale file, installed/used by xdg-user-dirs.
   xdg.configFile."user-dirs.locale".text = ''

@@ -37,12 +37,13 @@ in
 
 
     # A variety of audio plugins.
+    # Search for more plugins:
+    # nix-locate --minimal --at-root -t d -t s -r '/lib/(dssi|ladspa|lv2|lxvst|vst)' | sort | uniq | sed 's@\.out$@@'
     adlplug
     aeolus
     AMB-plugins
-    #ams-lv2
     artyFX
-    #bristol
+    bristol
     bshapr
     bslizr
     calf
@@ -56,19 +57,17 @@ in
     dssi
     eq10q
     fluidsynth
-    #fmsynth
     fomp
     gxplugins-lv2
     helm
     infamousPlugins
     ingen
     ladspaPlugins
-    #linuxsampler
+    linuxsampler
     mda_lv2
     metersLv2
     mod-distortion
     nova-filters
-    rkrlv2
     qsynth
     setbfree
     sorcer
@@ -76,7 +75,6 @@ in
     swh_lv2
     synthv1
     x42-avldrums
-    xsynth_dssi
     yoshimi
     zam-plugins
     zynaddsubfx

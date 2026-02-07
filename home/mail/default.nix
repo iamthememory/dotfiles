@@ -14,7 +14,7 @@
   ];
 
   # Set the base mail path to the same as the xdg mail directory.
-  accounts.email.maildirBasePath = config.xdg.userDirs.extraConfig.XDG_MAIL_DIR;
+  accounts.email.maildirBasePath = config.xdg.userDirs.extraConfig.MAIL;
 
   # Link ~/.abook to ~/.config/abook for compatibility, since home-manager likes
   # to put abook's config there, and this keeps all the files together.

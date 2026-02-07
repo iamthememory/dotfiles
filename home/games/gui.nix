@@ -107,9 +107,6 @@ in
       # A GBA emulator.
       mgba
 
-      # A Minecraft launcher and manager.
-      prismlauncher
-
       # An emulator.
       retroarch-full
 
@@ -122,6 +119,9 @@ in
       # A Minecraft-like survival game.
       vintagestory
     ];
+
+  # A Minecraft launcher and manager.
+  programs.prismlauncher.enable = true;
 
   xdg.configFile."MangoHud/MangoHud.conf".text = mangoHudDefaults;
 
