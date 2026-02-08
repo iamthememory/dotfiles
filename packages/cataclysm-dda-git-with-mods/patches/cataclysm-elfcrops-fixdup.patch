@@ -801,10 +801,10 @@ index 000000000000..f4992b0657ec
 +]
 diff --git a/Resource Crops Magiclysm addon/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops Magiclysm addon/mod_interactions/xedra_evolved/fungusdrops.json
 new file mode 100644
-index 000000000000..9320548c16bf
+index 000000000000..bec754a5aca8
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/mod_interactions/xedra_evolved/fungusdrops.json	
-@@ -0,0 +1,64 @@
+@@ -0,0 +1,65 @@
 +[
 +  {
 +    "type": "item_group",
@@ -864,7 +864,8 @@ index 000000000000..9320548c16bf
 +        { "group": "xe_all_spells_low", "prob": 10 },
 +        { "group": "xe_all_spells_mid", "prob": 10 },
 +        { "group": "xe_all_spells_high", "prob": 10 },
-+        { "group": "xe_border_patrol_evidence", "prob": 10 }
++        { "group": "xe_border_patrol_evidence", "prob": 10 },
++        { "item": "bezoar", "prob": 3 }
 +      ]
 +    }
 +  }
@@ -5694,10 +5695,10 @@ index 000000000000..f8504a6e8568
 +]
 diff --git a/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json
 new file mode 100644
-index 000000000000..d69445b879ae
+index 000000000000..6cae3a07ef17
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json	
-@@ -0,0 +1,67 @@
+@@ -0,0 +1,68 @@
 +[
 +  {
 +    "type": "item_group",
@@ -5707,6 +5708,7 @@ index 000000000000..d69445b879ae
 +      "items": [
 +        { "item": "ant_stomach", "prob": 40, "count": [ 3, 4 ] },
 +        { "item": "ash", "prob": 800, "count": [ 380, 400 ] },
++        { "item": "bezoar", "prob": 50, "count": [ 2, 4 ] },
 +        { "item": "birchbark", "prob": 80, "count": [ 1, 2 ] },
 +        { "item": "blank_blood_ball", "prob": 200, "count": [ 1, 2 ] },
 +        { "item": "blood_tainted_ball", "prob": 400, "count": [ 1, 2 ] },
