@@ -77,6 +77,7 @@
     "purifiable": false,
     "valid": false,
     "mixed_effect": true,
+    "starting_trait": true,
     "description": "You periodically mutate, but at least it's usually helpful."
   },
   {

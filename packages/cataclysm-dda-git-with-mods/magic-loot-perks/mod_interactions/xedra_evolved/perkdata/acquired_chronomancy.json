@@ -1,0 +1,27 @@
+[
+  {
+    "id": "EOC_PERK_ACQUIRED_CHRONOMANCY_MUTATION_GAIN",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "gains_mutation",
+    "condition": { "compare_string": [ "perk_acquired_chronomancy", { "context_val": "trait" } ] },
+    "effect": [
+      {
+        "run_eocs": [
+          "EOC_PERK_ACQUIRED_CHRONOMANCY_MUTATION_GAIN_GIVE_TRAIT"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EOC_PERK_ACQUIRED_CHRONOMANCY_MUTATION_GAIN_GIVE_TRAIT",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_add_trait": "XEDRA_CHRONOMANCER" },
+      { "u_add_trait": "XEDRA_CHRONOMANCER_LOOPING_WOUND" },
+      { "u_add_trait": "XEDRA_CHRONOMANCER_TIME_SLOWDOWN" },
+      { "u_add_trait": "XEDRA_CHRONOMANCER_UNSTABLE_POWERS" },
+      { "run_eocs": [ "EOC_CHECK_GAMESTART_CHRONOMANCER" ] }
+    ]
+  }
+]

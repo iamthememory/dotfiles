@@ -6,45 +6,35 @@
       {
         "condition": { "not": { "u_has_trait": "perk_magic_loot_magiclysm_books" } },
         "text": "Gain [<trait_name:perk_magic_loot_magiclysm_books>]",
-        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_BOOKS"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_magic_loot_magiclysm_books>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_magic_loot_magiclysm_books>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_magic_loot_magiclysm_books", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_magic_loot_magiclysm_attunement" } },
         "text": "Gain [<trait_name:perk_magic_loot_magiclysm_attunement>]",
-        "topic": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_ATTUNEMENT"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_magic_loot_magiclysm_attunement>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_magic_loot_magiclysm_attunement>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_magic_loot_magiclysm_attunement", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_BOOKS",
-    "dynamic_line": "<trait_name:perk_magic_loot_magiclysm_books>: \"<trait_description:perk_magic_loot_magiclysm_books>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_books" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAGIC_LOOT_MAGICLYSM_ATTUNEMENT",
-    "dynamic_line": "<trait_name:perk_magic_loot_magiclysm_attunement>: \"<trait_description:perk_magic_loot_magiclysm_attunement>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_magiclysm_attunement" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   }
 ]

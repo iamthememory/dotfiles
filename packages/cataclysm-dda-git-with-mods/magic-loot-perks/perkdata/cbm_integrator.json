@@ -1,0 +1,25 @@
+[
+  {
+    "id": "EOC_PERK_CBM_INTEGRATOR_MUTATION_GAIN",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "gains_mutation",
+    "condition": { "compare_string": [ "perk_cbm_integrator", { "context_val": "trait" } ] },
+    "effect": [
+      {
+        "run_eocs": [
+          "EOC_PERK_CBM_INTEGRATOR_MUTATION_GAIN_GIVE_TRAITS_AND_BIONICS"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "EOC_PERK_CBM_INTEGRATOR_MUTATION_GAIN_GIVE_TRAITS_AND_BIONICS",
+    "type": "effect_on_condition",
+    "effect": [
+      { "u_add_trait": "CBM_Interface" },
+      { "u_add_bionic": "bio_power_storage" },
+      { "u_add_bionic": "bio_cable" }
+    ]
+  }
+]

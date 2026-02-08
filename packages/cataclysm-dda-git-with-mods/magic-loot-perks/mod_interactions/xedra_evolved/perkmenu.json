@@ -6,52 +6,40 @@
       {
         "condition": { "not": { "u_has_trait": "perk_magic_loot_xedra" } },
         "text": "Gain [<trait_name:perk_magic_loot_xedra>]",
-        "topic": "TALK_PERK_MENU_MAGIC_LOOT_XEDRA"
-      },
-      {
-        "condition": { "not": { "u_has_trait": "XEDRA_CHRONOMANCER" } },
-        "text": "Gain [<trait_name:XEDRA_CHRONOMANCER>]",
-        "topic": "TALK_PERK_XEDRA_CHRONOMANCER"
-      }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_MAGIC_LOOT_XEDRA",
-    "dynamic_line": "<trait_name:perk_magic_loot_xedra>: \"<trait_description:perk_magic_loot_xedra>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_magic_loot_xedra" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_XEDRA_CHRONOMANCER",
-    "dynamic_line": "<trait_name:XEDRA_CHRONOMANCER>: \"<trait_description:XEDRA_CHRONOMANCER>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "XEDRA_CHRONOMANCER" },
-          { "u_add_trait": "XEDRA_CHRONOMANCER_LOOPING_WOUND" },
-          { "u_add_trait": "XEDRA_CHRONOMANCER_TIME_SLOWDOWN" },
-          { "u_add_trait": "XEDRA_CHRONOMANCER_UNSTABLE_POWERS" },
-          { "run_eocs": [ "EOC_CHECK_GAMESTART_CHRONOMANCER" ] },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
-        ]
+          { "set_string_var": "<trait_name:perk_magic_loot_xedra>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_magic_loot_xedra>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_magic_loot_xedra", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
+      {
+        "condition": {
+          "and": [
+            { "not": { "u_has_trait": "XEDRA_CHRONOMANCER" } },
+            { "not": { "u_has_trait": "perk_acquired_chronomancy" } }
+          ]
+        },
+        "text": "Gain [<trait_name:XEDRA_CHRONOMANCER>]",
+        "effect": [
+          { "set_string_var": "<trait_name:XEDRA_CHRONOMANCER>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:XEDRA_CHRONOMANCER>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_acquired_chronomancy", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
+      }
     ]
   }
 ]

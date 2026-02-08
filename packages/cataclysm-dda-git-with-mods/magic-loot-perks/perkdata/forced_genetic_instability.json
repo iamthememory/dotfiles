@@ -59,5 +59,19 @@
     "id": "EOC_perk_forced_genetic_instability_check_makayla_mutator",
     "condition": { "u_has_trait": "MAKAYLA_MUTATOR" },
     "effect": { "u_lose_trait": "MAKAYLA_MUTATOR" }
+  },
+  {
+    "id": "EOC_PERK_FORCED_GENETIC_INSTABILITY_MUTATION_GAIN",
+    "type": "effect_on_condition",
+    "eoc_type": "EVENT",
+    "required_event": "gains_mutation",
+    "condition": { "compare_string": [ "perk_forced_genetic_instability", { "context_val": "trait" } ] },
+    "effect": [
+      {
+        "run_eocs": [
+          "EOC_perk_forced_genetic_instability_check"
+        ]
+      }
+    ]
   }
 ]

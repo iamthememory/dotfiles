@@ -6,194 +6,131 @@
       {
         "condition": { "not": { "u_has_trait": "perk_haulers_aura" } },
         "text": "Gain [<trait_name:perk_haulers_aura>]",
-        "topic": "TALK_PERK_MENU_HAULERS_AURA"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_haulers_aura>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_haulers_aura>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_haulers_aura", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_haulers_holster" } },
         "text": "Gain [<trait_name:perk_haulers_holster>]",
-        "topic": "TALK_PERK_MENU_HAULERS_HOLSTER"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_haulers_holster>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_haulers_holster>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_haulers_holster", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_animal_hauler" } },
         "text": "Gain [<trait_name:perk_animal_hauler>]",
-        "topic": "TALK_PERK_MENU_ANIMAL_HAULER"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_animal_hauler>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_animal_hauler>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_animal_hauler", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_animal_finder" } },
         "text": "Gain [<trait_name:perk_animal_finder>]",
-        "topic": "TALK_PERK_MENU_ANIMAL_FINDER"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_animal_finder>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_animal_finder>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_animal_finder", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_cbm_integrator" } },
         "text": "Gain [<trait_name:perk_cbm_integrator>]",
-        "topic": "TALK_PERK_MENU_CBM_INTEGRATOR"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_cbm_integrator>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_cbm_integrator>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_cbm_integrator", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_cbm_hunter" } },
         "text": "Gain [<trait_name:perk_cbm_hunter>]",
-        "topic": "TALK_PERK_MENU_CBM_HUNTER"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_cbm_hunter>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_cbm_hunter>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_cbm_hunter", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_pocket_world" } },
         "text": "Gain [<trait_name:perk_pocket_world>]",
-        "topic": "TALK_PERK_MENU_POCKET_WORLD"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_pocket_world>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_pocket_world>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_pocket_world", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       },
       {
         "condition": { "not": { "u_has_trait": "perk_forced_genetic_instability" } },
         "text": "Gain [<trait_name:perk_forced_genetic_instability>]",
-        "topic": "TALK_PERK_MENU_FORCED_GENETIC_INSTABILITY"
+        "effect": [
+          { "set_string_var": "<trait_name:perk_forced_genetic_instability>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:perk_forced_genetic_instability>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "perk_forced_genetic_instability", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
       }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_HAULERS_AURA",
-    "dynamic_line": "<trait_name:perk_haulers_aura>: \"<trait_description:perk_haulers_aura>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_haulers_aura" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_HAULERS_HOLSTER",
-    "dynamic_line": "<trait_name:perk_haulers_holster>: \"<trait_description:perk_haulers_holster>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [ { "u_add_trait": "perk_haulers_holster" }, { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] } ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_ANIMAL_HAULER",
-    "dynamic_line": "<trait_name:perk_animal_hauler>: \"<trait_description:perk_animal_hauler>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [
-          { "u_add_trait": "perk_animal_hauler" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] },
-          { "u_add_effect": "effect_perk_animal_hauler_available", "duration": "PERMANENT" }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_ANIMAL_FINDER",
-    "dynamic_line": "<trait_name:perk_animal_finder>: \"<trait_description:perk_animal_finder>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [
-          { "u_add_trait": "perk_animal_finder" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] },
-          { "u_add_effect": "effect_perk_animal_finder_available", "duration": "PERMANENT" }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_CBM_INTEGRATOR",
-    "dynamic_line": "<trait_name:perk_cbm_integrator>: \"<trait_description:perk_cbm_integrator>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [
-          { "u_add_trait": "CBM_Interface" },
-          { "u_add_bionic": "bio_power_storage" },
-          { "u_add_bionic": "bio_cable" },
-          { "u_add_trait": "perk_cbm_integrator" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_CBM_HUNTER",
-    "dynamic_line": "<trait_name:perk_cbm_hunter>: \"<trait_description:perk_cbm_hunter>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [
-          { "u_add_trait": "perk_cbm_hunter" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_POCKET_WORLD",
-    "dynamic_line": "<trait_name:perk_pocket_world>: \"<trait_description:perk_pocket_world>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [
-          { "u_add_trait": "perk_pocket_world" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MENU_FORCED_GENETIC_INSTABILITY",
-    "dynamic_line": "<trait_name:perk_forced_genetic_instability>: \"<trait_description:perk_forced_genetic_instability>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
-        "effect": [
-          { "u_add_trait": "perk_forced_genetic_instability" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
     ]
   }
 ]

@@ -6,27 +6,19 @@
       {
         "condition": { "not": { "u_has_trait": "MUTAGEN_GLAND_SLIME" } },
         "text": "Gain [<trait_name:MUTAGEN_GLAND_SLIME>]",
-        "topic": "TALK_PERK_MUTAGEN_GLAND_SLIME"
-      }
-    ]
-  },
-  {
-    "type": "talk_topic",
-    "id": "TALK_PERK_MUTAGEN_GLAND_SLIME",
-    "dynamic_line": "<trait_name:MUTAGEN_GLAND_SLIME>: \"<trait_description:MUTAGEN_GLAND_SLIME>\"",
-    "responses": [
-      {
-        "text": "Select Perk.",
-        "topic": "TALK_PERK_MENU_PLAYSTYLE",
-        "condition": { "math": [ "u_num_perks >= u_playstyle_cost + 1" ] },
-        "failure_topic": "TALK_PERK_MENU_FAIL",
         "effect": [
-          { "u_add_trait": "MUTAGEN_GLAND_SLIME" },
-          { "math": [ "u_num_perks -= u_playstyle_cost + 1" ] }
-        ]
-      },
-      { "text": "Go Back.", "topic": "TALK_PERK_MENU_PLAYSTYLE" },
-      { "text": "Quit.", "topic": "TALK_DONE" }
+          { "set_string_var": "<trait_name:MUTAGEN_GLAND_SLIME>", "target_var": { "context_val": "trait_name" } },
+          { "set_string_var": "<trait_description:MUTAGEN_GLAND_SLIME>", "target_var": { "context_val": "trait_description" } },
+          { "set_string_var": "MUTAGEN_GLAND_SLIME", "target_var": { "context_val": "trait_id" } },
+          {
+            "set_string_var": "No Requirements",
+            "target_var": { "context_val": "trait_requirement_description" },
+            "i18n": true
+          },
+          { "set_condition": "perk_condition", "condition": { "math": [ "0 == 0" ] } }
+        ],
+        "topic": "TALK_PERK_MENU_SELECT_PLAYSTYLE"
+      }
     ]
   }
 ]

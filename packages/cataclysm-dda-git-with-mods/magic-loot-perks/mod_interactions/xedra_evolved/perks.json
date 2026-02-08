@@ -14,5 +14,15 @@
     "deactivated_eocs": [ "EOC_magic_loot_xedra_off" ],
     "processed_eocs": [ "EOC_magic_loot_xedra_find" ],
     "time": 24000
+  },
+  {
+    "type": "mutation",
+    "id": "perk_acquired_chronomancy",
+    "name": { "str": "Acquired Chronomancy" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "player_display": false,
+    "description": ""
   }
 ]
