@@ -12,13 +12,13 @@ index 592cf6ded70f..d11117c8e3c8 100644
    },
    {
 diff --git a/Tankmod_Revived/item_groups.json b/Tankmod_Revived/item_groups.json
-index 2acf747971a0..6d73dafd4f1a 100644
+index 2acf747971a0..ae059e73e3ba 100644
 --- a/Tankmod_Revived/item_groups.json
 +++ b/Tankmod_Revived/item_groups.json
-@@ -1,24 +1,4 @@
+@@ -1,28 +1,8 @@
  [
--  {
--    "type": "item_group",
+   {
+     "type": "item_group",
 -    "id": "mil_hw",
 -    "copy-from": "mil_hw",
 -    "extend": {
@@ -37,10 +37,64 @@ index 2acf747971a0..6d73dafd4f1a 100644
 -      ]
 -    }
 -  },
+-  {
+-    "type": "item_group",
+-    "id": "military",
+-    "copy-from": "military",
++    "id": "supplies_mechanics_milspec",
++    "copy-from": "supplies_mechanics_milspec",
+     "extend": {
+       "items": [
+         [ "electric_primer_120mm", 2 ],
+@@ -40,39 +20,20 @@
+       ]
+     }
+   },
+-  {
+-    "type": "item_group",
+-    "id": "rare",
+-    "copy-from": "rare",
+-    "extend": {
+-      "items": [
+-        [ "electric_primer_120mm", 1 ],
+-        [ "primer_155mm", 1 ],
+-        [ "25mm_apds", 1 ],
+-        [ "25mm_hei", 1 ],
+-        { "item": "belt25mm", "contents-group": "25mm_ammo", "prob": 1 },
+-        [ "120mm_usable_heat", 3 ],
+-        [ "120mm_usable_ap", 1 ],
+-        [ "155mm_frag", 2 ],
+-        [ "155mm_heat", 1 ],
+-        [ "105mm_heat", 1 ],
+-        [ "105mm_ap", 1 ]
+-      ]
+-    }
+-  },
    {
      "type": "item_group",
-     "id": "military",
-@@ -82,12 +62,6 @@
+     "id": "helicopter",
++    "subtype": "distribution",
+     "copy-from": "helicopter",
+     "extend": {
+-      "items": [
+-        [ "electric_primer_120mm", 2 ],
+-        [ "primer_155mm", 1 ],
+-        [ "25mm_apds", 2 ],
+-        [ "25mm_hei", 2 ],
++      "entries": [
++        { "item": "electric_primer_120mm", "prob": 2 },
++        { "item": "primer_155mm", "prob": 1 },
++        { "item": "25mm_apds", "prob": 2 },
++        { "item": "25mm_hei", "prob": 2 },
+         { "item": "belt25mm", "contents-group": "25mm_ammo", "prob": 3 },
+-        [ "105mm_heat", 1 ],
+-        [ "105mm_ap", 1 ]
++        { "item": "105mm_heat", "prob": 1 },
++        { "item": "105mm_ap", "prob": 1 }
+       ]
+     }
+   },
+@@ -82,12 +43,6 @@
      "copy-from": "guns_launcher_milspec",
      "extend": { "items": [ { "group": "guns_launcher_heavy", "prob": 20 } ] }
    },
@@ -54,7 +108,7 @@ index 2acf747971a0..6d73dafd4f1a 100644
      "type": "item_group",
      "id": "guns_launcher_heavy",
 diff --git a/Tankmod_Revived/items.json b/Tankmod_Revived/items.json
-index ae0e2ca97c3f..e0b7163e9e5b 100644
+index ae0e2ca97c3f..48dfe4a5a081 100644
 --- a/Tankmod_Revived/items.json
 +++ b/Tankmod_Revived/items.json
 @@ -2,7 +2,7 @@
@@ -483,8 +537,12 @@ index ae0e2ca97c3f..e0b7163e9e5b 100644
      "symbol": "(",
      "color": "green",
      "name": { "str_sp": "makeshift 155mm howitzer" },
-@@ -954,7 +954,7 @@
-     "copy-from": "gun_base",
+@@ -951,10 +951,10 @@
+   },
+   {
+     "id": "atgm_turret",
+-    "copy-from": "gun_base",
++    "copy-from": "launcher_base",
      "looks_like": "atgm_launcher",
      "type": "ITEM",
 -	"subtype": ["GUN"],
@@ -501,6 +559,17 @@ index ae0e2ca97c3f..e0b7163e9e5b 100644
      "id": "textbook_launcher",
      "category": "manuals",
      "name": { "str": "Artillery and Field Gunnery", "str_pl": "copies of Artillery and Field Gunnery" },
+@@ -992,8 +992,8 @@
+     "volume": "1 L",
+     "melee_damage": { "bash": 8 },
+     "time": "30 m",
+-    "fun": 0,
+-    "skill": "launcher",
++    "read_fun": 0,
++    "read_skill": "launcher",
+     "price": "60 USD",
+     "price_postapoc": "25 USD",
+     "required_level": 3
 @@ -1001,7 +1001,7 @@
    {
      "id": "tank_gun_auto_monster",
@@ -546,3 +615,133 @@ index ae0e2ca97c3f..e0b7163e9e5b 100644
      "category": "veh_parts",
      "name": { "str": "reinforced caterpillar track" },
      "description": "A short, interlocking set of shaped steel tracks held in place by a set of smaller wheels.  Similar with what you might see used on APCs and armored vehicles.  It's significantly stronger than regular tires due to not being at risk of bursting; but is extremely heavy.",
+diff --git a/Tankmod_Revived/mapgen.json b/Tankmod_Revived/mapgen.json
+index 1e7b45de4ccf..06d3232eab43 100644
+--- a/Tankmod_Revived/mapgen.json
++++ b/Tankmod_Revived/mapgen.json
+@@ -1,7 +1,6 @@
+ [
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "garage_gas_2" ],
+     "//": "Variation with military spawns and a vehicle.  Most often a Patton, sometimes not fully restored to battle-ready condition.",
+     "weight": 25,
+@@ -92,7 +91,6 @@
+   },
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "s_garage" ],
+     "weight": 100,
+     "object": {
+@@ -185,7 +183,6 @@
+   },
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "s_garage_1" ],
+     "weight": 100,
+     "object": {
+@@ -270,7 +267,6 @@
+   },
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "s_garage_2" ],
+     "weight": 100,
+     "object": {
+@@ -366,7 +362,6 @@
+   },
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "s_vfw" ],
+     "weight": 100,
+     "object": {
+@@ -451,7 +446,6 @@
+   },
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "outpost" ],
+     "weight": 100,
+     "object": {
+@@ -524,7 +518,7 @@
+           { "item": "guns_launcher_milspec", "chance": 80 },
+           { "item": "mags_milspec", "chance": 100, "repeat": [ 1, 3 ] }
+         ],
+-        "X": { "item": "oven", "chance": 70 },
++        "X": { "item": "SUS_oven", "chance": 70 },
+         "C": { "item": "mil_armor", "chance": 40 },
+         "T": { "item": "SUS_trash_floor_light", "chance": 50 }
+       },
+@@ -600,7 +594,6 @@
+   },
+   {
+     "type": "mapgen",
+-    "method": "json",
+     "om_terrain": [ "bunker" ],
+     "object": {
+       "rows": [
+diff --git a/Tankmod_Revived/recipes.json b/Tankmod_Revived/recipes.json
+index e427f575a513..a7bc31ba6085 100644
+--- a/Tankmod_Revived/recipes.json
++++ b/Tankmod_Revived/recipes.json
+@@ -45,7 +45,7 @@
+     "time": "16 m",
+     "book_learn": [ [ "textbook_launcher", 6 ], [ "recipe_bullets", 7 ], [ "textbook_anarch", 8 ] ],
+     "charges": 1,
+-    "using": [ [ "welding_standard", 5 ], [ "steel_tiny", 1 ] ],
++    "using": [ [ "welding_standard", 5 ], [ "steel_chunk_any", 1 ] ],
+     "qualities": [ { "id": "WRENCH", "level": 1 } ],
+     "components": [
+       [ [ "25mm_casing", 1 ] ],
+@@ -67,7 +67,7 @@
+     "time": "20 m",
+     "book_learn": [ [ "textbook_launcher", 6 ], [ "recipe_bullets", 7 ], [ "textbook_anarch", 8 ] ],
+     "charges": 1,
+-    "using": [ [ "welding_standard", 5 ], [ "steel_tiny", 1 ] ],
++    "using": [ [ "welding_standard", 5 ], [ "steel_chunk_any", 1 ] ],
+     "qualities": [ { "id": "WRENCH", "level": 1 } ],
+     "components": [
+       [ [ "25mm_casing", 1 ] ],
+@@ -88,7 +88,7 @@
+     "difficulty": 6,
+     "time": "90 m",
+     "book_learn": [ [ "textbook_launcher", 6 ], [ "textbook_anarch", 8 ] ],
+-    "using": [ [ "blacksmithing_standard", 2 ], [ "steel_tiny", 2 ] ],
++    "using": [ [ "blacksmithing_standard", 2 ], [ "steel_chunk_any", 2 ] ],
+     "qualities": [ { "id": "CHISEL", "level": 3 } ],
+     "tools": [ [ [ "swage", -1 ] ] ],
+     "components": [ [ [ "120mm_case_base", 1 ] ] ]
+@@ -489,9 +489,9 @@
+     "tools": [ [ [ "swage", -1 ], [ "small_repairkit", -1 ], [ "large_repairkit", -1 ] ] ],
+     "charges": 1,
+     "components": [
+-      [ [ "copper", 5 ], [ "cartridgebrass", 10 ], [ "aluminum_foil", 10 ] ],
++      [ [ "copper", 5 ], [ "aluminum_foil", 10 ] ],
+       [ [ "cable", 2 ] ],
+-      [ [ "gunpowder", 2 ], [ "chem_black_powder", 4 ], [ "chem_match_head_powder", 8 ], [ "chem_hmtd", 3 ] ]
++      [ [ "gunpowder", 2 ], [ "chem_black_powder", 4 ], [ "red_phosphorous", 8 ], [ "chem_hmtd", 3 ] ]
+     ]
+   },
+   {
+@@ -511,7 +511,7 @@
+     "tools": [ [ [ "swage", -1 ], [ "small_repairkit", -1 ], [ "large_repairkit", -1 ] ] ],
+     "charges": 1,
+     "components": [
+-      [ [ "copper", 10 ], [ "cartridgebrass", 20 ], [ "aluminum_foil", 20 ] ],
++      [ [ "copper", 10 ], [ "aluminum_foil", 20 ] ],
+       [
+         [ "smpistol_primer", 1 ],
+         [ "lgpistol_primer", 1 ],
+@@ -519,7 +519,7 @@
+         [ "lgrifle_primer", 1 ],
+         [ "shotgun_primer", 1 ]
+       ],
+-      [ [ "gunpowder", 4 ], [ "chem_black_powder", 8 ], [ "chem_match_head_powder", 16 ], [ "chem_hmtd", 6 ] ]
++      [ [ "gunpowder", 4 ], [ "chem_black_powder", 8 ], [ "red_phosphorous", 16 ], [ "chem_hmtd", 6 ] ]
+     ]
+   },
+   {
