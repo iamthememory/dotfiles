@@ -104,5 +104,23 @@
       [ "wheat", 10 ],
       [ "wild_rice", 10 ]
     ]
+  },
+  {
+    "type": "item_group",
+    "id": "farming_seeds",
+    "extend": {
+      "items": [
+        { "group": "arvore_seeds", "prob": 500 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "hydro",
+    "extend": {
+      "items": [
+        { "group": "arvore_seeds", "prob": 50 }
+      ]
+    }
   }
 ]
