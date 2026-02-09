@@ -3346,7 +3346,7 @@ index fccd89aa02a2..461fa36c7b27 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..ae8efa3395b5 100644
+index ce70e9badaf0..6510a3279fe5 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,1046 +1,1258 @@
@@ -4787,7 +4787,7 @@ index ce70e9badaf0..ae8efa3395b5 100644
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_rebarrailfungus",
-+          "effect": { "u_spawn_item": "rc_droprebarrail_", "suppress_message": true, "use_item_group": true }
++          "effect": { "u_spawn_item": "rc_drop_rebarrail", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
      }
