@@ -58,6 +58,7 @@ let
       ./patches/cataclysm-mom-defense.patch
       ./patches/cataclysm-more-engines.patch
       ./patches/cataclysm-multiple-thresholds.patch
+      ./patches/cataclysm-my-sweet-cataclysm-chance.patch
       ./patches/cataclysm-no-banned-ports.patch
       ./patches/cataclysm-perks-fix.patch
       ./patches/cataclysm-plant-in-cold.patch
