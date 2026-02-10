@@ -1,7 +1,16 @@
 diff --git a/MST_Extra/furniture_and_terrain/furniture.json b/MST_Extra/furniture_and_terrain/furniture.json
-index 293b5d0f3974..c69a6ba3cb38 100644
+index 293b5d0f3974..4fdc1305b205 100644
 --- a/MST_Extra/furniture_and_terrain/furniture.json
 +++ b/MST_Extra/furniture_and_terrain/furniture.json
+@@ -140,7 +140,7 @@
+     "required_str": 8,
+     "flags": [ "FLAMMABLE", "PLACE_ITEM", "ORGANIC", "BLOCKSDOOR", "EASY_DECONSTRUCT" ],
+     "deconstruct": { "items": [ { "item": "2x4", "count": 12 } ] },
+-    "max_volume": "6000 L",
++    "max_volume": "8000 L",
+     "bash": {
+       "str_min": 5,
+       "str_max": 38,
 @@ -171,7 +171,7 @@
        "items": [ { "item": "2x4", "count": [ 2, 5 ] }, { "item": "splinter", "count": 3 } ]
      },
@@ -20,6 +29,15 @@ index 293b5d0f3974..c69a6ba3cb38 100644
    },
    {
      "type": "furniture",
+@@ -262,7 +262,7 @@
+     "flags": [ "PLACE_ITEM", "TRANSPARENT", "FIRE_CONTAINER", "EASY_DECONSTRUCT", "INDOORS", "BLOCK_WIND" ],
+     "deployed_item": "hobo_stove_clay",
+     "examine_action": "fireplace",
+-    "max_volume": "55 L",
++    "max_volume": "220 L",
+     "bash": {
+       "str_min": 8,
+       "str_max": 30,
 diff --git a/MST_Extra/items/ammo.json b/MST_Extra/items/ammo.json
 index fc84351b1d87..e1de44b75ef5 100644
 --- a/MST_Extra/items/ammo.json

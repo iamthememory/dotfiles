@@ -1,15 +1,64 @@
+diff --git a/data/json/furniture_and_terrain/furniture-tools.json b/data/json/furniture_and_terrain/furniture-tools.json
+index 42e34204b560..4f6910dcd693 100644
+--- a/data/json/furniture_and_terrain/furniture-tools.json
++++ b/data/json/furniture_and_terrain/furniture-tools.json
+@@ -1060,7 +1060,7 @@
+     "id": "f_fvat_empty",
+     "name": "fermenting vat",
+     "looks_like": "f_standing_tank",
+-    "description": "A sealable 50-liter vat for fermenting vinegar and various alcoholic brews.",
++    "description": "A sealable 200-liter vat for fermenting vinegar and various alcoholic brews.",
+     "symbol": "O",
+     "color": "brown",
+     "move_cost_mod": -1,
+@@ -1098,7 +1098,7 @@
+     "id": "f_fvat_full",
+     "name": "filled fermenting vat",
+     "looks_like": "f_fvat_empty",
+-    "description": "A sealable 50-liter vat for fermenting vinegar and various alcoholic brews.",
++    "description": "A sealable 200-liter vat for fermenting vinegar and various alcoholic brews.",
+     "symbol": "O",
+     "color": "brown_cyan",
+     "move_cost_mod": -1,
+@@ -1136,7 +1136,7 @@
+     "id": "f_fvat_wood_empty",
+     "name": "wooden fermenting vat",
+     "looks_like": "f_fvat_empty",
+-    "description": "A sealable 50-liter wooden vat for fermenting vinegar and various alcoholic brews.",
++    "description": "A sealable 200-liter wooden vat for fermenting vinegar and various alcoholic brews.",
+     "symbol": "O",
+     "color": "brown",
+     "move_cost_mod": -1,
+@@ -1165,7 +1165,7 @@
+     "id": "f_fvat_wood_full",
+     "name": "filled wooden fermenting vat",
+     "looks_like": "f_fvat_wood_empty",
+-    "description": "A sealable 50-liter wooden vat for fermenting vinegar and various alcoholic brews.",
++    "description": "A sealable 200-liter wooden vat for fermenting vinegar and various alcoholic brews.",
+     "symbol": "O",
+     "color": "brown_cyan",
+     "move_cost_mod": -1,
 diff --git a/src/iexamine.cpp b/src/iexamine.cpp
-index 90fc665afd9d..218dad5839fc 100644
+index 90fc665afd9d..c610b5cec5b8 100644
 --- a/src/iexamine.cpp
 +++ b/src/iexamine.cpp
+@@ -3647,7 +3647,7 @@ void iexamine::fvat_empty( Character &you, const tripoint_bub_ms &examp )
+     itype_id brew_type;
+     std::string brew_nname;
+     bool to_deposit = false;
+-    static const auto vat_volume = units::from_liter( 50 );
++    static const auto vat_volume = units::from_liter( 200 );
+     bool vat_full = false;
+     bool ferment = false;
+     bool brew_present = false;
 @@ -6173,8 +6173,8 @@ namespace sm_rack
  {
  static const int MIN_CHARCOAL = 1200;
  static const int CHARCOAL_PER_LITER = 600;
 -static const units::volume MAX_FOOD_VOLUME = units::from_liter( 20 );
 -static const units::volume MAX_FOOD_VOLUME_PORTABLE = units::from_liter( 15 );
-+static const units::volume MAX_FOOD_VOLUME = units::from_liter( 400 );
-+static const units::volume MAX_FOOD_VOLUME_PORTABLE = units::from_liter( 300 );
++static const units::volume MAX_FOOD_VOLUME = units::from_liter( 200 );
++static const units::volume MAX_FOOD_VOLUME_PORTABLE = units::from_liter( 150 );
  } // namespace sm_rack
-
+ 
  static int get_charcoal_charges( units::volume food )

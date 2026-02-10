@@ -60,5 +60,20 @@
       { "id": "WRENCH", "level": 1 }
     ],
     "components": [ [ [ "cargo_rack", 4 ] ], [ [ "pipe", 16 ] ], [ [ "sheet_metal", 4 ] ], [ [ "hinge", 10 ] ] ]
+  },
+  {
+    "type": "furniture",
+    "id": "f_warehouse_shelf",
+    "copy-from": "f_warehouse_shelf",
+    "name": "warehouse shelf",
+    "max_volume": "8000 L"
+  },
+  {
+    "type": "furniture",
+    "id": "f_storage_tank",
+    "copy-from": "f_storage_tank",
+    "name": "bulk storage tank",
+    "description": "A 2 meters high tank that can store up to 8000 liters of liquid.  That's a lot.",
+    "keg_capacity": "8000 L"
   }
 ]
