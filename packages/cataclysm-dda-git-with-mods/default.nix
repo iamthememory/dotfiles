@@ -48,6 +48,7 @@ let
       ./patches/cataclysm-dream-fix.patch
       ./patches/cataclysm-exodii-bionics.patch
       ./patches/cataclysm-homullus-fix.patch
+      ./patches/cataclysm-large-smokers.patch
       ./patches/cataclysm-larger-trade-range.patch
       ./patches/cataclysm-limit-refuse.patch
       ./patches/cataclysm-locale-path.patch

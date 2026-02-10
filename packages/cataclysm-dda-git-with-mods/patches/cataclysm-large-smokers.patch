@@ -1,0 +1,15 @@
+diff --git a/src/iexamine.cpp b/src/iexamine.cpp
+index 90fc665afd9d..218dad5839fc 100644
+--- a/src/iexamine.cpp
++++ b/src/iexamine.cpp
+@@ -6173,8 +6173,8 @@ namespace sm_rack
+ {
+ static const int MIN_CHARCOAL = 1200;
+ static const int CHARCOAL_PER_LITER = 600;
+-static const units::volume MAX_FOOD_VOLUME = units::from_liter( 20 );
+-static const units::volume MAX_FOOD_VOLUME_PORTABLE = units::from_liter( 15 );
++static const units::volume MAX_FOOD_VOLUME = units::from_liter( 400 );
++static const units::volume MAX_FOOD_VOLUME_PORTABLE = units::from_liter( 300 );
+ } // namespace sm_rack
+
+ static int get_charcoal_charges( units::volume food )

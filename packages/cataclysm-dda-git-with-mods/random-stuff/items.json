@@ -197,5 +197,43 @@
       "tools_needed": { "apparatus": -1 },
       "moves": 420
     }
+  },
+  {
+    "id": "fake_char_kiln",
+    "copy-from": "fake_char_kiln",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "basecamp kiln" },
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "charcoal": 200000 } } ]
+  },
+  {
+    "type": "furniture",
+    "id": "f_kiln_empty",
+    "copy-from": "f_kiln_empty",
+    "name": "charcoal kiln",
+    "max_volume": "1000 L"
+  },
+  {
+    "type": "furniture",
+    "id": "f_kiln_portable_empty",
+    "copy-from": "f_kiln_portable_empty",
+    "name": "metal charcoal kiln",
+    "max_volume": "800 L"
+  },
+  {
+    "type": "furniture",
+    "id": "f_kiln_metal_empty",
+    "copy-from": "f_kiln_metal_empty",
+    "name": "metal charcoal kiln",
+    "max_volume": "1000 L"
+  },
+  {
+    "id": "fake_char_smoker",
+    "copy-from": "fake_char_smoker",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "basecamp charcoal smoker" },
+    "sub": "char_smoker",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "charcoal": 2000000 } } ]
   }
 ]
