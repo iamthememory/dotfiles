@@ -64,14 +64,14 @@
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 0.25
+    "value": 0.4
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CROP_YIELD_MULTIPLIER",
     "//": "How to scale crop yields. 2.0 will double crop yields.",
     "stype": "float",
-    "value": 1.5
+    "value": 2.5
   },
   {
     "type": "EXTERNAL_OPTION",
