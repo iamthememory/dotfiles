@@ -722,15 +722,16 @@ index 000000000000..31ea245747ba
 +]
 diff --git a/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json
 new file mode 100644
-index 000000000000..f4992b0657ec
+index 000000000000..321399b2de9f
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json	
-@@ -0,0 +1,73 @@
+@@ -0,0 +1,76 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_all_spell_books",
++    "copy-from": "rc_drop_all_spell_books",
 +    "extend": {
 +      "items": [
 +        { "group": "dist_matrix_crystals", "prob": 10 },
@@ -752,6 +753,7 @@ index 000000000000..f4992b0657ec
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_various_magic_items",
++    "copy-from": "rc_drop_various_magic_items",
 +    "extend": {
 +      "items": [
 +        { "group": "clairsentience_telepathy_matrix_technology", "prob": 2 },
@@ -792,6 +794,7 @@ index 000000000000..f4992b0657ec
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_mana_crystal",
++    "copy-from": "rc_drop_mana_crystal",
 +    "extend": {
 +      "items": [
 +        { "group": "collection_matrix_dust", "prob": 4 }
@@ -5263,15 +5266,16 @@ index ce70e9badaf0..6510a3279fe5 100644
 +]
 diff --git a/Resource Crops/mod_interactions/Arcana/fungusdrops.json b/Resource Crops/mod_interactions/Arcana/fungusdrops.json
 new file mode 100644
-index 000000000000..141aed0e20e3
+index 000000000000..0fc8de17ea60
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/Arcana/fungusdrops.json	
-@@ -0,0 +1,61 @@
+@@ -0,0 +1,62 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "group": "arcana_hunt_random", "prob": 103, "count": [ 1, 1 ] },
@@ -5330,15 +5334,16 @@ index 000000000000..141aed0e20e3
 +]
 diff --git a/Resource Crops/mod_interactions/Cata++/fungusdrops.json b/Resource Crops/mod_interactions/Cata++/fungusdrops.json
 new file mode 100644
-index 000000000000..3342ec797179
+index 000000000000..1faeb2baa79c
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/Cata++/fungusdrops.json	
-@@ -0,0 +1,24 @@
+@@ -0,0 +1,25 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "item": "alloy_sheet", "prob": 210, "count": [ 0, 1 ] },
@@ -5360,15 +5365,16 @@ index 000000000000..3342ec797179
 +]
 diff --git a/Resource Crops/mod_interactions/DinoMod/fungusdrops.json b/Resource Crops/mod_interactions/DinoMod/fungusdrops.json
 new file mode 100644
-index 000000000000..d62afaedd95a
+index 000000000000..20f2b0387231
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/DinoMod/fungusdrops.json	
-@@ -0,0 +1,40 @@
+@@ -0,0 +1,41 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "item": "blood_acid_ball", "prob": 400, "count": [ 2, 2 ] },
@@ -5406,15 +5412,16 @@ index 000000000000..d62afaedd95a
 +]
 diff --git a/Resource Crops/mod_interactions/magiclysm/fungusdrops.json b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json
 new file mode 100644
-index 000000000000..f7ec35fac554
+index 000000000000..9c10da79752c
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json	
-@@ -0,0 +1,69 @@
+@@ -0,0 +1,70 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "item": "adrenal_gland_large", "prob": 440, "count": [ 1, 2 ] },
@@ -5512,15 +5519,16 @@ index 000000000000..21337ed537b0
 +]
 diff --git a/Resource Crops/mod_interactions/my_sweet_cataclysm/fungusdrops.json b/Resource Crops/mod_interactions/my_sweet_cataclysm/fungusdrops.json
 new file mode 100644
-index 000000000000..c69f43d801bf
+index 000000000000..d201970756c6
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/my_sweet_cataclysm/fungusdrops.json	
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,24 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "item": "blood_chocolate_ball", "prob": 100, "count": [ 1, 2 ] },
@@ -5587,15 +5595,16 @@ index 000000000000..97d6e8b5de25
 +]
 diff --git a/Resource Crops/mod_interactions/pm_world/fungusdrops.json b/Resource Crops/mod_interactions/pm_world/fungusdrops.json
 new file mode 100644
-index 000000000000..b7cb8666d030
+index 000000000000..123ca97f8de5
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/pm_world/fungusdrops.json	
-@@ -0,0 +1,18 @@
+@@ -0,0 +1,19 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "item": "blood_ball", "prob": 1000, "count": [ 1, 2 ] },
@@ -5695,15 +5704,16 @@ index 000000000000..f8504a6e8568
 +]
 diff --git a/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json
 new file mode 100644
-index 000000000000..6cae3a07ef17
+index 000000000000..a300fee887b8
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json	
-@@ -0,0 +1,68 @@
+@@ -0,0 +1,69 @@
 +[
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
 +    "id": "rc_drop_bodypart",
++    "copy-from": "rc_drop_bodypart",
 +    "extend": {
 +      "items": [
 +        { "item": "ant_stomach", "prob": 40, "count": [ 3, 4 ] },
