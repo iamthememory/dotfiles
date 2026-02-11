@@ -15051,10 +15051,10 @@ index 000000000000..280a4da3d544
 +]
 diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
 new file mode 100644
-index 000000000000..5a05701cda55
+index 000000000000..35a61fe5eb73
 --- /dev/null
 +++ b/Resource Crops/uncraft/other.json	
-@@ -0,0 +1,258 @@
+@@ -0,0 +1,266 @@
 +[
 +  {
 +    "result": "material_sand_clump",
@@ -15071,6 +15071,14 @@ index 000000000000..5a05701cda55
 +    "time": "2 m",
 +    "qualities": [ { "id": "CUT", "level": 1 } ],
 +    "components": [ [ [ "nail", 50 ] ] ]
++  },
++  {
++    "result": "duct_tape_bundle",
++    "type": "uncraft",
++    "activity_level": "LIGHT_EXERCISE",
++    "time": "2 m",
++    "qualities": [ { "id": "CUT", "level": 1 } ],
++    "components": [ [ [ "duct_tape", 200 ] ] ]
 +  },
 +  {
 +    "result": "animal_blood_ball",
