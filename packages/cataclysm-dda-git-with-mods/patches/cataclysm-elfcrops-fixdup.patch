@@ -8889,7 +8889,7 @@ index 213d70f52239..e34f3281bbd9 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/recipes.json b/Resource Crops/recipes/recipes.json
-index acefc75df0a2..aae667544787 100644
+index acefc75df0a2..7c89885a208a 100644
 --- a/Resource Crops/recipes/recipes.json	
 +++ b/Resource Crops/recipes/recipes.json	
 @@ -2,8 +2,8 @@
@@ -9222,7 +9222,7 @@ index acefc75df0a2..aae667544787 100644
      "skill_used": "fabrication",
      "skills_required": [["cooking", 5], ["fabrication", 5]],
      "book_learn": {
-@@ -658,5 +658,115 @@
+@@ -658,5 +658,150 @@
          [ "rc_seed_mat", 1]
        ]
      ]
@@ -9312,6 +9312,41 @@ index acefc75df0a2..aae667544787 100644
 +    "qualities": [ { "id": "CUT", "level": 1 } ],
 +    "components": [
 +      [ [ "duct_tape_bundle", 1 ] ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
++    "result": "purifier",
++    "id_suffix": "from_plant_bundle",
++    "name": "%s from pure fruit",
++    "category": "CC_OTHER",
++    "subcategory": "CSC_OTHER_MATERIALS",
++    "skill_used": "fabrication",
++    "difficulty": 0,
++    "time": "2 m",
++    "autolearn": true,
++    "qualities": [ { "id": "CUT", "level": 1 } ],
++    "components": [
++      [ [ "rc_purifier_solid", 1 ] ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "activity_level": "LIGHT_EXERCISE",
++    "result": "anesthetic",
++    "id_suffix": "from_plant_bundle",
++    "name": "%s from Blackout fruit",
++    "category": "CC_OTHER",
++    "subcategory": "CSC_OTHER_MATERIALS",
++    "skill_used": "fabrication",
++    "difficulty": 0,
++    "time": "2 m",
++    "charges": 100,
++    "autolearn": true,
++    "qualities": [ { "id": "CUT", "level": 1 } ],
++    "components": [
++      [ [ "rc_anesthetic_solid", 1 ] ]
 +    ]
 +  },
 +  {
@@ -15051,10 +15086,10 @@ index 000000000000..280a4da3d544
 +]
 diff --git a/Resource Crops/uncraft/other.json b/Resource Crops/uncraft/other.json
 new file mode 100644
-index 000000000000..35a61fe5eb73
+index 000000000000..5a05701cda55
 --- /dev/null
 +++ b/Resource Crops/uncraft/other.json	
-@@ -0,0 +1,266 @@
+@@ -0,0 +1,258 @@
 +[
 +  {
 +    "result": "material_sand_clump",
@@ -15071,14 +15106,6 @@ index 000000000000..35a61fe5eb73
 +    "time": "2 m",
 +    "qualities": [ { "id": "CUT", "level": 1 } ],
 +    "components": [ [ [ "nail", 50 ] ] ]
-+  },
-+  {
-+    "result": "duct_tape_bundle",
-+    "type": "uncraft",
-+    "activity_level": "LIGHT_EXERCISE",
-+    "time": "2 m",
-+    "qualities": [ { "id": "CUT", "level": 1 } ],
-+    "components": [ [ [ "duct_tape", 200 ] ] ]
 +  },
 +  {
 +    "result": "animal_blood_ball",
