@@ -30,7 +30,7 @@ in
     keybase-gui
 
     # Ensure xinput is available.
-    xorg.xinput
+    pkgs.xinput
 
     # The Yubikey manager.
     yubikey-manager

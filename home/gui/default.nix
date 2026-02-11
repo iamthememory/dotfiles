@@ -58,14 +58,14 @@
     xdotool
 
     # A tool for showing info about the X11 server.
-    xorg.xdpyinfo
+    xdpyinfo
 
     # A tool for seeing X11 events such as keyboard input.
-    xorg.xev
+    xev
 
     # Tools for getting X11 window info.
-    xorg.xprop
-    xorg.xwininfo
+    xprop
+    xwininfo
 
     # A tool for telling how long the X11 user has been idle.
     xprintidle

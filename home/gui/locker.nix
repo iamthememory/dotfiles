@@ -55,7 +55,7 @@ let
     export XSECURELOCK_USERNAME=1
 
     # xsecurelock needs sleep, xprop, and xwininfo.
-    export PATH="${pkgs.coreutils}/bin:${pkgs.xorg.xprop}/bin:${pkgs.xorg.xwininfo}/bin"
+    export PATH="${pkgs.coreutils}/bin:${pkgs.xprop}/bin:${pkgs.xwininfo}/bin"
 
     # Exec xsecurelock.
     exec "${pkgs.xsecurelock}/bin/xsecurelock"

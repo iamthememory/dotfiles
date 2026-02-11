@@ -10,10 +10,10 @@
     icu
     libbsd
     liberation_ttf
+    libSM
     #libva1
     libxcrypt-legacy
     mesa
     python3
-    xorg.libSM
   ];
 }

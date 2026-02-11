@@ -166,10 +166,10 @@ in
     toggle-mute
 
     # Ensure xkill is available for forcibly killing a window.
-    xorg.xkill
+    xkill
 
     # Ensure xset is available for locking the screen.
-    xorg.xset
+    xset
   ];
 
   # Use Mod1 (left ALT) as the default modifier.

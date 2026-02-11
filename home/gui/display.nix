@@ -57,7 +57,7 @@ in
       # picom-trans has, but patched to not delete the X11 property for
       # transparency if a window is set to fully opaque, because for some reason
       # picom turns windows about 60% opaque when that happens.
-      transset = pkgs.xorg.transset.overrideAttrs (final: orig: {
+      transset = pkgs.transset.overrideAttrs (final: orig: {
         patches = [
           ./patches/0000-dont-delete-opacity.patch
         ];

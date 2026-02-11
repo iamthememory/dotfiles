@@ -19,7 +19,7 @@
     gnused
 
     # Ensure xinput is available.
-    xorg.xinput
+    xinput
   ];
 
   # Use a US keyboard layout.

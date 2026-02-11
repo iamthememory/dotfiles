@@ -24,7 +24,7 @@
     }
 
     # A plugin to add basic fzf fuzzy file finding to (neo)vim.
-    fzfWrapper
+    fzf-wrapper
 
     # A number of helpful commands using fzf.
     fzf-vim

@@ -113,7 +113,7 @@
     inputs.nix-alien.packages."${pkgs.stdenv.hostPlatform.system}".nix-alien
 
     # xinput, for the touchpad keybindings below.
-    xorg.xinput
+    xinput
   ];
 
   # Set the GitHub token from pass on login for tools like the GitHub CLI.
