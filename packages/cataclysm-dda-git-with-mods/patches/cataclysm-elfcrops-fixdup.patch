@@ -2906,10 +2906,10 @@ index 2000d28c817f..ffa4eca0305d 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..461fa36c7b27 100644
+index fccd89aa02a2..b79cc53f1723 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
-@@ -1,57 +1,403 @@
+@@ -1,57 +1,405 @@
  [
    {
      "id": "rc_textbook_infseeds",
@@ -2937,17 +2937,19 @@ index fccd89aa02a2..461fa36c7b27 100644
 +    "read_fun": -8
    },
    {
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
      "id": "rc_purifier_solid",
 -    "type": "COMESTIBLE",
 -    "copy-from": "purifier",
 -    "comestible_type": "MED",
-+    "type": "ITEM",
-+    "subtypes": [ "COMESTIBLE" ],
+-    "name": "pure fruit",
 +    "copy-from": "abstract_liquid_ball",
-     "name": "pure fruit",
--    "description": "Let's hope the scientists figured this out and this is really a fruit filled with purifier.",
++    "name": { "str": "pure fruit" },
++    "weight": "500 g",
+     "description": "Let's hope the scientists figured this out and this is really a fruit filled with purifier.",
 -    "phase": "solid"
-+    "description": "Let's hope the scientists figured this out and this is really a fruit filled with purifier."
++    "volume": "500 ml"
    },
    {
      "id": "rc_anesthetic_solid",
