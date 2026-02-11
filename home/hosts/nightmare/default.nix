@@ -8,6 +8,7 @@
   imports = [
     ../../base.nix
     ../../communication/discord.nix
+    ../../communication/matrix.nix
     ../../ctags.nix
     ../../games
     ../../games/ffxiv
@@ -202,38 +203,9 @@
     '';
 
   # Custom i3 workspaces for nightmare.
-  # FIXME: Find if there's a way to extend the default workspaces.
-  xsession.windowManager.i3.config.assigns = {
-    # Workspace for communication programs.
-    "1:comm" = [
-      # Put Discord here.
-      { class = "^discord$"; }
-    ];
-
-    # Workspace for system things, such as hacking on system configuration and
-    # updating.
-    "2:sys" = [ ];
-
-    # Workspace for email.
-    "3:mail" = [ ];
-
-    # FFXIV resources.
-    "4:ffdoc" = [ ];
-
-    # FFXIV.
-    "5:ffxiv" = [
-      # Assign FFXIV to this workspace.
-      { instance = "^ffxiv(|launcher|_dx11|boot)\\.exe$"; }
-    ];
-
-    # Workspace for miscellaneous windows and browser tabs.
-    "9:misc" = [ ];
-
-    # Steam.
-    "10:steam" = [
-      { class = "^Steam$"; }
-    ];
-  };
+  xsession.windowManager.i3.config.assigns."10:steam" = [
+    { class = "^Steam$"; }
+  ];
 
   xsession.windowManager.i3.config.keybindings =
     let

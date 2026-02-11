@@ -27,6 +27,9 @@
     "1:comm" = [
       # Put Discord here.
       { class = "^discord$"; }
+
+      # Put Element here too.
+      { class = "^[Ee]lement$"; }
     ];
 
     # Workspace for system things, such as hacking on system configuration and
