@@ -38,6 +38,7 @@ let
     src = cataclysm-dda-git-latest;
 
     patches = [
+      ./patches/cataclysm-big-tiles.patch
       ./patches/cataclysm-bionics-lower-saving.patch
       ./patches/cataclysm-craft-percent-fix.patch
       ./patches/cataclysm-custom-options.patch
