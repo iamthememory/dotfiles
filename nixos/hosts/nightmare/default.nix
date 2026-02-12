@@ -155,9 +155,6 @@
   # Tor.
   services.tor.torsocks.enable = true;
 
-  # Enable the yubikey agent.
-  services.yubikey-agent.enable = true;
-
   # Set the timezone.
   time.timeZone = "America/New_York";
 
