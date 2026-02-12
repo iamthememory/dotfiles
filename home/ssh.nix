@@ -38,4 +38,10 @@
   # The file for known hosts.
   programs.ssh.matchBlocks."*".userKnownHostsFile =
     "${config.home.homeDirectory}/.ssh/known_hosts";
+
+  # Enable ssh-agent.
+  services.ssh-agent.enable = true;
+
+  # Keep keys for an hour.
+  services.ssh-agent.defaultMaximumIdentityLifetime = 3600;
 }
