@@ -44,19 +44,24 @@ let
 in
 {
   imports = [
-    ./zsh-async.nix
-    ./powerlevel10k
     ./directory-utils.nix
     ./fsh.nix
     ./omz.nix
+    ./powerlevel10k
     ./sudo.nix
     ./web-search.nix
+    ./zsh-async.nix
   ];
 
   home.packages = with pkgs; [
     # Additional ZSH completions.
     zsh-completions
   ];
+
+  # Enable tirith, which tries to detect malicious shell commands.
+  programs.tirith.enable = true;
+  programs.tirith.enableBashIntegration = true;
+  programs.tirith.enableZshIntegration = true;
 
   # Enable zsh.
   programs.zsh.enable = true;
