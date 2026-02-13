@@ -1045,9 +1045,31 @@ index e3d8b5a23cb8..1decd1a590b0 100644
      "fear_triggers": [  ],
      "regen_morale": true,
 diff --git a/difficulty_options.json b/difficulty_options.json
-index 1e57bf41d39b..54079698fb4a 100644
+index 1e57bf41d39b..a1d346497689 100644
 --- a/difficulty_options.json
 +++ b/difficulty_options.json
+@@ -4,18 +4,18 @@
+     "id": "EOC_NH_start",
+     "eoc_type": "EVENT",
+     "required_event": "game_start",
+-    "effect": [ { "run_eocs": "EOC_difficultycheck" } ]
++    "effect": [ { "run_eocs": "EOC_PM_difficultycheck" } ]
+   },
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_NH_load",
+     "eoc_type": "EVENT",
+     "required_event": "game_load",
+-    "effect": [ { "run_eocs": "EOC_difficultycheck" } ]
++    "effect": [ { "run_eocs": "EOC_PM_difficultycheck" } ]
+   },
+   {
+     "type": "effect_on_condition",
+-    "id": "EOC_difficultycheck",
++    "id": "EOC_PM_difficultycheck",
+     "condition": { "math": [ "!has_var( PM_item_difficulty )" ] },
+     "effect": { "run_eocs": "EOC_PM_set_difficulty" },
+     "false_effect": [
 @@ -71,7 +71,12 @@
    },
    {
