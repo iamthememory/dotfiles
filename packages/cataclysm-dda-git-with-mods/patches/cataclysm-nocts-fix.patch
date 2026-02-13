@@ -1,5 +1,26 @@
+diff --git a/nocts_cata_mod_DDA/Monsters/c_monstergroups.json b/nocts_cata_mod_DDA/Monsters/c_monstergroups.json
+index 20546cb17c6f..bb26cbd71de8 100644
+--- a/nocts_cata_mod_DDA/Monsters/c_monstergroups.json
++++ b/nocts_cata_mod_DDA/Monsters/c_monstergroups.json
+@@ -39,16 +39,6 @@
+       { "monster": "mon_zombie_failed_weapon", "weight": 6, "cost_multiplier": 25, "starts": "72 hours" }
+     ]
+   },
+-  {
+-    "id": "GROUP_CENTRAL_LAB",
+-    "type": "monstergroup",
+-    "override": false,
+-    "auto_total": true,
+-    "monsters": [
+-      { "monster": "mon_failed_weapon", "weight": 4, "cost_multiplier": 25, "starts": "168 hours" },
+-      { "monster": "mon_zombie_failed_weapon", "weight": 6, "cost_multiplier": 25, "starts": "72 hours" }
+-    ]
+-  },
+   {
+     "id": "GROUP_ZOMBIE",
+     "type": "monstergroup",
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_armor.json b/nocts_cata_mod_DDA/Surv_help/c_armor.json
-index 01f755b34d85..dcd99ca8a9c1 100644
+index 69f0a0256902..1b415ea52474 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_armor.json
 +++ b/nocts_cata_mod_DDA/Surv_help/c_armor.json
 @@ -216,7 +216,7 @@
