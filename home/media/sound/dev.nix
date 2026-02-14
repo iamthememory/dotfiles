@@ -90,7 +90,7 @@ in
     dssi
     ensemble-chorus
     eq10q
-    faustPhysicalModeling
+    faust-physicalmodeling
     fil-plugins
     filtr
     fire
@@ -181,7 +181,7 @@ in
     stone-phaser
     string-machine
     #surge
-    surge-XT
+    surge-xt
     swh_lv2
     synthv1
     talentedhack

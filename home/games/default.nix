@@ -45,7 +45,7 @@
       winetricks
 
       # A default wine.
-      wineWowPackages.staging
+      wineWow64Packages.staging
     ];
 
   # Install Java.
