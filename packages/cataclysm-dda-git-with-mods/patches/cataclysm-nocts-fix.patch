@@ -211,6 +211,30 @@ index 96edc7e0f7fe..b2da3174bc4d 100644
          { "item": "mossberg_590", "x": 20, "y": 10, "chance": 75, "repeat": 8 },
          { "item": "m2010", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 2 },
          { "item": "m110a1", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 8 },
+diff --git a/nocts_cata_mod_DDA/Terrain/Unknown_Lab.json b/nocts_cata_mod_DDA/Terrain/Unknown_Lab.json
+index 7af00cd0ed4a..5f2c0a55458a 100644
+--- a/nocts_cata_mod_DDA/Terrain/Unknown_Lab.json
++++ b/nocts_cata_mod_DDA/Terrain/Unknown_Lab.json
+@@ -644,8 +644,8 @@
+         "                        ",
+         "                        ",
+         "|||||||||||             ",
+-        "D...rr{{{{|             ",
+-        "E.........||            ",
++        "6...rr{{{{|             ",
++        "6.........||            ",
+         "6c...212..P|            ",
+         "......_...P|            ",
+         ".....343..P|            ",
+@@ -679,8 +679,6 @@
+         "4": "t_station_disc",
+         "6": "t_metal_floor",
+         "C": "t_metal_floor",
+-        "D": "t_cvdbody",
+-        "E": "t_cvdmachine",
+         "F": "t_metal_floor",
+         "I": "t_reinforced_glass",
+         "P": "t_metal_floor",
 diff --git a/nocts_cata_mod_DDA/Terrain/regional_overlay.json b/nocts_cata_mod_DDA/Terrain/regional_overlay.json
 deleted file mode 100644
 index 4462c911e3e3..000000000000
