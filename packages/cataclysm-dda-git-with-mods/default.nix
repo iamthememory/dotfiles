@@ -62,6 +62,7 @@ let
       ./patches/cataclysm-multiple-thresholds.patch
       ./patches/cataclysm-my-sweet-cataclysm-chance.patch
       ./patches/cataclysm-no-banned-ports.patch
+      ./patches/cataclysm-no-hope-books.json
       ./patches/cataclysm-perks-fix.patch
       ./patches/cataclysm-plant-in-cold.patch
       ./patches/cataclysm-plant-only-check-now.patch

@@ -1,0 +1,13 @@
+diff --git a/data/mods/No_Hope/mapgen_palettes/house_general_palette.json b/data/mods/No_Hope/mapgen_palettes/house_general_palette.json
+index 19e6f691cb06..e4a88e077f32 100644
+--- a/data/mods/No_Hope/mapgen_palettes/house_general_palette.json
++++ b/data/mods/No_Hope/mapgen_palettes/house_general_palette.json
+@@ -168,7 +168,7 @@
+         { "item": "cleaning", "chance": 30, "repeat": [ 1, 2 ] },
+         { "item": "bed", "chance": 30, "repeat": [ 1, 2 ] }
+       ],
+-      "R": [ { "item": "homebooks", "chance": 20, "repeat": [ 1, 4 ] }, { "item": "games", "chance": 20, "repeat": [ 1, 2 ] } ],
++      "R": [ { "item": "SUS_domestic_bookshelf" }, { "item": "games", "chance": 20, "repeat": [ 1, 2 ] } ],
+       "S": [ { "item": "SUS_bathroom_sink", "chance": 20 }, { "item": "SUS_bathroom_medicine", "chance": 20 } ],
+       "U": [
+         { "item": "home_hw", "chance": 20, "repeat": [ 1, 2 ] },
