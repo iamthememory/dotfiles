@@ -128,5 +128,12 @@
     "//": "All vehicles spawn with this percentage of fuel.  0 is empty, 100 is fully loaded, -1 is random amount from 7% to 35% (default).  Values are read only if OVERRIDE_VEHICLE_INIT_STATE is set to true.",
     "stype": "int",
     "value": -1
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "UNCANNY_DODGE_TRAIT_STAMINA_COST",
+    "//": "How much stamina using uncanny dodge via mutations should cost. At the default player stamina burn rate, normal dodge attempts cost 90 stamina at dodge level 0, 67.5 at level 5, and 45 at level 10.",
+    "stype": "int",
+    "value": 50
   }
 ]
