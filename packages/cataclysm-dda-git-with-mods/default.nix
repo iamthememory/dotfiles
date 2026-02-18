@@ -219,9 +219,6 @@ let
     src = applyPatches {
       name = "cataclysm-dda-no-class-limit";
       src = cataclysm-dda-no-class-limit;
-      patches = [
-        ./patches/cataclysm-magiclysm-no-class-limit.patch
-      ];
     };
   };
 
