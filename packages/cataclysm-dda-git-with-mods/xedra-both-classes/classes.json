@@ -243,24 +243,28 @@
     "type": "mutation",
     "id": "UNKNOWING_CHANGELING_COMMONER_BROWNIE",
     "copy-from": "UNKNOWING_CHANGELING_COMMONER_BROWNIE",
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] },
     "allowed_category": [  ]
   },
   {
     "type": "mutation",
     "id": "UNKNOWING_CHANGELING_COMMONER_POOKA",
     "copy-from": "UNKNOWING_CHANGELING_COMMONER_POOKA",
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] },
     "allowed_category": [  ]
   },
   {
     "type": "mutation",
     "id": "UNKNOWING_CHANGELING_COMMONER_SELKIE",
     "copy-from": "UNKNOWING_CHANGELING_COMMONER_SELKIE",
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] },
     "allowed_category": [  ]
   },
   {
     "type": "mutation",
     "id": "UNKNOWING_CHANGELING_COMMONER_TROW",
     "copy-from": "UNKNOWING_CHANGELING_COMMONER_TROW",
+    "delete": { "flags": [ "HERITAGE", "NO_CBM_INSTALLATION" ] },
     "allowed_category": [  ]
   },
   {
