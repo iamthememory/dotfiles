@@ -1,8 +1,18 @@
 diff --git a/src/veh_interact.cpp b/src/veh_interact.cpp
-index 12ad9419ad8e..700fac8db958 100644
+index f67d7b170d58..231d459cce52 100644
 --- a/src/veh_interact.cpp
 +++ b/src/veh_interact.cpp
-@@ -845,6 +845,7 @@ bool veh_interact::update_part_requirements( map &here )
+@@ -844,16 +844,15 @@ bool veh_interact::update_part_requirements( map &here )
+ 
+     bool is_engine = sel_vpart_info->has_flag( "ENGINE" );
+     //count current engines, some engines don't require higher skill
+-    int engines = 0;
+     int dif_eng = 0;
+     if( is_engine && sel_vpart_info->has_flag( "E_HIGHER_SKILL" ) ) {
+         for( const vpart_reference &vp : veh->get_avail_parts( "ENGINE" ) ) {
+             if( vp.has_feature( "E_HIGHER_SKILL" ) ) {
+-                engines++;
+                 dif_eng = dif_eng / 2 + 8;
              }
          }
      }
@@ -10,7 +20,7 @@ index 12ad9419ad8e..700fac8db958 100644
  
      int dif_steering = 0;
      if( sel_vpart_info->has_flag( "STEERABLE" ) ) {
-@@ -864,6 +865,8 @@ bool veh_interact::update_part_requirements( map &here )
+@@ -873,6 +872,8 @@ bool veh_interact::update_part_requirements( map &here )
          }
      }
  
@@ -19,7 +29,7 @@ index 12ad9419ad8e..700fac8db958 100644
      const requirement_data reqs = sel_vpart_info->install_requirements();
  
      avatar &player_character = get_avatar();
-@@ -873,7 +876,7 @@ bool veh_interact::update_part_requirements( map &here )
+@@ -882,7 +883,7 @@ bool veh_interact::update_part_requirements( map &here )
  
      nmsg += _( "<color_white>Additional requirements:</color>\n" );
  
