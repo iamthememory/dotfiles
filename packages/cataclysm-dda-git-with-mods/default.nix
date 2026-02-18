@@ -26,6 +26,7 @@
 , cataclysmDDA
 , cdda-sounds
 , cdda-tilesets
+, clang
 , flake-revision
 , lib
 , stdenv
@@ -74,6 +75,17 @@ let
       ./patches/cataclysm-xedra-dreamdross.patch
       ./patches/cataclysm-xedra-nail.patch
       ./patches/cataclysm-xedra-wallet.patch
+    ];
+
+    # Build with clang, as upstream does.
+    # Weird way to do it, but it's how CDDA's workflow specifies the compiler.
+    makeFlags = oldAttrs.makeFlags ++ [
+      "COMPILER=clang++"
+    ];
+
+    # Make sure to include clang in our build environment.
+    nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
+      clang
     ];
 
     # Enable debugging info.
