@@ -1,19 +1,6 @@
 [
   {
     "type": "effect_on_condition",
-    "id": "EOC_NEWWORLDONDEATH_SET_DEFAULT_REGION",
-    "eoc_type": "EVENT",
-    "required_event": "game_begin",
-    "condition": { "not": { "math": [ "has_var(default_newworldondeath_region)" ] } },
-    "effect": [
-      {
-        "set_string_var": "default",
-        "target_var": { "global_val": "default_newworldondeath_region" }
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_NEWWORLDONDEATH_SET_DEFAULT_OM_TERRAIN",
     "eoc_type": "EVENT",
     "required_event": "game_begin",
@@ -93,7 +80,7 @@
       {
         "u_travel_to_dimension": "dimension_newworldondeath_overworld",
         "npc_travel_radius": 0,
-        "region_type": { "global_val": "default_newworldondeath_region" },
+        "region_type": "newworldondeath_overworld_region",
         "npc_travel_filter": "none"
       },
       {

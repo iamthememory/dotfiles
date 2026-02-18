@@ -1,6 +1,11 @@
 [
   {
     "type": "region_settings",
+    "id": "newworldondeath_overworld_region",
+    "copy-from": "default"
+  },
+  {
+    "type": "region_settings",
     "id": "default_newworldondeath",
     "rivers": null,
     "lakes": null,
