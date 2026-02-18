@@ -490,6 +490,12 @@ let
     src = ./magic-loot-perks;
   };
 
+  new-world-on-death = cataclysmDDA.buildMod {
+    modName = "new-world-on-death";
+    version = flake-revision;
+    src = ./new-world-on-death;
+  };
+
   no-overgrowth = cataclysmDDA.buildMod {
     modName = "no-overgrowth";
     version = flake-revision;
@@ -553,6 +559,7 @@ let
       mining-mod
       mom-submods
       mst-extra
+      new-world-on-death
       no-overgrowth
       nocts
       pm-world

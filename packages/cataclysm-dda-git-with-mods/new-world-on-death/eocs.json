@@ -1,0 +1,115 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_SET_DEFAULT_REGION",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": { "not": { "math": [ "has_var(default_newworldondeath_region)" ] } },
+    "effect": [
+      {
+        "set_string_var": "default",
+        "target_var": { "global_val": "default_newworldondeath_region" }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_SET_DEFAULT_OM_TERRAIN",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": { "not": { "math": [ "has_var(default_newworldondeath_om_terrain)" ] } },
+    "effect": [
+      {
+        "set_string_var": "field",
+        "target_var": { "global_val": "default_newworldondeath_om_terrain" }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_GAMESTART_SEND_OUT",
+    "eoc_type": "EVENT",
+    "required_event": "game_begin",
+    "condition": { "current_dimension": "" },
+    "effect": [
+      { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE", "time_in_future": "5 seconds" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_PREVENT_DEATH",
+    "eoc_type": "PREVENT_DEATH",
+    "effect": [
+      "u_prevent_death",
+      {
+        "run_eocs": [
+          "EOC_NEWWORLDONDEATH_HEAL",
+          "EOC_NEWWORLDONDEATH_RETURN_TO_HUB"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_HEAL",
+    "effect": [
+      { "math": [ "u_hp('ALL') = 999" ] },
+      { "math": [ "u_hp('ALL_MAJOR') = 15" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_RETURN_TO_HUB",
+    "effect": [
+      { "u_add_effect": "blind", "duration": 0 },
+      {
+        "u_travel_to_dimension": "",
+        "npc_travel_radius": 0,
+        "npc_travel_filter": "none"
+      },
+      {
+        "u_location_variable": { "context_val": "nearest_floor" },
+        "terrain": "t_grass",
+        "target_max_radius": 60,
+        "min_radius": 0,
+        "max_radius": 0
+      },
+      { "u_teleport": { "context_val": "nearest_floor" } },
+      { "clear_dimension": "dimension_newworldondeath_overworld" },
+      { "u_lose_effect": "blind" },
+      { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE", "time_in_future": "5 seconds" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_NEWWORLDONDEATH_START_EXPLORE",
+    "condition": {
+      "and": [
+        { "current_dimension": "" }
+      ]
+    },
+    "effect": [
+      { "u_add_effect": "blind", "duration": 0 },
+      {
+        "u_travel_to_dimension": "dimension_newworldondeath_overworld",
+        "npc_travel_radius": 0,
+        "region_type": { "global_val": "default_newworldondeath_region" },
+        "npc_travel_filter": "none"
+      },
+      {
+        "u_location_variable": { "context_val": "overworld_destination" },
+        "target_params": {
+          "om_terrain": { "global_val": "default_newworldondeath_om_terrain" },
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 500,
+          "min_distance": 75,
+          "z": 0,
+          "cant_see": true,
+          "random": true
+        }
+      },
+      { "u_teleport": { "context_val": "overworld_destination" } },
+      { "u_lose_effect": "blind" }
+    ]
+  }
+]
