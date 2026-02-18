@@ -106,10 +106,10 @@
     "type": "effect_on_condition",
     "recurrence": "1 seconds",
     "deactivate_condition": {
-      "math": [ "u_spell_level('reset_default_dimension_spell') > 0" ]
+      "math": [ "u_spell_level('reset_default_dimension_spell') >= 0" ]
     },
     "condition": {
-      "math": [ "u_spell_level('reset_default_dimension_spell') <= 0" ]
+      "math": [ "u_spell_level('reset_default_dimension_spell') < 0" ]
     },
     "effect": [
       {
@@ -122,7 +122,7 @@
     "id": "EOC_RESET_DEFAULT_DIMENSION_CONFIRM",
     "condition": {
       "and": [
-        { "current_dimension": "default" },
+        { "current_dimension": "" },
         { "not": "u_driving" },
         {
           "u_query": "Really reset the default dimension, and teleport you back to it randomly?",
@@ -139,12 +139,12 @@
     "id": "EOC_RESET_DEFAULT_DIMENSION_START",
     "condition": {
       "and": [
-        { "current_dimension": "default" },
+        { "current_dimension": "" },
         { "not": "u_driving" }
       ]
     },
     "effect": [
-      { "u_add_effect": "blind", "duration": 0 },
+      { "u_add_effect": "blind", "duration": "10 seconds" },
       {
         "u_travel_to_dimension": "reset_holding_dimension",
         "npc_travel_radius": 0,
@@ -166,16 +166,28 @@
     "type": "effect_on_condition",
     "id": "EOC_RESET_DEFAULT_DIMENSION_CLEAR",
     "effect": [
-      { "clear_dimension": "default" },
-      { "run_eocs": "EOC_RESET_DEFAULT_DIMENSION_RETURN" }
+      { "clear_dimension": "" },
+      {
+        "u_message": "Make sure to save now to avoid problems when returning to the default world.",
+        "type": "warning",
+        "popup": true,
+        "popup_w_interrupt_query": true
+      },
+      { "run_eocs": "EOC_RESET_DEFAULT_DIMENSION_RETURN", "time_in_future": "5 seconds" }
     ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_RESET_DEFAULT_DIMENSION_RETURN",
     "effect": [
+      { "u_add_effect": "blind", "duration": "10 seconds" },
       {
-        "u_travel_to_dimension": "default",
+        "set_string_var": { "mutator": "game_option", "option": "DEFAULT_REGION" },
+        "target_var": { "context_val": "default_dimension_region" }
+      },
+      {
+        "u_travel_to_dimension": "",
+        "region_type": { "context_val": "default_dimension_region" },
         "npc_travel_radius": 0,
         "npc_travel_filter": "none"
       },
@@ -192,15 +204,15 @@
         }
       },
       { "u_teleport": { "context_val": "dimension_return_point" } },
-      { "run_eocs": "EOC_RESET_DEFAULT_DIMENSION_CLEANUP" }
+      { "u_lose_effect": "blind" },
+      { "run_eocs": "EOC_RESET_DEFAULT_DIMENSION_CLEANUP", "time_in_future": "1 seconds" }
     ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_RESET_DEFAULT_DIMENSION_CLEANUP",
     "effect": [
-      { "clear_dimension": "reset_holding_dimension" },
-      { "u_lose_effect": "blind" }
+      { "clear_dimension": "reset_holding_dimension" }
     ]
   }
 ]
