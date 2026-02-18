@@ -1,0 +1,8 @@
+[
+  {
+    "type": "scenario",
+    "id": "xe_lilin_scenario",
+    "copy-from": "xe_lilin_scenario",
+    "allowed_locs": [ "sloc_newworldondeath_field" ]
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "type": "start_location",
+    "id": "sloc_newworldondeath_field",
+    "name": "New World On Death - Field",
+    "terrain": [ "newworldondeath_field" ]
+  }
+]
