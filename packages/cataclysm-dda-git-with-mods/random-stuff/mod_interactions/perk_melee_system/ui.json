@@ -1,0 +1,32 @@
+[
+  {
+    "id": "style_stats",
+    "copy-from": "style_stats",
+    "type": "widget",
+    "flags": [ ]
+  },
+  {
+    "id": "tempo",
+    "copy-from": "tempo",
+    "type": "widget",
+    "flags": [ ]
+  },
+  {
+    "id": "momentum",
+    "copy-from": "momentum",
+    "type": "widget",
+    "flags": [ ]
+  },
+  {
+    "id": "insight",
+    "copy-from": "insight",
+    "type": "widget",
+    "flags": [ ]
+  },
+  {
+    "id": "poise",
+    "copy-from": "poise",
+    "type": "widget",
+    "flags": [ ]
+  }
+]
