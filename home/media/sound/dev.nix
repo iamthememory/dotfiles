@@ -53,7 +53,7 @@ in
     airwin2rack
     airwindows
     airwindows-lv2
-    AMB-plugins
+    amb-plugins
     artyFX
     autotalent
     bankstown-lv2
@@ -104,7 +104,7 @@ in
     gxplugins-lv2
     helm
     hybridreverb2
-    infamousPlugins
+    infamousplugins
     ingen
     ir-lv2
     kapitonov-plugins-pack
@@ -127,17 +127,18 @@ in
     master_me
     mda_lv2
     melmatcheq-lv2
-    #metersLv2
+    #meters-lv2
     midi-trigger
     mod-arpeggiator-lv2
     mod-distortion
     molot-lite
-    mooSpace
+    moospace
     neural-amp-modeler-lv2
     ninjas2
     noise-repellent
     nova-filters
     odin2
+    openav-artyfx
     open-music-kontrollers.eteroj
     open-music-kontrollers.jit
     open-music-kontrollers.mephisto
