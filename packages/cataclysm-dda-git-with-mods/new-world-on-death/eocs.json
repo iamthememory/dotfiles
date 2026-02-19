@@ -19,7 +19,7 @@
     "required_event": "game_begin",
     "condition": { "current_dimension": "" },
     "effect": [
-      { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE", "time_in_future": "5 seconds" }
+      { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE" }
     ]
   },
   {
@@ -64,7 +64,7 @@
       { "u_teleport": { "context_val": "nearest_floor" } },
       { "clear_dimension": "dimension_newworldondeath_overworld" },
       { "u_lose_effect": "blind" },
-      { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE", "time_in_future": "5 seconds" }
+      { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE" }
     ]
   },
   {
