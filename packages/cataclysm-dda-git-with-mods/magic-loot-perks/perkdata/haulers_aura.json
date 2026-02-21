@@ -32,8 +32,8 @@
         "max_contains_volume": "80000 L",
         "max_contains_weight": "80000 kg",
         "max_item_length": "20 meter",
-        "weight_multiplier": 0.0,
-        "spoil_multiplier": 0.1,
+        "weight_multiplier": 0.5,
+        "spoil_multiplier": 1.0,
         "rigid": true
       }
     ],
