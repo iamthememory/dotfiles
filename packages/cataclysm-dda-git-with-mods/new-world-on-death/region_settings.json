@@ -2,7 +2,7 @@
   {
     "type": "region_settings",
     "id": "newworldondeath_overworld_region",
-    "copy-from": "default"
+    "copy-from": "default_backrooms"
   },
   {
     "type": "region_settings",
