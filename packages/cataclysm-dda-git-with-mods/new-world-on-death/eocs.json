@@ -7,7 +7,7 @@
     "condition": { "not": { "math": [ "has_var(default_newworldondeath_om_terrain)" ] } },
     "effect": [
       {
-        "set_string_var": "field",
+        "set_string_var": "backfloorchamber",
         "target_var": { "global_val": "default_newworldondeath_om_terrain" }
       }
     ]

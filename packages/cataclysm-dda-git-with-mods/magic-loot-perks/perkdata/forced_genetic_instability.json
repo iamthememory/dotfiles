@@ -27,7 +27,12 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_perk_forced_genetic_instability_check_unstable",
-    "condition": { "not": { "u_has_trait": "UNSTABLE" } },
+    "condition": {
+      "and": [
+        "not": { "u_has_trait": "UNSTABLE" },
+        "not": { "u_has_trait": "CHAOTIC" }
+      ]
+    },
     "effect": { "u_add_trait": "UNSTABLE" }
   },
   {
@@ -40,7 +45,7 @@
     "type": "effect_on_condition",
     "id": "EOC_perk_forced_genetic_instability_check_chaotic",
     "condition": { "u_has_trait": "CHAOTIC" },
-    "effect": { "u_lose_trait": "CHAOTIC" }
+    "effect": [  ]
   },
   {
     "type": "effect_on_condition",

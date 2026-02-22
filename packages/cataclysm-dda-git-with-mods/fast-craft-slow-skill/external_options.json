@@ -50,7 +50,7 @@
     "name": "CHAOTIC_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the chaotic trait.",
     "stype": "int",
-    "value": 12
+    "value": 24
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -64,7 +64,7 @@
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 1.0
+    "value": 0.5
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -113,7 +113,7 @@
     "name": "REQUIRE_THEORETICAL_KNOWLEDGE_TO_LEARN",
     "//": "Learning practical skill will no longer increase your theoretical skill, so you need to learn from books to get any skill.",
     "stype": "bool",
-    "value": true
+    "value": false
   },
   {
     "type": "EXTERNAL_OPTION",
