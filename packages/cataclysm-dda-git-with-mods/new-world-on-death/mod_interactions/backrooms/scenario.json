@@ -1,0 +1,14 @@
+[
+  {
+    "type": "scenario",
+    "id": "backroom_dweller",
+    "copy-from": "backroom_dweller",
+    "allowed_locs": [ "sloc_newworldondeath_field" ]
+  },
+  {
+    "type": "scenario",
+    "id": "backroom_dweller_starternpc",
+    "copy-from": "backroom_dweller_starternpc",
+    "allowed_locs": [ "sloc_newworldondeath_field" ]
+  }
+]
