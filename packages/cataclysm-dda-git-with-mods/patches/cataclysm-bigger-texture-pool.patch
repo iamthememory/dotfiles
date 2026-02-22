@@ -1,0 +1,13 @@
+diff --git a/src/pixel_minimap.cpp b/src/pixel_minimap.cpp
+index fa994666fba8..1e1552f218f3 100644
+--- a/src/pixel_minimap.cpp
++++ b/src/pixel_minimap.cpp
+@@ -126,7 +126,7 @@ class pixel_minimap::shared_texture_pool
+ {
+     public:
+         explicit shared_texture_pool( const std::function<SDL_Texture_Ptr()> &generator ) {
+-            const size_t pool_size = ( MAPSIZE + 1 ) * ( MAPSIZE + 1 );
++            const size_t pool_size = 2 * ( MAPSIZE + 1 ) * ( MAPSIZE + 1 );
+ 
+             texture_pool.reserve( pool_size );
+             inactive_index.reserve( pool_size );
