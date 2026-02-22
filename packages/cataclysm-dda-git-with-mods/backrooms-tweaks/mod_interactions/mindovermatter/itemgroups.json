@@ -1,0 +1,73 @@
+[
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "tweaks_mindovermatter_items",
+    "entries": [
+      { "group": "clairsentience_telepathy_matrix_technology", "prob": 2 },
+      { "group": "collection_force_field_and_note", "prob": 1 },
+      { "group": "collection_matrix_dust", "prob": 50 },
+      { "group": "dist_electronoetic_batteries", "prob": 5 },
+      { "group": "dist_matrix_crystals", "prob": 40 },
+      { "group": "dist_matrix_tools", "prob": 4 },
+      { "group": "dist_matrix_translocation_items", "prob": 2 },
+      { "group": "dist_meditation_books_begin", "prob": 20 },
+      { "group": "dist_meditation_books_int", "prob": 10 },
+      { "group": "dist_psionic_shield_belts", "prob": 2 },
+      { "group": "dist_pulse_rifles_heavy_prototype", "prob": 2 },
+      { "group": "matrix_crystal_biokin_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_clair_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_drained_dust", "prob": 10 },
+      { "group": "matrix_crystal_electrokin_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_photokin_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_pyrokin_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_telekin_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_telepath_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_teleport_dust_group", "prob": 10 },
+      { "group": "matrix_crystal_vitakin_dust_group", "prob": 10 },
+      { "group": "psi_lab", "prob": 4 },
+      { "group": "psi_lab_no_recipes", "prob": 4 },
+      { "group": "psi_testing_materials", "prob": 4 },
+      { "group": "psionic_recipes_advanced", "prob": 4 },
+      { "group": "psionic_recipes_armor", "prob": 4 },
+      { "group": "psionic_recipes_beginner", "prob": 4 },
+      { "group": "psionic_recipes_medicine", "prob": 4 },
+      { "group": "psionic_recipes_powers", "prob": 4 },
+      { "group": "psionic_recipes_tools", "prob": 4 },
+      { "group": "psionic_recipes_weapons", "prob": 4 },
+      { "group": "survivor_matrix_crystal_recipes", "prob": 2 },
+      { "item": "manual_psionics_advan", "prob": 2 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "vending_drink_items",
+    "copy-from": "vending_drink_items",
+    "extend": {
+      "items": [
+        { "group": "concentrated_matrix_elixirs", "prob": 4, "count": [ 1, 2 ] }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "backrooms_crate_rare",
+    "copy-from": "backrooms_crate_rare",
+    "extend": {
+      "items": [
+        { "group": "tweaks_mindovermatter_items", "prob": 2, "count": [ 1, 3 ] }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "backrooms_master_vending",
+    "copy-from": "backrooms_master_vending",
+    "subtype": "distribution",
+    "extend": {
+      "entries": [
+        { "group": "tweaks_mindovermatter_items", "prob": 2, "count": [ 2, 10 ] }
+      ]
+    }
+  }
+]

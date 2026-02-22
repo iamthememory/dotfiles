@@ -1,0 +1,10 @@
+[
+  {
+    "type": "item_group",
+    "id": "backrooms_master_vending_actual",
+    "subtype": "distribution",
+    "entries": [
+      { "group": "backrooms_master_vending", "prob": 100, "count": [ 1, 4 ] }
+    ]
+  }
+]

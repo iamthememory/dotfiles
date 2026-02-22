@@ -1,0 +1,69 @@
+[
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "all_magiclysm_spells",
+    "items": [
+      { "group": "spell_scroll_tier_0", "prob": 100 },
+      { "group": "spell_scroll_tier_1", "prob": 70 },
+      { "group": "spell_scroll_tier_2", "prob": 40 },
+      { "group": "spell_scroll_tier_3", "prob": 10 },
+      { "group": "spellbook_tier_0", "prob": 100 },
+      { "group": "spellbook_tier_1", "prob": 70 },
+      { "group": "spellbook_tier_2", "prob": 40 },
+      { "group": "spellbook_tier_3", "prob": 10 },
+      { "group": "spellbook_mana_upgrades", "prob": 30 },
+      { "group": "magic_recipe_basic", "prob": 50 },
+      { "group": "magic_recipe_advanced", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "vending_drink_items",
+    "copy-from": "vending_drink_items",
+    "extend": {
+      "items": [
+        { "group": "magic_shop_potions", "prob": 10, "count": [ 1, 4 ] },
+        { "group": "potions_illegal", "prob": 2, "count": [ 1, 2 ] }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "backrooms_crate_rare",
+    "copy-from": "backrooms_crate_rare",
+    "extend": {
+      "items": [
+        { "group": "magic_shop_potions", "prob": 10, "count": [ 1, 4 ] },
+        { "group": "potions_illegal", "prob": 2, "count": [ 1, 2 ] },
+        { "group": "forge_vault_items", "prob": 2 },
+        { "group": "all_magiclysm_spells", "prob": 2 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "backrooms_master_vending",
+    "copy-from": "backrooms_master_vending",
+    "subtype": "distribution",
+    "extend": {
+      "entries": [
+        { "group": "forge_vault_items", "prob": 1 },
+        { "group": "NC_FORGE_LORD_STORE", "prob": 1 },
+        { "group": "NC_FORGE_LORD_STORE_REAGENT_SHOP", "prob": 1 },
+        { "group": "NC_FORGE_LORD_STORE_LIBRARY_SHOP", "prob": 1 },
+        { "group": "all_magiclysm_spells", "prob": 1, "count": [ 2, 6 ] }
+      ]
+    }
+  },
+  {
+    "id": "backrooms_master_bookshelf",
+    "type": "item_group",
+    "copy-from": "backrooms_master_bookshelf",
+    "extend": {
+      "items": [
+        { "group": "all_magiclysm_spells", "prob": 2, "count": [ 2, 6 ] }
+      ]
+    }
+  }
+]

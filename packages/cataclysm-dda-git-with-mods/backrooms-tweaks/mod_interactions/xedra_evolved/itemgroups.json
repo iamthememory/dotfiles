@@ -1,0 +1,93 @@
+[
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "tweaks_xedra_items",
+    "copy-from": "tweaks_xedra_items",
+    "entries": [
+      { "group": "xed_cubical_office", "prob": 10 },
+      { "group": "xed_office", "prob": 10 },
+      { "group": "deduction_books", "prob": 10 },
+      { "group": "softdrugs", "prob": 10 },
+      { "group": "drugs_pharmacy", "prob": 10 },
+      { "group": "harddrugs", "prob": 10 },
+      { "group": "xed_notes", "prob": 10 },
+      { "group": "xed_books_crafting", "prob": 10 },
+      { "group": "hedge_magic_books", "prob": 10 },
+      { "group": "nether_cabin_ritual_cult_meeting_room", "prob": 10 },
+      { "group": "nether_cabin_ritual_ingredients", "prob": 10 },
+      { "group": "map_extra_fae", "prob": 10 },
+      { "group": "xe_nether_cult_artifact", "prob": 10 },
+      { "group": "mon_dream_shadow_death_drops", "prob": 10 },
+      { "group": "mon_dream_shadowbeast_death_drops", "prob": 10 },
+      { "group": "mon_dream_shadowman_death_drops", "prob": 10 },
+      { "group": "xe_shadowman_spell_drops", "prob": 10 },
+      { "group": "hedge_magick_materials", "prob": 10 },
+      { "group": "alchemical_materials", "prob": 10 },
+      { "group": "alchemy_mutagen_samples", "prob": 10 },
+      { "group": "alchemical_recipes", "prob": 10 },
+      { "group": "xe_classless_spells_low", "prob": 10 },
+      { "group": "xe_classless_spells_mid", "prob": 10 },
+      { "group": "xe_classless_spells_high", "prob": 10 },
+      { "group": "xe_dreamer_spells_low", "prob": 10 },
+      { "group": "xe_dreamer_spells_mid", "prob": 10 },
+      { "group": "xe_dreamer_spells_high", "prob": 10 },
+      { "group": "xe_dreamsmith_spells_low", "prob": 10 },
+      { "group": "xe_dreamsmith_spells_mid", "prob": 10 },
+      { "group": "xe_dreamsmith_spells_high", "prob": 10 },
+      { "group": "xe_eater_spells_low", "prob": 10 },
+      { "group": "xe_eater_spells_mid", "prob": 10 },
+      { "group": "xe_eater_spells_high", "prob": 10 },
+      { "group": "xe_inventor_spells_low", "prob": 10 },
+      { "group": "xe_inventor_spells_mid", "prob": 10 },
+      { "group": "xe_inventor_spells_high", "prob": 10 },
+      { "group": "xe_all_spells_low", "prob": 10 },
+      { "group": "xe_all_spells_mid", "prob": 10 },
+      { "group": "xe_all_spells_high", "prob": 10 },
+      { "group": "xe_border_patrol_evidence", "prob": 10 },
+      { "item": "bezoar", "prob": 3 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "vending_food_items",
+    "copy-from": "vending_food_items",
+    "extend": {
+      "items": [
+        { "group": "spell_spawned_goblin_fruit", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_ierde", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_arvore", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_homullus", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_salamander", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_sylph", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_undine", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_brownie", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_selkie", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_pooka", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_trow", "prob": 10 },
+        { "group": "spell_spawned_goblin_fruit_noble", "prob": 10 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "backrooms_master_vending",
+    "copy-from": "backrooms_master_vending",
+    "subtype": "distribution",
+    "extend": {
+      "entries": [
+        { "group": "tweaks_xedra_items", "prob": 2, "count": [ 2, 6 ] }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "backrooms_crate_rare",
+    "copy-from": "backrooms_crate_rare",
+    "extend": {
+      "items": [
+        { "group": "tweaks_xedra_items", "prob": 5, "count": [ 1, 2 ] }
+      ]
+    }
+  }
+]
