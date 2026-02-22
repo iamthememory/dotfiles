@@ -1,0 +1,31 @@
+diff --git a/data/mods/Backrooms/itemgroups.json b/data/mods/Backrooms/itemgroups.json
+index 1a2a0a593158..4e2d9329ea9d 100644
+--- a/data/mods/Backrooms/itemgroups.json
++++ b/data/mods/Backrooms/itemgroups.json
+@@ -681,6 +681,13 @@
+       { "group": "vending_mutagens", "prob": 2 }
+     ]
+   },
++  {
++    "type": "item_group",
++    "id": "backrooms_master_vending_actual",
++    "//": "The mapped vending machine distribution.",
++    "subtype": "distribution",
++    "entries": [ { "group": "backrooms_master_vending", "prob": 100 } ]
++  },
+   {
+     "type": "item_group",
+     "id": "backrooms_master_cardboard",
+diff --git a/data/mods/Backrooms/palettes.json b/data/mods/Backrooms/palettes.json
+index f84ff28bb4e7..f35bc2792332 100644
+--- a/data/mods/Backrooms/palettes.json
++++ b/data/mods/Backrooms/palettes.json
+@@ -87,7 +87,7 @@
+       "y": [ { "item": "backrooms_master_rubble", "chance": 80 } ],
+       "A": [ { "item": "backrooms_master_cardboard", "chance": 50 } ]
+     },
+-    "vendingmachines": { "p": { "item_group": "backrooms_master_vending", "reinforced": true, "powered": true } },
++    "vendingmachines": { "p": { "item_group": "backrooms_master_vending_actual", "reinforced": true, "powered": true } },
+     "nested": {
+       "!": { "chunks": [ [ "null", 10 ], [ "mx_backroom_micro_common", 20 ], [ "mx_backroom_micro_storage", 4 ] ] },
+       "@": { "chunks": [ [ "mx_backroom_micro_storage", 20 ] ] },
