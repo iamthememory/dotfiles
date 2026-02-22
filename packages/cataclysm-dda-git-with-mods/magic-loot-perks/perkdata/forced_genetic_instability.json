@@ -29,8 +29,8 @@
     "id": "EOC_perk_forced_genetic_instability_check_unstable",
     "condition": {
       "and": [
-        "not": { "u_has_trait": "UNSTABLE" },
-        "not": { "u_has_trait": "CHAOTIC" }
+        { "not": { "u_has_trait": "UNSTABLE" } },
+        { "not": { "u_has_trait": "CHAOTIC" } }
       ]
     },
     "effect": { "u_add_trait": "UNSTABLE" }
