@@ -1,0 +1,20 @@
+diff --git a/src/map.cpp b/src/map.cpp
+index 072c1dc5659d..b694ec0317e9 100644
+--- a/src/map.cpp
++++ b/src/map.cpp
+@@ -6080,11 +6080,13 @@ void map::process_items_in_submap( submap &current_submap, const tripoint_rel_sm
+ 
+         float spoil_multiplier = 1.0f;
+ 
+-        if( has_flag( ter_furn_flag::TFLAG_NO_SPOIL, map_location ) ) {
++        if( has_flag( ter_furn_flag::TFLAG_NO_SPOIL, map_location ) ||
++                furn.has_flag( ter_furn_flag::TFLAG_NO_SPOIL ) ) {
+             spoil_multiplier = 0.0f;
+         }
+ 
+-        bool furniture_is_sealed = has_flag( ter_furn_flag::TFLAG_SEALED, map_location );
++        bool furniture_is_sealed = has_flag( ter_furn_flag::TFLAG_SEALED, map_location ) ||
++            furn.has_flag( ter_furn_flag::TFLAG_SEALED );
+ 
+         map_stack items = i_at( map_location );
+         process_map_items( *this, items, active_item_ref.item_ref, active_item_ref.parent,

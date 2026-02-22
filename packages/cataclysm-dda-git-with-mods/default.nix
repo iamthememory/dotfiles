@@ -43,6 +43,7 @@ let
       ./patches/cataclysm-big-tiles.patch
       ./patches/cataclysm-bigger-texture-pool.patch
       ./patches/cataclysm-bionics-lower-saving.patch
+      ./patches/cataclysm-check-furniture-no-spoil.patch
       ./patches/cataclysm-craft-percent-fix.patch
       ./patches/cataclysm-custom-options.patch
       ./patches/cataclysm-defense-real-world.patch
