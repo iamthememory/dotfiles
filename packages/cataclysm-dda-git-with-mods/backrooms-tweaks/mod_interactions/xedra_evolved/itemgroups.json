@@ -3,7 +3,6 @@
     "type": "item_group",
     "subtype": "distribution",
     "id": "tweaks_xedra_items",
-    "copy-from": "tweaks_xedra_items",
     "entries": [
       { "group": "xed_cubical_office", "prob": 10 },
       { "group": "xed_office", "prob": 10 },
