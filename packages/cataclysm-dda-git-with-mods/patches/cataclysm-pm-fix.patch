@@ -1,64 +1,107 @@
-diff --git a/AnomalousThings/Birdo/Items.json b/AnomalousThings/Birdo/Items.json
-index d760cff0ba46..c19f08812d78 100644
---- a/AnomalousThings/Birdo/Items.json
-+++ b/AnomalousThings/Birdo/Items.json
-@@ -112,7 +112,7 @@
+diff --git a/AnomalousThings/BookThatDontBelongToYou/Owner/EGO spez.json b/AnomalousThings/BookThatDontBelongToYou/Owner/EGO spez.json
+index 72534203e4cc..e9e20fc14c6c 100644
+--- a/AnomalousThings/BookThatDontBelongToYou/Owner/EGO spez.json	
++++ b/AnomalousThings/BookThatDontBelongToYou/Owner/EGO spez.json	
+@@ -34,8 +34,8 @@
+     "difficulty": 3,
+     "max_level": 30,
+     "flags": [ "SILENT", "CONCENTRATE", "NON_MAGICAL", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
+-    "condition": { "not": { "u_has_effect": "EGO_CD" } },
+-    "condition_fail_message": "You must wait a while longer to use an EGO again!"
++    "caster_condition": { "not": { "u_has_effect": "EGO_CD" } },
++    "caster_condition_fail_message": "You must wait a while longer to use an EGO again!"
    },
    {
-     "id": "ego_weapon_beak",
--    "copy-from": "pistol_base",
-+    "copy-from": "gun_base_handgun_semi",
-     "looks_like": "ego_teth",
-     "type": "ITEM",
-     "subtypes": [ "GUN", "ARTIFACT" ],
+     "type": "effect_on_condition",
+@@ -336,7 +336,7 @@
+     "sound_description": "fush",
+     "message": "Wshh!",
+     "energy_source": "NONE"
+-  },  
++  },
+   {
+     "id": "92_sword_normal_hook",
+     "type": "SPELL",
+@@ -895,7 +895,7 @@
+     "immune_flags": [ "PROPHET_RESIST", "PROPHET_MINION" ],
+     "scaling_mods": {  }
+   },
+-  
++
+   {
+     "id": "92_sword_empower_hook",
+     "type": "SPELL",
+@@ -952,7 +952,7 @@
+         { "id": "EGO_92_sword_spellbook_3" },
+         { "id": "EGO_92_sword_spellbook_4" }
+       ]
+-    
++
+   },
+   {
+     "type": "enchantment",
+@@ -1746,8 +1746,8 @@
+     "recurrence": [ "40 turns", "160 turns" ],
+     "condition": { "u_is_wearing": "EGO_92_aura" },
+     "deactivate_condition": { "not": { "u_is_wearing": "EGO_92_aura" } },
+-    "effect": [ 
+-      { 
++    "effect": [
++      {
+         "switch": { "math": [ "u_spell_level('EGO_92_invoke')" ] },
+         "cases": [
+           {
+@@ -1765,7 +1765,7 @@
+           },
+           {
+             "case": 10,
+-            "effect": [ 
++            "effect": [
+               {
+                 "set_string_var": [
+                   "These people walk in the darkness.",
+@@ -1780,7 +1780,7 @@
+           },
+           {
+             "case": 20,
+-            "effect": [ 
++            "effect": [
+               {
+                 "set_string_var": [
+                   "The people walking in darkness have seen a great light.",
+@@ -1796,7 +1796,7 @@
+           },
+           {
+             "case": 25,
+-            "effect": [ 
++            "effect": [
+               {
+                 "set_string_var": [
+                   "You are the true prophet, the one whom brings the light.",
+@@ -1811,7 +1811,7 @@
+           }
+         ]
+       },
+-      { "message": "<color_light_red>\"<u_val:quote>\"</color>", "type": "mixed" } 
++      { "message": "<color_light_red>\"<u_val:quote>\"</color>", "type": "mixed" }
+     ]
+   }
+ ]
 diff --git a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json
-index 67c0785fcc3e..424d92c2c5cf 100644
+index ab65abc4c22c..1a755a0f0fbb 100644
 --- a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	
 +++ b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	
-@@ -6,19 +6,19 @@
-     "required_event": "character_wakes_up",
-     "condition": {
+@@ -8,8 +8,8 @@
        "and": [
--        { "math": [ "time_since('cataclysm', 'unit':'days') >= 18" ] },
-+        { "math": [ "time_since('cataclysm', 'unit':'days') >= 20" ] },
+         { "math": [ "time_since('cataclysm', 'unit':'days') >= 18" ] },
          { "not": { "compare_string": [ "yes", { "u_val": "u_ordeal_lock" } ] } },
--        { "math": [ "time_since('cataclysm', 'unit':'days') <= 42" ] },
+-        { "math": [ "time_since('cataclysm', 'unit':'days') <= 52" ] },
 -        "u_is_avatar" 
 +        { "math": [ "rng(0, 1.0) <= 0.01" ] },
 +        "u_is_avatar"
        ]
      },
      "effect": [
-       { "u_add_var": "u_ordeal_lock", "value": "yes" },
-       { "run_eocs": "EOC_green_dawn_wave", "time_in_future": "10 seconds" },
--      { "run_eocs": "EOC_green_dawn_elite", "time_in_future": "15 seconds" },
--      { "run_eocs": "EOC_green_dawn_wave", "time_in_future": [ "5 minutes", "10 minutes" ] },
-+      { "run_eocs": "EOC_green_dawn_elite", "time_in_future": "5 minutes" },
-       { "run_eocs": "EOC_green_dawn_wave", "time_in_future": [ "10 minutes", "20 minutes" ] },
--      { "run_eocs": "EOC_remove_ordeal_lock", "time_in_future": [ "14 days", "20 days" ] },
-+      { "run_eocs": "EOC_green_dawn_wave", "time_in_future": [ "20 minutes", "30 minutes" ] },
-+      { "run_eocs": "EOC_remove_ordeal_lock", "time_in_future": [ "20 days", "40 days" ] },
-       { "run_eocs": "EOC_green_dawn_flavour", "time_in_future": [ "5 minutes", "10 minutes" ] },
-       {
-         "message": "<color_green>     The Dawn of Green\n\n          DOUBT\n\nTo live was a process full of pain.</color>",
-@@ -40,7 +40,7 @@
-         "min_radius": [ 7, 9 ],
-         "max_radius": [ 14, 24 ]
-       },
--      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "1 minutes", "2 minutes" ] },
-+      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "10 minutes", "20 minutes" ] },
-       { "run_eocs": "EOC_green_dawn_flavour", "time_in_future": [ "5 minutes", "10 minutes" ] }
-     ]
-   },
-@@ -73,7 +73,7 @@
-         "min_radius": [ 7, 9 ],
-         "max_radius": [ 14, 24 ]
-       },
--      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "1 minutes", "2 minutes" ] }
-+      { "run_eocs": "EOC_green_dawn_wave_repeat", "time_in_future": [ "10 minutes", "20 minutes" ] }
-     ]
-   },
-   {
 diff --git a/AnomalousThings/Wellcheers/CansOfFun.json b/AnomalousThings/Wellcheers/CansOfFun.json
 index 212e5e10adf4..d37bbc3fc6ed 100644
 --- a/AnomalousThings/Wellcheers/CansOfFun.json
@@ -95,23 +138,2344 @@ index 212e5e10adf4..d37bbc3fc6ed 100644
      "comestible_type": "DRINK",
      "symbol": "~",
      "quench": 8,
-diff --git a/AnomalousThings/Wellcheers/Egocheers.json b/AnomalousThings/Wellcheers/Egocheers.json
-index 88eabfd7d059..8949d5c202ce 100644
---- a/AnomalousThings/Wellcheers/Egocheers.json
-+++ b/AnomalousThings/Wellcheers/Egocheers.json
-@@ -71,7 +71,7 @@
+diff --git a/AnomalousThings/Wellcheers/Soda/EGO Soda.json b/AnomalousThings/Wellcheers/Soda/EGO Soda.json
+index 52df4cb8f809..fa0ec0119453 100644
+--- a/AnomalousThings/Wellcheers/Soda/EGO Soda.json	
++++ b/AnomalousThings/Wellcheers/Soda/EGO Soda.json	
+@@ -33,8 +33,8 @@
+     "difficulty": 3,
+     "max_level": 30,
+     "flags": [ "SILENT", "CONCENTRATE", "NON_MAGICAL", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ],
+-    "condition": { "not": { "u_has_effect": "EGO_CD" } },
+-    "condition_fail_message": "You must wait a while longer to use an EGO again!"
++    "caster_condition": { "not": { "u_has_effect": "EGO_CD" } },
++    "caster_condition_fail_message": "You must wait a while longer to use an EGO again!"
    },
    {
-     "id": "ego_weapon_soda",
--    "copy-from": "pistol_base",
-+    "copy-from": "gun_base_handgun_semi",
-     "looks_like": "glock_17",
-     "type": "ITEM",
-     "subtypes": [ "GUN", "ARTIFACT" ],
+     "type": "effect_on_condition",
+@@ -43,11 +43,11 @@
+     "effect": [
+       { "u_add_effect": "EGO_CD", "intensity": 1, "duration": { "math": ["600 + (400 * (u_spell_level('EGO_soda')^2))"] } },
+       { "math": [ "u_vitamin('emotion') -= 20" ] },
+-      { 
++      {
+         "if": { "and": [ { "math": [ "u_spell_level('EGO_soda') >= 20 " ] }, { "math": [ "u_spell_level('EGO_soda') < 25 " ] }  ] },
+         "then": { "u_cast_spell": { "id": "EGO_soda_summon_armour_normal", "hit_self": true } }
+       },
+-      { 
++      {
+         "if": { "math": [ "u_spell_level('EGO_soda') >= 25 " ] },
+         "then": { "u_cast_spell": { "id": "EGO_soda_summon_armour_empower", "hit_self": true } }
+       },
+@@ -717,8 +717,8 @@
+     "recurrence": [ "40 turns", "160 turns" ],
+     "condition": { "u_is_wearing": "EGO_soda_aura" },
+     "deactivate_condition": { "not": { "u_is_wearing": "EGO_soda_aura" } },
+-    "effect": [ 
+-      { 
++    "effect": [
++      {
+         "switch": { "math": [ "u_spell_level('EGO_soda')" ] },
+         "cases": [
+           {
+@@ -736,7 +736,7 @@
+           },
+           {
+             "case": 10,
+-            "effect": [ 
++            "effect": [
+               {
+                 "set_string_var": [
+                   "Prawn. Prawn.",
+@@ -751,7 +751,7 @@
+           },
+           {
+             "case": 20,
+-            "effect": [ 
++            "effect": [
+               {
+                 "set_string_var": [
+                   "We should show the world our flavour!",
+@@ -768,7 +768,7 @@
+           },
+           {
+             "case": 25,
+-            "effect": [ 
++            "effect": [
+               {
+                 "set_string_var": [
+                   "Prawn is the best flavour, you agree, right? Right?",
+@@ -784,7 +784,7 @@
+           }
+         ]
+       },
+-      { "message": "<color_light_red>\"<u_val:quote>\"</color>", "type": "mixed" } 
++      { "message": "<color_light_red>\"<u_val:quote>\"</color>", "type": "mixed" }
+     ]
+   },
+   {
+@@ -801,4 +801,4 @@
+       { "math": [ "u_spell_level('EGO_soda_summon_net_empower') = -1" ] }
+     ]
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/ArtsofbigM.json b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/ArtsofbigM.json
+deleted file mode 100644
+index d2940348a50a..000000000000
+--- a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/ArtsofbigM.json	
++++ /dev/null
+@@ -1,236 +0,0 @@
+-[
+-	{
+-		"type": "martial_art",
+-		"id": "zwei_big",
+-		"name": { "str": "Zwei Combat Doctrine" },
+-		"description": "This doctrine outlines the techniques for defending both yourself and your client with a zweihander sword.",
+-		"initiate": [
+-			"To protect and serve.",
+-			"%s exhales calmly and slightly raise their sword."
+-		],
+-		"primary_skill": "melee",
+-		"learn_difficulty": 8,
+-		"strictly_melee": true,
+-		"static_buffs": [{
+-			"id": "zw_static",
+-			"name": "Zwei stance",
+-			"description": "You take a fighting stance. Ready to protect. \n\nBlock attempts +1\nBlock skill +50% of your strength\nDodge skill -100% of your strength",
+-			"melee_allowed": true,
+-			"bonus_blocks": 1,
+-			"flat_bonuses": [
+-				{ "stat": "block", "scaling-stat": "str", "scale": 0.5 },
+-				{ "stat": "dodge", "scaling-stat": "str", "scale": -1.0 }
+-			]
+-		}],
+-		"onpause_buffs": [{
+-			"id": "zw_combatprep",
+-			"name": "Combat preparation",
+-			"description": "Inhale. Exhale. Deflect.\n\n+1 accuracy, block skill increased by 50% of strength.\n-1 Dodge attempts\nLasts 2 turns. Max 2 stacks",
+-			"skill_requirements": [ { "name": "melee", "level": 2 } ],
+-			"melee_allowed": true,
+-			"buff_duration": 1,
+-			"max_stacks": 2,
+-			"flat_bonuses": [
+-				{ "stat": "hit", "scale": 1.0 },
+-				{ "stat": "block", "scaling-stat": "str", "scale": 0.5 },
+-				{ "stat": "dodge", "scale": -1.0 }
+-			]
+-		}],
+-		"onblock_buffs": [{
+-			"id": "zw_block1",
+-			"name": "Your shield",
+-			"description": "If you can deflect this, you can deflect anything.\n\nIncreases armor penetration by 15% of your strength, block skill by 30% of your strength, and grants +1 block attempt. Can stack up to 4 times.",
+-			"skill_requirements": [ { "name": "melee", "level": 4 } ],
+-			"melee_allowed": true,
+-			"buff_duration": 2,
+-			"max_stacks": 4,
+-			"bonus_blocks": 1,
+-			"flat_bonuses": [
+-				{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.15 },
+-				{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.15 },
+-				{ "stat": "block", "scaling-stat": "str", "scale": 0.3 }
+-			]
+-		}],
+-		"onmove_buffs": [{
+-			"id": "zw_step",
+-			"name": "Patrolling",
+-			"description": " You step forward, prepared for a powerful strike. \n\nIncreases armor penetration by 30% of your strength.",
+-			"skill_requirements": [{ "name": "melee", "level": 6 }],
+-			"melee_allowed": true,
+-			"buff_duration": 1,
+-			"max_stacks": 1,
+-			"flat_bonuses": [
+-				{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.3 },
+-				{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.3 }
+-			]
+-		}],
+-		"weapons": [
+-			"zw_zweihander"
+-		],
+-		"weapon_category": [
+-			"GREAT_SWORDS",
+-			"BIONIC_SWORDS",
+-			"CONSTRUCTED_SWORDS",
+-			"KNIVES"
+-		],
+-		"techniques": [
+-			"standoff",
+-			"flex_suppress",
+-			"guardian",
+-			"law",
+-			"ex_force",
+-			"zw_mastery"
+-		]
+-	},
+-	{
+-		"type": "martial_art",
+-		"id": "chains_martial",
+-		"name": { "str": "Rusted Chains brawl" },
+-		"description": "Using a barbed chains you know how mutilate enemy and turn him in minced meat.",
+-		"initiate": [
+-			"You raise your fists. Let the bodies hit the floor.",
+-			"%s raises their fist with a bloody grin."
+-		],
+-		"primary_skill": "unarmed",
+-		"learn_difficulty": 4,
+-		"arm_block": 2,
+-		"leg_block": 5,
+-		"static_buffs": [{
+-			"id": "rc_static",
+-			"name": "Rusted Chains stance",
+-			"description": "Do they have a death wish?\n\n+30% of strength to block. +30% of Dexterity to dodge",
+-			"unarmed_allowed": true,
+-			"flat_bonuses": [
+-				{ "stat": "block", "scaling-stat": "str", "scale": 0.3 },
+-				{ "stat": "dodge", "scaling-stat": "dex", "scale": 0.3 }
+-			]
+-		}],
+-		"onmove_buffs": [{
+-			"id": "rc_step",
+-			"name": "Prowl",
+-			"description": "Seeking Trouble \n\nBlock -20. +1 dodge attempt. +60% of Agility to dodge",
+-			"skill_requirements": [{ "name": "unarmed", "level": 3 }],
+-			"unarmed_allowed": true,
+-			"buff_duration": 1,
+-			"max_stacks": 1,
+-			"bonus_dodges": 1,
+-			"flat_bonuses": [
+-				{ "stat": "block", "scale": -20 },
+-				{ "stat": "dodge", "scaling-stat": "dex", "scale": 0.6 }
+-			]
+-		}],
+-		"onpause_buffs": [{
+-			"id": "rc_combatprep",
+-			"name": "Try me",
+-			"description": "Fight me, fools! I'm right here!\n\n+1 block attempt. Bonus block +150% of strength. -20 dodge",
+-			"skill_requirements": [{ "name": "unarmed", "level": 5 }],
+-			"unarmed_allowed": true,
+-			"bonus_blocks": 1,
+-			"buff_duration": 1,
+-			"max_stacks": 1,
+-			"flat_bonuses": [
+-				{ "stat": "block", "scaling-stat": "str", "scale": 1.5 },
+-				{ "stat": "dodge", "scale": -20 }
+-			]
+-		}],
+-		"onblock_buffs": [{
+-			"id": "rc_block1",
+-			"name": "Nice try",
+-			"description": "They had a chance to kill you. They failed. Now it's your turn\n\n Armour penetration increased by 15% of strength. +1 block attempt",
+-			"skill_requirements": [{ "name": "unarmed", "level": 5 }],
+-			"unarmed_allowed": true,
+-			"buff_duration": 1,
+-			"max_stacks": 1,
+-			"bonus_blocks": 1,
+-			"flat_bonuses": [
+-				{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.15 }
+-			]
+-		}],
+-		"ondodge_buffs": [{
+-			"id": "rc_dodge1",
+-			"name": "Risky Dodge",
+-			"description": "If it doesn't hit, then it doesn't hurt\n\n Armour penetration increached by 25% of dexteity. +1 evade attempt",
+-			"skill_requirements": [{ "name": "unarmed", "level": 5 }],
+-			"unarmed_allowed": true,
+-			"buff_duration": 1,
+-			"max_stacks": 1,
+-			"bonus_dodges": 1,
+-			"flat_bonuses": [
+-				{ "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 0.25 }
+-			]
+-		}],
+-		"onmove_eocs": [
+-			"minor_rest_eoc"
+-		],
+-		"weapons": [
+-			"rc_chains"
+-		],
+-		"techniques": [
+-			"rc_wrap",
+-			"rc_hth",
+-			"rc_flank",
+-			"rc_soft",
+-			"rc_finish"
+-		]
+-	},
+-	{
+-		"type": "martial_art",
+-		"id": "kurokumo_martial",
+-		"name": { "str": "Art of Kurokumo" },
+-		"description": "With their blood, you will make art that inspires both fear and hope in those who witness it",
+-		"initiate": [
+-			"<color_white>Ahh... </color>",
+-			"%s exhales ecstatically"
+-		],
+-		"primary_skill": "cutting",
+-		"learn_difficulty": 8,
+-		"oncrit_eocs": [
+-			"light_rest_eoc"
+-		],
+-		"ongethit_buffs": [{
+-			"id": "kr_debuff",
+-			"name": "Exposed",
+-			"description": "You've been struck! Adjust your stance.\n\n-3.75 to evade. Can stack up to 3 times.",
+-			"melee_allowed": true,
+-			"buff_duration": 3,
+-			"max_stacks": 3,
+-			"flat_bonuses": [
+-				{ "stat": "dodge", "scale": -3.75 }
+-			]
+-		}],
+-		"oncrit_buffs": [{
+-			"id": "kr_crit1",
+-			"name": "Kokuundo",
+-			"description": "In the shrouded haze, \nSteel shall carve its deadly path, \nSilent vengeance calls. \n\nYour speed increases by 75% of your agility. Can stack up to 3 times",
+-			"skill_requirements": [{ "name": "cutting", "level": 4 }],
+-			"melee_allowed": true,
+-			"buff_duration": 3,
+-			"max_stacks": 3,
+-			"flat_bonuses": [
+-				{ "stat": "speed", "scaling-stat": "dex", "scale": 0.75 }
+-			]
+-		}],
+-		"onkill_buffs": [{
+-			"id": "kr_kill",
+-			"name": "Heiyuhdao",
+-			"description": "Under the blade's dance, \nIn death, solace shall be found, \nYour Foes lost their chance. \n\nAll your actions are now 15% faster.",
+-			"melee_allowed": true,
+-			"buff_duration": 3,
+-			"max_stacks": 1,
+-			"skill_requirements": [{ "name": "cutting", "level": 6 }],
+-			"mult_bonuses": [
+-				{ "stat": "movecost", "scale": 0.85 }
+-			]
+-		}],
+-		"weapons": [
+-			"kr_katana"
+-		],
+-		"techniques": [
+-			"kr_hack",
+-			"kr_clean",
+-			"kr_focus",
+-			"kr_sky",
+-			"kr_sky2"
+-		]
+-	}
+-]
+diff --git a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/BattleTech.json b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/BattleTech.json
+deleted file mode 100644
+index 5b8a14a9c8a3..000000000000
+--- a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/BattleTech.json	
++++ /dev/null
+@@ -1,387 +0,0 @@
+-[
+-	{
+-		"type": "technique",
+-		"id": "testtec",
+-		"name": "Wide Strike",
+-		"melee_allowed": true,
+-		"skill_requirements": [ { "name": "melee", "level": 3 } ],
+-		"weighting": 2,
+-		"messages": [ "You swing in a wide arc through %s", "<npcname> swings in a wide arc through %s" ],
+-		"aoe": "wide",
+-		"description": "Attack in a wide arc, crit only, min 3 melee",
+-		"attack_vectors": [ "WEAPON" ],
+-		"eocs": [ "test_status" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "standoff",
+-		"name": "Standoff",
+-		"melee_allowed": true,
+-		"weighting": 3,
+-		"miss_recovery": true, 
+-		"description": "In the toughest of fights, hope will come.",
+-		"messages": [ "You strike through %s swiftly", "<npcname> strike through %s swiftly" ],
+-		"skill_requirements": [ { "name": "melee", "level": 3 } ],
+-		"attack_vectors": [ "WEAPON" ],
+-		"required_buffs_all": [ "zw_combatprep" ],
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 1.1 },
+-			{ "stat": "damage", "type": "cut", "scale": 1.1 } 
+-		],
+-		"eocs": [ "light_rest_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "flex_suppress",
+-		"name": "Flexible Suppression",
+-		"melee_allowed": true,
+-		"weighting": 5,
+-		"crit_tec": true,
+-		"down_dur": 3,
+-		"stun_dur": 2,
+-		"description": "Better to finish it off before it become more dangerous problem",
+-		"messages": [ "You deals a devastating blow at %s!", "<npcname> deals a devastating blow at %s!" ],
+-		"skill_requirements": [ { "name": "melee", "level": 5 } ],
+-		"attack_vectors": [ "WEAPON" ],
+-		"condition": { 
+-			"and": [ 
+-				{ "not": { "npc_has_effect": "downed" } }, 
+-				{ "or": [ 
+-					{ "not": { "npc_has_flag": "FLIES" } }, 
+-					{ "npc_has_flag": "DISABLE_FLIGHT" } 
+-				]} 
+-			]
+-		},
+-		"condition_desc": "* Only works on targets incapable of flight *",
+-		"required_buffs_all": [ "zw_block1", "zw_combatprep" ],
+-		"mult_bonuses": [ 
+-			{ "stat": "movecost", "scale": 1.1 },
+-			{ "stat": "damage", "type": "bash", "scale": 1.2 },
+-			{ "stat": "damage", "type": "cut", "scale": 1.2 } 
+-		]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "guardian",
+-		"name": "Guardian",
+-		"melee_allowed": true,
+-		"weighting": 1,
+-		"description": "To see the dawn, you must survive the night",
+-		"messages": [ "You deflects %s attack and strikes back.", "<npcname>s deflects %s attack and strikes back." ],
+-		"skill_requirements": [ { "name": "melee", "level": 7 } ],
+-		"attack_vectors": [ "WEAPON" ],
+-		"grab_break": true,
+-		"disarms": true,
+-		"block_counter": true, 
+-		"defensive": true,
+-		"required_buffs_all": [ "zw_combatprep" ],
+-		"mult_bonuses": [ 
+-			{ "stat": "movecost", "scale": 0.5 }, 
+-			{ "stat": "damage", "type": "bash", "scale": 0.6 },
+-			{ "stat": "damage", "type": "cut", "scale": 0.6 } 
+-		],
+-		"eocs": [ "light_rest_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "law",
+-		"name": "Law and Order",
+-		"melee_allowed": true,
+-		"weighting": 10,
+-		"description": "When we deliver <color_blue>Law</color>, <color_yellow>Order</color> shall follow",
+-		"messages": [ " <color_blue>Law</color> has been delivered to %s. <color_yellow>Order</color> is restored.", "<npcname>s delivers the <color_blue>Law</color> to %s. <color_yellow>Order</color> has been restored. " ],
+-		"skill_requirements": [ { "name": "melee", "level": 9 } ],
+-		"attack_vectors": [ "WEAPON" ],
+-		"condition": { "npc_has_effect": "downed" },
+-		"crit_tec": true, 
+-		"knockback_dist": 2,
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 1.6 },
+-			{ "stat": "damage", "type": "cut", "scale": 1.6 } 
+-		],
+-		"flat_bonuses": [ 
+-			{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.8 }, 
+-			{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.8} 
+-		],
+-		"eocs": [ "good_rest_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "ex_force",
+-		"name": "Excessive force",
+-		"melee_allowed": true,
+-		"weighting": 5,
+-		"description": "Your strike will send that enemy flying—no one will miss them anyway.",
+-		"messages": [ "With unyielding force and precision, you shove %s away.", "With unyielding force and precision, <npcname> shoves %s away." ],
+-		"skill_requirements": [ { "name": "melee", "level": 8 } ],
+-		"attack_vectors": [ "WEAPON" ], 
+-		"knockback_dist": 2,
+-		"required_buffs_all": [ "zw_step" ],
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 1.2 },
+-			{ "stat": "damage", "type": "cut", "scale": 1.2 } 
+-		],
+-		"flat_bonuses": [ 
+-			{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.3 }, 
+-			{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.3} 
+-		],
+-		"eocs": [ "light_rest_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "zw_mastery",
+-		"name": "Zwei mastery",
+-		"melee_allowed": true,
+-		"weighting": 15,
+-		"description": "<color_blue>Zwei</color> \n<color_yellow>To Protect and Serve</color>",
+-		"messages": [ "Like a hot knife through butter\n<color_red>You feel their flesh rip and their bones break</color> ", " <npcname>s <color_red>like a hot knife through butter</color>" ],
+-		"skill_requirements": [ { "name": "melee", "level": 10 } ],
+-		"attack_vectors": [ "WEAPON" ], 
+-		"aoe": "wide",
+-		"crit_tec": true, 
+-		"knockback_dist": 4,
+-		"knockback_spread": 3,
+-		"down_dur": 5,
+-		"stun_dur": 5,
+-		"required_buffs_all": [ "zw_block1" ],
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 1.4 },
+-			{ "stat": "damage", "type": "cut", "scale": 1.4 } 
+-		],
+-		"flat_bonuses": [ 	
+-			{ "stat": "arpen", "type": "cut", "scaling-stat": "str", "scale": 0.7 }, 
+-			{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.7} 
+-		],
+-		"eocs": [ "good_rest_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "rc_wrap",
+-		"name": "Steel hug",
+-		"unarmed_allowed": true,
+-		"skill_requirements": [ { "name": "unarmed", "level": 3 } ],
+-		"weighting": -2,
+-		"condition": {
+-			"and": [
+-				{ "math": [ "u_val('size') + 1", ">=", "n_val('size')" ] },
+-				{ "math": [ "n_val('size')", "!=", "1" ] },
+-				{ "not": { "npc_bodytype": "blob" } },
+-				{ "not": { "npc_bodytype": "fish" } },
+-				{ "not": { "npc_bodytype": "snake" } }
+-			]
+-		},
+-		"condition_desc": "Only works on a target of <info>similar size</info> with limbs to catch",
+-		"stun_dur": 1,
+-		"messages": [ "You wrap chains around %s and crush them!", "<npcname> wraps chains around %s and crushes them!" ],
+-		"description": "Stun for 1 turn",
+-		"attack_vectors": [ "GRAPPLE" ],
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 0.7 },
+-			{ "stat": "damage", "type": "stab", "scale": 3 }
+-		],
+-		"eocs": [ "bleed_mild_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "rc_hth",
+-		"name": "Head to head",
+-		"unarmed_allowed": true,
+-		"skill_requirements": [ { "name": "unarmed", "level": 6 } ],
+-		"weighting": 5,
+-		"messages": [ "You launch a frontal attack at %s! \nYou hear their bones crack.", "<npcname> launches a frontal attack at %s! \nYou hear cracking noises from %s." ],
+-		"description": "Stuns for 1 turn and breaks grab",
+-		"attack_vectors": [ "HAND" ],
+-		"required_buffs_all": [ "rc_block1" ],
+-		"forbidden_buffs_all": [ "rc_dodge1" ],
+-		"stun_dur": 1,
+-		"grab_break": true,
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 1.4 },
+-			{ "stat": "damage", "type": "stab", "scale": 0.3 }
+-		],
+-		"flat_bonuses": [ { "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.3} ],
+-		"eocs": [ "bleedrc_small_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "rc_flank",
+-		"name": "Flank Attack",
+-		"unarmed_allowed": true,
+-		"skill_requirements": [ { "name": "unarmed", "level": 6 } ],
+-		"weighting": 5,
+-		"messages": [ "You launch a flanking attack at %s. \nYou hear their bones crack", "<npcname> launches a flanking attack at %s. \nYou hear cracking noises from %s" ],
+-		"description": "Stuns for 1 turn and breaks grab",
+-		"attack_vectors": [ "HAND" ],
+-		"required_buffs_all": [ "rc_dodge1" ],
+-		"forbidden_buffs_all": [ "rc_block1" ],
+-		"stun_dur": 1,
+-		"grab_break": true,
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 0.3 },
+-			{ "stat": "damage", "type": "stab", "scale": 1.4 }
+-		],
+-		"flat_bonuses": [  { "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 0.3} ],
+-		"eocs": [ "bleedrc_small_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "rc_soft",
+-		"name": "You're Soft!",
+-		"unarmed_allowed": true,
+-		"skill_requirements": [ { "name": "unarmed", "level": 8 } ],
+-		"weighting": 15,
+-		"messages": [ "You tighten the chain around your hand and deliver a crushing blow to %s, channeling all your momentum into it!", "<npcname> tightens the chain around their hand and delivers a crushing blow to %s, channeling all their momentum into it!" ],
+-		"description": "Stuns, knockback, and downs the enemy",
+-		"attack_vectors": [ "HAND" ],
+-		"crit_tec": true,
+-		"condition": {
+-			"and": [ 
+-				{ "not": { "npc_has_effect": "downed" } }, 
+-				{ "or": [ { "not": { "npc_has_flag": "FLIES" } }, { "npc_has_flag": "DISABLE_FLIGHT" } ] },
+-				{ "u_has_strength": 12 },
+-				{ "npc_has_effect": "stunned" } 
+-			] 
+-		},
+-		"condition_desc": "Only works on a <info>non flying and stunned</info> target. Also your <info>Str</info> must be at least 12",
+-		"stun_dur": 1,
+-		"knockback_dist": 1,
+-		"knockback_follow": true,
+-		"down_dur": 3,
+-		"mult_bonuses": [ 
+-			{ "stat": "damage", "type": "bash", "scale": 1.45 },
+-			{ "stat": "damage", "type": "stab", "scale": 1.45}
+-		],
+-		"eocs": [ "bleed_medium_eoc", "good_rest_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "rc_finish",
+-		"name": "Die",
+-		"unarmed_allowed": true,
+-		"skill_requirements": [ { "name": "unarmed", "level": 8 } ],
+-		"weighting": 20,
+-		"messages": [ "You punch %s while sitting on top of them.", "<npcname> punches %s while sitting on top of them." ],
+-		"description": "Fast finishing attacks on a downed enemy",
+-		"attack_vectors": [ "HAND" ],
+-		"condition": {
+-			"and": [ 
+-				{ "npc_has_effect": "downed" },
+-				{ "u_has_dexterity": 12 }
+-			] 
+-		},
+-		"condition_desc": "Only works on a <info>downed</info> target. Also your <info>Dex</info> must be at least 12.",
+-		"mult_bonuses": [ 
+-			{ "stat": "movecost", "scale": 0.3},
+-			{ "stat": "damage", "type": "bash", "scale": 0.55 },
+-			{ "stat": "damage", "type": "stab", "scale": 0.55 }
+-		],
+-		"flat_bonuses": [  	
+-			{ "stat": "arpen", "type": "bash", "scaling-stat": "str", "scale": 0.8},
+-			{ "stat": "arpen", "type": "stab", "scaling-stat": "dex", "scale": 0.8}	
+-		],
+-		"eocs": [ "bleed_small_eoc_eoc", "light_rest_eoc", "bleedrc_small_eoc"  ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "kr_hack",
+-		"name": "Hack",
+-		"attack_vectors": [ "WEAPON" ],
+-		"melee_allowed": true,
+-		"skill_requirements": [ { "name": "cutting", "level": 4 } ],
+-		"weighting": 6,
+-		"messages": [ "You strike %s with lightning speed.", "<npcname> strikes %s so quickly that it's almost too fast to see."],
+-		"description": "Quick attack",
+-		"mult_bonuses": [ 
+-			{ "stat": "movecost", "scale": 0.3},
+-			{ "stat": "damage", "type": "cut", "scale": 0.33 }
+-		],
+-		"flat_bonuses": [  	
+-			{ "stat": "arpen", "type": "cut", "scaling-stat": "dex", "scale": 0.15} 
+-		],
+-		"eocs": [ "bleed_minor_eoc" ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "kr_clean",
+-		"name": "Clean up",
+-		"attack_vectors": [ "WEAPON" ],
+-		"melee_allowed": true,
+-		"crit_tec": true,
+-		"side_switch": true,
+-		"grab_break": true,
+-		"skill_requirements": [ { "name": "cutting", "level": 5 } ],
+-		"weighting": 2,
+-		"condition":  { "npc_has_effect": "bleed", "intensity": 10},
+-		"condition_desc": "Only works on a <info>bleeding</info> target",
+-		"messages": [ "You execute a wide slash through %s.", "<npcname> executes a wide slash through %s."],
+-		"description": "A powerful attack that slices through an enemy, only effective against a bleeding target.",
+-		"mult_bonuses": [ 
+-			{ "stat": "movecost", "scale": 0.9},
+-			{ "stat": "damage", "type": "cut", "scale": 1.15 }
+-		],
+-		"flat_bonuses": [  	{ "stat": "arpen", "type": "cut", "scaling-stat": "dex", "scale": 0.25} ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "kr_focus",
+-		"name": "Focus strike",
+-		"attack_vectors": [ "WEAPON" ],
+-		"melee_allowed": true,
+-		"crit_tec": true,
+-		"skill_requirements": [ { "name": "cutting", "level": 6 } ],
+-		"weighting": 2,
+-		"stun_dur": 2,
+-		"aoe":"impale",
+-		"condition":  { "npc_has_effect": "bleed", "intensity": 14},
+-		"condition_desc": "Only works on a <info>bleeding</info> target",
+-		"messages": [ "You pierce through %s.", "<npcname> pierces through %s."],
+-		"description": "A precise piercing attack that targets a bleeding enemy, delivering focused damage.",
+-		"mult_bonuses": [
+-			{ "stat": "damage", "type": "cut", "scale": 1.1 }
+-		],
+-		"flat_bonuses": [  	{ "stat": "arpen", "type": "cut", "scaling-stat": "dex", "scale": 0.35} ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "kr_sky",
+-		"name": "Sky clearing cut",
+-		"attack_vectors": [ "WEAPON" ],
+-		"melee_allowed": true,
+-		"crit_tec": true,
+-		"grab_break": true,
+-		"skill_requirements": [ { "name": "cutting", "level": 7 } ],
+-		"weighting": 3,
+-		"knockback_dist": 1,
+-		"down_dur": 2,
+-		"condition":  { "npc_has_effect": "bleed", "intensity": 17},
+-		"condition_desc": "Only works on a <info>bleeding</info> target",
+-		"messages": [ "You execute a powerful downward slash through %s.", "<npcname> executes a powerful downward slash through %s."],
+-		"description": "A powerful downward slash designed to strike through a bleeding enemy, dealing high damage.",
+-		"mult_bonuses": [ 
+-			{ "stat": "movecost", "scale": 1.1},
+-			{ "stat": "damage", "type": "cut", "scale": 1.45 }
+-		],
+-		"flat_bonuses": [  	{ "stat": "arpen", "type": "cut", "scaling-stat": "dex", "scale": 0.45} ]
+-	},
+-	{
+-		"type": "technique",
+-		"id": "kr_sky2",
+-		"name": "Cloud Cutter",
+-		"attack_vectors": [ "WEAPON" ],
+-		"melee_allowed": true,
+-		"crit_tec": true,
+-		"aoe": "wide",
+-		"skill_requirements": [ { "name": "cutting", "level": 8 } ],
+-		"weighting": 6,
+-		"knockback_dist": 2,
+-		"down_dur": 2,
+-		"condition":  { "npc_has_effect": "bleed", "intensity": 20},
+-		"condition_desc": "Only works on a <info>bleeding</info> target",
+-		"messages": [ "You execute a powerful wide diagonal slash through %s.", "<npcname> executes a powerful wide diagonal slash through %s."],
+-		"description": "A powerful diagonal slash aimed at a bleeding enemy, cutting through with immense force.",
+-		"mult_bonuses": [
+-			{ "stat": "damage", "type": "cut", "scale": 1.35 }
+-		],
+-		"flat_bonuses": [  	{ "stat": "arpen", "type": "cut", "scaling-stat": "dex", "scale": 0.55} ]
+-	}
+-]
+\ No newline at end of file
+diff --git a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Chain.json b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Chain.json
+deleted file mode 100644
+index 7063d7568510..000000000000
+--- a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Chain.json	
++++ /dev/null
+@@ -1,127 +0,0 @@
+-[
+-  {
+-    "id": "chain_curl",
+-    "type": "SPELL",
+-    "name": { "str": "Chain Curl" },
+-    "description": "Wrap an opponent in a chain, and then toss them away.",
+-    "flags": [ "NO_EXPLOSION_SFX", "SILENT", "NON_MAGICAL", "NO_FAIL", "NO_HANDS" ],
+-    "valid_targets": [ "hostile" ],
+-    "max_level": 1,
+-    "min_damage": -3,
+-    "max_damage": -3,
+-    "min_range": 3,
+-    "max_range": 3,
+-    "min_aoe": 0,
+-    "max_aoe": 0,
+-    "base_casting_time": 80,
+-    "shape": "blast",
+-    "effect": "effect_on_condition",
+-    "effect_str": "EOC_CHAIN_CURL"
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_CHAIN_CURL",
+-    "effect": [
+-      { "u_location_variable": { "context_val": "loc" } },
+-      { "npc_cast_spell": { "id": "chain_curl_1" }, "loc": { "context_val": "loc" } },
+-      { "u_location_variable": { "context_val": "loc" } },
+-      { "npc_cast_spell": { "id": "chain_curl_2" }, "loc": { "context_val": "loc" } },
+-      { "u_location_variable": { "context_val": "loc" } },
+-      { "npc_cast_spell": { "id": "chain_curl_3" }, "loc": { "context_val": "loc" } }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_CHAIN_CURL_FINAL",
+-    "effect": [
+-      { "u_location_variable": { "context_val": "loc" } },
+-      { "npc_cast_spell": { "id": "chain_curl_1" }, "loc": { "context_val": "loc" } },
+-      { "u_location_variable": { "context_val": "loc" } },
+-      { "npc_cast_spell": { "id": "chain_curl_2" }, "loc": { "context_val": "loc" } },
+-      { "u_location_variable": { "context_val": "loc" } },
+-      { "npc_cast_spell": { "id": "chain_curl_3" }, "loc": { "context_val": "loc" } }
+-    ]
+-  },
+-  {
+-    "id": "chain_curl_1",
+-    "type": "SPELL",
+-    "name": { "str": "Chain Curl" },
+-    "description": "Wrap an opponent in a chain, and then toss them away.",
+-    "flags": [ "SILENT", "NON_MAGICAL", "NO_FAIL", "NO_HANDS" ],
+-    "valid_targets": [ "hostile" ],
+-    "max_level": 1,
+-    "min_damage": -3,
+-    "max_damage": -3,
+-    "min_range": 3,
+-    "max_range": 3,
+-    "min_aoe": 0,
+-    "max_aoe": 0,
+-    "base_casting_time": 10,
+-    "shape": "blast",
+-    "effect": "directed_push"
+-  },
+-  {
+-    "id": "chain_curl_2",
+-    "type": "SPELL",
+-    "name": { "str": "Chain Curl" },
+-    "description": "Wrap an opponent in a chain, and then toss them away.",
+-    "flags": [ "SILENT", "NON_MAGICAL", "RANDOM_DAMAGE", "NO_FAIL", "NO_HANDS" ],
+-    "valid_targets": [ "hostile" ],
+-    "max_level": 1,
+-    "min_damage": { "math": [ "u_weapon_damage * 0.5" ] },
+-    "max_damage": { "math": [ "u_weapon_damage * 1.2" ] },
+-    "min_range": 3,
+-    "max_range": 3,
+-    "min_aoe": 1,
+-    "max_aoe": 1,
+-    "damage_type": "cut",
+-    "base_casting_time": 10,
+-    "shape": "blast",
+-    "effect": "attack"
+-  },
+-  {
+-    "id": "chain_curl_3",
+-    "type": "SPELL",
+-    "name": { "str": "Chain Curl" },
+-    "description": "Wrap an opponent in a chain, and then toss them away.",
+-    "flags": [ "SILENT", "NON_MAGICAL", "RANDOM_DAMAGE", "NO_FAIL", "NO_HANDS" ],
+-    "valid_targets": [ "hostile" ],
+-    "max_level": 1,
+-    "min_damage": 5,
+-    "max_damage": 10,
+-    "min_range": 3,
+-    "max_range": 3,
+-    "min_aoe": 0,
+-    "max_aoe": 0,
+-    "base_casting_time": 1,
+-    "shape": "blast",
+-    "effect": "directed_push"
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_GET_WEAPON_DAMAGE",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wields_item",
+-    "effect": [ 
+-      {
+-        "u_run_inv_eocs": "all",
+-        "search_data": [ { "wielded_only": true } ],
+-        "true_eocs": [
+-          {
+-            "id": "EOC_STATS",
+-            "effect": [
+-              { "math": [ "u_weapon_damage = n_melee_damage('ALL')" ] }  
+-            ]
+-          }
+-        ] 
+-      }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_GET_WEAPON_DAMAGE_START",
+-    "eoc_type": "EVENT",
+-    "required_event": "game_start",
+-    "effect": [ { "math": [ "u_weapon_damage = 0" ] } ]
+-  }
+-]
+\ No newline at end of file
 diff --git a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json
-index 346319ba81de..596040627fb9 100644
+deleted file mode 100644
+index 346319ba81de..000000000000
 --- a/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json	
-+++ b/Arts of martial fighting in melee range using weapons and sometimes bare hands/Another one/And another one/Shiny.json	
++++ /dev/null
+@@ -1,434 +0,0 @@
+-[
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_mang_ranged_attack_monster",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_ranged_attacks_monster",
+-    "condition": {
+-       "u_has_item": "SHIN_aura"
+-    },
+-    "effect": [
+-      { "u_cast_spell": { "id": "spell_mang", "hit_self": true } }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_mang_ranged_attack_character",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_ranged_attacks_character",
+-    "condition": {
+-       "u_has_item": "SHIN_aura"
+-    },
+-    "effect": [
+-      { "u_cast_spell": { "id": "spell_mang", "hit_self": true } }
+-    ]
+-  },
+-  {
+-    "id": "spell_shin",
+-    "type": "SPELL",
+-    "name": "Activate Shin",
+-    "description": "",
+-    "valid_targets": [ "self" ],
+-    "effect": "spawn_item",
+-    "effect_str": "SHIN_aura",
+-    "shape": "blast",
+-    "min_aoe": 0,
+-    "max_aoe": 0,
+-    "min_duration": { "math": ["600000"] },
+-    "base_casting_time": 0,
+-    "final_casting_time": 0,
+-    "base_energy_cost": 0,
+-    "final_energy_cost": 0,
+-    "energy_source": "NONE",
+-    "difficulty": 0,
+-    "max_level": 1,
+-    "flags": [ "SILENT", "NON_MAGICAL", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
+-  },
+-  {
+-    "id": "spell_mang",
+-    "type": "SPELL",
+-    "name": "Apply Mang",
+-    "description": "",
+-    "valid_targets": [ "self", "hostile" ],
+-    "effect": "effect_on_condition",
+-    "effect_str": "EOC_mang_spell",
+-    "shape": "blast",
+-    "min_aoe": 0,
+-    "max_aoe": 0,
+-    "base_casting_time": 0,
+-    "final_casting_time": 0,
+-    "base_energy_cost": 0,
+-    "final_energy_cost": 0,
+-    "energy_source": "NONE",
+-    "difficulty": 0,
+-    "max_level": 1,
+-    "flags": [ "SILENT", "NON_MAGICAL", "NO_EXPLOSION_SFX", "NO_HANDS", "NO_LEGS" ]
+-  },
+-  {
+-    "id": "SHIN_aura",
+-    "type": "ITEM",
+-    "subtypes": [ "ARMOR", "ARTIFACT" ],
+-    "name": "Shin Aura",
+-    "description": "A golden flame that pulses with a calmness that does not match the beat of combat, like the calm within the eye of a storm.",
+-    "weight": "0 g",
+-    "volume": "0 ml",
+-    "material": [ "wind" ],
+-    "symbol": "0",
+-    "color": "yellow",
+-    "flags": [ "ZERO_WEIGHT", "NO_TAKEOFF" ],
+-    "passive_effects": [ { "id": "SHIN_aura_1" }, { "id": "SHIN_aura_2" }, { "id": "SHIN_aura_3" } ]
+-  },
+-  {
+-    "type": "enchantment",
+-    "id": "SHIN_aura_1",
+-    "has": "WORN",
+-    "condition": { "math": [ "u_val('morale') == 0" ] },
+-    "hit_you_effect": [ { "id": "spell_mang", "hit_self": true } ],
+-    "values": [
+-      { "value": "PAIN", "add": -5 },
+-      { "value": "KNOCKDOWN_RESIST", "add": 100 },
+-      { "value": "KNOCKBACK_RESIST", "add": 100 },
+-      { "value": "RANGED_DAMAGE", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
+-      { "value": "THROW_DAMAGE", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } }
+-    ],
+-    "melee_damage_bonus": [ 
+-        { "type": "bash", "add": { "math": [ "3" ] } },
+-        { "type": "bash", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
+-        { "type": "stab", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
+-        { "type": "cut", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } }
+-    ],
+-    "incoming_damage_mod": [ 
+-      { "type": "bash", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } },
+-      { "type": "stab", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } },
+-      { "type": "cut", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } },
+-      { "type": "bullet", "multiply": { "math": [ "-0.4 - (u_vitamin('trauma') / 200)" ] } } 
+-    ]
+-  },
+-  {
+-    "type": "enchantment",
+-    "id": "SHIN_aura_2",
+-    "has": "WORN",
+-    "condition": { "u_has_proficiency": "prof_shen_1" },
+-    "values": [
+-      { "value": "PAIN", "add": -5 },
+-      { "value": "BONUS_BLOCK", "add": 1 },
+-      { "value": "BONUS_DODGE", "add": 1 },
+-      { "value": "RANGE_DODGE", "add": { "math": [ "0.1 * (1 + (u_vitamin('trauma') / 20))" ] } }
+-    ]
+-  },
+-  {
+-    "type": "enchantment",
+-    "id": "SHIN_aura_3",
+-    "has": "WORN",
+-    "condition": { "u_has_proficiency": "prof_shen_2" },
+-    "values": [
+-      { "value": "PAIN", "add": -5 },
+-      { "value": "DEXTERITY", "add": { "math": [ "1 * (1 + (u_vitamin('trauma') / 20))" ] } },
+-      { "value": "STRENGTH", "add": { "math": [ "1 * (1 + (u_vitamin('trauma') / 20))" ] } },
+-      { "value": "SPEED", "add": { "math": [ "10 * (1 + (u_vitamin('trauma') / 10))" ] } }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_mang_spell",
+-    "eoc_type": "ACTIVATION",
+-    "condition": { "u_has_proficiency": "prof_mang_0" },
+-    "effect": [
+-      { 
+-        "if": { "math": [ "u_mang > 0" ] },
+-        "then": [
+-          { "u_message": "In a blaze of power, <u_val:mang> Mang explode into a existance around your attack!", "type": "mixed" }
+-        ]
+-      },
+-      { "math": [ "_max_mang = ( u_vitamin('trauma') - 10) / 15" ] },
+-      { "if": { "math": [ "u_skill('self-control') > 8" ] }, "then": { "math": [ "_max_mang += 1" ] } },
+-      { "if": { "and": [ { "not": { "u_has_proficiency": "prof_mang_1" } }, { "math": [ "_max_mang > 2" ] } ] }, "then": { "math": [ "_max_mang = 2" ] } },
+-      { "if": { "and": [ { "not": { "u_has_proficiency": "prof_mang_2" } }, { "math": [ "_max_mang > 4" ] } ] }, "then": { "math": [ "_max_mang = 4" ] } },
+-      { "math": [ "u_mang = rand( _max_mang )" ] }
+-    ]
+-  },
+-  
+-  
+-  
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_0",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [ 
+-        { "math": [ "u_skill('self-control') < 2" ] }, 
+-        { "not": { "u_know_recipe": "prac_control_0" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 4 } }, 
+-        { "math": [ "u_vitamin('trauma') > 5" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_0" },
+-      { "u_message": "You're feeling worse and worse day by day.. Maybe there's a way to bring your emotions back under control? Perhaps you could practice.", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_1",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [ 
+-        { "math": [ "u_skill('self-control') > 0" ] }, 
+-        { "u_know_recipe": "prac_control_0" },
+-        { "not": { "u_know_recipe": "prac_control_1" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 4 } }, 
+-        { "math": [ "u_vitamin('trauma') > 7" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_1" },
+-      { "u_message": "Try as you might, you feel this world wearing away at you. Perhaps what you need is not calm, but to practice focus.", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_2",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 2" ] }, 
+-        { "u_know_recipe": "prac_control_1" },
+-        { "not": { "u_know_recipe": "prac_control_2" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 6 } }, 
+-        { "math": [ "u_vitamin('trauma') > 10" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_2" },
+-      { "u_message": "If- If you can just drown out the distractions.. Maybe you could actually focus. Surely?", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_3",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 4" ] }, 
+-        { "u_know_recipe": "prac_control_2" },
+-        { "not": { "u_know_recipe": "prac_control_3" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 6 } }, 
+-        { "math": [ "u_vitamin('trauma') > 12" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_3" },
+-      { "u_message": "Maybe you have a hang on it, the knowledge settling, but maybe your focus can go even deeper? Maybe you can just drown out the terrors?", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_4",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 5" ] }, 
+-        { "u_know_recipe": "prac_control_3" },
+-        { "not": { "u_know_recipe": "prac_control_4" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 10 } }, 
+-        { "math": [ "u_vitamin('trauma') > 16" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_4" },
+-      { "u_message": "That's it! You have it, it finally clicks in your mind, the next step - Simply be able to enter that moment of perfect focus, no matter what you're doing.", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_5",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 7" ] }, 
+-        { "u_know_recipe": "prac_control_4" },
+-        { "not": { "u_know_recipe": "prac_control_5" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 10 } }, 
+-        { "math": [ "u_vitamin('trauma') > 20" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_5" },
+-      { "u_message": "Finally, you feel in control. Properly this time. The horrors of the City are far away, even when they are close. But practice is always good.", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_6",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 8" ] }, 
+-        { "u_know_recipe": "prac_control_5" },
+-        { "not": { "u_know_recipe": "prac_control_6" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 12 } }, 
+-        { "math": [ "u_vitamin('trauma') > 24" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_6" },
+-      { "u_message": "Nothing bothers you any more, the terror, the awful things you have to do to survive. None of it matters. That is that, this is this.", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_control_wake_7",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_wakes_up",
+-    "condition": {
+-      "and": [  
+-        { "math": [ "u_skill('self-control') > 9" ] }, 
+-        { "u_know_recipe": "prac_control_6" },
+-        { "not": { "u_know_recipe": "prac_control_7" } }, 
+-        { "x_in_y_chance": { "x": 1, "y": 12 } }, 
+-        { "math": [ "u_vitamin('trauma') > 30" ] } 
+-      ] 
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_control_7" },
+-      { "u_message": "Soon, there will only be perfect focus. You can do anything you need to, even worries are merely things to be deflected, imperfections in your midst.", "popup": true }
+-    ]
+-  },
+-  
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_shin_learn_damage",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_takes_damage",
+-    "condition": {
+-      "and": [ 
+-        { "u_has_trait": "mut_self_control_on" },
+-        { "not": { "u_know_recipe": "prac_shin_0" } },
+-        { "math": [ "u_skill('self-control') > 3" ] },
+-        { "math": [ "u_val('focus') > 80" ] },
+-        { "x_in_y_chance": { "x": 1, "y": 64 } }
+-      ]
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_shin_0" },
+-      { "u_message": "The light just now? Did it ignite as you got hurt? It seems to be reacting to your control, maybe you can use this?", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_shin_learn_break",
+-    "eoc_type": "EVENT",
+-    "required_event": "broken_bone",
+-    "condition": {
+-      "and": [ 
+-        { "u_has_item": "SHIN_aura" },
+-        { "u_has_proficiency": "prac_shin_0" },
+-        { "not": { "u_know_recipe": "prac_shin_1" } },
+-        { "math": [ "u_skill('self-control') > 5" ] },
+-        { "x_in_y_chance": { "x": 1, "y": 8 } }
+-      ]
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_shin_1" },
+-      { "u_message": "Agony races through you as your limb bends and snaps the wrong way, your Shin aura flickers, trying to aid and further soothe the pain like a cool ice. Maybe you're learning to use it better?", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_shin_learn_death",
+-    "eoc_type": "PREVENT_DEATH",
+-    "condition": {
+-      "and": [ 
+-        { "u_has_item": "SHIN_aura" },
+-        { "u_has_proficiency": "prac_shin_1" },
+-        { "not": { "u_know_recipe": "prac_shin_2" } },
+-        { "math": [ "u_skill('self-control') > 7" ] },
+-        { "x_in_y_chance": { "x": 1, "y": 2 } }
+-      ]
+-    },
+-    "effect": [
+-      "u_prevent_death",
+-      { "run_eocs": [ "EOC_life_heal" ] },
+-      { "u_learn_recipe": "prac_shin_2" },
+-      { "u_message": "As the last gasp of life leaves you, your Shin flares, your body starts to restore, and you begin to understand. The cooling shimmer of the aura dances, growing with your understanding of your mortality, but it shall never save you again- Luck was simply on your side this one time.", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_life_heal",
+-    "effect": [
+-      { "math": [ "u_hp('ALL') = 999" ] },
+-      { "math": [ "u_hp('ALL_MAJOR') = 45" ] },
+-      { "math": [ "u_vitamin('redcells') = 0" ] },
+-      { "math": [ "u_vitamin('bad_food') = 0" ] },
+-      { "math": [ "u_vitamin('blood') = 0" ] },
+-      { "math": [ "u_pain() = 0" ] },
+-      { "math": [ "u_val('rad') = 0" ] },
+-      { "u_lose_effect": "corroding" },
+-      { "u_lose_effect": "onfire" },
+-      { "u_lose_effect": "dazed" },
+-      { "u_lose_effect": "stunned" },
+-      { "u_lose_effect": "venom_blind" },
+-      { "u_lose_effect": "formication" },
+-      { "u_lose_effect": "blisters" },
+-      { "u_lose_effect": "frostbite" },
+-      { "u_lose_effect": "frostbite_recovery" },
+-      { "u_lose_effect": "wet" },
+-      { "u_lose_effect": "slimed" },
+-      { "u_lose_effect": "migo_atmosphere" },
+-      { "u_lose_effect": "fetid_goop" },
+-      { "u_lose_effect": "sap" },
+-      { "u_lose_effect": "nausea" },
+-      { "u_lose_effect": "bleed" }
+-    ]
+-  },
+-  
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_mang_learn_attack",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_melee_attacks_character",
+-    "condition": {
+-      "and": [ 
+-        { "u_has_item": "SHIN_aura" },
+-        { "not": { "u_know_recipe": "prac_mang_0" } },
+-        { "math": [ "u_skill('self-control') > 4" ] },
+-        { "math": [ "u_val('focus') > 65" ] },
+-        { "math": [ "u_vitamin('emotion') > 60" ] },
+-        { "x_in_y_chance": { "x": 1, "y": 64 } }
+-      ]
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_mang_0" },
+-      { "u_message": "As you strike a ring of light flickers around your attack. Can you perhaps use that to strengthen your strikes?", "popup": true }
+-    ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_mang_learn_kill",
+-    "eoc_type": "EVENT",
+-    "required_event": "character_kills_character",
+-    "condition": {
+-      "and": [ 
+-        { "u_has_item": "SHIN_aura" },
+-        { "u_has_proficiency": "prac_mang_0" },
+-        { "not": { "u_know_recipe": "prac_mang_1" } },
+-        { "math": [ "u_skill('self-control') > 7" ] },
+-        { "math": [ "u_val('focus') > 65" ] },
+-        { "math": [ "u_vitamin('emotion') > 80" ] },
+-        { "x_in_y_chance": { "x": 1, "y": 12 } }
+-      ]
+-    },
+-    "effect": [
+-      { "u_learn_recipe": "prac_mang_1" },
+-      { "u_message": "One more blow comes down, this time it's not just a single Mang that radiates outwards- it's two. No, three. With a great crack, your opponent is no more.", "popup": true }
+-    ]
+-  }
+-]
+\ No newline at end of file
+diff --git a/Items/Item_group.json b/Items/Item_group.json
+index 70224d9f3d9e..e3cf81e61be9 100644
+--- a/Items/Item_group.json
++++ b/Items/Item_group.json
+@@ -62,6 +62,19 @@
+       { "item": "pipe_glass", "prob": 55 }
+     ]
+   },
++  {
++    "type": "item_group",
++    "id": "any_soda",
++    "subtype": "distribution",
++    "copy-from": "any_soda",
++    "extend": {
++      "items": [
++        [ "wellcheers", 25 ],
++        [ "cherry_wellcheers", 25 ],
++        [ "grape_wellcheers", 20 ]
++      ]
++    }
++   },
+   {
+     "type": "item_group",
+     "id": "vending_drink_items",
+@@ -69,9 +82,9 @@
+     "copy-from": "vending_drink_items",
+     "extend": {
+       "entries": [
+-        { "item": "wellcheers", "prob": 25 },
+-        { "item": "cherry_wellcheers", "prob": 25 },
+-        { "item": "grape_wellcheers", "prob": 25 }
++        { "item": "wellcheers", "prob": 25, "container-item": "well_can", "sealed": true },
++        { "item": "cherry_wellcheers", "prob": 25, "container-item": "wellcherry_can", "sealed": true },
++        { "item": "grape_wellcheers", "prob": 20, "container-item": "wellgrape_can", "sealed": true }
+       ]
+     }
+   },
+@@ -82,18 +95,12 @@
+     "copy-from": "SUS_fridge",
+     "extend": {
+       "entries": [
+-        { "item": "wellcheers", "prob": 5 },
+-        { "item": "cherry_wellcheers", "prob": 5 },
+-        { "item": "grape_wellcheers", "prob": 5 }
++        { "item": "wellcheers", "prob": 5, "container-item": "well_can", "sealed": true },
++        { "item": "cherry_wellcheers", "prob": 5, "container-item": "wellcherry_can", "sealed": true },
++        { "item": "grape_wellcheers", "prob": 5, "container-item": "wellgrape_can", "sealed": true }
+       ]
+     }
+   },
+-  {
+-    "type": "item_group",
+-    "id": "vending_drink_items",
+-    "copy-from": "vending_drink_items",
+-    "extend": { "items": [ [ "wellcheers", 25 ], [ "cherry_wellcheers", 25 ], [ "grape_wellcheers", 20 ] ] }
+-  },
+   {
+     "type": "item_group",
+     "id": "default_zombie_items_bags",
+@@ -103,9 +110,9 @@
+       "entries": [
+         {
+           "distribution": [
+-            { "item": "wellcheers", "prob": 50 },
+-            { "item": "cherry_wellcheers", "prob": 50 },
+-            { "item": "grape_wellcheers", "prob": 50 },
++            { "item": "wellcheers", "prob": 50, "container-item": "well_can", "sealed": true },
++            { "item": "cherry_wellcheers", "prob": 50, "container-item": "wellcherry_can", "sealed": true },
++            { "item": "grape_wellcheers", "prob": 50, "container-item": "wellgrape_can", "sealed": true },
+             { "item": "zweiflyer_item", "prob": 40 }
+           ]
+         }
+@@ -136,7 +143,9 @@
+     "id": "shrimp_drop",
+     "type": "item_group",
+     "subtype": "collection",
+-    "entries": [ { "item": "prawn_wellcheers", "count": [ 1, 1 ], "prob": 20 } ]
++    "entries": [
++      { "item": "prawn_wellcheers", "count": [ 1, 1 ], "container-item": "wellprawn_can", "prob": 20, "sealed": true }
++    ]
+   },
+   {
+     "id": "doubt_drop",
+@@ -163,14 +172,14 @@
+     "type": "item_group",
+     "subtype": "collection",
+     "copy-from": "SUS_martial_bookcase",
+-    "extend": { "entries": [ 
++    "extend": { "entries": [
+         { "item": "axe_arts_beginner", "prob": 3 },
+-        { "item": "chain_arts_beginner", "prob": 3 }, 
+-        { "item": "impact_arts_beginner", "prob": 3 }, 
+-        { "item": "knife_arts_beginner", "prob": 3 }, 
+-        { "item": "piercing_arts_beginner", "prob": 3 }, 
+-        { "item": "sword_arts_beginner", "prob": 3 } 
+-      ] 
++        { "item": "chain_arts_beginner", "prob": 3 },
++        { "item": "impact_arts_beginner", "prob": 3 },
++        { "item": "knife_arts_beginner", "prob": 3 },
++        { "item": "piercing_arts_beginner", "prob": 3 },
++        { "item": "sword_arts_beginner", "prob": 3 }
++      ]
+     }
+   },
+   {
+diff --git a/Items/StigmaWorkshop/weapons.json b/Items/StigmaWorkshop/weapons.json
+index e760fd194ff2..48695e1f170f 100644
+--- a/Items/StigmaWorkshop/weapons.json
++++ b/Items/StigmaWorkshop/weapons.json
+@@ -122,6 +122,7 @@
+       "DURABLE_MELEE",
+       "CHARGEDIM",
+       "TRADER_AVOID",
++      "SPAWN_ACTIVE",
+       "WATER_BREAK"
+     ],
+     "use_action": {
+@@ -311,6 +312,7 @@
+       "TRADER_AVOID",
+       "WATER_BREAK",
+       "CONDUCTIVE",
++      "SPAWN_ACTIVE",
+       "SHEATH_SWORD"
+     ],
+     "use_action": {
+@@ -474,6 +476,7 @@
+       "CHARGEDIM",
+       "TRADER_AVOID",
+       "WATER_BREAK",
++      "SPAWN_ACTIVE",
+       "NONCONDUCTIVE"
+     ],
+     "use_action": {
+@@ -495,4 +498,4 @@
+     "power_draw": "600 kW",
+     "revert_to": "stigma_axe_u"
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Items/internet/internet_access.json b/Items/internet/internet_access.json
+index fac1b379b2a4..0b07e4d51195 100644
+--- a/Items/internet/internet_access.json
++++ b/Items/internet/internet_access.json
+@@ -24,7 +24,6 @@
+     "charges_per_use": 1,
+     "etransfer_rate": "30 MB",
+     "e_port": "phone",
+-    "e_ports_banned": [ "USB-A" ],
+     "id": "smart_phone_internet",
+     "copy-from": "abstract_smart_phone",
+     "description": "A popular, fancy smartphone.  Capable of taking photos with its integrated camera and illuminating an area with its flashlight app, assuming it has enough charge.  The smartphone also has a clock app that includes an alarm and an app for tracking consumed calories.  Runs on a small, rechargeable power cell compatible with a Unified Power Supply.\nNow with internet access!",
+@@ -41,6 +40,12 @@
+       "E_FILE_DEVICE",
+       "EBOOKSAVE",
+       "CAMERA",
++      {
++        "type": "mp3",
++        "transform": "smart_phone_internet_music",
++        "message": "You put in the earbuds and start listening to music.",
++        "activate": true
++      },
+       "CALORIES_INTAKE_TRACKER",
+       "PORTABLE_GAME",
+       {
+@@ -58,17 +63,8 @@
+         "effect_on_conditions": [ "EOC_internet_access" ]
+       }
+     ],
+-    "flags": [
+-      "WATCH",
+-      "ALARMCLOCK",
+-      "USE_UPS",
+-      "NO_UNLOAD",
+-      "NO_RELOAD",
+-      "WATER_BREAK",
+-      "CALORIES_INTAKE",
+-      "ELECTRONIC",
+-      "INTERNET_ACCESS"
+-    ],
++    "faults": [ { "fault_group": "electronic_general" } ],
++    "extend": { "flags": [ "INTERNET_ACCESS" ] },
+     "pocket_data": [
+       { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 56 } },
+       {
+@@ -76,33 +72,44 @@
+         "rigid": true,
+         "max_contains_volume": "1 ml",
+         "max_contains_weight": "1 g",
+-        "weight_multiplier": 0,
++        "weight_multiplier": 0.0,
+         "ememory_max": "256 GB"
+       }
+     ]
+   },
+   {
++    "id": "smart_phone_internet_music",
++    "copy-from": "smart_phone_internet",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": { "str": "smartphone (SIM) - music", "str_pl": "smartphones (SIM) - music" },
++    "description": "This phone is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
++    "power_draw": "300 mW",
++    "revert_to": "smart_phone_internet",
++    "use_action": [
++      "E_FILE_DEVICE",
++      "EBOOKSAVE",
++      "PORTABLE_GAME",
++      { "type": "mp3", "transform": "smart_phone_internet", "message": "The phone turns off.", "activate": false },
++      { "type": "link_up", "cable_length": 3, "charge_rate": "20 W" },
++      {
++        "menu_text": "Browse the web",
++        "type": "effect_on_conditions",
++        "effect_on_conditions": [ "EOC_internet_access" ]
++      }
++    ],
++    "tick_action": [ "MP3_ON" ],
++    "extend": { "flags": [ "TRADER_AVOID" ] }
++  },
++  {
++    "id": "smart_phone_internet_flashlight",
++    "copy-from": "smart_phone_internet",
+     "type": "ITEM",
+     "subtypes": [ "TOOL" ],
+     "name": { "str": "smartphone (SIM) - Flashlight", "str_pl": "smartphones (SIM) - Flashlight" },
+-    "material": [ { "type": "aluminum", "portion": 75 }, { "type": "plastic", "portion": 25 } ],
+-    "tool_ammo": [ "battery" ],
+     "charges_per_use": 1,
+     "etransfer_rate": "30 MB",
+     "e_port": "phone",
+-    "e_ports_banned": [ "USB-A" ],
+-    "id": "smart_phone_internet_flashlight",
+-    "copy-from": "smart_phone_internet",
+-    "description": "A popular, fancy smartphone.  Capable of taking photos with its integrated camera and illuminating an area with its flashlight app, assuming it has enough charge.  The smartphone also has a clock app that includes an alarm and an app for tracking consumed calories.  Runs on a small, rechargeable power cell compatible with a Unified Power Supply.\nNow with internet access!",
+-    "//": "stats from samsung galaxy s24",
+-    "weight": "233 g",
+-    "volume": "111 ml",
+-    "longest_side": "15 cm",
+-    "price": "1299 USD",
+-    "price_postapoc": "1 USD",
+-    "looks_like": "cell_phone",
+-    "symbol": ";",
+-    "color": "light_gray",
+     "use_action": [
+       "E_FILE_DEVICE",
+       "EBOOKSAVE",
+@@ -121,43 +128,15 @@
+         "effect_on_conditions": [ "EOC_internet_access" ]
+       }
+     ],
+-    "flags": [
+-      "WATCH",
+-      "ALARMCLOCK",
+-      "USE_UPS",
+-      "NO_UNLOAD",
+-      "NO_RELOAD",
+-      "WATER_BREAK",
+-      "CALORIES_INTAKE",
+-      "ELECTRONIC",
+-      "CHARGEDIM",
+-      "TRADER_AVOID",
+-      "INTERNET_ACCESS"
+-    ],
+-    "pocket_data": [
+-      { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 56 } },
+-      {
+-        "pocket_type": "E_FILE_STORAGE",
+-        "rigid": true,
+-        "max_contains_volume": "1 ml",
+-        "max_contains_weight": "1 g",
+-        "weight_multiplier": 0,
+-        "ememory_max": "256 GB"
+-      }
+-    ],
+     "power_draw": "1500 mW",
+-    "revert_to": "smart_phone"
++    "revert_to": "smart_phone",
++    "light": 20,
++    "extend": { "flags": [ "CHARGEDIM", "TRADER_AVOID", "SPAWN_ACTIVE" ] }
+   },
+   {
+     "type": "ITEM",
+     "subtypes": [ "TOOL" ],
+     "name": { "str": "laptop computer (SIM)" },
+-    "material": [ { "type": "aluminum", "portion": 75 }, { "type": "plastic", "portion": 25 } ],
+-    "tool_ammo": [ "battery" ],
+-    "charges_per_use": 1,
+-    "etransfer_rate": "30 MB",
+-    "e_port": "laptop",
+-    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE", "INTERNET_ACCESS" ],
+     "melee_damage": { "bash": 6 },
+     "id": "laptop_internet",
+     "copy-from": "abstract_laptop",
+@@ -190,6 +169,8 @@
+         "effect_on_conditions": [ "EOC_internet_access" ]
+       }
+     ],
++    "extend": { "flags": [ "INTERNET_ACCESS" ] },
++    "faults": [ { "fault_group": "electronic_general" } ],
+     "pocket_data": [
+       { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 200 } },
+       {
+@@ -197,7 +178,7 @@
+         "rigid": true,
+         "max_contains_volume": "1 ml",
+         "max_contains_weight": "1 g",
+-        "weight_multiplier": 0,
++        "weight_multiplier": 0.0,
+         "ememory_max": "1 TB"
+       }
+     ]
+@@ -206,25 +187,9 @@
+     "type": "ITEM",
+     "subtypes": [ "TOOL" ],
+     "name": { "str": "laptop computer (SIM) - lit screen", "str_pl": "laptop computers (SIM) - lit screen" },
+-    "material": [ { "type": "aluminum", "portion": 75 }, { "type": "plastic", "portion": 25 } ],
+-    "tool_ammo": [ "battery" ],
+-    "charges_per_use": 1,
+-    "etransfer_rate": "30 MB",
+-    "e_port": "laptop",
+-    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "TRADER_AVOID", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE" ],
+-    "melee_damage": { "bash": 6 },
+     "id": "laptop_screen_internet_lit",
+     "copy-from": "laptop_internet",
+     "category": "tools",
+-    "description": "A portable computer, a ubiquitous tool both before and after the cataclysm.  Now that you have internet access, you can download it with books and other useful software.",
+-    "//": "https://www.amazon.com/dp/B0D6Z664QC, battery is FRANGWAT01",
+-    "symbol": ",",
+-    "color": "dark_gray",
+-    "price": "1049 USD",
+-    "price_postapoc": "2 USD 50 cent",
+-    "weight": "1319 g",
+-    "volume": "703 ml",
+-    "longest_side": "322 mm",
+     "use_action": [
+       "E_FILE_DEVICE",
+       "EBOOKSAVE",
+@@ -243,18 +208,9 @@
+         "effect_on_conditions": [ "EOC_internet_access" ]
+       }
+     ],
+-    "pocket_data": [
+-      { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 200 } },
+-      {
+-        "pocket_type": "E_FILE_STORAGE",
+-        "rigid": true,
+-        "max_contains_volume": "1 ml",
+-        "max_contains_weight": "1 g",
+-        "weight_multiplier": 0,
+-        "ememory_max": "1 TB"
+-      }
+-    ],
+     "power_draw": "1 W",
+-    "revert_to": "laptop"
++    "revert_to": "laptop",
++    "light": 10,
++    "extend": { "flags": [ "SPAWN_ACTIVE" ] }
+   }
+ ]
+diff --git a/Items/internet/internet_missions.json b/Items/internet/internet_missions.json
+index fd7a4dc925bf..b55424b9717a 100644
+--- a/Items/internet/internet_missions.json
++++ b/Items/internet/internet_missions.json
+@@ -90,8 +90,8 @@
+     "origins": [ "ORIGIN_COMPUTER" ],
+     "destination": "w_station_mb1"
+   },
+-  
+-  
++
++
+   {
+     "id": "MISSION_CLEAN_UP_9",
+     "type": "mission_definition",
+@@ -105,7 +105,7 @@
+     "monster_kill_goal": 3,
+     "invisible_on_complete": false,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "field", "random": true, "search_range": 60, "min_distance": 8, "z": 0 },
++      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 8, "z": 0 },
+       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 3, "target": true } ] }
+     },
+     "origins": [ "ORIGIN_COMPUTER" ],
+@@ -124,7 +124,7 @@
+     "monster_kill_goal": 5,
+     "invisible_on_complete": false,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "road", "random": true, "search_range": 60, "min_distance": 14, "z": 0 },
++      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 14, "z": 0 },
+       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 5, "target": true } ] }
+     },
+     "origins": [ "ORIGIN_COMPUTER" ],
+@@ -143,10 +143,10 @@
+     "monster_kill_goal": 9,
+     "invisible_on_complete": false,
+     "start": {
+-      "assign_mission_target": { "om_terrain": "road", "random": true, "search_range": 800, "min_distance": 20, "z": 0 },
++      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 20, "z": 0 },
+       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 2, "target": false }, { "monster": "mon_superbiae_c2", "x": [ 10, 15 ], "y": [ 10, 15 ], "target": true } ] }
+     },
+     "origins": [ "ORIGIN_COMPUTER" ],
+     "end": { "effect": [ { "math": [ "u_credit += 45000" ] }, { "u_message": "Your account is credited with the reward." } ] }
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json b/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
+index 81f533c26bf9..5f1ebadbe54e 100644
+--- a/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
++++ b/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
+@@ -1,7 +1,7 @@
+ [
+ {
+     "type": "mapgen",
+-    
++
+     "om_terrain": [ "hhpp1" ],
+     "object": {
+     "fill_ter": "t_floor",
+@@ -57,7 +57,7 @@
+       "*": [ ["t_tree", 10] , ["t_tree_apple", 8], ["t_tree_peach", 5], ["t_tree_cherry", 7] ],
+ 			"!": "t_floor_olight"
+ 		},
+-		"furniture": { 
++		"furniture": {
+       "n": "f_desk",
+       "h": "f_chair_black",
+       "H": "f_chair_white",
+@@ -91,7 +91,7 @@
+ },
+ {
+     "type": "mapgen",
+-    
++
+     "om_terrain": [ "hhpp2" ],
+     "object": {
+     "fill_ter": "t_floor",
+@@ -153,7 +153,7 @@
+       "*": [ ["t_tree", 10] , ["t_tree_apple", 8], ["t_tree_peach", 5], ["t_tree_cherry", 7] ],
+ 			"!": "t_floor_olight"
+ 		},
+-		"furniture": { 
++		"furniture": {
+       "n": "f_desk",
+       "h": "f_chair_black",
+       "H": "f_chair_white",
+@@ -187,7 +187,7 @@
+ },
+ {
+     "type": "mapgen",
+-    
++
+     "om_terrain": [ "hhpp1_roof" ],
+     "object": {
+       "fill_ter": "t_flat_roof",
+@@ -222,7 +222,7 @@
+ },
+ {
+     "type": "mapgen",
+-    
++
+     "om_terrain": [ "hhpp2_roof" ],
+     "object": {
+       "fill_ter": "t_flat_roof",
+@@ -255,4 +255,4 @@
+ 	  "palettes": [ "roof_palette" ]
+ 	}
+ }
+-]
+\ No newline at end of file
++]
+diff --git a/Martial Arts/Axe.json b/Martial Arts/Axe.json
+index 690ef55a4d57..fa025c8f1226 100644
+--- a/Martial Arts/Axe.json	
++++ b/Martial Arts/Axe.json	
+@@ -9,7 +9,7 @@
+     "purifiable": false,
+     "valid": false
+   },
+-  
++
+   {
+     "id": "aa_wild_swing",
+     "type": "SPELL",
+@@ -19,7 +19,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "AXE_ARTS",
+-    "base_energy_cost": 5, 
++    "base_energy_cost": 5,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.0 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 2.0 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -31,8 +31,8 @@
+     "damage_type": "cut",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "HAND_AXES" }, { "u_has_wielded_with_weapon_category": "GREAT_AXES" } ] },
+-    "condition_fail_message": "You must have an axe equipped."
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "HAND_AXES" }, { "u_has_wielded_with_weapon_category": "GREAT_AXES" } ] },
++    "caster_condition_fail_message": "You must have an axe equipped."
+   },
+   {
+     "id": "aa_the_cutting_arc",
+@@ -43,7 +43,7 @@
+     "valid_targets": [ "hostile", "ground" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "AXE_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.4 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 0.7 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -55,8 +55,8 @@
+     "damage_type": "cut",
+     "effect": "attack",
+     "shape": "cone",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "HAND_AXES" }, { "u_has_wielded_with_weapon_category": "GREAT_AXES" } ] },
+-    "condition_fail_message": "You must have an axe equipped."
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "HAND_AXES" }, { "u_has_wielded_with_weapon_category": "GREAT_AXES" } ] },
++    "caster_condition_fail_message": "You must have an axe equipped."
+   },
+   {
+     "id": "aa_skull_splitter",
+@@ -67,7 +67,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "AXE_ARTS",
+-    "base_energy_cost": 30, 
++    "base_energy_cost": 30,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 1.0 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 1.5 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -80,8 +80,8 @@
+     "damage_type": "cut",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "HAND_AXES" }, { "u_has_wielded_with_weapon_category": "GREAT_AXES" } ] },
+-    "condition_fail_message": "You must have an axe equipped."
+-  } 
+-  
+-]
+\ No newline at end of file
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "HAND_AXES" }, { "u_has_wielded_with_weapon_category": "GREAT_AXES" } ] },
++    "caster_condition_fail_message": "You must have an axe equipped."
++  }
++
++]
+diff --git a/Martial Arts/Chain.json b/Martial Arts/Chain.json
+index 6fd6947c90f0..01935955675c 100644
+--- a/Martial Arts/Chain.json	
++++ b/Martial Arts/Chain.json	
+@@ -18,7 +18,7 @@
+     "valid_targets": [ "hostile", "ground" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "CHAIN_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.4 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 0.6 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -31,8 +31,8 @@
+     "effect": "effect_on_condition",
+     "effect_str": "EOC_CHAIN_KNOCKDOWN",
+     "shape": "cone",
+-    "condition": { "u_has_wielded_with_weapon_category": "WHIPS" },
+-    "condition_fail_message": "You must have a chain equipped."
++    "caster_condition": { "u_has_wielded_with_weapon_category": "WHIPS" },
++    "caster_condition_fail_message": "You must have a chain equipped."
+   },
+   {
+     "type": "effect_on_condition",
+@@ -54,7 +54,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "CHAIN_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 2.0 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 3.0 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -66,8 +66,8 @@
+     "damage_type": "bash",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "and": [ { "u_has_wielded_with_weapon_category": "WHIPS" }, { "npc_has_effect": "downed" } ] },
+-    "condition_fail_message": "You must have a chain equipped, and the opponent must be downed."
++    "caster_condition": { "and": [ { "u_has_wielded_with_weapon_category": "WHIPS" }, { "npc_has_effect": "downed" } ] },
++    "caster_condition_fail_message": "You must have a chain equipped, and the opponent must be downed."
+   },
+   {
+     "id": "ca_chain_curl",
+@@ -78,7 +78,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "CHAIN_ARTS",
+-    "base_energy_cost": 20, 
++    "base_energy_cost": 20,
+     "max_level": 1,
+     "min_damage": -3,
+     "max_damage": -3,
+@@ -88,7 +88,8 @@
+     "max_aoe": 0,
+     "base_casting_time": 80,
+     "shape": "blast",
+-    "condition": { "u_has_wielded_with_weapon_category": "WHIPS" },
++    "caster_condition": { "u_has_wielded_with_weapon_category": "WHIPS" },
++    "caster_condition_fail_message": "You must have a chain equipped.",
+     "effect": "effect_on_condition",
+     "effect_str": "EOC_CHAIN_CURL"
+   },
+@@ -171,4 +172,4 @@
+     "shape": "blast",
+     "effect": "directed_push"
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Martial Arts/Impact.json b/Martial Arts/Impact.json
+index e1497c303176..f369910f3636 100644
+--- a/Martial Arts/Impact.json	
++++ b/Martial Arts/Impact.json	
+@@ -18,7 +18,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "IMPACT_ARTS",
+-    "base_energy_cost": 5, 
++    "base_energy_cost": 5,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.6 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 0.8 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -30,8 +30,8 @@
+     "damage_type": "bash",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "GREAT_HAMMERS" }, { "u_has_wielded_with_weapon_category": "BATONS" }, { "u_has_wielded_with_weapon_category": "FLAILS" }, { "u_has_wielded_with_weapon_category": "MACES" }, { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" } ] },
+-    "condition_fail_message": "You must have an impact weapon equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "GREAT_HAMMERS" }, { "u_has_wielded_with_weapon_category": "BATONS" }, { "u_has_wielded_with_weapon_category": "FLAILS" }, { "u_has_wielded_with_weapon_category": "MACES" }, { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" } ] },
++    "caster_condition_fail_message": "You must have an impact weapon equipped.",
+     "extra_effects": [
+       {
+         "id": "minor_disorient",
+@@ -49,7 +49,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "IMPACT_ARTS",
+-    "base_energy_cost": 15, 
++    "base_energy_cost": 15,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.7 * (0.5 + (0.1 * u_skill('melee'))) * (1 + u_effect_intensity('disoriented') / 4)" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 1.1 * (0.5 + (0.1 * u_skill('melee'))) * (1 + u_effect_intensity('disoriented') / 2)" ] },
+@@ -61,10 +61,10 @@
+     "damage_type": "bash",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "and": [ { "or": [ { "u_has_wielded_with_weapon_category": "GREAT_HAMMERS" }, { "u_has_wielded_with_weapon_category": "BATONS" }, { "u_has_wielded_with_weapon_category": "FLAILS" }, { "u_has_wielded_with_weapon_category": "MACES" }, { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" } ] }, 
+-    { "npc_has_effect": "disoriented" } 
++    "caster_condition": { "and": [ { "or": [ { "u_has_wielded_with_weapon_category": "GREAT_HAMMERS" }, { "u_has_wielded_with_weapon_category": "BATONS" }, { "u_has_wielded_with_weapon_category": "FLAILS" }, { "u_has_wielded_with_weapon_category": "MACES" }, { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" } ] },
++    { "npc_has_effect": "disoriented" }
+     ] },
+-    "condition_fail_message": "You must have an impact weapon equipped, and the opponent must be disoriented.",
++    "caster_condition_fail_message": "You must have an impact weapon equipped, and the opponent must be disoriented.",
+     "extra_effects": [
+       {
+         "id": "remove_disorient",
+@@ -82,7 +82,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "IMPACT_ARTS",
+-    "base_energy_cost": 20, 
++    "base_energy_cost": 20,
+     "max_level": 1,
+     "min_damage": { "math": [ "1 + (u_effect_intensity('disoriented') * 2)" ] },
+     "max_damage": { "math": [ "1 + (u_effect_intensity('disoriented') * 4)" ] },
+@@ -94,10 +94,10 @@
+     "damage_type": "bash",
+     "effect": "directed_push",
+     "shape": "blast",
+-    "condition": { "and": [ { "or": [ { "u_has_wielded_with_weapon_category": "GREAT_HAMMERS" }, { "u_has_wielded_with_weapon_category": "BATONS" }, { "u_has_wielded_with_weapon_category": "FLAILS" }, { "u_has_wielded_with_weapon_category": "MACES" }, { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" } ] }, 
+-    { "npc_has_effect": "disoriented" } 
++    "caster_condition": { "and": [ { "or": [ { "u_has_wielded_with_weapon_category": "GREAT_HAMMERS" }, { "u_has_wielded_with_weapon_category": "BATONS" }, { "u_has_wielded_with_weapon_category": "FLAILS" }, { "u_has_wielded_with_weapon_category": "MACES" }, { "u_has_wielded_with_weapon_category": "QUARTERSTAVES" } ] },
++    { "npc_has_effect": "disoriented" }
+     ] },
+-    "condition_fail_message": "You must have an impact weapon equipped, and the opponent must be disoriented.",
++    "caster_condition_fail_message": "You must have an impact weapon equipped, and the opponent must be disoriented.",
+     "extra_effects": [
+       {
+         "id": "remove_disorient",
+@@ -106,9 +106,9 @@
+       }
+     ]
+   },
+-  
+-  
+-  
++
++
++
+   {
+     "id": "minor_disorient",
+     "type": "SPELL",
+@@ -136,9 +136,9 @@
+     "effect": [
+       {
+         "if": { "u_has_effect": "disoriented" },
+-        "then": [ 
+-          { "math": [ "_inten = u_effect_intensity('disoriented')" ] }, 
+-          { "u_lose_effect": "disoriented" }, 
++        "then": [
++          { "math": [ "_inten = u_effect_intensity('disoriented')" ] },
++          { "u_lose_effect": "disoriented" },
+           { "u_add_effect": "disoriented", "duration": "20 seconds", "intensity": { "math": [ "_inten + 1" ] } }
+         ],
+         "else": [
+@@ -174,10 +174,10 @@
+     "effect": [
+       {
+         "if": { "u_has_effect": "disoriented" },
+-        "then": [ 
++        "then": [
+           { "u_lose_effect": "disoriented" }
+         ]
+       }
+     ]
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Martial Arts/Knives.json b/Martial Arts/Knives.json
+index f80a64195da9..ad9963228820 100644
+--- a/Martial Arts/Knives.json	
++++ b/Martial Arts/Knives.json	
+@@ -18,7 +18,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 1.5 * (0.5 + (0.1 * u_skill('throwing')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 2.0 * (0.5 + (0.1 * u_skill('throwing')))" ] },
+@@ -30,8 +30,8 @@
+     "damage_type": "stab",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
+-    "condition_fail_message": "You must have a knife equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
++    "caster_condition_fail_message": "You must have a knife equipped.",
+     "extra_effects": [
+       {
+         "id": "sp_laceration",
+@@ -54,7 +54,7 @@
+     "valid_targets": [ "hostile", "ground" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "base_energy_cost": 25, 
++    "base_energy_cost": 25,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 1.2 * (0.5 + (0.1 * u_skill('throwing')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 1.6 * (0.5 + (0.1 * u_skill('throwing')))" ] },
+@@ -66,8 +66,8 @@
+     "damage_type": "cut",
+     "effect": "attack",
+     "shape": "cone",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
+-    "condition_fail_message": "You must have a knife equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
++    "caster_condition_fail_message": "You must have a knife equipped.",
+     "extra_effects": [
+       {
+         "id": "sp_laceration",
+@@ -90,8 +90,8 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "effect_str": "EOC_LACERATION", 
+-    "base_energy_cost": 15, 
++    "effect_str": "EOC_LACERATION",
++    "base_energy_cost": 15,
+     "max_level": 1,
+     "min_damage": 1,
+     "max_damage": 5,
+@@ -103,8 +103,8 @@
+     "damage_type": "cut",
+     "effect": "effect_on_condition",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
+-    "condition_fail_message": "You must have a knife equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
++    "caster_condition_fail_message": "You must have a knife equipped.",
+     "extra_effects": [
+       {
+         "id": "sp_laceration",
+@@ -122,7 +122,7 @@
+     "valid_targets": [ "hostile", "ground" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "base_energy_cost": 15, 
++    "base_energy_cost": 15,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 1.5 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 2.0 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -134,8 +134,8 @@
+     "damage_type": "cut",
+     "effect": "dash",
+     "shape": "line",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
+-    "condition_fail_message": "You must have a knife equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
++    "caster_condition_fail_message": "You must have a knife equipped.",
+     "extra_effects": [
+       {
+         "id": "sp_laceration",
+@@ -158,7 +158,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "base_energy_cost": 50, 
++    "base_energy_cost": 50,
+     "max_level": 1,
+     "min_damage": 5,
+     "max_damage": 5,
+@@ -170,8 +170,8 @@
+     "damage_type": "cut",
+     "effect": "effect_on_condition",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
+-    "condition_fail_message": "You must have a knife equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "KNIVES" }, { "u_has_wielded_with_weapon_category": "SHIVS" } ] },
++    "caster_condition_fail_message": "You must have a knife equipped.",
+     "extra_effects": [
+       {
+         "id": "sp_laceration",
+@@ -205,9 +205,9 @@
+       }
+     ]
+   },
+-  
+-  
+-  
++
++
++
+   {
+     "id": "dimensional_cut",
+     "type": "SPELL",
+@@ -217,8 +217,8 @@
+     "valid_targets": [ "self" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "effect_str": "EOC_DIMENSION_TWIST", 
+-    "base_energy_cost": 0, 
++    "effect_str": "EOC_DIMENSION_TWIST",
++    "base_energy_cost": 0,
+     "max_level": 1,
+     "min_range": 0,
+     "max_range": 0,
+@@ -227,8 +227,8 @@
+     "base_casting_time": 5,
+     "effect": "effect_on_condition",
+     "shape": "blast",
+-    "condition": { "u_has_wielded_with_weapon_category": "KNIVES" },
+-    "condition_fail_message": "You must have a knife equipped."
++    "caster_condition": { "u_has_wielded_with_weapon_category": "KNIVES" },
++    "caster_condition_fail_message": "You must have a knife equipped."
+   },
+   {
+     "type": "effect_on_condition",
+@@ -241,9 +241,9 @@
+       }
+     ]
+   },
+-  
+-  
+-  
++
++
++
+   {
+     "id": "minor_laceration",
+     "type": "SPELL",
+@@ -271,9 +271,9 @@
+     "effect": [
+       {
+         "if": { "u_has_effect": "laceration" },
+-        "then": [ 
+-          { "math": [ "_inten = u_effect_intensity('laceration')" ] }, 
+-          { "u_lose_effect": "laceration" }, 
++        "then": [
++          { "math": [ "_inten = u_effect_intensity('laceration')" ] },
++          { "u_lose_effect": "laceration" },
+           { "u_add_effect": "laceration", "duration": "20 seconds", "intensity": { "math": [ "_inten + 5" ] } }
+         ],
+         "else": [
+@@ -288,9 +288,9 @@
+     "effect": [
+       {
+         "if": { "u_has_effect": "laceration" },
+-        "then": [ 
+-          { "math": [ "_inten = u_effect_intensity('laceration')" ] }, 
+-          { "u_lose_effect": "laceration" }, 
++        "then": [
++          { "math": [ "_inten = u_effect_intensity('laceration')" ] },
++          { "u_lose_effect": "laceration" },
+           { "u_add_effect": "laceration", "duration": "20 seconds", "intensity": { "math": [ "_inten + 10 + rand(20)" ] } }
+         ],
+         "else": [
+@@ -305,16 +305,16 @@
+     "effect": [
+       {
+         "if": { "u_has_effect": "laceration" },
+-        "then": [ 
+-          { "math": [ "_inten = u_effect_intensity('laceration')" ] }, 
+-          { "u_lose_effect": "laceration" }, 
++        "then": [
++          { "math": [ "_inten = u_effect_intensity('laceration')" ] },
++          { "u_lose_effect": "laceration" },
+           { "u_cast_spell": { "id": "ka_assassination_finale", "hit_self": true, "min_level": { "math": [ "_inten" ] } } }
+         ]
+       }
+     ]
+   },
+-  
+-  
++
++
+   {
+     "id": "ka_assassination_finale",
+     "type": "SPELL",
+@@ -324,7 +324,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "KNIFE_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 100,
+     "min_damage": 1,
+     "max_damage": 101,
+@@ -338,4 +338,4 @@
+     "effect": "attack",
+     "shape": "blast"
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Martial Arts/Piercing.json b/Martial Arts/Piercing.json
+index d0dac44331b5..13f200cdff92 100644
+--- a/Martial Arts/Piercing.json	
++++ b/Martial Arts/Piercing.json	
+@@ -9,7 +9,7 @@
+     "purifiable": false,
+     "valid": false
+   },
+-  
++
+   {
+     "id": "pa_piercing_strike",
+     "type": "SPELL",
+@@ -19,7 +19,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "PIERCING_ARTS",
+-    "base_energy_cost": 5, 
++    "base_energy_cost": 5,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.5 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 0.7 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -32,8 +32,8 @@
+     "damage_type": "stab",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
+-    "condition_fail_message": "You must have a piercing weapon equipped."
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
++    "caster_condition_fail_message": "You must have a piercing weapon equipped."
+   },
+   {
+     "id": "pa_skypiercer",
+@@ -44,7 +44,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "PIERCING_ARTS",
+-    "base_energy_cost": 20, 
++    "base_energy_cost": 20,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.8 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 1.2 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -57,8 +57,8 @@
+     "damage_type": "stab",
+     "effect": "attack",
+     "shape": "line",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
+-    "condition_fail_message": "You must have a piercing weapon equipped."
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
++    "caster_condition_fail_message": "You must have a piercing weapon equipped."
+   },
+   {
+     "id": "pa_retreating_strike",
+@@ -69,7 +69,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "PIERCING_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.4 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 0.6 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -81,8 +81,8 @@
+     "damage_type": "bash",
+     "effect": "attack",
+     "shape": "line",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
+-    "condition_fail_message": "You must have a piercing weapon equipped.",
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
++    "caster_condition_fail_message": "You must have a piercing weapon equipped.",
+     "extra_effects": [
+       {
+         "id": "pa_retreating_strike_2",
+@@ -100,7 +100,7 @@
+     "valid_targets": [ "ground" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "PIERCING_ARTS",
+-    "base_energy_cost": 0, 
++    "base_energy_cost": 0,
+     "max_level": 1,
+     "min_damage": 0,
+     "max_damage": 0,
+@@ -112,7 +112,7 @@
+     "damage_type": "bash",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
+-    "condition_fail_message": "You must have a piercing weapon equipped."
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "FENCING_WEAPONRY" }, { "u_has_wielded_with_weapon_category": "LONG_THRUSTING_SWORDS" }, { "u_has_wielded_with_weapon_category": "SPEARS" } ] },
++    "caster_condition_fail_message": "You must have a piercing weapon equipped."
+   }
+-]
+\ No newline at end of file
++]
+diff --git a/Martial Arts/Shiny.json b/Martial Arts/Shiny.json
+index dcbdafd7113c..7342e3f94f79 100644
+--- a/Martial Arts/Shiny.json	
++++ b/Martial Arts/Shiny.json	
 @@ -91,17 +91,17 @@
        { "value": "RANGED_DAMAGE", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } },
        { "value": "THROW_DAMAGE", "multiply": { "math": [ "1 + (1.2 * u_mang)" ] } }
@@ -391,599 +2755,79 @@ index 346319ba81de..596040627fb9 100644
 -]
 \ No newline at end of file
 +]
-diff --git a/Items/Item_group.json b/Items/Item_group.json
-index 2a377eaa4343..c0cf0a953f49 100644
---- a/Items/Item_group.json
-+++ b/Items/Item_group.json
-@@ -64,14 +64,14 @@
+diff --git a/Martial Arts/Swords.json b/Martial Arts/Swords.json
+index 364a4232786c..16144d36c932 100644
+--- a/Martial Arts/Swords.json	
++++ b/Martial Arts/Swords.json	
+@@ -18,7 +18,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "SWORD_ARTS",
+-    "base_energy_cost": 10, 
++    "base_energy_cost": 10,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 0.8 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 1.2 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -31,8 +31,8 @@
+     "effect": "effect_on_condition",
+     "effect_str": "EOC_SWORD_OPENING",
+     "shape": "blast",
+-    "condition": { "or": [ { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }, { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" }, { "u_has_wielded_with_weapon_category": "LONG_SWORDS" }, { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" }, { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" } ] },
+-    "condition_fail_message": "You must have a sword equipped."
++    "caster_condition": { "or": [ { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }, { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" }, { "u_has_wielded_with_weapon_category": "LONG_SWORDS" }, { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" }, { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" } ] },
++    "caster_condition_fail_message": "You must have a sword equipped."
    },
    {
-     "type": "item_group",
--    "id": "softdrinks_canned",
-+    "id": "any_soda",
-     "subtype": "distribution",
--    "copy-from": "softdrinks_canned",
-+    "copy-from": "any_soda",
-     "extend": {
--      "entries": [
--        { "item": "wellcheers", "prob": 25 },
--        { "item": "cherry_wellcheers", "prob": 25 },
--        { "item": "grape_wellcheers", "prob": 25 }
-+      "items": [
-+        [ "wellcheers", 25 ],
-+        [ "cherry_wellcheers", 25 ],
-+        [ "grape_wellcheers", 20 ]
-       ]
-     }
-   },
-@@ -79,7 +79,13 @@
-     "type": "item_group",
-     "id": "vending_drink_items",
-     "copy-from": "vending_drink_items",
--    "extend": { "items": [ [ "wellcheers", 25 ], [ "cherry_wellcheers", 25 ], [ "grape_wellcheers", 20 ] ] }
-+    "extend": {
-+      "items": [
-+        { "item": "wellcheers", "prob": 25, "container-item": "well_can", "sealed": true },
-+        { "item": "cherry_wellcheers", "prob": 25, "container-item": "wellcherry_can", "sealed": true },
-+        { "item": "grape_wellcheers", "prob": 20, "container-item": "wellgrape_can", "sealed": true }
+     "type": "effect_on_condition",
+@@ -53,7 +53,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "SWORD_ARTS",
+-    "base_energy_cost": 5, 
++    "base_energy_cost": 5,
+     "max_level": 1,
+     "min_damage": 0,
+     "max_damage": 0,
+@@ -65,12 +65,12 @@
+     "effect": "effect_on_condition",
+     "effect_str": "EOC_SWORD_FLOURISH",
+     "shape": "blast",
+-    "condition": { "and": [ 
+-        { "or": [ { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }, { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" }, { "u_has_wielded_with_weapon_category": "LONG_SWORDS" }, { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" }, { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" } ] }, 
++    "caster_condition": { "and": [
++        { "or": [ { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }, { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" }, { "u_has_wielded_with_weapon_category": "LONG_SWORDS" }, { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" }, { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" } ] },
+         { "npc_has_effect": "opening" }
+-      ] 
 +      ]
-+    }
+     },
+-    "condition_fail_message": "You must have a sword equipped, and the opponent must be showing an opening!"
++    "caster_condition_fail_message": "You must have a sword equipped, and the opponent must be showing an opening!"
    },
    {
-     "type": "item_group",
-@@ -90,9 +96,9 @@
-       "entries": [
-         {
-           "distribution": [
--            { "item": "wellcheers", "prob": 50 },
--            { "item": "cherry_wellcheers", "prob": 50 },
--            { "item": "grape_wellcheers", "prob": 50 },
-+            { "item": "wellcheers", "prob": 50, "container-item": "well_can", "sealed": true },
-+            { "item": "cherry_wellcheers", "prob": 50, "container-item": "wellcherry_can", "sealed": true },
-+            { "item": "grape_wellcheers", "prob": 50, "container-item": "wellgrape_can", "sealed": true },
-             { "item": "zweiflyer_item", "prob": 40 }
-           ]
-         }
-@@ -135,7 +141,9 @@
-     "id": "shrimp_drop",
-     "type": "item_group",
-     "subtype": "collection",
--    "entries": [ { "item": "prawn_wellcheers", "count": [ 1, 1 ], "prob": 20 } ]
-+    "entries": [
-+      { "item": "prawn_wellcheers", "count": [ 1, 1 ], "container-item": "wellprawn_can", "prob": 20, "sealed": true }
-+    ]
-   },
-   {
-     "id": "doubt_drop",
-diff --git a/Items/StigmaWorkshop/weapons.json b/Items/StigmaWorkshop/weapons.json
-index bf02b36cb71b..54db44244657 100644
---- a/Items/StigmaWorkshop/weapons.json
-+++ b/Items/StigmaWorkshop/weapons.json
-@@ -57,7 +57,6 @@
-       "type": "transform",
-       "msg": "You flick the switch on the bat, a fwoosh of flame igniting around it.",
-       "target": "stigma_bat_on",
--      "active": true,
-       "need_charges": 1,
-       "need_charges_msg": "The bat's batteries are dead."
+     "type": "effect_on_condition",
+@@ -88,7 +88,7 @@
+     "valid_targets": [ "hostile" ],
+     "magic_type": "PM_MARTIAL_ARTS",
+     "spell_class": "SWORD_ARTS",
+-    "base_energy_cost": 20, 
++    "base_energy_cost": 20,
+     "max_level": 1,
+     "min_damage": { "math": [ "u_weapon_damage * 1.2 * (0.5 + (0.1 * u_skill('melee')))" ] },
+     "max_damage": { "math": [ "u_weapon_damage * 1.4 * (0.5 + (0.1 * u_skill('melee')))" ] },
+@@ -101,11 +101,11 @@
+     "damage_type": "cut",
+     "effect": "attack",
+     "shape": "blast",
+-    "condition": { "and": [ 
++    "caster_condition": { "and": [
+         { "or": [ { "u_has_wielded_with_weapon_category": "BIONIC_SWORDS" }, { "u_has_wielded_with_weapon_category": "SHORT_SWORDS" }, { "u_has_wielded_with_weapon_category": "LONG_SWORDS" }, { "u_has_wielded_with_weapon_category": "GREAT_SWORDS" }, { "u_has_wielded_with_weapon_category": "MEDIUM_SWORDS" } ] },
+         { "npc_has_effect": "opening" }
+-      ] 
++      ]
      },
-@@ -119,12 +118,13 @@
-     "tool_ammo": [
-       "battery"
-     ],
-+    "light": 80,
-     "flags": [
-       "DURABLE_MELEE",
--      "LIGHT_80",
-       "CHARGEDIM",
-       "TRADER_AVOID",
--      "WATER_BREAK"
-+      "WATER_BREAK",
-+      "SPAWN_ACTIVE"
-     ],
-     "use_action": {
-       "menu_text": "Turn off",
-@@ -235,7 +235,6 @@
-       "type": "transform",
-       "msg": "You flick the switch on the sword, a fwoosh of flame igniting around it.",
-       "target": "stigma_shortsword_on",
--      "active": true,
-       "need_charges": 1,
-       "need_charges_msg": "The sword's batteries are dead."
-     },
-@@ -308,14 +307,15 @@
-     "tool_ammo": [
-       "battery"
-     ],
-+    "light": 80,
-     "flags": [
-       "DURABLE_MELEE",
--      "LIGHT_80",
-       "CHARGEDIM",
-       "TRADER_AVOID",
-       "WATER_BREAK",
-       "CONDUCTIVE",
--      "SHEATH_SWORD"
-+      "SHEATH_SWORD",
-+      "SPAWN_ACTIVE"
-     ],
-     "use_action": {
-       "menu_text": "Turn off",
-@@ -403,7 +403,6 @@
-       "type": "transform",
-       "msg": "You flick the switch on the axe, a fwoosh of flame igniting around it.",
-       "target": "stigma_axe_on",
--      "active": true,
-       "need_charges": 1,
-       "need_charges_msg": "The axe's batteries are dead."
-     },
-@@ -474,13 +473,14 @@
-     "tool_ammo": [
-       "battery"
-     ],
-+    "light": 80,
-     "flags": [
-       "DURABLE_MELEE",
--      "LIGHT_80",
-       "CHARGEDIM",
-       "TRADER_AVOID",
-       "WATER_BREAK",
--      "NONCONDUCTIVE"
-+      "NONCONDUCTIVE",
-+      "SPAWN_ACTIVE"
-     ],
-     "use_action": {
-       "menu_text": "Turn off",
-@@ -501,4 +501,4 @@
-     "power_draw": "600 kW",
-     "revert_to": "stigma_axe_u"
+-    "condition_fail_message": "You must have a sword equipped, and the opponent must be showing an opening!"
++    "caster_condition_fail_message": "You must have a sword equipped, and the opponent must be showing an opening!"
    }
--]
-\ No newline at end of file
-+]
-diff --git a/Items/internet/internet_access.json b/Items/internet/internet_access.json
-index e77d4cd7394f..3287169b3db2 100644
---- a/Items/internet/internet_access.json
-+++ b/Items/internet/internet_access.json
-@@ -24,7 +24,6 @@
-     "charges_per_use": 1,
-     "etransfer_rate": "30 MB",
-     "e_port": "phone",
--    "e_ports_banned": [ "USB-A" ],
-     "id": "smart_phone_internet",
-     "copy-from": "abstract_smart_phone",
-     "description": "A popular, fancy smartphone.  Capable of taking photos with its integrated camera and illuminating an area with its flashlight app, assuming it has enough charge.  The smartphone also has a clock app that includes an alarm and an app for tracking consumed calories.  Runs on a small, rechargeable power cell compatible with a Unified Power Supply.\nNow with internet access!",
-@@ -41,14 +40,18 @@
-       "E_FILE_DEVICE",
-       "EBOOKSAVE",
-       "CAMERA",
--      "MP3",
-+      {
-+        "type": "mp3",
-+        "transform": "smart_phone_internet_music",
-+        "message": "You put in the earbuds and start listening to music.",
-+        "activate": true
-+      },
-       "CALORIES_INTAKE_TRACKER",
-       "PORTABLE_GAME",
-       {
-         "target": "smart_phone_internet_flashlight",
-         "msg": "You activate the flashlight app.",
-         "menu_text": "Turn on flashlight",
--        "active": true,
-         "need_charges": 1,
-         "need_charges_msg": "The smartphone's charge is too low.",
-         "type": "transform"
-@@ -60,17 +63,8 @@
-         "effect_on_conditions": [ "EOC_internet_access" ]
-       }
-     ],
--    "flags": [
--      "WATCH",
--      "ALARMCLOCK",
--      "USE_UPS",
--      "NO_UNLOAD",
--      "NO_RELOAD",
--      "WATER_BREAK",
--      "CALORIES_INTAKE",
--      "ELECTRONIC",
--      "INTERNET_ACCESS"
--    ],
-+    "faults": [ { "fault_group": "electronic_general" } ],
-+    "extend": { "flags": [ "INTERNET_ACCESS" ] },
-     "pocket_data": [
-       { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 56 } },
-       {
-@@ -78,33 +72,43 @@
-         "rigid": true,
-         "max_contains_volume": "1 ml",
-         "max_contains_weight": "1 g",
--        "weight_multiplier": 0,
-+        "weight_multiplier": 0.0,
-         "ememory_max": "256 GB"
-       }
-     ]
-   },
-   {
-+    "id": "smart_phone_internet_music",
-+    "copy-from": "smart_phone_internet",
-     "type": "ITEM",
-     "subtypes": [ "TOOL" ],
--    "name": { "str": "smartphone (SIM) - Flashlight", "str_pl": "smartphones (SIM) - Flashlight" },
--    "material": [ { "type": "aluminum", "portion": 75 }, { "type": "plastic", "portion": 25 } ],
--    "tool_ammo": [ "battery" ],
--    "charges_per_use": 1,
--    "etransfer_rate": "30 MB",
--    "e_port": "phone",
--    "e_ports_banned": [ "USB-A" ],
-+    "name": { "str": "smartphone (SIM) - music", "str_pl": "smartphones (SIM) - music" },
-+    "description": "This phone is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
-+    "power_draw": "300 mW",
-+    "revert_to": "smart_phone_internet",
-+    "use_action": [
-+      "E_FILE_DEVICE",
-+      "EBOOKSAVE",
-+      "PORTABLE_GAME",
-+      { "type": "mp3", "transform": "smart_phone_internet", "message": "The phone turns off.", "activate": false },
-+      { "type": "link_up", "cable_length": 3, "charge_rate": "20 W" },
-+      {
-+        "menu_text": "Browse the web",
-+        "type": "effect_on_conditions",
-+        "effect_on_conditions": [ "EOC_internet_access" ]
-+      }
-+    ],
-+    "tick_action": [ "MP3_ON" ],
-+    "extend": { "flags": [ "TRADER_AVOID" ] }
-+  },
-+  {
-     "id": "smart_phone_internet_flashlight",
-     "copy-from": "smart_phone_internet",
--    "description": "A popular, fancy smartphone.  Capable of taking photos with its integrated camera and illuminating an area with its flashlight app, assuming it has enough charge.  The smartphone also has a clock app that includes an alarm and an app for tracking consumed calories.  Runs on a small, rechargeable power cell compatible with a Unified Power Supply.\nNow with internet access!",
--    "//": "stats from samsung galaxy s24",
--    "weight": "233 g",
--    "volume": "111 ml",
--    "longest_side": "15 cm",
--    "price": "1299 USD",
--    "price_postapoc": "1 USD",
--    "looks_like": "cell_phone",
--    "symbol": ";",
--    "color": "light_gray",
-+    "type": "ITEM",
-+    "subtypes": [ "TOOL" ],
-+    "name": { "str": "smartphone (SIM) - Flashlight", "str_pl": "smartphones (SIM) - Flashlight" },
-+    "power_draw": "1500 mW",
-+    "revert_to": "smart_phone_internet",
-     "use_action": [
-       "E_FILE_DEVICE",
-       "EBOOKSAVE",
-@@ -123,48 +127,16 @@
-         "effect_on_conditions": [ "EOC_internet_access" ]
-       }
-     ],
--    "flags": [
--      "WATCH",
--      "ALARMCLOCK",
--      "USE_UPS",
--      "NO_UNLOAD",
--      "NO_RELOAD",
--      "WATER_BREAK",
--      "CALORIES_INTAKE",
--      "ELECTRONIC",
--      "LIGHT_20",
--      "CHARGEDIM",
--      "TRADER_AVOID",
--      "INTERNET_ACCESS"
--    ],
--    "pocket_data": [
--      { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 56 } },
--      {
--        "pocket_type": "E_FILE_STORAGE",
--        "rigid": true,
--        "max_contains_volume": "1 ml",
--        "max_contains_weight": "1 g",
--        "weight_multiplier": 0,
--        "ememory_max": "256 GB"
--      }
--    ],
--    "power_draw": "1500 mW",
--    "revert_to": "smart_phone"
-+    "light": 20,
-+    "extend": { "flags": [ "CHARGEDIM", "TRADER_AVOID", "SPAWN_ACTIVE" ] }
-   },
-   {
--    "type": "ITEM",
--    "subtypes": [ "TOOL" ],
--    "name": { "str": "laptop computer (SIM)" },
--    "material": [ { "type": "aluminum", "portion": 75 }, { "type": "plastic", "portion": 25 } ],
--    "tool_ammo": [ "battery" ],
--    "charges_per_use": 1,
--    "etransfer_rate": "30 MB",
--    "e_port": "laptop",
--    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE", "INTERNET_ACCESS" ],
--    "melee_damage": { "bash": 6 },
-     "id": "laptop_internet",
-     "copy-from": "abstract_laptop",
-+    "type": "ITEM",
-+    "subtypes": [ "TOOL" ],
-     "category": "tools",
-+    "name": { "str": "laptop computer (SIM)" },
-     "description": "A portable computer, a ubiquitous tool both before and after the cataclysm.  Now that you have internet access, you can download it with books and other useful software.",
-     "//": "https://www.amazon.com/dp/B0D6Z664QC, battery is FRANGWAT01",
-     "symbol": ",",
-@@ -182,7 +154,6 @@
-         "target": "laptop_screen_internet_lit",
-         "msg": "You light up the screen.",
-         "menu_text": "Light up the screen",
--        "active": true,
-         "need_charges": 1,
-         "need_charges_msg": "The laptop's batteries need more charge.",
-         "type": "transform"
-@@ -194,6 +165,7 @@
-         "effect_on_conditions": [ "EOC_internet_access" ]
-       }
-     ],
-+    "extend": { "flags": [ "INTERNET_ACCESS" ] },
-     "pocket_data": [
-       { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 200 } },
-       {
-@@ -201,34 +173,19 @@
-         "rigid": true,
-         "max_contains_volume": "1 ml",
-         "max_contains_weight": "1 g",
--        "weight_multiplier": 0,
-+        "weight_multiplier": 0.0,
-         "ememory_max": "1 TB"
-       }
-     ]
-   },
-   {
-+    "id": "laptop_screen_internet_lit",
-+    "copy-from": "laptop_internet",
-     "type": "ITEM",
-     "subtypes": [ "TOOL" ],
-     "name": { "str": "laptop computer (SIM) - lit screen", "str_pl": "laptop computers (SIM) - lit screen" },
--    "material": [ { "type": "aluminum", "portion": 75 }, { "type": "plastic", "portion": 25 } ],
--    "tool_ammo": [ "battery" ],
--    "charges_per_use": 1,
--    "etransfer_rate": "30 MB",
--    "e_port": "laptop",
--    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "LIGHT_10", "TRADER_AVOID", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE" ],
--    "melee_damage": { "bash": 6 },
--    "id": "laptop_screen_internet_lit",
--    "copy-from": "laptop_internet",
--    "category": "tools",
--    "description": "A portable computer, a ubiquitous tool both before and after the cataclysm.  Now that you have internet access, you can download it with books and other useful software.",
--    "//": "https://www.amazon.com/dp/B0D6Z664QC, battery is FRANGWAT01",
--    "symbol": ",",
--    "color": "dark_gray",
--    "price": "1049 USD",
--    "price_postapoc": "2 USD 50 cent",
--    "weight": "1319 g",
--    "volume": "703 ml",
--    "longest_side": "322 mm",
-+    "power_draw": "1 W",
-+    "revert_to": "laptop_internet",
-     "use_action": [
-       "E_FILE_DEVICE",
-       "EBOOKSAVE",
-@@ -247,19 +204,8 @@
-         "effect_on_conditions": [ "EOC_internet_access" ]
-       }
-     ],
--    "pocket_data": [
--      { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 200 } },
--      {
--        "pocket_type": "E_FILE_STORAGE",
--        "rigid": true,
--        "max_contains_volume": "1 ml",
--        "max_contains_weight": "1 g",
--        "weight_multiplier": 0,
--        "ememory_max": "1 TB"
--      }
--    ],
--    "power_draw": "1 W",
--    "revert_to": "laptop",
--    "tick_action": [ "EPIC_MUSIC" ]
-+    "faults": [ { "fault_group": "electronic_general" } ],
-+    "light": 10,
-+    "flags": [ "NO_UNLOAD", "NO_RELOAD", "WATCH", "TRADER_AVOID", "WATER_BREAK", "ELECTRONIC", "ALLOWS_REMOTE_USE", "INTERNET_ACCESS", "SPAWN_ACTIVE" ]
-   }
- ]
-diff --git a/Items/internet/internet_missions.json b/Items/internet/internet_missions.json
-index 79d5255385a6..c481fac38c96 100644
---- a/Items/internet/internet_missions.json
-+++ b/Items/internet/internet_missions.json
-@@ -90,8 +90,8 @@
-     "origins": [ "ORIGIN_COMPUTER" ],
-     "destination": "w_station_mb1"
-   },
--  
--  
-+
-+
-   {
-     "id": "MISSION_CLEAN_UP_9",
-     "type": "mission_definition",
-@@ -105,7 +105,7 @@
-     "monster_kill_goal": 3,
-     "invisible_on_complete": false,
-     "start": {
--      "assign_mission_target": { "om_terrain": "field", "random": true, "search_range": 60, "min_distance": 8, "z": 0 },
-+      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 8, "z": 0 },
-       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 3, "target": true } ] }
-     },
-     "origins": [ "ORIGIN_COMPUTER" ],
-@@ -124,7 +124,7 @@
-     "monster_kill_goal": 5,
-     "invisible_on_complete": false,
-     "start": {
--      "assign_mission_target": { "om_terrain": "road", "random": true, "search_range": 60, "min_distance": 14, "z": 0 },
-+      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 14, "z": 0 },
-       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 5, "target": true } ] }
-     },
-     "origins": [ "ORIGIN_COMPUTER" ],
-@@ -143,10 +143,10 @@
-     "monster_kill_goal": 9,
-     "invisible_on_complete": false,
-     "start": {
--      "assign_mission_target": { "om_terrain": "road_four_way", "random": true, "search_range": 800, "min_distance": 20, "z": 0 },
-+      "assign_mission_target": { "om_terrain": "", "om_terrain_match_type": "CONTAINS", "random": true, "search_range": 60, "min_distance": 20, "z": 0 },
-       "update_mapgen": { "place_monster": [ { "group": "PECCA_GENERAL", "x": [ 10, 15 ], "y": [ 10, 15 ], "repeat": 9, "target": true } ] }
-     },
-     "origins": [ "ORIGIN_COMPUTER" ],
-     "end": { "effect": [ { "math": [ "u_credit += 25000" ] }, { "u_message": "Your account is credited with the reward." } ] }
-   }
--]
-\ No newline at end of file
-+]
-diff --git a/Maps/Mapgen/Dungeons/Phantom_Stronghold.json b/Maps/Mapgen/Dungeons/Phantom_Stronghold.json
-index 0f86cc9742f0..14a32001b3e3 100644
---- a/Maps/Mapgen/Dungeons/Phantom_Stronghold.json
-+++ b/Maps/Mapgen/Dungeons/Phantom_Stronghold.json
-@@ -1,7 +1,7 @@
- [
-   {
-     "type": "mapgen",
--    
-+
-     "om_terrain": [ [ "ps_lt", "ps_mt", "ps_rt" ], [ "ps_lb", "ps_mb", "ps_rb" ] ],
-     "weight": 500,
-     "object": {
-@@ -61,15 +61,15 @@
-         { "class": "bullet_leader_npc", "x": 36, "y": 3 },
-         { "class": "bullet_follower_npc", "x": 42, "y": 7 },
-         { "class": "bullet_follower_npc", "x": 30, "y": 7 },
--        
-+
-         { "class": "bullet_follower_npc", "x": 27, "y": 27 },
-         { "class": "bullet_follower_npc", "x": 45, "y": 27 },
-         { "class": "bullet_follower_npc", "x": 26, "y": 22 },
-         { "class": "bullet_follower_npc", "x": 49, "y": 22 },
-         { "class": "bullet_follower_npc", "x": 28, "y": 18 },
-         { "class": "bullet_follower_npc", "x": 46, "y": 18 },
--        
--        
-+
-+
-         { "class": "bullet_follower_npc", "x": 14, "y": 25 },
-         { "class": "bullet_follower_npc", "x": 12, "y": 14 },
-         { "class": "bullet_follower_npc", "x": 9, "y": 4 },
-@@ -77,9 +77,9 @@
-         { "class": "bullet_follower_npc", "x": 18, "y": 21 },
-         { "class": "bullet_follower_npc", "x": 56, "y": 21 },
-         { "class": "bullet_follower_npc", "x": 59, "y": 17 }
--        
--        
--        
-+
-+
-+
-       ],
-       "terrain": {
-         "N": "t_lixa_wall",
-@@ -126,7 +126,7 @@
-             }
-           }
-         ],
--        "e": { "item": "softdrinks_canned", "chance": 90, "repeat": [ 1, 5 ] },
-+        "e": { "item": "soda_in_container_full", "chance": 90, "repeat": [ 1, 5 ] },
-         "r": [ { "item": "SUS_pantry", "chance": 25 }, { "item": "cannedfood", "chance": 20, "repeat": [ 1, 2 ] } ],
-         ";": { "item": "home_display_case", "chance": 90, "repeat": [ 1, 5 ] },
-         "f": { "item": "SUS_fridge", "chance": 80, "repeat": [ 1, 2 ] },
-@@ -138,7 +138,7 @@
-   },
-   {
-     "type": "mapgen",
--    
-+
-     "om_terrain": [ [ "ps_lt_r", "ps_mt_r", "ps_rt_r" ], [ "ps_lb_r", "ps_mb_r", "ps_rb_r" ] ],
-     "weight": 500,
-     "object": {
-diff --git a/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json b/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
-index 4002bff0a399..7a8f19bce2ac 100644
---- a/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
-+++ b/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
-@@ -1,7 +1,7 @@
- [
- {
-     "type": "mapgen",
--    
-+
-     "om_terrain": [ "hhpp1" ],
-     "object": {
-     "fill_ter": "t_floor",
-@@ -36,7 +36,7 @@
- 		"items": {
-       "T": { "item": "dishes_dining", "chance": 15 },
-       "B": { "item": "magazines", "chance": 80, "repeat": [ 1, 5 ] },
--      "b": { "item": "softdrinks_canned", "chance": 90, "repeat": [ 1, 5 ] },
-+      "b": { "item": "soda_in_container_full", "chance": 90, "repeat": [ 1, 5 ] },
-       "t": { "item": [ { "item": "teddy_bear" } ] }
- 		},
- 		"place_npcs": [
-@@ -57,7 +57,7 @@
-       "*": [ ["t_tree", 10] , ["t_tree_apple", 8], ["t_tree_peach", 5], ["t_tree_cherry", 7] ],
- 			"!": "t_floor_olight"
- 		},
--		"furniture": { 
-+		"furniture": {
-       "n": "f_desk",
-       "h": "f_chair_black",
-       "H": "f_chair_white",
-@@ -90,7 +90,7 @@
- },
- {
-     "type": "mapgen",
--    
-+
-     "om_terrain": [ "hhpp2" ],
-     "object": {
-     "fill_ter": "t_floor",
-@@ -124,10 +124,10 @@
-     "faction_owner": [ { "id": "hhpp", "x": [ 0, 17 ], "y": [ 4, 20 ] } ],
- 		"items": {
-       "T": { "item": "dishes_dining", "chance": 15 },
--      "f": { "item": "softdrinks_canned", "chance": 80, "repeat": [ 1, 3 ] },
--      "/": { "item": "softdrinks_canned", "chance": 80, "repeat": [ 1, 3 ] },
-+      "f": { "item": "soda_in_container_full", "chance": 80, "repeat": [ 1, 3 ] },
-+      "/": { "item": "soda_in_container_full", "chance": 80, "repeat": [ 1, 3 ] },
-       ",": { "item": "dresser", "chance": 35 },
--      "&": { "item": "softdrinks_canned", "chance": 15 },
-+      "&": { "item": "soda_in_container_full", "chance": 15 },
-       "(": { "item": "kitchen", "chance": 45 }
- 		},
- 		"place_npcs": [
-@@ -152,7 +152,7 @@
-       "*": [ ["t_tree", 10] , ["t_tree_apple", 8], ["t_tree_peach", 5], ["t_tree_cherry", 7] ],
- 			"!": "t_floor_olight"
- 		},
--		"furniture": { 
-+		"furniture": {
-       "n": "f_desk",
-       "h": "f_chair_black",
-       "H": "f_chair_white",
-@@ -186,7 +186,7 @@
- },
- {
-     "type": "mapgen",
--    
-+
-     "om_terrain": [ "hhpp1_roof" ],
-     "object": {
-       "fill_ter": "t_flat_roof",
-@@ -221,7 +221,7 @@
- },
- {
-     "type": "mapgen",
--    
-+
-     "om_terrain": [ "hhpp2_roof" ],
-     "object": {
-       "fill_ter": "t_flat_roof",
-@@ -254,4 +254,4 @@
- 	  "palettes": [ "roof_palette" ]
- 	}
- }
 -]
 \ No newline at end of file
 +]
@@ -1013,39 +2857,8 @@ index 48407488a69b..266e254e4119 100644
        { "item": "deluxe_fried_egg_sandwich", "count-min": 1, "count-max": 3, "prob": 50 },
        { "item": "fish_sandwich", "count-min": 1, "count-max": 2, "prob": 50 },
        { "item": "sandwich_deluxe", "count-min": 1, "count-max": 4, "prob": 100 },
-diff --git a/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json b/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json
-index e3d8b5a23cb8..1decd1a590b0 100644
---- a/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json
-+++ b/ScaryMonstersAndNiceSprites/HumansOrAlmostHumans.json
-@@ -262,7 +262,7 @@
-     "melee_damage": [ { "damage_type": "bash", "amount": 4 } ],
-     "families": [ "prof_intro_biology", "prof_physiology" ],
-     "special_attacks": [  ],
--    "regenerates": 0.2,
-+    "regenerates": 1,
-     "anger_triggers": [ "FRIEND_ATTACKED" ],
-     "fear_triggers": [ "HURT", "FRIEND_DIED" ],
-     "regen_morale": true,
-@@ -380,7 +380,7 @@
-     "melee_damage": [ { "damage_type": "cut", "amount": 21 } ],
-     "families": [ "prof_intro_biology", "prof_physiology" ],
-     "special_attacks": [  ],
--    "regenerates": 0.1,
-+    "regenerates": 1,
-     "anger_triggers": [ "FRIEND_ATTACKED" ],
-     "fear_triggers": [ "HURT", "FRIEND_DIED" ],
-     "regen_morale": true,
-@@ -419,7 +419,7 @@
-     "melee_damage": [ { "damage_type": "cut", "amount": 21 } ],
-     "families": [ "prof_intro_biology", "prof_physiology" ],
-     "special_attacks": [  ],
--    "regenerates": 0.2,
-+    "regenerates": 1,
-     "anger_triggers": [ "FRIEND_ATTACKED" ],
-     "fear_triggers": [  ],
-     "regen_morale": true,
 diff --git a/difficulty_options.json b/difficulty_options.json
-index 1e57bf41d39b..a1d346497689 100644
+index 5e628c14d68b..463a3b8b2278 100644
 --- a/difficulty_options.json
 +++ b/difficulty_options.json
 @@ -4,18 +4,18 @@
@@ -1085,10 +2898,10 @@ index 1e57bf41d39b..a1d346497689 100644
        {
          "set_item_category_spawn_rates": [
 diff --git a/emotion.json b/emotion.json
-index d9d8f2be698e..102c6a63582e 100644
+index c06e860378d3..3fa769b24b43 100644
 --- a/emotion.json
 +++ b/emotion.json
-@@ -27,14 +27,14 @@
+@@ -27,7 +27,7 @@
      "max_intensity": 3,
      "scaling_mods": { "speed_mod": [ 4 ], "sleepiness_amount": [ -1 ], "sleepiness_chance": [ 5 ] }
    },
@@ -1096,17 +2909,36 @@ index d9d8f2be698e..102c6a63582e 100644
 +
    {
      "type": "effect_on_condition",
-     "id": "emotion_onkill",
-     "eoc_type": "EVENT",
+     "id": "EOC_EMOTION_UI_UPDATER",
+@@ -36,7 +36,7 @@
+       { "math": [ "u_emotion_number = u_vitamin('emotion')" ] }
+     ]
+   },
+-  
++
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_EMOTION_ON_KILL",
+@@ -44,7 +44,7 @@
      "required_event": "character_kills_monster",
+     "condition": { "not": { "u_has_trait": "mut_self_control_on" } },
      "effect": [
 -        { "math": [ "u_vitamin('emotion') += 8" ] } 
 +        { "math": [ "u_vitamin('emotion') += 8" ] }
      ]
    },
    {
-@@ -55,7 +55,7 @@
-     "id": "emotion_onbrokenbone",
+@@ -53,7 +53,7 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_kills_character",
+     "effect": [
+-	  { 
++	  {
+ 	    "if": { "u_has_trait": "mut_self_control_on" },
+       "then": { "math": [ "u_vitamin('emotion') += 4" ] },
+       "else": { "math": [ "u_vitamin('emotion') += 20" ] }
+@@ -69,7 +69,7 @@
+     "id": "EOC_EMOTION_ON_BROKEN_BONE",
      "eoc_type": "EVENT",
      "required_event": "broken_bone",
 -    "effect": [ 
@@ -1114,26 +2946,34 @@ index d9d8f2be698e..102c6a63582e 100644
        { "math": [ "u_vitamin('emotion') += 20" ] },
        {
          "if": { "math": [ "u_vitamin('trauma') < 30" ] },
-@@ -69,7 +69,7 @@
-     "eoc_type": "EVENT",
+@@ -84,7 +84,7 @@
      "required_event": "character_melee_attacks_monster",
+     "condition": { "not": { "u_has_trait": "mut_self_control_on" } },
      "effect": [
 -      { "math": [ "u_vitamin('emotion') += 2" ] } 
 +      { "math": [ "u_vitamin('emotion') += 2" ] }
      ]
    },
    {
-@@ -78,7 +78,7 @@
-     "eoc_type": "EVENT",
+@@ -94,7 +94,7 @@
      "required_event": "character_ranged_attacks_monster",
+     "condition": { "not": { "u_has_trait": "mut_self_control_on" } },
      "effect": [
 -      { "math": [ "u_vitamin('emotion') += 2" ] } 
 +      { "math": [ "u_vitamin('emotion') += 2" ] }
      ]
    },
    {
-@@ -108,14 +108,14 @@
-       { "math": [ "u_vitamin('emotion') += 4" ] }
+@@ -123,21 +123,21 @@
+     "eoc_type": "EVENT",
+     "required_event": "character_takes_damage",
+     "effect": [
+-      { 
++      {
+         "if": { "u_has_trait": "mut_self_control_on" },
+         "then": { "math": [ "u_vitamin('emotion') += 1" ] },
+         "else": { "math": [ "u_vitamin('emotion') += 4" ] }
+       }
      ]
    },
 -  
@@ -1155,16 +2995,7 @@ index d9d8f2be698e..102c6a63582e 100644
     {
      "id": "trauma",
      "type": "vitamin",
-@@ -123,7 +123,7 @@
-     "name": { "str": "Trauma" },
-     "min": 0,
-     "max": 100,
--    "rate": "0 t",
-+    "rate": "0 m",
-     "excess": "trauma",
-     "flags": [ "NO_DISPLAY" ],
-     "disease_excess": [ [ 20, 49 ], [ 50, 79 ], [ 80, 100 ] ]
-@@ -146,7 +146,7 @@
+@@ -168,7 +168,7 @@
      "eoc_type": "EVENT",
      "required_event": "character_wakes_up",
      "condition": {
@@ -1173,17 +3004,16 @@ index d9d8f2be698e..102c6a63582e 100644
      },
      "effect": [
        { "u_lose_morale": "morale_trauma" },
-@@ -159,8 +159,7 @@
+@@ -181,7 +181,7 @@
      "eoc_type": "EVENT",
      "required_event": "game_avatar_new",
      "effect": [
 -      { "math": [ "u_vitamin('trauma') = 5" ] },
--      { "math": [ "u_mang = 0" ] }
-+      { "math": [ "u_vitamin('trauma') = max(u_vitamin('trauma'), 5)" ] }
++      { "math": [ "u_vitamin('trauma') = max(u_vitamin('trauma'), 5)" ] },
+       { "math": [ "u_mang = 0" ] }
      ]
    },
-   {
-@@ -194,8 +193,8 @@
+@@ -214,8 +214,8 @@
        },
        { "math": [ "_total_control = (12 * u_skill('self-control')) / (1 + (u_vitamin('emotion') / 50))" ] },
        {
@@ -1194,21 +3024,20 @@ index d9d8f2be698e..102c6a63582e 100644
              { "and": [ { "math": [ "_pos == 1" ] }, { "math": [ "u_val('morale') > (-1 * _total_control)" ] } ] },
              { "and": [ { "math": [ "_pos == -1" ] }, { "math": [ "u_val('morale') < _total_control" ] } ] }
            ]
-@@ -204,19 +203,11 @@
+@@ -224,18 +224,10 @@
          "else": { "math": [ "_morale_change = _pos * _total_control" ] }
        },
-       { "u_add_morale": "morale_self_control", "bonus": { "math": [ "_morale_change"] }, "capped": true, "max_bonus": 100, "duration": "5 seconds" },
+       { "u_add_morale": "morale_self_control", "bonus": { "math": [ "_morale_change"] }, "capped": true, "max_bonus": 100, "duration": "24 hours" },
 -      { 
 -        "if": { "and": [ { "math": [ "_zeroed == 1" ] }, { "math": [ "u_val('morale') != 0" ] } ] },
 -        "then": [ 
 -          { "u_lose_morale": "morale_self_control" },
--          { "u_add_morale": "morale_self_control", "bonus": 1000, "max_bonus": 1000, "capped": true, "duration": "5 seconds" },
--          { "u_add_morale": "morale_self_control_1", "bonus": -1000, "max_bonus": -1000, "capped": true, "duration": "5 seconds" }
+-          { "u_add_morale": "morale_self_control", "bonus": 1000, "max_bonus": 1000, "capped": true, "duration": "24 hours" },
+-          { "u_add_morale": "morale_self_control_1", "bonus": -1000, "max_bonus": -1000, "capped": true, "duration": "24 hours" }
 -        ]
 -      },
-       { "run_eocs": [ "EOC_self_control_focus" ] },
        {
--        "if": { "math": [ "_zeroed == 1" ] },
+-        "if": { "math": [ "u_vitamin('emotion') <= 25" ] },
 +        "if": { "math": [ "u_val('morale') == 0" ] },
          "then": { "run_eocs": [ "EOC_self_control_shin" ] },
 -        "else": { "run_eocs": [ "EOC_remove_shin" ] } 
@@ -1216,26 +3045,35 @@ index d9d8f2be698e..102c6a63582e 100644
        }
      ]
    },
-@@ -228,9 +219,9 @@
-        "x_in_y_chance": { "x": { "math": [ "11 - u_skill('self-control')" ] }, "y": { "math": [ "110 - u_val('focus')" ] } }
-     },
+@@ -251,11 +243,11 @@
+     "id": "EOC_self_control_remove",
+     "condition": { "u_has_trait": "mut_self_control_on" },
      "effect": [
--      {  
-+      {
-           "if": { "math": [ "u_val('focus') < 5" ] },
--          "then": [ { "u_lose_trait": "mut_self_control_on" }, { "u_add_trait": "mut_self_control_off" }, { "u_message": "Your focus wavers, emotions flooding free from your control." }, { "run_eocs": [ "EOC_remove_shen" ] } ]
-+          "then": [ { "u_lose_trait": "mut_self_control_on" }, { "u_add_trait": "mut_self_control_off" }, { "u_message": "Your focus wavers, emotions flooding free from your control." }, { "run_eocs": [ "EOC_remove_shin" ] } ]
-       }
+-      { "u_lose_trait": "mut_self_control_on" }, 
+-      { "u_add_trait": "mut_self_control_off" }, 
+-      
+-      { "u_message": "Your focus wavers, emotions flooding free from your control." }, 
+-      { "run_eocs": [ "EOC_self_control_end" ] } 
++      { "u_lose_trait": "mut_self_control_on" },
++      { "u_add_trait": "mut_self_control_off" },
++
++      { "u_message": "Your focus wavers, emotions flooding free from your control." },
++      { "run_eocs": [ "EOC_self_control_end" ] }
      ]
    },
-@@ -268,12 +259,12 @@
-     "active": true,
-     "no_empathize_with": [ "HUMAN" ],
-     "time": 0,
--    "activated_eocs": [ "EOC_self_control_shen" ],
-+    "activated_eocs": [ "EOC_self_control_shin" ],
+   {
+@@ -266,7 +258,7 @@
+       { "u_add_var": "trance_locked", "value": "true" },
+       { "run_eocs": "EOC_self_control_refresh", "time_in_future": "22 hours" },
+       { "run_eocs": "EOC_self_control_remove", "time_in_future": { "math": [ "( 60 * 60 ) * u_skill('self-control')" ] } },
+-      { "run_eocs": [ "EOC_self_control_shin" ] } 
++      { "run_eocs": [ "EOC_self_control_shin" ] }
+     ],
+     "false_effect": [
+       { "u_message": "You don't have the energy to discard your emotions just yet.", "type": "bad" },
+@@ -320,8 +312,8 @@
      "processed_eocs": [ "EOC_self_control" ],
-     "deactivated_eocs": [ "EOC_remove_shin" ],
+     "deactivated_eocs": [ "EOC_self_control_end" ],
      "transform": {
 -      "target": "mut_self_control_off",                      
 -      "msg_transform": "You let your emotions flare.", 
@@ -1244,9 +3082,9 @@ index d9d8f2be698e..102c6a63582e 100644
        "active": false,
        "moves": 0
      }
-@@ -289,8 +280,8 @@
-     "valid": false,
+@@ -338,8 +330,8 @@
      "active": true,
+     "activated_eocs": [ "EOC_self_control_start" ],
      "transform": {
 -      "target": "mut_self_control_on",                      
 -      "msg_transform": "You focus, breathing stills.", 
@@ -1255,7 +3093,7 @@ index d9d8f2be698e..102c6a63582e 100644
        "active": true,
        "moves": 0
      }
-@@ -305,4 +296,4 @@
+@@ -354,4 +346,4 @@
        { "u_add_trait": "mut_self_control_off" }
      ]
    }
@@ -2128,52 +3966,42 @@ index 000000000000..55a50cc42cc3
 +  }
 +]
 diff --git a/region_overlay.json b/region_overlay.json
-index fb40bce95e5b..a5c0bcbdf14e 100644
+index fb9eb14a3f15..aa60b25dca85 100644
 --- a/region_overlay.json
 +++ b/region_overlay.json
-@@ -1,44 +1,50 @@
+@@ -1,29 +1,68 @@
  [
    {
--    "type": "region_overlay",
--    "regions": [ "all" ],
--    "map_extras": {
--      "field": {
--        "chance": 8,
--        "extras": {
--          "mx_kk_rc": 12,
--          "mx_incident_fixer": 15,
--          "mx_incident_zwei": 15
--        }
--      },
--      "road": {
--        "chance": 12,
--        "extras": {
--          "mx_kk_rc": 6,
--          "mx_incident_fixer": 15,
--          "mx_incident_zwei": 15
--        }
--      },
--      "forest_thick": {
--        "chance": 2,
--        "extras": {
--          "mx_kk_rc": 15,
--          "mx_incident_fixer": 4,
--          "mx_incident_zwei": 4
--        }
--      },
--      "forest": {
--        "chance": 4,
--        "extras": {
--          "mx_kk_rc": 15,
--          "mx_incident_fixer": 8,
--          "mx_incident_zwei": 8
--        }
--      }
--    },
--    "overmap_feature_flag_settings": { "blacklist": [ "MILITARY", "SOURCE_GUN", "SOURCE_AMMO" ] },
--    "city": {
--      "shops": { "s_hunting": 0, "s_gun_a": 0, "s_gun_b": 0, "mil_surplus": 0, "mil_surplus_1": 0, "mil_surplus_2": 0 }
+-    "type": "region_settings",
+-    "id": "default_pm_world",
+-    "cities": "default_pm_world_cities",
+-    "map_extras": "default_pm_world_extras"
 +    "type": "map_extra_collection",
++    "id": "extras_pm_world",
++    "chance": 30,
++    "extras": [ [ "mx_kk_rc", 24 ], [ "mx_incident_fixer", 30 ], [ "mx_incident_zwei", 30 ] ]
+   },
+   {
+     "type": "region_settings_map_extras",
+-    "id": "default_pm_world_extras",
++    "id": "default",
++    "copy-from": "default",
++    "extend": { "extras": [ "extras_pm_world" ] }
++  },
++  {
++    "type": "region_settings_city",
++    "id": "default",
+     "copy-from": "default",
+-    "extras": [
+-      "extras_pm_world"
+-    ]
++    "extend": { "shops": [ [ "w_corp_city_station", 250 ] ] }
+   },
+   {
+     "type": "map_extra_collection",
+-    "id": "extras_pm_world",
+-    "chance": 30,
+-    "extras": [ [ "mx_kk_rc", 24 ], [ "mx_incident_fixer", 30 ], [ "mx_incident_zwei", 30 ] ]
 +    "id": "field",
 +    "copy-from": "field",
 +    "extend": {
@@ -2183,8 +4011,13 @@ index fb40bce95e5b..a5c0bcbdf14e 100644
 +        [ "mx_incident_zwei", 15 ]
 +      ]
 +    }
-+  },
-+  {
+   },
+-  
+   {
+-    "type": "region_settings_city",
+-    "id": "default_pm_world_cities",
+-    "shops": [ [ "w_corp_city_station", 250 ] ],
+-    "delete": { "shops": [ "s_hunting", "s_gun_a", "s_gun_b", "mil_surplus", "mil_surplus_1", "mil_surplus_2" ] }
 +    "type": "map_extra_collection",
 +    "id": "road",
 +    "copy-from": "road",
@@ -2218,6 +4051,6 @@ index fb40bce95e5b..a5c0bcbdf14e 100644
 +        [ "mx_incident_fixer", 8 ],
 +        [ "mx_incident_zwei", 8 ]
 +      ]
-     }
++    }
    }
  ]

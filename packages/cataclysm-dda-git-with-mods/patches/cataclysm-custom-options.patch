@@ -1,11 +1,11 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..ab54e46acdd9 100644
+index e382e568bcf3..f0962fb0c14d 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,103 @@
-     "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
-     "stype": "int",
-     "value": 2
+@@ -527,5 +527,103 @@
+     "//": "If true, mapgen will be overwritten to place several large overlapping cities on every overmap. Intended for use only in the megacity mod, using it in other circumstances may cause strange behavior.",
+     "stype": "bool",
+     "value": false
 +  },
 +  {
 +    "type": "EXTERNAL_OPTION",
@@ -107,10 +107,10 @@ index 9e17b54f3ed3..ab54e46acdd9 100644
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
-index 5e4f1fad9c95..6fe2fb4757e7 100644
+index e0da8bf6055d..61a824585340 100644
 --- a/src/activity_actor.cpp
 +++ b/src/activity_actor.cpp
-@@ -2154,7 +2154,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
+@@ -2159,7 +2159,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
          return;
      }
  
@@ -120,10 +120,10 @@ index 5e4f1fad9c95..6fe2fb4757e7 100644
                  integrated_ar       - implant                                         = potentially infinite
                  ar_glasses_advanced - max 300 charges from disposable light battery   = 25 hours of reading
 diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
-index 178283c41be0..53a31aa49b8b 100644
+index 1b7933d03212..4cd759a59775 100644
 --- a/src/activity_item_handling.cpp
 +++ b/src/activity_item_handling.cpp
-@@ -4299,8 +4299,9 @@ static int get_comestible_order( Character &you, const item_location &loc,
+@@ -4491,8 +4491,9 @@ static int get_comestible_order( Character &you, const item_location &loc,
  static time_duration get_comestible_time_left( const item_location &loc )
  {
      time_duration time_left = 0_turns;
@@ -136,7 +136,7 @@ index 178283c41be0..53a31aa49b8b 100644
          const item &it = *loc;
          const double relative_rot = it.get_relative_rot();
 diff --git a/src/character.cpp b/src/character.cpp
-index 34523acc6ce0..e71286a67d20 100644
+index ee63e3f216dc..a2049f97289d 100644
 --- a/src/character.cpp
 +++ b/src/character.cpp
 @@ -378,6 +378,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
@@ -197,7 +197,7 @@ index 34523acc6ce0..e71286a67d20 100644
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
 diff --git a/src/game_inventory.cpp b/src/game_inventory.cpp
-index fd21d509dcea..dfda2ab5f871 100644
+index d750b7b9fe16..c5cb71f06aef 100644
 --- a/src/game_inventory.cpp
 +++ b/src/game_inventory.cpp
 @@ -721,8 +721,9 @@ class comestible_inventory_preset : public inventory_selector_preset
@@ -235,10 +235,10 @@ index a270b7ee025f..b1d893056ae9 100644
              for( item &i : get_harvest_items( type, plant_count, seedCount, true ) ) {
                  if( from_activity ) {
 diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
-index 78000f663b6f..70ed33f03b8b 100644
+index b127a4969ee8..2a8d565dd468 100644
 --- a/src/item_degrade.cpp
 +++ b/src/item_degrade.cpp
-@@ -437,9 +437,9 @@ time_duration item::get_shelf_life() const
+@@ -440,9 +440,9 @@ time_duration item::get_shelf_life() const
  {
      if( goes_bad() ) {
          if( is_comestible() ) {
