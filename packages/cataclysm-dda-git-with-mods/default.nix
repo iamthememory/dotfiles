@@ -52,6 +52,7 @@ let
       ./patches/cataclysm-disable-warning.patch
       ./patches/cataclysm-dream-fix.patch
       ./patches/cataclysm-exodii-bionics.patch
+      ./patches/cataclysm-fast-browse.patch
       ./patches/cataclysm-homullus-fix.patch
       ./patches/cataclysm-large-smokers.patch
       ./patches/cataclysm-larger-trade-range.patch

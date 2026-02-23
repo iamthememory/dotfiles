@@ -1,0 +1,20 @@
+diff --git a/src/activity_actor_definitions.h b/src/activity_actor_definitions.h
+index 8f3632f910cb..dca8816d7b97 100644
+--- a/src/activity_actor_definitions.h
++++ b/src/activity_actor_definitions.h
+@@ -1451,13 +1451,13 @@ class efile_activity_actor : public activity_actor
+         //TODO: base all of these constants on actual statistics?
+         /** Abstract flat time to look at a file's filename and extension,
+         determine whether it's junk or not, and open it to verify its contents */
+-        static constexpr time_duration time_per_browsed_efile = 15_seconds;
++        static constexpr time_duration time_per_browsed_efile = 2_seconds;
+         /** One charge consumed per 4 minutes*/
+         static constexpr time_duration charge_per_transfer_time = 4_minutes;
+         /** One charge consumed per 32 files (8 minutes) */
+         static constexpr time_duration charge_per_browse_time = time_per_browsed_efile * 32;
+         /** Time required to boot an e-device */
+-        static constexpr time_duration device_bootup_time = 10_seconds;
++        static constexpr time_duration device_bootup_time = 5_seconds;
+         /** Generic local file transfer speed */
+         static constexpr units::ememory local_etransfer_rate = 200_MB;
+ 
