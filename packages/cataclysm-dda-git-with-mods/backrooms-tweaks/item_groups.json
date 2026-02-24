@@ -1,6 +1,24 @@
 [
   {
     "type": "item_group",
+    "id": "backrooms_master_vending",
+    "copy-from": "backrooms_master_vending",
+    "subtype": "distribution",
+    "extend": {
+      "entries": [
+        { "group": "SUS_pantry", "prob": 4, "count": [ 1, 3 ] },
+        { "group": "SUS_coffee_cupboard", "prob": 4, "count": [ 1, 3 ] },
+        { "group": "SUS_breakfast_cupboard", "prob": 4, "count": [ 1, 3 ] },
+        { "group": "SUS_fridge", "prob": 4, "count": [ 1, 3 ] },
+        { "group": "SUS_freezer", "prob": 2, "count": [ 1, 3 ] },
+        { "group": "SUS_shelf_any", "prob": 2, "count": [ 1, 2 ] },
+        { "group": "SUS_supermarket_fridge_any", "prob": 2, "count": [ 1, 2 ] },
+        { "group": "SUS_supermarket_freezer_any", "prob": 2, "count": [ 1, 2 ] }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
     "id": "backrooms_master_vending_actual",
     "subtype": "distribution",
     "entries": [
