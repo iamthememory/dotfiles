@@ -303,8 +303,9 @@ in
           let
             down = "^icon_net_down $speed_down.eng(w:4,u:B)";
             up = "^icon_net_up $speed_up.eng(w:4,u:B)";
+            ping = "^icon_ping $ping.eng(w:4,p:m)";
           in
-          " ^icon_ping {$ping ${down} ${up}|N/A}";
+          "{ ${ping} ${down} ${up}| ^icon_ping N/A}";
 
         # Update every 30 minutes.
         interval = 30 * 60;
