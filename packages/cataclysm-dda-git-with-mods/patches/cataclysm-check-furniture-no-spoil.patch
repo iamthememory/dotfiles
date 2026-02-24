@@ -1,5 +1,5 @@
 diff --git a/src/item.h b/src/item.h
-index bf7885fb57e5..da2cff76c49c 100644
+index bf7885fb57e5..cd139c3651a9 100644
 --- a/src/item.h
 +++ b/src/item.h
 @@ -1171,7 +1171,7 @@ class item : public visitable
@@ -7,12 +7,12 @@ index bf7885fb57e5..da2cff76c49c 100644
           * (such as MRE) - processes its contents recursively.
           */
 -        void randomize_rot();
-+        void randomize_rot( map &here, const tripoint_bub_ms &pos );
++        void randomize_rot( const map &here, const tripoint_bub_ms &pos );
  
          /**
           * Get minimum time for this item or any of its contents to rot, ignoring
 diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
-index b127a4969ee8..3986492344ea 100644
+index b127a4969ee8..3e24dacd7d32 100644
 --- a/src/item_degrade.cpp
 +++ b/src/item_degrade.cpp
 @@ -474,8 +474,18 @@ void item::set_rot( time_duration val )
@@ -20,14 +20,14 @@ index b127a4969ee8..3986492344ea 100644
  }
  
 -void item::randomize_rot()
-+void item::randomize_rot( map &here, const tripoint_bub_ms &pos )
++void item::randomize_rot( const map &here, const tripoint_bub_ms &pos )
  {
-+    const furn_t &furn = map->furn( pos ).obj();
++    const furn_t &furn = here.furn( pos ).obj();
 +
 +    if( furn.has_flag( ter_furn_flag::TFLAG_DONT_REMOVE_ROTTEN ) ||
 +            furn.has_flag( ter_furn_flag::TFLAG_NO_SPOIL ) ||
-+            here->has_flag( ter_furn_flag::TFLAG_DONT_REMOVE_ROTTEN, pos ) ||
-+            here->has_flag( ter_furn_flag::TFLAG_NO_SPOIL, pos ) ) {
++            here.has_flag( ter_furn_flag::TFLAG_DONT_REMOVE_ROTTEN, pos ) ||
++            here.has_flag( ter_furn_flag::TFLAG_NO_SPOIL, pos ) ) {
 +        // Don't process rot.
 +        return;
 +    }
@@ -40,7 +40,7 @@ index b127a4969ee8..3986492344ea 100644
          if( pocket->spoil_multiplier() > 0.0f ) {
              for( item *subitem : pocket->all_items_top() ) {
 -                subitem->randomize_rot();
-+                subitem->randomize_rot( &here, &pos );
++                subitem->randomize_rot( here, pos );
              }
          }
      }
@@ -65,20 +65,52 @@ index 072c1dc5659d..b694ec0317e9 100644
          map_stack items = i_at( map_location );
          process_map_items( *this, items, active_item_ref.item_ref, active_item_ref.parent,
 diff --git a/src/mapgen.cpp b/src/mapgen.cpp
-index 250ff65cffa2..40a50bd95845 100644
+index 250ff65cffa2..d53aa0e3d32a 100644
 --- a/src/mapgen.cpp
 +++ b/src/mapgen.cpp
-@@ -6469,7 +6469,7 @@ std::vector<item *> map::place_items(
+@@ -6382,6 +6382,7 @@ std::vector<item *> map::place_items(
+     const int ammo, const std::string &faction )
+ {
+     std::vector<item *> res;
++    std::vector<std::tuple<item *, tripoint_bub_ms>> restuple;
+ 
+     if( chance > 100 || chance <= 0 ) {
+         debugmsg( "map::place_items() called with an invalid chance (%d)", chance );
+@@ -6417,10 +6418,11 @@ std::vector<item *> map::place_items(
+             tries++;
+         } while( is_valid_terrain( p ) && tries < 20 );
+         if( tries < 20 ) {
+-            auto add_res_itm = [this, &p, &res]( const item & itm ) {
++            auto add_res_itm = [this, &p, &res, &restuple]( const item & itm ) {
+                 item &it = add_item_or_charges( p, itm );
+                 if( !it.is_null() ) {
+                     res.push_back( &it );
++                    restuple.push_back( std::make_tuple( &it, p ) );
+                 }
+             };
+ 
+@@ -6458,7 +6460,9 @@ std::vector<item *> map::place_items(
+             }
+         }
+     }
+-    for( item *e : res ) {
++    for( std::tuple<item *, tripoint_bub_ms>& itemtuple : restuple ) {
++        item* e = std::get<0>( itemtuple );
++        tripoint_bub_ms& p = std::get<1>( itemtuple );
+         if( e->is_tool() || e->is_gun() || e->is_magazine() ) {
+             if( rng( 0, 99 ) < magazine && e->magazine_default() && !e->magazine_integral() &&
+                 !e->magazine_current() ) {
+@@ -6469,7 +6473,7 @@ std::vector<item *> map::place_items(
              }
          }
  
 -        e->randomize_rot();
-+        e->randomize_rot( &this, &p );
++        e->randomize_rot( *this, p );
          e->set_owner( faction_id( faction ) );
      }
      return res;
 diff --git a/src/monster.cpp b/src/monster.cpp
-index ae348c94fc12..c322b02e7e43 100644
+index ae348c94fc12..f1acbbd4e64c 100644
 --- a/src/monster.cpp
 +++ b/src/monster.cpp
 @@ -3313,7 +3313,7 @@ void monster::drop_items_on_death( map *here, item *corpse )
@@ -86,7 +118,7 @@ index ae348c94fc12..c322b02e7e43 100644
  
      for( item &e : new_items ) {
 -        e.randomize_rot();
-+        e.randomize_rot( &here, pos_bub( *here ) );
++        e.randomize_rot( *here, pos_bub( *here ) );
      }
  
      // for non corpses this is much simpler
