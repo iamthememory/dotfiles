@@ -1,3 +1,49 @@
+diff --git a/src/item.h b/src/item.h
+index bf7885fb57e5..da2cff76c49c 100644
+--- a/src/item.h
++++ b/src/item.h
+@@ -1171,7 +1171,7 @@ class item : public visitable
+          * Set item @ref rot to a random value. If the item is a container
+          * (such as MRE) - processes its contents recursively.
+          */
+-        void randomize_rot();
++        void randomize_rot( map &here, const tripoint_bub_ms &pos );
+ 
+         /**
+          * Get minimum time for this item or any of its contents to rot, ignoring
+diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
+index b127a4969ee8..3986492344ea 100644
+--- a/src/item_degrade.cpp
++++ b/src/item_degrade.cpp
+@@ -474,8 +474,18 @@ void item::set_rot( time_duration val )
+     rot = val;
+ }
+ 
+-void item::randomize_rot()
++void item::randomize_rot( map &here, const tripoint_bub_ms &pos )
+ {
++    const furn_t &furn = map->furn( pos ).obj();
++
++    if( furn.has_flag( ter_furn_flag::TFLAG_DONT_REMOVE_ROTTEN ) ||
++            furn.has_flag( ter_furn_flag::TFLAG_NO_SPOIL ) ||
++            here->has_flag( ter_furn_flag::TFLAG_DONT_REMOVE_ROTTEN, pos ) ||
++            here->has_flag( ter_furn_flag::TFLAG_NO_SPOIL, pos ) ) {
++        // Don't process rot.
++        return;
++    }
++
+     if( is_comestible() && get_comestible()->spoils > 0_turns ) {
+         const time_duration age_from_zero = calendar::turn - calendar::start_of_cataclysm;
+         const time_duration cap = get_shelf_life() * 2;
+@@ -494,7 +504,7 @@ void item::randomize_rot()
+     for( item_pocket *pocket : contents.get_container_pockets() ) {
+         if( pocket->spoil_multiplier() > 0.0f ) {
+             for( item *subitem : pocket->all_items_top() ) {
+-                subitem->randomize_rot();
++                subitem->randomize_rot( &here, &pos );
+             }
+         }
+     }
 diff --git a/src/map.cpp b/src/map.cpp
 index 072c1dc5659d..b694ec0317e9 100644
 --- a/src/map.cpp
@@ -18,3 +64,29 @@ index 072c1dc5659d..b694ec0317e9 100644
  
          map_stack items = i_at( map_location );
          process_map_items( *this, items, active_item_ref.item_ref, active_item_ref.parent,
+diff --git a/src/mapgen.cpp b/src/mapgen.cpp
+index 250ff65cffa2..40a50bd95845 100644
+--- a/src/mapgen.cpp
++++ b/src/mapgen.cpp
+@@ -6469,7 +6469,7 @@ std::vector<item *> map::place_items(
+             }
+         }
+ 
+-        e->randomize_rot();
++        e->randomize_rot( &this, &p );
+         e->set_owner( faction_id( faction ) );
+     }
+     return res;
+diff --git a/src/monster.cpp b/src/monster.cpp
+index ae348c94fc12..c322b02e7e43 100644
+--- a/src/monster.cpp
++++ b/src/monster.cpp
+@@ -3313,7 +3313,7 @@ void monster::drop_items_on_death( map *here, item *corpse )
+                                   spawn_flags::use_spawn_rate );
+ 
+     for( item &e : new_items ) {
+-        e.randomize_rot();
++        e.randomize_rot( &here, pos_bub( *here ) );
+     }
+ 
+     // for non corpses this is much simpler
