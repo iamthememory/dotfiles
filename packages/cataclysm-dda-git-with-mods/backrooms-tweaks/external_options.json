@@ -1,0 +1,9 @@
+[
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "SHELF_LIFE_MULTIPLIER",
+    "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
+    "stype": "float",
+    "value": 400.0
+  }
+]
