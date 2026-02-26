@@ -1,5 +1,6 @@
 # Image-related packages and configuration.
-{ lib
+{ inputs
+, lib
 , pkgs
 , ...
 }: {
@@ -14,7 +15,7 @@
     inkscape
 
     # A digital art program.
-    krita
+    inputs.stable.krita
 
     # Another image viewer, which has replaced eog upstream.
     loupe

@@ -1,5 +1,6 @@
 # Configuration for making and editting music and sound files.
 { config
+, inputs
 , pkgs
 , ...
 }:
@@ -99,7 +100,7 @@ in
     fverb
     gate12
     geonkick
-    guitarix
+    inputs.stable.guitarix
     gxmatcheq-lv2
     gxplugins-lv2
     helm

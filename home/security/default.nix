@@ -11,7 +11,7 @@
     diceware
 
     # A tool for receiving radio.
-    gqrx
+    inputs.stable.gqrx
 
     # Firmware tools for the HackRF.
     hackrf
