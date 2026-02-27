@@ -2,7 +2,7 @@
 { ...
 }: {
   # Generate man page caches.
-  documentation.man.generateCaches = true;
+  documentation.man.cache.enable = true;
 
   # Install NixOS documentation.
   documentation.nixos.enable = true;
