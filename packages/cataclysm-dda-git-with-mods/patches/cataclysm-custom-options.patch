@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index e382e568bcf3..f0962fb0c14d 100644
+index e382e568bcf3..619de834b33e 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -527,5 +527,103 @@
+@@ -527,5 +527,110 @@
      "//": "If true, mapgen will be overwritten to place several large overlapping cities on every overmap. Intended for use only in the megacity mod, using it in other circumstances may cause strange behavior.",
      "stype": "bool",
      "value": false
@@ -55,6 +55,13 @@ index e382e568bcf3..f0962fb0c14d 100644
 +    "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
 +    "stype": "float",
 +    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "COMESTIBLES_GO_BAD",
++    "//": "Whether or not comestibles spoil.",
++    "stype": "bool",
++    "value": true
 +  },
 +  {
 +    "type": "EXTERNAL_OPTION",
@@ -235,10 +242,20 @@ index a270b7ee025f..b1d893056ae9 100644
              for( item &i : get_harvest_items( type, plant_count, seedCount, true ) ) {
                  if( from_activity ) {
 diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
-index b127a4969ee8..2a8d565dd468 100644
+index b127a4969ee8..9d2817e41e86 100644
 --- a/src/item_degrade.cpp
 +++ b/src/item_degrade.cpp
-@@ -440,9 +440,9 @@ time_duration item::get_shelf_life() const
+@@ -433,16 +433,18 @@ bool item::goes_bad() const
+         }
+         return made_of_any( materials::get_rotting() );
+     }
+-    return is_comestible() && get_comestible()->spoils != 0_turns;
++    return ::get_option<bool>( "COMESTIBLES_GO_BAD" ) &&
++        is_comestible() &&
++        get_comestible()->spoils != 0_turns;
+ }
+ 
+ time_duration item::get_shelf_life() const
  {
      if( goes_bad() ) {
          if( is_comestible() ) {

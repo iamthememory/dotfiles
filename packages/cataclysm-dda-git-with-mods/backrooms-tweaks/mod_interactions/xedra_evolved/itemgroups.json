@@ -53,18 +53,7 @@
     "copy-from": "vending_food_items",
     "extend": {
       "items": [
-        { "group": "spell_spawned_goblin_fruit", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_ierde", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_arvore", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_homullus", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_salamander", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_sylph", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_undine", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_brownie", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_selkie", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_pooka", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_trow", "prob": 10 },
-        { "group": "spell_spawned_goblin_fruit_noble", "prob": 10 }
+        { "item": "goblin_fruit_gacha", "prob": 120 }
       ]
     }
   },
