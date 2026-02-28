@@ -237,6 +237,11 @@
         "result": "f_plant_harvest",
         "valid_furniture": [ "f_plant_mature", "f_plant_seedling", "f_plant_seed" ],
         "message": "The plant grows in moments, leaves unfurling, roots churning the soil, and flowers opening toward the sun.  Before you even lower your hands, it's ripe and ready for the harvest."
+      },
+      {
+        "result": "f_planter_harvest",
+        "valid_furniture": [ "f_planter_mature", "f_planter_seedling", "f_planter_seed" ],
+        "message": "The plant grows in moments, leaves unfurling, roots churning the soil, and flowers opening toward the sun.  Before you even lower your hands, it's ripe and ready for the harvest."
       }
     ]
   },
