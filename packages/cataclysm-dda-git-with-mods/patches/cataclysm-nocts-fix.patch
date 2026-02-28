@@ -1,3 +1,16 @@
+diff --git a/nocts_cata_mod_DDA/Char_creation/c_classes_r.json b/nocts_cata_mod_DDA/Char_creation/c_classes_r.json
+index 99145c2e135a..084e79cf4ce6 100644
+--- a/nocts_cata_mod_DDA/Char_creation/c_classes_r.json
++++ b/nocts_cata_mod_DDA/Char_creation/c_classes_r.json
+@@ -102,7 +102,7 @@
+           "gloves_fingerless",
+           "backpack",
+           "canteen",
+-          "survivor_mess_kit",
++          "mess_kit",
+           "fur_rollmat",
+           "press",
+           "puller",
 diff --git a/nocts_cata_mod_DDA/Monsters/c_monstergroups.json b/nocts_cata_mod_DDA/Monsters/c_monstergroups.json
 index 20546cb17c6f..bb26cbd71de8 100644
 --- a/nocts_cata_mod_DDA/Monsters/c_monstergroups.json
