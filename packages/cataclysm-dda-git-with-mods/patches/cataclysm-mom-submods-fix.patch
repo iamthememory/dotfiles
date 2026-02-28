@@ -43,3 +43,19 @@ index 462b75d6b8bf..ef378c7d27fd 100644
    {
      "type": "effect_on_condition",
      "id": "EOC_PSIONICS_NETHER_AREA_CHECK",
+diff --git a/MoM_No_Negative_Nether_Attunement/modinfo.json b/MoM_No_Negative_Nether_Attunement/modinfo.json
+index 2842f0631893..260fd506b69c 100644
+--- a/MoM_No_Negative_Nether_Attunement/modinfo.json
++++ b/MoM_No_Negative_Nether_Attunement/modinfo.json
+@@ -14,6 +14,11 @@
+     "id": "EOC_PSIONICS_NETHER_ATTUNEMENT_CONSEQUENCES_SETUP",
+     "effect": [  ]
+   },
++  {
++    "type": "effect_on_condition",
++    "id": "EOC_PSIONICS_NETHER_ATTUNEMENT_CONSEQUENCES",
++    "effect": [  ]
++  },
+   {
+     "type": "effect_on_condition",
+     "id": "EOC_PSIONICS_NETHER_AREA_CHECK",
