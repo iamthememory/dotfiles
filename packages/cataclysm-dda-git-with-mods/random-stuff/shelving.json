@@ -24,7 +24,7 @@
     "color": "light_gray",
     "broken_color": "dark_gray",
     "durability": 250,
-    "size": "2000 L",
+    "size": "8000 L",
     "item": "vehicle_shelving",
     "location": "center",
     "requirements": {
