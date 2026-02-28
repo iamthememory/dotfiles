@@ -52,7 +52,7 @@ index e7ee51948bab..a7c593242095 100644
      "components": [ [ [ "bio_kinetic_amplifier", 1 ] ] ]
    }
 diff --git a/Arcana/mod_interactions/Cata++/scenarios.json b/Arcana/mod_interactions/Cata++/scenarios.json
-index 7bb0dba0bb74..cf87bed1a5ee 100644
+index 7bb0dba0bb74..cb3476726b46 100644
 --- a/Arcana/mod_interactions/Cata++/scenarios.json
 +++ b/Arcana/mod_interactions/Cata++/scenarios.json
 @@ -30,7 +30,7 @@
@@ -60,7 +60,7 @@ index 7bb0dba0bb74..cf87bed1a5ee 100644
      "id": "house_fight_scenario",
      "copy-from": "house_fight_scenario",
 -    "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT", "SPELL_SHADOWSNAKES", "SPELL_AGILE", "SPELL_DAYLIGHT" ] }
-+    "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT", "SPELL_AGILE", "SPELL_DAYLIGHT" ] }
++    "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT" ] }
    },
    {
      "type": "scenario",
