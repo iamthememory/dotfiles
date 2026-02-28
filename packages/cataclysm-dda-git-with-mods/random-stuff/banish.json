@@ -1,0 +1,17 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BANISH_A_MONSTER_FOREVER",
+    "condition": { "not": "u_is_npc" },
+    "effect": [
+      { "u_die": { "remove_corpse": true, "supress_message": true, "remove_from_creature_tracker": true } }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BANISH_NEARBY_MONSTERS",
+    "effect": [
+      { "u_run_monster_eocs": [ "EOC_BANISH_A_MONSTER_FOREVER" ] }
+    ]
+  }
+]
