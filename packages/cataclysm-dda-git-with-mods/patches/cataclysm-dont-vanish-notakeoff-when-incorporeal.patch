@@ -1,0 +1,16 @@
+diff --git a/src/suffer.cpp b/src/suffer.cpp
+index aece4f6ef2bb..efb06c627289 100644
+--- a/src/suffer.cpp
++++ b/src/suffer.cpp
+@@ -1052,7 +1052,10 @@ void suffer::from_item_dropping( Character &you )
+         }
+         put_into_vehicle_or_drop( you, item_drop_reason::tumbling, tumble_items );
+         for( item *i : dump ) {
+-            you.i_rem( i );
++            if( !i->has_flag( flag_NO_UNWIELD ) && !i->has_flag( flag_NO_TAKEOFF ) &&
++                !i->has_flag( flag_INTEGRATED ) ) {
++                you.i_rem( i );
++            }
+         }
+     }
+ }
