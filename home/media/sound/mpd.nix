@@ -1,6 +1,5 @@
 # Configuration for MPD.
 { config
-, inputs
 , pkgs
 , ...
 }:
@@ -17,7 +16,7 @@ in
   programs.ncmpcpp.enable = true;
 
   # Enable the visualizer in ncmpcpp.
-  programs.ncmpcpp.package = inputs.stable.ncmpcpp.override {
+  programs.ncmpcpp.package = pkgs.ncmpcpp.override {
     visualizerSupport = true;
   };
 
