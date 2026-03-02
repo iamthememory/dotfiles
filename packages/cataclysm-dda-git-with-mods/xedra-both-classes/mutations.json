@@ -159,5 +159,17 @@
       }
     ],
     "//": "No messages so you aren't constantly spammed while you're walking in and out of buildings.  Being a fae spirit, the arvore doesn't need uncovered arms or head or anything--simply being in the sun is enough."
+  },
+  {
+    "type": "mutation",
+    "id": "ethereal_wings",
+    "copy-from": "ethereal_wings",
+    "enchantments": [
+      {
+        "values": [ { "value": "CARRY_WEIGHT", "add": { "math": [ "5000 * u_spell_level('spell_ethereal_wings')" ] } } ],
+        "ench_effects": [ { "effect": "effect_vampire_bat_form_levitation", "intensity": 1 } ]
+      },
+      { "values": [ { "value": "MAX_MANA", "multiply": -0.2 } ] }
+    ]
   }
 ]
