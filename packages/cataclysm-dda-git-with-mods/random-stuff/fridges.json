@@ -1,0 +1,172 @@
+[
+  {
+    "type": "vehicle_part",
+    "id": "ap_massive_portable_fridge",
+    "copy-from": "ap_big_portable_fridge",
+    "name": { "str": "massive food truck fridge" },
+    "epower": "-205 W",
+    "size": "4000 L",
+    "item": "massive_portable_fridge",
+    "breaks_into": [ { "group": "massive_portable_fridge_destroyed" } ]
+  },
+  {
+    "type": "vehicle_part",
+    "id": "ap_massive_portable_freezer",
+    "copy-from": "ap_big_portable_freezer",
+    "name": { "str": "massive food truck freezer" },
+    "epower": "-205 W",
+    "size": "4000 L",
+    "item": "massive_portable_freezer",
+    "breaks_into": [ { "group": "massive_portable_freezer_destroyed" } ]
+  },
+  {
+    "type": "ITEM",
+    "id": "massive_portable_freezer",
+    "name": { "str": "massive food truck freezer" },
+    "use_action": { "type": "deploy_appliance", "base": "massive_portable_freezer" },
+    "copy-from": "big_portable_freezer"
+  },
+  {
+    "type": "ITEM",
+    "id": "massive_portable_fridge",
+    "name": { "str": "massive food truck fridge" },
+    "use_action": { "type": "deploy_appliance", "base": "massive_portable_fridge" },
+    "copy-from": "big_portable_fridge"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "massive_portable_freezer",
+    "//": "add looks_like so that it rotates properly in vehicles",
+    "looks_like": "minifridge",
+    "delete": { "flags": [ "APPLIANCE", "CTRL_ELECTRONIC" ] },
+    "copy-from": "ap_massive_portable_freezer"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "massive_portable_fridge",
+    "//": "add looks_like so that it rotates properly in vehicles",
+    "looks_like": "minifridge",
+    "delete": { "flags": [ "APPLIANCE", "CTRL_ELECTRONIC" ] },
+    "copy-from": "ap_massive_portable_fridge"
+  },
+  {
+    "id": "massive_portable_fridge_destroyed",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "group": "apartment_fridge_destroyed", "count": 4 }
+    ]
+  },
+  {
+    "id": "massive_portable_freezer_destroyed",
+    "type": "item_group",
+    "subtype": "collection",
+    "items": [
+      { "group": "apartment_freezer_destroyed", "count": 4 }
+    ]
+  },
+  {
+    "type": "construction",
+    "id": "ap_massive_portable_freezer",
+    "group": "place_massive_portable_freezer",
+    "category": "APPLIANCE",
+    "required_skills": [ [ "fabrication", 0 ] ],
+    "time": "5 m",
+    "components": [ [ [ "massive_portable_freezer", 1 ] ] ],
+    "pre_special": "check_empty",
+    "post_special": "done_appliance",
+    "activity_level": "LIGHT_EXERCISE"
+  },
+  {
+    "type": "construction",
+    "id": "ap_massive_portable_fridge",
+    "group": "place_massive_portable_fridge",
+    "category": "APPLIANCE",
+    "required_skills": [ [ "fabrication", 0 ] ],
+    "time": "5 m",
+    "components": [ [ [ "massive_portable_fridge", 1 ] ] ],
+    "pre_special": "check_empty",
+    "post_special": "done_appliance",
+    "activity_level": "BRISK_EXERCISE"
+  },
+  {
+    "type": "construction_group",
+    "id": "place_massive_portable_fridge",
+    "name": "Place Massive Food Truck Fridge"
+  },
+  {
+    "type": "construction_group",
+    "id": "place_massive_portable_freezer",
+    "name": "Place Massive Food Truck Freezer"
+  },
+  {
+    "result": "massive_portable_fridge",
+    "type": "uncraft",
+    "activity_level": "LIGHT_EXERCISE",
+    "time": "8 h",
+    "qualities": [
+      { "id": "HAMMER", "level": 2 },
+      { "id": "WRENCH", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "SCREW", "level": 1 }
+    ],
+    "components": [
+      [ [ "apartment_fridge", 4 ] ]
+    ]
+  },
+  {
+    "result": "massive_portable_freezer",
+    "type": "uncraft",
+    "activity_level": "LIGHT_EXERCISE",
+    "time": "8 h",
+    "qualities": [
+      { "id": "HAMMER", "level": 2 },
+      { "id": "WRENCH", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "SCREW", "level": 1 }
+    ],
+    "components": [
+      [ [ "apartment_freezer", 4 ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "ACTIVE_EXERCISE",
+    "result": "massive_portable_fridge",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_PARTS",
+    "skill_used": "fabrication",
+    "skills_required": [ "mechanics", 4 ],
+    "difficulty": 4,
+    "time": "6 h",
+    "autolearn": true,
+    "using": [ [ "soldering_standard", 100 ], [ "welding_standard", 100 ] ],
+    "qualities": [
+      { "id": "SCREW", "level": 1 },
+      { "id": "HAMMER", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "WRENCH", "level": 1 }
+    ],
+    "components": [ [ [ "apartment_fridge", 4 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "ACTIVE_EXERCISE",
+    "result": "massive_portable_freezer",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_PARTS",
+    "skill_used": "fabrication",
+    "skills_required": [ "mechanics", 4 ],
+    "difficulty": 4,
+    "time": "6 h",
+    "autolearn": true,
+    "using": [ [ "soldering_standard", 100 ], [ "welding_standard", 100 ] ],
+    "qualities": [
+      { "id": "SCREW", "level": 1 },
+      { "id": "HAMMER", "level": 2 },
+      { "id": "SAW_M", "level": 1 },
+      { "id": "WRENCH", "level": 1 }
+    ],
+    "components": [ [ [ "apartment_freezer", 4 ] ] ]
+  }
+]

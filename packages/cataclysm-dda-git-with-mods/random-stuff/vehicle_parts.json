@@ -1,0 +1,9 @@
+[
+  {
+    "type": "vehicle_part",
+    "id": "trunk_floor",
+    "copy-from": "trunk_floor",
+    "name": { "str": "floor trunk" },
+    "size": "500 L"
+  }
+]
