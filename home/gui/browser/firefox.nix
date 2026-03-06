@@ -18,12 +18,14 @@
       # Extra Firefox addons.
       extraAddons =
         let
-          pkgsWithXpiBuilder = pkgs // {
-            inherit
-              (inputs.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
-          };
+          rycee = inputs.nur.repos.rycee;
         in
-        pkgs.lib.callPackageWith pkgsWithXpiBuilder ./firefox-addons.nix { };
+        pkgs.callPackage ./firefox-addons.nix {
+          # This doesn't seem to be exposed in NUR, so recreate it here.
+          buildMozillaXpiAddon = rycee.lib.mozilla.mkBuildMozillaXpiAddon {
+            inherit (pkgs) fetchurl stdenv;
+          };
+        };
     in
     with inputs.nur.repos.rycee.firefox-addons; with extraAddons; [
       # An ad blocker.

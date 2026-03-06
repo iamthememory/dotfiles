@@ -1,6 +1,6 @@
-{ buildFirefoxXpiAddon, fetchurl, lib, stdenv }:
+{ buildMozillaXpiAddon, fetchurl, lib, stdenv }:
   {
-    "adblock-plus" = buildFirefoxXpiAddon {
+    "adblock-plus" = buildMozillaXpiAddon {
       pname = "adblock-plus";
       version = "4.35.0";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
@@ -40,7 +40,7 @@
         platforms = platforms.all;
       };
     };
-    "adnauseam" = buildFirefoxXpiAddon {
+    "adnauseam" = buildMozillaXpiAddon {
       pname = "adnauseam";
       version = "3.28.2";
       addonId = "adnauseam@rednoise.org";
@@ -80,7 +80,7 @@
         platforms = platforms.all;
       };
     };
-    "downthemall" = buildFirefoxXpiAddon {
+    "downthemall" = buildMozillaXpiAddon {
       pname = "downthemall";
       version = "4.14.2";
       addonId = "{DDC359D1-844A-42a7-9AA1-88A850A938A8}";
@@ -108,7 +108,7 @@
         platforms = platforms.all;
       };
     };
-    "zen-fox" = buildFirefoxXpiAddon {
+    "zen-fox" = buildMozillaXpiAddon {
       pname = "zen-fox";
       version = "1.9.9";
       addonId = "{4b7db180-f46c-4955-afaf-a03913751acc}";
