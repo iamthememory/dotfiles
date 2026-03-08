@@ -38,9 +38,6 @@
       # A tool for showing OpenGL info for testing and debugging.
       mesa-demos
 
-      # A tool for easily running games on Linux.
-      lutris
-
       # A way of easily applying libraries to WINE prefixes.
       winetricks
 
@@ -50,4 +47,7 @@
 
   # Install Java.
   programs.java.enable = true;
+
+  # A tool for easily running games on Linux.
+  programs.lutris.enable = true;
 }
