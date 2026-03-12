@@ -3,6 +3,7 @@
 { ...
 }: {
   imports = [
+    ./itd.nix
     ./system-settings.nix
   ];
 }
