@@ -1,5 +1,6 @@
 # Sound settings for NixOS.
-{ ...
+{ lib
+, ...
 }: {
   imports = [
     ./pipewire.nix
@@ -30,14 +31,19 @@
       name = "Low-latency preemption config";
       patch = null;
 
-      extraConfig = ''
-        # Enable low-latency preemption.
-        PREEMPT y
+      structuredExtraConfig = with lib.kernel; {
+        # Enable real-time preemption now that it's in the kernel.
+        PREEMPT_RT = yes;
 
         # Disable the other preemption models.
-        PREEMPT_NONE n
-        PREEMPT_VOLUNTARY n
-      '';
+        PREEMPT = lib.mkForce unset;
+        PREEMPT_NONE = lib.mkForce unset;
+        PREEMPT_VOLUNTARY = lib.mkForce unset;
+
+        # Real-time preemption blocks i915 at the moment, so disble it.
+        DRM_I915_GVT = lib.mkForce unset;
+        DRM_I915_GVT_KVMGT = lib.mkForce unset;
+      };
     }
   ];
 

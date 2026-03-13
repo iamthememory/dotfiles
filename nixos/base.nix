@@ -38,6 +38,10 @@
   environment.etc."generation.rev".text =
     "${config.system.configurationRevision}";
 
+  # Link this generation's kernel config.
+  environment.etc."linux.kconfig".source =
+    "${config.boot.kernelPackages.kernel.configfile}";
+
   # Link the nixpkgs revision used for this generation to make building packages
   # from the same nixpkgs convenient for testing things.
   environment.etc."nixpkgs".source = "${pkgs.path}";
