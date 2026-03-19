@@ -80,6 +80,9 @@
     # A tool to show what file descriptors processes have open.
     lsof
 
+    # A tool for working with several structured formats like csv.
+    miller
+
     # A tool to bundle a nix package as a binary.
     nix-bundle
 
