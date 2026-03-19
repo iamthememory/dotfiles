@@ -85,7 +85,7 @@
     awscli2
 
     # A 3D modeling tool.
-    blender
+    inputs.master.blender
 
     # A tool for streaming to icecast.
     darkice
