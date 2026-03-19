@@ -56,6 +56,7 @@
       cargo-features-manager
       cargo-flamegraph
       cargo-geiger
+      cargo-generate
       cargo-info
       cargo-make
       cargo-msrv
