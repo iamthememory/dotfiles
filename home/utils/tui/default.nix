@@ -21,6 +21,7 @@
 
     # A tool that's like top for I/O.
     iotop
+    iotop-c
 
     # A pager for viewing files.
     less

@@ -26,6 +26,7 @@
 
   # Enable iotop, a way of monitoring processes doing the most IO.
   programs.iotop.enable = true;
+  programs.iotop.package = pkgs.iotop-c;
 
   # Enable the less pager.
   programs.less.enable = true;
