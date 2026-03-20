@@ -174,6 +174,10 @@ in
       # snapshots for three months.
       defaultPlan = "1w=>1h,1m=>1d,3m=>1w";
 
+      # A snapshotting plan for datasets with a lot of turnover, but not a lot
+      # of need for long-term snapshotting.
+      activePlan = "1d=>1h,1w=>1d";
+
       # A simple snapshotting plan that only keeps enough snapshots to keep
       # around a directory structure.
       structurePlan = "1d=>6h";
@@ -216,13 +220,18 @@ in
           };
         };
 
+      mkActive = dataset: {
+        inherit dataset;
+        plan = activePlan;
+      };
+
       # The datasets to snapshot.
       datasets = [
         "rpool/enc/nixos/srv"
-        "rpool/enc/nixos/var/cache"
-        "rpool/enc/nixos/var/cache/ccache"
-        "rpool/enc/nixos/var/cache/spotify"
-        "rpool/enc/nixos/var/lib"
+        (mkActive "rpool/enc/nixos/var/cache")
+        (mkActive "rpool/enc/nixos/var/cache/ccache")
+        (mkActive "rpool/enc/nixos/var/cache/spotify")
+        (mkActive "rpool/enc/nixos/var/lib")
         "rpool/enc/nixos/var/log"
         "rpool/enc/shared/data"
         "rpool/enc/shared/data/downloads"
