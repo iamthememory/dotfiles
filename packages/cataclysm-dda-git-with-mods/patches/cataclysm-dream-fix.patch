@@ -1,8 +1,8 @@
 diff --git a/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json b/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json
-index 52f7ea1bb407..0794298ff549 100644
+index cca2ba926880..571313b4452d 100644
 --- a/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json
 +++ b/data/mods/Xedra_Evolved/eocs/spell_learning_eoc.json
-@@ -71,7 +71,7 @@
+@@ -34,7 +34,7 @@
      "id": "EOC_XE_QUEUE_LEVELING",
      "eoc_type": "EVENT",
      "required_event": "character_wakes_up",

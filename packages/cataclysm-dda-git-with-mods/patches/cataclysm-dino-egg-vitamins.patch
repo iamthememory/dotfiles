@@ -1,5 +1,5 @@
 diff --git a/data/mods/DinoMod/items/egg.json b/data/mods/DinoMod/items/egg.json
-index 4111c9975a84..90cd3b993192 100644
+index 8432e04857db..c52656b0ad48 100644
 --- a/data/mods/DinoMod/items/egg.json
 +++ b/data/mods/DinoMod/items/egg.json
 @@ -20,7 +20,7 @@
@@ -56,7 +56,7 @@ index 4111c9975a84..90cd3b993192 100644
    },
    {
      "type": "ITEM",
-@@ -932,7 +932,7 @@
+@@ -940,7 +940,7 @@
      "fun": 2,
      "flags": [ "FREEZERBURN" ],
      "rot_spawn": { "group": "GROUP_NULL", "chance": 0 },
@@ -65,7 +65,7 @@ index 4111c9975a84..90cd3b993192 100644
    },
    {
      "type": "ITEM",
-@@ -950,7 +950,7 @@
+@@ -958,7 +958,7 @@
      "fun": 10,
      "flags": [ "FREEZERBURN" ],
      "rot_spawn": { "group": "GROUP_NULL", "chance": 0 },
@@ -74,7 +74,7 @@ index 4111c9975a84..90cd3b993192 100644
    },
    {
      "type": "ITEM",
-@@ -968,6 +968,6 @@
+@@ -976,6 +976,6 @@
      "fun": 20,
      "flags": [ "FREEZERBURN" ],
      "rot_spawn": { "group": "GROUP_NULL", "chance": 0 },

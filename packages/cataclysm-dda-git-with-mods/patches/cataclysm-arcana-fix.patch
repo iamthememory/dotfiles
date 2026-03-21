@@ -38,6 +38,20 @@ index edac5a4fe388..a046f4a3c469 100644
      "//": "Weights follow the same conventions as defined in Cata++ for this itemgroup.",
      "type": "item_group",
      "extend": { "items": [ [ "bio_temporal_stimulation", 1 ], [ "bio_life_sign_suppression", 1 ], [ "bio_kinetic_amplifier", 1 ] ] }
+diff --git a/Arcana/mod_interactions/Cata++/professions.json b/Arcana/mod_interactions/Cata++/professions.json
+index e30d868aa4d4..63ee145ffc06 100644
+--- a/Arcana/mod_interactions/Cata++/professions.json
++++ b/Arcana/mod_interactions/Cata++/professions.json
+@@ -14,7 +14,8 @@
+       "STAMINA_BIOWEAPON",
+       "HUNGER_BIOWEAPON",
+       "ANOMALY_BIOWEAPON",
+-      "BIO_WEAPON_EPSILON"
++      "BIO_WEAPON_EPSILON",
++      "CBM_Interface"
+     ],
+     "skills": [
+       { "level": 3, "name": "magic" },
 diff --git a/Arcana/mod_interactions/Cata++/recipe_magitech.json b/Arcana/mod_interactions/Cata++/recipe_magitech.json
 index e7ee51948bab..a7c593242095 100644
 --- a/Arcana/mod_interactions/Cata++/recipe_magitech.json
@@ -64,3 +78,47 @@ index 7bb0dba0bb74..cb3476726b46 100644
    },
    {
      "type": "scenario",
+diff --git a/Arcana/mod_interactions/magiclysm/professions.json b/Arcana/mod_interactions/magiclysm/professions.json
+index 55c9e0af7055..a1b56bb77e21 100644
+--- a/Arcana/mod_interactions/magiclysm/professions.json
++++ b/Arcana/mod_interactions/magiclysm/professions.json
+@@ -59,7 +59,7 @@
+       "male": [ "boxer_briefs" ],
+       "female": [ "bra", "panties" ]
+     },
+-    "traits": [ "PROF_CLEANSINGFLAME2" ],
++    "traits": [ "PROF_CLEANSINGFLAME2", "CBM_Interface" ],
+     "flags": [ "SCEN_ONLY" ]
+   },
+   {
+@@ -121,7 +121,7 @@
+       "male": [ "boxer_shorts" ],
+       "female": [ "sports_bra", "boy_shorts" ]
+     },
+-    "traits": [ "PROF_CLEANSINGFLAME2" ],
++    "traits": [ "PROF_CLEANSINGFLAME2", "CBM_Interface" ],
+     "flags": [ "SCEN_ONLY" ]
+   }
+ ]
+diff --git a/Arcana/mod_interactions/package_bionic_professions/professions.json b/Arcana/mod_interactions/package_bionic_professions/professions.json
+index 55c9e0af7055..a1b56bb77e21 100644
+--- a/Arcana/mod_interactions/package_bionic_professions/professions.json
++++ b/Arcana/mod_interactions/package_bionic_professions/professions.json
+@@ -59,7 +59,7 @@
+       "male": [ "boxer_briefs" ],
+       "female": [ "bra", "panties" ]
+     },
+-    "traits": [ "PROF_CLEANSINGFLAME2" ],
++    "traits": [ "PROF_CLEANSINGFLAME2", "CBM_Interface" ],
+     "flags": [ "SCEN_ONLY" ]
+   },
+   {
+@@ -121,7 +121,7 @@
+       "male": [ "boxer_shorts" ],
+       "female": [ "sports_bra", "boy_shorts" ]
+     },
+-    "traits": [ "PROF_CLEANSINGFLAME2" ],
++    "traits": [ "PROF_CLEANSINGFLAME2", "CBM_Interface" ],
+     "flags": [ "SCEN_ONLY" ]
+   }
+ ]

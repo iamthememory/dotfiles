@@ -1,8 +1,8 @@
 diff --git a/data/json/furniture_and_terrain/furniture-tools.json b/data/json/furniture_and_terrain/furniture-tools.json
-index 42e34204b560..4f6910dcd693 100644
+index e18de12e8888..98141a479203 100644
 --- a/data/json/furniture_and_terrain/furniture-tools.json
 +++ b/data/json/furniture_and_terrain/furniture-tools.json
-@@ -1060,7 +1060,7 @@
+@@ -1086,7 +1086,7 @@
      "id": "f_fvat_empty",
      "name": "fermenting vat",
      "looks_like": "f_standing_tank",
@@ -11,7 +11,7 @@ index 42e34204b560..4f6910dcd693 100644
      "symbol": "O",
      "color": "brown",
      "move_cost_mod": -1,
-@@ -1098,7 +1098,7 @@
+@@ -1124,7 +1124,7 @@
      "id": "f_fvat_full",
      "name": "filled fermenting vat",
      "looks_like": "f_fvat_empty",
@@ -20,7 +20,7 @@ index 42e34204b560..4f6910dcd693 100644
      "symbol": "O",
      "color": "brown_cyan",
      "move_cost_mod": -1,
-@@ -1136,7 +1136,7 @@
+@@ -1162,7 +1162,7 @@
      "id": "f_fvat_wood_empty",
      "name": "wooden fermenting vat",
      "looks_like": "f_fvat_empty",
@@ -29,7 +29,7 @@ index 42e34204b560..4f6910dcd693 100644
      "symbol": "O",
      "color": "brown",
      "move_cost_mod": -1,
-@@ -1165,7 +1165,7 @@
+@@ -1191,7 +1191,7 @@
      "id": "f_fvat_wood_full",
      "name": "filled wooden fermenting vat",
      "looks_like": "f_fvat_wood_empty",
@@ -39,10 +39,10 @@ index 42e34204b560..4f6910dcd693 100644
      "color": "brown_cyan",
      "move_cost_mod": -1,
 diff --git a/src/iexamine.cpp b/src/iexamine.cpp
-index 90fc665afd9d..c610b5cec5b8 100644
+index 173138fb8447..1b088919e4c8 100644
 --- a/src/iexamine.cpp
 +++ b/src/iexamine.cpp
-@@ -3647,7 +3647,7 @@ void iexamine::fvat_empty( Character &you, const tripoint_bub_ms &examp )
+@@ -3595,7 +3595,7 @@ void iexamine::fvat_empty( Character &you, const tripoint_bub_ms &examp )
      itype_id brew_type;
      std::string brew_nname;
      bool to_deposit = false;
@@ -51,7 +51,7 @@ index 90fc665afd9d..c610b5cec5b8 100644
      bool vat_full = false;
      bool ferment = false;
      bool brew_present = false;
-@@ -6173,8 +6173,8 @@ namespace sm_rack
+@@ -6121,8 +6121,8 @@ namespace sm_rack
  {
  static const int MIN_CHARCOAL = 1200;
  static const int CHARCOAL_PER_LITER = 600;

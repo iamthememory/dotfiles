@@ -1,3 +1,15 @@
+diff --git a/Augmented_survivor/modinfo.json b/Augmented_survivor/modinfo.json
+index 62b5d387528f..66f53e1b53c9 100644
+--- a/Augmented_survivor/modinfo.json
++++ b/Augmented_survivor/modinfo.json
+@@ -16,6 +16,7 @@
+     "name": "Augmented Survivor",
+     "description": "Extensive bionic augmentation has allowed to perdure when most would've faltered.",
+     "points": 8,
++    "traits": [ "CBM_Interface" ],
+     "CBMs": [
+       "bio_metabolics",
+       "bio_ears",
 diff --git a/Elemental_bionic_weapons/modinfo.json b/Elemental_bionic_weapons/modinfo.json
 index e8318ad7cdcc..c3d692e56207 100644
 --- a/Elemental_bionic_weapons/modinfo.json
