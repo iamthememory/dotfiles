@@ -132,13 +132,8 @@
     "copy-from": "IERDE",
     "types": [  ],
     "allowed_category": [  ],
+    "cancels": [ ],
     "delete": {
-      "cancels": [
-        "DREAMER",
-        "DREAMSMITH",
-        "EATER",
-        "INVENTOR"
-      ],
       "flags": [
         "HERITAGE",
         "NO_CBM_INSTALLATION"
@@ -151,13 +146,8 @@
     "copy-from": "ARVORE",
     "types": [  ],
     "allowed_category": [  ],
+    "cancels": [ ],
     "delete": {
-      "cancels": [
-        "DREAMER",
-        "DREAMSMITH",
-        "EATER",
-        "INVENTOR"
-      ],
       "flags": [
         "HERITAGE",
         "NO_CBM_INSTALLATION"
@@ -170,13 +160,8 @@
     "copy-from": "SALAMANDER",
     "types": [  ],
     "allowed_category": [  ],
+    "cancels": [ ],
     "delete": {
-      "cancels": [
-        "DREAMER",
-        "DREAMSMITH",
-        "EATER",
-        "INVENTOR"
-      ],
       "flags": [
         "HERITAGE",
         "NO_CBM_INSTALLATION"
@@ -189,13 +174,8 @@
     "copy-from": "UNDINE",
     "types": [  ],
     "allowed_category": [  ],
+    "cancels": [ ],
     "delete": {
-      "cancels": [
-        "DREAMER",
-        "DREAMSMITH",
-        "EATER",
-        "INVENTOR"
-      ],
       "flags": [
         "HERITAGE",
         "NO_CBM_INSTALLATION"
@@ -208,13 +188,8 @@
     "copy-from": "HOMULLUS",
     "types": [  ],
     "allowed_category": [  ],
+    "cancels": [ ],
     "delete": {
-      "cancels": [
-        "DREAMER",
-        "DREAMSMITH",
-        "EATER",
-        "INVENTOR"
-      ],
       "flags": [
         "HERITAGE"
       ]
@@ -226,13 +201,8 @@
     "copy-from": "SYLPH",
     "allowed_category": [  ],
     "types": [  ],
+    "cancels": [ ],
     "delete": {
-      "cancels": [
-        "DREAMER",
-        "DREAMSMITH",
-        "EATER",
-        "INVENTOR"
-      ],
       "flags": [
         "HERITAGE",
         "NO_CBM_INSTALLATION"
