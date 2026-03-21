@@ -10,6 +10,12 @@
     # The Nix user repository overlay.
     nur.url = "github:nix-community/NUR";
 
+    # Mobile NixOS.
+    mobile-nixos = {
+      url = "github:mobile-nixos/mobile-nixos";
+      flake = false;
+    };
+
     # Home-manager.
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -413,6 +419,11 @@
 
       nixosConfigurations = {
         nightmare = mkOSHost { host = "nightmare"; };
+
+        selene = mkOSHost {
+          host = "selene";
+          system = "aarch64-linux";
+        };
       };
     } // systemSpecific;
 }
