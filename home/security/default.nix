@@ -10,6 +10,9 @@
     # A tool for generating memorable passphrases from a wordlist.
     diceware
 
+    # A tool for monitoring ADS-B transmissions.
+    dump1090-fa
+
     # A tool for receiving radio.
     inputs.stable.gqrx
 
