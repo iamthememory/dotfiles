@@ -3,49 +3,63 @@
 , pkgs
 , ...
 }: {
-  home.packages = with pkgs; [
-    # A suite of tools for sniffing and cracking WiFi.
-    aircrack-ng
+  home.packages =
+    let
+      gnuradio-custom = pkgs.gnuradio.override {
+        extraPythonPackages = with pkgs.gnuradio.python.pkgs; [
+          numpy
+        ];
+      };
+    in
+    with pkgs; [
+      # A suite of tools for sniffing and cracking WiFi.
+      aircrack-ng
 
-    # A tool for generating memorable passphrases from a wordlist.
-    diceware
+      # A tool for generating memorable passphrases from a wordlist.
+      diceware
 
-    # A tool for monitoring ADS-B transmissions.
-    dump1090-fa
+      # A tool for monitoring ADS-B transmissions.
+      dump1090-fa
 
-    # A tool for receiving radio.
-    inputs.stable.gqrx
+      # A SDR framework.
+      gnuradio-custom
 
-    # Firmware tools for the HackRF.
-    hackrf
+      # A tool for receiving radio.
+      inputs.stable.gqrx
 
-    # A tool for cracking passwords.
-    hashcat
-    hashcat-utils
+      # Firmware tools for the HackRF.
+      hackrf
 
-    # A tool to calibrate the HackRF tranceiver by locating cell tower baseband
-    # frequencies.
-    kalibrate-hackrf
+      # A tool for cracking passwords.
+      hashcat
+      hashcat-utils
 
-    # The metasploit framework.
-    metasploit
+      # A tool to calibrate the HackRF tranceiver by locating cell tower baseband
+      # frequencies.
+      kalibrate-hackrf
 
-    # Basic wordlists.
-    netbsd.dict
+      # The metasploit framework.
+      metasploit
 
-    # A PCAP/BPF tool for grep-like operations on network data.
-    ngrep
+      # A tool for decoding transmissions.
+      multimon-ng
 
-    # A tool for probing and scanning networks.
-    nmap
+      # Basic wordlists.
+      netbsd.dict
 
-    # A tool for generating random passwords.
-    pwgen
+      # A PCAP/BPF tool for grep-like operations on network data.
+      ngrep
 
-    # The flipper GUI tool.
-    qFlipper
+      # A tool for probing and scanning networks.
+      nmap
 
-    # A tool for viewing and recording network traffic on an interface.
-    wireshark
-  ];
+      # A tool for generating random passwords.
+      pwgen
+
+      # The flipper GUI tool.
+      qFlipper
+
+      # A tool for viewing and recording network traffic on an interface.
+      wireshark
+    ];
 }
