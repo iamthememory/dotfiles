@@ -46,6 +46,7 @@ in
 
   # Use Adwaita dark as the GTK theme.
   gtk.theme.name = "Adwaita-dark";
+  gtk.gtk4.theme = config.gtk.theme;
 
   home.packages =
     let

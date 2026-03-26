@@ -108,7 +108,7 @@ in
       mgba
 
       # An emulator.
-      retroarch-full
+      inputs.master.retroarch-full
 
       # An old-school Runescape client.
       runelite

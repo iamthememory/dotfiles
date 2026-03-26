@@ -1,6 +1,6 @@
 diff --git a/data/mods/Defense_Mode/region_overlay.json b/data/mods/Defense_Mode/region_overlay.json
 deleted file mode 100644
-index 51e81f0a8d2c..000000000000
+index 830d8ac1a0e8..000000000000
 --- a/data/mods/Defense_Mode/region_overlay.json
 +++ /dev/null
 @@ -1,10 +0,0 @@
@@ -10,7 +10,7 @@ index 51e81f0a8d2c..000000000000
 -    "id": "default",
 -    "copy-from": "default",
 -    "highways": null,
--    "cities": null,
+-    "cities": "no_cities",
 -    "feature_flag_settings": { "blacklist": [  ], "whitelist": [ "DEFENSE_MODE" ] }
 -  }
 -]
