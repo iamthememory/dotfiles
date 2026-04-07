@@ -23,21 +23,6 @@ index be4e4e91ccfa..a8d99d8c035a 100644
 +    }
    }
  ]
-diff --git a/Arcana/mod_interactions/Cata++/item_groups_modcompat.json b/Arcana/mod_interactions/Cata++/item_groups_modcompat.json
-index edac5a4fe388..a046f4a3c469 100644
---- a/Arcana/mod_interactions/Cata++/item_groups_modcompat.json
-+++ b/Arcana/mod_interactions/Cata++/item_groups_modcompat.json
-@@ -69,8 +69,8 @@
-     "extend": { "items": [ [ "bio_temporal_stimulation", 1 ] ] }
-   },
-   {
--    "id": "bionics_apophis",
--    "copy-from": "bionics_apophis",
-+    "id": "bionics_apophis_util",
-+    "copy-from": "bionics_apophis_util",
-     "//": "Weights follow the same conventions as defined in Cata++ for this itemgroup.",
-     "type": "item_group",
-     "extend": { "items": [ [ "bio_temporal_stimulation", 1 ], [ "bio_life_sign_suppression", 1 ], [ "bio_kinetic_amplifier", 1 ] ] }
 diff --git a/Arcana/mod_interactions/Cata++/professions.json b/Arcana/mod_interactions/Cata++/professions.json
 index e30d868aa4d4..63ee145ffc06 100644
 --- a/Arcana/mod_interactions/Cata++/professions.json
@@ -52,32 +37,6 @@ index e30d868aa4d4..63ee145ffc06 100644
      ],
      "skills": [
        { "level": 3, "name": "magic" },
-diff --git a/Arcana/mod_interactions/Cata++/recipe_magitech.json b/Arcana/mod_interactions/Cata++/recipe_magitech.json
-index e7ee51948bab..a7c593242095 100644
---- a/Arcana/mod_interactions/Cata++/recipe_magitech.json
-+++ b/Arcana/mod_interactions/Cata++/recipe_magitech.json
-@@ -54,7 +54,7 @@
-     "skills_required": [ [ "electronics", 5 ], [ "fabrication", 3 ], [ "melee", 2 ] ],
-     "time": "30 m",
-     "book_learn": [ [ "recipe_lab_elec", 4 ], [ "recipe_mil_augs", 5 ], [ "recipe_augs", 5 ] ],
--    "using": [ [ "welding_standard", 20 ], [ "steel_chunk_any", 1, "LIST" ] ],
-+    "using": [ [ "welding_standard", 20 ], [ "steel_chunk_any", 1 ] ],
-     "qualities": [ { "id": "SCREW_FINE", "level": 1 } ],
-     "components": [ [ [ "bio_kinetic_amplifier", 1 ] ] ]
-   }
-diff --git a/Arcana/mod_interactions/Cata++/scenarios.json b/Arcana/mod_interactions/Cata++/scenarios.json
-index 7bb0dba0bb74..cb3476726b46 100644
---- a/Arcana/mod_interactions/Cata++/scenarios.json
-+++ b/Arcana/mod_interactions/Cata++/scenarios.json
-@@ -30,7 +30,7 @@
-     "type": "scenario",
-     "id": "house_fight_scenario",
-     "copy-from": "house_fight_scenario",
--    "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT", "SPELL_SHADOWSNAKES", "SPELL_AGILE", "SPELL_DAYLIGHT" ] }
-+    "extend": { "traits": [ "ARCANA_SCALYPATCHES", "ARCANA_INNERHEAT" ] }
-   },
-   {
-     "type": "scenario",
 diff --git a/Arcana/mod_interactions/magiclysm/professions.json b/Arcana/mod_interactions/magiclysm/professions.json
 index 55c9e0af7055..a1b56bb77e21 100644
 --- a/Arcana/mod_interactions/magiclysm/professions.json

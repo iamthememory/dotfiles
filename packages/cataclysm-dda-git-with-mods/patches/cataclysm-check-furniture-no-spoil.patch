@@ -1,8 +1,8 @@
 diff --git a/src/item.h b/src/item.h
-index bf7885fb57e5..cd139c3651a9 100644
+index 42294e59c9e0..dafa9ab29c8b 100644
 --- a/src/item.h
 +++ b/src/item.h
-@@ -1171,7 +1171,7 @@ class item : public visitable
+@@ -1194,7 +1194,7 @@ class item : public visitable
           * Set item @ref rot to a random value. If the item is a container
           * (such as MRE) - processes its contents recursively.
           */
@@ -45,10 +45,10 @@ index b127a4969ee8..3e24dacd7d32 100644
          }
      }
 diff --git a/src/map.cpp b/src/map.cpp
-index 072c1dc5659d..b694ec0317e9 100644
+index e91afeb55ad4..603de7e72c5b 100644
 --- a/src/map.cpp
 +++ b/src/map.cpp
-@@ -6080,11 +6080,13 @@ void map::process_items_in_submap( submap &current_submap, const tripoint_rel_sm
+@@ -6358,11 +6358,13 @@ void map::process_items_in_submap( submap &current_submap, const tripoint_rel_sm
  
          float spoil_multiplier = 1.0f;
  
@@ -65,10 +65,10 @@ index 072c1dc5659d..b694ec0317e9 100644
          map_stack items = i_at( map_location );
          process_map_items( *this, items, active_item_ref.item_ref, active_item_ref.parent,
 diff --git a/src/mapgen.cpp b/src/mapgen.cpp
-index 250ff65cffa2..d53aa0e3d32a 100644
+index 65e186381c14..189eaebf5ed6 100644
 --- a/src/mapgen.cpp
 +++ b/src/mapgen.cpp
-@@ -6382,6 +6382,7 @@ std::vector<item *> map::place_items(
+@@ -6969,6 +6969,7 @@ std::vector<item *> map::place_items(
      const int ammo, const std::string &faction )
  {
      std::vector<item *> res;
@@ -76,7 +76,7 @@ index 250ff65cffa2..d53aa0e3d32a 100644
  
      if( chance > 100 || chance <= 0 ) {
          debugmsg( "map::place_items() called with an invalid chance (%d)", chance );
-@@ -6417,10 +6418,11 @@ std::vector<item *> map::place_items(
+@@ -7004,10 +7005,11 @@ std::vector<item *> map::place_items(
              tries++;
          } while( is_valid_terrain( p ) && tries < 20 );
          if( tries < 20 ) {
@@ -89,7 +89,7 @@ index 250ff65cffa2..d53aa0e3d32a 100644
                  }
              };
  
-@@ -6458,7 +6460,9 @@ std::vector<item *> map::place_items(
+@@ -7045,7 +7047,9 @@ std::vector<item *> map::place_items(
              }
          }
      }
@@ -100,25 +100,25 @@ index 250ff65cffa2..d53aa0e3d32a 100644
          if( e->is_tool() || e->is_gun() || e->is_magazine() ) {
              if( rng( 0, 99 ) < magazine && e->magazine_default() && !e->magazine_integral() &&
                  !e->magazine_current() ) {
-@@ -6469,7 +6473,7 @@ std::vector<item *> map::place_items(
+@@ -7056,7 +7060,7 @@ std::vector<item *> map::place_items(
              }
          }
  
 -        e->randomize_rot();
 +        e->randomize_rot( *this, p );
+         e->preserve_location( project_to<coords::ms>( get_abs_sub() ) );
          e->set_owner( faction_id( faction ) );
      }
-     return res;
 diff --git a/src/monster.cpp b/src/monster.cpp
-index ae348c94fc12..f1acbbd4e64c 100644
+index 146d573190cc..0f3f31de8b7a 100644
 --- a/src/monster.cpp
 +++ b/src/monster.cpp
-@@ -3313,7 +3313,7 @@ void monster::drop_items_on_death( map *here, item *corpse )
+@@ -3318,7 +3318,7 @@ void monster::drop_items_on_death( map *here, item *corpse ) const
                                    spawn_flags::use_spawn_rate );
  
      for( item &e : new_items ) {
 -        e.randomize_rot();
 +        e.randomize_rot( *here, pos_bub( *here ) );
+         e.preserve_location( pos_abs() );
      }
  
-     // for non corpses this is much simpler
