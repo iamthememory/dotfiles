@@ -1,5 +1,6 @@
 # Hardware-specific configuration for nightmare
-{ pkgs
+{ config
+, pkgs
 , ...
 }: {
   # Try to disable power saving to see if that fixes an NVME issue.
@@ -41,6 +42,10 @@
   # Use the legacy NVIDIA drivers, since the open source ones don't support
   # older GPUs.
   hardware.nvidia.open = false;
+
+  # Use older drivers, as versions after 570 no longer support the 1070.
+  hardware.nvidia.package =
+    config.boot.kernelPackages.nvidiaPackages.legacy_470;
 
   # Enable system76 hardware options.
   hardware.system76.enableAll = true;
