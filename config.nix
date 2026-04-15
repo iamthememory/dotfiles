@@ -22,6 +22,9 @@
   # Enable CUDA support.
   cudaSupport = true;
 
+  # Accept the NVIDIA license.
+  nvidia.acceptLicense = true;
+
   # Allow dotnet 7 for now since vintagestory needs it.
   # FIXME: If vintagestory switches to a more up to date dotnet version, remove
   # this.
