@@ -28,6 +28,7 @@
     # files.
     {
       plugin = nerdtree-git-plugin;
+      type = "viml";
       config = ''
         " Use extra glyphs from NerdFonts.
         let g:NERDTreeGitStatusUseNerdFonts = 1
@@ -45,6 +46,7 @@
     # A plugin that allows creating, fetching, opening, etc. gists easily.
     {
       plugin = vim-gist;
+      type = "viml";
       config =
         let
           xclip = "${config.home.profileDirectory}/bin/xclip";
@@ -76,6 +78,7 @@
     # A plugin to look at the GitHub dashboard and activity in (neo)vim.
     {
       plugin = vim-github-dashboard;
+      type = "viml";
       config =
         let
           git = "${config.home.profileDirectory}/bin/git";

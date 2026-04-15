@@ -42,6 +42,7 @@ in
     # A color scheme plugin with treesitter and LSP support.
     {
       plugin = nvim-solarized-lua;
+      type = "viml";
       config = ''
         colorscheme solarized
       '';
@@ -50,6 +51,7 @@ in
     # A plugin for a fancy, featureful statusline.
     {
       plugin = vim-airline;
+      type = "viml";
       config = ''
         " Enable powerline font symbols.
         " These are also included in nerd fonts.
@@ -64,6 +66,7 @@ in
     # A plugin with themes for airline.
     {
       plugin = vim-airline-themes;
+      type = "viml";
       config = ''
         " Ensure colors are setup.
         ${setupColors}

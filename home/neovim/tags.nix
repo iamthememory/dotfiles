@@ -14,6 +14,7 @@
     # A plugin for smartly (re)generating tag files.
     {
       plugin = vim-gutentags;
+      type = "viml";
       config = ''
         " Put the ctags file at .ctags in the project root to make it a bit
         " less cluttery.

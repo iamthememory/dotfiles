@@ -25,6 +25,7 @@
     # A plugin to show diagnostics and linter warnings.
     {
       plugin = ale;
+      type = "viml";
       config = ''
         " Run fixers on each file save.
         let g:ale_fix_on_save = 1
@@ -42,31 +43,9 @@
 
     # A completion engine.
     {
-      plugin =
-        let
-          # FIXME: Remove this when nixpkg #377881 is merged.
-          coq_nvim-patched = coq_nvim.overrideAttrs {
-            passthru.python3Dependencies = ps: with ps;
-              let
-                std2-updated = std2.overrideAttrs {
-                  version = "0.1.10";
+      plugin = coq_nvim;
 
-                  src = pkgs.fetchFromGitHub {
-                    owner = "ms-jpq";
-                    repo = "std2";
-                    rev = "808a4ae1e050033a3863c35175894aa2a97320b2";
-                    hash = "sha256-Setty21ZMUAedN80ZwiMisQNiQmQR7E9khgVsExEHNc=";
-                  };
-                };
-              in
-              [
-                pynvim-pp
-                pyyaml
-                std2-updated
-              ];
-          };
-        in
-        coq_nvim-patched;
+      type = "viml";
 
       config = ''
         let g:coq_settings = {
@@ -82,6 +61,9 @@
     # A plugin to show completion function signatures.
     {
       plugin = echodoc-vim;
+
+      type = "viml";
+
       config = ''
         let g:echodoc#enable_at_startup = 1
       '';

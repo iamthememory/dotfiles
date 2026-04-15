@@ -16,6 +16,7 @@
     # exist in a repo.
     {
       plugin = editorconfig-vim;
+      type = "viml";
       config = ''
         " Don't try to mess with things from fugitive by trying to reformat
         " them.
@@ -32,6 +33,7 @@
     # A plugin to see the undo/redo tree visually.
     {
       plugin = gundo-vim;
+      type = "viml";
       config = ''
         " Use python3 instead of python2.
         let g:gundo_prefer_python3 = 1
@@ -82,6 +84,7 @@
     # A plugin for making writing text as convenient as code.
     {
       plugin = vim-pencil;
+      type = "viml";
       config = ''
         " Wrap lines at 80 characters.
         let g:pencil#textwidth = 80
