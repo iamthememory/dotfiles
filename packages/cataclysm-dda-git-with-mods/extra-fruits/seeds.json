@@ -376,6 +376,14 @@
     "seeds": true
   },
   {
+    "id": "seed_red_winter_wheat",
+    "copy-from": "seed_red_winter_wheat",
+    "type": "ITEM",
+    "subtypes": [ "SEED", "MILLING", "COMESTIBLE" ],
+    "name": { "str_sp": "red winter wheat seeds" },
+    "seeds": true
+  },
+  {
     "type": "ITEM",
     "subtypes": [ "SEED", "COMESTIBLE" ],
     "id": "seed_popcorn",

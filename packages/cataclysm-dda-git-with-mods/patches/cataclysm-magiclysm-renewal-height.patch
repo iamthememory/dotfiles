@@ -1,13 +1,17 @@
 diff --git a/data/mods/Magiclysm/Spells/druid.json b/data/mods/Magiclysm/Spells/druid.json
-index 6f46c1244ce7..fd8a513092d3 100644
+index 35e183c85d1b..4a8906ac7d4d 100644
 --- a/data/mods/Magiclysm/Spells/druid.json
 +++ b/data/mods/Magiclysm/Spells/druid.json
-@@ -1083,12 +1083,10 @@
-   {
-     "type": "effect_on_condition",
-     "id": "EOC_DRUID_RENEW_FOREST_SPELL",
--    "condition": "u_is_outside",
-     "effect": {
+@@ -1059,8 +1059,6 @@
+     "valid_targets": [ "self" ],
+     "max_level": 25,
+     "spell_class": "DRUID",
+-    "caster_condition": "u_is_outside",
+-    "caster_condition_fail_message": "You must be outside to cast Renewing the Forest.",
+     "shape": "blast",
+     "difficulty": 10,
+     "effect": "effect_on_condition",
+@@ -1077,7 +1075,6 @@
        "run_eocs": [
          {
            "id": "EOC_DRUID_RENEW_FOREST_SPELL_2",
