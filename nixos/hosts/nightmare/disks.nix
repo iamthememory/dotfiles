@@ -125,6 +125,7 @@ in
   # Bind /boot0 to /boot for compatibility with, e.g., system76-firmware-daemon.
   fileSystems."/boot" = {
     device = "/boot0";
+    fsType = "none";
     options = [ "bind" ];
   };
 
