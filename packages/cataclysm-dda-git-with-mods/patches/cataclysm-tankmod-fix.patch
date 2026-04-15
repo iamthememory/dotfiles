@@ -40,3 +40,15 @@ index fdadbda441ad..ae059e73e3ba 100644
        ]
      }
    },
+diff --git a/Tankmod_Revived/modinfo.json b/Tankmod_Revived/modinfo.json
+index 5a494a6573bd..544f5387131a 100644
+--- a/Tankmod_Revived/modinfo.json
++++ b/Tankmod_Revived/modinfo.json
+@@ -8,7 +8,6 @@
+     "description": "The intended successor of my older, obsoleted Tanks and Other Vehicles mod.",
+     "version": "DDA version, update 3/24/2025",
+     "category": "vehicles",
+-    "obsolete": true,
+     "dependencies": [ "dda" ]
+   }
+ ]
