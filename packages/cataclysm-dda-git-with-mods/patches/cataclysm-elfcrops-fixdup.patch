@@ -2151,7 +2151,7 @@ index d52300a7328b..f01f62aff128 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..fc003fbc36cd 100644
+index df4ffa673168..f41c022274b8 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -2246,7 +2246,7 @@ index df4ffa673168..fc003fbc36cd 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,536 @@
+@@ -615,9 +568,823 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2783,6 +2783,293 @@ index df4ffa673168..fc003fbc36cd 100644
 +      { "group": "tools_medical", "prob": 5 },
 +      { "group": "hospital_incubator", "prob": 5 },
 +      { "group": "estrogen_hrt", "prob": 10 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "items": [
++      { "item": "barley_stalks", "prob": 20 },
++      { "item": "bee_balm", "prob": 10 },
++      { "item": "bell_pepper", "prob": 10 },
++      { "item": "blackberries", "prob": 10 },
++      { "item": "blueberries", "prob": 10 },
++      { "item": "broccoli", "prob": 10 },
++      { "item": "buckwheat_stalks", "prob": 20 },
++      { "item": "cabbage_head", "prob": 10 },
++      { "item": "cactus_pad", "prob": 10 },
++      { "item": "cannabis", "prob": 10 },
++      { "item": "canola_stalks", "prob": 10 },
++      { "item": "carrot", "prob": 10 },
++      { "item": "carrot_wild", "prob": 10 },
++      { "item": "cattail_stalk", "prob": 10 },
++      { "item": "celery", "prob": 10 },
++      { "item": "chamomile", "prob": 10 },
++      { "item": "chicory_raw", "prob": 10 },
++      { "item": "chili_pepper", "prob": 10 },
++      { "item": "corn", "prob": 30 },
++      { "item": "cotton_boll", "prob": 10 },
++      { "item": "cranberries", "prob": 10 },
++      { "item": "cucumber", "prob": 10 },
++      { "item": "dahlia_root", "prob": 10 },
++      { "item": "datura_seed", "prob": 10 },
++      { "item": "dogbane", "prob": 10 },
++      { "item": "dry_lentil_stalks", "prob": 20 },
++      { "item": "eggplant", "prob": 10 },
++      { "item": "elderberries", "prob": 10 },
++      { "item": "garlic", "prob": 30 },
++      { "item": "gherkin", "prob": 10 },
++      { "item": "grapes", "prob": 10 },
++      { "item": "groundnut", "prob": 10 },
++      { "item": "hops", "prob": 10 },
++      { "item": "horseradish_root", "prob": 10 },
++      { "item": "huckleberries", "prob": 10 },
++      { "item": "japanese_knotweed_stem", "prob": 10 },
++      { "item": "jerusalem_artichoke", "prob": 10 },
++      { "item": "lettuce_head", "prob": 10 },
++      { "item": "lotus_rhizome", "prob": 10 },
++      { "item": "m_stellatum_berries", "prob": 10 },
++      { "item": "mayapple", "prob": 10 },
++      { "item": "melon", "prob": 10 },
++      { "item": "mugwort", "prob": 10 },
++      { "item": "mulberries", "prob": 10 },
++      { "item": "mushroom", "prob": 10 },
++      { "item": "mushroom_morel", "prob": 10 },
++      { "item": "oat_stalks", "prob": 20 },
++      { "item": "onion", "prob": 10 },
++      { "item": "popcorn_cob", "prob": 30 },
++      { "item": "poppy_bud", "prob": 10 },
++      { "item": "potato", "prob": 10 },
++      { "item": "pumpkin", "prob": 10 },
++      { "item": "radish_taproot", "prob": 10 },
++      { "item": "raspberries", "prob": 10 },
++      { "item": "raw_bamboo", "prob": 10 },
++      { "item": "raw_beans", "prob": 30 },
++      { "item": "raw_bottle_gourd", "prob": 10 },
++      { "item": "raw_burdock", "prob": 10 },
++      { "item": "raw_dandelion", "prob": 10 },
++      { "item": "raw_edamame", "prob": 10 },
++      { "item": "red_winter_wheat_stalks", "prob": 10 },
++      { "item": "rhubarb", "prob": 10 },
++      { "item": "rose_hips", "prob": 10 },
++      { "item": "salsify_raw", "prob": 10 },
++      { "item": "seed_mustard", "prob": 10 },
++      { "item": "seed_sunflower", "prob": 10 },
++      { "item": "soybean", "prob": 20 },
++      { "item": "spinach", "prob": 10 },
++      { "item": "spurge", "prob": 10 },
++      { "item": "strawberries", "prob": 10 },
++      { "item": "sugar_beet", "prob": 10 },
++      { "item": "thyme", "prob": 10 },
++      { "item": "tobacco_raw", "prob": 10 },
++      { "item": "tomato", "prob": 10 },
++      { "item": "veggy_wild", "prob": 10 },
++      { "item": "watermelon", "prob": 10 },
++      { "item": "wheat_stalks", "prob": 20 },
++      { "item": "wild_garlic", "prob": 10 },
++      { "item": "wild_herbs", "prob": 10 },
++      { "item": "wild_rice_stalks", "prob": 20 },
++      { "item": "wild_sarsaparilla_root", "prob": 10 },
++      { "item": "wintergreen_berry", "prob": 10 },
++      { "item": "withered", "prob": 10 },
++      { "item": "zucchini", "prob": 10 },
++
++      { "item": "2x4", "prob": 10 },
++      { "item": "alien_pod_resin", "prob": 10 },
++      { "item": "amplifier", "prob": 10 },
++      { "item": "ant_egg", "prob": 10 },
++      { "item": "bee_sting", "prob": 10 },
++      { "item": "bio_power_storage", "prob": 10 },
++      { "item": "bio_power_storage_mkII", "prob": 10 },
++      { "item": "biscuit", "prob": 10 },
++      { "item": "brick", "prob": 10 },
++      { "item": "butter", "prob": 10 },
++      { "item": "cable", "prob": 10 },
++      { "item": "cereal2", "prob": 10 },
++      { "item": "chain", "prob": 10 },
++      { "item": "chocolate", "prob": 10 },
++      { "item": "chunk_rubber", "prob": 10 },
++      { "item": "circuit", "prob": 10 },
++      { "item": "clay_lump", "prob": 10 },
++      { "item": "concrete", "prob": 10 },
++      { "item": "cookies", "prob": 10 },
++      { "item": "copper", "prob": 10 },
++      { "item": "demihuman_flesh", "prob": 10 },
++      { "item": "duct_tape_bundle", "prob": 10 },
++      { "item": "e_scrap", "prob": 10 },
++      { "item": "egg_chicken", "prob": 10 },
++      { "item": "egg_fish", "prob": 10 },
++      { "item": "egg_spider_web", "prob": 10 },
++      { "item": "egg_turtle_painted", "prob": 10 },
++      { "item": "element", "prob": 10 },
++      { "item": "fertilizer_commercial", "prob": 10 },
++      { "item": "fish", "prob": 10 },
++      { "item": "flour_clump", "prob": 10 },
++      { "item": "frame", "prob": 10 },
++      { "item": "fungicidalbomb", "prob": 10 },
++      { "item": "gasbomb", "prob": 10 },
++      { "item": "glass_sheet", "prob": 10 },
++      { "item": "gold_small", "prob": 10 },
++      { "item": "grahmcrackers", "prob": 10 },
++      { "item": "gunpowder", "prob": 10 },
++      { "item": "hdframe", "prob": 10 },
++      { "item": "hinge", "prob": 10 },
++      { "item": "honeycomb", "prob": 10 },
++      { "item": "human_flesh", "prob": 10 },
++      { "item": "insecticidalbomb", "prob": 10 },
++      { "item": "lead", "prob": 10 },
++      { "item": "log", "prob": 10 },
++      { "item": "magnetron", "prob": 10 },
++      { "item": "maple_sap_berry", "prob": 10 },
++      { "item": "marshmallow", "prob": 10 },
++      { "item": "material_cement_clump", "prob": 10 },
++      { "item": "material_rocksalt", "prob": 10 },
++      { "item": "material_sand_clump", "prob": 10 },
++      { "item": "material_soil", "prob": 10 },
++      { "item": "mattress", "prob": 10 },
++      { "item": "meat", "prob": 10 },
++      { "item": "meat_tainted", "prob": 10 },
++      { "item": "metal_tank", "prob": 10 },
++      { "item": "mil_plate", "prob": 10 },
++      { "item": "mortar_build", "prob": 10 },
++      { "item": "mutant_meat", "prob": 10 },
++      { "item": "nail_bundle", "prob": 10 },
++      { "item": "pemmican", "prob": 10 },
++      { "item": "pipe", "prob": 10 },
++      { "item": "pizza_cheese", "prob": 10 },
++      { "item": "pizza_meat", "prob": 10 },
++      { "item": "pizza_supreme", "prob": 10 },
++      { "item": "pizza_veggy", "prob": 10 },
++      { "item": "plastic_chunk", "prob": 10 },
++      { "item": "plastic_sheet", "prob": 10 },
++      { "item": "plut_cell", "prob": 10 },
++      { "item": "polycarbonate_sheet", "prob": 10 },
++      { "item": "power_supply", "prob": 10 },
++      { "item": "raw_milk_berry", "prob": 10 },
++      { "item": "rc_anesthetic_solid", "prob": 10 },
++      { "item": "rc_purifier_solid", "prob": 10 },
++      { "item": "rc_seed_mat", "prob": 10 },
++      { "item": "rc_spawn_10mmfungus", "prob": 10 },
++      { "item": "rc_spawn_1231nfungus", "prob": 10 },
++      { "item": "rc_spawn_12mmfungus", "prob": 10 },
++      { "item": "rc_spawn_223fungus", "prob": 10 },
++      { "item": "rc_spawn_22fungus", "prob": 10 },
++      { "item": "rc_spawn_270winfungus", "prob": 10 },
++      { "item": "rc_spawn_3006springfungus", "prob": 10 },
++      { "item": "rc_spawn_300blkfungus", "prob": 10 },
++      { "item": "rc_spawn_300winfungus", "prob": 10 },
++      { "item": "rc_spawn_308winfungus", "prob": 10 },
++      { "item": "rc_spawn_32acpfungus", "prob": 10 },
++      { "item": "rc_spawn_357magfungus", "prob": 10 },
++      { "item": "rc_spawn_357sigfungus", "prob": 10 },
++      { "item": "rc_spawn_36navyfungus", "prob": 10 },
++      { "item": "rc_spawn_380acpfungus", "prob": 10 },
++      { "item": "rc_spawn_38specfungus", "prob": 10 },
++      { "item": "rc_spawn_40swfungus", "prob": 10 },
++      { "item": "rc_spawn_40x46grenfungus", "prob": 10 },
++      { "item": "rc_spawn_40x53grenfungus", "prob": 10 },
++      { "item": "rc_spawn_410000fungus", "prob": 10 },
++      { "item": "rc_spawn_44armyfungus", "prob": 10 },
++      { "item": "rc_spawn_44magfungus", "prob": 10 },
++      { "item": "rc_spawn_454casufungus", "prob": 10 },
++      { "item": "rc_spawn_4570fungus", "prob": 10 },
++      { "item": "rc_spawn_45acpfungus", "prob": 10 },
++      { "item": "rc_spawn_45coltfungus", "prob": 10 },
++      { "item": "rc_spawn_460rowfungus", "prob": 10 },
++      { "item": "rc_spawn_46mmfungus", "prob": 10 },
++      { "item": "rc_spawn_500magfungus", "prob": 10 },
++      { "item": "rc_spawn_50bmgfungus", "prob": 10 },
++      { "item": "rc_spawn_545x39fungus", "prob": 10 },
++      { "item": "rc_spawn_57x28fungus", "prob": 10 },
++      { "item": "rc_spawn_5x40fungus", "prob": 10 },
++      { "item": "rc_spawn_66rockfungus", "prob": 10 },
++      { "item": "rc_spawn_762x25fungus", "prob": 10 },
++      { "item": "rc_spawn_762x39fungus", "prob": 10 },
++      { "item": "rc_spawn_762x54fungus", "prob": 10 },
++      { "item": "rc_spawn_84x246fungus", "prob": 10 },
++      { "item": "rc_spawn_8x40fungus", "prob": 10 },
++      { "item": "rc_spawn_9x18makafungus", "prob": 10 },
++      { "item": "rc_spawn_9x19fungus", "prob": 10 },
++      { "item": "rc_spawn_ammo_fungus", "prob": 10 },
++      { "item": "rc_spawn_atgmfungus", "prob": 10 },
++      { "item": "rc_spawn_barbparafungus", "prob": 10 },
++      { "item": "rc_spawn_batterydisposfungus", "prob": 10 },
++      { "item": "rc_spawn_bodypart_fungus", "prob": 10 },
++      { "item": "rc_spawn_cannonfungus", "prob": 10 },
++      { "item": "rc_spawn_cbmfungus", "prob": 10 },
++      { "item": "rc_spawn_exotic_books_fungus", "prob": 10 },
++      { "item": "rc_spawn_feather_fungus", "prob": 10 },
++      { "item": "rc_spawn_flarefungus", "prob": 10 },
++      { "item": "rc_spawn_flintlockfungus", "prob": 10 },
++      { "item": "rc_spawn_forage_fungus", "prob": 10 },
++      { "item": "rc_spawn_fuel_fungus", "prob": 10 },
++      { "item": "rc_spawn_gamble_fungus", "prob": 10 },
++      { "item": "rc_spawn_gasfungus", "prob": 10 },
++      { "item": "rc_spawn_gunmags_fungus", "prob": 10 },
++      { "item": "rc_spawn_gunmods_fungus", "prob": 10 },
++      { "item": "rc_spawn_guns_fungus", "prob": 10 },
++      { "item": "rc_spawn_harvest_fungus", "prob": 10 },
++      { "item": "rc_spawn_homejunk_fungus", "prob": 10 },
++      { "item": "rc_spawn_lab_libraryfungus", "prob": 10 },
++      { "item": "rc_spawn_many_books_fungus", "prob": 10 },
++      { "item": "rc_spawn_medicine_fungus", "prob": 10 },
++      { "item": "rc_spawn_mineral_fungus", "prob": 10 },
++      { "item": "rc_spawn_moneyfungus", "prob": 10 },
++      { "item": "rc_spawn_paintballfungus", "prob": 10 },
++      { "item": "rc_spawn_rebarrailfungus", "prob": 10 },
++      { "item": "rc_spawn_rpgfungus", "prob": 10 },
++      { "item": "rc_spawn_seed_fungus", "prob": 10 },
++      { "item": "rc_spawn_shotgunfungus", "prob": 10 },
++      { "item": "rebar", "prob": 10 },
++      { "item": "reinforced_glass_pane", "prob": 10 },
++      { "item": "rigid_plastic_sheet", "prob": 10 },
++      { "item": "rock", "prob": 10 },
++      { "item": "rope_30", "prob": 10 },
++      { "item": "scrap", "prob": 10 },
++      { "item": "sheet", "prob": 10 },
++      { "item": "sheet_canvas", "prob": 10 },
++      { "item": "sheet_cotton", "prob": 10 },
++      { "item": "sheet_denim", "prob": 10 },
++      { "item": "sheet_faux_fur", "prob": 10 },
++      { "item": "sheet_felt", "prob": 10 },
++      { "item": "sheet_kevlar", "prob": 10 },
++      { "item": "sheet_kevlar_layered", "prob": 10 },
++      { "item": "sheet_leather", "prob": 10 },
++      { "item": "sheet_lycra", "prob": 10 },
++      { "item": "sheet_metal", "prob": 10 },
++      { "item": "sheet_metal_small", "prob": 10 },
++      { "item": "sheet_neoprene", "prob": 10 },
++      { "item": "sheet_nomex", "prob": 10 },
++      { "item": "sheet_nylon", "prob": 10 },
++      { "item": "silver_small", "prob": 10 },
++      { "item": "smores", "prob": 10 },
++      { "item": "solar_cell", "prob": 10 },
++      { "item": "solar_panel", "prob": 10 },
++      { "item": "solar_panel_v2", "prob": 10 },
++      { "item": "solder_wire", "prob": 10 },
++      { "item": "spike", "prob": 10 },
++      { "item": "steel_chunk", "prob": 10 },
++      { "item": "steel_lump", "prob": 10 },
++      { "item": "steel_plate", "prob": 10 },
++      { "item": "stick_long", "prob": 10 },
++      { "item": "string_36", "prob": 10 },
++      { "item": "sugar_clump", "prob": 10 },
++      { "item": "tallow", "prob": 10 },
++      { "item": "tanned_pelt", "prob": 10 },
++      { "item": "tempered_glass_sheet", "prob": 10 },
++      { "item": "thread", "prob": 10 },
++      { "item": "tin", "prob": 10 },
++      { "item": "tinyweldtank", "prob": 10 },
++      { "item": "toastem", "prob": 10 },
++      { "item": "venom_bee", "prob": 10 },
++      { "item": "venom_wasp", "prob": 10 },
++      { "item": "water_berry", "prob": 10 },
++      { "item": "wax", "prob": 10 },
++      { "item": "wire", "prob": 10 },
++      { "item": "wood_beam", "prob": 10 },
++      { "item": "wood_panel", "prob": 10 },
++      { "item": "wool_staple", "prob": 10 }
      ]
    }
 -]
@@ -3351,10 +3638,10 @@ index fccd89aa02a2..b79cc53f1723 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..6510a3279fe5 100644
+index ce70e9badaf0..603f2672dca9 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1258 @@
+@@ -1,1046 +1,1276 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -4358,7 +4645,7 @@ index ce70e9badaf0..6510a3279fe5 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_66rock_fungus",
 -      "moves": 50,
@@ -4376,7 +4663,7 @@ index ce70e9badaf0..6510a3279fe5 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
--    "use_action": {
+     "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_700nitro_fungus",
 -      "moves": 50,
@@ -5261,6 +5548,24 @@ index ce70e9badaf0..6510a3279fe5 100644
 +          "effect": { "u_spawn_item": "rc_drop_medicine", "suppress_message": true, "use_item_group": true }
 +        }
 +      ]
++    }
++  },
++  {
++    "id": "rc_spawn_gamble_fungus",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon gamble fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with something in its body.",
++    "use_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_gamble_fungus",
++          "effect": { "u_spawn_item": "rc_drop_gamble", "suppress_message": true, "use_item_group": true }
++        }
++      ]
      }
    }
 -]
@@ -5408,6 +5713,54 @@ index 000000000000..20f2b0387231
 +        { "item": "skull_triceratops", "prob": 20, "count": [ 0, 1 ] },
 +        { "item": "skull_tyrannosaurus", "prob": 20, "count": [ 0, 1 ] },
 +        { "item": "stomach_sauropod", "prob": 20, "count": [ 1, 2 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/aftershock_exoplanet/itemgroups.json b/Resource Crops/mod_interactions/aftershock_exoplanet/itemgroups.json
+new file mode 100644
+index 000000000000..e116e9036dbf
+--- /dev/null
++++ b/Resource Crops/mod_interactions/aftershock_exoplanet/itemgroups.json	
+@@ -0,0 +1,18 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "banana", "prob": 10 },
++        { "item": "coconut", "prob": 10 },
++        { "item": "lemon", "prob": 10 },
++        { "item": "melon", "prob": 10 },
++        { "item": "orange", "prob": 10 },
++        { "item": "pineapple", "prob": 10 }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/extra-fruits/itemgroups.json b/Resource Crops/mod_interactions/extra-fruits/itemgroups.json
+new file mode 100644
+index 000000000000..96cc1488e80c
+--- /dev/null
++++ b/Resource Crops/mod_interactions/extra-fruits/itemgroups.json	
+@@ -0,0 +1,18 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "banana", "prob": 10 },
++        { "item": "coconut", "prob": 10 },
++        { "item": "kiwi", "prob": 10 },
++        { "item": "lemon", "prob": 10 },
++        { "item": "orange", "prob": 10 },
++        { "item": "pineapple", "prob": 10 }
 +      ]
 +    }
 +  }
@@ -5616,6 +5969,90 @@ index 000000000000..123ca97f8de5
 +        { "item": "mutant_meat", "prob": 3320, "count": [ 1, 2 ] },
 +        { "item": "sinew", "prob": 4, "count": [ 380, 400 ] },
 +        { "item": "tainted_distortion_organ", "prob": 8, "count": [ 1, 1 ] }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/resource_cropsMagic/itemgroups.json b/Resource Crops/mod_interactions/resource_cropsMagic/itemgroups.json
+new file mode 100644
+index 000000000000..91348024cbee
+--- /dev/null
++++ b/Resource Crops/mod_interactions/resource_cropsMagic/itemgroups.json	
+@@ -0,0 +1,37 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "alumentum", "prob": 10 },
++        { "item": "black_dragon_tanned_hide", "prob": 10 },
++        { "item": "bulette_plate", "prob": 10 },
++        { "item": "demon_chitin_piece", "prob": 10 },
++        { "item": "demon_chitin_plate", "prob": 10 },
++        { "item": "dragon_black_scale", "prob": 10 },
++        { "item": "light_orichalcum_frame", "prob": 10 },
++        { "item": "mana_dust", "prob": 10 },
++        { "item": "mithril_ingot", "prob": 10 },
++        { "item": "mithril_lump", "prob": 10 },
++        { "item": "orichalcum_frame", "prob": 10 },
++        { "item": "orichalcum_ingot", "prob": 10 },
++        { "item": "orichalcum_lump", "prob": 10 },
++        { "item": "parabolan_wool_staple", "prob": 10 },
++        { "item": "rc_spawn_all_spell_books_fungus", "prob": 10 },
++        { "item": "rc_spawn_animistfungus", "prob": 10 },
++        { "item": "rc_spawn_biomancerfungus", "prob": 10 },
++        { "item": "rc_spawn_druidfungus", "prob": 10 },
++        { "item": "rc_spawn_earthshaperfungus", "prob": 10 },
++        { "item": "rc_spawn_kelvinistfungus", "prob": 10 },
++        { "item": "rc_spawn_magusfungus", "prob": 10 },
++        { "item": "rc_spawn_mana_crystal_fungus", "prob": 10 },
++        { "item": "rc_spawn_stormshaperfungus", "prob": 10 },
++        { "item": "rc_spawn_technomancerfungus", "prob": 10 },
++        { "item": "rc_spawn_various_magic_items_fungus", "prob": 10 }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/resource_crops_plants/itemgroups.json b/Resource Crops/mod_interactions/resource_crops_plants/itemgroups.json
+new file mode 100644
+index 000000000000..66b91100e66c
+--- /dev/null
++++ b/Resource Crops/mod_interactions/resource_crops_plants/itemgroups.json	
+@@ -0,0 +1,14 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "rc_rice", "prob": 10 },
++        { "item": "tinder", "prob": 10 }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/tropicata/itemgroups.json b/Resource Crops/mod_interactions/tropicata/itemgroups.json
+new file mode 100644
+index 000000000000..1208209dcfcf
+--- /dev/null
++++ b/Resource Crops/mod_interactions/tropicata/itemgroups.json	
+@@ -0,0 +1,15 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "banana", "prob": 10 },
++        { "item": "kiwi", "prob": 10 },
++        { "item": "melon", "prob": 10 }
 +      ]
 +    }
 +  }
@@ -7952,7 +8389,7 @@ index 056d35917941..5c2772a020f4 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..0324dea8835b 100644
+index fa98ccf57c19..ce1182e8f3c5 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
 @@ -2,10 +2,11 @@
@@ -7983,7 +8420,7 @@ index fa98ccf57c19..0324dea8835b 100644
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
-@@ -48,5 +50,307 @@
+@@ -48,5 +50,330 @@
          [ "paper", 100 ]
        ]
      ]
@@ -8279,6 +8716,29 @@ index fa98ccf57c19..0324dea8835b 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "medicine seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_gamble",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "gamble seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -12367,10 +12827,10 @@ index 4b6a9ff1343e..004ea40a1bd8 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..5850baecbe81 100644
+index 83c7aca5e180..aa895b65a4bd 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,301 @@
+@@ -2,33 +2,321 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -12687,6 +13147,26 @@ index 83c7aca5e180..5850baecbe81 100644
 +    "price_postapoc": "250 cent",
 +    "plant_name": "medicine bush",
 +    "fruit": "rc_spawn_medicine_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_gamble",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "gamble seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with something random.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "gamble bush",
++    "fruit": "rc_spawn_gamble_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "5 days" },
