@@ -1838,6 +1838,38 @@ index fd7a4dc925bf..b55424b9717a 100644
 -]
 \ No newline at end of file
 +]
+diff --git a/Maps/Map_extras.json b/Maps/Map_extras.json
+index 4756d5ea4340..7e5aed1eabb5 100644
+--- a/Maps/Map_extras.json
++++ b/Maps/Map_extras.json
+@@ -7,7 +7,7 @@
+     "generator": { "generator_method": "update_mapgen", "generator_id": "mx_kk_rc" },
+     "sym": "G",
+     "color": "red",
+-    "autonote": true
++    "autonote_visibility": "details"
+   },
+   {
+     "id": "mx_incident_fixer",
+@@ -17,7 +17,7 @@
+     "generator": { "generator_method": "update_mapgen", "generator_id": "mx_incident_fixer" },
+     "sym": "O",
+     "color": "blue",
+-    "autonote": true
++    "autonote_visibility": "details"
+   },
+   {
+     "id": "mx_incident_zwei",
+@@ -27,6 +27,6 @@
+     "generator": { "generator_method": "update_mapgen", "generator_id": "mx_incident_zwei" },
+     "sym": "O",
+     "color": "blue",
+-    "autonote": true
++    "autonote_visibility": "details"
+   }
+-]
+\ No newline at end of file
++]
 diff --git a/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json b/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json
 index 81f533c26bf9..5f1ebadbe54e 100644
 --- a/Maps/Mapgen/HamHamPangPang/HamHamPangPang.json

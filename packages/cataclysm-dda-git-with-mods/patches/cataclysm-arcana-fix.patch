@@ -81,3 +81,34 @@ index 55c9e0af7055..a1b56bb77e21 100644
      "flags": [ "SCEN_ONLY" ]
    }
  ]
+diff --git a/Arcana/overmap_and_mapgen/map_extras/map_extras.json b/Arcana/overmap_and_mapgen/map_extras/map_extras.json
+index 2aa2b00eea3b..c43415bae150 100644
+--- a/Arcana/overmap_and_mapgen/map_extras/map_extras.json
++++ b/Arcana/overmap_and_mapgen/map_extras/map_extras.json
+@@ -8,7 +8,7 @@
+     "min_max_zlevel": [ 0, 0 ],
+     "sym": "t",
+     "color": "green",
+-    "autonote": false,
++    "autonote_visibility": "same_tile",
+     "flags": [ "WILDERNESS", "CLASSIC" ]
+   },
+   {
+@@ -20,7 +20,7 @@
+     "min_max_zlevel": [ -1, 0 ],
+     "sym": "c",
+     "color": "red",
+-    "autonote": false,
++    "autonote_visibility": "same_tile",
+     "flags": [ "MAN_MADE", "CLASSIC" ]
+   },
+   {
+@@ -32,7 +32,7 @@
+     "min_max_zlevel": [ -2, 0 ],
+     "sym": "c",
+     "color": "red",
+-    "autonote": false,
++    "autonote_visibility": "same_tile",
+     "flags": [ "MAN_MADE", "CLASSIC" ]
+   }
+ ]

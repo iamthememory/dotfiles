@@ -396,44 +396,6 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_ARVORE_GOBLIN_FRUIT",
-    "copy-from": "EOC_ARVORE_GOBLIN_FRUIT",
-    "condition": {
-      "and": [
-        {
-          "or": [
-            "u_is_outside",
-            { "u_is_on_terrain": "t_barkfloor" },
-            { "u_is_on_terrain": "t_barkfloor_no_roof" },
-            { "u_is_on_terrain": "t_bramble_door_o" }
-          ]
-        },
-        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
-        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
-      ]
-    }
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_ARVORE_SUMMON_PRESERVATION_CONTAINER_CHECK",
-    "copy-from": "EOC_ARVORE_SUMMON_PRESERVATION_CONTAINER_CHECK",
-    "condition": {
-      "and": [
-        {
-          "or": [
-            "u_is_outside",
-            { "u_is_on_terrain": "t_barkfloor" },
-            { "u_is_on_terrain": "t_barkfloor_no_roof" },
-            { "u_is_on_terrain": "t_bramble_door_o" }
-          ]
-        },
-        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" },
-        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_WILD" }
-      ]
-    }
-  },
-  {
-    "type": "effect_on_condition",
     "id": "EOC_ARVORE_SUN_FOODS_ON_KCAL",
     "copy-from": "EOC_ARVORE_SUN_FOODS_ON_KCAL",
     "recurrence": [ "1 minutes", "1 minutes" ],
@@ -498,57 +460,6 @@
           ]
         },
         { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_ON_NATURAL_TERRAIN" }
-      ]
-    }
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_ARVORE_VERDANT_IMPRISONMENT",
-    "copy-from": "EOC_ARVORE_VERDANT_IMPRISONMENT",
-    "condition": {
-      "or": [
-        "u_is_outside",
-        { "u_is_on_terrain": "t_barkfloor" },
-        { "u_is_on_terrain": "t_barkfloor_no_roof" },
-        { "u_is_on_terrain": "t_bramble_door_o" }
-      ]
-    }
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_ARVORE_ROOT_TO_ROOT_TRANSLOCATE_CHECK",
-    "copy-from": "EOC_ARVORE_ROOT_TO_ROOT_TRANSLOCATE_CHECK",
-    "condition": {
-      "and": [
-        {
-          "or": [
-            "u_is_outside",
-            { "u_is_on_terrain": "t_barkfloor" },
-            { "u_is_on_terrain": "t_barkfloor_no_roof" },
-            { "u_is_on_terrain": "t_bramble_door_o" }
-          ]
-        },
-        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_FOREST" },
-        { "not": { "u_at_om_location": "field" } }
-      ]
-    }
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_ARVORE_ROOT_TO_ROOT_ATTUNEMENT_CHECK",
-    "copy-from": "EOC_ARVORE_ROOT_TO_ROOT_ATTUNEMENT_CHECK",
-    "condition": {
-      "and": [
-        {
-          "or": [
-            "u_is_outside",
-            { "u_is_on_terrain": "t_barkfloor" },
-            { "u_is_on_terrain": "t_barkfloor_no_roof" },
-            { "u_is_on_terrain": "t_bramble_door_o" }
-          ]
-        },
-        { "test_eoc": "EOC_CONDITION_CHECK_ARVORE_IN_THE_FOREST" },
-        { "not": { "u_at_om_location": "field" } }
       ]
     }
   }

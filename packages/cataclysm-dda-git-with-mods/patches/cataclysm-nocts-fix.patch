@@ -146,7 +146,7 @@ index 23aceb94771d..0e326ccc5aed 100644
        "bio_magnet",
        "bio_pitch_perfect",
 diff --git a/nocts_cata_mod_DDA/Char_creation/c_classes_r.json b/nocts_cata_mod_DDA/Char_creation/c_classes_r.json
-index 8c78ce5c1d9c..498d4f558476 100644
+index 8c78ce5c1d9c..64ab99061097 100644
 --- a/nocts_cata_mod_DDA/Char_creation/c_classes_r.json
 +++ b/nocts_cata_mod_DDA/Char_creation/c_classes_r.json
 @@ -97,7 +97,7 @@
@@ -158,26 +158,6 @@ index 8c78ce5c1d9c..498d4f558476 100644
            "fur_rollmat",
            "press",
            "puller",
-@@ -197,6 +197,7 @@
-     "name": "Bionic Silencer",
-     "description": "You were trained and equipped for infiltrating secure facilities for your mysterious backers, to secure specific objects of interest and silence high-value targets.  Now that they've gone silent themselves, you'll have to use your gifts for simple survival.",
-     "points": 12,
-+    "traits": [ "CBM_Interface" ],
-     "CBMs": [
-       "bio_adrenaline",
-       "bio_ads",
-diff --git a/nocts_cata_mod_DDA/Surv_help/c_armor.json b/nocts_cata_mod_DDA/Surv_help/c_armor.json
-index 4cbfb8862ee1..c3aa67a888d2 100644
---- a/nocts_cata_mod_DDA/Surv_help/c_armor.json
-+++ b/nocts_cata_mod_DDA/Surv_help/c_armor.json
-@@ -445,6 +445,7 @@
-     "light": 50,
-     "environmental_protection": 5,
-     "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "C_RADIOGENIC_GOGGLES" ] } ],
-+    "light": 25,
-     "flags": [ "GNV_EFFECT", "WATERPROOF", "STURDY", "RADIOACTIVE", "PADDED" ],
-     "armor": [ { "encumbrance": 30, "coverage": 100, "covers": [ "eyes" ] } ]
-   },
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json b/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
 index 97c30a99854e..5d2311bef392 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
