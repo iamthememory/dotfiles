@@ -95,6 +95,7 @@
         [ "rc_seed_frame", 10 ],
         [ "rc_seed_fuel", 10 ],
         [ "rc_seed_furpelt", 10 ],
+        [ "rc_seed_gamble", 10 ],
         [ "rc_seed_gas", 10 ],
         [ "rc_seed_glass", 10 ],
         [ "rc_seed_glassReinf", 10 ],

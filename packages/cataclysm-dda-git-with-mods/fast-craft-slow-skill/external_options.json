@@ -36,28 +36,28 @@
     "name": "SKILL_TRAINING_SPEED",
     "//": "Scales experience gained from practicing skills and reading books.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables skill training except for NPC training.",
     "stype": "float",
-    "value": 1.0
+    "value": 0.5
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "UNSTABLE_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the unstable trait.",
     "stype": "int",
-    "value": 48
+    "value": 96
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CHAOTIC_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the chaotic trait.",
     "stype": "int",
-    "value": 36
+    "value": 72
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "BASE_MANA_REGEN_TIME",
     "//": "How many hours it should take to regenerate all mana at base mana regen.",
     "stype": "float",
-    "value": 1.0
+    "value": 2.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -78,7 +78,7 @@
     "name": "SHELF_LIFE_MULTIPLIER",
     "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
     "stype": "float",
-    "value": 4.0
+    "value": 10.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -113,7 +113,7 @@
     "name": "REQUIRE_THEORETICAL_KNOWLEDGE_TO_LEARN",
     "//": "Learning practical skill will no longer increase your theoretical skill, so you need to learn from books to get any skill.",
     "stype": "bool",
-    "value": false
+    "value": true
   },
   {
     "type": "EXTERNAL_OPTION",
