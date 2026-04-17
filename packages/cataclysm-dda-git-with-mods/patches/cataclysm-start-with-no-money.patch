@@ -1,0 +1,13 @@
+diff --git a/src/newcharacter.cpp b/src/newcharacter.cpp
+index 392da7b481a4..fecb0daf3e90 100644
+--- a/src/newcharacter.cpp
++++ b/src/newcharacter.cpp
+@@ -874,7 +874,7 @@ void Character::initialize( bool learn_recipes )
+     set_skills_from_hobbies();
+ 
+     // setup staring bank money
+-    cash = prof->starting_cash().value_or( rng( -200000, 200000 ) );
++    cash = prof->starting_cash().value_or( 0 );
+ 
+     randomize_heartrate();
+ 
