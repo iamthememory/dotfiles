@@ -359,10 +359,10 @@ index 000000000000..c815bc5a4bb5
 +  }
 +]
 diff --git a/Resource Crops Magiclysm addon/items/summoners.json b/Resource Crops Magiclysm addon/items/summoners.json
-index 9d7a999b9de1..bf85645525c8 100644
+index 9d7a999b9de1..5003cb575f80 100644
 --- a/Resource Crops Magiclysm addon/items/summoners.json	
 +++ b/Resource Crops Magiclysm addon/items/summoners.json	
-@@ -1,146 +1,200 @@
+@@ -1,146 +1,233 @@
  [
    {
      "id": "rc_spawn_animistfungus",
@@ -378,17 +378,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_animist_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_animistfungus",
-+          "effect": { "u_spawn_item": "animist_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "animist_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -407,17 +411,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_biomancer_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_biomancerfungus",
-+          "effect": { "u_spawn_item": "biomancer_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "biomancer_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -436,17 +444,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_druid_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_druidfungus",
-+          "effect": { "u_spawn_item": "druid_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "druid_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -465,17 +477,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_earthshaper_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_earthshaperfungus",
-+          "effect": { "u_spawn_item": "earthshaper_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "earthshaper_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -494,17 +510,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_kelvinist_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_kelvinistfungus",
-+          "effect": { "u_spawn_item": "kelvinist_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "kelvinist_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -523,17 +543,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_magus_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_magusfungus",
-+          "effect": { "u_spawn_item": "magus_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "magus_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -552,17 +576,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_stormshaper_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_stormshaperfungus",
-+          "effect": { "u_spawn_item": "stormshaper_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "stormshaper_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -581,17 +609,21 @@ index 9d7a999b9de1..bf85645525c8 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_technomancer_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_technomancerfungus",
-+          "effect": { "u_spawn_item": "technomancer_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "technomancer_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -603,13 +635,16 @@ index 9d7a999b9de1..bf85645525c8 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon spellbook fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with spellbooks in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_all_spell_books_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_all_spell_books", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_all_spell_books", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -621,13 +656,16 @@ index 9d7a999b9de1..bf85645525c8 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon magic items fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with magic items in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_various_magic_items_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_various_magic_items", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_various_magic_items", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -639,13 +677,16 @@ index 9d7a999b9de1..bf85645525c8 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon mana crystal fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with mana crystals in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_mana_crystal_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_mana_crystal", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_mana_crystal", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -2151,7 +2192,7 @@ index d52300a7328b..f01f62aff128 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..f41c022274b8 100644
+index df4ffa673168..23f01d61b8d1 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -36,21 +36,6 @@
@@ -2246,7 +2287,7 @@ index df4ffa673168..f41c022274b8 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,823 @@
+@@ -615,9 +568,822 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -3019,7 +3060,6 @@ index df4ffa673168..f41c022274b8 100644
 +      { "item": "rc_spawn_paintballfungus", "prob": 10 },
 +      { "item": "rc_spawn_rebarrailfungus", "prob": 10 },
 +      { "item": "rc_spawn_rpgfungus", "prob": 10 },
-+      { "item": "rc_spawn_seed_fungus", "prob": 10 },
 +      { "item": "rc_spawn_shotgunfungus", "prob": 10 },
 +      { "item": "rebar", "prob": 10 },
 +      { "item": "reinforced_glass_pane", "prob": 10 },
@@ -3638,10 +3678,10 @@ index fccd89aa02a2..b79cc53f1723 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..603f2672dca9 100644
+index ce70e9badaf0..6701e42888b8 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1276 @@
+@@ -1,1046 +1,1486 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -3661,7 +3701,12 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "price_postapoc": "1000 cent",
      "material": [ "veggy" ],
      "symbol": "$",
-+    "flags": [ "SINGLE_USE" ]
+-    "use_action": {
+-      "type": "place_monster",
+-      "monster_id": "rc_money_fungus",
+-      "moves": 50,
+-      "difficulty": 100
++    "flags": [ "SPAWN_ACTIVE", "DESTROY_ON_CHARGE_USE" ]
 +  },
 +  {
 +    "id": "rc_spawn_moneyfungus",
@@ -3670,17 +3715,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon money fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a cash card.",
-     "use_action": {
--      "type": "place_monster",
--      "monster_id": "rc_money_fungus",
--      "moves": 50,
--      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_moneyfungus",
-+          "effect": { "u_spawn_item": "rc_drop_cashcard", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_cashcard", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3699,17 +3743,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_22_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_22fungus",
-+          "effect": { "u_spawn_item": "rc_drop_22", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_22", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3728,17 +3776,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_10mm_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_10mmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_10mm", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_10mm", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3775,17 +3827,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_20x66_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_12mmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_12mm", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_12mm", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3804,17 +3860,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_223_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_223fungus",
-+          "effect": { "u_spawn_item": "rc_drop_223", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_223", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3833,17 +3893,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_270win_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_270winfungus",
-+          "effect": { "u_spawn_item": "rc_drop_270win", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_270win", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3862,17 +3926,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_300win_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_300winfungus",
-+          "effect": { "u_spawn_item": "rc_drop_300win", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_300win", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3891,17 +3959,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_3006spring_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_3006springfungus",
-+          "effect": { "u_spawn_item": "rc_drop_3006spring", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_3006spring", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3920,17 +3992,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_300blk_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_300blkfungus",
-+          "effect": { "u_spawn_item": "rc_drop_300blk", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_300blk", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3949,17 +4025,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_308win_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_308winfungus",
-+          "effect": { "u_spawn_item": "rc_drop_308win", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_308win", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -3978,17 +4058,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_32acp_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_32acpfungus",
-+          "effect": { "u_spawn_item": "rc_drop_32acp", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_32acp", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4007,17 +4091,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_357mag_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_357magfungus",
-+          "effect": { "u_spawn_item": "rc_drop_357mag", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_357mag", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4036,17 +4124,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_357sig_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_357sigfungus",
-+          "effect": { "u_spawn_item": "rc_drop_357sig", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_357sig", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4065,17 +4157,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_36navy_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_36navyfungus",
-+          "effect": { "u_spawn_item": "rc_drop_36navy", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_36navy", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4094,17 +4190,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_38spec_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_38specfungus",
-+          "effect": { "u_spawn_item": "rc_drop_38spec", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_38spec", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4123,17 +4223,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_380acp_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_380acpfungus",
-+          "effect": { "u_spawn_item": "rc_drop_380acp", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_380acp", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4152,17 +4256,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_40sw_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_40swfungus",
-+          "effect": { "u_spawn_item": "rc_drop_40sw", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_40sw", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4181,17 +4289,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_40x46gren_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_40x46grenfungus",
-+          "effect": { "u_spawn_item": "rc_drop_40x46gren", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_40x46gren", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4210,17 +4322,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_40x53gren_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_40x53grenfungus",
-+          "effect": { "u_spawn_item": "rc_drop_40x53gren", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_40x53gren", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4239,17 +4355,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_410000_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_410000fungus",
-+          "effect": { "u_spawn_item": "rc_drop_410000", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_410000", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4268,17 +4388,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_44mag_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_44magfungus",
-+          "effect": { "u_spawn_item": "rc_drop_44mag", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_44mag", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4297,17 +4421,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_44army_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_44armyfungus",
-+          "effect": { "u_spawn_item": "rc_drop_44army", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_44army", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4326,17 +4454,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_45acp_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_45acpfungus",
-+          "effect": { "u_spawn_item": "rc_drop_45acp", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_45acp", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4355,17 +4487,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_454casu_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_454casufungus",
-+          "effect": { "u_spawn_item": "rc_drop_454casu", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_454casu", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4384,17 +4520,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_4570_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_4570fungus",
-+          "effect": { "u_spawn_item": "rc_drop_4570", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_4570", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4413,17 +4553,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_45colt_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_45coltfungus",
-+          "effect": { "u_spawn_item": "rc_drop_45cold", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_45cold", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4442,17 +4586,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_46mm_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_46mmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_46mm", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_46mm", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4471,17 +4619,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_460row_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_460rowfungus",
-+          "effect": { "u_spawn_item": "rc_drop_460row", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_460row", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4500,17 +4652,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_50bmg_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_50bmgfungus",
-+          "effect": { "u_spawn_item": "rc_drop_50bmg", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_50bmg", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4529,17 +4685,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_500mag_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_500magfungus",
-+          "effect": { "u_spawn_item": "rc_drop_500mag", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_500mag", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4558,17 +4718,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_545x39_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_545x39fungus",
-+          "effect": { "u_spawn_item": "rc_drop_545x39", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_545x39", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4587,17 +4751,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_57x28_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_57x28fungus",
-+          "effect": { "u_spawn_item": "rc_drop_57x28", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_57x28", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4616,17 +4784,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_5x40_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_5x40fungus",
-+          "effect": { "u_spawn_item": "rc_drop_5x40", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_5x40", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4663,17 +4835,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_700nitro_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_66rockfungus",
-+          "effect": { "u_spawn_item": "rc_drop_66rock", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_66rock", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4692,17 +4868,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_762x39_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_762x39fungus",
-+          "effect": { "u_spawn_item": "rc_drop_762x39", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_762x39", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4721,17 +4901,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_762x54_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_762x54fungus",
-+          "effect": { "u_spawn_item": "rc_drop_762x54", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_762x54", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4750,17 +4934,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_762x25_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_762x25fungus",
-+          "effect": { "u_spawn_item": "rc_drop_762x25", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_762x25", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4779,17 +4967,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_84x246_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_84x246fungus",
-+          "effect": { "u_spawn_item": "rc_drop_84x246", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_84x246", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4808,17 +5000,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_8x40_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_8x40fungus",
-+          "effect": { "u_spawn_item": "rc_drop_8x40", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_8x40", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4837,17 +5033,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_9x19_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_9x19fungus",
-+          "effect": { "u_spawn_item": "rc_drop_9x19", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_9x19", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4866,17 +5066,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_9x18maka_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_9x18makafungus",
-+          "effect": { "u_spawn_item": "rc_drop_9x18maka", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_9x18maka", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4895,17 +5099,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_atgm_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_atgmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_atgm", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_atgm", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4924,17 +5132,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_barbpara_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_barbparafungus",
-+          "effect": { "u_spawn_item": "rc_drop_barbpara", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_barbpara", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4953,17 +5165,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_cannon_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_cannonfungus",
-+          "effect": { "u_spawn_item": "rc_drop_cannon", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_cannon", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -4982,17 +5198,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_gas_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gasfungus",
-+          "effect": { "u_spawn_item": "rc_drop_gas", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_gas", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5011,17 +5231,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_1231n_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_1231nfungus",
-+          "effect": { "u_spawn_item": "rc_drop_1231n", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_1231n", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5040,17 +5264,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_flintlock_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_flintlockfungus",
-+          "effect": { "u_spawn_item": "rc_drop_flintlock", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_flintlock", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5069,17 +5297,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_rebarrail_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_rebarrailfungus",
-+          "effect": { "u_spawn_item": "rc_drop_rebarrail", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_rebarrail", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5098,17 +5330,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_paintball_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_paintballfungus",
-+          "effect": { "u_spawn_item": "rc_drop_paintball", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_paintball", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5127,17 +5363,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_rpg_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_rpgfungus",
-+          "effect": { "u_spawn_item": "rc_drop_rpg", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_rpg", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5156,17 +5396,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_shotgun_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_shotgunfungus",
-+          "effect": { "u_spawn_item": "rc_drop_shotgun", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_shotgun", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5185,17 +5429,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_flare_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_flarefungus",
-+          "effect": { "u_spawn_item": "rc_drop_flare", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_flare", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5214,17 +5462,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_cbm_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_cbmfungus",
-+          "effect": { "u_spawn_item": "rc_drop_cbm2", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_cbm2", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5243,17 +5495,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_batterydispos_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_batterydisposfungus",
-+          "effect": { "u_spawn_item": "rc_drop_batterydispos", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_batterydispos", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5272,17 +5528,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_lab_library_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_lab_libraryfungus",
-+          "effect": { "u_spawn_item": "lab_bookshelves", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "lab_bookshelves", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -5301,17 +5561,21 @@ index ce70e9badaf0..603f2672dca9 100644
 -    "price_postapoc": 1000,
 -    "material": [ "veggy" ],
 -    "symbol": "$",
-     "use_action": {
+-    "use_action": {
 -      "type": "place_monster",
 -      "monster_id": "rc_exotic_books_fungus",
 -      "moves": 50,
 -      "difficulty": 100
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_exotic_books_fungus",
-+          "effect": { "u_spawn_item": "exotic_books", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "exotic_books", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5323,13 +5587,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon book fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of books in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_many_books_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_many_books", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_many_books", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5341,13 +5608,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon gun mods fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of gun attachments in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gunmods_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_gunmods", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_gunmods", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5359,13 +5629,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon gun fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of guns in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_guns_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_guns", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_guns", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5377,13 +5650,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon gun magazine fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of magazines in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gunmags_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_gunmags", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_gunmags", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5395,13 +5671,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon junk fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of domestic junk in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_homejunk_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_homejunk", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_homejunk", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5413,13 +5692,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon forage fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of forage in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_forage_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_forage", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_forage", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5431,13 +5713,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon harvest fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of harvested forage in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_harvest_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_harvests", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_harvests", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5449,13 +5734,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon mineral fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with a wide array of minerals in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_mineral_fungus",
-+          "effect": { "u_spawn_item": "mining_rock", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "mining_rock", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5467,13 +5755,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon feather fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with feathers in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_feather_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_feather", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_feather", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5485,13 +5776,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon body part fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with body parts and meat in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_bodypart_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_bodypart", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_bodypart", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5503,13 +5797,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon fuel fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with fuel in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_fuel_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_fuel", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_fuel", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5521,13 +5818,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon ammo fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with ammo in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_ammo_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_ammo", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_ammo", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5539,13 +5839,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon medicine fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with medicine in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_medicine_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_medicine", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_medicine", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
@@ -5557,13 +5860,16 @@ index ce70e9badaf0..603f2672dca9 100644
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon gamble fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with something in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_gamble_fungus",
-+          "effect": { "u_spawn_item": "rc_drop_gamble", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_gamble", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
      }
@@ -6059,10 +6365,10 @@ index 000000000000..1208209dcfcf
 +]
 diff --git a/Resource Crops/mod_interactions/xedra-both-classes/items.json b/Resource Crops/mod_interactions/xedra-both-classes/items.json
 new file mode 100644
-index 000000000000..3ec3b71d2779
+index 000000000000..45e1797d4fdd
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/xedra-both-classes/items.json	
-@@ -0,0 +1,20 @@
+@@ -0,0 +1,23 @@
 +[
 +  {
 +    "id": "rc_spawn_seed_fungus",
@@ -6071,13 +6377,16 @@ index 000000000000..3ec3b71d2779
 +    "subtypes": [ "TOOL" ],
 +    "name": "summon seed fungus",
 +    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with seeds in its body.",
-+    "use_action": {
++    "tick_action": {
 +      "type": "effect_on_conditions",
 +      "consume": true,
 +      "effect_on_conditions": [
 +        {
 +          "id": "EOC_rc_spawn_seed_fungus",
-+          "effect": { "u_spawn_item": "arvore_seeds", "suppress_message": true, "use_item_group": true }
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "arvore_seeds", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
 +        }
 +      ]
 +    }
