@@ -5,7 +5,7 @@
     "id": "seed_potato_raw",
     "copy-from": "seed_potato_raw",
     "name": { "str_sp": "seed potatoes" },
-    "spoils_in": "360 days",
+    "spoils_in": 0,
     "delete": {
       "flags": [ "FREEZERBURN" ]
     }

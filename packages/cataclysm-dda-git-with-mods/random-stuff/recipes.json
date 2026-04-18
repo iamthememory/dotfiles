@@ -38,5 +38,11 @@
       [ [ "bone", 4 ], [ "bone_human", 4 ] ],
       [ [ "cordage_short", 2, "LIST" ], [ "sinew", 40 ], [ "thread", 40 ], [ "plant_fibre", 40 ], [ "yarn", 40 ] ]
     ]
+  },
+  {
+    "result": "seed_garlic",
+    "type": "recipe",
+    "copy-from": "seed_extraction_base",
+    "components": [ [ [ "garlic_clove", 6 ] ] ]
   }
 ]
