@@ -329,21 +329,28 @@
     "flags": [ "ALLOW_OUTSIDE" ]
   },
   {
+    "type": "start_location",
+    "id": "sloc_desert_island_sand",
+    "name": "Sandy Island",
+    "terrain": [ "island_sand" ],
+    "flags": [ "ALLOW_OUTSIDE" ]
+  },
+  {
     "type": "scenario",
     "id": "wilderness",
     "copy-from": "wilderness",
-    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big", "sloc_desert_island_sand" ] }
   },
   {
     "type": "scenario",
     "copy-from": "heli_crash",
     "id": "heli_crash",
-    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big", "sloc_desert_island_sand" ] }
   },
   {
     "type": "scenario",
     "copy-from": "portal_dependent",
     "id": "portal_dependent",
-    "extend": { "allowed_locs": [ "sloc_desert_island_field_big" ] }
+    "extend": { "allowed_locs": [ "sloc_desert_island_field_big", "sloc_desert_island_sand" ] }
   }
 ]
