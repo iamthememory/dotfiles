@@ -123,7 +123,7 @@
     "items": {
       "both": {
         "entries": [
-          { "item": "rc_seed_gamble", "count": 4 },
+          { "item": "rc_seed_gamble", "count": 8 },
           { "item": "rc_seed_bodypart", "count": 1 },
           { "item": "rc_seed_forage", "count": 1 },
           { "item": "rc_seed_log", "count": 1 },

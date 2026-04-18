@@ -81,6 +81,7 @@ let
       ./patches/cataclysm-xedra-dream.patch
       ./patches/cataclysm-xedra-dreamdross.patch
       ./patches/cataclysm-xedra-nail.patch
+      ./patches/cataclysm-xedra-show-gramarye.patch
       ./patches/cataclysm-xedra-wallet.patch
     ];
 

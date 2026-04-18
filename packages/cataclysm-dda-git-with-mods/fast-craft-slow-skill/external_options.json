@@ -3,13 +3,13 @@
     "type": "EXTERNAL_OPTION",
     "name": "PLAYER_HEALING_RATE",
     "stype": "float",
-    "value": 0.00001
+    "value": 0.0
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "NPC_HEALING_RATE",
     "stype": "float",
-    "value": 0.00001
+    "value": 0.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -57,7 +57,7 @@
     "name": "BASE_MANA_REGEN_TIME",
     "//": "How many hours it should take to regenerate all mana at base mana regen.",
     "stype": "float",
-    "value": 2.0
+    "value": 4.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -71,14 +71,14 @@
     "name": "CROP_YIELD_MULTIPLIER",
     "//": "How to scale crop yields. 2.0 will double crop yields.",
     "stype": "float",
-    "value": 2.0
+    "value": 1.0
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "SHELF_LIFE_MULTIPLIER",
     "//": "How much longer than normal foods will last. 2.0 will cause foods to last twice as long.",
     "stype": "float",
-    "value": 10.0
+    "value": 4.0
   },
   {
     "type": "EXTERNAL_OPTION",
