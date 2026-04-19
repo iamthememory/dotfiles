@@ -123,21 +123,19 @@
     "items": {
       "both": {
         "entries": [
-          { "item": "rc_seed_gamble", "count": 8 },
-          { "item": "rc_seed_bodypart", "count": 1 },
+          { "item": "rc_seed_gamble", "count": 1 },
+
           { "item": "rc_seed_forage", "count": 1 },
           { "item": "rc_seed_log", "count": 1 },
           { "item": "rc_seed_longstout", "count": 1 },
           { "item": "rc_seed_many_books", "count": 1 },
-          { "item": "rc_seed_medicine", "count": 1 },
           { "item": "rc_seed_mineral", "count": 1 },
+          { "item": "rc_seed_warp", "count": 1 },
           { "item": "rc_seed_water_berry", "count": 1 },
 
-          { "item": "e_tool" },
+          { "item": "digging_stick" },
 
           { "group": "rc_drop_many_books", "count": 4 },
-
-          { "item": "tent_kit" },
 
           { "item": "bottle_plastic" },
 

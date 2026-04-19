@@ -2192,10 +2192,22 @@ index d52300a7328b..8db0c511fac5 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..38bb85221973 100644
+index df4ffa673168..31201a2f75a6 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
-@@ -36,21 +36,6 @@
+@@ -3,7 +3,10 @@
+     "type": "item_group",
+     "id": "rc_drop_cashcard",
+     "items": [
+-      { "item": "cash_card", "charges-min": 1, "charges-max": 50000}
++      { "item": "cash_card", "prob": 100, "charges": [ 1, 50000 ] },
++      { "group": "coins", "prob": 80, "count": [ 1, 4 ] },
++      { "group": "banknotes", "prob": 80, "count": [ 1, 4 ] },
++      { "group": "discount_cards", "prob": 40, "count": [ 1, 2 ] }
+     ]
+   },
+   {
+@@ -36,21 +39,6 @@
        { "item": "12mm"}
      ]
    },
@@ -2217,7 +2229,7 @@ index df4ffa673168..38bb85221973 100644
    {
      "type": "item_group",
      "subtype": "distribution",
-@@ -201,19 +186,7 @@
+@@ -201,19 +189,7 @@
        { "item": "40x46mm_m1006"},
        { "item": "40x46mm_m433"},
        { "item": "40x46mm_m576"},
@@ -2238,7 +2250,7 @@ index df4ffa673168..38bb85221973 100644
      ]
    },
    {
-@@ -380,23 +353,12 @@
+@@ -380,23 +356,12 @@
        { "item": "66mm_HEAT"}
      ]
    },
@@ -2262,7 +2274,7 @@ index df4ffa673168..38bb85221973 100644
        { "item": "bp_762_m87"}
      ]
    },
-@@ -524,8 +486,7 @@
+@@ -524,8 +489,7 @@
      "subtype": "distribution",
      "id": "rc_drop_rebarrail",
      "items": [
@@ -2272,7 +2284,7 @@ index df4ffa673168..38bb85221973 100644
      ]
    },
    {
-@@ -599,14 +560,6 @@
+@@ -599,14 +563,6 @@
      "id": "rc_drop_cbm2",
      "entries": [
        { "group": "bionics", "prob":10},
@@ -2287,7 +2299,7 @@ index df4ffa673168..38bb85221973 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +568,821 @@
+@@ -615,9 +571,821 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2915,200 +2927,200 @@ index df4ffa673168..38bb85221973 100644
 +      { "item": "withered", "prob": 10 },
 +      { "item": "zucchini", "prob": 10 },
 +
-+      { "item": "2x4", "prob": 10 },
-+      { "item": "alien_pod_resin", "prob": 10 },
-+      { "item": "amplifier", "prob": 10 },
-+      { "item": "ant_egg", "prob": 10 },
-+      { "item": "bee_sting", "prob": 10 },
-+      { "item": "bio_power_storage", "prob": 10 },
-+      { "item": "bio_power_storage_mkII", "prob": 10 },
-+      { "item": "biscuit", "prob": 10 },
-+      { "item": "brick", "prob": 10 },
-+      { "item": "butter", "prob": 10 },
-+      { "item": "cable", "prob": 10 },
-+      { "item": "cereal2", "prob": 10 },
-+      { "item": "chain", "prob": 10 },
-+      { "item": "chocolate", "prob": 10 },
-+      { "item": "chunk_rubber", "prob": 10 },
-+      { "item": "circuit", "prob": 10 },
-+      { "item": "clay_lump", "prob": 10 },
-+      { "item": "concrete", "prob": 10 },
-+      { "item": "cookies", "prob": 10 },
-+      { "item": "copper", "prob": 10 },
-+      { "item": "demihuman_flesh", "prob": 10 },
-+      { "item": "duct_tape_bundle", "prob": 10 },
-+      { "item": "e_scrap", "prob": 10 },
-+      { "item": "egg_chicken", "prob": 10 },
-+      { "item": "egg_fish", "prob": 10 },
-+      { "item": "egg_spider_web", "prob": 10 },
-+      { "item": "egg_turtle_painted", "prob": 10 },
-+      { "item": "element", "prob": 10 },
-+      { "item": "fertilizer_commercial", "prob": 10 },
-+      { "item": "fish", "prob": 10 },
-+      { "item": "flour_clump", "prob": 10 },
-+      { "item": "frame", "prob": 10 },
-+      { "item": "fungicidalbomb", "prob": 10 },
-+      { "item": "gasbomb", "prob": 10 },
-+      { "item": "glass_sheet", "prob": 10 },
-+      { "item": "gold_small", "prob": 10 },
-+      { "item": "grahmcrackers", "prob": 10 },
-+      { "item": "gunpowder", "prob": 10 },
-+      { "item": "hdframe", "prob": 10 },
-+      { "item": "hinge", "prob": 10 },
-+      { "item": "honeycomb", "prob": 10 },
-+      { "item": "human_flesh", "prob": 10 },
-+      { "item": "insecticidalbomb", "prob": 10 },
-+      { "item": "lead", "prob": 10 },
-+      { "item": "log", "prob": 10 },
-+      { "item": "magnetron", "prob": 10 },
-+      { "item": "maple_sap_berry", "prob": 10 },
-+      { "item": "marshmallow", "prob": 10 },
-+      { "item": "material_cement_clump", "prob": 10 },
-+      { "item": "material_rocksalt", "prob": 10 },
-+      { "item": "material_sand_clump", "prob": 10 },
-+      { "item": "material_soil", "prob": 10 },
-+      { "item": "mattress", "prob": 10 },
-+      { "item": "meat", "prob": 10 },
-+      { "item": "meat_tainted", "prob": 10 },
-+      { "item": "metal_tank", "prob": 10 },
-+      { "item": "mil_plate", "prob": 10 },
-+      { "item": "mortar_build", "prob": 10 },
-+      { "item": "mutant_meat", "prob": 10 },
-+      { "item": "nail_bundle", "prob": 10 },
-+      { "item": "pemmican", "prob": 10 },
-+      { "item": "pipe", "prob": 10 },
-+      { "item": "pizza_cheese", "prob": 10 },
-+      { "item": "pizza_meat", "prob": 10 },
-+      { "item": "pizza_supreme", "prob": 10 },
-+      { "item": "pizza_veggy", "prob": 10 },
-+      { "item": "plastic_chunk", "prob": 10 },
-+      { "item": "plastic_sheet", "prob": 10 },
-+      { "item": "plut_cell", "prob": 10 },
-+      { "item": "polycarbonate_sheet", "prob": 10 },
-+      { "item": "power_supply", "prob": 10 },
-+      { "item": "raw_milk_berry", "prob": 10 },
-+      { "item": "rc_anesthetic_solid", "prob": 10 },
-+      { "item": "rc_purifier_solid", "prob": 10 },
-+      { "item": "rc_seed_mat", "prob": 10 },
-+      { "item": "rc_spawn_10mmfungus", "prob": 10 },
-+      { "item": "rc_spawn_1231nfungus", "prob": 10 },
-+      { "item": "rc_spawn_12mmfungus", "prob": 10 },
-+      { "item": "rc_spawn_223fungus", "prob": 10 },
-+      { "item": "rc_spawn_22fungus", "prob": 10 },
-+      { "item": "rc_spawn_270winfungus", "prob": 10 },
-+      { "item": "rc_spawn_3006springfungus", "prob": 10 },
-+      { "item": "rc_spawn_300blkfungus", "prob": 10 },
-+      { "item": "rc_spawn_300winfungus", "prob": 10 },
-+      { "item": "rc_spawn_308winfungus", "prob": 10 },
-+      { "item": "rc_spawn_32acpfungus", "prob": 10 },
-+      { "item": "rc_spawn_357magfungus", "prob": 10 },
-+      { "item": "rc_spawn_357sigfungus", "prob": 10 },
-+      { "item": "rc_spawn_36navyfungus", "prob": 10 },
-+      { "item": "rc_spawn_380acpfungus", "prob": 10 },
-+      { "item": "rc_spawn_38specfungus", "prob": 10 },
-+      { "item": "rc_spawn_40swfungus", "prob": 10 },
-+      { "item": "rc_spawn_40x46grenfungus", "prob": 10 },
-+      { "item": "rc_spawn_40x53grenfungus", "prob": 10 },
-+      { "item": "rc_spawn_410000fungus", "prob": 10 },
-+      { "item": "rc_spawn_44armyfungus", "prob": 10 },
-+      { "item": "rc_spawn_44magfungus", "prob": 10 },
-+      { "item": "rc_spawn_454casufungus", "prob": 10 },
-+      { "item": "rc_spawn_4570fungus", "prob": 10 },
-+      { "item": "rc_spawn_45acpfungus", "prob": 10 },
-+      { "item": "rc_spawn_45coltfungus", "prob": 10 },
-+      { "item": "rc_spawn_460rowfungus", "prob": 10 },
-+      { "item": "rc_spawn_46mmfungus", "prob": 10 },
-+      { "item": "rc_spawn_500magfungus", "prob": 10 },
-+      { "item": "rc_spawn_50bmgfungus", "prob": 10 },
-+      { "item": "rc_spawn_545x39fungus", "prob": 10 },
-+      { "item": "rc_spawn_57x28fungus", "prob": 10 },
-+      { "item": "rc_spawn_5x40fungus", "prob": 10 },
-+      { "item": "rc_spawn_66rockfungus", "prob": 10 },
-+      { "item": "rc_spawn_762x25fungus", "prob": 10 },
-+      { "item": "rc_spawn_762x39fungus", "prob": 10 },
-+      { "item": "rc_spawn_762x54fungus", "prob": 10 },
-+      { "item": "rc_spawn_84x246fungus", "prob": 10 },
-+      { "item": "rc_spawn_8x40fungus", "prob": 10 },
-+      { "item": "rc_spawn_9x18makafungus", "prob": 10 },
-+      { "item": "rc_spawn_9x19fungus", "prob": 10 },
-+      { "item": "rc_spawn_ammo_fungus", "prob": 10 },
-+      { "item": "rc_spawn_atgmfungus", "prob": 10 },
-+      { "item": "rc_spawn_barbparafungus", "prob": 10 },
-+      { "item": "rc_spawn_batterydisposfungus", "prob": 10 },
-+      { "item": "rc_spawn_bodypart_fungus", "prob": 10 },
-+      { "item": "rc_spawn_cannonfungus", "prob": 10 },
-+      { "item": "rc_spawn_cbmfungus", "prob": 10 },
-+      { "item": "rc_spawn_exotic_books_fungus", "prob": 10 },
-+      { "item": "rc_spawn_feather_fungus", "prob": 10 },
-+      { "item": "rc_spawn_flarefungus", "prob": 10 },
-+      { "item": "rc_spawn_flintlockfungus", "prob": 10 },
-+      { "item": "rc_spawn_forage_fungus", "prob": 10 },
-+      { "item": "rc_spawn_fuel_fungus", "prob": 10 },
-+      { "item": "rc_spawn_gamble_fungus", "prob": 10 },
-+      { "item": "rc_spawn_gasfungus", "prob": 10 },
-+      { "item": "rc_spawn_gunmags_fungus", "prob": 10 },
-+      { "item": "rc_spawn_gunmods_fungus", "prob": 10 },
-+      { "item": "rc_spawn_guns_fungus", "prob": 10 },
-+      { "item": "rc_spawn_harvest_fungus", "prob": 10 },
-+      { "item": "rc_spawn_homejunk_fungus", "prob": 10 },
-+      { "item": "rc_spawn_lab_libraryfungus", "prob": 10 },
-+      { "item": "rc_spawn_many_books_fungus", "prob": 10 },
-+      { "item": "rc_spawn_medicine_fungus", "prob": 10 },
-+      { "item": "rc_spawn_mineral_fungus", "prob": 10 },
-+      { "item": "rc_spawn_moneyfungus", "prob": 10 },
-+      { "item": "rc_spawn_paintballfungus", "prob": 10 },
-+      { "item": "rc_spawn_rebarrailfungus", "prob": 10 },
-+      { "item": "rc_spawn_rpgfungus", "prob": 10 },
-+      { "item": "rc_spawn_shotgunfungus", "prob": 10 },
-+      { "item": "rebar", "prob": 10 },
-+      { "item": "reinforced_glass_pane", "prob": 10 },
-+      { "item": "rigid_plastic_sheet", "prob": 10 },
-+      { "item": "rock", "prob": 10 },
-+      { "item": "rope_30", "prob": 10 },
-+      { "item": "scrap", "prob": 10 },
-+      { "item": "sheet", "prob": 10 },
-+      { "item": "sheet_canvas", "prob": 10 },
-+      { "item": "sheet_cotton", "prob": 10 },
-+      { "item": "sheet_denim", "prob": 10 },
-+      { "item": "sheet_faux_fur", "prob": 10 },
-+      { "item": "sheet_felt", "prob": 10 },
-+      { "item": "sheet_kevlar", "prob": 10 },
-+      { "item": "sheet_kevlar_layered", "prob": 10 },
-+      { "item": "sheet_leather", "prob": 10 },
-+      { "item": "sheet_lycra", "prob": 10 },
-+      { "item": "sheet_metal", "prob": 10 },
-+      { "item": "sheet_metal_small", "prob": 10 },
-+      { "item": "sheet_neoprene", "prob": 10 },
-+      { "item": "sheet_nomex", "prob": 10 },
-+      { "item": "sheet_nylon", "prob": 10 },
-+      { "item": "silver_small", "prob": 10 },
-+      { "item": "smores", "prob": 10 },
-+      { "item": "solar_cell", "prob": 10 },
-+      { "item": "solar_panel", "prob": 10 },
-+      { "item": "solar_panel_v2", "prob": 10 },
-+      { "item": "solder_wire", "prob": 10 },
-+      { "item": "spike", "prob": 10 },
-+      { "item": "steel_chunk", "prob": 10 },
-+      { "item": "steel_lump", "prob": 10 },
-+      { "item": "steel_plate", "prob": 10 },
-+      { "item": "stick_long", "prob": 10 },
-+      { "item": "string_36", "prob": 10 },
-+      { "item": "sugar_clump", "prob": 10 },
-+      { "item": "tallow", "prob": 10 },
-+      { "item": "tanned_pelt", "prob": 10 },
-+      { "item": "tempered_glass_sheet", "prob": 10 },
-+      { "item": "thread", "prob": 10 },
-+      { "item": "tin", "prob": 10 },
-+      { "item": "tinyweldtank", "prob": 10 },
-+      { "item": "toastem", "prob": 10 },
-+      { "item": "venom_bee", "prob": 10 },
-+      { "item": "venom_wasp", "prob": 10 },
-+      { "item": "water_berry", "prob": 10 },
-+      { "item": "wax", "prob": 10 },
-+      { "item": "wire", "prob": 10 },
-+      { "item": "wood_beam", "prob": 10 },
-+      { "item": "wood_panel", "prob": 10 },
-+      { "item": "wool_staple", "prob": 10 }
++      { "item": "2x4", "prob": 5 },
++      { "item": "alien_pod_resin", "prob": 5 },
++      { "item": "amplifier", "prob": 5 },
++      { "item": "ant_egg", "prob": 5 },
++      { "item": "bee_sting", "prob": 5 },
++      { "item": "bio_power_storage", "prob": 5 },
++      { "item": "bio_power_storage_mkII", "prob": 5 },
++      { "item": "biscuit", "prob": 5 },
++      { "item": "brick", "prob": 5 },
++      { "item": "butter", "prob": 5 },
++      { "item": "cable", "prob": 5 },
++      { "item": "cereal2", "prob": 5 },
++      { "item": "chain", "prob": 5 },
++      { "item": "chocolate", "prob": 5 },
++      { "item": "chunk_rubber", "prob": 5 },
++      { "item": "circuit", "prob": 5 },
++      { "item": "clay_lump", "prob": 5 },
++      { "item": "concrete", "prob": 5 },
++      { "item": "cookies", "prob": 5 },
++      { "item": "copper", "prob": 5 },
++      { "item": "demihuman_flesh", "prob": 5 },
++      { "item": "duct_tape_bundle", "prob": 5 },
++      { "item": "e_scrap", "prob": 5 },
++      { "item": "egg_chicken", "prob": 5 },
++      { "item": "egg_fish", "prob": 5 },
++      { "item": "egg_spider_web", "prob": 5 },
++      { "item": "egg_turtle_painted", "prob": 5 },
++      { "item": "element", "prob": 5 },
++      { "item": "fertilizer_commercial", "prob": 5 },
++      { "item": "fish", "prob": 5 },
++      { "item": "flour_clump", "prob": 5 },
++      { "item": "frame", "prob": 5 },
++      { "item": "fungicidalbomb", "prob": 5 },
++      { "item": "gasbomb", "prob": 5 },
++      { "item": "glass_sheet", "prob": 5 },
++      { "item": "gold_small", "prob": 5 },
++      { "item": "grahmcrackers", "prob": 5 },
++      { "item": "gunpowder", "prob": 5 },
++      { "item": "hdframe", "prob": 5 },
++      { "item": "hinge", "prob": 5 },
++      { "item": "honeycomb", "prob": 5 },
++      { "item": "human_flesh", "prob": 5 },
++      { "item": "insecticidalbomb", "prob": 5 },
++      { "item": "lead", "prob": 5 },
++      { "item": "log", "prob": 5 },
++      { "item": "magnetron", "prob": 5 },
++      { "item": "maple_sap_berry", "prob": 5 },
++      { "item": "marshmallow", "prob": 5 },
++      { "item": "material_cement_clump", "prob": 5 },
++      { "item": "material_rocksalt", "prob": 5 },
++      { "item": "material_sand_clump", "prob": 5 },
++      { "item": "material_soil", "prob": 5 },
++      { "item": "mattress", "prob": 5 },
++      { "item": "meat", "prob": 5 },
++      { "item": "meat_tainted", "prob": 5 },
++      { "item": "metal_tank", "prob": 5 },
++      { "item": "mil_plate", "prob": 5 },
++      { "item": "mortar_build", "prob": 5 },
++      { "item": "mutant_meat", "prob": 5 },
++      { "item": "nail_bundle", "prob": 5 },
++      { "item": "pemmican", "prob": 5 },
++      { "item": "pipe", "prob": 5 },
++      { "item": "pizza_cheese", "prob": 5 },
++      { "item": "pizza_meat", "prob": 5 },
++      { "item": "pizza_supreme", "prob": 5 },
++      { "item": "pizza_veggy", "prob": 5 },
++      { "item": "plastic_chunk", "prob": 5 },
++      { "item": "plastic_sheet", "prob": 5 },
++      { "item": "plut_cell", "prob": 5 },
++      { "item": "polycarbonate_sheet", "prob": 5 },
++      { "item": "power_supply", "prob": 5 },
++      { "item": "raw_milk_berry", "prob": 5 },
++      { "item": "rc_anesthetic_solid", "prob": 5 },
++      { "item": "rc_purifier_solid", "prob": 5 },
++      { "item": "rc_seed_mat", "prob": 5 },
++      { "item": "rc_spawn_10mmfungus", "prob": 5 },
++      { "item": "rc_spawn_1231nfungus", "prob": 5 },
++      { "item": "rc_spawn_12mmfungus", "prob": 5 },
++      { "item": "rc_spawn_223fungus", "prob": 5 },
++      { "item": "rc_spawn_22fungus", "prob": 5 },
++      { "item": "rc_spawn_270winfungus", "prob": 5 },
++      { "item": "rc_spawn_3006springfungus", "prob": 5 },
++      { "item": "rc_spawn_300blkfungus", "prob": 5 },
++      { "item": "rc_spawn_300winfungus", "prob": 5 },
++      { "item": "rc_spawn_308winfungus", "prob": 5 },
++      { "item": "rc_spawn_32acpfungus", "prob": 5 },
++      { "item": "rc_spawn_357magfungus", "prob": 5 },
++      { "item": "rc_spawn_357sigfungus", "prob": 5 },
++      { "item": "rc_spawn_36navyfungus", "prob": 5 },
++      { "item": "rc_spawn_380acpfungus", "prob": 5 },
++      { "item": "rc_spawn_38specfungus", "prob": 5 },
++      { "item": "rc_spawn_40swfungus", "prob": 5 },
++      { "item": "rc_spawn_40x46grenfungus", "prob": 5 },
++      { "item": "rc_spawn_40x53grenfungus", "prob": 5 },
++      { "item": "rc_spawn_410000fungus", "prob": 5 },
++      { "item": "rc_spawn_44armyfungus", "prob": 5 },
++      { "item": "rc_spawn_44magfungus", "prob": 5 },
++      { "item": "rc_spawn_454casufungus", "prob": 5 },
++      { "item": "rc_spawn_4570fungus", "prob": 5 },
++      { "item": "rc_spawn_45acpfungus", "prob": 5 },
++      { "item": "rc_spawn_45coltfungus", "prob": 5 },
++      { "item": "rc_spawn_460rowfungus", "prob": 5 },
++      { "item": "rc_spawn_46mmfungus", "prob": 5 },
++      { "item": "rc_spawn_500magfungus", "prob": 5 },
++      { "item": "rc_spawn_50bmgfungus", "prob": 5 },
++      { "item": "rc_spawn_545x39fungus", "prob": 5 },
++      { "item": "rc_spawn_57x28fungus", "prob": 5 },
++      { "item": "rc_spawn_5x40fungus", "prob": 5 },
++      { "item": "rc_spawn_66rockfungus", "prob": 5 },
++      { "item": "rc_spawn_762x25fungus", "prob": 5 },
++      { "item": "rc_spawn_762x39fungus", "prob": 5 },
++      { "item": "rc_spawn_762x54fungus", "prob": 5 },
++      { "item": "rc_spawn_84x246fungus", "prob": 5 },
++      { "item": "rc_spawn_8x40fungus", "prob": 5 },
++      { "item": "rc_spawn_9x18makafungus", "prob": 5 },
++      { "item": "rc_spawn_9x19fungus", "prob": 5 },
++      { "item": "rc_spawn_ammo_fungus", "prob": 5 },
++      { "item": "rc_spawn_atgmfungus", "prob": 5 },
++      { "item": "rc_spawn_barbparafungus", "prob": 5 },
++      { "item": "rc_spawn_batterydisposfungus", "prob": 5 },
++      { "item": "rc_spawn_bodypart_fungus", "prob": 5 },
++      { "item": "rc_spawn_cannonfungus", "prob": 5 },
++      { "item": "rc_spawn_cbmfungus", "prob": 5 },
++      { "item": "rc_spawn_exotic_books_fungus", "prob": 5 },
++      { "item": "rc_spawn_feather_fungus", "prob": 5 },
++      { "item": "rc_spawn_flarefungus", "prob": 5 },
++      { "item": "rc_spawn_flintlockfungus", "prob": 5 },
++      { "item": "rc_spawn_forage_fungus", "prob": 5 },
++      { "item": "rc_spawn_fuel_fungus", "prob": 5 },
++      { "item": "rc_spawn_gamble_fungus", "prob": 5 },
++      { "item": "rc_spawn_gasfungus", "prob": 5 },
++      { "item": "rc_spawn_gunmags_fungus", "prob": 5 },
++      { "item": "rc_spawn_gunmods_fungus", "prob": 5 },
++      { "item": "rc_spawn_guns_fungus", "prob": 5 },
++      { "item": "rc_spawn_harvest_fungus", "prob": 5 },
++      { "item": "rc_spawn_homejunk_fungus", "prob": 5 },
++      { "item": "rc_spawn_lab_libraryfungus", "prob": 5 },
++      { "item": "rc_spawn_many_books_fungus", "prob": 5 },
++      { "item": "rc_spawn_medicine_fungus", "prob": 5 },
++      { "item": "rc_spawn_mineral_fungus", "prob": 5 },
++      { "item": "rc_spawn_moneyfungus", "prob": 5 },
++      { "item": "rc_spawn_paintballfungus", "prob": 5 },
++      { "item": "rc_spawn_rebarrailfungus", "prob": 5 },
++      { "item": "rc_spawn_rpgfungus", "prob": 5 },
++      { "item": "rc_spawn_shotgunfungus", "prob": 5 },
++      { "item": "rebar", "prob": 5 },
++      { "item": "reinforced_glass_pane", "prob": 5 },
++      { "item": "rigid_plastic_sheet", "prob": 5 },
++      { "item": "rock", "prob": 5 },
++      { "item": "rope_30", "prob": 5 },
++      { "item": "scrap", "prob": 5 },
++      { "item": "sheet", "prob": 5 },
++      { "item": "sheet_canvas", "prob": 5 },
++      { "item": "sheet_cotton", "prob": 5 },
++      { "item": "sheet_denim", "prob": 5 },
++      { "item": "sheet_faux_fur", "prob": 5 },
++      { "item": "sheet_felt", "prob": 5 },
++      { "item": "sheet_kevlar", "prob": 5 },
++      { "item": "sheet_kevlar_layered", "prob": 5 },
++      { "item": "sheet_leather", "prob": 5 },
++      { "item": "sheet_lycra", "prob": 5 },
++      { "item": "sheet_metal", "prob": 5 },
++      { "item": "sheet_metal_small", "prob": 5 },
++      { "item": "sheet_neoprene", "prob": 5 },
++      { "item": "sheet_nomex", "prob": 5 },
++      { "item": "sheet_nylon", "prob": 5 },
++      { "item": "silver_small", "prob": 5 },
++      { "item": "smores", "prob": 5 },
++      { "item": "solar_cell", "prob": 5 },
++      { "item": "solar_panel", "prob": 5 },
++      { "item": "solar_panel_v2", "prob": 5 },
++      { "item": "solder_wire", "prob": 5 },
++      { "item": "spike", "prob": 5 },
++      { "item": "steel_chunk", "prob": 5 },
++      { "item": "steel_lump", "prob": 5 },
++      { "item": "steel_plate", "prob": 5 },
++      { "item": "stick_long", "prob": 5 },
++      { "item": "string_36", "prob": 5 },
++      { "item": "sugar_clump", "prob": 5 },
++      { "item": "tallow", "prob": 5 },
++      { "item": "tanned_pelt", "prob": 5 },
++      { "item": "tempered_glass_sheet", "prob": 5 },
++      { "item": "thread", "prob": 5 },
++      { "item": "tin", "prob": 5 },
++      { "item": "tinyweldtank", "prob": 5 },
++      { "item": "toastem", "prob": 5 },
++      { "item": "venom_bee", "prob": 5 },
++      { "item": "venom_wasp", "prob": 5 },
++      { "item": "water_berry", "prob": 5 },
++      { "item": "wax", "prob": 5 },
++      { "item": "wire", "prob": 5 },
++      { "item": "wood_beam", "prob": 5 },
++      { "item": "wood_panel", "prob": 5 },
++      { "item": "wool_staple", "prob": 5 }
      ]
    }
 -]
@@ -6280,7 +6292,7 @@ index 000000000000..123ca97f8de5
 +]
 diff --git a/Resource Crops/mod_interactions/resource_cropsMagic/itemgroups.json b/Resource Crops/mod_interactions/resource_cropsMagic/itemgroups.json
 new file mode 100644
-index 000000000000..91348024cbee
+index 000000000000..e803cb464dd2
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/resource_cropsMagic/itemgroups.json	
 @@ -0,0 +1,37 @@
@@ -6292,31 +6304,31 @@ index 000000000000..91348024cbee
 +    "copy-from": "rc_drop_gamble",
 +    "extend": {
 +      "items": [
-+        { "item": "alumentum", "prob": 10 },
-+        { "item": "black_dragon_tanned_hide", "prob": 10 },
-+        { "item": "bulette_plate", "prob": 10 },
-+        { "item": "demon_chitin_piece", "prob": 10 },
-+        { "item": "demon_chitin_plate", "prob": 10 },
-+        { "item": "dragon_black_scale", "prob": 10 },
-+        { "item": "light_orichalcum_frame", "prob": 10 },
-+        { "item": "mana_dust", "prob": 10 },
-+        { "item": "mithril_ingot", "prob": 10 },
-+        { "item": "mithril_lump", "prob": 10 },
-+        { "item": "orichalcum_frame", "prob": 10 },
-+        { "item": "orichalcum_ingot", "prob": 10 },
-+        { "item": "orichalcum_lump", "prob": 10 },
-+        { "item": "parabolan_wool_staple", "prob": 10 },
-+        { "item": "rc_spawn_all_spell_books_fungus", "prob": 10 },
-+        { "item": "rc_spawn_animistfungus", "prob": 10 },
-+        { "item": "rc_spawn_biomancerfungus", "prob": 10 },
-+        { "item": "rc_spawn_druidfungus", "prob": 10 },
-+        { "item": "rc_spawn_earthshaperfungus", "prob": 10 },
-+        { "item": "rc_spawn_kelvinistfungus", "prob": 10 },
-+        { "item": "rc_spawn_magusfungus", "prob": 10 },
-+        { "item": "rc_spawn_mana_crystal_fungus", "prob": 10 },
-+        { "item": "rc_spawn_stormshaperfungus", "prob": 10 },
-+        { "item": "rc_spawn_technomancerfungus", "prob": 10 },
-+        { "item": "rc_spawn_various_magic_items_fungus", "prob": 10 }
++        { "item": "alumentum", "prob": 5 },
++        { "item": "black_dragon_tanned_hide", "prob": 5 },
++        { "item": "bulette_plate", "prob": 5 },
++        { "item": "demon_chitin_piece", "prob": 5 },
++        { "item": "demon_chitin_plate", "prob": 5 },
++        { "item": "dragon_black_scale", "prob": 5 },
++        { "item": "light_orichalcum_frame", "prob": 5 },
++        { "item": "mana_dust", "prob": 5 },
++        { "item": "mithril_ingot", "prob": 5 },
++        { "item": "mithril_lump", "prob": 5 },
++        { "item": "orichalcum_frame", "prob": 5 },
++        { "item": "orichalcum_ingot", "prob": 5 },
++        { "item": "orichalcum_lump", "prob": 5 },
++        { "item": "parabolan_wool_staple", "prob": 5 },
++        { "item": "rc_spawn_all_spell_books_fungus", "prob": 5 },
++        { "item": "rc_spawn_animistfungus", "prob": 5 },
++        { "item": "rc_spawn_biomancerfungus", "prob": 5 },
++        { "item": "rc_spawn_druidfungus", "prob": 5 },
++        { "item": "rc_spawn_earthshaperfungus", "prob": 5 },
++        { "item": "rc_spawn_kelvinistfungus", "prob": 5 },
++        { "item": "rc_spawn_magusfungus", "prob": 5 },
++        { "item": "rc_spawn_mana_crystal_fungus", "prob": 5 },
++        { "item": "rc_spawn_stormshaperfungus", "prob": 5 },
++        { "item": "rc_spawn_technomancerfungus", "prob": 5 },
++        { "item": "rc_spawn_various_magic_items_fungus", "prob": 5 }
 +      ]
 +    }
 +  }
@@ -6341,6 +6353,123 @@ index 000000000000..66b91100e66c
 +    }
 +  }
 +]
+diff --git a/Resource Crops/mod_interactions/skyisland/itemgroups.json b/Resource Crops/mod_interactions/skyisland/itemgroups.json
+new file mode 100644
+index 000000000000..f4d2ebd8450e
+--- /dev/null
++++ b/Resource Crops/mod_interactions/skyisland/itemgroups.json	
+@@ -0,0 +1,24 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "rc_spawn_warp_fungus", "prob": 5 }
++      ]
++    }
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_warp",
++    "copy-from": "rc_drop_warp",
++    "items": [
++      { "item": "random_artifact_pool", "prob": 1 },
++      { "item": "warptoken", "prob": 10 },
++      { "item": "warptoken_material", "prob": 50, "count": [ 1, 10 ] }
++    ]
++  }
++]
+diff --git a/Resource Crops/mod_interactions/skyisland/items.json b/Resource Crops/mod_interactions/skyisland/items.json
+new file mode 100644
+index 000000000000..ebad6ec6a523
+--- /dev/null
++++ b/Resource Crops/mod_interactions/skyisland/items.json	
+@@ -0,0 +1,23 @@
++[
++  {
++    "id": "rc_spawn_warp_fungus",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon warp fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with tokens in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_warp_fungus",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_warp", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/skyisland/recipes.json b/Resource Crops/mod_interactions/skyisland/recipes.json
+new file mode 100644
+index 000000000000..00b78fb2ed4a
+--- /dev/null
++++ b/Resource Crops/mod_interactions/skyisland/recipes.json	
+@@ -0,0 +1,24 @@
++[
++  {
++    "type": "recipe",
++    "result": "rc_seed_warp",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "warp seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  }
++]
+diff --git a/Resource Crops/mod_interactions/skyisland/seeds.json b/Resource Crops/mod_interactions/skyisland/seeds.json
+new file mode 100644
+index 000000000000..81a2f0ec8d5a
+--- /dev/null
++++ b/Resource Crops/mod_interactions/skyisland/seeds.json	
+@@ -0,0 +1,22 @@
++[
++  {
++    "id": "rc_seed_warp",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "warp seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with strange warp tokens.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "plant_name": "warp bush",
++    "fruit": "rc_spawn_warp_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "3 days" },
++      { "GROWTH_SEEDLING": "3 days" },
++      { "GROWTH_MATURE": "3 days" },
++      { "GROWTH_HARVEST": "3 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++  }
++]
 diff --git a/Resource Crops/mod_interactions/tropicata/itemgroups.json b/Resource Crops/mod_interactions/tropicata/itemgroups.json
 new file mode 100644
 index 000000000000..1208209dcfcf
@@ -6358,6 +6487,25 @@ index 000000000000..1208209dcfcf
 +        { "item": "banana", "prob": 10 },
 +        { "item": "kiwi", "prob": 10 },
 +        { "item": "melon", "prob": 10 }
++      ]
++    }
++  }
++]
+diff --git a/Resource Crops/mod_interactions/xedra-both-classes/fungusdrops.json b/Resource Crops/mod_interactions/xedra-both-classes/fungusdrops.json
+new file mode 100644
+index 000000000000..8e0143e5d069
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra-both-classes/fungusdrops.json	
+@@ -0,0 +1,13 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "rc_spawn_seed_fungus", "prob": 10 }
 +      ]
 +    }
 +  }

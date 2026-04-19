@@ -1,0 +1,12 @@
+[
+  {
+    "type": "item_group",
+    "id": "arvore_seeds",
+    "copy-from": "arvore_seeds",
+    "extend": {
+      "items": [
+        [ "rc_seed_warp", 10 ]
+      ]
+    }
+  }
+]
