@@ -6355,7 +6355,7 @@ index 000000000000..66b91100e66c
 +]
 diff --git a/Resource Crops/mod_interactions/skyisland/itemgroups.json b/Resource Crops/mod_interactions/skyisland/itemgroups.json
 new file mode 100644
-index 000000000000..0194d4f9ccd6
+index 000000000000..154de4168079
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/skyisland/itemgroups.json	
 @@ -0,0 +1,23 @@
@@ -6378,7 +6378,7 @@ index 000000000000..0194d4f9ccd6
 +    "items": [
 +      { "group": "random_artifact_pool", "prob": 1 },
 +      { "item": "warptoken", "prob": 10 },
-+      { "item": "warptoken_material", "prob": 50, "count": [ 1, 10 ] }
++      { "item": "warptoken_material", "prob": 50, "charges": [ 1, 10 ] }
 +    ]
 +  }
 +]
