@@ -96,6 +96,20 @@
   },
   {
     "type": "EXTERNAL_OPTION",
+    "name": "TRADER_RESPECT_WHITELIST",
+    "//": "Whether traders will respect their whitelists.",
+    "stype": "bool",
+    "value": false
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "TRADER_RESPECT_BLACKLIST",
+    "//": "Whether traders will respect their blacklists.",
+    "stype": "bool",
+    "value": false
+  },
+  {
+    "type": "EXTERNAL_OPTION",
     "name": "DONT_AUTOLEARN_BOOK_RECIPES",
     "//": "Whether to prevent autolearning recipes which can be learned via a book.",
     "stype": "bool",

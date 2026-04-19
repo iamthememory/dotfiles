@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..4a2a1fe1f597 100644
+index 9e17b54f3ed3..b28a282ebcec 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,110 @@
+@@ -520,5 +520,124 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -74,6 +74,20 @@ index 9e17b54f3ed3..4a2a1fe1f597 100644
 +    "type": "EXTERNAL_OPTION",
 +    "name": "TRADER_AVOID_FILTHY",
 +    "//": "Whether traders will refuse to buy filthy items or not.",
++    "stype": "bool",
++    "value": true
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "TRADER_RESPECT_WHITELIST",
++    "//": "Whether traders will respect their whitelists.",
++    "stype": "bool",
++    "value": true
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "TRADER_RESPECT_BLACKLIST",
++    "//": "Whether traders will respect their blacklists.",
 +    "stype": "bool",
 +    "value": true
 +  },
@@ -297,10 +311,10 @@ index de8eca5b31eb..2c4538d2272d 100644
  
      const auto check_flag = []( const std::string & to_check ) {
 diff --git a/src/npc.cpp b/src/npc.cpp
-index 866f65a06371..28616770e776 100644
+index 866f65a06371..fb12782be7a5 100644
 --- a/src/npc.cpp
 +++ b/src/npc.cpp
-@@ -2119,11 +2119,12 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2119,15 +2119,16 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
  
@@ -313,6 +327,20 @@ index 866f65a06371..28616770e776 100644
 -    if( it.is_filthy() ) {
 +    if( ::get_option<bool>( "TRADER_AVOID_FILTHY" ) && it.is_filthy() ) {
          return ret_val<void>::make_failure( _( "Will not buy filthy items" ) );
+     }
+ 
+-    if( myclass->has_whitelist() ) {
++    if( ::get_option<bool>( "TRADER_RESPECT_WHITELIST" ) && myclass->has_whitelist() ) {
+         const shopkeeper_whitelist &wl = myclass->get_shopkeeper_whitelist();
+         icg_entry const *wl_icg = myclass->get_shopkeeper_whitelist().matches( it, *this );
+         if( wl_icg != nullptr ) {
+@@ -2138,7 +2139,7 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+     }
+ 
+     icg_entry const *bl = myclass->get_shopkeeper_blacklist().matches( it, *this );
+-    if( bl != nullptr ) {
++    if( ::get_option<bool>( "TRADER_RESPECT_BLACKLIST" ) && bl != nullptr ) {
+         return ret_val<void>::make_failure( bl->message.translated() );
      }
  
 @@ -4245,5 +4246,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )

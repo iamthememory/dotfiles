@@ -146,12 +146,9 @@
       }
     },
     "traits": [
-      "GOODMEMORY",
       "ROBUST",
       "UNSTABLE",
-      "perk_flawless_memory",
-      "perk_forced_genetic_instability",
-      "perk_haulers_aura"
+      "perk_forced_genetic_instability"
     ]
   }
 ]
