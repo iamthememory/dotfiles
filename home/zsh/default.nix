@@ -58,10 +58,10 @@ in
     zsh-completions
   ];
 
-  # Enable tirith, which tries to detect malicious shell commands.
-  programs.tirith.enable = true;
-  programs.tirith.enableBashIntegration = true;
-  programs.tirith.enableZshIntegration = true;
+  ## Enable tirith, which tries to detect malicious shell commands.
+  #programs.tirith.enable = true;
+  #programs.tirith.enableBashIntegration = true;
+  #programs.tirith.enableZshIntegration = true;
 
   # Enable zsh.
   programs.zsh.enable = true;

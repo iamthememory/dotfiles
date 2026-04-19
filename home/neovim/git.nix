@@ -76,42 +76,42 @@
     vim-gitgutter
 
     # A plugin to look at the GitHub dashboard and activity in (neo)vim.
-    {
-      plugin = vim-github-dashboard;
-      type = "viml";
-      config =
-        let
-          git = "${config.home.profileDirectory}/bin/git";
-          getGitHubUser = "${git} config --get github.user";
-        in
-        ''
-          " Clear/initialize the configuration.
-          let g:github_dashboard = {}
+    #{
+    #  plugin = vim-github-dashboard;
+    #  type = "viml";
+    #  config =
+    #    let
+    #      git = "${config.home.profileDirectory}/bin/git";
+    #      getGitHubUser = "${git} config --get github.user";
+    #    in
+    #    ''
+    #      " Clear/initialize the configuration.
+    #      let g:github_dashboard = {}
 
-          " Set the username from the github.user key in git config, and clear
-          " whatever junk we put in there if it fails.
-          " There is probably a more elegant way to do this.
-          let g:github_dashboard['username'] = trim(system("${getGitHubUser}"))
-          if v:shell_error != 0
-            unlet g:github_dashboard['username']
-          endif
+    #      " Set the username from the github.user key in git config, and clear
+    #      " whatever junk we put in there if it fails.
+    #      " There is probably a more elegant way to do this.
+    #      let g:github_dashboard['username'] = trim(system("${getGitHubUser}"))
+    #      if v:shell_error != 0
+    #        unlet g:github_dashboard['username']
+    #      endif
 
-          " Add the GITHUB_TOKEN as the "password" from the environment if it's
-          " set.
-          if $GITHUB_TOKEN != ""
-            let g:github_dashboard['password'] = $GITHUB_TOKEN
-          endif
+    #      " Add the GITHUB_TOKEN as the "password" from the environment if it's
+    #      " set.
+    #      if $GITHUB_TOKEN != ""
+    #        let g:github_dashboard['password'] = $GITHUB_TOKEN
+    #      endif
 
-          " Allow outputting emoji.
-          let g:github_dashboard['emoji'] = 1
-        '';
-    }
+    #      " Allow outputting emoji.
+    #      let g:github_dashboard['emoji'] = 1
+    #    '';
+    #}
 
     # A plugin to allow omni-completion of GitHub issues, URLs, collaborators,
     # etc. in commit messages, allows :Gbrowse to open GitHub URLs, sets :Git
     # to use `hub`, etc.
     # This is an extension to fugitive.
-    vim-rhubarb
+    #vim-rhubarb
 
     # A plugin library that helps with access to web APIs.
     # This is needed by vim-gist.

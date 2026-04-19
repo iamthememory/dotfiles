@@ -7,10 +7,10 @@
     gopls
   ];
 
-  programs.neovim.initLua = ''
-    vim.lsp.config('gopls', require('coq').lsp_ensure_capabilities())
-    vim.lsp.enable('gopls')
-  '';
+  #programs.neovim.initLua = ''
+  #  vim.lsp.config('gopls', require('coq').lsp_ensure_capabilities())
+  #  vim.lsp.enable('gopls')
+  #'';
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
     #vim-go

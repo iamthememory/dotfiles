@@ -21,10 +21,10 @@
     let g:ale_fixers['nix'] = ['nixpkgs-fmt']
   '';
 
-  programs.neovim.initLua = ''
-    vim.lsp.config('nil_ls', require('coq').lsp_ensure_capabilities())
-    vim.lsp.enable('nil_ls')
-  '';
+  #programs.neovim.initLua = ''
+  #  vim.lsp.config('nil_ls', require('coq').lsp_ensure_capabilities())
+  #  vim.lsp.enable('nil_ls')
+  #'';
 
   # Buffer settings for nix.
   xdg.configFile."nvim/ftplugin/nix.vim".text = ''

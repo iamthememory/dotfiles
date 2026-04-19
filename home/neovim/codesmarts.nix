@@ -42,118 +42,118 @@
     }
 
     # A completion engine.
-    {
-      plugin = coq_nvim;
+    #{
+    #  plugin = coq_nvim;
 
-      type = "viml";
+    #  type = "viml";
 
-      config = ''
-        let g:coq_settings = {
-        \  'auto_start': v:true,
-        \  'display.statusline.helo': v:false
-        \}
-      '';
-    }
+    #  config = ''
+    #    let g:coq_settings = {
+    #    \  'auto_start': v:true,
+    #    \  'display.statusline.helo': v:false
+    #    \}
+    #  '';
+    #}
 
     # The snippets for coq_nvim.
-    coq-artifacts
+    #coq-artifacts
 
     # A plugin to show completion function signatures.
-    {
-      plugin = echodoc-vim;
+    #{
+    #  plugin = echodoc-vim;
 
-      type = "viml";
+    #  type = "viml";
 
-      config = ''
-        let g:echodoc#enable_at_startup = 1
-      '';
-    }
+    #  config = ''
+    #    let g:echodoc#enable_at_startup = 1
+    #  '';
+    #}
 
     # A plugin for integrating neovim with debuggers.
-    {
-      plugin = nvim-dap;
-      config = ''
-        local dap = require("dap")
-        dap.adapters.gdb = {
-          type = "executable",
-          command = "gdb",
-          args = {
-            "--interpreter=dap",
-            "--eval-command",
-            "set print pretty on",
-          },
-        }
+    #{
+    #  plugin = nvim-dap;
+    #  config = ''
+    #    local dap = require("dap")
+    #    dap.adapters.gdb = {
+    #      type = "executable",
+    #      command = "gdb",
+    #      args = {
+    #        "--interpreter=dap",
+    #        "--eval-command",
+    #        "set print pretty on",
+    #      },
+    #    }
 
-        dap.configurations.c = {
-          {
-            name = "Launch",
-            type = "gdb",
-            request = "launch",
-            program = function()
-              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-            end,
-            cwd = "''${workspaceFolder}",
-            stopAtBeginningOfMainSubprogram = false,
-          },
-          {
-            name = "Select and attach to process",
-            type = "gdb",
-            request = "attach",
-            program = function()
-               return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-            end,
-            pid = function()
-               local name = vim.fn.input('Executable name (filter): ')
-               return require("dap.utils").pick_process({ filter = name })
-            end,
-            cwd = "''${workspaceFolder}"
-          },
-          {
-            name = 'Attach to gdbserver :1234',
-            type = 'gdb',
-            request = 'attach',
-            target = 'localhost:1234',
-            program = function()
-               return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-            end,
-            cwd = "''${workspaceFolder}"
-          },
-        }
-        dap.configurations.cpp = dap.configurations.c
-        dap.configurations.rust = dap.configurations.c
-      '';
-      type = "lua";
-    }
+    #    dap.configurations.c = {
+    #      {
+    #        name = "Launch",
+    #        type = "gdb",
+    #        request = "launch",
+    #        program = function()
+    #          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    #        end,
+    #        cwd = "''${workspaceFolder}",
+    #        stopAtBeginningOfMainSubprogram = false,
+    #      },
+    #      {
+    #        name = "Select and attach to process",
+    #        type = "gdb",
+    #        request = "attach",
+    #        program = function()
+    #           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    #        end,
+    #        pid = function()
+    #           local name = vim.fn.input('Executable name (filter): ')
+    #           return require("dap.utils").pick_process({ filter = name })
+    #        end,
+    #        cwd = "''${workspaceFolder}"
+    #      },
+    #      {
+    #        name = 'Attach to gdbserver :1234',
+    #        type = 'gdb',
+    #        request = 'attach',
+    #        target = 'localhost:1234',
+    #        program = function()
+    #           return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    #        end,
+    #        cwd = "''${workspaceFolder}"
+    #      },
+    #    }
+    #    dap.configurations.cpp = dap.configurations.c
+    #    dap.configurations.rust = dap.configurations.c
+    #  '';
+    #  type = "lua";
+    #}
 
     # A UI for nvim-dap.
-    {
-      plugin = nvim-dap-ui;
-      config = ''
-        local dap, dapui = require("dap"), require("dapui")
-        dapui.setup()
-        dap.listeners.before.attach.dapui_config = function()
-          dapui.open()
-        end
-        dap.listeners.before.launch.dapui_config = function()
-          dapui.open()
-        end
-        dap.listeners.before.event_terminated.dapui_config = function()
-          dapui.close()
-        end
-        dap.listeners.before.event_exited.dapui_config = function()
-          dapui.close()
-        end
-      '';
-      type = "lua";
-    }
+    #{
+    #  plugin = nvim-dap-ui;
+    #  config = ''
+    #    local dap, dapui = require("dap"), require("dapui")
+    #    dapui.setup()
+    #    dap.listeners.before.attach.dapui_config = function()
+    #      dapui.open()
+    #    end
+    #    dap.listeners.before.launch.dapui_config = function()
+    #      dapui.open()
+    #    end
+    #    dap.listeners.before.event_terminated.dapui_config = function()
+    #      dapui.close()
+    #    end
+    #    dap.listeners.before.event_exited.dapui_config = function()
+    #      dapui.close()
+    #    end
+    #  '';
+    #  type = "lua";
+    #}
 
     # A set of LSP configurations.
     nvim-lspconfig
 
     # A plugin for parsing languages.
-    {
-      plugin = nvim-treesitter.withAllGrammars;
-      type = "lua";
-    }
+    #{
+    #  plugin = nvim-treesitter.withAllGrammars;
+    #  type = "lua";
+    #}
   ];
 }

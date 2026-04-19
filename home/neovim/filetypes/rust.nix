@@ -36,13 +36,13 @@
   '';
 
   # Lua configuration for rust.
-  programs.neovim.initLua = ''
-    vim.lsp.config('rust_analyzer', require('coq').lsp_ensure_capabilities())
-    vim.lsp.enable('rust_analyzer')
-  '';
+  #programs.neovim.initLua = ''
+  #  vim.lsp.config('rust_analyzer', require('coq').lsp_ensure_capabilities())
+  #  vim.lsp.enable('rust_analyzer')
+  #'';
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
-    rustaceanvim
+    #rustaceanvim
   ];
 
   # Buffer settings for Rust.

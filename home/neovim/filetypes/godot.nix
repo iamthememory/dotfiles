@@ -12,42 +12,42 @@
     "${config.home.profileDirectory}/bin/nvim --listen ./godothost.pipe";
 
   # Configuration for godot.
-  programs.neovim.extraConfig = ''
-    " Register ALE godot LSP server.
-    call ale#linter#Define('gdscript', {
-    \   'name': 'godot',
-    \   'lsp': 'socket',
-    \   'address': '127.0.0.1:6005',
-    \   'project_root': 'project.godot',
-    \})
-  '';
+  #programs.neovim.extraConfig = ''
+  #  " Register ALE godot LSP server.
+  #  call ale#linter#Define('gdscript', {
+  #  \   'name': 'godot',
+  #  \   'lsp': 'socket',
+  #  \   'address': '127.0.0.1:6005',
+  #  \   'project_root': 'project.godot',
+  #  \})
+  #'';
 
-  programs.neovim.initLua = ''
-    vim.lsp.config('gdscript',
-      require('coq').lsp_ensure_capabilities({
-        name = "godot",
-        cmd = vim.lsp.rpc.connect("127.0.0.1", 6005)
-      })
-    )
-    vim.lsp.enable('gdscript')
+  #programs.neovim.initLua = ''
+  #  vim.lsp.config('gdscript',
+  #    require('coq').lsp_ensure_capabilities({
+  #      name = "godot",
+  #      cmd = vim.lsp.rpc.connect("127.0.0.1", 6005)
+  #    })
+  #  )
+  #  vim.lsp.enable('gdscript')
 
-    local dap = require("dap")
+  #  local dap = require("dap")
 
-    dap.adapters.godot = {
-      type = "server",
-      host = "127.0.0.1",
-      port = 6006,
-    }
+  #  dap.adapters.godot = {
+  #    type = "server",
+  #    host = "127.0.0.1",
+  #    port = 6006,
+  #  }
 
-    dap.configurations.gdscript = {
-      {
-        type = "godot",
-        request = "launch",
-        name = "Launch scene",
-        project = "''${workspaceFolder}",
-      },
-    }
-  '';
+  #  dap.configurations.gdscript = {
+  #    {
+  #      type = "godot",
+  #      request = "launch",
+  #      name = "Launch scene",
+  #      project = "''${workspaceFolder}",
+  #    },
+  #  }
+  #'';
 
   # Buffer settings for godot.
   xdg.configFile."nvim/ftplugin/gdscript.vim".text = ''
