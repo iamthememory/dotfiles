@@ -146,10 +146,10 @@ index 61189c799240..fd707b5326ea 100644
 \ No newline at end of file
 +]
 diff --git a/Plant Crops/seed.json b/Plant Crops/seed.json
-index e50a8e4141d3..160c79d974f7 100644
+index e50a8e4141d3..4586797fa483 100644
 --- a/Plant Crops/seed.json	
 +++ b/Plant Crops/seed.json	
-@@ -2,43 +2,37 @@
+@@ -2,43 +2,39 @@
    {
      "id": "rc_seed_rice",
      "copy-from": "seed",
@@ -179,6 +179,7 @@ index e50a8e4141d3..160c79d974f7 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "47 days"
 -    }
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rice",
 +    "fruit": "rc_rice",
 +    "byproducts": [ "withered" ],
@@ -205,6 +206,7 @@ index e50a8e4141d3..160c79d974f7 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "30 days"
 -    }
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tinder",
 +    "fruit": "tinder",
 +    "byproducts": [ "withered" ],
@@ -1424,10 +1426,10 @@ index 0e346e119eeb..d670b333c57f 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/alchemy seeds.json b/Resource Crops Magiclysm addon/seeds/alchemy seeds.json
-index 09f3ce743caa..162859af71a6 100644
+index 09f3ce743caa..a584f07eca09 100644
 --- a/Resource Crops Magiclysm addon/seeds/alchemy seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/alchemy seeds.json	
-@@ -2,49 +2,61 @@
+@@ -2,49 +2,64 @@
    {
      "id": "rc_seed_bulettePlate",
      "copy-from": "seed",
@@ -1447,6 +1449,7 @@ index 09f3ce743caa..162859af71a6 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "bulette plate bush",
 +    "fruit": "bulette_plate",
 +    "byproducts": [ "withered" ],
@@ -1477,6 +1480,7 @@ index 09f3ce743caa..162859af71a6 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "alumentum bush",
 +    "fruit": "alumentum",
 +    "byproducts": [ "withered" ],
@@ -1507,6 +1511,7 @@ index 09f3ce743caa..162859af71a6 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mana dust bush",
 +    "fruit": "mana_dust",
 +    "byproducts": [ "withered" ],
@@ -1522,10 +1527,10 @@ index 09f3ce743caa..162859af71a6 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/butchering seeds.json b/Resource Crops Magiclysm addon/seeds/butchering seeds.json
-index f48d47289878..6d0bf863885c 100644
+index f48d47289878..f04557b6921a 100644
 --- a/Resource Crops Magiclysm addon/seeds/butchering seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/butchering seeds.json	
-@@ -2,65 +2,81 @@
+@@ -2,65 +2,85 @@
    {
      "id": "rc_seed_blackScale",
      "copy-from": "seed",
@@ -1545,6 +1550,7 @@ index f48d47289878..6d0bf863885c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "black dragon scale bush",
 +    "fruit": "dragon_black_scale",
 +    "byproducts": [ "withered" ],
@@ -1575,6 +1581,7 @@ index f48d47289878..6d0bf863885c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "black dragon hide bush",
 +    "fruit": "black_dragon_tanned_hide",
 +    "byproducts": [ "withered" ],
@@ -1605,6 +1612,7 @@ index f48d47289878..6d0bf863885c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "demon chitin chunk bush",
 +    "fruit": "demon_chitin_piece",
 +    "byproducts": [ "withered" ],
@@ -1635,6 +1643,7 @@ index f48d47289878..6d0bf863885c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "demon chitin plate bush",
 +    "fruit": "demon_chitin_plate",
 +    "byproducts": [ "withered" ],
@@ -1650,10 +1659,10 @@ index f48d47289878..6d0bf863885c 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/lootbox seeds.json b/Resource Crops Magiclysm addon/seeds/lootbox seeds.json
-index 168e6dd7ac6c..8bb5ed3499ee 100644
+index 168e6dd7ac6c..0a2c42ef9b5a 100644
 --- a/Resource Crops Magiclysm addon/seeds/lootbox seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/lootbox seeds.json	
-@@ -2,129 +2,241 @@
+@@ -2,129 +2,253 @@
    {
      "id": "rc_seed_animist",
      "copy-from": "seed",
@@ -1675,6 +1684,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "animist scroll bush",
 +    "fruit": "rc_spawn_animistfungus",
 +    "byproducts": [ "withered" ],
@@ -1707,6 +1717,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "biomancer scroll bush",
 +    "fruit": "rc_spawn_biomancerfungus",
 +    "byproducts": [ "withered" ],
@@ -1739,6 +1750,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "druid scroll bush",
 +    "fruit": "rc_spawn_druidfungus",
 +    "byproducts": [ "withered" ],
@@ -1771,6 +1783,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "earthshaper scroll bush",
 +    "fruit": "rc_spawn_earthshaperfungus",
 +    "byproducts": [ "withered" ],
@@ -1803,6 +1816,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "kelvinist scroll bush",
 +    "fruit": "rc_spawn_kelvinistfungus",
 +    "byproducts": [ "withered" ],
@@ -1835,6 +1849,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "magus scroll bush",
 +    "fruit": "rc_spawn_magusfungus",
 +    "byproducts": [ "withered" ],
@@ -1867,6 +1882,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "stormshaper scroll bush",
 +    "fruit": "rc_spawn_stormshaperfungus",
 +    "byproducts": [ "withered" ],
@@ -1900,6 +1916,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "technomancer scroll bush",
 +    "fruit": "rc_spawn_technomancerfungus",
 +    "byproducts": [ "withered" ],
@@ -1920,6 +1937,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with spellbooks.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "spellbook bush",
 +    "fruit": "rc_spawn_all_spell_books_fungus",
 +    "byproducts": [ "withered" ],
@@ -1940,6 +1958,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with magic items.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "magic item bush",
 +    "fruit": "rc_spawn_various_magic_items_fungus",
 +    "byproducts": [ "withered" ],
@@ -1960,6 +1979,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with mana crystals.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mana crystal bush",
 +    "fruit": "rc_spawn_mana_crystal_fungus",
 +    "byproducts": [ "withered" ],
@@ -1980,6 +2000,7 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with parabolan wool.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "parabolan wool bush",
 +    "fruit": "parabolan_wool_staple",
 +    "byproducts": [ "withered" ],
@@ -1993,10 +2014,10 @@ index 168e6dd7ac6c..8bb5ed3499ee 100644
 +}
 +]
 diff --git a/Resource Crops Magiclysm addon/seeds/metal seeds.json b/Resource Crops Magiclysm addon/seeds/metal seeds.json
-index d52300a7328b..8db0c511fac5 100644
+index d52300a7328b..996ab44a9808 100644
 --- a/Resource Crops Magiclysm addon/seeds/metal seeds.json	
 +++ b/Resource Crops Magiclysm addon/seeds/metal seeds.json	
-@@ -2,97 +2,121 @@
+@@ -2,97 +2,127 @@
    {
      "id": "rc_seed_oriLump",
      "copy-from": "seed",
@@ -2018,6 +2039,7 @@ index d52300a7328b..8db0c511fac5 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "orichalcum lump bush",
 +    "fruit": "orichalcum_lump",
 +    "byproducts": [ "withered" ],
@@ -2050,6 +2072,7 @@ index d52300a7328b..8db0c511fac5 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "orichalcum ingot bush",
 +    "fruit": "orichalcum_ingot",
 +    "byproducts": [ "withered" ],
@@ -2082,6 +2105,7 @@ index d52300a7328b..8db0c511fac5 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mithril lump bush",
 +    "fruit": "mithril_lump",
 +    "byproducts": [ "withered" ],
@@ -2114,6 +2138,7 @@ index d52300a7328b..8db0c511fac5 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mithril ingot bush",
 +    "fruit": "mithril_ingot",
 +    "byproducts": [ "withered" ],
@@ -2146,6 +2171,7 @@ index d52300a7328b..8db0c511fac5 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "orichalcum frame bush",
 +    "fruit": "orichalcum_frame",
 +    "byproducts": [ "withered" ],
@@ -2179,6 +2205,7 @@ index d52300a7328b..8db0c511fac5 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "light orichalcum frame bush",
 +    "fruit": "light_orichalcum_frame",
 +    "byproducts": [ "withered" ],
@@ -6443,10 +6470,10 @@ index 000000000000..00b78fb2ed4a
 +]
 diff --git a/Resource Crops/mod_interactions/skyisland/seeds.json b/Resource Crops/mod_interactions/skyisland/seeds.json
 new file mode 100644
-index 000000000000..81a2f0ec8d5a
+index 000000000000..f547bbcb5a12
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/skyisland/seeds.json	
-@@ -0,0 +1,22 @@
+@@ -0,0 +1,23 @@
 +[
 +  {
 +    "id": "rc_seed_warp",
@@ -6457,6 +6484,7 @@ index 000000000000..81a2f0ec8d5a
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with strange warp tokens.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "warp bush",
 +    "fruit": "rc_spawn_warp_fungus",
 +    "byproducts": [ "withered" ],
@@ -6570,10 +6598,10 @@ index 000000000000..4dcaf798ddeb
 +]
 diff --git a/Resource Crops/mod_interactions/xedra-both-classes/seeds.json b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json
 new file mode 100644
-index 000000000000..f8504a6e8568
+index 000000000000..83c13a9070e4
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json	
-@@ -0,0 +1,22 @@
+@@ -0,0 +1,23 @@
 +[
 +  {
 +    "id": "rc_seed_seeds",
@@ -6584,6 +6612,7 @@ index 000000000000..f8504a6e8568
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with other seeds.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "seed bush",
 +    "fruit": "rc_spawn_seed_fungus",
 +    "byproducts": [ "withered" ],
@@ -10773,10 +10802,10 @@ index 000000000000..4676f7d4da5d
 +  }
 +]
 diff --git a/Resource Crops/seeds/ammo seeds.json b/Resource Crops/seeds/ammo seeds.json
-index 04affdd2ac51..55f4edc1368a 100644
+index 04affdd2ac51..d907ee8d1ece 100644
 --- a/Resource Crops/seeds/ammo seeds.json	
 +++ b/Resource Crops/seeds/ammo seeds.json	
-@@ -2,865 +2,1041 @@
+@@ -2,865 +2,1093 @@
    {
      "id": "rc_seed_22",
      "copy-from": "seed",
@@ -10796,6 +10825,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".22 ammo bush",
 +    "fruit": "rc_spawn_22fungus",
 +    "byproducts": [ "withered" ],
@@ -10826,6 +10856,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "10mm ammo bush",
 +    "fruit": "rc_spawn_10mmfungus",
 +    "byproducts": [ "withered" ],
@@ -10872,6 +10903,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "12mm ammo bush",
 +    "fruit": "rc_spawn_12mmfungus",
 +    "byproducts": [ "withered" ],
@@ -10902,6 +10934,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".223 ammo bush",
 +    "fruit": "rc_spawn_223fungus",
 +    "byproducts": [ "withered" ],
@@ -10932,6 +10965,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".270 Winchester ammo bush",
 +    "fruit": "rc_spawn_270winfungus",
 +    "byproducts": [ "withered" ],
@@ -10962,6 +10996,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".300 Winchester ammo bush",
 +    "fruit": "rc_spawn_300winfungus",
 +    "byproducts": [ "withered" ],
@@ -10992,6 +11027,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".30-06 Springfield ammo bush",
 +    "fruit": "rc_spawn_3006springfungus",
 +    "byproducts": [ "withered" ],
@@ -11022,6 +11058,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".300 Blackout ammo bush",
 +    "fruit": "rc_spawn_300blkfungus",
 +    "byproducts": [ "withered" ],
@@ -11052,6 +11089,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".308 Winchester ammo bush",
 +    "fruit": "rc_spawn_308winfungus",
 +    "byproducts": [ "withered" ],
@@ -11082,6 +11120,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".32 ACP ammo bush",
 +    "fruit": "rc_spawn_32acpfungus",
 +    "byproducts": [ "withered" ],
@@ -11112,6 +11151,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".357 magnum ammo bush",
 +    "fruit": "rc_spawn_357magfungus",
 +    "byproducts": [ "withered" ],
@@ -11142,6 +11182,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".357 SIG ammo bush",
 +    "fruit": "rc_spawn_357sigfungus",
 +    "byproducts": [ "withered" ],
@@ -11172,6 +11213,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".36 paper cartridge bush",
 +    "fruit": "rc_spawn_36navyfungus",
 +    "byproducts": [ "withered" ],
@@ -11202,6 +11244,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".38 ammo bush",
 +    "fruit": "rc_spawn_38specfungus",
 +    "byproducts": [ "withered" ],
@@ -11232,6 +11275,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".380 ACP bush",
 +    "fruit": "rc_spawn_380acpfungus",
 +    "byproducts": [ "withered" ],
@@ -11262,6 +11306,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".40 S&W bush",
 +    "fruit": "rc_spawn_40swfungus",
 +    "byproducts": [ "withered" ],
@@ -11292,6 +11337,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "40x46mm grenade bush",
 +    "fruit": "rc_spawn_40x46grenfungus",
 +    "byproducts": [ "withered" ],
@@ -11322,6 +11368,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "40x53mm grenade bush",
 +    "fruit": "rc_spawn_40x53grenfungus",
 +    "byproducts": [ "withered" ],
@@ -11352,6 +11399,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".410 000 ammo bush",
 +    "fruit": "rc_spawn_410000fungus",
 +    "byproducts": [ "withered" ],
@@ -11382,6 +11430,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".44 Magnum ammo bush",
 +    "fruit": "rc_spawn_44magfungus",
 +    "byproducts": [ "withered" ],
@@ -11412,6 +11461,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".44 paper cartridge bush",
 +    "fruit": "rc_spawn_44armyfungus",
 +    "byproducts": [ "withered" ],
@@ -11442,6 +11492,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".45 ACP bush",
 +    "fruit": "rc_spawn_45acpfungus",
 +    "byproducts": [ "withered" ],
@@ -11472,6 +11523,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".454 Casull bush",
 +    "fruit": "rc_spawn_454casufungus",
 +    "byproducts": [ "withered" ],
@@ -11502,6 +11554,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".45-70 Government ammo bush",
 +    "fruit": "rc_spawn_4570fungus",
 +    "byproducts": [ "withered" ],
@@ -11532,6 +11585,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".45 Colt ammo bush",
 +    "fruit": "rc_spawn_45coltfungus",
 +    "byproducts": [ "withered" ],
@@ -11562,6 +11616,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "4.6x30mm ammo bush",
 +    "fruit": "rc_spawn_46mmfungus",
 +    "byproducts": [ "withered" ],
@@ -11592,6 +11647,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".460 Rowland ammo bush",
 +    "fruit": "rc_spawn_460rowfungus",
 +    "byproducts": [ "withered" ],
@@ -11622,6 +11678,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".50 BMG ammo bush",
 +    "fruit": "rc_spawn_50bmgfungus",
 +    "byproducts": [ "withered" ],
@@ -11652,6 +11709,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": ".500 S&W Magnum ammo bush",
 +    "fruit": "rc_spawn_500magfungus",
 +    "byproducts": [ "withered" ],
@@ -11682,6 +11740,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "5.45x39mm ammo bush",
 +    "fruit": "rc_spawn_545x39fungus",
 +    "byproducts": [ "withered" ],
@@ -11712,6 +11771,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "5.7x28mm ammo bush",
 +    "fruit": "rc_spawn_57x28fungus",
 +    "byproducts": [ "withered" ],
@@ -11742,6 +11802,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "5x50mm ammo bush",
 +    "fruit": "rc_spawn_5x40fungus",
 +    "byproducts": [ "withered" ],
@@ -11788,6 +11849,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "66mm ammo bush",
 +    "fruit": "rc_spawn_66rockfungus",
 +    "byproducts": [ "withered" ],
@@ -11818,6 +11880,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "7.62x39mm ammo bush",
 +    "fruit": "rc_spawn_762x39fungus",
 +    "byproducts": [ "withered" ],
@@ -11848,6 +11911,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "7.62x54mmR ammo bush",
 +    "fruit": "rc_spawn_762x54fungus",
 +    "byproducts": [ "withered" ],
@@ -11878,6 +11942,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "7.62x25mm ammo bush",
 +    "fruit": "rc_spawn_762x25fungus",
 +    "byproducts": [ "withered" ],
@@ -11908,6 +11973,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "84x246mm ammo bush",
 +    "fruit": "rc_spawn_84x246fungus",
 +    "byproducts": [ "withered" ],
@@ -11938,6 +12004,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "8x40mm ammo bush",
 +    "fruit": "rc_spawn_8x40fungus",
 +    "byproducts": [ "withered" ],
@@ -11968,6 +12035,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "9x19mm ammo bush",
 +    "fruit": "rc_spawn_9x19fungus",
 +    "byproducts": [ "withered" ],
@@ -11998,6 +12066,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "9x18mm Makarov ammo bush",
 +    "fruit": "rc_spawn_9x18makafungus",
 +    "byproducts": [ "withered" ],
@@ -12028,6 +12097,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "ATGM HEAT ammo bush",
 +    "fruit": "rc_spawn_atgmfungus",
 +    "byproducts": [ "withered" ],
@@ -12058,6 +12128,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "paralyzing barbs bush",
 +    "fruit": "rc_spawn_barbparafungus",
 +    "byproducts": [ "withered" ],
@@ -12088,6 +12159,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "cannon shots bush",
 +    "fruit": "rc_spawn_cannonfungus",
 +    "byproducts": [ "withered" ],
@@ -12118,6 +12190,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "sprayable gas bush",
 +    "fruit": "rc_spawn_gasfungus",
 +    "byproducts": [ "withered" ],
@@ -12148,6 +12221,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "12.31n ammo bush",
 +    "fruit": "rc_spawn_1231nfungus",
 +    "byproducts": [ "withered" ],
@@ -12178,6 +12252,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "flintlock ammo bush",
 +    "fruit": "rc_spawn_flintlockfungus",
 +    "byproducts": [ "withered" ],
@@ -12208,6 +12283,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rebar ammo bush",
 +    "fruit": "rc_spawn_rebarrailfungus",
 +    "byproducts": [ "withered" ],
@@ -12238,6 +12314,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "paintball bush",
 +    "fruit": "rc_spawn_paintballfungus",
 +    "byproducts": [ "withered" ],
@@ -12268,6 +12345,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "RPG-7 ammo bush",
 +    "fruit": "rc_spawn_rpgfungus",
 +    "byproducts": [ "withered" ],
@@ -12298,6 +12376,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "shotgun ammo bush",
 +    "fruit": "rc_spawn_shotgunfungus",
 +    "byproducts": [ "withered" ],
@@ -12328,6 +12407,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "signal flare bush",
 +    "fruit": "rc_spawn_flarefungus",
 +    "byproducts": [ "withered" ],
@@ -12358,6 +12438,7 @@ index 04affdd2ac51..55f4edc1368a 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "oxyacetylene bush",
 +    "fruit": "tinyweldtank",
 +    "byproducts": [ "withered" ],
@@ -12373,10 +12454,10 @@ index 04affdd2ac51..55f4edc1368a 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/cloth seeds.json b/Resource Crops/seeds/cloth seeds.json
-index 2ba932551057..aa6ef8c831cb 100644
+index 2ba932551057..323aec17b2ad 100644
 --- a/Resource Crops/seeds/cloth seeds.json	
 +++ b/Resource Crops/seeds/cloth seeds.json	
-@@ -2,161 +2,361 @@
+@@ -2,161 +2,379 @@
  	{
      "id": "rc_seed_sheet",
      "copy-from": "seed",
@@ -12414,6 +12495,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "sheet bush",
 +    "fruit": "sheet",
 +    "byproducts": [ "withered" ],
@@ -12446,6 +12528,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "thread bush",
 +    "fruit": "thread",
 +    "byproducts": [ "withered" ],
@@ -12478,6 +12561,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "long string bush",
 +    "fruit": "string_36",
 +    "byproducts": [ "withered" ],
@@ -12510,6 +12594,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "long rope bush",
 +    "fruit": "rope_30",
 +    "byproducts": [ "withered" ],
@@ -12544,6 +12629,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with some leather hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "leather bush",
 +    "fruit": "sheet_leather",
 +    "byproducts": [ "withered" ],
@@ -12578,6 +12664,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with some nomex hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "nomex bush",
 +    "fruit": "sheet_nomex",
 +    "byproducts": [ "withered" ],
@@ -12610,6 +12697,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "layered kevlar bush",
 +    "fruit": "sheet_kevlar_layered",
 +    "byproducts": [ "withered" ],
@@ -12642,6 +12730,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mattress bush",
 +    "fruit": "mattress",
 +    "byproducts": [ "withered" ],
@@ -12676,6 +12765,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "pelt bush",
 +    "fruit": "tanned_pelt",
 +    "byproducts": [ "withered" ],
@@ -12696,6 +12786,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow synthetic fabric.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "synthetic fabric bush",
 +    "fruit": "sheet_nylon",
 +    "byproducts": [ "withered" ],
@@ -12716,6 +12807,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow canvas.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "canvas bush",
 +    "fruit": "sheet_canvas",
 +    "byproducts": [ "withered" ],
@@ -12736,6 +12828,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow Lycra.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "Lycra bush",
 +    "fruit": "sheet_lycra",
 +    "byproducts": [ "withered" ],
@@ -12756,6 +12849,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow denim.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "denim bush",
 +    "fruit": "sheet_denim",
 +    "byproducts": [ "withered" ],
@@ -12776,6 +12870,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow neoprene.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "neoprene bush",
 +    "fruit": "sheet_neoprene",
 +    "byproducts": [ "withered" ],
@@ -12796,6 +12891,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow faux fur.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "faux fur bush",
 +    "fruit": "sheet_faux_fur",
 +    "byproducts": [ "withered" ],
@@ -12816,6 +12912,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow kevlar.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "kevlar bush",
 +    "fruit": "sheet_kevlar",
 +    "byproducts": [ "withered" ],
@@ -12836,6 +12933,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow felt.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "felt bush",
 +    "fruit": "sheet_felt",
 +    "byproducts": [ "withered" ],
@@ -12856,6 +12954,7 @@ index 2ba932551057..aa6ef8c831cb 100644
 +    "description": "Infused seeds prepared in such a way that their fruits grow cotton sheets.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "cotton sheet bush",
 +    "fruit": "sheet_cotton",
 +    "byproducts": [ "withered" ],
@@ -12869,10 +12968,10 @@ index 2ba932551057..aa6ef8c831cb 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/electrical seeds.json b/Resource Crops/seeds/electrical seeds.json
-index e3b40b6e648a..5c81232e2f53 100644
+index e3b40b6e648a..bb50efdb0056 100644
 --- a/Resource Crops/seeds/electrical seeds.json	
 +++ b/Resource Crops/seeds/electrical seeds.json	
-@@ -2,81 +2,121 @@
+@@ -2,81 +2,127 @@
    {
      "id": "rc_seed_amplifier",
      "copy-from": "seed",
@@ -12894,6 +12993,7 @@ index e3b40b6e648a..5c81232e2f53 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "amplifier bush",
 +    "fruit": "amplifier",
 +    "byproducts": [ "withered" ],
@@ -12926,6 +13026,7 @@ index e3b40b6e648a..5c81232e2f53 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "power converter bush",
 +    "fruit": "power_supply",
 +    "byproducts": [ "withered" ],
@@ -12958,6 +13059,7 @@ index e3b40b6e648a..5c81232e2f53 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "electronic scrap bush",
 +    "fruit": "e_scrap",
 +    "byproducts": [ "withered" ],
@@ -12990,6 +13092,7 @@ index e3b40b6e648a..5c81232e2f53 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "circuit board bush",
 +    "fruit": "circuit",
 +    "byproducts": [ "withered" ],
@@ -13023,6 +13126,7 @@ index e3b40b6e648a..5c81232e2f53 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "solar cell bush",
 +    "fruit": "solar_cell",
 +    "byproducts": [ "withered" ],
@@ -13043,6 +13147,7 @@ index e3b40b6e648a..5c81232e2f53 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with magnetron hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "magnetron bush",
 +    "fruit": "magnetron",
 +    "byproducts": [ "withered" ],
@@ -13056,10 +13161,10 @@ index e3b40b6e648a..5c81232e2f53 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/food seeds.json b/Resource Crops/seeds/food seeds.json
-index 4b6a9ff1343e..b4f2c456e03c 100644
+index 4b6a9ff1343e..2c5b453b716a 100644
 --- a/Resource Crops/seeds/food seeds.json	
 +++ b/Resource Crops/seeds/food seeds.json	
-@@ -2,289 +2,521 @@
+@@ -2,289 +2,547 @@
    {
      "id": "rc_seed_meatMut",
      "copy-from": "seed",
@@ -13079,6 +13184,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "meat bush",
 +    "fruit": "mutant_meat",
 +    "byproducts": [ "withered" ],
@@ -13109,6 +13215,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "meat bush",
 +    "fruit": "meat",
 +    "byproducts": [ "withered" ],
@@ -13139,6 +13246,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tainted meat bush",
 +    "fruit": "meat_tainted",
 +    "byproducts": [ "withered" ],
@@ -13169,6 +13277,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "human meat bush",
 +    "fruit": "human_flesh",
 +    "byproducts": [ "withered" ],
@@ -13199,6 +13308,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "demihuman meat bush",
 +    "fruit": "demihuman_flesh",
 +    "byproducts": [ "withered" ],
@@ -13219,6 +13329,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with juicy fish meat hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "fillet of fish bush",
 +    "fruit": "fish",
 +    "byproducts": [ "withered" ],
@@ -13239,6 +13350,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with unfertilized roe hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "roe bush",
 +    "fruit": "egg_fish",
 +    "byproducts": [ "withered" ],
@@ -13259,6 +13371,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with butter hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "butter bush",
 +    "fruit": "butter",
 +    "byproducts": [ "withered" ],
@@ -13289,6 +13402,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "supreme pizza bush",
 +    "fruit": "pizza_supreme",
 +    "byproducts": [ "withered" ],
@@ -13319,6 +13433,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "cheese pizza bush",
 +    "fruit": "pizza_cheese",
 +    "byproducts": [ "withered" ],
@@ -13349,6 +13464,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "meat pizza bush",
 +    "fruit": "pizza_meat",
 +    "byproducts": [ "withered" ],
@@ -13379,6 +13495,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "veggy pizza bush",
 +    "fruit": "pizza_veggy",
 +    "byproducts": [ "withered" ],
@@ -13409,6 +13526,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "flour bush",
 +    "fruit": "flour_clump",
 +    "byproducts": [ "withered" ],
@@ -13439,6 +13557,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "biscuit bush",
 +    "fruit": "biscuit",
 +    "byproducts": [ "withered" ],
@@ -13469,6 +13588,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "s'mores bush",
 +    "fruit": "smores",
 +    "byproducts": [ "withered" ],
@@ -13499,6 +13619,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "cookies bush",
 +    "fruit": "cookies",
 +    "byproducts": [ "withered" ],
@@ -13529,6 +13650,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "wheat cereal bush",
 +    "fruit": "cereal2",
 +    "byproducts": [ "withered" ],
@@ -13559,6 +13681,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "pemmican bush",
 +    "fruit": "pemmican",
 +    "byproducts": [ "withered" ],
@@ -13589,6 +13712,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "marshmallow bush",
 +    "fruit": "marshmallow",
 +    "byproducts": [ "withered" ],
@@ -13619,6 +13743,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "graham cracker bush",
 +    "fruit": "grahmcrackers",
 +    "byproducts": [ "withered" ],
@@ -13649,6 +13774,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "toastem bush",
 +    "fruit": "toastem",
 +    "byproducts": [ "withered" ],
@@ -13669,6 +13795,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with berries full of raw milk hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "milkberry bush",
 +    "fruit": "raw_milk_berry",
 +    "byproducts": [ "withered" ],
@@ -13689,6 +13816,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with chocolate bars hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "chocolate bar bush",
 +    "fruit": "chocolate",
 +    "byproducts": [ "withered" ],
@@ -13709,6 +13837,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with berries full of raw maple sap hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "maple sap bush",
 +    "fruit": "maple_sap_berry",
 +    "byproducts": [ "withered" ],
@@ -13729,6 +13858,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with berries full of water hanging from it.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "water bush",
 +    "fruit": "water_berry",
 +    "byproducts": [ "withered" ],
@@ -13749,6 +13879,7 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in sugar.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "sugar bush",
 +    "fruit": "sugar_clump",
 +    "byproducts": [ "withered" ],
@@ -13764,10 +13895,10 @@ index 4b6a9ff1343e..b4f2c456e03c 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..233b4735169e 100644
+index 83c7aca5e180..bb1350d761c5 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,321 @@
+@@ -2,33 +2,337 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -13775,7 +13906,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "type": "ITEM",
 +    "subtypes": [ "SEED", "COMESTIBLE" ],
      "name": { "str_sp": "labratoy book seeds" },
-     "description": "Infused seeds prepared in such a way that they grow into a bush with labratoy books.",
+-    "description": "Infused seeds prepared in such a way that they grow into a bush with labratoy books.",
 -    "price": 1000,
 -    "price_postapoc": 250,
 -    "charges": 1,
@@ -13787,9 +13918,11 @@ index 83c7aca5e180..233b4735169e 100644
 -    }
 -  },
 -  {
++    "description": "Infused seeds prepared in such a way that they grow into a bush with laboratory books.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "labratoy books bush",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
++    "plant_name": "laboratory books bush",
 +    "fruit": "rc_spawn_lab_libraryfungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
@@ -13822,6 +13955,7 @@ index 83c7aca5e180..233b4735169e 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "exotic books bush",
 +    "fruit": "rc_spawn_exotic_books_fungus",
 +    "byproducts": [ "withered" ],
@@ -13842,6 +13976,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of books.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "books bush",
 +    "fruit": "rc_spawn_many_books_fungus",
 +    "byproducts": [ "withered" ],
@@ -13862,6 +13997,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of gun attachments.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gun mod bush",
 +    "fruit": "rc_spawn_gunmods_fungus",
 +    "byproducts": [ "withered" ],
@@ -13882,6 +14018,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of guns.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gun bush",
 +    "fruit": "rc_spawn_guns_fungus",
 +    "byproducts": [ "withered" ],
@@ -13902,6 +14039,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of gun magazines.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gun magazine bush",
 +    "fruit": "rc_spawn_gunmags_fungus",
 +    "byproducts": [ "withered" ],
@@ -13922,6 +14060,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of domestic junk.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "junk bush",
 +    "fruit": "rc_spawn_homejunk_fungus",
 +    "byproducts": [ "withered" ],
@@ -13942,6 +14081,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of forage.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "forage bush",
 +    "fruit": "rc_spawn_forage_fungus",
 +    "byproducts": [ "withered" ],
@@ -13962,6 +14102,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of harvested forage.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "harvest bush",
 +    "fruit": "rc_spawn_harvest_fungus",
 +    "byproducts": [ "withered" ],
@@ -13982,6 +14123,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with a wide array of minerals.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mineral bush",
 +    "fruit": "rc_spawn_mineral_fungus",
 +    "byproducts": [ "withered" ],
@@ -14002,6 +14144,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with feathers.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "feather bush",
 +    "fruit": "rc_spawn_feather_fungus",
 +    "byproducts": [ "withered" ],
@@ -14022,6 +14165,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with body parts and meat.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "body part bush",
 +    "fruit": "rc_spawn_bodypart_fungus",
 +    "byproducts": [ "withered" ],
@@ -14042,6 +14186,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with fuel.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "fuel bush",
 +    "fruit": "rc_spawn_fuel_fungus",
 +    "byproducts": [ "withered" ],
@@ -14062,6 +14207,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with ammo.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "ammo bush",
 +    "fruit": "rc_spawn_ammo_fungus",
 +    "byproducts": [ "withered" ],
@@ -14082,6 +14228,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with medicine.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "medicine bush",
 +    "fruit": "rc_spawn_medicine_fungus",
 +    "byproducts": [ "withered" ],
@@ -14102,6 +14249,7 @@ index 83c7aca5e180..233b4735169e 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush with something random.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gamble bush",
 +    "fruit": "rc_spawn_gamble_fungus",
 +    "byproducts": [ "withered" ],
@@ -14115,10 +14263,10 @@ index 83c7aca5e180..233b4735169e 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
-index f2819e545949..209987f6a576 100644
+index f2819e545949..05991408b648 100644
 --- a/Resource Crops/seeds/metal seeds.json	
 +++ b/Resource Crops/seeds/metal seeds.json	
-@@ -2,385 +2,481 @@
+@@ -2,385 +2,505 @@
    {
      "id": "rc_seed_metalsheet",
      "copy-from": "seed",
@@ -14140,6 +14288,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "sheet metal bush",
 +    "fruit": "sheet_metal",
 +    "byproducts": [ "withered" ],
@@ -14172,6 +14321,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "small metal sheet bush",
 +    "fruit": "sheet_metal_small",
 +    "byproducts": [ "withered" ],
@@ -14204,6 +14354,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "lump of steel bush",
 +    "fruit": "steel_lump",
 +    "byproducts": [ "withered" ],
@@ -14236,6 +14387,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "chunk of steel bush",
 +    "fruit": "steel_chunk",
 +    "byproducts": [ "withered" ],
@@ -14268,6 +14420,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "scrap metal bush",
 +    "fruit": "scrap",
 +    "byproducts": [ "withered" ],
@@ -14300,6 +14453,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "spike bush",
 +    "fruit": "spike",
 +    "byproducts": [ "withered" ],
@@ -14332,6 +14486,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "pipe bush",
 +    "fruit": "pipe",
 +    "byproducts": [ "withered" ],
@@ -14364,6 +14519,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "steel plating bush",
 +    "fruit": "steel_plate",
 +    "byproducts": [ "withered" ],
@@ -14396,6 +14552,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rebar bush",
 +    "fruit": "rebar",
 +    "byproducts": [ "withered" ],
@@ -14428,6 +14585,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "door hinge bush",
 +    "fruit": "hinge",
 +    "byproducts": [ "withered" ],
@@ -14460,6 +14618,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "wire bush",
 +    "fruit": "wire",
 +    "byproducts": [ "withered" ],
@@ -14492,6 +14651,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "nail bush",
 +    "fruit": "nail_bundle",
 +    "byproducts": [ "withered" ],
@@ -14524,6 +14684,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "heavy duty frame bush",
 +    "fruit": "hdframe",
 +    "byproducts": [ "withered" ],
@@ -14556,6 +14717,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "steel frame bush",
 +    "fruit": "frame",
 +    "byproducts": [ "withered" ],
@@ -14588,6 +14750,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "60L metal tank bush",
 +    "fruit": "metal_tank",
 +    "byproducts": [ "withered" ],
@@ -14620,6 +14783,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "copper wire bush",
 +    "fruit": "cable",
 +    "byproducts": [ "withered" ],
@@ -14652,6 +14816,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "copper bush",
 +    "fruit": "copper",
 +    "byproducts": [ "withered" ],
@@ -14684,6 +14849,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "lead bush",
 +    "fruit": "lead",
 +    "byproducts": [ "withered" ],
@@ -14716,6 +14882,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tin bush",
 +    "fruit": "tin",
 +    "byproducts": [ "withered" ],
@@ -14748,6 +14915,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "silver bush",
 +    "fruit": "silver_small",
 +    "byproducts": [ "withered" ],
@@ -14780,6 +14948,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gold bush",
 +    "fruit": "gold_small",
 +    "byproducts": [ "withered" ],
@@ -14812,6 +14981,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "steel chain bush",
 +    "fruit": "chain",
 +    "byproducts": [ "withered" ],
@@ -14844,6 +15014,7 @@ index f2819e545949..209987f6a576 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "military plate bush",
 +    "fruit": "mil_plate",
 +    "byproducts": [ "withered" ],
@@ -14877,6 +15048,7 @@ index f2819e545949..209987f6a576 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "solder bush",
 +    "fruit": "solder_wire",
 +    "byproducts": [ "withered" ],
@@ -14890,10 +15062,10 @@ index f2819e545949..209987f6a576 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/misc seeds.json b/Resource Crops/seeds/misc seeds.json
-index bd3cb009fb17..c7d86e6730dc 100644
+index bd3cb009fb17..63c9c90903b3 100644
 --- a/Resource Crops/seeds/misc seeds.json	
 +++ b/Resource Crops/seeds/misc seeds.json	
-@@ -2,321 +2,441 @@
+@@ -2,321 +2,463 @@
    {
      "id": "rc_seed_ducttape",
      "copy-from": "seed",
@@ -14915,6 +15087,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "duct tape bush",
 +    "fruit": "duct_tape_bundle",
 +    "byproducts": [ "withered" ],
@@ -14947,6 +15120,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "soil bush",
 +    "fruit": "material_soil",
 +    "byproducts": [ "withered" ],
@@ -14979,6 +15153,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "clay bush",
 +    "fruit": "clay_lump",
 +    "byproducts": [ "withered" ],
@@ -15011,6 +15186,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "brick bush",
 +    "fruit": "brick",
 +    "byproducts": [ "withered" ],
@@ -15043,6 +15219,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "concrete bush",
 +    "fruit": "concrete",
 +    "byproducts": [ "withered" ],
@@ -15075,6 +15252,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rock bush",
 +    "fruit": "rock",
 +    "byproducts": [ "withered" ],
@@ -15107,6 +15285,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "alien resin pod bush",
 +    "fruit": "alien_pod_resin",
 +    "byproducts": [ "withered" ],
@@ -15139,6 +15318,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "mortar bush",
 +    "fruit": "mortar_build",
 +    "byproducts": [ "withered" ],
@@ -15171,6 +15351,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "plastic sheet bush",
 +    "fruit": "plastic_sheet",
 +    "byproducts": [ "withered" ],
@@ -15203,6 +15384,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "compact bionic modules bush",
 +    "fruit": "rc_spawn_cbmfungus",
 +    "byproducts": [ "withered" ],
@@ -15235,6 +15417,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "power storage bush",
 +    "fruit": "bio_power_storage",
 +    "byproducts": [ "withered" ],
@@ -15267,6 +15450,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "power storage mkII bush",
 +    "fruit": "bio_power_storage_mkII",
 +    "byproducts": [ "withered" ],
@@ -15299,6 +15483,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "disposable battery bush",
 +    "fruit": "rc_spawn_batterydisposfungus",
 +    "byproducts": [ "withered" ],
@@ -15331,6 +15516,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "fertilizer bush",
 +    "fruit": "fertilizer_commercial",
 +    "byproducts": [ "withered" ],
@@ -15363,6 +15549,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "solar panel bush",
 +    "fruit": "solar_panel",
 +    "byproducts": [ "withered" ],
@@ -15395,6 +15582,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "upgraded solar panel bush",
 +    "fruit": "solar_panel_v2",
 +    "byproducts": [ "withered" ],
@@ -15427,6 +15615,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "heating element bush",
 +    "fruit": "element",
 +    "byproducts": [ "withered" ],
@@ -15459,6 +15648,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "plastic chunk bush",
 +    "fruit": "plastic_chunk",
 +    "byproducts": [ "withered" ],
@@ -15491,6 +15681,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 -  {
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "sand bush",
 +    "fruit": "material_sand_clump",
 +    "byproducts": [ "withered" ],
@@ -15524,6 +15715,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 \ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "cement bush",
 +    "fruit": "material_cement_clump",
 +    "byproducts": [ "withered" ],
@@ -15544,6 +15736,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in rigid plastic.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rigid plastic bush",
 +    "fruit": "rigid_plastic_sheet",
 +    "byproducts": [ "withered" ],
@@ -15564,6 +15757,7 @@ index bd3cb009fb17..c7d86e6730dc 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in polycarbonate.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "polycarbonate bush",
 +    "fruit": "polycarbonate_sheet",
 +    "byproducts": [ "withered" ],
@@ -15577,10 +15771,10 @@ index bd3cb009fb17..c7d86e6730dc 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/seed.json b/Resource Crops/seeds/seed.json
-index b11153388c60..1d823e2b3678 100644
+index b11153388c60..89f2e0e03262 100644
 --- a/Resource Crops/seeds/seed.json	
 +++ b/Resource Crops/seeds/seed.json	
-@@ -2,417 +2,601 @@
+@@ -2,417 +2,631 @@
    {
      "id": "rc_seed_mat",
      "copy-from": "seed",
@@ -15600,7 +15794,8 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
-+    "plant_name": "INFUSED",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
++    "plant_name": "infused bush",
 +    "fruit": "rc_seed_mat",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
@@ -15630,6 +15825,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "Bee stinger bush",
 +    "fruit": "bee_sting",
 +    "byproducts": [ "withered" ],
@@ -15660,6 +15856,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "Bee venom bush",
 +    "fruit": "venom_bee",
 +    "byproducts": [ "withered" ],
@@ -15690,6 +15887,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "Wasp venom bush",
 +    "fruit": "venom_wasp",
 +    "byproducts": [ "withered" ],
@@ -15720,6 +15918,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "honey bush",
 +    "fruit": "honeycomb",
 +    "byproducts": [ "withered" ],
@@ -15750,6 +15949,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gunpowder flower",
 +    "fruit": "gunpowder",
 +    "byproducts": [ "withered" ],
@@ -15780,6 +15980,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "plutonium bush",
 +    "fruit": "plut_cell",
 +    "byproducts": [ "withered" ],
@@ -15810,6 +16011,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "fungicidal gas grenade bush",
 +    "fruit": "fungicidalbomb",
 +    "byproducts": [ "withered" ],
@@ -15840,6 +16042,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tear gas grenade bush",
 +    "fruit": "gasbomb",
 +    "byproducts": [ "withered" ],
@@ -15870,6 +16073,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "insecticidal gas grenade bush",
 +    "fruit": "insecticidalbomb",
 +    "byproducts": [ "withered" ],
@@ -15900,6 +16104,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "purifier fruit bush",
 +    "fruit": "rc_purifier_solid",
 +    "byproducts": [ "withered" ],
@@ -15930,6 +16135,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "anesthetic fruit bush",
 +    "fruit": "rc_anesthetic_solid",
 +    "byproducts": [ "withered" ],
@@ -15960,6 +16166,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rubber chunk bush",
 +    "fruit": "chunk_rubber",
 +    "byproducts": [ "withered" ],
@@ -15990,6 +16197,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "cash card bush",
 +    "fruit": "rc_spawn_moneyfungus",
 +    "byproducts": [ "withered" ],
@@ -16020,6 +16228,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "chicken egg bush",
 +    "fruit": "egg_chicken",
 +    "byproducts": [ "withered" ],
@@ -16051,6 +16260,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "painted turtle egg bush",
 +    "fruit": "egg_turtle_painted",
 +    "byproducts": [ "withered" ],
@@ -16081,6 +16291,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "ant egg bush",
 +    "fruit": "ant_egg",
 +    "byproducts": [ "withered" ],
@@ -16111,6 +16322,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "spider egg bush",
 +    "fruit": "egg_spider_web",
 +    "byproducts": [ "withered" ],
@@ -16142,6 +16354,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }  
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "glass sheet bush",
 +    "fruit": "glass_sheet",
 +    "byproducts": [ "withered" ],
@@ -16173,6 +16386,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tempered glass sheet bush",
 +    "fruit": "tempered_glass_sheet",
 +    "byproducts": [ "withered" ],
@@ -16204,6 +16418,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "reinforced glass pane bush",
 +    "fruit": "reinforced_glass_pane",
 +    "byproducts": [ "withered" ],
@@ -16235,6 +16450,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "plank bush",
 +    "fruit": "2x4",
 +    "byproducts": [ "withered" ],
@@ -16266,6 +16482,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "long stout branch bush",
 +    "fruit": "stick_long",
 +    "byproducts": [ "withered" ],
@@ -16297,6 +16514,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "wooden panel bush",
 +    "fruit": "wood_panel",
 +    "byproducts": [ "withered" ],
@@ -16328,6 +16546,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "log bush",
 +    "fruit": "log",
 +    "byproducts": [ "withered" ],
@@ -16359,6 +16578,7 @@ index b11153388c60..1d823e2b3678 100644
 -    }
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "wooden beam bush",
 +    "fruit": "wood_beam",
 +    "byproducts": [ "withered" ],
@@ -16379,6 +16599,7 @@ index b11153388c60..1d823e2b3678 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in rock salt.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "rock salt bush",
 +    "fruit": "material_rocksalt",
 +    "byproducts": [ "withered" ],
@@ -16399,6 +16620,7 @@ index b11153388c60..1d823e2b3678 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in tallow.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tallow bush",
 +    "fruit": "tallow",
 +    "byproducts": [ "withered" ],
@@ -16419,6 +16641,7 @@ index b11153388c60..1d823e2b3678 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in beeswax.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "beeswax bush",
 +    "fruit": "wax",
 +    "byproducts": [ "withered" ],
@@ -16439,6 +16662,7 @@ index b11153388c60..1d823e2b3678 100644
 +    "description": "Infused seeds prepared in such a way that they grow into a bush covered in wool.",
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "wool bush",
 +    "fruit": "wool_staple",
 +    "byproducts": [ "withered" ],
