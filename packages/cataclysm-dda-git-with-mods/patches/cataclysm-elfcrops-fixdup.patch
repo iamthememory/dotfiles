@@ -6087,11 +6087,35 @@ index 000000000000..e116e9036dbf
 +]
 diff --git a/Resource Crops/mod_interactions/extra-fruits/itemgroups.json b/Resource Crops/mod_interactions/extra-fruits/itemgroups.json
 new file mode 100644
-index 000000000000..96cc1488e80c
+index 000000000000..2d54cc4dc7ea
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/extra-fruits/itemgroups.json	
-@@ -0,0 +1,18 @@
+@@ -0,0 +1,42 @@
 +[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_harvests",
++    "copy-from": "rc_drop_harvests",
++    "extend": {
++      "items": [
++        { "item": "mango", "prob": 10, "count": [2, 5] },
++        { "item": "papaya", "prob": 10, "count": [2, 5] },
++        { "item": "pomegranate", "prob": 10, "count": [2, 5] },
++        { "item": "melon", "prob": 10, "count": [2, 5] },
++        { "item": "kiwi", "prob": 10, "count": [2, 5] },
++        { "item": "coconut", "prob": 10, "count": [2, 5] },
++        { "item": "pineapple", "prob": 10, "count": [2, 5] },
++        { "item": "banana", "prob": 10, "count": [2, 5] },
++        { "item": "orange", "prob": 10, "count": [2, 5] },
++        { "item": "lemon", "prob": 10, "count": [2, 5] },
++        { "item": "grapefruit", "prob": 10, "count": [2, 5] },
++        { "item": "watermelon", "prob": 10, "count": [2, 5] },
++        { "item": "cholla_bud", "prob": 10, "count": [2, 5] },
++        { "item": "cactus_pad", "prob": 10, "count": [1, 2] }
++      ]
++    }
++  },
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
