@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..b28a282ebcec 100644
+index 9e17b54f3ed3..855932418a17 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,124 @@
+@@ -520,5 +520,131 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -62,6 +62,13 @@ index 9e17b54f3ed3..b28a282ebcec 100644
 +    "//": "Whether or not comestibles spoil.",
 +    "stype": "bool",
 +    "value": true
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "BUTCHERY_TIME_MULTIPLIER",
++    "//": "How much longer than normal butchering will take. 0.5 will cause butchering to take half as long..",
++    "stype": "float",
++    "value": 1.0
 +  },
 +  {
 +    "type": "EXTERNAL_OPTION",
@@ -140,22 +147,26 @@ index 6464d66107fd..dd5529a3ce56 100644
          /** Expected battery life while reading with common ereaders:
                  integrated_ar       - implant                                         = potentially infinite
                  ar_glasses_advanced - max 300 charges from disposable light battery   = 25 hours of reading
-diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
-index 03146e144084..89deb69e9b4f 100644
---- a/src/activity_item_handling.cpp
-+++ b/src/activity_item_handling.cpp
-@@ -4267,8 +4267,9 @@ static int get_comestible_order( Character &you, const item_location &loc,
- static time_duration get_comestible_time_left( const item_location &loc )
- {
-     time_duration time_left = 0_turns;
--    const time_duration shelf_life = loc->is_comestible() ? loc->get_comestible()->spoils :
--                                     calendar::INDEFINITELY_LONG_DURATION;
-+    const time_duration shelf_life =
-+        loc->is_comestible() ? loc->get_comestible()->spoils  * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" ):
-+                calendar::INDEFINITELY_LONG_DURATION;
-     if( shelf_life > 0_turns ) {
-         const item &it = *loc;
-         const double relative_rot = it.get_relative_rot();
+diff --git a/src/butchery.cpp b/src/butchery.cpp
+index 796fe183f260..5007068aa89d 100644
+--- a/src/butchery.cpp
++++ b/src/butchery.cpp
+@@ -35,6 +35,7 @@
+ #include "mtype.h"
+ #include "npc.h"
+ #include "npc_opinion.h"
++#include "options.h"
+ #include "output.h"
+ #include "player_activity.h"
+ #include "pocket_type.h"
+@@ -490,6 +491,7 @@ int butcher_time_to_cut( Character &you, const item &corpse_item, const butcher_
+     }
+ 
+     time_to_cut *= ( 1.0f - ( get_player_character().get_num_crafting_helpers( 3 ) / 10.0f ) );
++    time_to_cut *= ::get_option<float>( "BUTCHERY_TIME_MULTIPLIER" );
+     return time_to_cut;
+ }
+ 
 diff --git a/src/character.cpp b/src/character.cpp
 index 29a76d3fe9b9..6f0f952c5b8e 100644
 --- a/src/character.cpp
@@ -217,22 +228,6 @@ index 29a76d3fe9b9..6f0f952c5b8e 100644
      // Your ability to "catch up" skill experience to knowledge is mostly a function of intelligence,
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
-diff --git a/src/game_inventory.cpp b/src/game_inventory.cpp
-index 396d1a349023..6e9f8192c579 100644
---- a/src/game_inventory.cpp
-+++ b/src/game_inventory.cpp
-@@ -722,8 +722,9 @@ class comestible_inventory_preset : public inventory_selector_preset
-             }, _( "HEALTH" ) );
- 
-             append_cell( []( const item_location & loc ) {
--                const time_duration spoils = loc->is_comestible() ? loc->get_comestible()->spoils :
--                                             calendar::INDEFINITELY_LONG_DURATION;
-+                const time_duration spoils =
-+                        loc->is_comestible() ? loc->get_comestible()->spoils * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" ) :
-+                                calendar::INDEFINITELY_LONG_DURATION;
-                 if( spoils > 0_turns ) {
-                     return to_string_clipped( spoils );
-                 }
 diff --git a/src/iexamine.cpp b/src/iexamine.cpp
 index cfebc26f2ed2..f2e3a1f40f33 100644
 --- a/src/iexamine.cpp
@@ -257,32 +252,23 @@ index cfebc26f2ed2..f2e3a1f40f33 100644
              for( item &i : get_harvest_items( type, plant_count, seedCount, true ) ) {
                  if( from_activity ) {
                      i.set_var( "activity_var", you.name );
-diff --git a/src/item_degrade.cpp b/src/item_degrade.cpp
-index ea62c162ade4..f37130b3b77e 100644
---- a/src/item_degrade.cpp
-+++ b/src/item_degrade.cpp
-@@ -434,16 +434,18 @@ bool item::goes_bad() const
+diff --git a/src/item_factory.cpp b/src/item_factory.cpp
+index 0888c06faf09..6d7e85f69ded 100644
+--- a/src/item_factory.cpp
++++ b/src/item_factory.cpp
+@@ -823,6 +823,12 @@ void Item_factory::finalize_pre( itype &obj )
+                 }
+             }
          }
-         return made_of_any( materials::get_rotting() );
++
++        if ( !get_option<bool>( "COMESTIBLES_GO_BAD" ) ) {
++            obj.spoils = time_duration::from_turns(0);
++        } else {
++            obj.spoils *= get_option<float>( "SHELF_LIFE_MULTIPLIER" );
++        }
      }
--    return is_comestible() && get_comestible()->spoils != 0_turns;
-+    return ::get_option<bool>( "COMESTIBLES_GO_BAD" ) &&
-+        is_comestible() &&
-+        get_comestible()->spoils != 0_turns;
- }
  
- time_duration item::get_shelf_life() const
- {
-     if( goes_bad() ) {
-         if( is_comestible() ) {
--            return get_comestible()->spoils;
-+            return get_comestible()->spoils * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" );
-         } else if( is_corpse() ) {
--            return 24_hours;
-+            return 24_hours * ::get_option<float>( "SHELF_LIFE_MULTIPLIER" );
-         }
-     }
-     return 0_turns;
+     // recurse into subtypes, adding self as substitution for all items in the subtypes chain
 diff --git a/src/magic.cpp b/src/magic.cpp
 index 9dd39aab065a..9b5b73b230cf 100644
 --- a/src/magic.cpp
