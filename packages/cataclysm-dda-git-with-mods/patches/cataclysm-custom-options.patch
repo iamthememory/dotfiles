@@ -253,7 +253,7 @@ index cfebc26f2ed2..f2e3a1f40f33 100644
                  if( from_activity ) {
                      i.set_var( "activity_var", you.name );
 diff --git a/src/item_factory.cpp b/src/item_factory.cpp
-index 0888c06faf09..6d7e85f69ded 100644
+index 0888c06faf09..de03e19b6c95 100644
 --- a/src/item_factory.cpp
 +++ b/src/item_factory.cpp
 @@ -823,6 +823,12 @@ void Item_factory::finalize_pre( itype &obj )
@@ -262,9 +262,9 @@ index 0888c06faf09..6d7e85f69ded 100644
          }
 +
 +        if ( !get_option<bool>( "COMESTIBLES_GO_BAD" ) ) {
-+            obj.spoils = time_duration::from_turns(0);
++            obj.comestible->spoils = time_duration::from_turns(0);
 +        } else {
-+            obj.spoils *= get_option<float>( "SHELF_LIFE_MULTIPLIER" );
++            obj.comestible->spoils *= get_option<float>( "SHELF_LIFE_MULTIPLIER" );
 +        }
      }
  
