@@ -120,7 +120,7 @@
     "id": "hydro",
     "extend": {
       "items": [
-        { "group": "arvore_seeds", "prob": 10 }
+        { "group": "arvore_seeds", "prob": 5 }
       ]
     }
   }
