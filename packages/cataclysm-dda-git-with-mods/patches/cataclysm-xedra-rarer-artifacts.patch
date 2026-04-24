@@ -1,0 +1,31 @@
+diff --git a/data/mods/Xedra_Evolved/itemgroups/itemgroups.json b/data/mods/Xedra_Evolved/itemgroups/itemgroups.json
+index a8c973be9288..25a84c78902f 100644
+--- a/data/mods/Xedra_Evolved/itemgroups/itemgroups.json
++++ b/data/mods/Xedra_Evolved/itemgroups/itemgroups.json
+@@ -505,7 +505,7 @@
+     "//": "Adding spell learning items to standard itemgroups",
+     "copy-from": "SUS_junk_drawer",
+     "subtype": "collection",
+-    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 50 } ] }
++    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 10 } ] }
+   },
+   {
+     "id": "SUS_junk_drawer_messy",
+@@ -513,7 +513,7 @@
+     "//": "Adding spell learning items to standard itemgroups",
+     "copy-from": "SUS_junk_drawer_messy",
+     "subtype": "collection",
+-    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 50 } ] }
++    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 10 } ] }
+   },
+   {
+     "id": "SUS_office_filing_cabinet",
+@@ -521,7 +521,7 @@
+     "//": "Adding spell learning items to standard itemgroups",
+     "copy-from": "SUS_office_filing_cabinet",
+     "subtype": "collection",
+-    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 50 } ] }
++    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 10 } ] }
+   },
+   {
+     "id": "costume_misc_items",
