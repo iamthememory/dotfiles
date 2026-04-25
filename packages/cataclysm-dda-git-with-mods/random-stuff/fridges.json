@@ -4,8 +4,8 @@
     "id": "ap_massive_portable_fridge",
     "copy-from": "ap_big_portable_fridge",
     "name": { "str": "massive food truck fridge" },
-    "epower": "-205 W",
-    "size": "4000 L",
+    "epower": "-102 W",
+    "size": "2000 L",
     "item": "massive_portable_fridge",
     "breaks_into": [ { "group": "massive_portable_fridge_destroyed" } ]
   },
@@ -14,8 +14,8 @@
     "id": "ap_massive_portable_freezer",
     "copy-from": "ap_big_portable_freezer",
     "name": { "str": "massive food truck freezer" },
-    "epower": "-205 W",
-    "size": "4000 L",
+    "epower": "-102 W",
+    "size": "2000 L",
     "item": "massive_portable_freezer",
     "breaks_into": [ { "group": "massive_portable_freezer_destroyed" } ]
   },

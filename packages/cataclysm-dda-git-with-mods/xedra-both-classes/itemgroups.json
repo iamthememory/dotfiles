@@ -111,7 +111,7 @@
     "id": "farming_seeds",
     "extend": {
       "items": [
-        { "group": "arvore_seeds", "prob": 100 }
+        { "group": "arvore_seeds", "prob": 5 }
       ]
     }
   },
