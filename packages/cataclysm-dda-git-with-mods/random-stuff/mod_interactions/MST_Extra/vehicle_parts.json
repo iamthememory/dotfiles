@@ -1,0 +1,14 @@
+[
+  {
+    "type": "vehicle_part",
+    "id": "makeshift_sled_basket_part",
+    "copy-from": "makeshift_sled_basket_part",
+    "size": "500 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "bed_straw_rollmat",
+    "copy-from": "bed_straw_rollmat",
+    "size": "500 L"
+  }
+]

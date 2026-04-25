@@ -1,0 +1,8 @@
+[
+  {
+    "type": "vehicle_part",
+    "id": "mana_frame",
+    "copy-from": "mana_frame",
+    "size": "2000 L"
+  }
+]

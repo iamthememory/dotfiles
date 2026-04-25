@@ -1,9 +1,384 @@
 [
   {
     "type": "vehicle_part",
+    "id": "veh_forge",
+    "copy-from": "veh_forge",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "veh_kiln",
+    "copy-from": "veh_kiln",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
     "id": "trunk_floor",
     "copy-from": "trunk_floor",
-    "name": { "str": "floor trunk" },
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "bed",
+    "copy-from": "bed",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "washing_machine",
+    "copy-from": "washing_machine",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "dishwasher",
+    "copy-from": "dishwasher",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "autoclave",
+    "copy-from": "autoclave",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "trunk",
+    "copy-from": "trunk",
+    "looks_like": "trunk",
+    "variants": [ { "symbols": "H", "symbols_broken": "#" } ],
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "trunk_sedan",
+    "copy-from": "trunk_sedan",
+    "looks_like": "trunk",
+    "variants": [ { "symbols": "H", "symbols_broken": "#" } ],
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "travois",
+    "copy-from": "travois",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "wood box",
+    "copy-from": "wood box",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "folding wood box",
+    "copy-from": "folding wood box",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "veh_table",
+    "copy-from": "veh_table",
+    "size": "1000 L",
+    "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "veh_table_wood",
+    "copy-from": "veh_table_wood",
+    "size": "1000 L",
+    "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "veh_table_foldable",
+    "copy-from": "veh_table_foldable",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "workbench",
+    "copy-from": "workbench",
+    "size": "1000 L",
+    "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "workbench_with_recharger",
+    "copy-from": "workbench_with_recharger",
+    "size": "1000 L",
+    "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "inflatable_section",
+    "copy-from": "inflatable_section",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "cargo_space",
+    "copy-from": "cargo_space",
+    "size": "2000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "livestock_stall",
+    "copy-from": "livestock_stall",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "animal_compartment",
+    "copy-from": "animal_compartment",
+    "size": "500 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seat_wood",
+    "copy-from": "seat_wood",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seat_wood_bench",
+    "copy-from": "seat_wood_bench",
+    "size": "300 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "vehicle_scoop",
+    "copy-from": "vehicle_scoop",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seed_drill",
+    "copy-from": "seed_drill",
+    "size": "200 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seed_drill_advanced",
+    "copy-from": "seed_drill_advanced",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "reaper_advanced",
+    "copy-from": "reaper_advanced",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seat",
+    "copy-from": "seat",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seat_leather",
+    "copy-from": "seat_leather",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "reclining_seat",
+    "copy-from": "reclining_seat",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "reclining_seat_leather",
+    "copy-from": "reclining_seat_leather",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seat_back",
+    "copy-from": "seat_back",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "seat_back_leather",
+    "copy-from": "seat_back_leather",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "metal_bench",
+    "copy-from": "metal_bench",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "forklift_fork",
+    "copy-from": "forklift_fork",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "door",
+    "copy-from": "door",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "cloth_flap_door",
+    "copy-from": "cloth_flap_door",
+    "size": "100 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "cloth_curtain_door",
+    "copy-from": "cloth_curtain_door",
+    "size": "100 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "door_opaque",
+    "copy-from": "door_opaque",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hddoor",
+    "copy-from": "hddoor",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hddoor_opaque",
+    "copy-from": "hddoor_opaque",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "door_internal",
+    "copy-from": "door_internal",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hatch",
+    "copy-from": "hatch",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hatch_opaque",
+    "copy-from": "hatch_opaque",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hdhatch",
+    "copy-from": "hdhatch",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hdhatch_opaque",
+    "copy-from": "hdhatch_opaque",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hatchback_trunk",
+    "copy-from": "hatchback_trunk",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "stowboard",
+    "copy-from": "stowboard",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "hdstowboard",
+    "copy-from": "hdstowboard",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "veh_tools_kitchen",
+    "copy-from": "veh_tools_kitchen",
+    "size": "1000 L",
+    "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "veh_tools_workshop",
+    "copy-from": "veh_tools_workshop",
+    "size": "1000 L",
+    "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "cargo_bag",
+    "copy-from": "cargo_bag",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "metal_tray",
+    "copy-from": "metal_tray",
+    "size": "250 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "basketlg",
+    "copy-from": "basketlg",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "basketlg_external",
+    "copy-from": "basketlg_external",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "basketlg_folding",
+    "copy-from": "basketlg_folding",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "basketsm",
+    "copy-from": "basketsm",
+    "size": "500 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "basketsm_external",
+    "copy-from": "basketsm_external",
+    "size": "500 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "box",
+    "copy-from": "box",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "integrated_trashcan",
+    "copy-from": "integrated_trashcan",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "cargo_space_external",
+    "copy-from": "cargo_space_external",
+    "size": "1000 L"
+  },
+  {
+    "type": "vehicle_part",
+    "id": "nose_plate",
+    "copy-from": "nose_plate",
     "size": "500 L"
   }
 ]
