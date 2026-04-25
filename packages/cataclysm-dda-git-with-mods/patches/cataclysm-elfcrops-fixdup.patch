@@ -2219,7 +2219,7 @@ index d52300a7328b..996ab44a9808 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..31201a2f75a6 100644
+index df4ffa673168..8d083c8d3c1d 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..31201a2f75a6 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,821 @@
+@@ -615,9 +571,835 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2867,6 +2867,19 @@ index df4ffa673168..31201a2f75a6 100644
 +  {
 +    "type": "item_group",
 +    "subtype": "distribution",
++    "id": "rc_drop_welding",
++    "items": [
++      { "item": "welding_rod_steel", "prob": 10, "charges": [ 100, 200 ] },
++      { "item": "welding_rod_alloy", "prob": 10, "charges": [ 100, 200 ] },
++      { "item": "welding_wire_steel", "prob": 10, "charges": [ 100, 200 ] },
++      { "item": "welding_wire_alloy", "prob": 10, "charges": [ 100, 200 ] },
++      { "item": "brazing_rod_bronze", "prob": 10, "charges": [ 100, 200 ] },
++      { "item": "brazing_rod_alloy", "prob": 10, "charges": [ 100, 200 ] }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
 +    "id": "rc_drop_gamble",
 +    "items": [
 +      { "item": "barley_stalks", "prob": 20 },
@@ -3099,6 +3112,7 @@ index df4ffa673168..31201a2f75a6 100644
 +      { "item": "rc_spawn_rebarrailfungus", "prob": 5 },
 +      { "item": "rc_spawn_rpgfungus", "prob": 5 },
 +      { "item": "rc_spawn_shotgunfungus", "prob": 5 },
++      { "item": "rc_spawn_welding_fungus", "prob": 5 },
 +      { "item": "rebar", "prob": 5 },
 +      { "item": "reinforced_glass_pane", "prob": 5 },
 +      { "item": "rigid_plastic_sheet", "prob": 5 },
@@ -3686,10 +3700,10 @@ index fccd89aa02a2..7665c0bbef75 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..6701e42888b8 100644
+index ce70e9badaf0..cd13debe8541 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1486 @@
+@@ -1,1046 +1,1507 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -5856,6 +5870,27 @@ index ce70e9badaf0..6701e42888b8 100644
 +          "effect": [
 +            { "npc_location_variable": { "context_val": "loc" } },
 +            { "map_spawn_item": "rc_drop_medicine", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_welding_fungus",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon welding fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with welding supplies in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_welding_fungus",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_welding", "loc": { "context_val": "loc" }, "use_item_group": true }
 +          ]
 +        }
 +      ]
@@ -8867,7 +8902,7 @@ index 056d35917941..5c2772a020f4 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..ce1182e8f3c5 100644
+index fa98ccf57c19..bad250003a4f 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
 @@ -2,10 +2,11 @@
@@ -8898,7 +8933,7 @@ index fa98ccf57c19..ce1182e8f3c5 100644
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
-@@ -48,5 +50,330 @@
+@@ -48,5 +50,353 @@
          [ "paper", 100 ]
        ]
      ]
@@ -9194,6 +9229,29 @@ index fa98ccf57c19..ce1182e8f3c5 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "medicine seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_welding",
++    "category": "CC_RESOURCE_SEEDS",
++    "subcategory": "CSC_RESOURCE_SEEDS_RESOURCE SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "autolearn": true,
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "welding seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -13889,10 +13947,10 @@ index 4b6a9ff1343e..2c5b453b716a 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..bb1350d761c5 100644
+index 83c7aca5e180..6cdd567c9cae 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,337 @@
+@@ -2,33 +2,358 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -14225,6 +14283,27 @@ index 83c7aca5e180..bb1350d761c5 100644
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "medicine bush",
 +    "fruit": "rc_spawn_medicine_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "3 days" },
++      { "GROWTH_SEEDLING": "3 days" },
++      { "GROWTH_MATURE": "3 days" },
++      { "GROWTH_HARVEST": "3 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
++},
++{
++    "id": "rc_seed_welding",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "welding seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with welding supplies.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
++    "plant_name": "welding bush",
++    "fruit": "rc_spawn_welding_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "3 days" },
