@@ -183,5 +183,11 @@
     "//": "Whether to disable being cramped in a vehicle.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "EVOLUTION_INVERSE_MULTIPLIER",
+    "stype": "float",
+    "value": 1.0
   }
 ]
