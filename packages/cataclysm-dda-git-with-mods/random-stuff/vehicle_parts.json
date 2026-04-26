@@ -46,7 +46,6 @@
     "id": "trunk",
     "copy-from": "trunk",
     "looks_like": "trunk",
-    "variants": [ { "symbols": "H", "symbols_broken": "#" } ],
     "size": "1000 L"
   },
   {
@@ -54,7 +53,6 @@
     "id": "trunk_sedan",
     "copy-from": "trunk_sedan",
     "looks_like": "trunk",
-    "variants": [ { "symbols": "H", "symbols_broken": "#" } ],
     "size": "1000 L"
   },
   {
@@ -79,6 +77,7 @@
     "type": "vehicle_part",
     "id": "veh_table",
     "copy-from": "veh_table",
+    "looks_like": "f_table",
     "size": "1000 L",
     "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
   },
@@ -86,6 +85,7 @@
     "type": "vehicle_part",
     "id": "veh_table_wood",
     "copy-from": "veh_table_wood",
+    "looks_like": "f_table",
     "size": "1000 L",
     "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
   },
@@ -93,12 +93,14 @@
     "type": "vehicle_part",
     "id": "veh_table_foldable",
     "copy-from": "veh_table_foldable",
+    "looks_like": "veh_table_wood",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "workbench",
     "copy-from": "workbench",
+    "looks_like": "veh_table_wood",
     "size": "1000 L",
     "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
   },
@@ -106,6 +108,7 @@
     "type": "vehicle_part",
     "id": "workbench_with_recharger",
     "copy-from": "workbench_with_recharger",
+    "looks_like": "veh_table_wood",
     "size": "1000 L",
     "workbench": { "multiplier": 1.2, "mass": "10000 kg", "volume": "1000 L" }
   },
@@ -221,72 +224,84 @@
     "type": "vehicle_part",
     "id": "door",
     "copy-from": "door",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "cloth_flap_door",
     "copy-from": "cloth_flap_door",
+    "looks_like": "door",
     "size": "100 L"
   },
   {
     "type": "vehicle_part",
     "id": "cloth_curtain_door",
     "copy-from": "cloth_curtain_door",
+    "looks_like": "door",
     "size": "100 L"
   },
   {
     "type": "vehicle_part",
     "id": "door_opaque",
     "copy-from": "door_opaque",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hddoor",
     "copy-from": "hddoor",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hddoor_opaque",
     "copy-from": "hddoor_opaque",
+    "looks_like": "door_opaque",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "door_internal",
     "copy-from": "door_internal",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hatch",
     "copy-from": "hatch",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hatch_opaque",
     "copy-from": "hatch_opaque",
+    "looks_like": "door_opaque",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hdhatch",
     "copy-from": "hdhatch",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hdhatch_opaque",
     "copy-from": "hdhatch_opaque",
+    "looks_like": "hatch_opaque",
     "size": "1000 L"
   },
   {
     "type": "vehicle_part",
     "id": "hatchback_trunk",
     "copy-from": "hatchback_trunk",
+    "looks_like": "t_door_metal_c",
     "size": "1000 L"
   },
   {
