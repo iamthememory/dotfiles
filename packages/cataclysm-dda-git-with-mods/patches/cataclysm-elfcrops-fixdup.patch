@@ -2219,7 +2219,7 @@ index d52300a7328b..996ab44a9808 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..8d083c8d3c1d 100644
+index df4ffa673168..22686aad2cb9 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..8d083c8d3c1d 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,835 @@
+@@ -615,9 +571,836 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2718,6 +2718,7 @@ index df4ffa673168..8d083c8d3c1d 100644
 +      { "item": "nether_huntsman_organ", "prob": 20, "count": [ 0, 1 ] },
 +      { "item": "nether_huntsman_spike", "prob": 200, "count": [ 1, 1 ] },
 +      { "item": "nomex", "prob": 40, "count": [ 95, 100 ] },
++      { "item": "oyster", "prob": 800, "count": [ 7, 9 ] },
 +      { "item": "plant_sac", "prob": 490, "count": [ 1, 2 ] },
 +      { "item": "porkbelly", "prob": 400, "count": [ 1, 2 ] },
 +      { "item": "poultry", "prob": 1200, "count": [ 3, 4 ] },
