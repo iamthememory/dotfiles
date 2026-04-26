@@ -109,6 +109,7 @@
   {
     "type": "item_group",
     "id": "farming_seeds",
+    "copy-from": "farming_seeds",
     "extend": {
       "items": [
         { "group": "arvore_seeds", "prob": 5 }
@@ -118,6 +119,7 @@
   {
     "type": "item_group",
     "id": "hydro",
+    "copy-from": "hydro",
     "extend": {
       "items": [
         { "group": "arvore_seeds", "prob": 5 }
