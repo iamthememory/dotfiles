@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..81aa8852064f 100644
+index 9e17b54f3ed3..c6eae79d7de3 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,138 @@
+@@ -520,5 +520,180 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -44,6 +44,13 @@ index 9e17b54f3ed3..81aa8852064f 100644
 +  },
 +  {
 +    "type": "EXTERNAL_OPTION",
++    "name": "CROP_GROWTH_FORCE_SEEDS",
++    "//": "Whether to force crops to spawn seeds when harvest.",
++    "stype": "bool",
++    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
 +    "name": "CROP_YIELD_MULTIPLIER",
 +    "//": "How to scale crop yields. 2.0 will double crop yields.",
 +    "stype": "float",
@@ -69,6 +76,41 @@ index 9e17b54f3ed3..81aa8852064f 100644
 +    "//": "How much longer than normal butchering will take. 0.5 will cause butchering to take half as long..",
 +    "stype": "float",
 +    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "BREW_TIME_MULTIPLIER",
++    "//": "How much longer than normal brewing will take. 0.5 will cause brewing to take half as long..",
++    "stype": "float",
++    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "COMPOST_TIME_MULTIPLIER",
++    "//": "How much longer than normal composting will take. 0.5 will cause composting to take half as long..",
++    "stype": "float",
++    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "RECIPE_TIME_MULTIPLIER",
++    "//": "How much longer than normal crafting will take. 0.5 will cause crafting to take half as long..",
++    "stype": "float",
++    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "VEHICLE_WORK_TIME_MULTIPLIER",
++    "//": "How much longer than normal working on vehicles will take. 0.5 will cause working on vehicles to take half as long..",
++    "stype": "float",
++    "value": 1.0
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "FOCUS_EQUILIBRIUM_PENALTY",
++    "//": "How much of a penalty to give to the focus equilibrium point while reading. 40 will aim focus towards 100 - 40 = 60.",
++    "stype": "int",
++    "value": 50
 +  },
 +  {
 +    "type": "EXTERNAL_OPTION",
@@ -142,7 +184,7 @@ index 9e17b54f3ed3..81aa8852064f 100644
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
-index ece9744086c3..6bb0d2b1a886 100644
+index ba611058b0ae..dfd3a265dbb7 100644
 --- a/src/activity_actor.cpp
 +++ b/src/activity_actor.cpp
 @@ -2174,7 +2174,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
@@ -175,7 +217,7 @@ index 796fe183f260..5007068aa89d 100644
  }
  
 diff --git a/src/character.cpp b/src/character.cpp
-index 29a76d3fe9b9..6f0f952c5b8e 100644
+index 5accf2c71012..b37b24b0c3ef 100644
 --- a/src/character.cpp
 +++ b/src/character.cpp
 @@ -379,6 +379,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
@@ -235,6 +277,19 @@ index 29a76d3fe9b9..6f0f952c5b8e 100644
      // Your ability to "catch up" skill experience to knowledge is mostly a function of intelligence,
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
+diff --git a/src/character_health.cpp b/src/character_health.cpp
+index a40b42d8e9ae..6d1e0d4d47a0 100644
+--- a/src/character_health.cpp
++++ b/src/character_health.cpp
+@@ -524,7 +524,7 @@ int Character::calc_focus_equilibrium( bool ignore_pain ) const
+             // apply a penalty when we're actually learning something
+             const SkillLevel &skill_level = get_skill_level_object( bt->skill );
+             if( skill_level.can_train() && skill_level < bt->level ) {
+-                focus_equilibrium -= 50;
++                focus_equilibrium -= ::get_option<int>( "FOCUS_EQUILIBRIUM_READING_PENALTY" );
+             }
+         }
+     }
 diff --git a/src/creature.cpp b/src/creature.cpp
 index 655c65c7b01d..1df43d66afe2 100644
 --- a/src/creature.cpp
@@ -251,10 +306,10 @@ index 655c65c7b01d..1df43d66afe2 100644
      if( !vp_there ) {
          return false;
 diff --git a/src/iexamine.cpp b/src/iexamine.cpp
-index cfebc26f2ed2..f2e3a1f40f33 100644
+index ca2a5bdc372a..035b5c2ef2ec 100644
 --- a/src/iexamine.cpp
 +++ b/src/iexamine.cpp
-@@ -2830,11 +2830,16 @@ void iexamine::harvest_plant( Character &you, const tripoint_bub_ms &examp, bool
+@@ -2831,11 +2831,16 @@ void iexamine::harvest_plant( Character &you, const tripoint_bub_ms &examp, bool
  
              int skillLevel = round( you.get_skill_level( skill_survival ) );
              ///\EFFECT_SURVIVAL increases number of plants harvested from a seed
@@ -275,10 +330,31 @@ index cfebc26f2ed2..f2e3a1f40f33 100644
                  if( from_activity ) {
                      i.set_var( "activity_var", you.name );
 diff --git a/src/item_factory.cpp b/src/item_factory.cpp
-index 0888c06faf09..de03e19b6c95 100644
+index 0888c06faf09..8decaf98b3ae 100644
 --- a/src/item_factory.cpp
 +++ b/src/item_factory.cpp
-@@ -823,6 +823,12 @@ void Item_factory::finalize_pre( itype &obj )
+@@ -544,6 +544,20 @@ void Item_factory::finalize_pre( itype &obj )
+         }
+     }
+ 
++    if( obj.brewable ) {
++        obj.brewable->time *= ::get_option<float>( "BREW_TIME_MULTIPLIER" );
++    }
++
++    if( obj.compostable ) {
++        obj.compostable->time *= ::get_option<float>( "COMPOST_TIME_MULTIPLIER" );
++    }
++
++    if( obj.seed ) {
++        if( ::get_option<bool>( "CROP_GROWTH_FORCE_SEEDS" ) ) {
++            obj.seed->spawn_seeds = true;
++        }
++    }
++
+     if( obj.bionic ) {
+         obj.bionic->id = bionic_id( obj.id.str() );
+     }
+@@ -823,6 +837,12 @@ void Item_factory::finalize_pre( itype &obj )
                  }
              }
          }
@@ -319,10 +395,10 @@ index de8eca5b31eb..2c4538d2272d 100644
  
      const auto check_flag = []( const std::string & to_check ) {
 diff --git a/src/npc.cpp b/src/npc.cpp
-index 866f65a06371..fb12782be7a5 100644
+index 7fab8542ebfa..507025c0b081 100644
 --- a/src/npc.cpp
 +++ b/src/npc.cpp
-@@ -2119,15 +2119,16 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2118,15 +2118,16 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
  
@@ -342,7 +418,7 @@ index 866f65a06371..fb12782be7a5 100644
          const shopkeeper_whitelist &wl = myclass->get_shopkeeper_whitelist();
          icg_entry const *wl_icg = myclass->get_shopkeeper_whitelist().matches( it, *this );
          if( wl_icg != nullptr ) {
-@@ -2138,7 +2139,7 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2137,7 +2138,7 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
      icg_entry const *bl = myclass->get_shopkeeper_blacklist().matches( it, *this );
@@ -351,14 +427,14 @@ index 866f65a06371..fb12782be7a5 100644
          return ret_val<void>::make_failure( bl->message.translated() );
      }
  
-@@ -4245,5 +4246,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
+@@ -4246,5 +4247,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
  {
      return std::make_unique<talker_npc>( guy );
  }
 -
 -
 diff --git a/src/recipe.cpp b/src/recipe.cpp
-index 3d875b15c4e4..5cc9cf562d74 100644
+index e3f6884bef16..d8eb0da4e074 100644
 --- a/src/recipe.cpp
 +++ b/src/recipe.cpp
 @@ -40,6 +40,7 @@
@@ -369,7 +445,23 @@ index 3d875b15c4e4..5cc9cf562d74 100644
  #include "output.h"
  #include "proficiency.h"
  #include "recipe_dictionary.h"
-@@ -894,6 +895,13 @@ void recipe::finalize()
+@@ -811,6 +812,15 @@ void recipe::finalize()
+         check_blueprint_requirements();
+     }
+ 
++    float recipe_time_multiplier = ::get_option<float>( "RECIPE_TIME_MULTIPLIER" );
++    if( has_steps() ) {
++        for( recipe_step &s : steps_ ) {
++            s.time *= recipe_time_multiplier;
++        }
++    } else {
++        time *= recipe_time_multiplier;
++    }
++
+     if( !blueprint.is_empty() ) {
+         incorporate_build_reqs();
+     } else if( has_steps() ) {
+@@ -922,6 +932,13 @@ void recipe::finalize()
          }
      }
  
@@ -415,4 +507,28 @@ index aece4f6ef2bb..8a6ea8749c9c 100644
 +                     one_turn_in( 1_hours * ::get_option<int>( "CHAOTIC_TRAIT_MUTATION_TIME" ) );
      if( should_mutate ) {
          you.mutate();
+     }
+diff --git a/src/veh_type.cpp b/src/veh_type.cpp
+index 51769e5d757e..74b67b6e192a 100644
+--- a/src/veh_type.cpp
++++ b/src/veh_type.cpp
+@@ -33,6 +33,7 @@
+ #include "json.h"
+ #include "magic_enchantment.h"
+ #include "map.h"
++#include "options.h"
+ #include "output.h"
+ #include "pocket_type.h"
+ #include "requirements.h"
+@@ -737,6 +738,11 @@ void vpart_info::finalize()
+     requirement_data::save_requirement( ins, ins_id );
+     install_reqs.emplace_back( ins_id, 1 );
+ 
++    float work_time_multiplier = ::get_option<float>( "VEHICLE_WORK_TIME_MULTIPLIER" );
++    install_moves *= work_time_multiplier;
++    removal_moves *= work_time_multiplier;
++    repair_moves *= work_time_multiplier;
++
+     if( removal_moves < 0_seconds ) {
+         removal_moves = install_moves / 2;
      }
