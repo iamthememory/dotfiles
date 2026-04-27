@@ -181,7 +181,7 @@
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 0.25
+    "value": 0.1
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -224,6 +224,13 @@
     "//": "How much longer than normal working on vehicles will take. 0.5 will cause working on vehicles to take half as long..",
     "stype": "float",
     "value": 0.25
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "CONSTRUCTION_SCALING",
+    "//": "Sets the time of construction in percents.  '50' is two times faster than default, '200' is two times longer.  '0' automatically scales construction time to match the world's season length.",
+    "stype": "int",
+    "value": 25
   },
   {
     "type": "EXTERNAL_OPTION",
