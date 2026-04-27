@@ -1,5 +1,5 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..c6eae79d7de3 100644
+index 9e17b54f3ed3..c9acbfb41346 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
 @@ -520,5 +520,180 @@
@@ -107,7 +107,7 @@ index 9e17b54f3ed3..c6eae79d7de3 100644
 +  },
 +  {
 +    "type": "EXTERNAL_OPTION",
-+    "name": "FOCUS_EQUILIBRIUM_PENALTY",
++    "name": "FOCUS_EQUILIBRIUM_READING_PENALTY",
 +    "//": "How much of a penalty to give to the focus equilibrium point while reading. 40 will aim focus towards 100 - 40 = 60.",
 +    "stype": "int",
 +    "value": 50

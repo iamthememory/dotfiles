@@ -234,7 +234,7 @@
   },
   {
     "type": "EXTERNAL_OPTION",
-    "name": "FOCUS_EQUILIBRIUM_PENALTY",
+    "name": "FOCUS_EQUILIBRIUM_READING_PENALTY",
     "//": "How much of a penalty to give to the focus equilibrium point while reading. 40 will aim focus towards 100 - 40 = 60.",
     "stype": "int",
     "value": 0
