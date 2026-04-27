@@ -120,7 +120,7 @@
     "name": "DONT_AUTOLEARN_BOOK_RECIPES",
     "//": "Whether to prevent autolearning recipes which can be learned via a book.",
     "stype": "bool",
-    "value": true
+    "value": false
   },
   {
     "type": "EXTERNAL_OPTION",
