@@ -3,16 +3,17 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1777382850,
-        "narHash": "sha256-ylOoLV/87xVf/+SMAlwNmkiWXk1c7bDxtNi7cf0eEqI=",
+        "lastModified": 1777300758,
+        "narHash": "sha256-UNrvO4XmqgbAoWFs1tW3p/8V/dk5kATFlVtjiYivGL8=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "6f5ba8c2209636bd48e3274388374b957fd4c30f",
+        "rev": "26fa1fcc9d1b0a1b616e006a095be11bdad871aa",
         "type": "github"
       },
       "original": {
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
+        "rev": "26fa1fcc9d1b0a1b616e006a095be11bdad871aa",
         "type": "github"
       }
     },

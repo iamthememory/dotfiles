@@ -39,7 +39,6 @@ let
     src = cataclysm-dda-git-latest;
 
     patches = [
-      ./patches/86756.patch
       ./patches/cataclysm-backrooms-extend-vending.patch
       ./patches/cataclysm-big-tiles.patch
       ./patches/cataclysm-bigger-texture-pool.patch

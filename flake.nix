@@ -79,7 +79,7 @@
     };
 
     cataclysm-dda = {
-      url = "github:CleverRaven/Cataclysm-DDA";
+      url = "github:CleverRaven/Cataclysm-DDA/26fa1fcc9d1b0a1b616e006a095be11bdad871aa";
       flake = false;
     };
 
