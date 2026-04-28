@@ -6,12 +6,12 @@
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "group": "spellbook_loot_0", "prob": 1 },
-        { "group": "spellbook_loot_1", "prob": 1 },
-        { "group": "spellbook_loot_2", "prob": 1 },
-        { "group": "book_martial", "prob": 1 },
-        { "group": "homebooks", "prob": 1 },
-        { "group": "esoteric_books", "prob": 1 }
+        { "group": "spellbook_loot_0", "prob": 3 },
+        { "group": "spellbook_loot_1", "prob": 3 },
+        { "group": "spellbook_loot_2", "prob": 3 },
+        { "group": "book_martial", "prob": 3 },
+        { "group": "homebooks", "prob": 3 },
+        { "group": "esoteric_books", "prob": 3 }
       ]
     }
   },
@@ -21,10 +21,12 @@
     "copy-from": "science",
     "extend": {
       "items": [
-        { "group": "magic_tools_and_loot", "prob": 1 },
-        { "group": "xe_border_patrol_evidence", "prob": 1 },
-        { "group": "collection_matrix_dust", "prob": 1 },
-        { "group": "dist_matrix_crystals", "prob": 1 }
+        { "group": "magic_tools_and_loot", "prob": 3 },
+        { "group": "xe_border_patrol_evidence", "prob": 3 },
+        { "group": "collection_matrix_dust", "prob": 3 },
+        { "group": "dist_matrix_crystals", "prob": 3 },
+        { "group": "farming_seeds", "prob": 3 },
+        { "group": "rc_drop_gamble", "prob": 3 }
       ]
     }
   },
@@ -34,13 +36,15 @@
     "copy-from": "supplies_reagents_lab",
     "extend": {
       "items": [
-        { "group": "magic_tools_and_loot", "prob": 1 },
-        { "group": "spellbook_loot_0", "prob": 1 },
-        { "group": "spellbook_loot_1", "prob": 1 },
-        { "group": "spellbook_loot_2", "prob": 1 },
-        { "group": "xe_border_patrol_evidence", "prob": 1 },
-        { "group": "collection_matrix_dust", "prob": 1 },
-        { "group": "dist_matrix_crystals", "prob": 1 }
+        { "group": "magic_tools_and_loot", "prob": 3 },
+        { "group": "spellbook_loot_0", "prob": 3 },
+        { "group": "spellbook_loot_1", "prob": 3 },
+        { "group": "spellbook_loot_2", "prob": 3 },
+        { "group": "xe_border_patrol_evidence", "prob": 3 },
+        { "group": "collection_matrix_dust", "prob": 3 },
+        { "group": "dist_matrix_crystals", "prob": 3 },
+        { "group": "farming_seeds", "prob": 3 },
+        { "group": "rc_drop_gamble", "prob": 3 }
       ]
     }
   },
@@ -51,7 +55,8 @@
     "subtype": "collection",
     "extend": {
       "entries": [
-        { "item": "water_clean", "count": [ 1, 2 ], "prob": 80 }
+        { "item": "water_clean", "count": [ 1, 2 ], "prob": 80 },
+        { "group": "farming_seeds", "prob": 80 }
       ]
     }
   }
