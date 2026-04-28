@@ -4,6 +4,7 @@
     "id": "f_vending_reinforced",
     "copy-from": "f_vending_reinforced",
     "name": "reinforced vending machine",
+    "looks_like": "f_vending_c",
     "extend": { "flags": [ "NO_SPOIL" ] }
   },
   {
@@ -11,6 +12,7 @@
     "id": "f_vending_reinforced_networked",
     "copy-from": "f_vending_reinforced_networked",
     "name": "reinforced vending machine",
+    "looks_like": "f_vending_c",
     "extend": { "flags": [ "NO_SPOIL" ] }
   },
   {
@@ -18,6 +20,7 @@
     "id": "f_vending_reinforced_off",
     "copy-from": "f_vending_reinforced_off",
     "name": "reinforced vending machine (off)",
+    "looks_like": "f_vending_reinforced",
     "extend": { "flags": [ "NO_SPOIL" ] }
   },
   {
@@ -25,6 +28,7 @@
     "id": "f_vending_c",
     "copy-from": "f_vending_c",
     "name": "vending machine",
+    "looks_like": "f_console",
     "extend": { "flags": [ "NO_SPOIL" ] }
   },
   {
@@ -32,6 +36,7 @@
     "id": "f_vending_c_networked",
     "copy-from": "f_vending_c_networked",
     "name": "vending machine",
+    "looks_like": "f_console",
     "extend": { "flags": [ "NO_SPOIL" ] }
   },
   {
@@ -39,6 +44,7 @@
     "id": "f_vending_c_off",
     "copy-from": "f_vending_c_off",
     "name": "vending machine (off)",
+    "looks_like": "f_vending_c",
     "extend": { "flags": [ "NO_SPOIL" ] }
   }
 ]
