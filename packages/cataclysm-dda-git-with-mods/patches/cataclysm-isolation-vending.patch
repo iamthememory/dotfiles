@@ -1,0 +1,12 @@
+diff --git a/data/mods/Isolation-Protocol/Map/mapgen/palettes/iso_office.json b/data/mods/Isolation-Protocol/Map/mapgen/palettes/iso_office.json
+index 5ea8a2b89e3e..21c0402c8dc4 100644
+--- a/data/mods/Isolation-Protocol/Map/mapgen/palettes/iso_office.json
++++ b/data/mods/Isolation-Protocol/Map/mapgen/palettes/iso_office.json
+@@ -59,6 +59,6 @@
+       "B": [ { "item": "textbooks", "chance": 50 }, { "item": "manuals", "chance": 50 } ],
+       "i": { "item": "cleaning", "chance": 20 }
+     },
+-    "vendingmachines": { "F": { "item_group": "default_vending_machine", "reinforced": true } }
++    "vendingmachines": { "F": { "item_group": "default_vending_machine", "reinforced": true, "powered": true } }
+   }
+ ]

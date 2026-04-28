@@ -55,6 +55,7 @@ let
       ./patches/cataclysm-exodii-bionics.patch
       ./patches/cataclysm-fast-browse.patch
       ./patches/cataclysm-homullus-fix.patch
+      ./patches/cataclysm-isolation-vending.patch
       ./patches/cataclysm-large-smokers.patch
       ./patches/cataclysm-larger-trade-range.patch
       ./patches/cataclysm-limit-refuse.patch
