@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..c9acbfb41346 100644
+index 9e17b54f3ed3..90dab2dc8aaf 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,180 @@
+@@ -520,5 +520,187 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -101,7 +101,7 @@ index 9e17b54f3ed3..c9acbfb41346 100644
 +  {
 +    "type": "EXTERNAL_OPTION",
 +    "name": "VEHICLE_WORK_TIME_MULTIPLIER",
-+    "//": "How much longer than normal working on vehicles will take. 0.5 will cause working on vehicles to take half as long..",
++    "//": "How much longer than normal working on vehicles will take. 0.5 will cause working on vehicles to take half as long.",
 +    "stype": "float",
 +    "value": 1.0
 +  },
@@ -181,10 +181,17 @@ index 9e17b54f3ed3..c9acbfb41346 100644
 +    "//": "Whether to disable being cramped in a vehicle.",
 +    "stype": "bool",
 +    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "FORCE_BUYABLE_VENDING_MACHINES",
++    "//": "Whether to make all vending machines powered and networked.",
++    "stype": "bool",
++    "value": false
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
-index ba611058b0ae..dfd3a265dbb7 100644
+index 6f49b001dfdb..4a92c0600646 100644
 --- a/src/activity_actor.cpp
 +++ b/src/activity_actor.cpp
 @@ -2174,7 +2174,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
@@ -217,10 +224,10 @@ index 796fe183f260..5007068aa89d 100644
  }
  
 diff --git a/src/character.cpp b/src/character.cpp
-index 5accf2c71012..b37b24b0c3ef 100644
+index eb5b86b26edd..e31deb192c23 100644
 --- a/src/character.cpp
 +++ b/src/character.cpp
-@@ -379,6 +379,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
+@@ -378,6 +378,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
  static const std::set<material_id> ferric = { material_iron, material_steel, material_budget_steel, material_ch_steel, material_hc_steel, material_lc_steel, material_mc_steel, material_qt_steel };
  
  static const std::string player_base_stamina_burn_rate( "PLAYER_BASE_STAMINA_BURN_RATE" );
@@ -228,7 +235,7 @@ index 5accf2c71012..b37b24b0c3ef 100644
  static const std::string type_hair_color( "hair_color" );
  static const std::string type_hair_style( "hair_style" );
  static const std::string type_skin_tone( "skin_tone" );
-@@ -1923,14 +1924,15 @@ bool Character::uncanny_dodge()
+@@ -1900,14 +1901,15 @@ bool Character::uncanny_dodge()
      bool seen = get_player_view().sees( here, *this );
  
      const units::energy trigger_cost = bio_uncanny_dodge->power_trigger;
@@ -246,7 +253,7 @@ index 5accf2c71012..b37b24b0c3ef 100644
  
      if( !( can_dodge_bio || can_dodge_stam || can_dodge_both ) ) {
          return false;
-@@ -1963,11 +1965,11 @@ bool Character::uncanny_dodge()
+@@ -1940,11 +1942,11 @@ bool Character::uncanny_dodge()
  
          if( can_dodge_both ) {
              mod_power_level( -trigger_cost / 2 );
@@ -260,7 +267,7 @@ index 5accf2c71012..b37b24b0c3ef 100644
          }
          return true;
      }
-@@ -2556,6 +2558,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
+@@ -2530,6 +2532,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
          return false;
      }
  
@@ -278,10 +285,10 @@ index 5accf2c71012..b37b24b0c3ef 100644
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
 diff --git a/src/character_health.cpp b/src/character_health.cpp
-index a40b42d8e9ae..6d1e0d4d47a0 100644
+index 1e2e8e2eb4e2..2150be36baff 100644
 --- a/src/character_health.cpp
 +++ b/src/character_health.cpp
-@@ -524,7 +524,7 @@ int Character::calc_focus_equilibrium( bool ignore_pain ) const
+@@ -525,7 +525,7 @@ int Character::calc_focus_equilibrium( bool ignore_pain ) const
              // apply a penalty when we're actually learning something
              const SkillLevel &skill_level = get_skill_level_object( bt->skill );
              if( skill_level.can_train() && skill_level < bt->level ) {
@@ -330,7 +337,7 @@ index ca2a5bdc372a..035b5c2ef2ec 100644
                  if( from_activity ) {
                      i.set_var( "activity_var", you.name );
 diff --git a/src/item_factory.cpp b/src/item_factory.cpp
-index 0888c06faf09..8decaf98b3ae 100644
+index a193d95ea1ab..9988b0d0f806 100644
 --- a/src/item_factory.cpp
 +++ b/src/item_factory.cpp
 @@ -544,6 +544,20 @@ void Item_factory::finalize_pre( itype &obj )
@@ -394,6 +401,23 @@ index de8eca5b31eb..2c4538d2272d 100644
      }
  
      const auto check_flag = []( const std::string & to_check ) {
+diff --git a/src/mapgen.cpp b/src/mapgen.cpp
+index 37634955e632..88ecf5b62138 100644
+--- a/src/mapgen.cpp
++++ b/src/mapgen.cpp
+@@ -2233,6 +2233,12 @@ class jmapgen_vending_machine : public jmapgen_piece_with_has_vehicle_collision
+             } else {
+                 group_id = mapgen_value<item_group_id>( "default_vending_machine" );
+             }
++            if( ::get_option<bool>( "FORCE_BUYABLE_VENDING_MACHINES" ) ) {
++                reinforced = true;
++                lootable = false;
++                powered = true;
++                networked = true;
++            }
+         }
+         void apply( const mapgendata &dat, const jmapgen_int &x, const jmapgen_int &y, const jmapgen_int &z,
+                     const std::string &/*context*/ ) const override {
 diff --git a/src/npc.cpp b/src/npc.cpp
 index 7fab8542ebfa..507025c0b081 100644
 --- a/src/npc.cpp
