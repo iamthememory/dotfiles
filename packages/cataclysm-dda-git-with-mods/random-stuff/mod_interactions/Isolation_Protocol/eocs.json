@@ -24,7 +24,7 @@
       {
         "if": { "u_has_trait": "iso_eldritch_sorcery" },
         "then": { "math": [ "u_val('mana') += 25" ] },
-        "else": { "math": [ "u_val('mana') += 10" ] }
+        "else": { "math": [ "u_val('mana') += 5" ] }
       }
     ]
   }
