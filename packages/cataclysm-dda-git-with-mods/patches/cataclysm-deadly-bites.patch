@@ -1,19 +1,31 @@
 diff --git a/data/mods/deadly_bites/effect_on_conditions.json b/data/mods/deadly_bites/effect_on_conditions.json
-index 5ef3b7fc52e3..c600ca28d790 100644
+index 5ef3b7fc52e3..c142416b0311 100644
 --- a/data/mods/deadly_bites/effect_on_conditions.json
 +++ b/data/mods/deadly_bites/effect_on_conditions.json
-@@ -21,9 +21,9 @@
-     "type": "effect_on_condition",
-     "id": "EOC_CONSUMED_ANTIVIRAL",
-     "condition": { "u_has_effect": "antivirals" },
--    "effect": [ { "u_add_effect": "antivirals", "duration": "16 hours" }, { "u_message": "You take an antiviral.", "type": "info" } ],
-+    "effect": [ { "u_add_effect": "antivirals", "duration": "24 hours" }, { "u_message": "You take an antiviral.", "type": "info" } ],
-     "false_effect": [
--      { "u_add_effect": "antivirals", "duration": "16 hours" },
-+      { "u_add_effect": "antivirals", "duration": "24 hours" },
-       { "u_message": "You take an antiviral.", "type": "info" },
+@@ -28,6 +28,7 @@
        {
          "if": { "math": [ "u_effect_intensity('zombie_virus') == 2" ] },
+         "then": [
++          { "u_lose_effect": "zombie_virus" },
+           { "u_add_effect": "zombie_virus", "intensity": 1, "duration": "PERMANENT" },
+           {
+             "u_message": "You seem to be feeling a little better, but the prickling sensation remains.",
+@@ -38,6 +39,7 @@
+       {
+         "if": { "math": [ "u_effect_intensity('zombie_virus') == 3" ] },
+         "then": [
++          { "u_lose_effect": "zombie_virus" },
+           { "u_add_effect": "zombie_virus", "intensity": 2, "duration": "PERMANENT" },
+           {
+             "u_message": "You no longer feel uncomfortably itchy, but your skin is still concerningly pale.",
+@@ -48,6 +50,7 @@
+       {
+         "if": { "math": [ "u_effect_intensity('zombie_virus') == 4" ] },
+         "then": [
++          { "u_lose_effect": "zombie_virus" },
+           { "u_add_effect": "zombie_virus", "intensity": 3, "duration": "PERMANENT" },
+           {
+             "u_message": "Some of the lesions on your skin have begun to heal, but the itchiness remains.",
 diff --git a/data/mods/deadly_bites/effects.json b/data/mods/deadly_bites/effects.json
 index 43a7ad5db0c7..fd4b589a477f 100644
 --- a/data/mods/deadly_bites/effects.json
@@ -88,10 +100,10 @@ index fda32a29129e..703c77ebd22a 100644
    }
  ]
 diff --git a/data/mods/deadly_bites/items.json b/data/mods/deadly_bites/items.json
-index 0695ec804600..cb484d3bb490 100644
+index 0695ec804600..3f0874a7e23a 100644
 --- a/data/mods/deadly_bites/items.json
 +++ b/data/mods/deadly_bites/items.json
-@@ -2,10 +2,9 @@
+@@ -2,8 +2,7 @@
    {
      "id": "antivirals",
      "type": "ITEM",
@@ -99,8 +111,5 @@ index 0695ec804600..cb484d3bb490 100644
 -    "comestible_type": "MED",
 +    "category": "drugs",
      "name": { "str_sp": "antivirals" },
--    "description": "An anti-viral medication that inhibits the development of certain viruses.  One dose lasts 16 hours.  Could this, by some miracle, work against whatever the zombies are carrying?",
-+    "description": "An anti-viral medication that inhibits the development of certain viruses.  One dose lasts 24 hours.  Could this, by some miracle, work against whatever the zombies are carrying?",
+     "description": "An anti-viral medication that inhibits the development of certain viruses.  One dose lasts 16 hours.  Could this, by some miracle, work against whatever the zombies are carrying?",
      "weight": "1 g",
-     "volume": "1 ml",
-     "price": "45 cent",
