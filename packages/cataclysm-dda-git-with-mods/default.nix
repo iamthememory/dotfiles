@@ -46,6 +46,7 @@ let
       ./patches/cataclysm-check-furniture-no-spoil.patch
       ./patches/cataclysm-craft-percent-fix.patch
       ./patches/cataclysm-custom-options.patch
+      ./patches/cataclysm-deadly-bites.patch
       ./patches/cataclysm-defense-real-world.patch
       ./patches/cataclysm-dino-egg-vitamins.patch
       ./patches/cataclysm-disable-trait-flag-cache.patch

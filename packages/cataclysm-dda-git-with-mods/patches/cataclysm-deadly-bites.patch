@@ -1,0 +1,106 @@
+diff --git a/data/mods/deadly_bites/effect_on_conditions.json b/data/mods/deadly_bites/effect_on_conditions.json
+index 5ef3b7fc52e3..c600ca28d790 100644
+--- a/data/mods/deadly_bites/effect_on_conditions.json
++++ b/data/mods/deadly_bites/effect_on_conditions.json
+@@ -21,9 +21,9 @@
+     "type": "effect_on_condition",
+     "id": "EOC_CONSUMED_ANTIVIRAL",
+     "condition": { "u_has_effect": "antivirals" },
+-    "effect": [ { "u_add_effect": "antivirals", "duration": "16 hours" }, { "u_message": "You take an antiviral.", "type": "info" } ],
++    "effect": [ { "u_add_effect": "antivirals", "duration": "24 hours" }, { "u_message": "You take an antiviral.", "type": "info" } ],
+     "false_effect": [
+-      { "u_add_effect": "antivirals", "duration": "16 hours" },
++      { "u_add_effect": "antivirals", "duration": "24 hours" },
+       { "u_message": "You take an antiviral.", "type": "info" },
+       {
+         "if": { "math": [ "u_effect_intensity('zombie_virus') == 2" ] },
+diff --git a/data/mods/deadly_bites/effects.json b/data/mods/deadly_bites/effects.json
+index 43a7ad5db0c7..fd4b589a477f 100644
+--- a/data/mods/deadly_bites/effects.json
++++ b/data/mods/deadly_bites/effects.json
+@@ -5,7 +5,7 @@
+     "rating": "good",
+     "blocks_effects": [ "zombie_virus" ],
+     "blood_analysis_description": "Antivirals",
+-    "max_duration": 86400,
++    "max_duration": 108000,
+     "dur_add_perc": 25
+   },
+   {
+diff --git a/data/mods/deadly_bites/itemgroups.json b/data/mods/deadly_bites/itemgroups.json
+index fda32a29129e..703c77ebd22a 100644
+--- a/data/mods/deadly_bites/itemgroups.json
++++ b/data/mods/deadly_bites/itemgroups.json
+@@ -1,42 +1,40 @@
+ [
++  {
++    "id": "antiviral_group",
++    "type": "item_group",
++    "subtype": "collection",
++    "container-item": "bottle_plastic_pill_prescription",
++    "entries": [ { "item": "antivirals", "container-item": "null", "count": [ 1, 10 ] } ]
++  },
+   {
+     "id": "drugs_rare",
+     "type": "item_group",
+     "copy-from": "drugs_rare",
+-    "extend": { "items": [ [ "antivirals", 100 ] ] }
++    "subtype": "distribution",
++    "extend": { "items": [ { "group": "antiviral_group", "prob": 10 } ] }
+   },
+   {
+     "id": "vet_hardrug",
+     "type": "item_group",
+     "copy-from": "vet_hardrug",
+-    "extend": {
+-      "items": [
+-        {
+-          "item": "antivirals",
+-          "prob": 20,
+-          "count": [ 1, 10 ],
+-          "container-item": "null",
+-          "entry-wrapper": "bottle_plastic_pill_prescription"
+-        }
+-      ]
+-    }
++    "extend": { "items": [ { "group": "antiviral_group", "prob": 20 } ] }
+   },
+   {
+     "type": "item_group",
+     "id": "hospital_lab",
+     "copy-from": "hospital_lab",
+-    "extend": { "items": [ [ "antivirals", 10 ] ] }
++    "extend": { "items": [ { "group": "antiviral_group", "prob": 10 } ] }
+   },
+   {
+     "type": "item_group",
+     "id": "hospital_bed",
+     "copy-from": "hospital_bed",
+-    "extend": { "items": [ [ "antivirals", 6 ] ] }
++    "extend": { "items": [ { "group": "antiviral_group", "prob": 6 } ] }
+   },
+   {
+     "id": "virology_lab_fridge",
+     "type": "item_group",
+     "copy-from": "virology_lab_fridge",
+-    "extend": { "items": [ [ "antivirals", 40 ] ] }
++    "extend": { "items": [ { "group": "antiviral_group", "prob": 40 } ] }
+   }
+ ]
+diff --git a/data/mods/deadly_bites/items.json b/data/mods/deadly_bites/items.json
+index 0695ec804600..cb484d3bb490 100644
+--- a/data/mods/deadly_bites/items.json
++++ b/data/mods/deadly_bites/items.json
+@@ -2,10 +2,9 @@
+   {
+     "id": "antivirals",
+     "type": "ITEM",
+-    "subtypes": [ "COMESTIBLE" ],
+-    "comestible_type": "MED",
++    "category": "drugs",
+     "name": { "str_sp": "antivirals" },
+-    "description": "An anti-viral medication that inhibits the development of certain viruses.  One dose lasts 16 hours.  Could this, by some miracle, work against whatever the zombies are carrying?",
++    "description": "An anti-viral medication that inhibits the development of certain viruses.  One dose lasts 24 hours.  Could this, by some miracle, work against whatever the zombies are carrying?",
+     "weight": "1 g",
+     "volume": "1 ml",
+     "price": "45 cent",
