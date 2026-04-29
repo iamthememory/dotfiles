@@ -488,6 +488,12 @@ let
     src = ./magiclysm-linear-leveling;
   };
 
+  magiclysm-no-condition-upgrade-spells = cataclysmDDA.buildMod {
+    modName = "magiclysm-no-condition-upgrade-spells";
+    version = flake-revision;
+    src = ./magiclysm-no-condition-upgrade-spells;
+  };
+
   magiclysm-non-exclusive-attunements = cataclysmDDA.buildMod {
     modName = "magiclysm-non-exclusive-attunements";
     version = flake-revision;
@@ -562,6 +568,7 @@ let
       magic-loot-perks
       magiclysm-linear-leveling
       magiclysm-no-class-limit
+      magiclysm-no-condition-upgrade-spells
       magiclysm-non-exclusive-attunements
       mana-cores
       medieval

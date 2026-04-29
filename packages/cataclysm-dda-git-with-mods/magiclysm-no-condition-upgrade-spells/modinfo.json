@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "magiclysm-no-condition-upgrade-spells",
+    "name": "Magiclysm Conditionless Upgrade Spells",
+    "authors": [ "iamthememory" ],
+    "description": "Make Magiclysm upgrade spells work regardless of conditions which may not be possible in some mods",
+    "category": "rebalance",
+    "dependencies": [ "dda", "magiclysm" ]
+  }
+]

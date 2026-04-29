@@ -1,0 +1,170 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPELL_GRANT_MANA_ADD1",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_SPELL_GRANT_MANA_ADD1_PART2",
+            "condition": {
+              "roll_contested": { "math": [ "u_spell_level('mana_upgrade_efficiency_01') + (u_skill('spellcraft') / 2 )" ] },
+              "difficulty": 15
+            },
+            "effect": [ { "u_mutate_towards": "MANA_ADD1", "category": "MANATOUCHED", "use_vitamins": false } ],
+            "false_effect": [
+              {
+                "u_message": "As you intone the final words of the spell, you wait for the change, but nothing happens.  You must need more practice."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "u_message": "You intone the final words of the spell, but without the proper conditions being fulfilled it has no effect."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPELL_GRANT_MANA_ADD2",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_SPELL_GRANT_MANA_ADD2_PART2",
+            "condition": {
+              "roll_contested": { "math": [ "u_spell_level('mana_upgrade_efficiency_02') + (u_skill('spellcraft') / 2 )" ] },
+              "difficulty": 15
+            },
+            "effect": [ { "u_mutate_towards": "MANA_ADD2", "category": "MANATOUCHED", "use_vitamins": false } ],
+            "false_effect": [
+              {
+                "u_message": "As you intone the final words of the spell, you wait for the change, but nothing happens.  You must need more practice."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "u_message": "You intone the final words of the spell, but without the proper conditions being fulfilled it has no effect."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPELL_GRANT_MANA_REGEN1",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_SPELL_GRANT_MANA_REGEN1_PART2",
+            "condition": {
+              "roll_contested": { "math": [ "u_spell_level('mana_upgrade_regeneration_01') + (u_skill('spellcraft') / 2 )" ] },
+              "difficulty": 15
+            },
+            "effect": [ { "u_mutate_towards": "MANA_REGEN1", "category": "MANATOUCHED", "use_vitamins": false } ],
+            "false_effect": [
+              {
+                "u_message": "As you intone the final words of the spell, you wait for the change, but nothing happens.  You must need more practice."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "u_message": "You intone the final words of the spell, but without the proper conditions being fulfilled it has no effect."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPELL_GRANT_MANA_REGEN2",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_SPELL_GRANT_MANA_REGEN2_PART2",
+            "condition": {
+              "roll_contested": { "math": [ "u_spell_level('mana_upgrade_regeneration_02') + (u_skill('spellcraft') / 2 )" ] },
+              "difficulty": 15
+            },
+            "effect": [ { "u_mutate_towards": "MANA_REGEN2", "category": "MANATOUCHED", "use_vitamins": false } ],
+            "false_effect": [
+              {
+                "u_message": "As you intone the final words of the spell, you wait for the change, but nothing happens.  You must need more practice."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "u_message": "You intone the final words of the spell, but without the proper conditions being fulfilled it has no effect."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPELL_GRANT_MANA_MULT1",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_SPELL_GRANT_MANA_MULT1_PART2",
+            "condition": {
+              "roll_contested": { "math": [ "u_spell_level('mana_upgrade_sensitivity_01') + (u_skill('spellcraft') / 2 )" ] },
+              "difficulty": 15
+            },
+            "effect": [ { "u_mutate_towards": "MANA_MULT1", "category": "MANATOUCHED", "use_vitamins": false } ],
+            "false_effect": [
+              {
+                "u_message": "As you intone the final words of the spell, you wait for the change, but nothing happens.  You must need more practice."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "u_message": "You intone the final words of the spell, but without the proper conditions being fulfilled it has no effect."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_SPELL_GRANT_MANA_MULT2",
+    "effect": [
+      {
+        "run_eocs": [
+          {
+            "id": "EOC_SPELL_GRANT_MANA_MULT2_PART2",
+            "condition": {
+              "roll_contested": { "math": [ "u_spell_level('mana_upgrade_sensitivity_02') + (u_skill('spellcraft') / 2 )" ] },
+              "difficulty": 15
+            },
+            "effect": [ { "u_mutate_towards": "MANA_MULT2", "category": "MANATOUCHED", "use_vitamins": false } ],
+            "false_effect": [
+              {
+                "u_message": "As you intone the final words of the spell, you wait for the change, but nothing happens.  You must need more practice."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "false_effect": [
+      {
+        "u_message": "You intone the final words of the spell, but without the proper conditions being fulfilled it has no effect."
+      }
+    ]
+  }
+]
