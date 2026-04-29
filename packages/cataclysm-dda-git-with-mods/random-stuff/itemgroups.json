@@ -5,7 +5,10 @@
     "subtype": "collection",
     "extend": {
       "entries": [
-        { "group": "vending_food", "prob": 50 }
+        { "group": "vending_food", "prob": 50 },
+        { "group": "vending_food", "prob": 50 },
+        { "group": "rc_drop_gamble", "prob": 50 },
+        { "group": "rc_drop_gamble", "prob": 50 }
       ]
     }
   },

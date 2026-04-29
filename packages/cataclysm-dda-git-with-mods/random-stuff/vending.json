@@ -46,5 +46,12 @@
     "name": "vending machine (off)",
     "looks_like": "f_vending_c",
     "extend": { "flags": [ "NO_SPOIL" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_atm_off",
+    "copy-from": "f_atm",
+    "name": "ATM",
+    "looks_like": "f_atm"
   }
 ]

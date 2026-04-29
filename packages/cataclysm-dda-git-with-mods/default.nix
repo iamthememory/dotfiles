@@ -74,6 +74,7 @@ let
       ./patches/cataclysm-perks-fix.patch
       ./patches/cataclysm-plant-in-cold.patch
       ./patches/cataclysm-plant-only-check-now.patch
+      ./patches/cataclysm-powered-vending.patch
       ./patches/cataclysm-seedbearer-fix.patch
       ./patches/cataclysm-spell-ui-widen.patch
       ./patches/cataclysm-start-with-no-money.patch
