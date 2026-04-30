@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..90dab2dc8aaf 100644
+index 9e17b54f3ed3..8169c84310f9 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,187 @@
+@@ -520,5 +520,208 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -188,6 +188,27 @@ index 9e17b54f3ed3..90dab2dc8aaf 100644
 +    "//": "Whether to make all vending machines powered and networked.",
 +    "stype": "bool",
 +    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "PLANTS_NEED_SUNLIGHT",
++    "//": "Whether you need sunlight access to plant a seed.",
++    "stype": "bool",
++    "value": true
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "PLANTS_ONLY_CHECK_NOW",
++    "//": "Whether plants only check the current day's temperature when planting.",
++    "stype": "bool",
++    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "DEFAULT_SEED_GROWTH_TEMP",
++    "//": "The default temperature required to grow for plants, in Celsius.",
++    "stype": "int",
++    "value": 10
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
@@ -337,7 +358,7 @@ index ca2a5bdc372a..035b5c2ef2ec 100644
                  if( from_activity ) {
                      i.set_var( "activity_var", you.name );
 diff --git a/src/item_factory.cpp b/src/item_factory.cpp
-index a193d95ea1ab..9988b0d0f806 100644
+index a193d95ea1ab..0a142593f191 100644
 --- a/src/item_factory.cpp
 +++ b/src/item_factory.cpp
 @@ -544,6 +544,20 @@ void Item_factory::finalize_pre( itype &obj )
@@ -374,6 +395,17 @@ index a193d95ea1ab..9988b0d0f806 100644
      }
  
      // recurse into subtypes, adding self as substitution for all items in the subtypes chain
+@@ -3617,7 +3637,9 @@ void islot_seed::deserialize( const JsonObject &jo )
+     mandatory( jo, was_loaded, "fruit", fruit_id );
+     mandatory( jo, was_loaded, "growth_stages", growth_stages,
+                pair_reader<flag_id, time_duration> {} );
+-    optional( jo, was_loaded, "growth_temp", growth_temp, 10_C );
++    units::temperature default_growth_temp =
++        units::from_celsius( ::get_option<int>( "DEFAULT_SEED_GROWTH_TEMP" ) );
++    optional( jo, was_loaded, "growth_temp", growth_temp, default_growth_temp );
+     optional( jo, was_loaded, "seeds", spawn_seeds, true );
+     optional( jo, was_loaded, "byproducts", byproducts );
+     optional( jo, was_loaded, "required_terrain_flag", required_terrain_flag,
 diff --git a/src/magic.cpp b/src/magic.cpp
 index 9dd39aab065a..9b5b73b230cf 100644
 --- a/src/magic.cpp
@@ -556,3 +588,31 @@ index 51769e5d757e..74b67b6e192a 100644
      if( removal_moves < 0_seconds ) {
          removal_moves = install_moves / 2;
      }
+diff --git a/src/weather.cpp b/src/weather.cpp
+index 095722c8ab9b..d20f15e26896 100644
+--- a/src/weather.cpp
++++ b/src/weather.cpp
+@@ -964,7 +964,7 @@ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &
+ {
+     std::map<time_point, units::temperature> planting_times;
+ 
+-    if( !has_sunlight_access( pos ) ) {
++    if( ::get_option<bool>( "PLANTS_NEED_SUNLIGHT" ) && !has_sunlight_access( pos ) ) {
+         return ret_val<void>::make_failure( _( "Plants need sunlight to grow!  You can't plant there." ) );
+     }
+ 
+@@ -982,12 +982,14 @@ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &
+     // initialize the first...
+     time_point check_date = calendar::turn;
+     planting_times[check_date] = highest_temp_on_day( check_date, checked_omt, weather_gen );
++    if( !::get_option<bool>( "PLANTS_ONLY_CHECK_NOW" ) ) {
+     for( const auto &pair : growth_stages ) {
+         // TODO: Replace epoch checks with data from a farmer's almanac
+         check_date = check_date + pair.second;
+         // The [] operator in std::map inserts an entry if it doesn't already exist.
+         planting_times[check_date] = highest_temp_on_day( check_date, checked_omt, weather_gen );
+     }
++    }
+     for( const std::pair<const time_point, units::temperature> &pair : planting_times ) {
+         // This absolutely needs to be a time point.
+         add_msg_debug( debugmode::DF_MAP,
