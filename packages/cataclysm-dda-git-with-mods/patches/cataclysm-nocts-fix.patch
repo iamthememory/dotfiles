@@ -158,6 +158,19 @@ index 8c78ce5c1d9c..64ab99061097 100644
            "fur_rollmat",
            "press",
            "puller",
+diff --git a/nocts_cata_mod_DDA/Recipe/c_recipes.json b/nocts_cata_mod_DDA/Recipe/c_recipes.json
+index b0a306ca2dfa..70bf344021f7 100644
+--- a/nocts_cata_mod_DDA/Recipe/c_recipes.json
++++ b/nocts_cata_mod_DDA/Recipe/c_recipes.json
+@@ -1632,7 +1632,7 @@
+     "difficulty": 5,
+     "skills_required": [ "fabrication", 3, "melee", 2 ],
+     "time": "30 m",
+-    "book_learn": [ [ "recipe_lab_elec", 4 ], [ "recipe_mil_augs", 5 ], [ "recipe_augs", 5 ] ],
++    "// book_learn": [ [ "recipe_lab_elec", 4 ], [ "recipe_mil_augs", 5 ], [ "recipe_augs", 5 ] ],
+     "using": [ [ "welding_standard", 20 ], [ "steel_chunk_any", 3 ] ],
+     "qualities": [ { "id": "SCREW_FINE", "level": 1 } ],
+     "components": [ [ [ "bio_sword", 1 ] ] ]
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_books.json b/nocts_cata_mod_DDA/Surv_help/c_books.json
 index 53722df4140d..a3f37c74ed8a 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_books.json
