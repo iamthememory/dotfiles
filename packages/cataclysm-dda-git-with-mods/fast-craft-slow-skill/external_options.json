@@ -71,14 +71,14 @@
     "name": "TRADER_RESPECT_WHITELIST",
     "//": "Whether traders will respect their whitelists.",
     "stype": "bool",
-    "value": false
+    "value": true
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "TRADER_RESPECT_BLACKLIST",
     "//": "Whether traders will respect their blacklists.",
     "stype": "bool",
-    "value": false
+    "value": true
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -119,7 +119,7 @@
     "type": "EXTERNAL_OPTION",
     "name": "RAD_MUTATION",
     "stype": "bool",
-    "value": true
+    "value": false
   },
   {
     "type": "EXTERNAL_OPTION",
