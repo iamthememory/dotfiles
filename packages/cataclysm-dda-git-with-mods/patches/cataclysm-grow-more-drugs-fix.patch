@@ -1,8 +1,361 @@
+diff --git a/mods/grow_more_drugs/harvest/gmd_harvest.json b/mods/grow_more_drugs/harvest/gmd_harvest.json
+index 63d4ac8af60c..5a00ca30ffae 100644
+--- a/mods/grow_more_drugs/harvest/gmd_harvest.json
++++ b/mods/grow_more_drugs/harvest/gmd_harvest.json
+@@ -1,9 +1,11 @@
+ [
+-    {
+-      "id": "bluebell_harv",
+-      "type": "harvest",
+-      "copy-from": "bluebell_harv",
+-      "entries": [ { "drop": "withered", "base_num": [ 0, 2 ] }, { "drop": "bluebell_bundle", "base_num": [ 1, 2 ] } ]
+-    }
+-  ]
+-  
+\ No newline at end of file
++  {
++    "id": "bluebell_harv",
++    "type": "harvest",
++    "copy-from": "bluebell_harv",
++    "entries": [
++      { "drop": "withered", "base_num": [ 0, 2 ] },
++      { "drop": "bluebell_bundle", "base_num": [ 1, 2 ] }
++    ]
++  }
++]
+diff --git a/mods/grow_more_drugs/itemgroups/cdf_item_groups.json b/mods/grow_more_drugs/itemgroups/cdf_item_groups.json
+index 81c09b78ea0a..ff62bb065133 100644
+--- a/mods/grow_more_drugs/itemgroups/cdf_item_groups.json
++++ b/mods/grow_more_drugs/itemgroups/cdf_item_groups.json
+@@ -4,36 +4,64 @@
+     "type": "item_group",
+     "subtype": "collection",
+     "container-item": "bag_plastic",
+-    "items": [ { "item": "cdf_seed_coca", "prob": 100, "count": [ 1, 20 ] } ]
++    "items": [
++      { "item": "cdf_seed_coca", "prob": 100, "count": [ 1, 20 ] }
++    ]
+   },
+   {
+     "id": "hydro",
+     "type": "item_group",
+     "copy-from": "hydro",
+-    "extend": { "items": [ [ "cdf_seed_tea", 1 ], [ "coffee_bean", 1 ], [ "seed_weed", 1 ] ] }
++    "extend": {
++      "items": [
++        [ "cdf_seed_tea", 1 ],
++        [ "cdf_seed_coffee", 1 ],
++        [ "seed_weed", 1 ]
++      ]
++    }
+   },
+   {
+     "id": "farming_seeds",
+     "type": "item_group",
+     "copy-from": "farming_seeds",
+-    "extend": { "items": [ [ "cdf_seed_tea", 1 ], [ "coffee_bean", 1 ], [ "cdf_seed_poppy", 1 ] ] }
++    "extend": {
++      "items": [
++        [ "cdf_seed_tea", 1 ],
++        [ "cdf_seed_coffee", 1 ]
++      ]
++    }
+   },
+   {
+     "id": "stash_drugs",
+     "type": "item_group",
+     "copy-from": "stash_drugs",
+-    "extend": { "items": [ { "group": "gmd_bag_of_coca_seeds", "prob": 25 }, [ "gmd_pure_coke", 5 ] ] }
++    "extend": {
++      "items": [
++        { "group": "gmd_bag_of_coca_seeds", "prob": 25 },
++        [ "gmd_pure_coke", 5 ]
++      ]
++    }
+   },
+   {
+     "id": "cop_evidence",
+     "type": "item_group",
+     "copy-from": "cop_evidence",
+-    "extend": { "items": [ { "group": "gmd_bag_of_coca_seeds", "prob": 25 }, [ "gmd_pure_coke", 5 ] ] }
++    "extend": {
++      "items": [
++        { "group": "gmd_bag_of_coca_seeds", "prob": 25 },
++        [ "gmd_pure_coke", 5 ]
++      ]
++    }
+   },
+   {
+     "id": "drugdealer",
+     "type": "item_group",
+     "copy-from": "drugdealer",
+-    "extend": { "items": [ { "group": "gmd_bag_of_coca_seeds", "prob": 20 }, [ "gmd_pure_coke", 5 ] ] }
++    "extend": {
++      "items": [
++        { "group": "gmd_bag_of_coca_seeds", "prob": 20 },
++        [ "gmd_pure_coke", 5 ]
++      ]
++    }
+   }
+ ]
+diff --git a/mods/grow_more_drugs/items/cdf_items_food_raw.json b/mods/grow_more_drugs/items/cdf_items_food_raw.json
+index 482710abf4d9..820df7ee39b1 100644
+--- a/mods/grow_more_drugs/items/cdf_items_food_raw.json
++++ b/mods/grow_more_drugs/items/cdf_items_food_raw.json
+@@ -1,9 +1,10 @@
+ [
+   {
+     "id": "cdf_coca_raw",
+-    "type": "COMESTIBLE",
+-    "looks_like": "lettuce",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
+     "comestible_type": "MED",
++    "looks_like": "lettuce",
+     "name": { "str": "chopped coca leaf", "str_pl": "chopped coca leaves" },
+     "description": "Leaves from the coca plant, chopped for ease of use. Can be further refined into cocaine or chewed as is.",
+     "weight": "1 g",
+@@ -24,13 +25,14 @@
+     "use_action": [ "CHEW" ]
+   },
+   {
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "comestible_type": "FOOD",
+     "id": "bluebell_greens",
+     "name": { "str": "handful of bluebell greens", "str_pl": "handfuls of bluebell greens" },
+     "weight": "100 g",
+     "color": "green",
+     "spoils_in": "1 day 6 hours",
+-    "comestible_type": "FOOD",
+     "symbol": "^",
+     "healthy": 1,
+     "calories": 21,
+@@ -40,18 +42,19 @@
+     "material": [ "veggy" ],
+     "volume": "100 ml",
+     "fun": -12,
+-    "flags": [ "FREEZERBURN", "SMOKABLE", "RAW" ],
++    "flags": [ "FREEZERBURN", "RAW" ],
+     "smoking_result": "dry_veggy",
+     "vitamins": [ [ "vitC", "16 mg" ], [ "iron", "2 mg" ], [ "calcium", "66 mg" ] ]
+   },
+   {
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
+     "id": "bluebell_flowers",
++    "subtypes": [ "COMESTIBLE" ],
++    "comestible_type": "FOOD",
+     "name": { "str_sp": "bluebell flowers"},
+     "weight": "100 g",
+     "color": "blue",
+     "spoils_in": "1 day 6 hours",
+-    "comestible_type": "FOOD",
+     "symbol": "%",
+     "calories": 35,
+     "description": "A handful of freshly-picked bluebell flowers.  In their current raw state they are totally edible, but are a lot tastier when properly cooked.",
+@@ -60,7 +63,7 @@
+     "material": [ "veggy" ],
+     "volume": "100 ml",
+     "fun": -2,
+-    "flags": [ "FREEZERBURN", "SMOKABLE", "RAW" ],
++    "flags": [ "FREEZERBURN", "RAW" ],
+     "smoking_result": "dry_bluebell",
+     "vitamins": [ [ "vitC", 16 ], [ "calcium", 66 ], [ "iron", 2 ] ]
+   }
+diff --git a/mods/grow_more_drugs/items/cdf_items_seeds.json b/mods/grow_more_drugs/items/cdf_items_seeds.json
+index f28e81527c40..14ca83f34001 100644
+--- a/mods/grow_more_drugs/items/cdf_items_seeds.json
++++ b/mods/grow_more_drugs/items/cdf_items_seeds.json
+@@ -2,40 +2,73 @@
+   {
+     "id": "cdf_seed_coca",
+     "copy-from": "seed",
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
+     "name": { "str": "coca seed", "str_pl": "coca seeds" },
+     "description": "Some coca plant seeds. They're just begging to grow into a big plant one day, and end up in a snorted powder.",
+-    "seed_data": { "plant_name": "coca plant", "fruit": "gmd_coca_leaves_bundle", "byproducts": [ "withered" ], "grow": 91 }
++    "plant_name": "coca plant",
++    "fruit": "gmd_coca_leaves_bundle",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "22 days" },
++      { "GROWTH_SEEDLING": "22 days" },
++      { "GROWTH_MATURE": "23 days" },
++      { "GROWTH_HARVEST": "23 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
+   },
+   {
+-    "id": "cdf_seed_poppy",
++    "id": "cdf_seed_coffee",
+     "copy-from": "seed",
+-    "type": "COMESTIBLE",
+-    "name": { "str": "mutated poppy seed", "str_pl": "mutated poppy seeds" },
+-    "description": "Some mutated poppy seeds.",
+-    "seed_data": { "plant_name": "mutated poppy", "fruit": "poppy_bud", "grow": 30 }
+-  },
+-  {
+-    "id": "coffee_bean",
+-    "copy-from": "coffee_bean",
+-    "type": "COMESTIBLE",
+-    "name": { "str": "coffee bean", "str_pl": "coffee beans" },
+-    "seed_data": { "plant_name": "coffee plant", "fruit": "coffee_bean", "byproducts": [ "withered" ], "grow": 91 }
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str": "coffee bean seed", "str_pl": "coffee bean seeds" },
++    "description": "Some seeds for growing coffee.",
++    "plant_name": "coffee plant",
++    "fruit": "coffee_bean",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "22 days" },
++      { "GROWTH_SEEDLING": "22 days" },
++      { "GROWTH_MATURE": "23 days" },
++      { "GROWTH_HARVEST": "23 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
+   },
+   {
+     "id": "cdf_seed_tea",
+     "copy-from": "seed",
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
+     "name": { "str": "tea bush seed", "str_pl": "tea bush seeds" },
+     "description": "Some tea bush seeds.",
+-    "seed_data": { "plant_name": "tea bush", "fruit": "tea_raw", "byproducts": [ "withered" ], "grow": 91 }
++    "plant_name": "tea bush",
++    "fruit": "tea_raw",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "22 days" },
++      { "GROWTH_SEEDLING": "22 days" },
++      { "GROWTH_MATURE": "23 days" },
++      { "GROWTH_HARVEST": "23 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
+   },
+   {
+     "id": "bluebell_seed",
+     "copy-from": "seed",
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
+     "name": { "str": "bluebell seed", "str_pl": "bluebell seeds" },
+     "description": "Some bluebell plant seeds. Plant them to grow more bluebells.",
+-    "seed_data": { "plant_name": "bluebell plant", "fruit": "bluebell_bundle", "byproducts": [ "withered" ], "grow": 50 }
++    "plant_name": "bluebell plant",
++    "fruit": "bluebell_bundle",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "12 days" },
++      { "GROWTH_SEEDLING": "12 days" },
++      { "GROWTH_MATURE": "13 days" },
++      { "GROWTH_HARVEST": "13 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
+   }
+ ]
+diff --git a/mods/grow_more_drugs/items/gmd_drink.json b/mods/grow_more_drugs/items/gmd_drink.json
+index 49a8aa452a69..1020b519030e 100644
+--- a/mods/grow_more_drugs/items/gmd_drink.json
++++ b/mods/grow_more_drugs/items/gmd_drink.json
+@@ -1,49 +1,33 @@
+ [
+   {
+-    "type": "COMESTIBLE",
+     "id": "coca_tea",
+-    "looks_like": "water",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "comestible_type": "MED",
++    "copy-from": "tea",
+     "name": { "str_sp": "coca tea" },
+-    "weight": "250 g",
+     "color": "green",
+     "sleepiness_mod": 9,
+     "stim": 4,
+-    "container": "bottle_plastic",
+-    "comestible_type": "DRINK",
+-    "symbol": "~",
+     "quench": 40,
+     "calories": 1,
+     "description": "A traditional South American herbal infusion made from coca leaves.  Be cautious, as overconsumption can lead to jitteriness.",
+     "price": "90 cent",
+     "price_postapoc": "25 cent",
+-    "volume": "250 ml",
+-    "charges": 1,
+-    "material": [ "water" ],
+-    "phase": "liquid",
+     "flags": [ "EATEN_HOT" ],
+     "fun": 5
+   },
+   {
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
++    "comestible_type": "MED",
++    "copy-from": "coca_tea",
+     "id": "coca_tea_sugar",
+-    "looks_like": "water",
+     "name": { "str_sp": "sweetened coca tea" },
+-    "weight": "250 g",
+-    "color": "green",
+-    "sleepiness_mod": 9,
+-    "stim": 4,
+-    "container": "bottle_plastic",
+-    "comestible_type": "DRINK",
+-    "symbol": "~",
+-    "quench": 40,
+     "calories": 2,
+     "description": "A traditional South American herbal infusion made from coca leaves.  Be cautious, as overconsumption can lead to jitteriness.  It has been properly sweetened and tastes sightly better.",
+     "price": "100 cent",
+     "price_postapoc": "30 cent",
+-    "volume": "250 ml",
+-    "charges": 1,
+-    "material": [ "water" ],
+-    "phase": "liquid",
+     "flags": [ "EATEN_HOT" ],
+     "fun": 7
+   }
 diff --git a/mods/grow_more_drugs/items/gmd_drugs.json b/mods/grow_more_drugs/items/gmd_drugs.json
-index 848eac2c52ab..e632950d897f 100644
+index 848eac2c52ab..0ede90fb5e94 100644
 --- a/mods/grow_more_drugs/items/gmd_drugs.json
 +++ b/mods/grow_more_drugs/items/gmd_drugs.json
-@@ -31,8 +31,8 @@
+@@ -1,9 +1,10 @@
+ [
+-{
++  {
+     "id": "gmd_pure_coke",
+-    "type": "COMESTIBLE",
+-    "looks_like": "coke",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
+     "comestible_type": "MED",
++    "looks_like": "coke",
+     "name": { "str_sp": "high grade cocaine" },
+     "description": "High grade crystalline extract of the coca leaf.  A topical analgesic, it is more commonly used for its stimulatory properties.  Highly addictive and potent, use with care.",
+     "weight": "1 g",
+@@ -19,20 +20,21 @@
+     "fun": 30,
+     "addiction_potential": 50,
+     "addiction_type": "cocaine",
+-    "flags": [ "NO_INGEST", "IRREPLACEABLE_CONSUMABLE", "WATER_DISSOLVE", "EDIBLE_FROZEN" ],
++    "flags": [ "NO_INGEST", "WATER_DISSOLVE", "EDIBLE_FROZEN" ],
+     "use_action": [ "COKE" ]
+   },
+   {
+     "id": "gmd_highquality_cocaine_topical",
+     "looks_like": "cocaine_topical",
+-    "type": "COMESTIBLE",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
+     "comestible_type": "MED",
+     "name": { "str_sp": "high quality cocaine topical cream" },
      "description": "A medical cream that provides both vascular restriction and anesthetic properties. It is made from pure cocaine, not that street stuff, and lasts longer than other similar recipes.",
      "weight": "5 g",
      "volume": "250 ml",
@@ -13,10 +366,131 @@ index 848eac2c52ab..e632950d897f 100644
      "charges": 6,
      "stack_size": 60,
      "symbol": "u",
-@@ -75,4 +75,4 @@
+@@ -46,9 +48,10 @@
+   },
+   {
+     "id": "dry_bluebell",
+-    "type": "COMESTIBLE",
+-    "looks_like": "spinach",
++    "type": "ITEM",
++    "subtypes": [ "COMESTIBLE" ],
+     "comestible_type": "MED",
++    "looks_like": "spinach",
+     "name": { "str_sp": "dried bluebell flowers" },
+     "description": "Dried bluebell flowers.  Not edible anymore, but you could smoke those for a quick relief from withdrawal: But have in mind that these will only trick your brain, bluebell has no nicotine.",
+     "weight": "80 g",
+@@ -75,4 +78,4 @@
        "moves": 250
      }
    }
 -]
 \ No newline at end of file
++]
+diff --git a/mods/grow_more_drugs/items/gmd_plants.json b/mods/grow_more_drugs/items/gmd_plants.json
+index 0b39e840022f..48e816656a5f 100644
+--- a/mods/grow_more_drugs/items/gmd_plants.json
++++ b/mods/grow_more_drugs/items/gmd_plants.json
+@@ -1,31 +1,30 @@
+ [
+-    {
+-      "id": "gmd_coca_leaves_bundle",
+-      "type": "GENERIC",
+-      "name": { "str": "large bundle of coca leaves" },
+-      "description": "A large bundle of mature coca leaves and some twigs, ready to be chopped up for immediate use or processing into cocaine.",
+-      "weight": "550 g",
+-      "volume": "1000 ml",
+-      "price": "5000 cent",
+-      "price_postapoc": "2000 cent",
+-      "symbol": "%",
+-      "color": "green",
+-      "looks_like": "raw_burdock",
+-      "material": [ "veggy" ]
+-    },
+-    {
+-      "id": "bluebell_bundle",
+-      "type": "GENERIC",
+-      "name": { "str": "bundle of bluebell plants" },
+-      "description": "A bundle of mature bluebell plants, including the flowers, greens, and some seeds. Ready to be processed into its various components.",
+-      "weight": "550 g",
+-      "volume": "1000 ml",
+-      "price": "500 cent",
+-      "price_postapoc": "200 cent",
+-      "symbol": "%",
+-      "color": "blue",
+-      "looks_like": "raw_burdock",
+-      "material": [ "veggy" ]
+-    }
+-  ]
+-  
+\ No newline at end of file
++  {
++    "id": "gmd_coca_leaves_bundle",
++    "type": "ITEM",
++    "name": { "str": "large bundle of coca leaves" },
++    "description": "A large bundle of mature coca leaves and some twigs, ready to be chopped up for immediate use or processing into cocaine.",
++    "weight": "550 g",
++    "volume": "1000 ml",
++    "price": "5000 cent",
++    "price_postapoc": "2000 cent",
++    "symbol": "%",
++    "color": "green",
++    "looks_like": "raw_burdock",
++    "material": [ "veggy" ]
++  },
++  {
++    "id": "bluebell_bundle",
++    "type": "ITEM",
++    "name": { "str": "bundle of bluebell plants" },
++    "description": "A bundle of mature bluebell plants, including the flowers, greens, and some seeds. Ready to be processed into its various components.",
++    "weight": "550 g",
++    "volume": "1000 ml",
++    "price": "500 cent",
++    "price_postapoc": "200 cent",
++    "symbol": "%",
++    "color": "blue",
++    "looks_like": "raw_burdock",
++    "material": [ "veggy" ]
++  }
++]
+diff --git a/mods/grow_more_drugs/modinfo.json b/mods/grow_more_drugs/modinfo.json
+index 34fcae237491..45e7078fbcfc 100644
+--- a/mods/grow_more_drugs/modinfo.json
++++ b/mods/grow_more_drugs/modinfo.json
+@@ -3,7 +3,7 @@
+     "type": "MOD_INFO",
+     "id": "grow_more_drugs",
+     "name": "Grow More Drugs (CDF+)",
+-    "authors": "Jackledead, Maddremor",
++    "authors": [ "Jackledead", "Maddremor" ],
+     "maintainers": [ "Jackledead" ],
+     "description": "Adds different drug crops that would not grow in New England, but work great with TropiCataclysm. Successor mod to Climate Defying Farming by Maddremor. Plants/seeds: Coca, coffee, tea, poppy, tobacco.",
+     "category": "items",
+diff --git a/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json b/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json
+deleted file mode 100644
+index bfd6e6279ec6..000000000000
+--- a/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json
++++ /dev/null
+@@ -1,9 +0,0 @@
+-[
+-  {
+-    "result": "cdf_seed_poppy",
+-    "type": "recipe",
+-    "copy-from": "seed_extraction_cutting",
+-    "components": [ [ [ "poppy_bud", 1 ] ] ],
+-    "charges": 2
+-  }
+-]
+diff --git a/mods/grow_more_drugs/recipes/cdf_seeds.json b/mods/grow_more_drugs/recipes/cdf_seeds.json
+new file mode 100644
+index 000000000000..8e9e46950314
+--- /dev/null
++++ b/mods/grow_more_drugs/recipes/cdf_seeds.json
+@@ -0,0 +1,8 @@
++[
++  {
++    "result": "cdf_seed_coffee",
++    "type": "recipe",
++    "copy-from": "seed_extraction_designation",
++    "components": [ [ [ "coffee_bean", 1 ] ] ]
++  }
 +]

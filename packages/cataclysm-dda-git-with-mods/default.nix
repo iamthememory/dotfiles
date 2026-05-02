@@ -561,7 +561,7 @@ let
       e85-engines
       extra-fruits
       fast-craft-slow-skill
-      #grow-more-drugs
+      grow-more-drugs
       innawoods-compat
       lab-loot-extras
       magic-loot-perks

@@ -6139,6 +6139,40 @@ index 000000000000..2d54cc4dc7ea
 +    }
 +  }
 +]
+diff --git a/Resource Crops/mod_interactions/grow_more_drugs/itemgroups.json b/Resource Crops/mod_interactions/grow_more_drugs/itemgroups.json
+new file mode 100644
+index 000000000000..1c7d799f580a
+--- /dev/null
++++ b/Resource Crops/mod_interactions/grow_more_drugs/itemgroups.json	
+@@ -0,0 +1,28 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_harvests",
++    "copy-from": "rc_drop_harvests",
++    "extend": {
++      "items": [
++        { "item": "bluebell_bundle", "prob": 10, "count": [1, 2] }
++      ]
++    }
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gamble",
++    "copy-from": "rc_drop_gamble",
++    "extend": {
++      "items": [
++        { "item": "banana", "prob": 10 },
++        { "item": "gmd_coca_leaves_bundle", "prob": 10 },
++        { "item": "coffee_bean", "prob": 10 },
++        { "item": "tea_raw", "prob": 10 },
++        { "item": "bluebell_bundle", "prob": 10 }
++      ]
++    }
++  }
++]
 diff --git a/Resource Crops/mod_interactions/magiclysm/fungusdrops.json b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json
 new file mode 100644
 index 000000000000..9c10da79752c

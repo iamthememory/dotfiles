@@ -1,0 +1,659 @@
+diff --git a/Dorf_Life/mapgen_overlays.json b/Dorf_Life/mapgen_overlays.json
+index 24a1279dbc1f..9b3fa2d4797b 100644
+--- a/Dorf_Life/mapgen_overlays.json
++++ b/Dorf_Life/mapgen_overlays.json
+@@ -180,7 +180,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_wall_horizontal",
+     "object": {
+       "mapgensize": [ 24, 24 ],
+@@ -189,7 +189,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_wall_vertical",
+     "object": {
+       "mapgensize": [ 24, 24 ],
+@@ -198,7 +198,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pillar",
+     "object": {
+       "mapgensize": [ 6, 6 ],
+@@ -211,12 +211,13 @@
+         "   ###",
+         "   !#!"
+       ],
++      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN" ],
+       "palettes": [ "breach" ]
+     }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pillar",
+     "object": {
+       "mapgensize": [ 6, 6 ],
+@@ -229,12 +230,13 @@
+         "  !##!",
+         "  ?!!?"
+       ],
++      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN" ],
+       "palettes": [ "breach" ]
+     }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pillar",
+     "object": {
+       "mapgensize": [ 6, 6 ],
+@@ -247,12 +249,13 @@
+         " ?!#!?",
+         "  ?!? "
+       ],
++      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN" ],
+       "palettes": [ "breach" ]
+     }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pillar",
+     "object": {
+       "mapgensize": [ 6, 6 ],
+@@ -265,12 +268,13 @@
+         " ?!!? ",
+         "  ??  "
+       ],
++      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN" ],
+       "palettes": [ "breach" ]
+     }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -287,7 +291,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -304,7 +308,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -321,7 +325,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -338,7 +342,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -355,7 +359,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -372,7 +376,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -389,7 +393,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -407,7 +411,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_1",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -425,7 +429,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pool",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -451,7 +455,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pool",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -477,7 +481,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pool",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -508,7 +512,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pool",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -539,7 +543,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pool",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -564,7 +568,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_pool",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -589,7 +593,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_spood",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -619,7 +623,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_goop",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -652,7 +656,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_spiral",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -678,7 +682,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_camp",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -705,7 +709,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_camp",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -735,7 +739,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_camp",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -763,7 +767,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins",
+     "//": "Log walls and wooden doors, vanilla terrain doesn't offer anything more fitting for pre-contact construction methods.",
+     "object": {
+@@ -797,7 +801,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -823,7 +827,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -854,7 +858,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -885,7 +889,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins_strange",
+     "object": {
+       "mapgensize": [ 20, 20 ],
+@@ -968,7 +972,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins_strange",
+     "object": {
+       "mapgensize": [ 20, 20 ],
+@@ -1016,7 +1020,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_ruins_strange",
+     "object": {
+       "mapgensize": [ 20, 20 ],
+@@ -1055,7 +1059,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_forge",
+     "object": {
+       "mapgensize": [ 20, 20 ],
+@@ -1101,7 +1105,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_dump",
+     "object": {
+       "mapgensize": [ 20, 20 ],
+@@ -1137,7 +1141,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_sewage",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -1163,7 +1167,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_sewage",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -1189,7 +1193,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_sewage",
+     "object": {
+       "mapgensize": [ 12, 12 ],
+@@ -1215,7 +1219,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_dumpshack",
+     "object": {
+       "mapgensize": [ 9, 9 ],
+@@ -1242,7 +1246,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_chunk_embark",
+     "object": {
+       "mapgensize": [ 20, 20 ],
+@@ -1276,7 +1280,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_standard",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1304,7 +1308,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_water",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1326,7 +1330,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_spiral",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1341,7 +1345,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_rats",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1350,7 +1354,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_bats",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1359,7 +1363,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_cougars",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1368,7 +1372,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_bears",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1377,7 +1381,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_snakes",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1386,7 +1390,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_birbs",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1395,7 +1399,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_gators",
+     "//": "ID retained, we can't have nice things in DDA",
+     "object": {
+@@ -1405,7 +1409,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_wyrms",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1414,7 +1418,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_chud",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1423,7 +1427,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_crawler",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1432,19 +1436,19 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_sludge",
+     "object": { "mapgensize": [ 5, 5 ], "place_monster": [ { "monster": "mon_sludge_crawler", "x": [ 0, 4 ], "y": [ 0, 4 ] } ] }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_drr_drr",
+     "object": { "mapgensize": [ 5, 5 ], "place_monster": [ { "monster": "mon_amigara_horror", "x": [ 0, 4 ], "y": [ 0, 4 ] } ] }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_lobster",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1453,7 +1457,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_carp",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1465,7 +1469,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_fish",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1474,7 +1478,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_frogs",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1483,7 +1487,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_sharks",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1492,7 +1496,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_shelly",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1501,7 +1505,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_twisted",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1510,7 +1514,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_vortices",
+     "object": {
+       "mapgensize": [ 5, 5 ],
+@@ -1519,19 +1523,19 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_finale_1_door",
+     "object": { "mapgensize": [ 1, 1 ], "rows": [ "+" ], "terrain": { "+": "t_door_c" } }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_finale_doot_rads",
+     "object": { "mapgensize": [ 4, 4 ], "set": [ { "square": "radiation", "amount": [ 20, 40 ], "x": 0, "y": 0, "x2": 3, "y2": 3 } ] }
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_doot_single_demon",
+     "//": "Mi-go in vanilla, potentially replaced by demon if combined with PK.",
+     "weight": 1,
+@@ -1539,7 +1543,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_doot_multiple_demons",
+     "//": "Mi-gos in vanilla, potentially replaced by demons if combined with PK.",
+     "weight": 1,
+@@ -1550,7 +1554,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_doot_pair_spectres",
+     "//": "Shady zombies in vanilla, potentially replaced by spectres if combined with PK.",
+     "weight": 1,
+@@ -1561,7 +1565,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_doot_baron",
+     "//": "Shocker brute in vanilla, potentially replaced by baron of hell if combined with PK.",
+     "weight": 1,
+@@ -1569,7 +1573,7 @@
+   },
+   {
+     "type": "mapgen",
+-    
++
+     "nested_mapgen_id": "breach_spawn_doot_imp_surprise",
+     "//": "Krecks in vanilla, potentially replaced by imps if combined with PK.",
+     "weight": 1,

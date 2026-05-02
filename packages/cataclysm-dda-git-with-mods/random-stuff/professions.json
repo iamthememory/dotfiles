@@ -32,11 +32,11 @@
           { "group": "charged_ref_lighter" },
           { "group": "charged_smart_watch_adv" },
           { "group": "new_eink_tablet_pcs" },
-          { "item": "laptop_internet", "ammo-item": "battery", "charges": 1000 },
+          { "item": "laptop", "ammo-item": "battery", "charges": 1000 },
           { "item": "oil_cooker", "charges": 800 },
           { "item": "oil_lamp", "charges": 750 },
           { "item": "rope_30", "custom-flags": [ "no_auto_equip" ] },
-          { "item": "smart_phone_internet", "ammo-item": "battery", "charges": 1000 },
+          { "item": "smart_phone", "ammo-item": "battery", "charges": 1000 },
           { "item": "xe_oneiric_hammer" },
 
           { "item": "folding_solar_panel" },
@@ -145,8 +145,8 @@
           { "item": "bottle_plastic" },
 
           { "group": "new_eink_tablet_pcs" },
-          { "item": "laptop_internet", "ammo-item": "battery", "charges": 1000 },
-          { "item": "smart_phone_internet", "ammo-item": "battery", "charges": 1000 }
+          { "item": "laptop", "ammo-item": "battery", "charges": 1000 },
+          { "item": "smart_phone", "ammo-item": "battery", "charges": 1000 }
         ]
       }
     },

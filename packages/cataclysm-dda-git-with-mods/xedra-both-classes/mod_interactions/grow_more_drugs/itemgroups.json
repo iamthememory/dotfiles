@@ -1,0 +1,15 @@
+[
+  {
+    "type": "item_group",
+    "id": "arvore_seeds",
+    "copy-from": "arvore_seeds",
+    "extend": {
+      "items": [
+        [ "cdf_seed_coca", 10 ],
+        [ "cdf_seed_coffee", 10 ],
+        [ "cdf_seed_tea", 10 ],
+        [ "bluebell_seed", 10 ]
+      ]
+    }
+  }
+]
