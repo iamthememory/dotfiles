@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1777527914,
-        "narHash": "sha256-pmM5YI090jL/hsZvk1x9RLLOH9PL2Oth0jwX8nASHR8=",
+        "lastModified": 1777743832,
+        "narHash": "sha256-DzOTmm/02QMM/JyNafPKc/RZKRSZg9l4o+v8Ml29MNo=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "161e3ff406de5a1ca5b1f429cc399bcdd4f2cecb",
+        "rev": "8562c200e31d848451e87a00ff660e8bc01ed33e",
         "type": "github"
       },
       "original": {
@@ -125,6 +125,54 @@
       "original": {
         "owner": "jackledead",
         "repo": "grow_more_drugs",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-levelled-crystallize": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720036450,
+        "narHash": "sha256-JQHlnVi/r94seJ+K6sCVjmO5QO9vB4YwSY14bKlchEA=",
+        "owner": "OromisElf",
+        "repo": "Levelled-Crystallize",
+        "rev": "195e3cd9bb028ac475fe65c446717f8f5acfd365",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OromisElf",
+        "repo": "Levelled-Crystallize",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-levelled-runes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719969349,
+        "narHash": "sha256-e0mstDNXZ9SIjjRJmJnpFRC4m0OpihjRCqeDb3tahno=",
+        "owner": "OromisElf",
+        "repo": "Levelled-Runes",
+        "rev": "98049754c3dfeac80c5d4768499d834dc03cb13a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OromisElf",
+        "repo": "Levelled-Runes",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-magical-vehicles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1724030040,
+        "narHash": "sha256-VOaTWW2ECH+8TTXsql9/Cb5JuKzx2BAythh1TB0n+og=",
+        "owner": "OromisElf",
+        "repo": "magical-vehicles",
+        "rev": "2725fa21539956524a9f0de15786521212638a6b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OromisElf",
+        "repo": "magical-vehicles",
         "type": "github"
       }
     },
@@ -462,11 +510,11 @@
     "gef": {
       "flake": false,
       "locked": {
-        "lastModified": 1777245490,
-        "narHash": "sha256-TJxfbNlOOKA0K4TbKJMmKXMNWGEZSvmg3/YuWcgYgBw=",
+        "lastModified": 1777749326,
+        "narHash": "sha256-43rldmxdorBkqWqud97BTcDymHIK/XGY/KN0FMhV2E8=",
         "owner": "hugsy",
         "repo": "gef",
-        "rev": "f55b81256ae3eea1f506185db2f5098b77ca0540",
+        "rev": "90cced847b57a627aa4b38568f001e88259ba44b",
         "type": "github"
       },
       "original": {
@@ -498,11 +546,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777518431,
-        "narHash": "sha256-SwgiG2T5pbyo33Vz7/vUCAhEMgwCK8Pa2nDSx5a6/WE=",
+        "lastModified": 1777815398,
+        "narHash": "sha256-MrIhEoqXc4YsHEUfH4rDU/K09XnWcKntNhCjs7n7zi8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2e54a938cdd4c8e414b2518edc3d82308027c670",
+        "rev": "b5e86c1b19f178a8ee10f7cb747325e02e3d3991",
         "type": "github"
       },
       "original": {
@@ -586,11 +634,11 @@
     },
     "nixos-stable": {
       "locked": {
-        "lastModified": 1777428379,
-        "narHash": "sha256-ypxFOeDz+CqADEQNL72haqGjvZQdBR5Vc7pyx2JDttI=",
+        "lastModified": 1777673416,
+        "narHash": "sha256-5c2POKPOjU40Kh0MirOdScBLG0bu9TAuPYAtPRNZMBs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "755f5aa91337890c432639c60b6064bb7fe67769",
+        "rev": "26ef669cffa904b6f6832ab57b77892a37c1a671",
         "type": "github"
       },
       "original": {
@@ -602,11 +650,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1777268161,
-        "narHash": "sha256-bxrdOn8SCOv8tN4JbTF/TXq7kjo9ag4M+C8yzzIRYbE=",
+        "lastModified": 1777578337,
+        "narHash": "sha256-Ad49moKWeXtKBJNy2ebiTQUEgdLyvGmTeykAQ9xM+Z4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+        "rev": "15f4ee454b1dce334612fa6843b3e05cf546efab",
         "type": "github"
       },
       "original": {
@@ -634,11 +682,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1777561703,
-        "narHash": "sha256-we7BfVwkQSlBREmE27bHxE3EYhI6jN2JElhvd0/Ajtc=",
+        "lastModified": 1777823454,
+        "narHash": "sha256-IZSIJxQhns8SQC4aOAhfeu1QaWXs7CQ3Hd9IBBw6AOg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b63a3a39915fd6cccc970e38f3f8c05817e0c9cc",
+        "rev": "c9844c7ef6d408ead1776e8e6f19124176084329",
         "type": "github"
       },
       "original": {
@@ -666,11 +714,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1777268161,
-        "narHash": "sha256-bxrdOn8SCOv8tN4JbTF/TXq7kjo9ag4M+C8yzzIRYbE=",
+        "lastModified": 1777578337,
+        "narHash": "sha256-Ad49moKWeXtKBJNy2ebiTQUEgdLyvGmTeykAQ9xM+Z4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+        "rev": "15f4ee454b1dce334612fa6843b3e05cf546efab",
         "type": "github"
       },
       "original": {
@@ -702,11 +750,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1777556273,
-        "narHash": "sha256-8YBq8X78DCo7AztvCKOmYmHxbjVaaR0uw7H/aadFl2A=",
+        "lastModified": 1777822957,
+        "narHash": "sha256-DZh1eWJsDpeO06RShuq3kfjrT8P81Dn6y5PaGnWDaaw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "da20c1536fca004ed9f8bbd1eacb59d1ce13954b",
+        "rev": "02d6e22878741cd8a07131e29d3a2b6124931107",
         "type": "github"
       },
       "original": {
@@ -725,6 +773,9 @@
         "cataclysm-dda-e85-engines": "cataclysm-dda-e85-engines",
         "cataclysm-dda-elf-crops": "cataclysm-dda-elf-crops",
         "cataclysm-dda-grow-more-drugs": "cataclysm-dda-grow-more-drugs",
+        "cataclysm-dda-levelled-crystallize": "cataclysm-dda-levelled-crystallize",
+        "cataclysm-dda-levelled-runes": "cataclysm-dda-levelled-runes",
+        "cataclysm-dda-magical-vehicles": "cataclysm-dda-magical-vehicles",
         "cataclysm-dda-mana-cores": "cataclysm-dda-mana-cores",
         "cataclysm-dda-medieval": "cataclysm-dda-medieval",
         "cataclysm-dda-minimods": "cataclysm-dda-minimods",
@@ -765,11 +816,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1777519017,
-        "narHash": "sha256-TXilQ8MwFFtZs7HSogSI/LJzAS63nicE8iF63iB93WM=",
+        "lastModified": 1777778183,
+        "narHash": "sha256-Lqv9MZO0XAGcMbXJU+ULBSMD41Pf391uJehylUQKe7Y=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "09b556f18dacc39e97a46e0a1cba47af7b3af1d8",
+        "rev": "dbba5f888c82ef3ce594c451c33ac2474eb80847",
         "type": "github"
       },
       "original": {

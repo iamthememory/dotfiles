@@ -15,6 +15,9 @@
       cataclysm-dda-e85-engines
       cataclysm-dda-elf-crops
       cataclysm-dda-grow-more-drugs
+      cataclysm-dda-levelled-crystallize
+      cataclysm-dda-levelled-runes
+      cataclysm-dda-magical-vehicles
       cataclysm-dda-mana-cores
       cataclysm-dda-medieval
       cataclysm-dda-minimods

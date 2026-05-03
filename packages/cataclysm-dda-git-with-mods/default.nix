@@ -9,6 +9,9 @@
 , cataclysm-dda-elf-crops
 , cataclysm-dda-git-latest
 , cataclysm-dda-grow-more-drugs
+, cataclysm-dda-levelled-crystallize
+, cataclysm-dda-levelled-runes
+, cataclysm-dda-magical-vehicles
 , cataclysm-dda-mana-cores
 , cataclysm-dda-medieval
 , cataclysm-dda-minimods
@@ -220,6 +223,24 @@ let
       ];
     };
     modRoot = "mods/grow_more_drugs";
+  };
+
+  levelled-crystallize = cataclysmDDA.buildMod {
+    modName = "lvl_crystallize";
+    version = cataclysm-dda-levelled-crystallize.lastModifiedDate;
+    src = cataclysm-dda-levelled-crystallize;
+  };
+
+  levelled-runes = cataclysmDDA.buildMod {
+    modName = "lvl_runes";
+    version = cataclysm-dda-levelled-runes.lastModifiedDate;
+    src = cataclysm-dda-levelled-runes;
+  };
+
+  magical-vehicles = cataclysmDDA.buildMod {
+    modName = "magic_vehicles";
+    version = cataclysm-dda-magical-vehicles.lastModifiedDate;
+    src = cataclysm-dda-magical-vehicles;
   };
 
   magiclysm-no-class-limit = cataclysmDDA.buildMod {
@@ -564,6 +585,9 @@ let
       grow-more-drugs
       innawoods-compat
       lab-loot-extras
+      levelled-crystallize
+      levelled-runes
+      magical-vehicles
       magic-loot-perks
       magiclysm-linear-leveling
       magiclysm-no-class-limit

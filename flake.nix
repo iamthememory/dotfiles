@@ -118,6 +118,21 @@
       flake = false;
     };
 
+    cataclysm-dda-levelled-crystallize = {
+      url = "github:OromisElf/Levelled-Crystallize";
+      flake = false;
+    };
+
+    cataclysm-dda-levelled-runes = {
+      url = "github:OromisElf/Levelled-Runes";
+      flake = false;
+    };
+
+    cataclysm-dda-magical-vehicles = {
+      url = "github:OromisElf/magical-vehicles";
+      flake = false;
+    };
+
     cataclysm-dda-mana-cores = {
       url = "github:Computer-Engineer-Man/cdda-mana-cores";
       flake = false;
