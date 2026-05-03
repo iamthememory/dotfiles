@@ -240,7 +240,13 @@ let
   magical-vehicles = cataclysmDDA.buildMod {
     modName = "magic_vehicles";
     version = cataclysm-dda-magical-vehicles.lastModifiedDate;
-    src = cataclysm-dda-magical-vehicles;
+    src = applyPatches {
+      name = "cataclysm-dda-magical-vehicles";
+      src = cataclysm-dda-magical-vehicles;
+      patches = [
+        ./patches/cataclysm-magical-vehicles.patch
+      ];
+    };
   };
 
   magiclysm-no-class-limit = cataclysmDDA.buildMod {
