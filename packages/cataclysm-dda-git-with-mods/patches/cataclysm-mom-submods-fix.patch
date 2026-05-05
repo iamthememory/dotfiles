@@ -1,5 +1,55 @@
+diff --git a/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json b/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json
+index b5fba668e64c..18106cff570b 100644
+--- a/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json
++++ b/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json
+@@ -24,13 +24,13 @@
+             "effect": {
+               "switch": { "math": [ "u_vitamin('vitamin_psionic_drain')" ] },
+               "cases": [
+-                { "case": 0, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.4" ] } },
+-                { "case": 15, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.45" ] } },
+-                { "case": 35, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.56" ] } },
+-                { "case": 55, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.68" ] } },
+-                { "case": 85, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.8" ] } },
+-                { "case": 115, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.9" ] } },
+-                { "case": 145, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1" ] } },
++                { "case": 0, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.75" ] } },
++                { "case": 15, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.8" ] } },
++                { "case": 35, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.85" ] } },
++                { "case": 55, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.9" ] } },
++                { "case": 85, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "0.95" ] } },
++                { "case": 115, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.0" ] } },
++                { "case": 145, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.05" ] } },
+                 { "case": 175, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.1" ] } },
+                 { "case": 195, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.2" ] } },
+                 { "case": 215, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.3" ] } },
+@@ -52,6 +52,23 @@
+         ]
+       }
+     ],
+-    "false_effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.05" ] }
++    "false_effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.0" ] }
++  },
++  {
++    "type": "effect_type",
++    "id": "effect_telepathic_learning_bonus",
++    "copy-from": "effect_telepathic_learning_bonus",
++    "name": [ "Trance State" ],
++    "enchantments": [
++      {
++        "values": [
++          {
++            "value": "LEARNING_FOCUS",
++            "add": { "math": [ "min( ( u_spell_level('telepathic_concentration') * 2.5) * psionic_power_modifiers(), 40 )" ] }
++          },
++          { "value": "MOVE_COST", "multiply": 3 }
++        ]
++      }
++    ]
+   }
+ ]
 diff --git a/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json b/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
-index 462b75d6b8bf..ef378c7d27fd 100644
+index b9256dd139a6..9b04a63dc328 100644
 --- a/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
 +++ b/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
 @@ -24,13 +24,13 @@
@@ -44,7 +94,7 @@ index 462b75d6b8bf..ef378c7d27fd 100644
      "type": "effect_on_condition",
      "id": "EOC_PSIONICS_NETHER_AREA_CHECK",
 diff --git a/MoM_No_Negative_Nether_Attunement/modinfo.json b/MoM_No_Negative_Nether_Attunement/modinfo.json
-index 2842f0631893..260fd506b69c 100644
+index 202616853719..e0ab1af83a2a 100644
 --- a/MoM_No_Negative_Nether_Attunement/modinfo.json
 +++ b/MoM_No_Negative_Nether_Attunement/modinfo.json
 @@ -14,6 +14,11 @@
