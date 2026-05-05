@@ -202,6 +202,16 @@
       flake = false;
     };
 
+    cataclysm-dda-xe-innawoods = {
+      url = "github:Standing-Storm/ccda-xedra-evolved-innawoods";
+      flake = false;
+    };
+
+    cataclysm-dda-xe-innawoods-places = {
+      url = "github:Standing-Storm/XE-Innawood-Mysterious-Places";
+      flake = false;
+    };
+
     cdda-sounds = {
       url = "git+https://github.com/Fris0uman/CDDA-Soundpacks?submodules=1";
       flake = false;

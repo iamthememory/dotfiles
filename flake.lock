@@ -400,6 +400,38 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-xe-innawoods": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774299598,
+        "narHash": "sha256-GGU1Yg7ax/vmGDXWnTi74ue978E/D4nG9MB5pVgvv+s=",
+        "owner": "Standing-Storm",
+        "repo": "ccda-xedra-evolved-innawoods",
+        "rev": "3a999a110abd3a62116cd0cbbc33339f923329cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Standing-Storm",
+        "repo": "ccda-xedra-evolved-innawoods",
+        "type": "github"
+      }
+    },
+    "cataclysm-dda-xe-innawoods-places": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770093426,
+        "narHash": "sha256-qFbvpaSyrK73JxPklrp2RTvy+WUFz2YSfBZqaaZMTw8=",
+        "owner": "Standing-Storm",
+        "repo": "XE-Innawood-Mysterious-Places",
+        "rev": "158039866ef96f9579cfd620e561cea6988af290",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Standing-Storm",
+        "repo": "XE-Innawood-Mysterious-Places",
+        "type": "github"
+      }
+    },
     "cdda-sounds": {
       "flake": false,
       "locked": {
@@ -790,6 +822,8 @@
         "cataclysm-dda-stats-through-kills": "cataclysm-dda-stats-through-kills",
         "cataclysm-dda-stats-through-skills": "cataclysm-dda-stats-through-skills",
         "cataclysm-dda-tankmod": "cataclysm-dda-tankmod",
+        "cataclysm-dda-xe-innawoods": "cataclysm-dda-xe-innawoods",
+        "cataclysm-dda-xe-innawoods-places": "cataclysm-dda-xe-innawoods-places",
         "cdda-sounds": "cdda-sounds",
         "cdda-tilesets": "cdda-tilesets",
         "dircolors-solarized": "dircolors-solarized",

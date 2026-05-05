@@ -32,6 +32,8 @@
       cataclysm-dda-stats-through-kills
       cataclysm-dda-stats-through-skills
       cataclysm-dda-tankmod
+      cataclysm-dda-xe-innawoods
+      cataclysm-dda-xe-innawoods-places
       cdda-sounds
       cdda-tilesets;
   };

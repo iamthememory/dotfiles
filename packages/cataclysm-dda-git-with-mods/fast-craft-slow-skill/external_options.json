@@ -26,10 +26,24 @@
   },
   {
     "type": "EXTERNAL_OPTION",
+    "name": "INT_BASED_LEARNING_FOCUS_ADJUSTMENT",
+    "//": "The amount of focus gained per each INT point above INT_BASED_LEARNING_BASE_VALUE",
+    "stype": "int",
+    "value": 3
+  },
+  {
+    "type": "EXTERNAL_OPTION",
     "name": "SKILL_TRAINING_SPEED",
     "//": "Scales experience gained from practicing skills and reading books.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables skill training except for NPC training.",
     "stype": "float",
-    "value": 1.0
+    "value": 0.25
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "PROFICIENCY_TRAINING_SPEED",
+    "//": "Scales experience gained from practicing proficiencies.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables proficiency training except for NPC training.",
+    "stype": "float",
+    "value": 0.25
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -85,7 +99,7 @@
     "name": "DONT_AUTOLEARN_BOOK_RECIPES",
     "//": "Whether to prevent autolearning recipes which can be learned via a book.",
     "stype": "bool",
-    "value": false
+    "value": true
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -153,7 +167,7 @@
     "type": "EXTERNAL_OPTION",
     "name": "EVOLUTION_INVERSE_MULTIPLIER",
     "stype": "float",
-    "value": 1.0
+    "value": 3.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -174,7 +188,7 @@
     "name": "CROP_GROWTH_TIME_SCALER",
     "//": "A scaler for how long crops take to grow. 0.5 will make crops take half as much time to grow.",
     "stype": "float",
-    "value": 1.0
+    "value": 2.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -230,7 +244,7 @@
     "name": "FOCUS_EQUILIBRIUM_READING_PENALTY",
     "//": "How much of a penalty to give to the focus equilibrium point while reading. 40 will aim focus towards 100 - 40 = 60.",
     "stype": "int",
-    "value": 0
+    "value": 50
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -259,5 +273,33 @@
     "//": "The default temperature required to grow for plants, in Celsius.",
     "stype": "int",
     "value": 10
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "PLAYER_MAX_STR_VALUE",
+    "//": "Sets a cap on maximum effective strength for characters.",
+    "stype": "int",
+    "value": 20
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "PLAYER_MAX_DEX_VALUE",
+    "//": "Sets a cap on maximum effective dexterity for characters.",
+    "stype": "int",
+    "value": 20
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "PLAYER_MAX_PER_VALUE",
+    "//": "Sets a cap on maximum effective perception for characters.",
+    "stype": "int",
+    "value": 20
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "PLAYER_MAX_INT_VALUE",
+    "//": "Sets a cap on maximum effective intelligence for characters.",
+    "stype": "int",
+    "value": 20
   }
 ]

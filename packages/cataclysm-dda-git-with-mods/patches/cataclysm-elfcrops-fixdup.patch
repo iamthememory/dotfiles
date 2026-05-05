@@ -6825,6 +6825,31 @@ index 000000000000..b0e01df09ad8
 +    "components": [ [ [ "vampire_blood", 1 ] ] ]
 +  }
 +]
+diff --git a/Resource Crops/mod_interactions/xedra_evolved_innawoods/itemgroups.json b/Resource Crops/mod_interactions/xedra_evolved_innawoods/itemgroups.json
+new file mode 100644
+index 000000000000..b9f1eaf63a4f
+--- /dev/null
++++ b/Resource Crops/mod_interactions/xedra_evolved_innawoods/itemgroups.json	
+@@ -0,0 +1,19 @@
++[
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_harvests",
++    "copy-from": "rc_drop_harvests",
++    "extend": {
++      "items": [
++        { "item": "morningflower_leaves", "prob": 10, "count": [1, 4] },
++        { "item": "harfry_root", "prob": 10, "count": [1, 2] },
++        { "item": "harfry_root", "prob": 10, "count": [2, 4] },
++        { "item": "maidens_hair", "prob": 10, "count": [1, 4] },
++        { "item": "witchwood_bark", "prob": 10, "count": [3, 6] },
++        { "item": "starsbreath_harvested", "prob": 10, "count": [2, 4] },
++        { "item": "corpsefire_cap", "prob": 10, "count": [1, 3] }
++      ]
++    }
++  }
++]
 diff --git a/Resource Crops/modinfo.json b/Resource Crops/modinfo.json
 index d893e6888f4b..7c79f692eb68 100644
 --- a/Resource Crops/modinfo.json	

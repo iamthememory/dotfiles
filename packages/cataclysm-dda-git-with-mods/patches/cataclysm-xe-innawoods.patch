@@ -1,0 +1,12 @@
+diff --git a/modinfo.json b/modinfo.json
+index a60dd291395a..520d8871e52b 100644
+--- a/modinfo.json
++++ b/modinfo.json
+@@ -7,6 +7,6 @@
+     "maintainers": [ "StandingStorm" ],
+     "description": "Better blending for Xedra Evolved and Innawoods.  Also forms the core for a number of optional supplemental mods.",
+     "category": "content",
+-    "dependencies": [ "dda", "xedra_evolved", "innawood" ]
++    "dependencies": [ "dda", "xedra_evolved", "innawood-compat" ]
+   }
+ ]

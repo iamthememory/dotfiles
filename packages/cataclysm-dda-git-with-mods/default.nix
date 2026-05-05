@@ -26,6 +26,8 @@
 , cataclysm-dda-stats-through-kills
 , cataclysm-dda-stats-through-skills
 , cataclysm-dda-tankmod
+, cataclysm-dda-xe-innawoods
+, cataclysm-dda-xe-innawoods-places
 , cataclysmDDA
 , cdda-sounds
 , cdda-tilesets
@@ -470,6 +472,28 @@ let
     modRoot = "Tankmod_Revived";
   };
 
+  xe-innawoods = cataclysmDDA.buildMod {
+    modName = "xedra_evolved_innawoods";
+    version = cataclysm-dda-xe-innawoods.lastModifiedDate;
+    src = applyPatches {
+      name = "xe-innawoods-patched";
+      src = cataclysm-dda-xe-innawoods;
+      patches = [
+        ./patches/cataclysm-xe-innawoods.patch
+      ];
+    };
+  };
+
+  xe-innawoods-places = cataclysmDDA.buildMod {
+    modName = "xe_innawood_mysterious_places";
+    version = cataclysm-dda-xe-innawoods-places.lastModifiedDate;
+    src = applyPatches {
+      name = "xe-innawoods-places-patched";
+      src = cataclysm-dda-xe-innawoods-places;
+      patches = [ ];
+    };
+  };
+
   # My mods.
 
   backrooms-tweaks = cataclysmDDA.buildMod {
@@ -616,6 +640,8 @@ let
       stats-through-skills
       tankmod
       trickle-exp
+      xe-innawoods
+      xe-innawoods-places
       xedra-both-classes
       xedra-disable-leveling
       xedra-seedbearer-always
