@@ -33,12 +33,12 @@
     "ter_id": "t_region_tree_forest_dense",
     "extend": {
       "replace_with_terrain": [
-        [ "t_tree_ceiba", 4 ],
-        [ "t_tree_acacia", 4 ],
-        [ "t_tree_huizache", 4 ],
-        [ "t_tree_parajubea", 3 ],
-        [ "t_tree_guayacan", 3 ],
-        [ "t_tree_ficus", 3 ]
+        [ "t_tree_ceiba", 1 ],
+        [ "t_tree_acacia", 1 ],
+        [ "t_tree_huizache", 1 ],
+        [ "t_tree_parajubea", 1 ],
+        [ "t_tree_guayacan", 1 ],
+        [ "t_tree_ficus", 1 ]
       ]
     }
   },
@@ -49,8 +49,8 @@
     "ter_id": "t_region_tree_forest_other",
     "extend": {
       "replace_with_terrain": [
-        [ "t_tree_pachira", 5 ],
-        [ "t_tree_gevuina", 5 ]
+        [ "t_tree_pachira", 1 ],
+        [ "t_tree_gevuina", 1 ]
       ]
     }
   },
@@ -61,14 +61,14 @@
     "ter_id": "t_region_tree",
     "extend": {
       "replace_with_terrain": [
-        [ "t_tree_pachira", 4 ],
+        [ "t_tree_pachira", 1 ],
         [ "t_tree_gevuina", 1 ],
-        [ "t_tree_ceiba", 4 ],
-        [ "t_tree_acacia", 4 ],
-        [ "t_tree_huizache", 4 ],
-        [ "t_tree_parajubea", 4 ],
-        [ "t_tree_guayacan", 4 ],
-        [ "t_tree_ficus", 4 ],
+        [ "t_tree_ceiba", 1 ],
+        [ "t_tree_acacia", 1 ],
+        [ "t_tree_huizache", 1 ],
+        [ "t_tree_parajubea", 1 ],
+        [ "t_tree_guayacan", 1 ],
+        [ "t_tree_ficus", 1 ],
         [ "t_tree_mango", 1 ],
         [ "t_tree_papaya", 1 ],
         [ "t_tree_pomegranate", 1 ],
@@ -86,8 +86,8 @@
     "ter_id": "t_region_tree_shade",
     "extend": {
       "replace_with_terrain": [
-        [ "t_tree_pachira", 4 ],
-        [ "t_tree_ceiba", 4 ],
+        [ "t_tree_pachira", 1 ],
+        [ "t_tree_ceiba", 1 ],
         [ "t_tree_mango", 1 ],
         [ "t_tree_papaya", 1 ],
         [ "t_tree_pomegranate", 1 ],
@@ -122,7 +122,7 @@
     "ter_id": "t_region_tree_nut",
     "extend": {
       "replace_with_terrain": [
-        [ "t_tree_pachira", 4 ],
+        [ "t_tree_pachira", 1 ],
         [ "t_tree_gevuina", 1 ],
         [ "t_tree_coconut", 1 ]
       ]
