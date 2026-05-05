@@ -81,7 +81,6 @@ let
       ./patches/cataclysm-seedbearer-fix.patch
       ./patches/cataclysm-spell-ui-widen.patch
       ./patches/cataclysm-start-with-no-money.patch
-      ./patches/cataclysm-survival-forage.patch
       ./patches/cataclysm-xedra-chronomancer-heritage.patch
       ./patches/cataclysm-xedra-dream.patch
       ./patches/cataclysm-xedra-dreamdross.patch
