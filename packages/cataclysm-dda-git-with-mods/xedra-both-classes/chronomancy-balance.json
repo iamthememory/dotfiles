@@ -1,0 +1,230 @@
+[
+  {
+    "type": "jmath_function",
+    "id": "xedra_chron_spell_calc",
+    "num_args": 3,
+    "return": "((_0 * _1) + _2)"
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_xedra_chronomancer_chronal_accel",
+    "name": [ "Chronal Acceleration" ],
+    "desc": [ "You are accelerating your relative progression of time compared to the universal baseline." ],
+    "apply_message": "The world slows down around you.",
+    "remove_message": "The world speeds up again.",
+    "rating": "good",
+    "max_intensity": 1,
+    "show_in_info": true,
+    "enchantments": [
+      {
+        "values": [
+          {
+            "value": "SPEED",
+            "add": { "math": [ "xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_chronal_acceleration'), 2, 0 )" ] }
+          },
+          {
+            "value": "MAX_MANA",
+            "add": { "math": [ "-max( 400 - ( 10 * u_spell_level('xedra_chronomancer_chronal_acceleration') ), 100 )" ] }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_xedra_chronomancer_destabilizing_strikes",
+    "name": [ "Destabilizing Strikes" ],
+    "desc": [ "You maintain a field of destabilized time around you.  Your attacks cause your targets to erode over time." ],
+    "apply_message": "Your hands turn gray as the air around them starts to flicker.",
+    "remove_message": "Your field of destabilized time fades.",
+    "rating": "good",
+    "max_intensity": 1,
+    "show_in_info": true,
+    "enchantments": [
+      { "hit_you_effect": [ { "id": "xedra_chronomancer_destabilizing_strikes_attack" } ] },
+      {
+        "values": [
+          {
+            "value": "MAX_MANA",
+            "add": { "math": [ "-max( 400 - ( 10 * u_spell_level('xedra_chronomancer_destabilizing_strikes') ), 100 )" ] }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_xedra_chronomancer_stabilize_timeline",
+    "name": [ "Stabilized Timeline" ],
+    "desc": [ "You are protected from adverse changes in your personal timestream." ],
+    "apply_message": "You may not look any different, but you can tell that you're completely protected from harmful time magic.",
+    "remove_message": "You feel more vulnerable to manipulated time.",
+    "rating": "good",
+    "max_intensity": 1,
+    "show_in_info": true,
+    "flags": [ "STABILIZED_TIMELINE" ],
+    "enchantments": [
+      {
+        "values": [
+          {
+            "value": "MAX_MANA",
+            "add": { "math": [ "-max( 200 - ( 5 * u_spell_level('xedra_chronomancer_stabilize_timeline') ), 50 )" ] }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_xedra_chronomancer_reverse_entropy",
+    "name": [ "Reversed Entropy" ],
+    "desc": [ "Your equipment is slowly losing its damage, repairing itself to its original, ideal form." ],
+    "apply_message": "Your equipment obtains a gray tint and appears ever so slightly more whole.",
+    "remove_message": "Your equipment loses its gray tint.",
+    "rating": "good",
+    "max_intensity": 1,
+    "show_in_info": true,
+    "enchantments": [
+      {
+        "values": [
+          {
+            "value": "MAX_MANA",
+            "add": { "math": [ "-max( 400 - ( 10 * u_spell_level('xedra_chronomancer_reverse_entropy') ), 100 )" ] }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_xedra_rewrite_wound_causality",
+    "name": [ "Rewriting Wound Causality" ],
+    "desc": [ "Your injuries are disappearing in a harmless paradox." ],
+    "rating": "good",
+    "enchantments": [
+      {
+        "values": [
+          {
+            "value": "REGEN_HP",
+            "multiply": { "math": [ "xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_rewrite_wound_causality'), 0.5, 0 )" ] }
+          },
+          {
+            "value": "MENDING_MODIFIER",
+            "multiply": { "math": [ "xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_rewrite_wound_causality'), 0.5, 0 )" ] }
+          },
+          { "value": "REGEN_HP_AWAKE", "multiply": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XEDRA_CHRONOMANCER_REVERSE_ENTROPY_INV_SCANNER",
+    "condition": { "u_has_effect": "effect_xedra_chronomancer_reverse_entropy" },
+    "effect": [
+      {
+        "run_eocs": "EOC_XEDRA_CHRONOMANCER_REVERSE_ENTROPY_INV_SCANNER",
+        "time_in_future": { "math": [ "max( xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_reverse_entropy'), -2, 60 ), 10 )" ] }
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "is_chargeable": true } ],
+        "true_eocs": [
+          {
+            "id": "EOC_XEDRA_CHRONOMANCER_REVERSE_ENTROPY_INV_SCANNER_ENERGY",
+            "effect": [
+              {
+                "math": [ "n_val('power') += xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_reverse_entropy'), 0.1, 1 )" ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "true_eocs": [
+          {
+            "id": "EOC_XEDRA_CHRONOMANCER_REVERSE_ENTROPY_INV_SCANNER_DURABILITY",
+            "effect": [
+              { "math": [ "n_hp('ALL') += xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_reverse_entropy'), 0.1, 1 )" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY",
+    "effect": [
+      { "u_assign_activity": "ACT_XEDRA_CHRONOMANCER_MEDITATE", "duration": "200 days" },
+      { "u_add_effect": "effect_xedra_rewrite_equipment_causality", "duration": "PERMANENT" },
+      {
+        "run_eocs": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_REPAIR",
+        "time_in_future": { "math": [ "900 - (u_spell_level('xedra_chronomancer_rewrite_equipment_causality') * 12 )" ] }
+      },
+      {
+        "run_eocs": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_MANA",
+        "time_in_future": { "math": [ "180 + ( u_spell_level('xedra_chronomancer_rewrite_equipment_causality') * 12 )" ] }
+      },
+      {
+        "run_eocs": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_EXPERIENCE",
+        "time_in_future": { "math": [ "900 - (u_spell_level('xedra_chronomancer_rewrite_equipment_causality') * 12 )" ] }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_REPAIR",
+    "condition": { "u_has_effect": "effect_xedra_rewrite_equipment_causality" },
+    "effect": [
+      {
+        "u_run_inv_eocs": "all",
+        "true_eocs": [
+          {
+            "id": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_REPAIR_SCANNER",
+            "effect": [
+              {
+                "math": [ "n_hp('ALL') += xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_rewrite_equipment_causality'), 4, 0 )" ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "//": "no way to target vehicle parts only?",
+        "true_eocs": [
+          {
+            "id": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_DEGRADATION_SCANNER",
+            "effect": [
+              {
+                "math": [
+                  "n_degradation() -= xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_rewrite_equipment_causality'), 4, 0 )"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "u_run_inv_eocs": "all",
+        "search_data": [ { "is_chargeable": true } ],
+        "true_eocs": [
+          {
+            "id": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_ENERGY_SCANNER",
+            "effect": [
+              {
+                "math": [ "n_val('power') += xedra_chron_spell_calc( u_spell_level('xedra_chronomancer_rewrite_equipment_causality'), 4, 0 )" ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "run_eocs": "EOC_XEDRA_CHRONOMANCER_REWRITE_EQUIPMENT_CAUSALITY_ONGOING_REPAIR",
+        "time_in_future": { "math": [ "900 - ( u_spell_level('xedra_chronomancer_rewrite_equipment_causality') * 12 )" ] }
+      }
+    ]
+  }
+]
