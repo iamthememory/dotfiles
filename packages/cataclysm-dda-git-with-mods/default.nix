@@ -489,7 +489,9 @@ let
     src = applyPatches {
       name = "xe-innawoods-places-patched";
       src = cataclysm-dda-xe-innawoods-places;
-      patches = [ ];
+      patches = [
+        ./patches/cataclysm-xe-innawoods-places.patch
+      ];
     };
   };
 

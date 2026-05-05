@@ -1,5 +1,5 @@
 diff --git a/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json b/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json
-index b5fba668e64c..18106cff570b 100644
+index b5fba668e64c..64d05397d340 100644
 --- a/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json
 +++ b/MoM_Harsher_Nether_Attunement_Scaling/modinfo.json
 @@ -24,13 +24,13 @@
@@ -23,7 +23,7 @@ index b5fba668e64c..18106cff570b 100644
                  { "case": 175, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.1" ] } },
                  { "case": 195, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.2" ] } },
                  { "case": 215, "effect": { "math": [ "u_nether_attunement_power_scaling", "=", "1.3" ] } },
-@@ -52,6 +52,23 @@
+@@ -52,6 +52,33 @@
          ]
        }
      ],
@@ -33,8 +33,17 @@ index b5fba668e64c..18106cff570b 100644
 +  {
 +    "type": "effect_type",
 +    "id": "effect_telepathic_learning_bonus",
-+    "copy-from": "effect_telepathic_learning_bonus",
 +    "name": [ "Trance State" ],
++    "desc": [ "You are in a focused mental state, increasing the ease of learning." ],
++    "apply_message": "",
++    "remove_message": "You shake your head as you become aware of the outside world again.",
++    "decay_messages": [
++      [ "Your enhanced concentration is fading like a dream.", "bad" ],
++      [ "The outside world is impinging itself on your awareness.", "bad" ]
++    ],
++    "rating": "good",
++    "max_duration": "7 days",
++    "max_intensity": 100,
 +    "enchantments": [
 +      {
 +        "values": [
@@ -45,7 +54,8 @@ index b5fba668e64c..18106cff570b 100644
 +          { "value": "MOVE_COST", "multiply": 3 }
 +        ]
 +      }
-+    ]
++    ],
++    "flags": [ "MYOPIC" ]
    }
  ]
 diff --git a/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json b/MoM_Harsher_Nether_Attunement_Scaling_No_Negative/modinfo.json
