@@ -98,6 +98,11 @@
       flake = false;
     };
 
+    cataclysm-dda-compack = {
+      url = "github:comportnx/compack-mods";
+      flake = false;
+    };
+
     cataclysm-dda-dorf-life = {
       url = "github:chaosvolt/Dorf-Life-CDDA";
       flake = false;

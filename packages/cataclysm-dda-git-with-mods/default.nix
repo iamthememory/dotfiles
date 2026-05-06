@@ -4,6 +4,7 @@
 , cataclysm-dda-arcana
 , cataclysm-dda-cdda-arcana-technoclysm
 , cataclysm-dda-cdda-extra-lives
+, cataclysm-dda-compack
 , cataclysm-dda-dorf-life
 , cataclysm-dda-e85-engines
 , cataclysm-dda-elf-crops
@@ -165,6 +166,30 @@ let
       tilesets = builtins.attrValues tilesetSet;
     in
     tilesets;
+
+  compack-mods =
+    let
+      compack-src = applyPatches {
+        name = "cataclysm-dda-compack-patched";
+        src = cataclysm-dda-compack;
+        patches = [ ];
+      };
+
+      compack-mod = modRoot: modName: cataclysmDDA.buildMod {
+        inherit modName modRoot;
+        version = cataclysm-dda-compack.lastModifiedDate;
+        src = compack-src;
+      };
+    in
+    builtins.attrValues (builtins.mapAttrs compack-mod {
+      "color-coding" = "color-coding";
+      "fast-smash" = "fast-smash";
+      "fungus-not-amongus" = "fungus-notamongus";
+      "reach3-patch" = "reach-tweak";
+      "simplified-transport" = "simplified-transport";
+      "simplified-travel" = "simplified-travel";
+      "tough-tyres" = "tough-tyres";
+    });
 
   dorf-life = cataclysmDDA.buildMod {
     modName = "Dorf_Life";
@@ -650,6 +675,7 @@ let
     ++ minimods
     ++ mom-submods
     ++ elfmods
+    ++ compack-mods
     );
 in
 cataclysm-dda-git-with-mods

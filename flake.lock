@@ -64,6 +64,22 @@
         "type": "github"
       }
     },
+    "cataclysm-dda-compack": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777630671,
+        "narHash": "sha256-9eg67JIUNXXiBlfwrPQUPC4jE33vqJxjjrDKAmcyow0=",
+        "owner": "comportnx",
+        "repo": "compack-mods",
+        "rev": "9d7cc781c7f40167d7dd0d33993e5d362b408c4e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "comportnx",
+        "repo": "compack-mods",
+        "type": "github"
+      }
+    },
     "cataclysm-dda-dorf-life": {
       "flake": false,
       "locked": {
@@ -801,6 +817,7 @@
         "cataclysm-dda-arcana": "cataclysm-dda-arcana",
         "cataclysm-dda-cdda-arcana-technoclysm": "cataclysm-dda-cdda-arcana-technoclysm",
         "cataclysm-dda-cdda-extra-lives": "cataclysm-dda-cdda-extra-lives",
+        "cataclysm-dda-compack": "cataclysm-dda-compack",
         "cataclysm-dda-dorf-life": "cataclysm-dda-dorf-life",
         "cataclysm-dda-e85-engines": "cataclysm-dda-e85-engines",
         "cataclysm-dda-elf-crops": "cataclysm-dda-elf-crops",

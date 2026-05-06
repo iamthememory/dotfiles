@@ -11,6 +11,7 @@
       cataclysm-dda-arcana
       cataclysm-dda-cdda-arcana-technoclysm
       cataclysm-dda-cdda-extra-lives
+      cataclysm-dda-compack
       cataclysm-dda-dorf-life
       cataclysm-dda-e85-engines
       cataclysm-dda-elf-crops
