@@ -25,13 +25,59 @@
     }
   },
   {
+    "id": "forage_mining",
+    "type": "item_group",
+    "subtype": "distribution",
+    "items": [
+      { "item": "flint", "count": [ 1, 2 ], "prob": 10 },
+      { "item": "coal_lump", "charges": [ 25, 50 ], "prob": 10 },
+      { "item": "material_shrd_limestone", "count": [ 1, 2 ], "prob": 10 },
+      { "item": "material_rocksalt", "count": [ 1, 2 ], "prob": 10 },
+      { "item": "material_niter", "count": [ 1, 1 ], "prob": 10 },
+      { "item": "material_rhodonite", "count": [ 1, 1 ], "prob": 5 },
+      { "item": "material_zincite", "count": [ 1, 4 ], "prob": 5 },
+      { "item": "chunk_sulfur", "count": [ 1, 5 ], "prob": 5 },
+      { "item": "iron_ore", "count": [ 1, 4 ], "prob": 5 },
+      { "item": "chunk_copper", "count": [ 1, 3 ], "prob": 10 },
+      { "item": "chunk_silver", "count": [ 1, 2 ], "prob": 5 },
+      { "item": "chunk_gold", "count": [ 1, 2 ], "prob": 5 },
+      { "item": "chunk_aluminum", "count": [ 1, 3 ], "prob": 5 },
+      { "item": "chunk_cassiterite", "count": [ 2, 4 ], "prob": 10 },
+      { "item": "chunk_galena", "count": [ 2, 4 ], "prob": 10 },
+      { "item": "chunk_hematite", "count": [ 2, 2 ], "prob": 10 },
+      { "item": "chunk_magnetite", "count": [ 2, 2 ], "prob": 10 },
+      { "item": "chunk_cinnabar", "count": [ 1, 3 ], "prob": 10 },
+      { "item": "chunk_borax", "count": [ 1, 2 ], "prob": 10 },
+      { "item": "chunk_feldspar", "count": [ 1, 3 ], "prob": 10 },
+      { "item": "chunk_graphite", "count": [ 1, 1 ], "prob": 10 },
+      { "item": "chunk_caco3", "count": [ 1, 1 ], "prob": 10 },
+      { "item": "citrine", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "diamond", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "emerald", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "peridot", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "amethyst", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "sapphire", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "aquamarine", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "blue_topaz", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "tourmaline", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "alexandrite", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "malachite", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "pearl", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "onyx", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "opal", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "ruby", "count": [ 1, 1 ], "prob": 2 },
+      { "item": "garnet", "count": [ 1, 1 ], "prob": 2 }
+    ]
+  },
+  {
     "id": "forage_spring",
     "copy-from": "forage_spring",
     "type": "item_group",
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "group": "farming_seeds", "prob": 4, "count": [ 1, 3 ] }
+        { "group": "farming_seeds", "prob": 6, "count": [ 1, 3 ] },
+        { "group": "forage_mining", "prob": 6, "count": [ 1, 3 ] }
       ]
     }
   },
@@ -42,7 +88,8 @@
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "group": "farming_seeds", "prob": 4, "count": [ 1, 3 ] }
+        { "group": "farming_seeds", "prob": 6, "count": [ 1, 3 ] },
+        { "group": "forage_mining", "prob": 6, "count": [ 1, 3 ] }
       ]
     }
   },
@@ -53,7 +100,8 @@
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "group": "farming_seeds", "prob": 4, "count": [ 1, 3 ] }
+        { "group": "farming_seeds", "prob": 6, "count": [ 1, 3 ] },
+        { "group": "forage_mining", "prob": 6, "count": [ 1, 3 ] }
       ]
     }
   },
@@ -64,8 +112,9 @@
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "item": "wintergreen_berry", "prob": 20, "count": [ 1, 3 ] },
-        { "group": "farming_seeds", "prob": 1, "count": [ 1, 3 ] }
+        { "item": "wintergreen_berry", "prob": 10, "count": [ 1, 3 ] },
+        { "group": "farming_seeds", "prob": 2, "count": [ 1, 3 ] },
+        { "group": "forage_mining", "prob": 2, "count": [ 1, 3 ] }
       ]
     }
   }
