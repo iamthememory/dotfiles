@@ -112,9 +112,8 @@
     "subtype": "distribution",
     "extend": {
       "entries": [
-        { "item": "wintergreen_berry", "prob": 10, "count": [ 1, 3 ] },
-        { "group": "farming_seeds", "prob": 2, "count": [ 1, 3 ] },
-        { "group": "forage_mining", "prob": 2, "count": [ 1, 3 ] }
+        { "group": "farming_seeds", "prob": 1, "count": [ 1, 3 ] },
+        { "group": "forage_mining", "prob": 1, "count": [ 1, 3 ] }
       ]
     }
   }
