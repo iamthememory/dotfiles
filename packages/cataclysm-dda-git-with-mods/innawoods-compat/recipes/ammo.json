@@ -1,0 +1,11 @@
+[
+  {
+    "type": "recipe",
+    "result": "bearing",
+    "copy-from": "bearing",
+    "autolearn": true,
+    "skills_required": [ "gun", 0 ],
+    "tools": [ [ [ "press", -1 ] ], [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ] ],
+    "components": [ [ [ "weights", 34, "LIST" ], [ "steel_chunk_any", 2, "LIST" ] ] ]
+  }
+]

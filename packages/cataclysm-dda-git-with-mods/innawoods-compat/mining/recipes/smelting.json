@@ -1,6 +1,6 @@
 [
   {
-    "result": "steel_lump",
+    "result": "budget_steel_lump",
     "type": "recipe",
     "id_suffix": "from ore",
     "activity_level": "LIGHT_EXERCISE",
@@ -17,7 +17,7 @@
     "components": [ [ [ "iron_ore", 17 ] ] ]
   },
   {
-    "result": "steel_chunk",
+    "result": "budget_steel_chunk",
     "type": "recipe",
     "id_suffix": "from ore",
     "activity_level": "LIGHT_EXERCISE",
@@ -179,7 +179,7 @@
     "components": [ [ [ "chunk_galena", 1 ] ] ]
   },
   {
-    "result": "steel_lump",
+    "result": "budget_steel_lump",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "smelt",
@@ -201,7 +201,7 @@
     ]
   },
   {
-    "result": "steel_chunk",
+    "result": "budget_steel_chunk",
     "type": "recipe",
     "activity_level": "LIGHT_EXERCISE",
     "id_suffix": "smelt",
