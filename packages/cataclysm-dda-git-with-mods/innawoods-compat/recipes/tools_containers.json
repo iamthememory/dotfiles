@@ -4,6 +4,7 @@
     "result": "jar_3l_glass_sealed",
     "copy-from": "jar_3l_glass_sealed",
     "autolearn": true,
+    "batch_time_factors": [ 50, 1 ],
     "qualities": [ { "id": "CHISEL", "level": 2 } ],
     "tools": [
       [ [ "metalworking_tongs_any", 1, "LIST" ] ],
@@ -19,6 +20,7 @@
     "copy-from": "bottle_glass",
     "autolearn": true,
     "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "batch_time_factors": [ 50, 1 ],
     "tools": [
       [ [ "metalworking_tongs_any", 1, "LIST" ] ],
       [ [ "pipe", -1 ] ],
@@ -32,6 +34,7 @@
     "result": "jar_glass_sealed",
     "copy-from": "jar_glass_sealed",
     "autolearn": true,
+    "batch_time_factors": [ 50, 1 ],
     "qualities": [ { "id": "CHISEL", "level": 2 } ],
     "tools": [
       [ [ "metalworking_tongs_any", 1, "LIST" ] ],
@@ -47,6 +50,7 @@
     "copy-from": "flask_glass",
     "autolearn": true,
     "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "batch_time_factors": [ 50, 1 ],
     "tools": [
       [ [ "metalworking_tongs_any", 1, "LIST" ] ],
       [ [ "pipe", -1 ] ],
@@ -61,6 +65,7 @@
     "copy-from": "test_tube",
     "autolearn": true,
     "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "batch_time_factors": [ 50, 1 ],
     "tools": [
       [ [ "metalworking_tongs_any", 1, "LIST" ] ],
       [ [ "pipe", -1 ] ],

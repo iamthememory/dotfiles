@@ -35,6 +35,7 @@
     "copy-from": "glass_shard",
     "autolearn": true,
     "qualities": [ { "id": "CHEM", "level": 1 } ],
+    "batch_time_factors": [ 90, 1 ],
     "tools": [
       [ [ "crucible", -1 ], [ "crucible_clay", -1 ] ],
       [
@@ -49,7 +50,7 @@
     ],
     "components": [
       [ [ "material_sand", 10 ] ],
-      [ [ "chem_washing_soda", 41 ] ],
+      [ [ "chem_washing_soda", 41 ], [ "ash", 540 ] ],
       [ [ "material_quicklime", 2 ], [ "material_limestone", 2 ], [ "chem_slaked_lime", 20 ] ]
     ]
   },
