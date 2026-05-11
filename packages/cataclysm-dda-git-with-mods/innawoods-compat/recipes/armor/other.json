@@ -1,5 +1,60 @@
 [
   {
+    "result": "platinum_ear",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "platinum_small", 2 ] ] ]
+  },
+  {
+    "result": "platinum_ring",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "platinum_small", 2 ] ] ]
+  },
+  {
+    "result": "platinum_bracelet",
+    "copy-from": "gold_bracelet",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "platinum_small", 8 ] ] ]
+  },
+  {
+    "result": "platinum_necklace",
+    "copy-from": "gold_necklace",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "platinum_small", 10 ] ] ]
+  },
+  {
+    "result": "gold_ear",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "gold_small", 3 ] ] ]
+  },
+  {
     "result": "gold_ring",
     "copy-from": "gold_ring",
     "type": "recipe",
@@ -27,6 +82,28 @@
     "components": [ [ [ "gold_small", 10 ] ] ]
   },
   {
+    "result": "copper_ear",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "copper", 1 ] ] ]
+  },
+  {
+    "result": "copper_ring",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "copper", 1 ] ] ]
+  },
+  {
     "result": "copper_bracelet",
     "copy-from": "copper_bracelet",
     "type": "recipe",
@@ -43,6 +120,28 @@
     "qualities": [ { "id": "CHISEL", "level": 2 } ],
     "tools": [ [ [ "swage", -1 ] ] ],
     "components": [ [ [ "copper", 6 ] ] ]
+  },
+  {
+    "result": "silver_ear",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "silver_small", 2 ] ] ]
+  },
+  {
+    "result": "silver_ring",
+    "copy-from": "gold_ring",
+    "type": "recipe",
+    "category": "CC_ARMOR",
+    "subcategory": "CSC_ARMOR_OTHER",
+    "autolearn": true,
+    "qualities": [ { "id": "CHISEL", "level": 2 } ],
+    "tools": [ [ [ "swage", -1 ] ] ],
+    "components": [ [ [ "silver_small", 2 ] ] ]
   },
   {
     "type": "recipe",
