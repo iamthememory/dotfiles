@@ -1,5 +1,6 @@
 # Firefox configuration.
-{ inputs
+{ config
+, inputs
 , pkgs
 , ...
 }: {
@@ -11,6 +12,9 @@
   # Firefox builds (and especially the linking step) seem to take dozens of
   # gigabytes of memory.
   programs.firefox.package = pkgs.firefox-bin;
+
+  # Ensure the firefox config path is under ~/.config.
+  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
 
   # Extensions for Firefox.
   programs.firefox.profiles.default.extensions.packages =
