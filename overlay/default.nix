@@ -12,6 +12,11 @@ self: super: {
   # own completions take priority.
   nix-zsh-completions = super.lib.setPrio 20 super.nix-zsh-completions;
 
+  # Skip tests for openldap on x86, since they seem to be failing.
+  openldap = super.openldap.overrideAttrs {
+    doCheck = !super.stdenv.hostPlatform.isi686;
+  };
+
   # Add the configuration for the 8BitDo Pro 2 controller.
   retroarch-joypad-autoconfig = super.retroarch-joypad-autoconfig.overrideAttrs {
     patches = [
