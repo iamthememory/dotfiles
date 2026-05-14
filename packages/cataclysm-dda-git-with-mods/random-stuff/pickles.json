@@ -1,0 +1,30 @@
+[
+  {
+    "id": "eggs_ferment_active",
+    "copy-from": "eggs_ferment_active",
+    "type": "ITEM",
+    "name": { "str": "fermenting eggs jar" },
+    "transform_into": { "target": "pickled_egg", "container": "jar_glass_sealed", "target_charges": 10, "sealed": true }
+  },
+  {
+    "id": "pickles_ferment_active",
+    "copy-from": "pickles_ferment_active",
+    "type": "ITEM",
+    "name": { "str": "fermenting pickle jar" },
+    "transform_into": { "target": "pickle", "container": "jar_glass_sealed", "target_charges": 8, "sealed": true }
+  },
+  {
+    "id": "sauerkraut_ferment_active",
+    "copy-from": "sauerkraut_ferment_active",
+    "type": "ITEM",
+    "name": { "str": "fermenting sauerkraut jar" },
+    "transform_into": { "target": "sauerkraut", "container": "jar_glass_sealed", "target_charges": 2, "sealed": true }
+  },
+  {
+    "id": "flask_yeast_active",
+    "copy-from": "flask_yeast_active",
+    "type": "ITEM",
+    "name": { "str_sp": "sealed yeast culture" },
+    "transform_into": { "target": "yeast", "container": "jar_glass_sealed", "target_charges": 50, "sealed": true }
+  }
+]
