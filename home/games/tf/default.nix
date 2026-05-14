@@ -20,6 +20,8 @@
             ./0002-missing-includes.patch
           ];
 
+          postPatch = "";
+
           src = inputs.tinyfugue-patched;
 
           buildInputs = with pkgs; oldAttrs.buildInputs ++ [
