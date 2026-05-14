@@ -55,6 +55,7 @@ let
       ./patches/cataclysm-deadly-bites.patch
       ./patches/cataclysm-defense-real-world.patch
       ./patches/cataclysm-dino-egg-vitamins.patch
+      ./patches/cataclysm-dino-fertilizer-fix.patch
       ./patches/cataclysm-disable-trait-flag-cache.patch
       ./patches/cataclysm-disable-warning.patch
       ./patches/cataclysm-dont-vanish-notakeoff-when-incorporeal.patch
