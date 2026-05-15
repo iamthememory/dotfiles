@@ -1,0 +1,12 @@
+diff --git a/data/mods/XedraWood/modinfo.json b/data/mods/XedraWood/modinfo.json
+index 2465a4c6431c..3f268ed78711 100644
+--- a/data/mods/XedraWood/modinfo.json
++++ b/data/mods/XedraWood/modinfo.json
+@@ -7,6 +7,6 @@
+     "maintainers": [ "StandingStorm" ],
+     "description": "Expands on connection between Xedra Evolved and Innawood, turning it into a full-fledged neolithic sword and sorcery setting.",
+     "category": "content",
+-    "dependencies": [ "dda", "xedra_evolved", "innawood" ]
++    "dependencies": [ "dda", "xedra_evolved", "innawood-compat" ]
+   }
+ ]

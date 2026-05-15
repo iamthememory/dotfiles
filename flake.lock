@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1778779641,
-        "narHash": "sha256-ANqT+sfottfrm0LYAobUSGb5TReiomnGIQZFvdOWlC4=",
+        "lastModified": 1778855853,
+        "narHash": "sha256-K7/uvfYzVQvGQ65qMYJXPNgs+keufKzpFE8OZb/iQRE=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "53a046abf4ea02ba2d706a17a43d8b5e44ee6338",
+        "rev": "4bcdbcb13bf6993225289a47cd4c7cf4ba63c065",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1778539503,
-        "narHash": "sha256-zQg0ZanYk/BpWk9afFvrT2BbesWoa/5BoebAXOPiB8c=",
+        "lastModified": 1778794892,
+        "narHash": "sha256-EVHkIp5QXVQOmRnNhGdevSWRABvXxzxW28m7AS/CBJA=",
         "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "008bc5cd04679e58da55232e3340a9b6e04d9005",
+        "rev": "7a6f94de96c22f854c749b53e6933610ab66c912",
         "type": "github"
       },
       "original": {
@@ -416,38 +416,6 @@
         "type": "github"
       }
     },
-    "cataclysm-dda-xe-innawoods": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774299598,
-        "narHash": "sha256-GGU1Yg7ax/vmGDXWnTi74ue978E/D4nG9MB5pVgvv+s=",
-        "owner": "Standing-Storm",
-        "repo": "ccda-xedra-evolved-innawoods",
-        "rev": "3a999a110abd3a62116cd0cbbc33339f923329cb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Standing-Storm",
-        "repo": "ccda-xedra-evolved-innawoods",
-        "type": "github"
-      }
-    },
-    "cataclysm-dda-xe-innawoods-places": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1770093426,
-        "narHash": "sha256-qFbvpaSyrK73JxPklrp2RTvy+WUFz2YSfBZqaaZMTw8=",
-        "owner": "Standing-Storm",
-        "repo": "XE-Innawood-Mysterious-Places",
-        "rev": "158039866ef96f9579cfd620e561cea6988af290",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Standing-Storm",
-        "repo": "XE-Innawood-Mysterious-Places",
-        "type": "github"
-      }
-    },
     "cdda-sounds": {
       "flake": false,
       "locked": {
@@ -594,11 +562,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778781368,
-        "narHash": "sha256-t7GW8f4So0b+ATPACjTkCy9UesbSidDW3X9w3utVC1A=",
+        "lastModified": 1778858474,
+        "narHash": "sha256-uOh5fCoxOgdFa50WymuhCwJKuEVv/Eo4VYjK0SgzlPs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c68d2a24376da3860ef161373d91348b1542356b",
+        "rev": "ca77575d39c908de876c10f93704532689df546f",
         "type": "github"
       },
       "original": {
@@ -646,11 +614,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1776242217,
-        "narHash": "sha256-TRts0fKUPFcf1i6rZHFGUDTfti/x3oKEg/CqsPRpSgs=",
+        "lastModified": 1778849865,
+        "narHash": "sha256-HiVhuhD7Fvfje3iw4slmtcCckz/LbjLITa4g/iTEbw0=",
         "owner": "thiagokokada",
         "repo": "nix-alien",
-        "rev": "4c5e52dda0d6ab3de814e364046769321d3e1021",
+        "rev": "1bb49f5aea63e95a3cf9c4b91f9f1331fef7a52b",
         "type": "github"
       },
       "original": {
@@ -667,11 +635,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775970782,
-        "narHash": "sha256-7jt9Vpm48Yy5yAWigYpde+HxtYEpEuyzIQJF4VYehhk=",
+        "lastModified": 1778393439,
+        "narHash": "sha256-mOtQxUjtKaPHLeoLOY/YEDctmud1X9KwJr4kE1MJ3Wc=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "bedba5989b04614fc598af9633033b95a937933f",
+        "rev": "01466c414c7357ae2ce32be4a272a7c69e94ab5f",
         "type": "github"
       },
       "original": {
@@ -682,11 +650,11 @@
     },
     "nixos-stable": {
       "locked": {
-        "lastModified": 1778430510,
-        "narHash": "sha256-Ti+ZBvW6yrWWAg2szExVTwCd4qOJ3KlVr1tFHfyfi8Q=",
+        "lastModified": 1778737229,
+        "narHash": "sha256-6xWoytx8jFW4PF1GjRm/i/53trbpKGfz6zjzQGBr4cI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8fd9daa3db09ced9700431c5b7ad0e8ba199b575",
+        "rev": "d7a713c0b7e47c908258e71cba7a2d77cc8d71d5",
         "type": "github"
       },
       "original": {
@@ -730,11 +698,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1778779945,
-        "narHash": "sha256-Ewp0d60I/3Vu5n1OhNWE+il9X+OZEi58VssgeJ42rw4=",
+        "lastModified": 1778871426,
+        "narHash": "sha256-kOXy5gUlKoqxs8uLbx1wcs2vJO0hybHfryU1NlXgwag=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e855160d98747e0156f28b46de9760ffd98f9a76",
+        "rev": "bacb1386dc51e3c04af690c3a1ce91f204f63821",
         "type": "github"
       },
       "original": {
@@ -746,11 +714,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1775710090,
-        "narHash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E=",
+        "lastModified": 1778443072,
+        "narHash": "sha256-zi7/fsqM/kFdNuED//4WOCUtezGtKKqRNORjMvfwjnA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4c1018dae018162ec878d42fec712642d214fdfa",
+        "rev": "da5ad661ba4e5ef59ba743f0d112cbc30e474f32",
         "type": "github"
       },
       "original": {
@@ -798,11 +766,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1778778474,
-        "narHash": "sha256-RSXjjj1jVf/wJSHNCUZrHQNnNpvSadv10vy7vvDwFbk=",
+        "lastModified": 1778870675,
+        "narHash": "sha256-SX5maeSsVW9vuIMCTFwVA9Dw7ntTP6yNG4e0JgeYGmE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "56dfc183a313e33408c32757f1e482b771e9ef7b",
+        "rev": "92263e11f194e564552809ff89a5e09e80749639",
         "type": "github"
       },
       "original": {
@@ -839,8 +807,6 @@
         "cataclysm-dda-stats-through-kills": "cataclysm-dda-stats-through-kills",
         "cataclysm-dda-stats-through-skills": "cataclysm-dda-stats-through-skills",
         "cataclysm-dda-tankmod": "cataclysm-dda-tankmod",
-        "cataclysm-dda-xe-innawoods": "cataclysm-dda-xe-innawoods",
-        "cataclysm-dda-xe-innawoods-places": "cataclysm-dda-xe-innawoods-places",
         "cdda-sounds": "cdda-sounds",
         "cdda-tilesets": "cdda-tilesets",
         "dircolors-solarized": "dircolors-solarized",
@@ -867,11 +833,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1778728594,
-        "narHash": "sha256-+gIOsOzqWNfn+ThCXBQGcLHVEnaGQW59XjghE9JUIYk=",
+        "lastModified": 1778815121,
+        "narHash": "sha256-xlhD+1NVJbhrUUM2usRHW6iKWTXP2uw2Fo6sWJmLg8g=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "83a17ebffcfacb17b49e1b5e9dc15eed07936648",
+        "rev": "017351829a9356423afd2cca0dde9b63346c8ab3",
         "type": "github"
       },
       "original": {
