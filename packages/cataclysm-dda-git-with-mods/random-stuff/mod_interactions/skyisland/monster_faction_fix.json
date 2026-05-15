@@ -1,0 +1,7 @@
+[
+  {
+    "type": "MONSTER_FACTION",
+    "name": "sky_island_traders",
+    "friendly": [ "player" ]
+  }
+]
