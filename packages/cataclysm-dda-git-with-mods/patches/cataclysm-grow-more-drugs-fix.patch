@@ -99,23 +99,25 @@ index 81c09b78ea0a..ff62bb065133 100644
    }
  ]
 diff --git a/mods/grow_more_drugs/items/cdf_items_food_raw.json b/mods/grow_more_drugs/items/cdf_items_food_raw.json
-index 482710abf4d9..820df7ee39b1 100644
+index 482710abf4d9..a635f7c74354 100644
 --- a/mods/grow_more_drugs/items/cdf_items_food_raw.json
 +++ b/mods/grow_more_drugs/items/cdf_items_food_raw.json
-@@ -1,9 +1,10 @@
+@@ -1,9 +1,12 @@
  [
    {
      "id": "cdf_coca_raw",
 -    "type": "COMESTIBLE",
 -    "looks_like": "lettuce",
 +    "type": "ITEM",
-+    "subtypes": [ "COMESTIBLE" ],
++    "subtypes": [ "COMESTIBLE", "AMMO" ],
++    "ammo_type": "components",
++    "category": "drug",
      "comestible_type": "MED",
 +    "looks_like": "lettuce",
      "name": { "str": "chopped coca leaf", "str_pl": "chopped coca leaves" },
      "description": "Leaves from the coca plant, chopped for ease of use. Can be further refined into cocaine or chewed as is.",
      "weight": "1 g",
-@@ -24,13 +25,14 @@
+@@ -24,13 +27,14 @@
      "use_action": [ "CHEW" ]
    },
    {
@@ -132,7 +134,7 @@ index 482710abf4d9..820df7ee39b1 100644
      "symbol": "^",
      "healthy": 1,
      "calories": 21,
-@@ -40,18 +42,19 @@
+@@ -40,18 +44,19 @@
      "material": [ "veggy" ],
      "volume": "100 ml",
      "fun": -12,
@@ -155,7 +157,7 @@ index 482710abf4d9..820df7ee39b1 100644
      "symbol": "%",
      "calories": 35,
      "description": "A handful of freshly-picked bluebell flowers.  In their current raw state they are totally edible, but are a lot tastier when properly cooked.",
-@@ -60,7 +63,7 @@
+@@ -60,7 +65,7 @@
      "material": [ "veggy" ],
      "volume": "100 ml",
      "fun": -2,
@@ -465,6 +467,49 @@ index 34fcae237491..45e7078fbcfc 100644
      "maintainers": [ "Jackledead" ],
      "description": "Adds different drug crops that would not grow in New England, but work great with TropiCataclysm. Successor mod to Climate Defying Farming by Maddremor. Plants/seeds: Coca, coffee, tea, poppy, tobacco.",
      "category": "items",
+diff --git a/mods/grow_more_drugs/recipes/cdf_recipes_refining.json b/mods/grow_more_drugs/recipes/cdf_recipes_refining.json
+index 7aa7fc3f246c..6ee1bdce30d6 100644
+--- a/mods/grow_more_drugs/recipes/cdf_recipes_refining.json
++++ b/mods/grow_more_drugs/recipes/cdf_recipes_refining.json
+@@ -6,7 +6,7 @@
+     "category": "CC_CHEM",
+     "subcategory": "CSC_CHEM_DRUGS",
+     "skill_used": "survival",
+-    "time": "25 m",
++    "time": "5 m",
+     "charges": 500,
+     "autolearn": true,
+     "qualities": [ { "id": "CUT", "level": 1 } ],
+@@ -21,9 +21,9 @@
+     "subcategory": "CSC_CHEM_DRUGS",
+     "skill_used": "chemistry",
+     "difficulty": 4,
+-    "time": "6 h",
++    "time": "4 h",
+     "book_learn": [ [ "adv_chemistry", 4 ], [ "recipe_labchem", 4 ], [ "textbook_anarch", 4 ] ],
+-    "batch_time_factors": [ 30, 3 ],
++    "batch_time_factors": [ 90, 1 ],
+     "proficiencies": [
+       { "proficiency": "prof_intro_chemistry" },
+       { "proficiency": "prof_organic_chemistry" },
+@@ -51,7 +51,7 @@
+     "subcategory": "CSC_CHEM_DRUGS",
+     "skill_used": "chemistry",
+     "difficulty": 3,
+-    "time": "7 h",
++    "time": "4 h",
+     "book_learn": [
+       [ "textbook_anarch", 2 ],
+       [ "textbook_chemistry", 3 ],
+@@ -59,7 +59,7 @@
+       [ "adv_chemistry", 4 ],
+       [ "recipe_labchem", 4 ]
+     ],
+-    "batch_time_factors": [ 30, 3 ],
++    "batch_time_factors": [ 90, 1 ],
+     "proficiencies": [
+       { "proficiency": "prof_intro_chemistry" },
+       { "proficiency": "prof_organic_chemistry" },
 diff --git a/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json b/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json
 deleted file mode 100644
 index bfd6e6279ec6..000000000000
