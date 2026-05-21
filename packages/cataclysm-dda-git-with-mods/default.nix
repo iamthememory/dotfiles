@@ -189,6 +189,7 @@ let
       "simplified-transport" = "simplified-transport";
       "simplified-travel" = "simplified-travel";
       "tough-tyres" = "tough-tyres";
+      "visible-extras" = "visible-extras";
     });
 
   dorf-life = cataclysmDDA.buildMod {

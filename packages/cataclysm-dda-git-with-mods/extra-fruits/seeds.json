@@ -414,5 +414,29 @@
     "copy-from": "seed_eggplant",
     "name": { "str_sp": "eggplant seeds" },
     "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_artichoke",
+    "copy-from": "seed_artichoke",
+    "name": { "str_sp": "artichoke seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_asparagus",
+    "copy-from": "seed_asparagus",
+    "name": { "str_sp": "asparagus seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_brussels_sprout",
+    "copy-from": "seed_brussels_sprout",
+    "name": { "str_sp": "brussels sprout seeds" },
+    "seeds": true
   }
 ]

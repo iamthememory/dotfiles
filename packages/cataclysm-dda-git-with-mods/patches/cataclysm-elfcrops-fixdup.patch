@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..22686aad2cb9 100644
+index df4ffa673168..f52846d2c7a9 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..22686aad2cb9 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,836 @@
+@@ -615,9 +571,883 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2870,12 +2870,12 @@ index df4ffa673168..22686aad2cb9 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_welding",
 +    "items": [
-+      { "item": "welding_rod_steel", "prob": 10, "charges": [ 100, 200 ] },
-+      { "item": "welding_rod_alloy", "prob": 10, "charges": [ 100, 200 ] },
-+      { "item": "welding_wire_steel", "prob": 10, "charges": [ 100, 200 ] },
-+      { "item": "welding_wire_alloy", "prob": 10, "charges": [ 100, 200 ] },
-+      { "item": "brazing_rod_bronze", "prob": 10, "charges": [ 100, 200 ] },
-+      { "item": "brazing_rod_alloy", "prob": 10, "charges": [ 100, 200 ] }
++      { "item": "welding_rod_steel", "prob": 10, "count": [ 100, 200 ] },
++      { "item": "welding_rod_alloy", "prob": 10, "count": [ 100, 200 ] },
++      { "item": "welding_wire_steel", "prob": 10, "count": [ 100, 200 ] },
++      { "item": "welding_wire_alloy", "prob": 10, "count": [ 100, 200 ] },
++      { "item": "brazing_rod_bronze", "prob": 10, "count": [ 100, 200 ] },
++      { "item": "brazing_rod_alloy", "prob": 10, "count": [ 100, 200 ] }
 +    ]
 +  },
 +  {
@@ -2889,6 +2889,7 @@ index df4ffa673168..22686aad2cb9 100644
 +      { "item": "blackberries", "prob": 10 },
 +      { "item": "blueberries", "prob": 10 },
 +      { "item": "broccoli", "prob": 10 },
++      { "item": "brussels_sprout", "prob": 10 },
 +      { "item": "buckwheat_stalks", "prob": 20 },
 +      { "item": "cabbage_head", "prob": 10 },
 +      { "item": "cactus_pad", "prob": 10 },
@@ -2937,6 +2938,8 @@ index df4ffa673168..22686aad2cb9 100644
 +      { "item": "pumpkin", "prob": 10 },
 +      { "item": "radish_taproot", "prob": 10 },
 +      { "item": "raspberries", "prob": 10 },
++      { "item": "raw_artichoke", "prob": 10 },
++      { "item": "raw_asparagus", "prob": 10 },
 +      { "item": "raw_bamboo", "prob": 10 },
 +      { "item": "raw_beans", "prob": 30 },
 +      { "item": "raw_bottle_gourd", "prob": 10 },
@@ -3163,6 +3166,50 @@ index df4ffa673168..22686aad2cb9 100644
 +      { "item": "wood_beam", "prob": 5 },
 +      { "item": "wood_panel", "prob": 5 },
 +      { "item": "wool_staple", "prob": 5 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_copperwire",
++    "items": [
++      { "item": "cable", "count": 200 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_gunpowder",
++    "items": [
++      { "item": "gunpowder", "count": 4540, "container-item": "bottle_plastic" },
++      { "item": "gunpowder_shotgun", "count": 4540, "container-item": "bottle_plastic" },
++      { "item": "gunpowder_pistol", "count": 4540, "container-item": "bottle_plastic" },
++      { "item": "gunpowder_magnum_pistol", "count": 4540, "container-item": "bottle_plastic" },
++      { "item": "gunpowder_rifle", "count": 4540, "container-item": "bottle_plastic" },
++      { "item": "gunpowder_large_rifle", "count": 4540, "container-item": "bottle_plastic" },
++      { "item": "gunpowder_artillery", "count": 4540, "container-item": "bottle_plastic" },
++
++      { "item": "smpistol_primer", "count": 200, "container-item": "bottle_plastic" },
++      { "item": "lgpistol_primer", "count": 200, "container-item": "bottle_plastic" },
++      { "item": "smrifle_primer", "count": 200, "container-item": "bottle_plastic" },
++      { "item": "lgrifle_primer", "count": 200, "container-item": "bottle_plastic" },
++      { "item": "shotgun_primer", "count": 200, "container-item": "bottle_plastic" }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_copper",
++    "items": [
++      { "item": "copper", "count": 200 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_solder",
++    "items": [
++      { "item": "solder", "count": 200 }
      ]
    }
 -]
@@ -3701,10 +3748,10 @@ index fccd89aa02a2..7665c0bbef75 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..cd13debe8541 100644
+index ce70e9badaf0..3d836541d1ed 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1507 @@
+@@ -1,1046 +1,1591 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -5913,6 +5960,90 @@ index ce70e9badaf0..cd13debe8541 100644
 +          "effect": [
 +            { "npc_location_variable": { "context_val": "loc" } },
 +            { "map_spawn_item": "rc_drop_gamble", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_copperwire",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon copper wire fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with wires in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_copperwire",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_copperwire", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_gunpowder",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon gunpowder fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with gunpowder in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_gunpowder",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_gunpowder", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_copper",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon copper fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with copper in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_copper",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_copper", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_solder",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon solder fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with solder in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_solder",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_solder", "loc": { "context_val": "loc" }, "use_item_group": true }
 +          ]
 +        }
 +      ]
@@ -15526,7 +15657,7 @@ index 83c7aca5e180..be06581c1b8b 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
-index f2819e545949..153328bea642 100644
+index f2819e545949..b5b1db7c04a6 100644
 --- a/Resource Crops/seeds/metal seeds.json	
 +++ b/Resource Crops/seeds/metal seeds.json	
 @@ -2,385 +2,505 @@
@@ -16313,7 +16444,7 @@ index f2819e545949..153328bea642 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "solder bush",
-+    "fruit": "solder_wire",
++    "fruit": "rc_spawn_solder",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -17034,7 +17165,7 @@ index bd3cb009fb17..2c8aa5d45de8 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/seed.json b/Resource Crops/seeds/seed.json
-index b11153388c60..45dd992282eb 100644
+index b11153388c60..5530a93862f7 100644
 --- a/Resource Crops/seeds/seed.json	
 +++ b/Resource Crops/seeds/seed.json	
 @@ -2,417 +2,631 @@
@@ -17214,7 +17345,7 @@ index b11153388c60..45dd992282eb 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "gunpowder flower",
-+    "fruit": "gunpowder",
++    "fruit": "rc_spawn_gunpowder",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

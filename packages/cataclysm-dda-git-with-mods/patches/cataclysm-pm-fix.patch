@@ -1538,7 +1538,7 @@ index 70224d9f3d9e..e3cf81e61be9 100644
    },
    {
 diff --git a/Items/StigmaWorkshop/weapons.json b/Items/StigmaWorkshop/weapons.json
-index e34072c3fe35..8b2ba2635ab8 100644
+index e760fd194ff2..48695e1f170f 100644
 --- a/Items/StigmaWorkshop/weapons.json
 +++ b/Items/StigmaWorkshop/weapons.json
 @@ -122,6 +122,7 @@
@@ -1567,13 +1567,13 @@ index e34072c3fe35..8b2ba2635ab8 100644
      "use_action": {
 @@ -495,4 +498,4 @@
      "power_draw": "600 kW",
-     "transform_into": { "target": "stigma_axe_u" }
+     "revert_to": "stigma_axe_u"
    }
 -]
 \ No newline at end of file
 +]
 diff --git a/Items/internet/internet_access.json b/Items/internet/internet_access.json
-index 5d17d864d173..7bb303f2cdab 100644
+index fac1b379b2a4..7bb303f2cdab 100644
 --- a/Items/internet/internet_access.json
 +++ b/Items/internet/internet_access.json
 @@ -24,7 +24,6 @@
@@ -1707,7 +1707,7 @@ index 5d17d864d173..7bb303f2cdab 100644
 -      }
 -    ],
      "power_draw": "1500 mW",
--    "transform_into": { "target": "smart_phone" }
+-    "revert_to": "smart_phone"
 +    "transform_into": { "target": "smart_phone" },
 +    "light": 20,
 +    "extend": { "flags": [ "CHARGEDIM", "TRADER_AVOID", "SPAWN_ACTIVE" ] }
@@ -1785,7 +1785,7 @@ index 5d17d864d173..7bb303f2cdab 100644
 -      }
 -    ],
      "power_draw": "1 W",
--    "transform_into": { "target": "laptop" }
+-    "revert_to": "laptop"
 +    "transform_into": { "target": "laptop" },
 +    "light": 10,
 +    "extend": { "flags": [ "SPAWN_ACTIVE" ] }
@@ -1839,12 +1839,12 @@ index fd7a4dc925bf..b55424b9717a 100644
 \ No newline at end of file
 +]
 diff --git a/Maps/Map_extras.json b/Maps/Map_extras.json
-index 0a5e8df17563..88b304795e5e 100644
+index 4756d5ea4340..c15649a2a6a3 100644
 --- a/Maps/Map_extras.json
 +++ b/Maps/Map_extras.json
 @@ -29,4 +29,4 @@
      "color": "blue",
-     "autonote_visibility": "always"
+     "autonote": true
    }
 -]
 \ No newline at end of file
@@ -4254,10 +4254,10 @@ index 000000000000..55a50cc42cc3
 +  }
 +]
 diff --git a/region_overlay.json b/region_overlay.json
-index c581ff236dda..aa60b25dca85 100644
+index fb9eb14a3f15..aa60b25dca85 100644
 --- a/region_overlay.json
 +++ b/region_overlay.json
-@@ -1,30 +1,68 @@
+@@ -1,29 +1,68 @@
  [
    {
 -    "type": "region_settings",
@@ -4304,7 +4304,6 @@ index c581ff236dda..aa60b25dca85 100644
    {
 -    "type": "region_settings_city",
 -    "id": "default_pm_world_cities",
--    "copy-from": "default",
 -    "shops": [ [ "w_corp_city_station", 250 ] ],
 -    "delete": { "shops": [ "s_hunting", "s_gun_a", "s_gun_b", "mil_surplus", "mil_surplus_1", "mil_surplus_2" ] }
 +    "type": "map_extra_collection",
