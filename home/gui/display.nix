@@ -159,7 +159,8 @@ in
       # The default screenshot location.
       General.savePath = defaultScreenshotDirectory;
 
-      # Use the legacy X11 screenshotting until I'm on wayland.
-      General.useX11LegacyScreenshot = true;
+      # Use the legacy X11 screenshotting until I'm on wayland or figure out
+      # what portal's needed for i3wm.
+      #General.useX11LegacyScreenshot = true;
     };
 }
