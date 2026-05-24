@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..f52846d2c7a9 100644
+index df4ffa673168..8be07c4a1587 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..f52846d2c7a9 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,883 @@
+@@ -615,9 +571,916 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2597,6 +2597,7 @@ index df4ffa673168..f52846d2c7a9 100644
 +      { "item": "kelp_sugar", "prob": 10 },
 +      { "item": "bladderwrack", "prob": 10 },
 +      { "item": "sea_lettuce", "prob": 10 },
++      { "item": "raw_asparagus", "prob": 10 },
 +      { "item": "mango", "prob": 10, "count": [ 2, 5 ] },
 +      { "item": "papaya", "prob": 10, "count": [ 2, 5 ] },
 +      { "item": "pomegranate", "prob": 10, "count": [ 2, 5 ] },
@@ -2898,6 +2899,7 @@ index df4ffa673168..f52846d2c7a9 100644
 +      { "item": "carrot", "prob": 10 },
 +      { "item": "carrot_wild", "prob": 10 },
 +      { "item": "cattail_stalk", "prob": 10 },
++      { "item": "cauliflower_head", "prob": 10 },
 +      { "item": "celery", "prob": 10 },
 +      { "item": "chamomile", "prob": 10 },
 +      { "item": "chicory_raw", "prob": 10 },
@@ -2911,6 +2913,7 @@ index df4ffa673168..f52846d2c7a9 100644
 +      { "item": "dogbane", "prob": 10 },
 +      { "item": "dry_lentil_stalks", "prob": 20 },
 +      { "item": "eggplant", "prob": 10 },
++      { "item": "eggplant", "prob": 10 },
 +      { "item": "elderberries", "prob": 10 },
 +      { "item": "garlic", "prob": 30 },
 +      { "item": "gherkin", "prob": 10 },
@@ -2921,6 +2924,7 @@ index df4ffa673168..f52846d2c7a9 100644
 +      { "item": "huckleberries", "prob": 10 },
 +      { "item": "japanese_knotweed_stem", "prob": 10 },
 +      { "item": "jerusalem_artichoke", "prob": 10 },
++      { "item": "kale", "prob": 10 },
 +      { "item": "lettuce_head", "prob": 10 },
 +      { "item": "lotus_rhizome", "prob": 10 },
 +      { "item": "m_stellatum_berries", "prob": 10 },
@@ -2932,6 +2936,7 @@ index df4ffa673168..f52846d2c7a9 100644
 +      { "item": "mushroom_morel", "prob": 10 },
 +      { "item": "oat_stalks", "prob": 20 },
 +      { "item": "onion", "prob": 10 },
++      { "item": "pea_pods", "prob": 10 },
 +      { "item": "popcorn_cob", "prob": 30 },
 +      { "item": "poppy_bud", "prob": 10 },
 +      { "item": "potato", "prob": 10 },
@@ -3145,7 +3150,7 @@ index df4ffa673168..f52846d2c7a9 100644
 +      { "item": "solar_panel_v2", "prob": 5 },
 +      { "item": "solder_wire", "prob": 5 },
 +      { "item": "spike", "prob": 5 },
-+      { "item": "steel_chunk", "prob": 5 },
++      { "item": "steel_chunk", "prob": 5, "count": 4 },
 +      { "item": "steel_lump", "prob": 5 },
 +      { "item": "steel_plate", "prob": 5 },
 +      { "item": "stick_long", "prob": 5 },
@@ -3210,6 +3215,34 @@ index df4ffa673168..f52846d2c7a9 100644
 +    "id": "rc_drop_solder",
 +    "items": [
 +      { "item": "solder", "count": 200 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_steel_chunk",
++    "items": [
++      { "item": "steel_chunk", "count": 4 },
++      { "item": "budget_steel_chunk", "count": 4 },
++      { "item": "lc_steel_chunk", "count": 4 },
++      { "item": "qt_steel_chunk", "count": 4 },
++      { "item": "mc_steel_chunk", "count": 4 },
++      { "item": "hc_steel_chunk", "count": 4 },
++      { "item": "ch_steel_chunk", "count": 4 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_steel_lump",
++    "items": [
++      { "item": "steel_lump" },
++      { "item": "budget_steel_lump" },
++      { "item": "lc_steel_lump" },
++      { "item": "qt_steel_lump" },
++      { "item": "mc_steel_lump" },
++      { "item": "hc_steel_lump" },
++      { "item": "ch_steel_lump" }
      ]
    }
 -]
@@ -3748,10 +3781,10 @@ index fccd89aa02a2..7665c0bbef75 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..3d836541d1ed 100644
+index ce70e9badaf0..7833b6db705b 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1591 @@
+@@ -1,1046 +1,1633 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -6044,6 +6077,48 @@ index ce70e9badaf0..3d836541d1ed 100644
 +          "effect": [
 +            { "npc_location_variable": { "context_val": "loc" } },
 +            { "map_spawn_item": "rc_drop_solder", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_steel_chunk",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon steel chunk fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with steel in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_steel_chunk",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_steel_chunk", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_steel_lump",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon steel lump fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with steel in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_steel_lump",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_steel_lump", "loc": { "context_val": "loc" }, "use_item_group": true }
 +          ]
 +        }
 +      ]
@@ -15657,7 +15732,7 @@ index 83c7aca5e180..be06581c1b8b 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
-index f2819e545949..b5b1db7c04a6 100644
+index f2819e545949..b936d50f8fb3 100644
 --- a/Resource Crops/seeds/metal seeds.json	
 +++ b/Resource Crops/seeds/metal seeds.json	
 @@ -2,385 +2,505 @@
@@ -15750,7 +15825,7 @@ index f2819e545949..b5b1db7c04a6 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "lump of steel bush",
-+    "fruit": "steel_lump",
++    "fruit": "rc_spawn_steel_lump",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

@@ -438,5 +438,29 @@
     "copy-from": "seed_brussels_sprout",
     "name": { "str_sp": "brussels sprout seeds" },
     "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_cauliflower",
+    "copy-from": "seed_cauliflower",
+    "name": { "str_sp": "cauliflower seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_kale",
+    "copy-from": "seed_kale",
+    "name": { "str_sp": "kale seeds" },
+    "seeds": true
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_pea",
+    "copy-from": "seed_pea",
+    "name": { "str_sp": "pea seeds" },
+    "seeds": true
   }
 ]
