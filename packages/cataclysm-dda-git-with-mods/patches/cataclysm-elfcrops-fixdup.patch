@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..8be07c4a1587 100644
+index df4ffa673168..b803eb5baf36 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2871,12 +2871,12 @@ index df4ffa673168..8be07c4a1587 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_welding",
 +    "items": [
-+      { "item": "welding_rod_steel", "prob": 10, "count": [ 100, 200 ] },
-+      { "item": "welding_rod_alloy", "prob": 10, "count": [ 100, 200 ] },
-+      { "item": "welding_wire_steel", "prob": 10, "count": [ 100, 200 ] },
-+      { "item": "welding_wire_alloy", "prob": 10, "count": [ 100, 200 ] },
-+      { "item": "brazing_rod_bronze", "prob": 10, "count": [ 100, 200 ] },
-+      { "item": "brazing_rod_alloy", "prob": 10, "count": [ 100, 200 ] }
++      { "item": "welding_rod_steel", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" },
++      { "item": "welding_rod_alloy", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" },
++      { "item": "welding_wire_steel", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "spool_welding" },
++      { "item": "welding_wire_alloy", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "spool_welding" },
++      { "item": "brazing_rod_bronze", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" },
++      { "item": "brazing_rod_alloy", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" }
 +    ]
 +  },
 +  {
@@ -3121,6 +3121,9 @@ index df4ffa673168..8be07c4a1587 100644
 +      { "item": "rc_spawn_rebarrailfungus", "prob": 5 },
 +      { "item": "rc_spawn_rpgfungus", "prob": 5 },
 +      { "item": "rc_spawn_shotgunfungus", "prob": 5 },
++      { "item": "rc_spawn_solder", "prob": 5 },
++      { "item": "rc_spawn_steel_chunk", "prob": 5 },
++      { "item": "rc_spawn_steel_lump", "prob": 5 },
 +      { "item": "rc_spawn_welding_fungus", "prob": 5 },
 +      { "item": "rebar", "prob": 5 },
 +      { "item": "reinforced_glass_pane", "prob": 5 },
@@ -3148,10 +3151,7 @@ index df4ffa673168..8be07c4a1587 100644
 +      { "item": "solar_cell", "prob": 5 },
 +      { "item": "solar_panel", "prob": 5 },
 +      { "item": "solar_panel_v2", "prob": 5 },
-+      { "item": "solder_wire", "prob": 5 },
 +      { "item": "spike", "prob": 5 },
-+      { "item": "steel_chunk", "prob": 5, "count": 4 },
-+      { "item": "steel_lump", "prob": 5 },
 +      { "item": "steel_plate", "prob": 5 },
 +      { "item": "stick_long", "prob": 5 },
 +      { "item": "string_36", "prob": 5 },
@@ -3214,7 +3214,7 @@ index df4ffa673168..8be07c4a1587 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_solder",
 +    "items": [
-+      { "item": "solder", "count": 200 }
++      { "item": "solder_wire", "count": 200, "entity-wrapper": "spool_welding" }
 +    ]
 +  },
 +  {
