@@ -43,9 +43,9 @@
   # older GPUs.
   hardware.nvidia.open = false;
 
-  # Use older drivers, as versions after 570 no longer support the 1070.
+  # Use older drivers, as versions after 580 no longer support the 1070.
   hardware.nvidia.package =
-    config.boot.kernelPackages.nvidiaPackages.legacy_470;
+    config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
   # Enable system76 hardware options.
   hardware.system76.enableAll = true;
