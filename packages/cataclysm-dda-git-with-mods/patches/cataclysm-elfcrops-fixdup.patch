@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..b803eb5baf36 100644
+index df4ffa673168..6a79de1fda39 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..b803eb5baf36 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,916 @@
+@@ -615,9 +571,952 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -3214,7 +3214,7 @@ index df4ffa673168..b803eb5baf36 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_solder",
 +    "items": [
-+      { "item": "solder_wire", "count": 200, "entity-wrapper": "spool_welding" }
++      { "group": "solder_wire_spool", "count": 2 }
 +    ]
 +  },
 +  {
@@ -3243,6 +3243,42 @@ index df4ffa673168..b803eb5baf36 100644
 +      { "item": "mc_steel_lump" },
 +      { "item": "hc_steel_lump" },
 +      { "item": "ch_steel_lump" }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_scrap",
++    "items": [
++      { "item": "scrap", "count": 8 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_lead",
++    "items": [
++      { "item": "lead", "count": 100 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_sheet_metal_small",
++    "items": [
++      { "item": "sheet_metal_small", "count": [ 1, 2 ] },
++      { "item": "mc_sheet_metal_small", "count": [ 1, 2 ] },
++      { "item": "hc_sheet_metal_small", "count": [ 1, 2 ] },
++      { "item": "ch_sheet_metal_small", "count": [ 1, 2 ] },
++      { "item": "qt_sheet_metal_small", "count": [ 1, 2 ] }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_tin",
++    "items": [
++      { "item": "tin", "count": 100 }
      ]
    }
 -]
@@ -3781,10 +3817,10 @@ index fccd89aa02a2..7665c0bbef75 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..7833b6db705b 100644
+index ce70e9badaf0..9d6b34889145 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1633 @@
+@@ -1,1046 +1,1717 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -6119,6 +6155,90 @@ index ce70e9badaf0..7833b6db705b 100644
 +          "effect": [
 +            { "npc_location_variable": { "context_val": "loc" } },
 +            { "map_spawn_item": "rc_drop_steel_lump", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_scrap",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon scrap fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with scrap metal in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_scrap",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_scrap", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_lead",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon lead fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with lead in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_lead",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_lead", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_sheet_metal_small",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon small metal sheet fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with small metal sheets in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_sheet_metal_small",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_sheet_metal_small", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
++    }
++  },
++  {
++    "id": "rc_spawn_tin",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon tin fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with tin in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_tin",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "rc_drop_tin", "loc": { "context_val": "loc" }, "use_item_group": true }
 +          ]
 +        }
 +      ]
@@ -15732,7 +15852,7 @@ index 83c7aca5e180..be06581c1b8b 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
-index f2819e545949..b936d50f8fb3 100644
+index f2819e545949..34fea07aa621 100644
 --- a/Resource Crops/seeds/metal seeds.json	
 +++ b/Resource Crops/seeds/metal seeds.json	
 @@ -2,385 +2,505 @@
@@ -15792,7 +15912,7 @@ index f2819e545949..b936d50f8fb3 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "small metal sheet bush",
-+    "fruit": "sheet_metal_small",
++    "fruit": "rc_spawn_sheet_metal_small",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -15891,7 +16011,7 @@ index f2819e545949..b936d50f8fb3 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "scrap metal bush",
-+    "fruit": "scrap",
++    "fruit": "rc_spawn_scrap",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -16320,7 +16440,7 @@ index f2819e545949..b936d50f8fb3 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "lead bush",
-+    "fruit": "lead",
++    "fruit": "rc_spawn_lead",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },
@@ -16353,7 +16473,7 @@ index f2819e545949..b936d50f8fb3 100644
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
 +    "plant_name": "tin bush",
-+    "fruit": "tin",
++    "fruit": "rc_spawn_tin",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
 +      { "GROWTH_SEED": "15 days" },

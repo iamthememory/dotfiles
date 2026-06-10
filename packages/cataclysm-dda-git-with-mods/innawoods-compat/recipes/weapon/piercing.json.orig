@@ -1,0 +1,18 @@
+[
+  {
+    "type": "recipe",
+    "result": "spear_dory",
+    "copy-from": "spear_dory",
+    "autolearn": true,
+    "qualities": [ { "id": "CUT", "level": 2 } ],
+    "tools": [ [ [ "casting_mold", -1 ] ] ],
+    "components": [ [ [ "scrap_bronze", 2 ] ], [ [ "long_pole", 1 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "pike",
+    "copy-from": "pike",
+    "autolearn": true,
+    "components": [ [ [ "long_pole", 1 ] ], [ [ "fur", 2 ], [ "leather", 2 ] ], [ [ "nail", 1 ] ] ]
+  }
+]

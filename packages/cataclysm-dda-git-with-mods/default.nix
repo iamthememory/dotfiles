@@ -32,7 +32,13 @@
 , cdda-tilesets
 , clang
 , flake-revision
+, glslang
 , lib
+, python3
+, sdl3
+, sdl3-image
+, sdl3-mixer
+, sdl3-ttf
 , stdenv
 }:
 let
@@ -89,6 +95,15 @@ let
       ./patches/cataclysm-xedra-show-gramarye.patch
       ./patches/cataclysm-xedra-wallet.patch
       ./patches/cataclysm-xedrawood.patch
+    ];
+
+    buildInputs = oldAttrs.buildInputs ++ [
+      glslang
+      python3
+      sdl3
+      sdl3-image
+      sdl3-mixer
+      sdl3-ttf
     ];
 
     # Build with clang, as upstream does.

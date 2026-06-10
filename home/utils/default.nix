@@ -132,9 +132,6 @@
     # A replacement tool similar to sed.
     sd
 
-    # A tool like ack, but faster.
-    silver-searcher
-
     # A tool for tracing system calls.
     strace
 

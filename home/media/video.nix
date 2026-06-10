@@ -3,6 +3,8 @@
 , ...
 }: {
   home.packages = with pkgs; [
+    handbrake
+
     # A video editor.
     kdePackages.kdenlive
   ];

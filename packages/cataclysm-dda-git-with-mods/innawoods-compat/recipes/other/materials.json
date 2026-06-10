@@ -79,18 +79,6 @@
   },
   {
     "type": "recipe",
-    "result": "sheet_fibercloth",
-    "copy-from": "sheet_fibercloth",
-    "id_suffix": "spinningwheel_innawoods",
-    "batch_time_factors": [ 70, 1 ],
-    "time": "5 m",
-    "autolearn": true,
-    "tools": [ [ [ "spinwheelitem", -1 ] ] ],
-    "qualities": [ { "id": "CUT", "level": 2 } ],
-    "components": [ [ [ "plant_fibre", 50 ] ] ]
-  },
-  {
-    "type": "recipe",
     "result": "lc_steel_lump",
     "copy-from": "lc_steel_lump",
     "batch_time_factors": [ 90, 2 ],

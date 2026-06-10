@@ -1,5 +1,5 @@
 diff --git a/data/mods/DinoMod/recipes/medsandchemicals.json b/data/mods/DinoMod/recipes/medsandchemicals.json
-index 60205f003b0d..79c8d5948bd0 100644
+index 0ec9e1a772b7..797eb0b215ba 100644
 --- a/data/mods/DinoMod/recipes/medsandchemicals.json
 +++ b/data/mods/DinoMod/recipes/medsandchemicals.json
 @@ -194,7 +194,7 @@
@@ -8,6 +8,6 @@ index 60205f003b0d..79c8d5948bd0 100644
      "result": "fertilizer_liquid",
 -    "id_suffix": "simple",
 +    "id_suffix": "dino_simple",
+     "charges": 4,
      "category": "CC_CHEM",
      "subcategory": "CSC_CHEM_CHEMICALS",
-     "skill_used": "survival",

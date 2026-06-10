@@ -1,12 +1,1226 @@
+diff --git a/data/mods/XedraWood/external_options_and_monster_adjustments.json b/data/mods/XedraWood/external_options_and_monster_adjustments.json
+index 0fc56d5b23df..f0a888589a4b 100644
+--- a/data/mods/XedraWood/external_options_and_monster_adjustments.json
++++ b/data/mods/XedraWood/external_options_and_monster_adjustments.json
+@@ -13,13 +13,6 @@
+     "stype": "float",
+     "value": -78.644257
+   },
+-  {
+-    "type": "EXTERNAL_OPTION",
+-    "name": "CBM_SLOTS_ENABLED",
+-    "//": "Used here to enable body slots for magical tattoos",
+-    "stype": "bool",
+-    "value": true
+-  },
+   {
+     "type": "EXTERNAL_OPTION",
+     "name": "SPAWN_ANIMAL_DENSITY",
+@@ -37,35 +30,5 @@
+     "name": "INT_BASED_LEARNING_FOCUS_ADJUSTMENT",
+     "stype": "int",
+     "value": 6
+-  },
+-  {
+-    "type": "EXTERNAL_OPTION",
+-    "name": "ZOMBIFY_INTO_ENABLED",
+-    "stype": "bool",
+-    "value": false
+-  },
+-  {
+-    "type": "EXTERNAL_OPTION",
+-    "name": "EVOLUTION_INVERSE_MULTIPLIER",
+-    "//": "Higher-evo monsters should mostly be spawned through mapgen or map extras, so just crank this up so we don't have to edit a ton of monsters to turn evolution off",
+-    "stype": "float",
+-    "value": 99.0
+-  },
+-  {
+-    "type": "monster_adjustment",
+-    "species": "ZOMBIE",
+-    "flag": { "name": "REVIVES", "value": false },
+-    "stat": { "name": "speed", "modifier": 0.9 }
+-  },
+-  {
+-    "type": "monster_adjustment",
+-    "species": "ZOMBIE",
+-    "flag": { "name": "WARM", "value": false },
+-    "stat": { "name": "hp", "modifier": 4 }
+-  },
+-  {
+-    "type": "monster_adjustment",
+-    "species": "ZOMBIE",
+-    "stat": { "name": "bleed_rate", "modifier": 0 }
+   }
+ ]
+diff --git a/data/mods/XedraWood/mod_interactions/innawood/scenarios.json b/data/mods/XedraWood/mod_interactions/innawood/scenarios.json
+deleted file mode 100644
+index 50adf3a7a5b2..000000000000
+--- a/data/mods/XedraWood/mod_interactions/innawood/scenarios.json
++++ /dev/null
+@@ -1,31 +0,0 @@
+-[
+-  {
+-    "type": "SCENARIO_BLACKLIST",
+-    "subtype": "whitelist",
+-    "scenarios": [
+-      "evacuee",
+-      "cave_lonesome",
+-      "medieval",
+-      "migo_prisoner",
+-      "xedrawood_wise_one_start",
+-      "wilderness",
+-      "strong_portal_storm",
+-      "portal_dependent",
+-      "infected",
+-      "hunted_start",
+-      "fungal_start",
+-      "bad_day",
+-      "bordered",
+-      "ambushed",
+-      "summer_advanced_start",
+-      "paraclesian_birth",
+-      "paraclesian_birth_naked_afraid",
+-      "werewolf_native",
+-      "werewolf_native_naked_unafraid",
+-      "xe_lilin_scenario",
+-      "xe_lilin_scenario_naked_afraid",
+-      "once_bitten",
+-      "once_bitten_naked_and_afraid"
+-    ]
+-  }
+-]
 diff --git a/data/mods/XedraWood/modinfo.json b/data/mods/XedraWood/modinfo.json
-index 2465a4c6431c..3f268ed78711 100644
+index abb45360a020..3f268ed78711 100644
 --- a/data/mods/XedraWood/modinfo.json
 +++ b/data/mods/XedraWood/modinfo.json
-@@ -7,6 +7,6 @@
+@@ -7,7 +7,6 @@
      "maintainers": [ "StandingStorm" ],
      "description": "Expands on connection between Xedra Evolved and Innawood, turning it into a full-fledged neolithic sword and sorcery setting.",
      "category": "content",
--    "dependencies": [ "dda", "xedra_evolved", "innawood" ]
+-    "dependencies": [ "dda", "xedra_evolved", "innawood" ],
+-    "conflicts": [ "magiclysm", "generic_guns", "MA" ]
 +    "dependencies": [ "dda", "xedra_evolved", "innawood-compat" ]
    }
  ]
+diff --git a/data/mods/XedraWood/monstergroups/default_additions.json b/data/mods/XedraWood/monstergroups/default_additions.json
+index 05e5e2795433..d17463421dba 100644
+--- a/data/mods/XedraWood/monstergroups/default_additions.json
++++ b/data/mods/XedraWood/monstergroups/default_additions.json
+@@ -88,30 +88,11 @@
+   {
+     "type": "monstergroup",
+     "id": "GROUP_RIVER",
+-    "default": "mon_null",
+     "monsters": [
+       { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 5 },
+       { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 1, "pack_size": [ 2, 5 ] }
+     ]
+   },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_WILDERNESS_FOREST_ZOMBIE",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_null", "weight": 1 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_WILDERNESS_FOREST_MAMMAL_MUTANT",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_null", "weight": 1 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_MUTAFROGS_SWAMP",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_null", "weight": 1 } ]
+-  },
+   {
+     "type": "monstergroup",
+     "id": "GROUP_TRIFFID",
+diff --git a/data/mods/XedraWood/monstergroups/insect_overrides.json b/data/mods/XedraWood/monstergroups/insect_overrides.json
+deleted file mode 100644
+index 3ed95dcb172a..000000000000
+--- a/data/mods/XedraWood/monstergroups/insect_overrides.json
++++ /dev/null
+@@ -1,260 +0,0 @@
+-[
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_ANT_SURFACE",
+-    "is_animal": true,
+-    "override": true,
+-    "monsters": [
+-      { "monster": "mon_ant_soldier", "weight": 90, "cost_multiplier": 5 },
+-      { "group": "GROUP_APHID", "weight": 40, "pack_size": [ 3, 10 ], "cost_multiplier": 0 },
+-      { "group": "GROUP_LADY_BUG", "weight": 15, "pack_size": [ 1, 3 ], "cost_multiplier": 10 },
+-      { "monster": "mon_antlion_larva", "weight": 5, "cost_multiplier": 10 },
+-      { "monster": "mon_ant_small", "weight": 852, "cost_multiplier": 0 }
+-    ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_ACID_ANT_SURFACE",
+-    "is_animal": true,
+-    "override": true,
+-    "monsters": [
+-      { "monster": "mon_ant_acid_soldier", "weight": 90, "cost_multiplier": 5 },
+-      { "group": "GROUP_APHID", "weight": 40, "pack_size": [ 3, 10 ], "cost_multiplier": 0 },
+-      { "group": "GROUP_LADY_BUG", "weight": 15, "pack_size": [ 1, 3 ], "cost_multiplier": 10 },
+-      { "monster": "mon_antlion_larva", "weight": 5, "cost_multiplier": 10 },
+-      { "monster": "mon_ant_acid_small", "weight": 852, "cost_multiplier": 0 }
+-    ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_BEEHIVE",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_bee_small", "cost_multiplier": 0 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_BEE",
+-    "monsters": [ { "monster": "mon_bee_small", "cost_multiplier": 0 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_spider_web_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER_BASEMENT",
+-    "override": true,
+-    "default": "mon_spider_cellar_small",
+-    "monsters": [ { "monster": "mon_spider_cellar_small", "weight": 30 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER_CELLAR_GIANT",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_null", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER_TRAPDOOR",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_spider_trapdoor_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER_WIDOW",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_spider_widow_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER_WOLF",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_spider_wolf_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SPIDER_JUMPING",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_spider_jumping_small", "weight": 5 } ]
+-  },
+-  {
+-    "id": "GROUP_WASP_NEST",
+-    "type": "monstergroup",
+-    "override": true,
+-    "monsters": [
+-      { "monster": "mon_wasp_small", "weight": 500, "ends": "30 days", "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+-      {
+-        "monster": "mon_wasp_small",
+-        "weight": 500,
+-        "starts": "30 days",
+-        "pack_size": [ 2, 4 ],
+-        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+-      },
+-      { "monster": "mon_wasp_small_guard", "weight": 500, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+-      {
+-        "monster": "mon_wasp_small_guard",
+-        "weight": 500,
+-        "starts": "30 days",
+-        "pack_size": [ 2, 4 ],
+-        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+-      }
+-    ]
+-  },
+-  {
+-    "id": "GROUP_WASP_FORAGER",
+-    "type": "monstergroup",
+-    "override": true,
+-    "monsters": [
+-      { "monster": "mon_wasp_small", "weight": 1000, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+-      {
+-        "monster": "mon_wasp_small",
+-        "weight": 500,
+-        "starts": "30 days",
+-        "pack_size": [ 2, 4 ],
+-        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+-      }
+-    ]
+-  },
+-  {
+-    "id": "GROUP_WASP_GUARD",
+-    "type": "monstergroup",
+-    "override": true,
+-    "monsters": [
+-      { "monster": "mon_wasp_small_guard", "weight": 1000, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+-      {
+-        "monster": "mon_wasp_small_guard",
+-        "weight": 500,
+-        "starts": "30 days",
+-        "pack_size": [ 2, 4 ],
+-        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ]
+-      }
+-    ]
+-  },
+-  {
+-    "id": "GROUP_WASP_QUEEN",
+-    "type": "monstergroup",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_wasp_queen", "weight": 1000, "cost_multiplier": 50 } ]
+-  },
+-  {
+-    "id": "GROUP_WASP_PUPA",
+-    "type": "monstergroup",
+-    "default": "mon_wasp_small",
+-    "override": true,
+-    "monsters": [
+-      { "monster": "mon_dermatik", "weight": 50 },
+-      { "monster": "mon_wasp_small_guard", "weight": 500 },
+-      { "monster": "mon_wasp_small", "weight": 450 }
+-    ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_FLY",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_fly_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_MOSQUITO",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_mosquito_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_GRASSHOPPER",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_grasshopper_small" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_LOCUST",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_locust_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_WATER_STRIDER",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_strider_small" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_PRAYING_MANTIS",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_mantis_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_APHID",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_aphid_small" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_LADY_BUG",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_lady_bug" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_CENTIPEDE",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_centipede_small", "weight": 30 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_STAG_BEETLE",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_stag_beetle_small", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_BUTTERFLY",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_butterfly", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_MOTH",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_moth", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SNAIL",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_snail_forest", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SLUG",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_slug_forest", "weight": 5 } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_MOTH_FLY",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_moth_fly_small" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_SILVERFISH",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_silverfish_small" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_CENTIPEDE_HOUSE",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_centipede_house_small" } ]
+-  },
+-  {
+-    "type": "monstergroup",
+-    "id": "GROUP_CENTIPEDE",
+-    "override": true,
+-    "monsters": [ { "monster": "mon_centipede_small", "weight": 30 } ]
+-  }
+-]
+diff --git a/data/mods/XedraWood/monstergroups/monster_blacklist.json b/data/mods/XedraWood/monstergroups/monster_blacklist.json
+deleted file mode 100644
+index 93b597767ee1..000000000000
+--- a/data/mods/XedraWood/monstergroups/monster_blacklist.json
++++ /dev/null
+@@ -1,13 +0,0 @@
+-[
+-  {
+-    "type": "MONSTER_BLACKLIST",
+-    "monsters": [
+-      "mon_beaver_mutant_huge",
+-      "mon_beaver_mutant_avian",
+-      "mon_mutant_experimental",
+-      "mon_crow_mutant_small",
+-      "mon_zhark",
+-      "mon_ocean_zhark"
+-    ]
+-  }
+-]
+diff --git a/data/mods/XedraWood/monsters/vanilla_overrides.json b/data/mods/XedraWood/monsters/vanilla_overrides.json
+deleted file mode 100644
+index 7d7829d87df1..000000000000
+--- a/data/mods/XedraWood/monsters/vanilla_overrides.json
++++ /dev/null
+@@ -1,286 +0,0 @@
+-[
+-  {
+-    "id": "mon_large_cockroach",
+-    "copy-from": "mon_large_cockroach",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_worm_small",
+-    "copy-from": "mon_worm_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_silverfish_small",
+-    "copy-from": "mon_silverfish_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_bee",
+-    "copy-from": "mon_bee",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_centipede_small",
+-    "copy-from": "mon_centipede_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_centipede_house_small",
+-    "copy-from": "mon_centipede_house_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_dragonfly_giant",
+-    "copy-from": "mon_dragonfly_giant",
+-    "type": "MONSTER",
+-    "aggression": 0,
+-    "aggro_character": false,
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_fly",
+-    "copy-from": "mon_fly",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_mosquito_small",
+-    "copy-from": "mon_mosquito_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_mosquito_larva",
+-    "copy-from": "mon_mosquito_larva",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_mosquito_small" }
+-  },
+-  {
+-    "id": "mon_spider_cellar_small",
+-    "copy-from": "mon_spider_cellar_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_spider_cellar_giant_s",
+-    "copy-from": "mon_spider_cellar_giant_s",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_spider_cellar_small" }
+-  },
+-  {
+-    "id": "mon_spider_jumping_small",
+-    "copy-from": "mon_spider_jumping_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_spider_jumping_giant_s",
+-    "copy-from": "mon_spider_jumping_giant_s",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_spider_jumping_small" }
+-  },
+-  {
+-    "id": "mon_spider_trapdoor_small",
+-    "copy-from": "mon_spider_trapdoor_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_spider_trapdoor_s",
+-    "copy-from": "mon_spider_jumping_giant_s",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_spider_trapdoor_small" }
+-  },
+-  {
+-    "id": "mon_spider_web_small",
+-    "copy-from": "mon_spider_web_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_spider_web_s",
+-    "copy-from": "mon_spider_jumping_giant_s",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_spider_web_small" }
+-  },
+-  {
+-    "id": "mon_spider_widow_small",
+-    "copy-from": "mon_spider_widow_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_spider_widow_giant_s",
+-    "copy-from": "mon_spider_widow_giant_s",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_spider_widow_small" }
+-  },
+-  {
+-    "id": "mon_spider_wolf_small",
+-    "copy-from": "mon_spider_wolf_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_spider_wolf_giant_s",
+-    "copy-from": "mon_spider_wolf_giant_s",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_spider_wolf_small" }
+-  },
+-  {
+-    "id": "mon_wasp_small",
+-    "copy-from": "mon_wasp_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_wasp_small_guard",
+-    "copy-from": "mon_wasp_small_guard",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_ant_small",
+-    "copy-from": "mon_ant_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_ant_larva",
+-    "copy-from": "mon_ant_larva",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_ant_small" }
+-  },
+-  {
+-    "id": "mon_ant_soldier",
+-    "copy-from": "mon_ant_soldier",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_ant_acid_small",
+-    "copy-from": "mon_ant_acid_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_ant_acid_larva",
+-    "copy-from": "mon_ant_acid_larva",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_ant_acid_small" }
+-  },
+-  {
+-    "id": "mon_ant_acid_soldier",
+-    "copy-from": "mon_ant_acid_soldier",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_locust_small",
+-    "copy-from": "mon_locust_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_locust_nymph",
+-    "copy-from": "mon_locust_nymph",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_locust_small" }
+-  },
+-  {
+-    "id": "mon_aphid_small",
+-    "copy-from": "mon_aphid_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_mantis_small",
+-    "copy-from": "mon_mantis_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_mantis_nymph",
+-    "copy-from": "mon_mantis_nymph",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_mantis_small" }
+-  },
+-  {
+-    "id": "mon_lady_bug",
+-    "copy-from": "mon_lady_bug",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_lady_bug_larva",
+-    "copy-from": "mon_lady_bug_larva",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_lady_bug" }
+-  },
+-  {
+-    "id": "mon_grasshopper_small",
+-    "copy-from": "mon_grasshopper_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_grasshopper_nymph",
+-    "copy-from": "mon_grasshopper_nymph",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_grasshopper_small" }
+-  },
+-  {
+-    "id": "mon_stag_beetle_small",
+-    "copy-from": "mon_stag_beetle_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_antlion_giant",
+-    "copy-from": "mon_antlion_giant",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_strider_small",
+-    "copy-from": "mon_strider_small",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_strider_nymph",
+-    "copy-from": "mon_strider_nymph",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_strider_small" }
+-  },
+-  {
+-    "id": "mon_butterfly",
+-    "copy-from": "mon_butterfly",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_moth",
+-    "copy-from": "mon_moth",
+-    "type": "MONSTER",
+-    "upgrades": false
+-  },
+-  {
+-    "id": "mon_butterfly_cocoon",
+-    "copy-from": "mon_butterfly_cocoon",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_butterfly" }
+-  },
+-  {
+-    "id": "mon_moth_cocoon",
+-    "copy-from": "mon_moth_cocoon",
+-    "type": "MONSTER",
+-    "upgrades": { "age_grow": 30, "into": "mon_moth" }
+-  }
+-]
+diff --git a/data/mods/XedraWood/monsters/zombies.json b/data/mods/XedraWood/monsters/zombies.json
+deleted file mode 100644
+index 413a7caca03e..000000000000
+--- a/data/mods/XedraWood/monsters/zombies.json
++++ /dev/null
+@@ -1,273 +0,0 @@
+-[
+-  {
+-    "id": "mon_zombie",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie",
+-    "description": "A human body, skin a sickly grayish color, moving with a slow shuffling motion.",
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie",
+-    "weakpoint_sets": [ "wps_humanoid_zombie_body" ],
+-    "extend": {
+-      "flags": [ "CLUMSY_ATTACKS" ],
+-      "special_attacks": [
+-        {
+-          "type": "monster_attack",
+-          "attack_type": "melee",
+-          "id": "zombie_drag_down",
+-          "cooldown": 15,
+-          "accuracy": 5,
+-          "move_cost": 100,
+-          "dodgeable": true,
+-          "blockable": false,
+-          "condition": {
+-            "and": [
+-              {
+-                "or": [
+-                  { "npc_has_effect": "grabbed", "bodypart": "arm_r" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "arm_l" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "head" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "torso" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "leg_l" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "leg_r" }
+-                ]
+-              },
+-              { "math": [ "n_mon_species_nearby('ZOMBIE', 'radius': 1) >= 3" ] },
+-              { "not": { "npc_has_effect": "downed" } }
+-            ]
+-          },
+-          "damage_max_instance": [ { "damage_type": "bash", "amount": 0 } ],
+-          "effects": [ { "id": "downed", "duration": 3 } ],
+-          "effects_require_dmg": false,
+-          "hit_dmg_u": "%1$s drags you down to the ground!",
+-          "hit_dmg_npc": "%1$s drags <npcname> down to the ground!",
+-          "no_dmg_msg_u": "%1$s drags you down to the ground!",
+-          "no_dmg_msg_npc": "%1$s drags <npcname> down to the ground!",
+-          "miss_msg_u": "",
+-          "miss_msg_npc": ""
+-        },
+-        {
+-          "type": "monster_attack",
+-          "attack_type": "melee",
+-          "id": "zombie_pile_on",
+-          "cooldown": 15,
+-          "accuracy": 5,
+-          "move_cost": 100,
+-          "dodgeable": true,
+-          "blockable": false,
+-          "condition": {
+-            "and": [
+-              {
+-                "or": [
+-                  { "npc_has_effect": "grabbed", "bodypart": "arm_r" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "arm_l" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "head" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "torso" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "leg_l" },
+-                  { "npc_has_effect": "grabbed", "bodypart": "leg_r" }
+-                ]
+-              },
+-              { "npc_has_effect": "downed" }
+-            ]
+-          },
+-          "damage_max_instance": [ { "damage_type": "bash", "amount": 0 } ],
+-          "effects": [ { "id": "downed", "duration": 3 }, { "id": "effect_zombie_pile_on", "duration": 10 } ],
+-          "self_effects_always": [ { "id": "downed", "duration": 3 } ],
+-          "effects_require_dmg": false,
+-          "hit_dmg_u": "%1$s piles on while you're down!",
+-          "hit_dmg_npc": "%1$s piles on <npcname> while they're down!",
+-          "no_dmg_msg_u": "%1$s piles on while you're down!",
+-          "no_dmg_msg_npc": "%1$s piles on <npcname> while they're down!",
+-          "miss_msg_u": "",
+-          "miss_msg_npc": ""
+-        }
+-      ]
+-    }
+-  },
+-  {
+-    "id": "mon_zombie_crawler",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_crawler",
+-    "weakpoint_sets": [ "wps_humanoid_zombie_body" ],
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_rot",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_rot",
+-    "description": "A once-dead human corpse.  Its discolored, swollen flesh is riddled with festering wounds and open sores.  Even at a distance, the smell nearly makes you gag.",
+-    "weakpoint_sets": [ "wps_humanoid_zombie_body" ],
+-    "attack_effs": [ { "id": "pre_flu", "duration": 432000, "chance": 2 }, { "id": "rat_bite_fever", "duration": 345600, "chance": 3 } ],
+-    "emit_fields": [ { "emit_id": "emit_nauseating_smell", "delay": "1 s" } ],
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_tough",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_tough",
+-    "weakpoint_sets": [ "wps_humanoid_zombie_body" ],
+-    "upgrades": false,
+-    "death_drops": "hollow_warrior_death_drops"
+-  },
+-  {
+-    "id": "mon_devourer",
+-    "type": "MONSTER",
+-    "copy-from": "mon_devourer",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_acidic",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_acidic",
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_spitter",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_spitter",
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_corrosive",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_corrosive",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_gasbag",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_gasbag",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_crawler_pupa_decoy",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_crawler_pupa_decoy",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_crawler_pupa",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_crawler_pupa",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_grabber",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_grabber",
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_grappler",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_grappler",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_hollow",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_hollow",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_hulk",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_hulk",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_hunter",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_hunter",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_mancroc",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_mancroc",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_regenerating",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_regenerating",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_biter",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_biter",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_predator",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_predator",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_screecher",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_screecher",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_shady",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_shady",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_shrieker",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_shrieker",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_smoker",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_smoker",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_smoker_brute",
+-    "type": "MONSTER",
+-    "copy-from": "mon_smoker_brute",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_winged",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_winged",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_zombie_brute_winged",
+-    "type": "MONSTER",
+-    "copy-from": "mon_zombie_brute_winged",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_skeleton",
+-    "type": "MONSTER",
+-    "copy-from": "mon_skeleton",
+-    "upgrades": false,
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_skeleton_brute",
+-    "type": "MONSTER",
+-    "copy-from": "mon_skeleton_brute",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  },
+-  {
+-    "id": "mon_skeleton_hulk",
+-    "type": "MONSTER",
+-    "copy-from": "mon_skeleton_hulk",
+-    "death_drops": "hollow_one_death_drops_zombie"
+-  }
+-]
+diff --git a/data/mods/XedraWood/player/profession_blacklist.json b/data/mods/XedraWood/player/profession_blacklist.json
+deleted file mode 100644
+index 04a6ae632954..000000000000
+--- a/data/mods/XedraWood/player/profession_blacklist.json
++++ /dev/null
+@@ -1,122 +0,0 @@
+-[
+-  {
+-    "type": "profession_blacklist",
+-    "subtype": "blacklist",
+-    "professions": [
+-      "svictim",
+-      "hobby_eater",
+-      "hobby_dreamer",
+-      "hobby_inventor",
+-      "hobby_dreamsmith",
+-      "amateur_electronics",
+-      "dodgeball",
+-      "vid_games",
+-      "baseball_expert",
+-      "baseball",
+-      "baseball_pitcher",
+-      "baseball_beginner",
+-      "chem_cooking",
+-      "hobby_heli_pilot",
+-      "bushcraft",
+-      "camping",
+-      "boating_license",
+-      "lockpicking_expert",
+-      "lockpicking",
+-      "cosplay",
+-      "caffeine_junkie",
+-      "caffiend",
+-      "sleepingpillhead",
+-      "pillhead",
+-      "homebrewer",
+-      "meatarian",
+-      "trapping",
+-      "cheesemaking",
+-      "parkour",
+-      "gardening",
+-      "gourmand",
+-      "bushcraft",
+-      "diy_crafts",
+-      "tweaker",
+-      "benzos_addict",
+-      "crackhead",
+-      "heroin_addict",
+-      "back_yard_grilling",
+-      "boating_license",
+-      "diy_crafts",
+-      "diy_crafts_expert",
+-      "marathon_runner",
+-      "canning_food",
+-      "paintball",
+-      "plinking",
+-      "skeet_shooting",
+-      "boating_license",
+-      "fencing",
+-      "fencing_expert",
+-      "car_fan",
+-      "racing",
+-      "gourmand_alt",
+-      "skating",
+-      "car_rebuilding",
+-      "modelling",
+-      "handloading",
+-      "game_mastering",
+-      "ham_radio_operator",
+-      "golfing",
+-      "cyclist_beginner",
+-      "cyclist_intermediate",
+-      "cyclist_expert",
+-      "basketball_beginner",
+-      "basketball",
+-      "basketball_expert",
+-      "football_beginner",
+-      "football",
+-      "football_expert",
+-      "soccer_beginner",
+-      "soccer",
+-      "soccer_expert",
+-      "backpacking",
+-      "shooter_beginner",
+-      "shooter",
+-      "trap_shooting",
+-      "luthier",
+-      "home_improvement",
+-      "machinist_beginner",
+-      "gunsmithing",
+-      "roller_derby",
+-      "hockey",
+-      "frying",
+-      "coaching",
+-      "trivia",
+-      "scrapart",
+-      "moshing",
+-      "melee_training",
+-      "melee_training_expert",
+-      "kickboxing_beginner",
+-      "martial_training",
+-      "self_defense",
+-      "shaolin",
+-      "blackbelt_hobby",
+-      "cooking_beginner",
+-      "cooking",
+-      "cooking_expert",
+-      "wrestling_beginner",
+-      "wrestling",
+-      "wrestling_expert",
+-      "archery",
+-      "archery_expert",
+-      "archery_master",
+-      "street_fighting",
+-      "street_fighting_expert",
+-      "sewing",
+-      "sewing_expert",
+-      "PARACLESIAN_BIRTH",
+-      "PARACLESIAN_BIRTH_GRAMARYE",
+-      "HOMULLUS_SOCIAL",
+-      "UNDINE_MOVEMENT",
+-      "SYLPH_EVERYWHERE_NOWHERE",
+-      "ARVORE_NURTURE_GREEN",
+-      "SALAMANDER_FIRE_DANCE",
+-      "IERDE_MEDITATION"
+-    ]
+-  }
+-]
+diff --git a/data/mods/XedraWood/recipes/vanilla_blacklist.json b/data/mods/XedraWood/recipes/vanilla_blacklist.json
+deleted file mode 100644
+index c0fe6ca93e9f..000000000000
+--- a/data/mods/XedraWood/recipes/vanilla_blacklist.json
++++ /dev/null
+@@ -1,97 +0,0 @@
+-[
+-  {
+-    "type": "recipe",
+-    "result": "coffeemaker",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "electronics_controls",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "food_processor",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "dehydrator",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "microcentrifuge",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "reading_light",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "bat",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "bwirebat",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "pastaextruder",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "biogas_cooker",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "xl_biogas_tank",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "large_biogas_tank",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "plastic_chunk",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "battery_charger",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "makeshift_hand_crank_charger",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "condensor_coil",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "evaporator_coil",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "light_minus_disposable_cell",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "power_supply",
+-    "obsolete": true
+-  }
+-]
