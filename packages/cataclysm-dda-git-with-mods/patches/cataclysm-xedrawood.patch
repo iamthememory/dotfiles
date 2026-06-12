@@ -1,3 +1,35 @@
+diff --git a/data/mods/XedraWood/effect_on_condition/eoc_game_start.json b/data/mods/XedraWood/effect_on_condition/eoc_game_start.json
+deleted file mode 100644
+index 7ca00e92084c..000000000000
+--- a/data/mods/XedraWood/effect_on_condition/eoc_game_start.json
++++ /dev/null
+@@ -1,26 +0,0 @@
+-[
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_XEDRAWOOD_TRADITIONAL_MINDSET",
+-    "eoc_type": "EVENT",
+-    "required_event": "game_start",
+-    "effect": [ { "u_add_trait": "XEDRA_WOOD_COMPUTER_ILLITERATE" }, { "u_add_trait": "ILLITERATE" } ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_XEDRAWOOD_LIZARDFOLK_HAVE_NO_HAIR",
+-    "eoc_type": "EVENT",
+-    "required_event": "game_start",
+-    "condition": { "u_has_trait": "LIZARDFOLK_BUILD" },
+-    "effect": [ { "u_mutate_towards": "LIZARDFOLK_NO_HAIR", "category": "ANY", "use_vitamins": false } ]
+-  },
+-  {
+-    "type": "effect_on_condition",
+-    "id": "EOC_XEDRAWOOD_LIZARDFOLK_HAVE_NO_HAIR_GLOBAL_NPCS",
+-    "recurrence": "1 minute",
+-    "global": true,
+-    "run_for_npcs": true,
+-    "condition": { "u_has_trait": "LIZARDFOLK_BUILD" },
+-    "effect": [ { "u_mutate_towards": "LIZARDFOLK_NO_HAIR", "category": "ANY", "use_vitamins": false } ]
+-  }
+-]
 diff --git a/data/mods/XedraWood/external_options_and_monster_adjustments.json b/data/mods/XedraWood/external_options_and_monster_adjustments.json
 index 0fc56d5b23df..f0a888589a4b 100644
 --- a/data/mods/XedraWood/external_options_and_monster_adjustments.json
@@ -103,10 +135,18 @@ index abb45360a020..3f268ed78711 100644
    }
  ]
 diff --git a/data/mods/XedraWood/monstergroups/default_additions.json b/data/mods/XedraWood/monstergroups/default_additions.json
-index 05e5e2795433..d17463421dba 100644
+index acbc3b245a1d..6db79ef5f5a5 100644
 --- a/data/mods/XedraWood/monstergroups/default_additions.json
 +++ b/data/mods/XedraWood/monstergroups/default_additions.json
-@@ -88,30 +88,11 @@
+@@ -2,7 +2,6 @@
+   {
+     "type": "monstergroup",
+     "id": "GROUP_FOREST_THICK",
+-    "default": "mon_null",
+     "is_animal": true,
+     "monsters": [
+       { "group": "GROUP_WILDERNESS_FOREST_MAMMAL", "weight": 375, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+@@ -131,7 +130,6 @@
    {
      "type": "monstergroup",
      "id": "GROUP_RIVER",
@@ -114,7 +154,12 @@ index 05e5e2795433..d17463421dba 100644
      "monsters": [
        { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 5 },
        { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 1, "pack_size": [ 2, 5 ] }
-     ]
+@@ -140,27 +138,8 @@
+   {
+     "type": "monstergroup",
+     "id": "GROUP_FOREST_SPIRIT",
+-    "default": "mon_null",
+     "monsters": [ { "monster": "mon_dryad", "weight": 200 }, { "monster": "mon_dryad", "weight": 25, "pack_size": [ 2, 3 ] } ]
    },
 -  {
 -    "type": "monstergroup",
@@ -993,6 +1038,38 @@ index 413a7caca03e..000000000000
 -    "death_drops": "hollow_one_death_drops_zombie"
 -  }
 -]
+diff --git a/data/mods/XedraWood/overmap/overmap_terrain_overwrites.json b/data/mods/XedraWood/overmap/overmap_terrain_overwrites.json
+deleted file mode 100644
+index 80d8969f4e20..000000000000
+--- a/data/mods/XedraWood/overmap/overmap_terrain_overwrites.json
++++ /dev/null
+@@ -1,26 +0,0 @@
+-[
+-  {
+-    "type": "overmap_terrain",
+-    "id": "field",
+-    "copy-from": "field",
+-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 1 ], "chance": 3 }
+-  },
+-  {
+-    "type": "overmap_terrain",
+-    "id": "forest",
+-    "copy-from": "forest",
+-    "spawns": { "group": "GROUP_FOREST", "population": [ 0, 2 ], "chance": 3 }
+-  },
+-  {
+-    "type": "overmap_terrain",
+-    "id": "forest_thick",
+-    "copy-from": "forest_thick",
+-    "spawns": { "group": "GROUP_FOREST_THICK", "population": [ 0, 4 ], "chance": 5 }
+-  },
+-  {
+-    "type": "overmap_terrain",
+-    "id": "forest_water",
+-    "copy-from": "forest_water",
+-    "spawns": { "group": "GROUP_SWAMP", "population": [ 1, 4 ], "chance": 8 }
+-  }
+-]
 diff --git a/data/mods/XedraWood/player/profession_blacklist.json b/data/mods/XedraWood/player/profession_blacklist.json
 deleted file mode 100644
 index 04a6ae632954..000000000000
@@ -1224,3 +1301,26 @@ index c0fe6ca93e9f..000000000000
 -    "obsolete": true
 -  }
 -]
+diff --git a/data/mods/XedraWood/regional_overlay.json b/data/mods/XedraWood/regional_overlay.json
+index 7262c31b6f9a..746dcd9a129a 100644
+--- a/data/mods/XedraWood/regional_overlay.json
++++ b/data/mods/XedraWood/regional_overlay.json
+@@ -24,18 +24,6 @@
+     "ocean_start_south": 5,
+     "sandy_beach_width": 15
+   },
+-  {
+-    "type": "region_terrain_furniture",
+-    "id": "default_t_region_groundcover",
+-    "ter_id": "t_region_groundcover",
+-    "replace_with_terrain": [ [ "t_grass", 12000 ], [ "t_grass_dead", 2000 ], [ "t_dirt", 1000 ] ]
+-  },
+-  {
+-    "type": "region_terrain_furniture",
+-    "id": "default_t_region_groundcover_swamp",
+-    "ter_id": "t_region_groundcover_swamp",
+-    "replace_with_terrain": [ [ "t_grass_long", 300 ], [ "t_grass_tall", 100 ], [ "t_moss", 200 ], [ "t_dirt", 200 ] ]
+-  },
+   {
+     "type": "map_extra_collection",
+     "id": "forest_water",

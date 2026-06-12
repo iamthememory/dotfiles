@@ -487,6 +487,13 @@ let
     modRoot = "sleepscuming-lose-your-stuff";
   };
 
+  sleepscumming-souls = cataclysmDDA.buildMod {
+    modName = "sleepscumming_soulslike_version";
+    version = cataclysm-dda-sleepscumming.lastModifiedDate;
+    src = cataclysm-dda-sleepscumming;
+    modRoot = "sleepscumming-soulslike-penalty";
+  };
+
   stats-through-kills = cataclysmDDA.buildMod {
     modName = "stk_eoc";
     version = cataclysm-dda-stats-through-kills.lastModifiedDate;
@@ -654,6 +661,7 @@ let
       random-stuff
       sleepscumming-keep
       sleepscumming-lose
+      sleepscumming-souls
       stats-through-kills
       stats-through-skills
       tankmod
