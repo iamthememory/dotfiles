@@ -1072,16 +1072,17 @@ index 80d8969f4e20..000000000000
 -]
 diff --git a/data/mods/XedraWood/player/profession_blacklist.json b/data/mods/XedraWood/player/profession_blacklist.json
 deleted file mode 100644
-index 04a6ae632954..000000000000
+index f24b5ef2a52e..000000000000
 --- a/data/mods/XedraWood/player/profession_blacklist.json
 +++ /dev/null
-@@ -1,122 +0,0 @@
+@@ -1,123 +0,0 @@
 -[
 -  {
 -    "type": "profession_blacklist",
 -    "subtype": "blacklist",
 -    "professions": [
 -      "svictim",
+-      "crossbow_hunter",
 -      "hobby_eater",
 -      "hobby_dreamer",
 -      "hobby_inventor",
@@ -1198,12 +1199,518 @@ index 04a6ae632954..000000000000
 -    ]
 -  }
 -]
-diff --git a/data/mods/XedraWood/recipes/vanilla_blacklist.json b/data/mods/XedraWood/recipes/vanilla_blacklist.json
+diff --git a/data/mods/XedraWood/player/removed_starting_traits.json b/data/mods/XedraWood/player/removed_starting_traits.json
 deleted file mode 100644
-index c0fe6ca93e9f..000000000000
---- a/data/mods/XedraWood/recipes/vanilla_blacklist.json
+index 2eb26f4a096a..000000000000
+--- a/data/mods/XedraWood/player/removed_starting_traits.json
 +++ /dev/null
-@@ -1,97 +0,0 @@
+@@ -1,112 +0,0 @@
+-[
+-  {
+-    "type": "mutation",
+-    "id": "QUICK",
+-    "copy-from": "QUICK",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "DEFT",
+-    "copy-from": "DEFT",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "FAST_REFLEXES",
+-    "copy-from": "FAST_REFLEXES",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "NIGHTVISION",
+-    "copy-from": "NIGHTVISION",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "PACKMULE",
+-    "copy-from": "PACKMULE",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "TOUGH",
+-    "copy-from": "TOUGH",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "STRONGBACK",
+-    "copy-from": "STRONGBACK",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "ANTIJUNK",
+-    "copy-from": "ANTIJUNK",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "PROJUNK",
+-    "copy-from": "PROJUNK",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "PICKYEATER",
+-    "copy-from": "PICKYEATER",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "TABLEMANNERS",
+-    "copy-from": "TABLEMANNERS",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "COMPUTER_ILLITERATE",
+-    "copy-from": "COMPUTER_ILLITERATE",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "GUNSHY",
+-    "copy-from": "GUNSHY",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "FASTREADER",
+-    "copy-from": "FASTREADER",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "SLOWREADER",
+-    "copy-from": "SLOWREADER",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "NO_CBM_INSTALLATION",
+-    "copy-from": "NO_CBM_INSTALLATION",
+-    "starting_trait": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "KI_STRIKE",
+-    "copy-from": "KI_STRIKE",
+-    "starting_trait": false,
+-    "chargen_allow_npc": false
+-  },
+-  {
+-    "type": "mutation",
+-    "id": "DRUNKEN",
+-    "copy-from": "DRUNKEN",
+-    "starting_trait": false,
+-    "chargen_allow_npc": false
+-  }
+-]
+diff --git a/data/mods/XedraWood/recipes/blacklisting/innawood_blacklisting.json b/data/mods/XedraWood/recipes/blacklisting/innawood_blacklisting.json
+deleted file mode 100644
+index 94c55b49ec2a..000000000000
+--- a/data/mods/XedraWood/recipes/blacklisting/innawood_blacklisting.json
++++ /dev/null
+@@ -1,382 +0,0 @@
+-[
+-  {
+-    "type": "recipe",
+-    "result": "material_quicklime",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "material_cement",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "steel_lump",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "lc_steel_lump",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "mc_steel_lump",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "hc_steel_lump",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "qt_steel_lump",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "steel_lump_from ore",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "steel_chunk_from ore",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "scrap_from ore",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "steel_lump_smelt",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "steel_chunk_smelt",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "scrap_smelt",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "material_aluminium_ingot_native",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "steel_lump_from_other_steel",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "plastic_chunk_from chitin",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "pilot_light",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "water_faucet",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "well_pump",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "makeshift_transformer",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "motor_micro",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "motor_tiny",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "motor_small",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "vehicle_controls",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "drivebelt_makeshift",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "power_supply",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "power_supply_innawood",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "battery_charger",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "makeshift_hand_crank_charger",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "condensor_coil",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "evaporator_coil",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "light_minus_disposable_cell",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "filter_air_makeshift",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "goggles_welding",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "battery_car_clay",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "battery_clay_array",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "light_bulb",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "chem_muriatic_acid_by_electrolysis",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "chem_black_powder",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "chem_black_powder_generic",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "bleach",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "oxy_powder",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "latex",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "chunk_rubber",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "lye_by_electrolysis",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "chemistry_set_basic",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "chemistry_set",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "funnel_separation",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "thermometer",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "water_purifier",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "soldering_iron",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "soldering_iron_portable",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "hotplate",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "makeshift_sealer",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "makeshift_vacuum_mold",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "xacto",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "electric_lantern",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "flashlight",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "floodlight",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "directed_floodlight",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "car_headlight",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "car_wide_headlight",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "wearable_light",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "standing_lamp",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "standing_floodlight",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "wooden_grip",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "rifle_flintlock",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "longrifle_flintlock",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "carbine_flintlock",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "pistol_flintlock",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "carbine_flintlock_double",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "carbine_flintlock_double_from_antiques",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "hand_crossbow",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "crossbow",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "bullet_crossbow",
+-    "obsolete": true
+-  },
+-  {
+-    "type": "recipe",
+-    "result": "cannon_3in_ordnance",
+-    "obsolete": true
+-  }
+-]
+diff --git a/data/mods/XedraWood/recipes/blacklisting/vanilla_blacklist.json b/data/mods/XedraWood/recipes/blacklisting/vanilla_blacklist.json
+deleted file mode 100644
+index 5355c3801fe3..000000000000
+--- a/data/mods/XedraWood/recipes/blacklisting/vanilla_blacklist.json
++++ /dev/null
+@@ -1,67 +0,0 @@
 -[
 -  {
 -    "type": "recipe",
@@ -1268,36 +1775,6 @@ index c0fe6ca93e9f..000000000000
 -  {
 -    "type": "recipe",
 -    "result": "plastic_chunk",
--    "obsolete": true
--  },
--  {
--    "type": "recipe",
--    "result": "battery_charger",
--    "obsolete": true
--  },
--  {
--    "type": "recipe",
--    "result": "makeshift_hand_crank_charger",
--    "obsolete": true
--  },
--  {
--    "type": "recipe",
--    "result": "condensor_coil",
--    "obsolete": true
--  },
--  {
--    "type": "recipe",
--    "result": "evaporator_coil",
--    "obsolete": true
--  },
--  {
--    "type": "recipe",
--    "result": "light_minus_disposable_cell",
--    "obsolete": true
--  },
--  {
--    "type": "recipe",
--    "result": "power_supply",
 -    "obsolete": true
 -  }
 -]
