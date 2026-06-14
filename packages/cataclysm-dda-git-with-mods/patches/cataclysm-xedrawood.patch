@@ -1779,13 +1779,21 @@ index 5355c3801fe3..000000000000
 -  }
 -]
 diff --git a/data/mods/XedraWood/regional_overlay.json b/data/mods/XedraWood/regional_overlay.json
-index 7262c31b6f9a..746dcd9a129a 100644
+index 6f26d0c9c769..3b1f5a67d3e6 100644
 --- a/data/mods/XedraWood/regional_overlay.json
 +++ b/data/mods/XedraWood/regional_overlay.json
-@@ -24,18 +24,6 @@
+@@ -24,26 +24,6 @@
      "ocean_start_south": 5,
      "sandy_beach_width": 15
    },
+-  {
+-    "type": "weather_generator",
+-    "id": "default",
+-    "copy-from": "default",
+-    "base_temperature": 13,
+-    "base_humidity": 75.0,
+-    "base_pressure": 1012.0
+-  },
 -  {
 -    "type": "region_terrain_furniture",
 -    "id": "default_t_region_groundcover",
