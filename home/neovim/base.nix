@@ -84,6 +84,19 @@
     " them.
     set wildmode=longest,list,full
 
+    " By default, expand tabs to spaces.
+    set expandtab
+
+    " By default, fold by indents.
+    set foldmethod=indent
+
+    " By default, use two-spaced shifts.
+    set shiftwidth=2
+    set softtabstop=2
+
+    " By default, treat hard tabs as 8 spaces.
+    set tabstop=8
+
     " Add :Man to open manpages.
     runtime! ftplugin/man.vim
   '';

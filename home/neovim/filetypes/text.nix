@@ -10,7 +10,7 @@
     " Fold text by indents.
     setlocal foldmethod=indent
 
-    " Set shifts and expanded tabs to four spaces.
+    " Set shifts and expanded tabs to two spaces.
     setlocal shiftwidth=2
     setlocal softtabstop=2
 
