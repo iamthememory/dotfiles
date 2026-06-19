@@ -2,10 +2,10 @@
   {
     "adblock-plus" = buildMozillaXpiAddon {
       pname = "adblock-plus";
-      version = "4.39.1";
+      version = "4.40.0";
       addonId = "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4843406/adblock_plus-4.39.1.xpi";
-      sha256 = "8a03e665f7e8c7d2d7e8081fba2234a0dc39baf5df3ce554374b541015cdfd53";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4853758/adblock_plus-4.40.0.xpi";
+      sha256 = "b7233fb0136150b8892785030115a9cb6f726330149b29e8446a6b782c18f1c3";
       meta = with lib;
       {
         homepage = "https://adblockplus.org/";
@@ -82,10 +82,10 @@
     };
     "downthemall" = buildMozillaXpiAddon {
       pname = "downthemall";
-      version = "4.14.2";
+      version = "4.15.1";
       addonId = "{DDC359D1-844A-42a7-9AA1-88A850A938A8}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4628327/downthemall-4.14.2.xpi";
-      sha256 = "7bb83f729934fb2a58f2c65248060830bca337e1e8a7c2729b5608340dc29df3";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4825019/downthemall-4.15.1.xpi";
+      sha256 = "a6f53822b708b4cb595195f25818fb0eeb690e1244ca2d7fc0d0b645c4dc5de9";
       meta = with lib;
       {
         homepage = "https://www.downthemall.org/";

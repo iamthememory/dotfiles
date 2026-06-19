@@ -197,6 +197,8 @@ let
       };
     in
     builtins.attrValues (builtins.mapAttrs compack-mod {
+      "castle-doctrine" = "castle-doctrine";
+      "castle-doctrine-safe" = "castle-doctrine-safe";
       "color-coding" = "color-coding";
       "fast-smash" = "fast-smash";
       "fungus-not-amongus" = "fungus-notamongus";

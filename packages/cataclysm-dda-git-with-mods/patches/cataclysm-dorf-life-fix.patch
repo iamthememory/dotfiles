@@ -1,3 +1,16 @@
+diff --git a/Dorf_Life/itemgroups.json b/Dorf_Life/itemgroups.json
+index c427dba588f4..5af7f76661d4 100644
+--- a/Dorf_Life/itemgroups.json
++++ b/Dorf_Life/itemgroups.json
+@@ -42,7 +42,7 @@
+       { "item": "chestpouch", "prob": 6 },
+       { "item": "ammo_satchel", "prob": 3 },
+       { "item": "ammo_pouch", "prob": 3 },
+-      { "item": "gobag", "prob": 1 },
++      { "item": "bugout_bag", "prob": 1 },
+       { "item": "mess_kit", "prob": 9 },
+       { "item": "tent_kit", "prob": 10 },
+       { "item": "large_tent_kit", "prob": 10 },
 diff --git a/Dorf_Life/mapgen_overlays.json b/Dorf_Life/mapgen_overlays.json
 index 24a1279dbc1f..9b3fa2d4797b 100644
 --- a/Dorf_Life/mapgen_overlays.json
