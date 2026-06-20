@@ -1,16 +1,19 @@
 diff --git a/data/mods/XedraWood/effect_on_condition/eoc_game_start.json b/data/mods/XedraWood/effect_on_condition/eoc_game_start.json
 deleted file mode 100644
-index 7ca00e92084c..000000000000
+index 54ec4a44a9ce..000000000000
 --- a/data/mods/XedraWood/effect_on_condition/eoc_game_start.json
 +++ /dev/null
-@@ -1,26 +0,0 @@
+@@ -1,29 +0,0 @@
 -[
 -  {
 -    "type": "effect_on_condition",
 -    "id": "EOC_XEDRAWOOD_TRADITIONAL_MINDSET",
 -    "eoc_type": "EVENT",
 -    "required_event": "game_start",
--    "effect": [ { "u_add_trait": "XEDRA_WOOD_COMPUTER_ILLITERATE" }, { "u_add_trait": "ILLITERATE" } ]
+-    "effect": [
+-      { "u_add_trait": "XEDRA_WOOD_COMPUTER_ILLITERATE" },
+-      { "if": { "not": { "u_has_trait": "WISE_LITERATE" } }, "then": { "u_add_trait": "ILLITERATE" } }
+-    ]
 -  },
 -  {
 -    "type": "effect_on_condition",
