@@ -5,18 +5,9 @@
 , pkgs
 , ...
 }: {
-  programs.zsh.initContent = ''
-    # Use the default theme.
-    fast-theme -q default
-  '';
 
-  # Add fast-syntax-highlighting to ZSH.
-  programs.zsh.plugins = [{
-    name = "fast-syntax-highlighting";
-    src =
-      "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
-    file = "fast-syntax-highlighting.plugin.zsh";
-  }];
+  programs.zsh.fastSyntaxHighlighting.enable = true;
+  programs.zsh.fastSyntaxHighlighting.theme = "default";
 
   # Use ~/.cache/fsh for FSH's working directory.
   programs.zsh.sessionVariables.FAST_WORK_DIR =

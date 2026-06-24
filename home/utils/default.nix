@@ -43,9 +43,6 @@
     # A tool for manipulating CSV files.
     csvkit
 
-    # A tool for managing development environments.
-    devenv
-
     # Tools such as diff, cmp, etc.
     diffutils
 
@@ -229,6 +226,9 @@
       # Use reflinks when able to to benefit from CoW filesystems.
       cp = "${profileBin}/cp --reflink=auto";
     };
+
+  # A tool for managing development environments.
+  programs.devenv.enable = true;
 
   # A shiny alternative to ls written in rust.
   programs.eza.enable = true;

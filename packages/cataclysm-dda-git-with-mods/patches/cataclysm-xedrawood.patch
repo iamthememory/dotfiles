@@ -125,20 +125,21 @@ index 50adf3a7a5b2..000000000000
 -  }
 -]
 diff --git a/data/mods/XedraWood/modinfo.json b/data/mods/XedraWood/modinfo.json
-index abb45360a020..3f268ed78711 100644
+index 802da9ef4baf..62d8d01147d5 100644
 --- a/data/mods/XedraWood/modinfo.json
 +++ b/data/mods/XedraWood/modinfo.json
-@@ -7,7 +7,6 @@
+@@ -7,7 +7,7 @@
      "maintainers": [ "StandingStorm" ],
      "description": "Expands on connection between Xedra Evolved and Innawood, turning it into a full-fledged neolithic sword and sorcery setting.",
-     "category": "content",
+     "category": "total_conversion",
 -    "dependencies": [ "dda", "xedra_evolved", "innawood" ],
 -    "conflicts": [ "magiclysm", "generic_guns", "MA" ]
-+    "dependencies": [ "dda", "xedra_evolved", "innawood-compat" ]
++    "dependencies": [ "dda", "xedra_evolved", "innawood-compat" ],
++    "conflicts": [ "generic_guns", "MA" ]
    }
  ]
 diff --git a/data/mods/XedraWood/monstergroups/default_additions.json b/data/mods/XedraWood/monstergroups/default_additions.json
-index acbc3b245a1d..6db79ef5f5a5 100644
+index 493d81c6f88c..4746782e42c4 100644
 --- a/data/mods/XedraWood/monstergroups/default_additions.json
 +++ b/data/mods/XedraWood/monstergroups/default_additions.json
 @@ -2,7 +2,6 @@
@@ -157,12 +158,17 @@ index acbc3b245a1d..6db79ef5f5a5 100644
      "monsters": [
        { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 5 },
        { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 1, "pack_size": [ 2, 5 ] }
-@@ -140,27 +138,8 @@
+@@ -140,7 +138,6 @@
    {
      "type": "monstergroup",
      "id": "GROUP_FOREST_SPIRIT",
 -    "default": "mon_null",
      "monsters": [ { "monster": "mon_dryad", "weight": 200 }, { "monster": "mon_dryad", "weight": 25, "pack_size": [ 2, 3 ] } ]
+   },
+   {
+@@ -156,24 +153,6 @@
+       { "monster": "mon_lizardfolk_hunter_hostile", "weight": 3 }
+     ]
    },
 -  {
 -    "type": "monstergroup",
