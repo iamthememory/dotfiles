@@ -50,10 +50,6 @@ in
 
   home.packages =
     let
-      # Flameshot, with its priority increased to avoid a collision with the
-      # completion also provided by the general ZSH completions.
-      flameshot = lib.setPrio (-1) pkgs.flameshot;
-
       # transset, for setting window transparency without the rounding issues
       # picom-trans has, but patched to not delete the X11 property for
       # transparency if a window is set to fully opaque, because for some reason
@@ -70,9 +66,6 @@ in
 
       # Coreutils, for the date program used in the screenshot script.
       pkgs.coreutils
-
-      # Flameshot, for the utility used in the screenshot script.
-      flameshot
 
       # Our screenshot scripts using flameshot.
       (screenshot "full")
@@ -161,6 +154,6 @@ in
 
       # Use the legacy X11 screenshotting until I'm on wayland or figure out
       # what portal's needed for i3wm.
-      #General.useX11LegacyScreenshot = true;
+      General.useX11LegacyScreenshot = true;
     };
 }
