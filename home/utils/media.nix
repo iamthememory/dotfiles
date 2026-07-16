@@ -6,6 +6,9 @@
     # A tool for converting and manipulating media files.
     ffmpeg
 
+    # A tool for rendering graphs.
+    graphviz
+
     # A tool for manipulating images.
     imagemagick
 
