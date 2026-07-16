@@ -46,6 +46,7 @@
   home.keyboard.variant = lib.mkDefault "";
 
   # Use a size 16 Adwaita cursor.
+  home.pointerCursor.enable = true;
   home.pointerCursor.package = pkgs.adwaita-icon-theme;
   home.pointerCursor.name = "Adwaita";
   home.pointerCursor.size = 16;
