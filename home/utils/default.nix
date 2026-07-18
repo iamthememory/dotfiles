@@ -151,6 +151,9 @@
     util-linux
 
     # A utility for running commands when files in a directory change.
+    watchexec
+
+    # A utility for running commands when files in a directory change.
     inputs.stable.watchman
 
     # A (de)compressor for .xz.
