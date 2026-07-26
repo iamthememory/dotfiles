@@ -52,6 +52,16 @@
     }
   },
   {
+    "type": "dimension_region_layout",
+    "id": "dimension_perk_pocket_world",
+    "generation_mode": "UNIFORM",
+    "uniform_region": "dimension_perk_pocket_world_settings"
+  {
+    "type": "dimension",
+    "id": "dimension_perk_pocket_world",
+    "region_layout": "dimension_perk_pocket_world"
+  },
+  {
     "type": "weather_generator",
     "id": "default_pocket_world",
     "copy-from": "default",
@@ -127,8 +137,7 @@
       { "u_add_effect": "effect_perk_closetland_temp_levitation", "duration": 0 },
       {
         "u_travel_to_dimension": "dimension_perk_pocket_world",
-        "npc_travel_radius": 0,
-        "region_type": "dimension_perk_pocket_world_settings"
+        "npc_travel_radius": 0
       },
       {
         "if": { "not": { "math": [ "has_var(u_pocket_world_arrival_point)" ] } },

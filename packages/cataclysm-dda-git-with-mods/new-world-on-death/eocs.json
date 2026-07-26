@@ -17,7 +17,7 @@
     "id": "EOC_NEWWORLDONDEATH_GAMESTART_SEND_OUT",
     "eoc_type": "EVENT",
     "required_event": "game_begin",
-    "condition": { "current_dimension": "" },
+    "condition": { "current_dimension": "default" },
     "effect": [
       { "run_eocs": "EOC_NEWWORLDONDEATH_START_EXPLORE", "time_in_future": "2 seconds" }
     ]
@@ -50,7 +50,7 @@
     "effect": [
       { "u_add_effect": "blind", "duration": 0 },
       {
-        "u_travel_to_dimension": "",
+        "u_travel_to_dimension": "default",
         "npc_travel_radius": 0,
         "npc_travel_filter": "none"
       },
@@ -72,7 +72,7 @@
     "id": "EOC_NEWWORLDONDEATH_START_EXPLORE",
     "condition": {
       "and": [
-        { "current_dimension": "" }
+        { "current_dimension": "default" }
       ]
     },
     "effect": [
