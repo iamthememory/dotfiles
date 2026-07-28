@@ -16,9 +16,6 @@
   # Enable proprietary codecs in Chromium.
   chromium.proprietaryCodecs = true;
 
-  # Enable pulseaudio support in Chromium.
-  chromium.pulseSupport = true;
-
   # Enable CUDA support.
   cudaSupport = true;
 
