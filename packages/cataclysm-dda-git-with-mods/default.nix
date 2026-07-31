@@ -417,6 +417,7 @@ let
       "MoM_Increase_Random_Power_Delay" = "mom_increase_power_learn_delay";
       "MoM_Infinite_Concentration" = "mom_infinite_concentration";
       "MoM_No_Calorie_Cost" = "mom_no_calorie_cost";
+      "MoM_No_Exercise_For_Learning_Powers" = "mom_no_exercise_learning_powers";
       "MoM_No_Negative_Nether_Attunement" =
         "mom_no_negative_nether_attunement";
       "MoM_No_Nether_Attunement" = "mom_no_nether_attunement";
