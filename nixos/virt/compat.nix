@@ -26,8 +26,40 @@
         "riscv64-linux"
 
         # Webassembly.
-        "wasm32-wasi"
-        "wasm64-wasi"
+        "wasm32-wasip1"
+        "wasm64-wasip1"
+
+        # Windows
+        #"i686-windows"
+        #"x86_64-windows"
+
+        # More esoteric architectures.
+
+        # DEC Alpha.
+        "alpha-linux"
+
+        # IBM Z.
+        "s390x-linux"
+
+        # LoongArch.
+        "loongarch64-linux"
+
+        # MIPS.
+        "mips-linux"
+        "mips64-linux"
+        "mips64-linuxabin32"
+        "mips64el-linux"
+        "mips64el-linuxabin32"
+        "mipsel-linux"
+
+        # PowerPC.
+        "powerpc-linux"
+        "powerpc64-linux"
+        "powerpc64le-linux"
+
+        # SPARC.
+        "sparc-linux"
+        "sparc64-linux"
       ];
 
       # Filter out any architectures that the current system can natively run.
