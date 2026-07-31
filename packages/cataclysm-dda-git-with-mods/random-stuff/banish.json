@@ -4,7 +4,7 @@
     "id": "EOC_BANISH_A_MONSTER_FOREVER",
     "condition": { "not": "u_is_npc" },
     "effect": [
-      { "u_die": { "remove_corpse": true, "supress_message": true, "remove_from_creature_tracker": true } }
+      { "u_die": { "remove_corpse": true, "supress_message": true } }
     ]
   },
   {

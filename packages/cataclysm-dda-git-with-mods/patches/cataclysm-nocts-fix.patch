@@ -414,6 +414,19 @@ index 53722df4140d..a3f37c74ed8a 100644
      "read_fun": -5
    },
    {
+diff --git a/nocts_cata_mod_DDA/Surv_help/c_item_groups.json b/nocts_cata_mod_DDA/Surv_help/c_item_groups.json
+index 3fd8aa698dee..c8282c80bf99 100644
+--- a/nocts_cata_mod_DDA/Surv_help/c_item_groups.json
++++ b/nocts_cata_mod_DDA/Surv_help/c_item_groups.json
+@@ -142,7 +142,7 @@
+   {
+     "id": "sketchy_cabin_ashes",
+     "type": "item_group",
+-    "items": [ { "item": "ash", "prob": 50, "charges": [ 50, 250 ] }, { "item": "meal_bone", "prob": 50, "count": [ 5, 10 ] } ]
++    "items": [ { "item": "ash", "prob": 50, "count": [ 5, 25 ] }, { "item": "meal_bone", "prob": 50, "count": [ 5, 10 ] } ]
+   },
+   {
+     "type": "item_group",
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json b/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
 index 97c30a99854e..5d2311bef392 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
@@ -463,7 +476,7 @@ index aa137e953a79..d35186c4e54e 100644
        "masonrysaw_off",
        "masonrysaw_on",
 diff --git a/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json b/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json
-index 96edc7e0f7fe..b2da3174bc4d 100644
+index 8e7f7f8be260..0bda681f7ff7 100644
 --- a/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json
 +++ b/nocts_cata_mod_DDA/Terrain/Mapgen_Variants.json
 @@ -135,7 +135,7 @@
@@ -475,6 +488,77 @@ index 96edc7e0f7fe..b2da3174bc4d 100644
          { "item": "mossberg_590", "x": 20, "y": 10, "chance": 75, "repeat": 8 },
          { "item": "m2010", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 2 },
          { "item": "m110a1", "x": 20, "y": 11, "magazine": 100, "chance": 75, "repeat": 8 },
+diff --git a/nocts_cata_mod_DDA/Terrain/Survivor_Encampments.json b/nocts_cata_mod_DDA/Terrain/Survivor_Encampments.json
+index 9582b7884568..f4967eabb741 100644
+--- a/nocts_cata_mod_DDA/Terrain/Survivor_Encampments.json
++++ b/nocts_cata_mod_DDA/Terrain/Survivor_Encampments.json
+@@ -604,7 +604,7 @@
+       },
+       "set": [ { "point": "trap", "id": "tr_rollmat", "x": 18, "y": 16 }, { "point": "trap", "id": "tr_rollmat", "x": 18, "y": 20 } ],
+       "mapping": {
+-        "~": { "item": [ { "item": "ash", "chance": 30, "amount": [ 25, 50 ] }, { "item": "bone_human", "chance": 10 } ] },
++        "~": { "item": [ { "item": "ash", "chance": 30, "amount": [ 2, 5 ] }, { "item": "bone_human", "chance": 10 } ] },
+         "B": { "items": { "item": "bed", "chance": 75 } },
+         "C": { "items": [ { "item": "SUS_oven", "chance": 50 } ] },
+         "D": {
+diff --git a/nocts_cata_mod_DDA/Vehicles/c_vehicle_parts.json b/nocts_cata_mod_DDA/Vehicles/c_vehicle_parts.json
+index 082ed2940014..13c41415373a 100644
+--- a/nocts_cata_mod_DDA/Vehicles/c_vehicle_parts.json
++++ b/nocts_cata_mod_DDA/Vehicles/c_vehicle_parts.json
+@@ -76,7 +76,7 @@
+     "breaks_into": [
+       { "item": "plastic_chunk", "count": [ 1, 2 ] },
+       { "item": "scrap", "count": [ 1, 2 ] },
+-      { "item": "cable", "charges": [ 1, 3 ] }
++      { "item": "cable", "count": [ 1, 3 ] }
+     ],
+     "requirements": {
+       "install": { "skills": [ [ "mechanics", 1 ] ], "time": "60 m", "using": [ [ "vehicle_screw", 1 ] ] },
+@@ -100,7 +100,7 @@
+       { "item": "lc_steel_lump", "count": [ 1, 2 ] },
+       { "item": "lc_steel_chunk", "count": [ 1, 2 ] },
+       { "item": "scrap", "count": [ 1, 2 ] },
+-      { "item": "cable", "charges": [ 3, 6 ] }
++      { "item": "cable", "count": [ 3, 6 ] }
+     ],
+     "damage_reduction": { "all": 6 },
+     "requirements": {
+@@ -124,7 +124,7 @@
+       { "item": "lc_steel_lump", "count": [ 3, 5 ] },
+       { "item": "lc_steel_chunk", "count": [ 3, 5 ] },
+       { "item": "scrap", "count": [ 3, 5 ] },
+-      { "item": "cable", "charges": [ 10, 15 ] }
++      { "item": "cable", "count": [ 10, 15 ] }
+     ],
+     "damage_reduction": { "all": 32 },
+     "requirements": {
+@@ -148,7 +148,7 @@
+       { "item": "lc_steel_lump", "count": [ 3, 5 ] },
+       { "item": "lc_steel_chunk", "count": [ 3, 5 ] },
+       { "item": "scrap", "count": [ 3, 5 ] },
+-      { "item": "cable", "charges": [ 10, 15 ] }
++      { "item": "cable", "count": [ 10, 15 ] }
+     ],
+     "damage_reduction": { "all": 43 },
+     "requirements": {
+@@ -172,7 +172,7 @@
+       { "item": "lc_steel_lump", "count": [ 3, 5 ] },
+       { "item": "lc_steel_chunk", "count": [ 3, 5 ] },
+       { "item": "scrap", "count": [ 3, 5 ] },
+-      { "item": "cable", "charges": [ 10, 15 ] }
++      { "item": "cable", "count": [ 10, 15 ] }
+     ],
+     "damage_reduction": { "all": 50 },
+     "requirements": {
+@@ -196,7 +196,7 @@
+       { "item": "lc_steel_lump", "count": [ 6, 10 ] },
+       { "item": "lc_steel_chunk", "count": [ 6, 10 ] },
+       { "item": "scrap", "count": [ 6, 10 ] },
+-      { "item": "cable", "charges": [ 20, 30 ] }
++      { "item": "cable", "count": [ 20, 30 ] }
+     ],
+     "damage_reduction": { "all": 60 },
+     "requirements": {
 diff --git a/nocts_cata_mod_DDA/Weapons/c_magazines.json b/nocts_cata_mod_DDA/Weapons/c_magazines.json
 index a5dc1db09fd5..dec502d30af5 100644
 --- a/nocts_cata_mod_DDA/Weapons/c_magazines.json

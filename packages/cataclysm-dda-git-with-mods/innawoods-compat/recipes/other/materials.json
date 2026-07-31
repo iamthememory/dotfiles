@@ -50,7 +50,7 @@
     ],
     "components": [
       [ [ "material_sand", 10 ] ],
-      [ [ "chem_washing_soda", 41 ], [ "ash", 50 ] ],
+      [ [ "chem_washing_soda", 41 ], [ "ash", 5 ] ],
       [ [ "material_quicklime", 2 ], [ "material_limestone", 2 ], [ "chem_slaked_lime", 20 ] ]
     ]
   },

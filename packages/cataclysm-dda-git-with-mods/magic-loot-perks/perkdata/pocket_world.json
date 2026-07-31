@@ -56,6 +56,7 @@
     "id": "dimension_perk_pocket_world",
     "generation_mode": "UNIFORM",
     "uniform_region": "dimension_perk_pocket_world_settings"
+  },
   {
     "type": "dimension",
     "id": "dimension_perk_pocket_world",

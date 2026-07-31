@@ -1,0 +1,13 @@
+diff --git a/bionic_ritual.json b/bionic_ritual.json
+index b0de48f1d54d..c4f427af7393 100644
+--- a/bionic_ritual.json
++++ b/bionic_ritual.json
+@@ -53,7 +53,7 @@
+     "name_unique": "Bionic Avatar",
+     "gender": "male",
+     "attitude": 0,
+-    "mission": 3,
++    "mission": "SHOPKEEP",
+     "class": "NC_BIONIC_TALISMAN",
+     "chat": "TALK_BIONIC_TALISMAN_1",
+     "faction": "no_faction",

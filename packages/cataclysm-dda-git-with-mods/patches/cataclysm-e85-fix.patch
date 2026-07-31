@@ -1,8 +1,24 @@
 diff --git a/Fertilizer Recipes.json b/Fertilizer Recipes.json
-index 5ac902c6aafd..52b790bc1b37 100644
+index 5ac902c6aafd..8fcd676d0592 100644
 --- a/Fertilizer Recipes.json	
 +++ b/Fertilizer Recipes.json	
-@@ -45,7 +45,8 @@
+@@ -4,6 +4,7 @@
+     "activity_level": "LIGHT_EXERCISE",
+     "result": "fertilizer_yeast",
+     "id_suffix": "simple",
++    "charges": 64,
+     "category": "CC_CHEM",
+     "subcategory": "CSC_CHEM_CHEMICALS",
+     "skill_used": "survival",
+@@ -33,6 +34,7 @@
+     "difficulty": 2,
+     "time": "10 m",
+     "autolearn": true,
++    "charges": 96,
+     "//": "Too simple. Just mixing feces and chitin with water. Basic chemistry shall be enough for this.",
+     "proficiencies": [ { "proficiency": "prof_intro_chemistry" } ],
+     "batch_time_factors": [ 95, 4 ],
+@@ -45,7 +47,8 @@
      ]
    },
    {
@@ -12,7 +28,7 @@ index 5ac902c6aafd..52b790bc1b37 100644
      "id": "fertilizer_yeast",
      "name": { "str_sp": "yeast fertilizer" },
      "weight": "62 g",
-@@ -60,8 +61,8 @@
+@@ -60,8 +63,8 @@
      "healthy": -1,
      "calories": 260,
      "description": "A nutrient-rich elixir for plants made from yeast.",
@@ -23,7 +39,7 @@ index 5ac902c6aafd..52b790bc1b37 100644
      "volume": "4000 ml",
      "phase": "liquid",
      "charges": 64,
-@@ -69,7 +70,8 @@
+@@ -69,7 +72,8 @@
      "fun": -30
    },
    {
@@ -33,7 +49,7 @@ index 5ac902c6aafd..52b790bc1b37 100644
      "id": "fertilizer_chitin",
      "name": { "str_sp": "chitin fertilizer" },
      "weight": "38 g",
-@@ -84,13 +86,13 @@
+@@ -84,13 +88,13 @@
      "healthy": -1,
      "calories": 260,
      "description": "A nutrient-rich elixir for plants made from powdered chitin.",
@@ -51,6 +67,49 @@ index 5ac902c6aafd..52b790bc1b37 100644
 -]
 \ No newline at end of file
 +
++]
+diff --git a/Fuel_Recipes.json b/Fuel_Recipes.json
+index 5167bb305e32..4fa683e48b11 100644
+--- a/Fuel_Recipes.json
++++ b/Fuel_Recipes.json
+@@ -9,6 +9,7 @@
+     "difficulty": 2,
+     "time": "20 s",
+     "batch_time_factors": [ 80, 1 ],
++    "charges": 250,
+     "book_learn": [ [ "adv_chemistry", 4 ] ],
+     "proficiencies": [ { "proficiency": "prof_intro_chemistry" } ],
+     "qualities": [ { "id": "CHEM", "level": 1 } ],
+@@ -24,6 +25,7 @@
+     "difficulty": 2,
+     "time": "20 s",
+     "batch_time_factors": [ 80, 1 ],
++    "charges": 250,
+     "book_learn": [ [ "adv_chemistry", 4 ] ],
+     "proficiencies": [ { "proficiency": "prof_intro_chemistry" } ],
+     "qualities": [ { "id": "CHEM", "level": 1 } ],
+@@ -38,6 +40,8 @@
+     "subcategory": "CSC_CHEM_FUEL",
+     "skill_used": "chemistry",
+     "difficulty": 4,
++    "id_suffix": "e85",
++    "charges": 250,
+     "time": "10 m",
+ 	"batch_time_factors": [ 99, 10 ],
+     "book_learn": [ [ "textbook_chemistry" ], [ "distilling_cookbook", 4 ] ],
+@@ -55,10 +59,11 @@
+     "skill_used": "chemistry",
+     "difficulty": 4,
+     "time": "20 s",
++    "charges": 250,
+     "batch_time_factors": [ 80, 1 ],
+     "book_learn": [ [ "adv_chemistry", 4 ] ],
+     "proficiencies": [ { "proficiency": "prof_intro_chemistry" } ],
+     "qualities": [ { "id": "CHEM", "level": 1 } ],
+     "components": [ [ [ "mutant_bug_hydrogen_sacs", 5 ] ] ]
+  }
+-]
+\ No newline at end of file
 +]
 diff --git a/Fuels.json b/Fuels.json
 index e42a9468da36..7caae90a5616 100644

@@ -16,7 +16,7 @@
     "result": "chemistry_set",
     "copy-from": "chemistry_set",
     "autolearn": true,
-    "components": [ [ [ "cable", 10 ], [ "any_wire", 1, "LIST" ] ], [ [ "hotplate", 1 ] ], [ [ "chemistry_set_basic", 1 ] ] ]
+    "components": [ [ [ "cable", 4 ], [ "any_wire", 1, "LIST" ] ], [ [ "hotplate", 1 ] ], [ [ "chemistry_set_basic", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -36,7 +36,7 @@
     "result": "pipe_cleaner",
     "copy-from": "pipe_cleaner",
     "autolearn": true,
-    "components": [ [ [ "any_wire", 2, "LIST" ], [ "cable", 2 ] ], [ [ "yarn", 1 ], [ "cotton_ball", 1 ], [ "wool_staple", 1 ] ] ]
+    "components": [ [ [ "any_wire", 2, "LIST" ], [ "cable", 1 ] ], [ [ "yarn", 1 ], [ "cotton_ball", 1 ], [ "wool_staple", 1 ] ] ]
   },
   {
     "type": "recipe",

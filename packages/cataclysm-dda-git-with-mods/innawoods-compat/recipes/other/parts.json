@@ -5,7 +5,7 @@
     "copy-from": "pilot_light",
     "autolearn": true,
     "qualities": [ { "id": "SAW_M", "level": 1 }, { "id": "HAMMER", "level": 2 }, { "id": "SCREW", "level": 1 } ],
-    "components": [ [ [ "scrap", 3 ] ], [ [ "cable", 2 ] ] ]
+    "components": [ [ [ "scrap", 3 ] ], [ [ "cable", 1 ] ] ]
   },
   {
     "type": "recipe",
@@ -51,7 +51,7 @@
     "time": "20 m 30 s",
     "autolearn": true,
     "using": [ [ "blacksmithing_standard", 8 ], [ "steel_standard", 2 ] ],
-    "components": [ [ [ "cable", 20 ] ] ]
+    "components": [ [ [ "cable", 7 ] ] ]
   },
   {
     "type": "recipe",
@@ -72,7 +72,7 @@
     "autolearn": true,
     "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
     "components": [
-      [ [ "cable", 28 ] ],
+      [ [ "cable", 9 ] ],
       [ [ "e_scrap", 3 ], [ "makeshift_transformer", 3 ] ],
       [ [ "scrap", 1 ] ],
       [ [ "bearing", 4 ] ]
@@ -86,7 +86,7 @@
     "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW", "level": 1 } ],
     "components": [
       [ [ "e_scrap", 15 ], [ "makeshift_transformer", 15 ] ],
-      [ [ "cable", 519 ] ],
+      [ [ "cable", 180 ] ],
       [ [ "pipe", 1 ] ],
       [ [ "bearing", 10 ] ],
       [ [ "sheet_metal_small", 4 ] ]
@@ -102,7 +102,7 @@
       [ [ "pipe", 6 ] ],
       [ [ "steel_chunk_any", 4, "LIST" ], [ "scrap", 12 ] ],
       [ [ "any_wire", 3, "LIST" ] ],
-      [ [ "cable", 10 ] ],
+      [ [ "cable", 3 ] ],
       [ [ "pipe_fittings", 4 ] ]
     ]
   },
@@ -115,7 +115,7 @@
     "components": [
       [ [ "e_scrap", 5 ], [ "makeshift_transformer", 5 ] ],
       [ [ "amplifier", 1 ], [ "makeshift_transformer", 2 ] ],
-      [ [ "cable", 5 ] ],
+      [ [ "cable", 2 ] ],
       [ [ "plastic_chunk", 5 ] ]
     ]
   },
@@ -186,7 +186,7 @@
     "copy-from": "power_supply",
     "autolearn": true,
     "qualities": [ { "id": "SCREW", "level": 1 } ],
-    "components": [ [ [ "amplifier", 2 ], [ "makeshift_transformer", 2 ] ], [ [ "cable", 20 ] ] ]
+    "components": [ [ [ "amplifier", 2 ], [ "makeshift_transformer", 2 ] ], [ [ "cable", 7 ] ] ]
   },
   {
     "type": "recipe",

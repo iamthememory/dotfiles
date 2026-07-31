@@ -143,7 +143,13 @@ let
   cdda-arcana-technoclysm = cataclysmDDA.buildMod {
     modName = "arcana-technoclysm";
     version = cataclysm-dda-cdda-arcana-technoclysm.lastModifiedDate;
-    src = cataclysm-dda-cdda-arcana-technoclysm;
+    src = applyPatches {
+      name = "cataclysm-dda-arcana-technoclysm-patched";
+      src = cataclysm-dda-cdda-arcana-technoclysm;
+      patches = [
+        ./patches/cataclysm-arcana-technoclysm.patch
+      ];
+    };
   };
 
   cdda-extra-lives = cataclysmDDA.buildMod {

@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..3a5cca65dcfb 100644
+index df4ffa673168..ca3430e0f9ce 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2876,12 +2876,12 @@ index df4ffa673168..3a5cca65dcfb 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_welding",
 +    "items": [
-+      { "item": "welding_rod_steel", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" },
-+      { "item": "welding_rod_alloy", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" },
-+      { "item": "welding_wire_steel", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "spool_welding" },
-+      { "item": "welding_wire_alloy", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "spool_welding" },
-+      { "item": "brazing_rod_bronze", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" },
-+      { "item": "brazing_rod_alloy", "prob": 10, "count": [ 100, 200 ], "entity-wrapper": "tube_welding_rod" }
++      { "item": "welding_rod_steel", "prob": 10, "count": [ 100, 200 ], "entry-wrapper": "tube_welding_rod" },
++      { "item": "welding_rod_alloy", "prob": 10, "count": [ 100, 200 ], "entry-wrapper": "tube_welding_rod" },
++      { "item": "welding_wire_steel", "prob": 10, "count": [ 100, 200 ], "entry-wrapper": "spool_welding" },
++      { "item": "welding_wire_alloy", "prob": 10, "count": [ 100, 200 ], "entry-wrapper": "spool_welding" },
++      { "item": "brazing_rod_bronze", "prob": 10, "count": [ 100, 200 ], "entry-wrapper": "tube_welding_rod" },
++      { "item": "brazing_rod_alloy", "prob": 10, "count": [ 100, 200 ], "entry-wrapper": "tube_welding_rod" }
 +    ]
 +  },
 +  {
@@ -6254,7 +6254,7 @@ index ce70e9badaf0..9d6b34889145 100644
 +]
 diff --git a/Resource Crops/mod_interactions/Arcana/fungusdrops.json b/Resource Crops/mod_interactions/Arcana/fungusdrops.json
 new file mode 100644
-index 000000000000..0fc8de17ea60
+index 000000000000..ff63dfa6731b
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/Arcana/fungusdrops.json	
 @@ -0,0 +1,62 @@
@@ -6276,7 +6276,7 @@ index 000000000000..0fc8de17ea60
 +        { "item": "amulet_exotic", "prob": 15, "count": [ 1, 1 ] },
 +        { "item": "amulet_exotic_empowered", "prob": 5, "count": [ 1, 1 ] },
 +        { "item": "arcana_mech_shem", "prob": 20, "count": [ 1, 1 ] },
-+        { "item": "ash", "prob": 20, "count": [ 380, 400 ] },
++        { "item": "ash", "prob": 20, "count": [ 38, 40 ] },
 +        { "item": "blob_gem", "prob": 72, "count": [ 1, 1 ] },
 +        { "item": "bone_tainted", "prob": 500, "count": [ 1, 2 ] },
 +        { "item": "bone_twisted", "prob": 150, "count": [ 1, 2 ] },
@@ -7022,7 +7022,7 @@ index 000000000000..da7e86e84164
 +]
 diff --git a/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json
 new file mode 100644
-index 000000000000..a300fee887b8
+index 000000000000..891e4c8f370f
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json	
 @@ -0,0 +1,69 @@
@@ -7035,7 +7035,7 @@ index 000000000000..a300fee887b8
 +    "extend": {
 +      "items": [
 +        { "item": "ant_stomach", "prob": 40, "count": [ 3, 4 ] },
-+        { "item": "ash", "prob": 800, "count": [ 380, 400 ] },
++        { "item": "ash", "prob": 800, "count": [ 38, 40 ] },
 +        { "item": "bezoar", "prob": 50, "count": [ 2, 4 ] },
 +        { "item": "birchbark", "prob": 80, "count": [ 1, 2 ] },
 +        { "item": "blank_blood_ball", "prob": 200, "count": [ 1, 2 ] },

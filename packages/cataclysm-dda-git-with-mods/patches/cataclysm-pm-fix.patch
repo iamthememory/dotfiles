@@ -87,6 +87,39 @@ index 72534203e4cc..e9e20fc14c6c 100644
      ]
    }
  ]
+diff --git a/AnomalousThings/BookThatDontBelongToYou/what eocs.json b/AnomalousThings/BookThatDontBelongToYou/what eocs.json
+index a5f2dea1c25d..8ce77e1dc31b 100644
+--- a/AnomalousThings/BookThatDontBelongToYou/what eocs.json	
++++ b/AnomalousThings/BookThatDontBelongToYou/what eocs.json	
+@@ -226,7 +226,7 @@
+     "type": "effect_on_condition",
+     "id": "92_ego_evolve",
+     "effect": [
+-      { 
++      {
+         "if": { "math": [ "u_spell_level('EGO_92_invoke')", "==", "-1" ] },
+         "then": [
+           { "math": [ "u_spell_level('EGO_92_invoke')", "=", "1" ] },
+@@ -235,7 +235,7 @@
+             "popup": true
+           }
+         ],
+-        "else": [ 
++        "else": [
+           { "math": [ "u_spell_level('EGO_92_invoke')", "+=", "1" ] },
+           {
+             "u_message": "you feel the blood in your veins heating up and it almost hurts, but everything abruptly subsides, replaced by a cold inside your stomach."
+@@ -422,8 +422,8 @@
+             {
+               "id": "skin_book_secondary_effect_13",
+               "effect": [
+-                { "u_spawn_item": "corpse_ash", "count": [ 20, 380 ], "suppress_message": true },
+-                { "u_spawn_item": "ash", "count": [ 20, 380 ], "suppress_message": true },
++                { "u_spawn_item": "corpse_ash", "count": [ 2, 38 ], "suppress_message": true },
++                { "u_spawn_item": "ash", "count": [ 2, 38 ], "suppress_message": true },
+                 { "u_spawn_item": "chem_saltpetre", "count": [ 1, 22 ], "suppress_message": true },
+                 { "u_spawn_item": "coal_lump", "count": [ 1, 3 ], "suppress_message": true }
+               ]
 diff --git a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json b/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json
 index ab65abc4c22c..1a755a0f0fbb 100644
 --- a/AnomalousThings/Ordeals/Green Dawn/GreenDawnEoC.json	

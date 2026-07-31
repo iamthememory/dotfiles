@@ -14,7 +14,7 @@
       [ [ "30gal_drum", 3 ] ],
       [ [ "filter_air", 1 ], [ "filter_air_makeshift", 1 ] ],
       [ [ "well_pump", 2 ] ],
-      [ [ "cable", 40 ] ],
+      [ [ "cable", 14 ] ],
       [ [ "frame", 1 ] ],
       [ [ "steel_plate", 8 ] ],
       [ [ "water", 150 ], [ "water_clean", 150 ] ]
@@ -27,7 +27,7 @@
     "autolearn": true,
     "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
     "components": [
-      [ [ "cable", 4 ] ],
+      [ [ "cable", 2 ] ],
       [ [ "e_scrap", 1 ], [ "makeshift_transformer", 1 ] ]
     ]
   },
@@ -39,7 +39,7 @@
     "qualities": [ { "id": "HAMMER", "level": 1 }, { "id": "SCREW_FINE", "level": 1 } ],
     "components": [
       [ [ "e_scrap", 4 ], [ "makeshift_transformer", 4 ] ],
-      [ [ "cable", 30 ] ]
+      [ [ "cable", 10 ] ]
     ]
   }
 ]

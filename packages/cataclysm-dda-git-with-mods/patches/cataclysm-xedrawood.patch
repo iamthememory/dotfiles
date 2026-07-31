@@ -87,6 +87,88 @@ index 0fc56d5b23df..f0a888589a4b 100644
 -    "stat": { "name": "bleed_rate", "modifier": 0 }
    }
  ]
+diff --git a/data/mods/XedraWood/mapgen/forest_tomb.json b/data/mods/XedraWood/mapgen/forest_tomb.json
+index 5b93573e8a70..b1774563f1da 100644
+--- a/data/mods/XedraWood/mapgen/forest_tomb.json
++++ b/data/mods/XedraWood/mapgen/forest_tomb.json
+@@ -1,7 +1,7 @@
+ [
+   {
+     "type": "palette",
+-    "id": "tomb",
++    "id": "xedrawood_tomb",
+     "terrain": {
+       ".": "t_rock_floor",
+       " ": [ [ "t_region_groundcover_forest", 15 ], [ "t_grass_dead", 1 ] ],
+@@ -24,12 +24,12 @@
+   },
+   {
+     "type": "palette",
+-    "id": "tomb_roof",
++    "id": "xedrawood_tomb_roof",
+     "terrain": { ".": "t_rock_roof", " ": "t_open_air", ">": "t_slope_down" }
+   },
+   {
+     "type": "mapgen",
+-    "om_terrain": [ "forest_tomb" ],
++    "om_terrain": [ "xedrawood_forest_tomb" ],
+     "//": "Ground level - Z-0.",
+     "object": {
+       "fill_ter": "t_rock_floor",
+@@ -59,12 +59,12 @@
+         "          TRRT          ",
+         "            R    S      "
+       ],
+-      "palettes": [ "tomb" ]
++      "palettes": [ "xedrawood_tomb" ]
+     }
+   },
+   {
+     "type": "mapgen",
+-    "om_terrain": [ "forest_tomb_bottom" ],
++    "om_terrain": [ "xedrawood_forest_tomb_bottom" ],
+     "//": "Underground level - Z -1.",
+     "object": {
+       "fill_ter": "t_rock_floor",
+@@ -94,12 +94,12 @@
+         "########################",
+         "########################"
+       ],
+-      "palettes": [ "tomb" ]
++      "palettes": [ "xedrawood_tomb" ]
+     }
+   },
+   {
+     "type": "mapgen",
+-    "om_terrain": [ "forest_tomb_roof" ],
++    "om_terrain": [ "xedrawood_forest_tomb_roof" ],
+     "//": "Roof level - Z +1.",
+     "object": {
+       "rows": [
+@@ -128,7 +128,7 @@
+         "                        ",
+         "                        "
+       ],
+-      "palettes": [ "tomb_roof" ]
++      "palettes": [ "xedrawood_tomb_roof" ]
+     }
+   }
+ ]
+diff --git a/data/mods/XedraWood/mapgen/map_extras/mx_giant_snake_nest.json b/data/mods/XedraWood/mapgen/map_extras/mx_giant_snake_nest.json
+index 5b8f96d6fd59..141c20dfc2b1 100644
+--- a/data/mods/XedraWood/mapgen/map_extras/mx_giant_snake_nest.json
++++ b/data/mods/XedraWood/mapgen/map_extras/mx_giant_snake_nest.json
+@@ -32,9 +32,7 @@
+       "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+       "terrain": { ".": "t_region_groundcover_swamp", "_": "t_region_groundcover_swamp", ",": "t_pit_shallow", "-": "t_trunk" },
+       "place_corpses": [ { "group": "GROUP_SWAMP", "x": [ 9 ], "y": [ 10 ], "repeat": [ 1, 3 ] } ],
+-      "items": {
+-        "_": [ { "item": "corpses", "chance": 10, "repeat": 1 }, { "item": "default_innawood_zombie_clothes", "chance": 20 } ]
+-      },
++      "items": { "_": [ { "item": "corpses", "chance": 10, "repeat": 1 }, { "item": "default_zombie_clothes", "chance": 20 } ] },
+       "place_monster": [
+         { "monster": "mon_rattlesnake_mega", "x": 9, "y": 11, "spawn_data": { "patrol": [ { "x": 9, "y": 9 } ] } },
+         { "monster": "mon_rattlesnake_big_s", "x": [ 6, 15 ], "y": [ 6, 15 ], "repeat": [ 2, 10 ], "chance": 50 }
 diff --git a/data/mods/XedraWood/mod_interactions/innawood/scenarios.json b/data/mods/XedraWood/mod_interactions/innawood/scenarios.json
 deleted file mode 100644
 index 50adf3a7a5b2..000000000000
@@ -139,7 +221,7 @@ index 802da9ef4baf..62d8d01147d5 100644
    }
  ]
 diff --git a/data/mods/XedraWood/monstergroups/default_additions.json b/data/mods/XedraWood/monstergroups/default_additions.json
-index 493d81c6f88c..4746782e42c4 100644
+index 69d5c85a0950..ad78ed233a40 100644
 --- a/data/mods/XedraWood/monstergroups/default_additions.json
 +++ b/data/mods/XedraWood/monstergroups/default_additions.json
 @@ -2,7 +2,6 @@
@@ -150,7 +232,7 @@ index 493d81c6f88c..4746782e42c4 100644
      "is_animal": true,
      "monsters": [
        { "group": "GROUP_WILDERNESS_FOREST_MAMMAL", "weight": 375, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
-@@ -131,7 +130,6 @@
+@@ -135,7 +134,6 @@
    {
      "type": "monstergroup",
      "id": "GROUP_RIVER",
@@ -158,7 +240,7 @@ index 493d81c6f88c..4746782e42c4 100644
      "monsters": [
        { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 5 },
        { "group": "GROUP_HOLLOW_ZOMBIES", "weight": 1, "pack_size": [ 2, 5 ] }
-@@ -140,7 +138,6 @@
+@@ -144,7 +142,6 @@
    {
      "type": "monstergroup",
      "id": "GROUP_FOREST_SPIRIT",
@@ -166,7 +248,7 @@ index 493d81c6f88c..4746782e42c4 100644
      "monsters": [ { "monster": "mon_dryad", "weight": 200 }, { "monster": "mon_dryad", "weight": 25, "pack_size": [ 2, 3 ] } ]
    },
    {
-@@ -156,24 +153,6 @@
+@@ -160,24 +157,6 @@
        { "monster": "mon_lizardfolk_hunter_hostile", "weight": 3 }
      ]
    },
@@ -1047,6 +1129,59 @@ index 413a7caca03e..000000000000
 -    "death_drops": "hollow_one_death_drops_zombie"
 -  }
 -]
+diff --git a/data/mods/XedraWood/overmap/overmap_specials.json b/data/mods/XedraWood/overmap/overmap_specials.json
+index ade7bcaa51a4..467e2945db79 100644
+--- a/data/mods/XedraWood/overmap/overmap_specials.json
++++ b/data/mods/XedraWood/overmap/overmap_specials.json
+@@ -15,11 +15,11 @@
+   },
+   {
+     "type": "overmap_special",
+-    "id": "forest_tomb",
++    "id": "xedrawood_forest_tomb",
+     "overmaps": [
+-      { "point": [ 0, 0, 0 ], "overmap": "forest_tomb_north" },
+-      { "point": [ 0, 0, 1 ], "overmap": "forest_tomb_roof_north" },
+-      { "point": [ 0, 0, -1 ], "overmap": "forest_tomb_bottom_north" }
++      { "point": [ 0, 0, 0 ], "overmap": "xedrawood_forest_tomb_north" },
++      { "point": [ 0, 0, 1 ], "overmap": "xedrawood_forest_tomb_roof_north" },
++      { "point": [ 0, 0, -1 ], "overmap": "xedrawood_forest_tomb_bottom_north" }
+     ],
+     "locations": [ "forest_center" ],
+     "city_distance": [ 20, -1 ],
+diff --git a/data/mods/XedraWood/overmap/overmap_terrain.json b/data/mods/XedraWood/overmap/overmap_terrain.json
+index 8700245d7928..0d78e6110127 100644
+--- a/data/mods/XedraWood/overmap/overmap_terrain.json
++++ b/data/mods/XedraWood/overmap/overmap_terrain.json
+@@ -12,7 +12,7 @@
+   },
+   {
+     "type": "overmap_terrain",
+-    "id": "forest_tomb",
++    "id": "xedrawood_forest_tomb",
+     "name": "ancient tomb",
+     "sym": "T",
+     "color": "brown",
+@@ -22,15 +22,15 @@
+   },
+   {
+     "type": "overmap_terrain",
+-    "id": "forest_tomb_roof",
+-    "copy-from": "forest_tomb",
++    "id": "xedrawood_forest_tomb_roof",
++    "copy-from": "xedrawood_forest_tomb",
+     "name": "ancient tomb roof",
+     "travel_cost_type": "roof"
+   },
+   {
+     "type": "overmap_terrain",
+-    "id": "forest_tomb_bottom",
+-    "copy-from": "forest_tomb",
++    "id": "xedrawood_forest_tomb_bottom",
++    "copy-from": "xedrawood_forest_tomb",
+     "name": "ancient tomb depths",
+     "travel_cost_type": "basement"
+   },
 diff --git a/data/mods/XedraWood/overmap/overmap_terrain_overwrites.json b/data/mods/XedraWood/overmap/overmap_terrain_overwrites.json
 deleted file mode 100644
 index 80d8969f4e20..000000000000
@@ -1079,6 +1214,298 @@ index 80d8969f4e20..000000000000
 -    "spawns": { "group": "GROUP_SWAMP", "population": [ 1, 4 ], "chance": 8 }
 -  }
 -]
+diff --git a/data/mods/XedraWood/player/hobbies.json b/data/mods/XedraWood/player/hobbies.json
+index c2e5a1830763..7b0330ebae10 100644
+--- a/data/mods/XedraWood/player/hobbies.json
++++ b/data/mods/XedraWood/player/hobbies.json
+@@ -2,7 +2,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "driving_license",
++    "id": "xedrawood_physique",
+     "name": "Adult Physique",
+     "description": "All adults have to walk long hours and do physical labor to support their people.  You were no exception, leaving you well-conditioned to survive on your own.",
+     "points": 0,
+@@ -12,7 +12,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "computer_literate",
++    "id": "xedrawood_traditional",
+     "name": "Traditional Mindset",
+     "description": "What survives from the past has proved its worth.  A new thing is risky--who knows if it will stand the test of time?  You cannot use modern technology.",
+     "points": 0,
+@@ -21,7 +21,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "simple_home_cooking",
++    "id": "xedrawood_simple_home_cooking",
+     "name": "Simple Cooking",
+     "description": "You've spent enough time around the communal campfires that you know how to cook basic dishes and feed yourself.",
+     "points": 0,
+@@ -31,7 +31,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "social_skills",
++    "id": "xedrawood_social_skills",
+     "name": "Social Skills",
+     "description": "You've spent a significant portion of your life living among other people and are familiar with social norms.  You know how to talk with other people, and how to convey your emotions and understand those of others.",
+     "points": 0,
+@@ -40,7 +40,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "high_school_graduate",
++    "id": "xedrawood_living_wild",
+     "name": "Living in the Wild",
+     "description": "Since you were young you were taught which plants to avoid and which ones can feed you in an emergency, how to follow water to the source, when fruits are in season, and to *never* stay out in the forest after dark.",
+     "points": 0,
+@@ -49,7 +49,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "mundane_survival",
++    "id": "xedrawood_mundane_survival",
+     "name": "Mundane Survival",
+     "description": "You've managed to survive to adulthood, which is no small feat.  Through your ordeals you've learned how to treat scrapes and bruises, and how to assemble basic furniture.",
+     "points": 0,
+@@ -58,7 +58,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "smoker",
++    "id": "xedrawood_smoker",
+     "name": "Pipeleaf Dependence",
+     "description": "Your people may have used pipeleaf for ritual purposes but you were always a bit too…enthusiastic when your partook.  You'll need to find a steady supply of leaf to smoke if you want to keep the cravings at bay.",
+     "points": -1,
+@@ -67,7 +67,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "long_distance_messenger",
++    "id": "xedrawood_long_distance_messenger",
+     "name": "Messenger",
+     "description": "You made your living running messages between the villages and tribes of the land, always priding yourself on being the fastest.  That speed is definitely going to help you now.",
+     "points": 5,
+@@ -78,7 +78,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "socialdance",
++    "id": "xedrawood_socialdance",
+     "name": "Group Dancing",
+     "description": "You loved meeting new people during tribal gatherings, dancing around the fire until the late hours.  Maybe you can keep putting those skills to use.",
+     "points": 2,
+@@ -87,7 +87,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "brewer",
++    "id": "xedrawood_brewer",
+     "subtype": "hobby",
+     "name": "Brewer",
+     "description": "You didn't hunt, and you didn't cook food, but your skills at brewing alcohol ensured that you were always valued at any tribal gathering larger than two or three people.",
+@@ -98,7 +98,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "foraging",
++    "id": "xedrawood_foraging",
+     "name": "Foraging",
+     "description": "You have plenty of practice at searching the forest for delicious foods.",
+     "points": 1,
+@@ -108,7 +108,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "fireperformance",
++    "id": "xedrawood_fireperformance",
+     "name": "Flamedancer",
+     "description": "Whether you twirled, spun, juggled, or ate it, your manipulation of flaming objects was impressive and terrifying to behold.",
+     "points": 1,
+@@ -118,7 +118,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "butcher_amateur",
++    "id": "xedrawood_butcher_amateur",
+     "name": "Butcher's Apprentice",
+     "description": "You helped dress and prepare the animals that came back from the hunt, and sometimes accompanied the hunters into the field if they were expecting a particularly large catch.  You're very good at preparing a carcass for food.",
+     "points": 2,
+@@ -128,7 +128,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "hunting_snares",
++    "id": "xedrawood_hunting_snares",
+     "name": "Snare-making",
+     "description": "You used to accompany the hunters but not to flush out or chase the quarry.  Your task was to place snares in the path, so the others would harry your prey and your traps could catch them.",
+     "points": 2,
+@@ -138,7 +138,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "wanderer",
++    "id": "xedrawood_wanderer",
+     "name": "Wanderer",
+     "description": "You used to travel far beyond the safety of your people's lands.  Maybe you were a trader seeking new goods, or maybe you ranged far afield seeking new game, or maybe you just needed some time away from everyone else.  At least now you'll get some time alone.",
+     "points": 2,
+@@ -148,7 +148,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "outcast",
++    "id": "xedrawood_outcast",
+     "name": "Outcast",
+     "description": "You were exiled from your tribe.  Whether you deserved it or not, it has forced you become self-reliant and stay on the move lest you meet others who know of your sentence.",
+     "points": 3,
+@@ -158,7 +158,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "cookfire_tender",
++    "id": "xedrawood_cookfire_tender",
+     "name": "Tender of Cookfires",
+     "description": "You used to tend the cookfires and prepare the meals, making sure that the meat didn't burn and the flames stayed hot until every one of your people was fed.",
+     "points": 1,
+@@ -169,7 +169,7 @@
+     "type": "profession",
+     "subtype": "hobby",
+     "name": "Healer's Apprentice",
+-    "id": "redcross",
++    "id": "xedrawood_redcross",
+     "description": "You've got training and some experience in dealing with urgent injuries.  Away from your people, that'll have to do.",
+     "points": 1,
+     "skills": [ { "level": 2, "name": "firstaid" } ],
+@@ -178,7 +178,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "leatherworking",
++    "id": "xedrawood_leatherworking",
+     "name": "Leatherworker (Apprentice)",
+     "description": "You spent time time apprenticed to the leather-workers among your people and have practice in cutting and treating hides as well as sewing them together to make garments.",
+     "points": 2,
+@@ -188,7 +188,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "big_eater",
++    "id": "xedrawood_big_eater",
+     "name": "Big Eater",
+     "description": "You were almost always hungry, always thinking about where your next meal was coming from.  You hung around the tribal cookfires so often that they eventually just kept roping you in to help prepare the meals.  You never minded as long as you got to taste the meals before they were served, but it's made you very particular about what you eat.",
+     "points": 1,
+@@ -198,7 +198,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "leatherworking_adept",
++    "id": "xedrawood_leatherworking_adept",
+     "name": "Leatherworker (Adept)",
+     "description": "You were an adept hand with the hides the hunters brought back, turning them into clothing and shelter for your people.",
+     "points": 4,
+@@ -208,7 +208,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "carving_hobby",
++    "id": "xedrawood_carving_hobby",
+     "name": "Whittling",
+     "description": "You've spent a chunk of your free time around the fire in camp or on boring moments out in the wild carving wood and bone into amusing or memorable shapes, and over time you've gotten pretty good at it.",
+     "points": 1,
+@@ -218,7 +218,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "stonecarver",
++    "id": "xedrawood_stonecarver",
+     "name": "Stonecarver (Apprentice)",
+     "description": "You were an apprentice stonecarver, set to accomplish simple tasks like knife-knapping and finding flaking stones in the wild.",
+     "points": 2,
+@@ -228,7 +228,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "stonecarver_adept",
++    "id": "xedrawood_stonecarver_adept",
+     "name": "Stonecarver (Adept)",
+     "description": "You served your people as a stonecarver, making the tools and weapons they needed to survive in the hostile wilderness.",
+     "points": 4,
+@@ -238,7 +238,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "basket_weaving",
++    "id": "xedrawood_basket_weaving",
+     "name": "Basket-weaving",
+     "description": "You frequently took a turn with the basketweavers, staying awake as long as the fire gave enough light to provide the containers your people used to transport their food and possessions on their wanderings.  To this day you still don't need as much sleep as others do.",
+     "points": 1,
+@@ -249,7 +249,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "river_dweller",
++    "id": "xedrawood_river_dweller",
+     "name": "River-dweller",
+     "description": "Your people dwelt by the waters, and you were playing on and in them almost before you could walk.  You're familiar with both swimming and boating.",
+     "points": 1,
+@@ -259,7 +259,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "witch_sight",
++    "id": "xedrawood_witch_sight",
+     "name": "Witch-sight",
+     "description": "You were born attuned to the spirit world.  Normally that would have marked you out for apprenticeship to a shaman or one of the Wise, but for whatever reason, that did not happen.  Your unique senses have left you with some knowledge of the unseen world, as well as difficulty falling asleep.",
+     "points": 1,
+@@ -269,7 +269,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "unarmed_combat",
++    "id": "xedrawood_unarmed_combat",
+     "name": "Wrestler (Apprentice)",
+     "description": "You've spent time fighting with your bare hands.  Not to take down game or against other tribes, of course, but in friendly--or at least, non-lethal--contests around the campfires.  You've gotten pretty good at it..",
+     "points": 2,
+@@ -279,7 +279,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "unarmed_combat_adept",
++    "id": "xedrawood_unarmed_combat_adept",
+     "name": "Wrestler (Adept)",
+     "description": "You're a veteran of contests using just your fists.  Maybe you've even used your skills in fights against other tribes, if it came down to a contest of champions and both of you ended up without your weapons.",
+     "points": 5,
+@@ -290,7 +290,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "hunter_hobby",
++    "id": "xedrawood_hunter_hobby",
+     "name": "Hunter (Apprentice)",
+     "description": "While not usually one of the hunters, you've gone on hunts when food supplies were slow or some of the hunters were recovering from their injuries, and have developed skill with the bow because of it.",
+     "points": 2,
+@@ -310,7 +310,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "warrior_hobby",
++    "id": "xedrawood_warrior_hobby",
+     "name": "Warrior (Apprentice)",
+     "description": "While not one of the warriors who went out on raids, you have fought in defense of your people and know how to handle yourself in a fight.",
+     "points": 5,
+@@ -325,7 +325,7 @@
+   {
+     "type": "profession",
+     "subtype": "hobby",
+-    "id": "arts_and_crafts",
++    "id": "xedrawood_arts_and_crafts",
+     "name": "Artisan",
+     "description": "You loved creating small dolls, toys, and bits of art during your downtime.  Now, you might want to channel those skills into making more practical things.",
+     "points": 1,
 diff --git a/data/mods/XedraWood/player/profession_blacklist.json b/data/mods/XedraWood/player/profession_blacklist.json
 deleted file mode 100644
 index f24b5ef2a52e..000000000000
@@ -1208,6 +1635,224 @@ index f24b5ef2a52e..000000000000
 -    ]
 -  }
 -]
+diff --git a/data/mods/XedraWood/player/professions.json b/data/mods/XedraWood/player/professions.json
+index 7e8f732bedd7..6805d69e8ccb 100644
+--- a/data/mods/XedraWood/player/professions.json
++++ b/data/mods/XedraWood/player/professions.json
+@@ -1,7 +1,7 @@
+ [
+   {
+     "type": "profession",
+-    "id": "redsmith",
++    "id": "xedrawood_redsmith",
+     "copy-from": "redsmith",
+     "name": "Redsmith",
+     "description": "When you were young, you were selected to be part of a secret fellowship and learned the rites necessary to melt and mold copper into tools.  You have spent long hours over the forge, lit by the glow of molten metal",
+@@ -28,7 +28,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "tribal_arbalist",
++    "id": "xedrawood_tribal_arbalist",
+     "name": "Tribal Archer",
+     "description": "From your first hunt, you showed talent with a bow.  While the tribe was well guarded by your aim, you're all alone now.",
+     "points": 3,
+@@ -61,7 +61,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "tribal_warrior_expert",
++    "id": "xedrawood_tribal_warrior_expert",
+     "name": "Seasoned Tribal Warrior",
+     "description": "You are veteran of many a raid and have fought in defense of your people against the things in the wild when they try to invade your home.  You have been scarred by weapon, by claw, and by things you'd rather not remember.  This latest ordeal is just another battle to be won.",
+     "points": 8,
+@@ -103,7 +103,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "pattern_tattoo_mountain_prof",
++    "id": "xedrawood_pattern_tattoo_mountain_prof",
+     "name": "Aspirant of the Mountain",
+     "description": "You are one of the warrior companions to the Wise, and have received the sacred tattoos that bond your soul with the spirits of the land.  In your case, the spirits of the Mountain, granting you resilience and skill in unarmed combat.  Hopefully these talents will help you now.",
+     "points": 7,
+@@ -135,7 +135,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "lizardfolk_warrior",
++    "id": "xedrawood_lizardfolk_warrior",
+     "name": "Lizardfolk Swampstalker",
+     "//": "Separate lizardfolk hunter/warrior professions because they don't have clothes and they have unarmed proficiency due to teeth and claws",
+     "description": "The land was your kin's long before the warmbloods came.  Someday, it will be yours again.",
+@@ -182,7 +182,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "lizardfolk_hunter",
++    "id": "xedrawood_lizardfolk_hunter",
+     "name": "Lizardfolk Hunter",
+     "description": "For years you went out from your tribe's village, taking game and bringing it back to keep them fed.  Now that you're on your own, those skills will have to be enough to keep you alive.",
+     "points": 5,
+@@ -240,7 +240,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "wise_one_apprentice",
++    "id": "xedrawood_wise_one_apprentice",
+     "name": "Apprentice to the Wise",
+     "description": "From your birth, you were in contact with the spirit world.  You were trained in the ways of the spirits and mediated between them and your tribe.  In time, one of the Wise came to your village to induct you into the deeper mysteries, but they vanished before completing your training.  Now that you're alone, you'll need to contact the spirits of this new place and learn their ways.",
+     "points": 3,
+@@ -264,7 +264,7 @@
+       "hobby_species_changeling_noble",
+       "hobby_species_changeling_commoner",
+       "hates_books",
+-      "witch_sight"
++      "xedrawood_witch_sight"
+     ],
+     "whitelist_hobbies": false,
+     "items": {
+@@ -285,7 +285,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "wise_one_forest",
++    "id": "xedrawood_wise_one_forest",
+     "name": { "male": "Brother to the Trees", "female": "Sister to the Trees" },
+     "description": "You passed your apprenticeship among the Wise, learning the lesser mysteries and undergoing the ordeal to bond your soul with that of the Forest.  You succeeded where many of your fellow apprentices failed and began to learn the deeper mysteries under the tutelage of your master.  Now you're on your own, but your knowledge will guide your way forward.",
+     "flags": [ "SCEN_ONLY" ],
+@@ -323,7 +323,7 @@
+       "hobby_species_changeling_noble",
+       "hobby_species_changeling_commoner",
+       "hates_books",
+-      "witch_sight"
++      "xedrawood_witch_sight"
+     ],
+     "whitelist_hobbies": false,
+     "items": {
+diff --git a/data/mods/XedraWood/player/professions_modified.json b/data/mods/XedraWood/player/professions_modified.json
+index 02e06ef1ce77..fe0cb4b41113 100644
+--- a/data/mods/XedraWood/player/professions_modified.json
++++ b/data/mods/XedraWood/player/professions_modified.json
+@@ -1,19 +1,7 @@
+ [
+   {
+     "type": "profession",
+-    "id": "shaman",
+-    "copy-from": "shaman",
+-    "name": "Healer"
+-  },
+-  {
+-    "type": "profession",
+-    "id": "recruit",
+-    "copy-from": "recruit",
+-    "name": "Novice Tribal Warrior"
+-  },
+-  {
+-    "type": "profession",
+-    "id": "paraclesian_ierde",
++    "id": "xedrawood_paraclesian_ierde",
+     "copy-from": "paraclesian_ierde",
+     "traits": [ "IERDE", "IERDE_STONE_MEDITATIONS", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "deduction" } ],
+@@ -22,7 +10,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_arvore",
++    "id": "xedrawood_paraclesian_arvore",
+     "copy-from": "paraclesian_arvore",
+     "traits": [ "ARVORE", "ARVORE_SEED_BEARER", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "gramarye" } ],
+@@ -31,7 +19,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_undine",
++    "id": "xedrawood_paraclesian_undine",
+     "copy-from": "paraclesian_undine",
+     "traits": [ "UNDINE", "ILLITERATE" ],
+     "proficiencies": [ "prof_parkour" ],
+@@ -41,7 +29,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_salamander",
++    "id": "xedrawood_paraclesian_salamander",
+     "copy-from": "paraclesian_salamander",
+     "traits": [ "SALAMANDER", "PYROMANIA", "DEFT", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "gramarye" }, { "level": 1, "name": "unarmed" } ],
+@@ -50,7 +38,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_homullus",
++    "id": "xedrawood_paraclesian_homullus",
+     "copy-from": "paraclesian_homullus",
+     "traits": [ "HOMULLUS", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "deduction" }, { "level": 3, "name": "speech" } ],
+@@ -59,7 +47,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_sylph",
++    "id": "xedrawood_paraclesian_sylph",
+     "copy-from": "paraclesian_sylph",
+     "traits": [ "SYLPH", "LIGHTSTEP", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "deduction" }, { "level": 3, "name": "dodge" } ],
+@@ -68,7 +56,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_ierde_naked_afraid",
++    "id": "xedrawood_paraclesian_ierde_naked_afraid",
+     "copy-from": "paraclesian_ierde_naked_afraid",
+     "traits": [ "IERDE", "IERDE_STONE_MEDITATIONS", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "deduction" } ],
+@@ -77,7 +65,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_arvore_naked_afraid",
++    "id": "xedrawood_paraclesian_arvore_naked_afraid",
+     "copy-from": "paraclesian_arvore_naked_afraid",
+     "traits": [ "ARVORE", "ARVORE_SEED_BEARER", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "gramarye" } ],
+@@ -86,7 +74,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_undine_naked_afraid",
++    "id": "xedrawood_paraclesian_undine_naked_afraid",
+     "copy-from": "paraclesian_undine_naked_afraid",
+     "traits": [ "UNDINE", "ILLITERATE" ],
+     "proficiencies": [ "prof_parkour" ],
+@@ -96,7 +84,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_salamander_naked_afraid",
++    "id": "xedrawood_paraclesian_salamander_naked_afraid",
+     "copy-from": "paraclesian_salamander_naked_afraid",
+     "traits": [ "SALAMANDER", "PYROMANIA", "DEFT", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "gramarye" } ],
+@@ -105,7 +93,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_homullus_naked_afraid",
++    "id": "xedrawood_paraclesian_homullus_naked_afraid",
+     "copy-from": "paraclesian_homullus_naked_afraid",
+     "traits": [ "HOMULLUS", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "deduction" }, { "level": 3, "name": "speech" } ],
+@@ -114,7 +102,7 @@
+   },
+   {
+     "type": "profession",
+-    "id": "paraclesian_sylph_naked_afraid",
++    "id": "xedrawood_paraclesian_sylph_naked_afraid",
+     "copy-from": "paraclesian_sylph_naked_afraid",
+     "traits": [ "SYLPH", "LIGHTSTEP", "ILLITERATE" ],
+     "skills": [ { "level": 3, "name": "deduction" }, { "level": 3, "name": "dodge" } ],
 diff --git a/data/mods/XedraWood/player/removed_starting_traits.json b/data/mods/XedraWood/player/removed_starting_traits.json
 deleted file mode 100644
 index 2eb26f4a096a..000000000000
@@ -1326,6 +1971,164 @@ index 2eb26f4a096a..000000000000
 -    "chargen_allow_npc": false
 -  }
 -]
+diff --git a/data/mods/XedraWood/player/scenario.json b/data/mods/XedraWood/player/scenario.json
+index 930875f95f27..372bac515969 100644
+--- a/data/mods/XedraWood/player/scenario.json
++++ b/data/mods/XedraWood/player/scenario.json
+@@ -3,7 +3,14 @@
+     "type": "scenario",
+     "id": "evacuee",
+     "copy-from": "evacuee",
+-    "extend": { "professions": [ "tribal_warrior_expert", "lizardfolk_warrior", "lizardfolk_hunter", "wise_one_apprentice" ] }
++    "extend": {
++      "professions": [
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice"
++      ]
++    }
+   },
+   {
+     "type": "scenario",
+@@ -11,11 +18,11 @@
+     "copy-from": "cave_lonesome",
+     "extend": {
+       "professions": [
+-        "tribal_warrior_expert",
+-        "lizardfolk_warrior",
+-        "lizardfolk_hunter",
+-        "wise_one_apprentice",
+-        "pattern_tattoo_mountain_prof"
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice",
++        "xedrawood_pattern_tattoo_mountain_prof"
+       ]
+     }
+   },
+@@ -23,7 +30,9 @@
+     "type": "scenario",
+     "id": "infected",
+     "copy-from": "infected",
+-    "extend": { "professions": [ "tribal_warrior_expert", "wise_one_apprentice", "pattern_tattoo_mountain_prof" ] }
++    "extend": {
++      "professions": [ "xedrawood_tribal_warrior_expert", "xedrawood_wise_one_apprentice", "xedrawood_pattern_tattoo_mountain_prof" ]
++    }
+   },
+   {
+     "type": "scenario",
+@@ -31,11 +40,11 @@
+     "copy-from": "hunted_start",
+     "extend": {
+       "professions": [
+-        "tribal_warrior_expert",
+-        "lizardfolk_warrior",
+-        "lizardfolk_hunter",
+-        "wise_one_apprentice",
+-        "pattern_tattoo_mountain_prof"
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice",
++        "xedrawood_pattern_tattoo_mountain_prof"
+       ]
+     }
+   },
+@@ -43,7 +52,14 @@
+     "type": "scenario",
+     "id": "fungal_start",
+     "copy-from": "fungal_start",
+-    "extend": { "professions": [ "tribal_warrior_expert", "lizardfolk_warrior", "lizardfolk_hunter", "wise_one_apprentice" ] }
++    "extend": {
++      "professions": [
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice"
++      ]
++    }
+   },
+   {
+     "type": "scenario",
+@@ -51,11 +67,11 @@
+     "copy-from": "bordered",
+     "extend": {
+       "professions": [
+-        "tribal_warrior_expert",
+-        "lizardfolk_warrior",
+-        "lizardfolk_hunter",
+-        "wise_one_apprentice",
+-        "pattern_tattoo_mountain_prof"
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice",
++        "xedrawood_pattern_tattoo_mountain_prof"
+       ]
+     }
+   },
+@@ -65,11 +81,11 @@
+     "copy-from": "ambushed",
+     "extend": {
+       "professions": [
+-        "tribal_warrior_expert",
+-        "lizardfolk_warrior",
+-        "lizardfolk_hunter",
+-        "wise_one_apprentice",
+-        "pattern_tattoo_mountain_prof"
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice",
++        "xedrawood_pattern_tattoo_mountain_prof"
+       ]
+     }
+   },
+@@ -79,11 +95,11 @@
+     "copy-from": "summer_advanced_start",
+     "extend": {
+       "professions": [
+-        "tribal_warrior_expert",
+-        "lizardfolk_warrior",
+-        "lizardfolk_hunter",
+-        "wise_one_apprentice",
+-        "pattern_tattoo_mountain_prof"
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice",
++        "xedrawood_pattern_tattoo_mountain_prof"
+       ]
+     }
+   },
+@@ -93,11 +109,11 @@
+     "copy-from": "wilderness",
+     "extend": {
+       "professions": [
+-        "tribal_warrior_expert",
+-        "lizardfolk_warrior",
+-        "lizardfolk_hunter",
+-        "wise_one_apprentice",
+-        "pattern_tattoo_mountain_prof"
++        "xedrawood_tribal_warrior_expert",
++        "xedrawood_lizardfolk_warrior",
++        "xedrawood_lizardfolk_hunter",
++        "xedrawood_wise_one_apprentice",
++        "xedrawood_pattern_tattoo_mountain_prof"
+       ]
+     }
+   },
+@@ -109,7 +125,7 @@
+     "points": 8,
+     "start_name": "Remote dwelling",
+     "allowed_locs": [ "sloc_wise_one_hut" ],
+-    "professions": [ "wise_one_apprentice", "wise_one_forest" ],
++    "professions": [ "xedrawood_wise_one_apprentice", "xedrawood_wise_one_forest" ],
+     "reveal_locale": false,
+     "flags": [ "LONE_START" ]
+   }
 diff --git a/data/mods/XedraWood/recipes/blacklisting/innawood_blacklisting.json b/data/mods/XedraWood/recipes/blacklisting/innawood_blacklisting.json
 deleted file mode 100644
 index 94c55b49ec2a..000000000000
@@ -1788,7 +2591,7 @@ index 5355c3801fe3..000000000000
 -  }
 -]
 diff --git a/data/mods/XedraWood/regional_overlay.json b/data/mods/XedraWood/regional_overlay.json
-index 6f26d0c9c769..3b1f5a67d3e6 100644
+index 68b1a583741e..54c39a3c38c0 100644
 --- a/data/mods/XedraWood/regional_overlay.json
 +++ b/data/mods/XedraWood/regional_overlay.json
 @@ -24,26 +24,6 @@
