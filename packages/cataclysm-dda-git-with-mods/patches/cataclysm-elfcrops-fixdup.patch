@@ -14734,7 +14734,7 @@ index e3b40b6e648a..eb6b8b94c4fc 100644
 +}
 +]
 diff --git a/Resource Crops/seeds/food seeds.json b/Resource Crops/seeds/food seeds.json
-index 4b6a9ff1343e..ab0e189574d4 100644
+index 4b6a9ff1343e..a7dcf434cfb2 100644
 --- a/Resource Crops/seeds/food seeds.json	
 +++ b/Resource Crops/seeds/food seeds.json	
 @@ -2,289 +2,547 @@
@@ -15436,10 +15436,10 @@ index 4b6a9ff1343e..ab0e189574d4 100644
 +    "fruit": "water_berry",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +  },
@@ -15468,7 +15468,7 @@ index 4b6a9ff1343e..ab0e189574d4 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..be06581c1b8b 100644
+index 83c7aca5e180..82dec0e16c51 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
 @@ -2,33 +2,358 @@
@@ -15659,10 +15659,10 @@ index 83c7aca5e180..be06581c1b8b 100644
 +    "fruit": "rc_spawn_forage_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
@@ -15680,10 +15680,10 @@ index 83c7aca5e180..be06581c1b8b 100644
 +    "fruit": "rc_spawn_harvest_fungus",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_SEED": "5 days" },
++      { "GROWTH_SEEDLING": "5 days" },
++      { "GROWTH_MATURE": "5 days" },
++      { "GROWTH_HARVEST": "5 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
 +},
