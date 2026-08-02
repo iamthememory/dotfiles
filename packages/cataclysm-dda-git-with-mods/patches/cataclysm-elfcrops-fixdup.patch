@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..ca3430e0f9ce 100644
+index df4ffa673168..ec90a3ca1663 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2662,7 +2662,7 @@ index df4ffa673168..ca3430e0f9ce 100644
 +      { "item": "demihuman_stomach", "prob": 120, "count": [ 5, 6 ] },
 +      { "item": "demihuman_stomach_large", "prob": 20, "count": [ 2, 3 ] },
 +      { "item": "demihuman_sweetbread", "prob": 24, "count": [ 8, 9 ] },
-+      { "item": "down_feather", "prob": 70, "count": [ 380, 400 ] },
++      { "item": "down_feather", "prob": 70, "count": [ 38, 40 ] },
 +      { "item": "endochitin", "prob": 3480, "count": [ 4, 5 ] },
 +      { "item": "fat", "prob": 2920, "count": [ 17, 19 ] },
 +      { "item": "fat_tainted", "prob": 1060, "count": [ 2, 2 ] },
@@ -6353,7 +6353,7 @@ index 000000000000..1faeb2baa79c
 +]
 diff --git a/Resource Crops/mod_interactions/DinoMod/fungusdrops.json b/Resource Crops/mod_interactions/DinoMod/fungusdrops.json
 new file mode 100644
-index 000000000000..20f2b0387231
+index 000000000000..889f99aea02c
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/DinoMod/fungusdrops.json	
 @@ -0,0 +1,41 @@
@@ -6369,7 +6369,7 @@ index 000000000000..20f2b0387231
 +        { "item": "blood_tainted_ball", "prob": 400, "count": [ 1, 2 ] },
 +        { "item": "bone", "prob": 1700, "count": [ 1, 2 ] },
 +        { "item": "bone_tainted", "prob": 800, "count": [ 1, 2 ] },
-+        { "item": "down_feather", "prob": 22, "count": [ 380, 400 ] },
++        { "item": "down_feather", "prob": 22, "count": [ 38, 40 ] },
 +        { "item": "fat_tainted", "prob": 640, "count": [ 2, 2 ] },
 +        { "item": "feather", "prob": 44, "count": [ 380, 400 ] },
 +        { "item": "large_bone", "prob": 3400, "count": [ 0, 1 ] },
@@ -6506,7 +6506,7 @@ index 000000000000..1c7d799f580a
 +]
 diff --git a/Resource Crops/mod_interactions/magiclysm/fungusdrops.json b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json
 new file mode 100644
-index 000000000000..9c10da79752c
+index 000000000000..e16292441325
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/magiclysm/fungusdrops.json	
 @@ -0,0 +1,70 @@
@@ -6542,7 +6542,7 @@ index 000000000000..9c10da79752c
 +        { "item": "demihuman_sweetbread", "prob": 4, "count": [ 8, 9 ] },
 +        { "item": "demon_chitin_piece", "prob": 200, "count": [ 4, 5 ] },
 +        { "item": "demon_spider_fang", "prob": 40, "count": [ 1, 2 ] },
-+        { "item": "down_feather", "prob": 56, "count": [ 380, 400 ] },
++        { "item": "down_feather", "prob": 56, "count": [ 38, 40 ] },
 +        { "item": "dragon_black_scale", "prob": 100, "count": [ 1, 1 ] },
 +        { "item": "dragon_blood_ball", "prob": 200, "count": [ 1, 1 ] },
 +        { "item": "fat", "prob": 360, "count": [ 17, 19 ] },
