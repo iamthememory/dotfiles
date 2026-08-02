@@ -9,5 +9,16 @@
     "delete": {
       "flags": [ "FREEZERBURN" ]
     }
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "SEED", "COMESTIBLE" ],
+    "id": "seed_pea",
+    "copy-from": "seed_pea",
+    "name": { "str_sp": "pea seeds" },
+    "spoils_in": 0,
+    "delete": {
+      "flags": [ "FREEZERBURN" ]
+    }
   }
 ]
