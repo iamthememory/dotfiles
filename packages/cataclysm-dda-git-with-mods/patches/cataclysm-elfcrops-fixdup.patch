@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..ec90a3ca1663 100644
+index df4ffa673168..f1993b053053 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..ec90a3ca1663 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,957 @@
+@@ -615,9 +571,965 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -3284,6 +3284,14 @@ index df4ffa673168..ec90a3ca1663 100644
 +    "id": "rc_drop_tin",
 +    "items": [
 +      { "item": "tin", "count": 100 }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_mineral",
++    "items": [
++      { "group": "mining_rock_roll", "count": [ 10, 40 ] }
      ]
    }
 -]
@@ -3822,7 +3830,7 @@ index fccd89aa02a2..7665c0bbef75 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..9d6b34889145 100644
+index ce70e9badaf0..9b89d804b41a 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
 @@ -1,1046 +1,1717 @@
@@ -5886,7 +5894,7 @@ index ce70e9badaf0..9d6b34889145 100644
 +          "id": "EOC_rc_spawn_mineral_fungus",
 +          "effect": [
 +            { "npc_location_variable": { "context_val": "loc" } },
-+            { "map_spawn_item": "mining_rock", "loc": { "context_val": "loc" }, "use_item_group": true }
++            { "map_spawn_item": "rc_drop_mineral", "loc": { "context_val": "loc" }, "use_item_group": true }
 +          ]
 +        }
 +      ]

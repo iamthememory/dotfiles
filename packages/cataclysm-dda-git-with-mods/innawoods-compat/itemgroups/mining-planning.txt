@@ -1,0 +1,92 @@
+Average amount per rock wall mined:
+
+37.5   coal_lump
+23.5   rock
+14     material_limestone
+ 1     rock_large
+ 0.5   sharp_rock
+ 0.4   chunk_feldspar
+ 0.3   chunk_galena
+ 0.3   chunk_cinnabar
+ 0.3   chunk_cassiterite
+ 0.25  rock_flaking
+ 0.25  flint
+ 0.225 chunk_copper
+ 0.2   material_rocksalt
+ 0.2   chunk_magnetite
+ 0.2   chunk_hematite
+ 0.15  chunk_caco3
+ 0.125 material_zincite
+ 0.125 iron_ore
+ 0.125 chunk_sulfur
+ 0.1   material_niter
+ 0.1   chunk_borax
+ 0.05  chunk_silver
+ 0.045 chunk_aluminum
+ 0.03  chunk_gold
+ 0.025 chunk_graphite
+ 0.015 material_rhodonite
+ 0.01  pearl
+ 0.01  diamond
+ 0.005 tourmaline
+ 0.005 sapphire
+ 0.005 ruby
+ 0.005 peridot
+ 0.005 opal
+ 0.005 onyx
+ 0.005 malachite
+ 0.005 garnet
+ 0.005 emerald
+ 0.005 citrine
+ 0.005 blue_topaz
+ 0.005 aquamarine
+ 0.005 amethyst
+ 0.005 alexandrite
+
+Average items: 80.105
+
+
+Normalized (x200):
+
+7500 coal_lump
+4700 rock
+2800 material_limestone
+200  rock_large
+100  sharp_rock
+80   chunk_feldspar
+60   chunk_galena
+60   chunk_cinnabar
+60   chunk_cassiterite
+50   rock_flaking
+50   flint
+45   chunk_copper
+40   material_rocksalt
+40   chunk_magnetite
+40   chunk_hematite
+30   chunk_caco3
+25   material_zincite
+25   iron_ore
+25   chunk_sulfur
+20   material_niter
+20   chunk_borax
+10   chunk_silver
+9    chunk_aluminum
+6    chunk_gold
+5    chunk_graphite
+3    material_rhodonite
+2    pearl
+2    diamond
+1    tourmaline
+1    sapphire
+1    ruby
+1    peridot
+1    opal
+1    onyx
+1    malachite
+1    garnet
+1    emerald
+1    citrine
+1    blue_topaz
+1    aquamarine
+1    amethyst
+1    alexandrite
