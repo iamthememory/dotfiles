@@ -2219,7 +2219,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..f1993b053053 100644
+index df4ffa673168..c0e0a38554b1 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2326,7 +2326,7 @@ index df4ffa673168..f1993b053053 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,965 @@
+@@ -615,9 +571,974 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -2538,12 +2538,12 @@ index df4ffa673168..f1993b053053 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_forage",
 +    "items": [
-+      { "group": "SUS_trash_forest_no_manmade", "prob": 10 },
-+      { "group": "SUS_trash_forest_manmade", "prob": 10 },
-+      { "group": "forage_spring", "prob": 10 },
-+      { "group": "forage_summer", "prob": 10 },
-+      { "group": "forage_autumn", "prob": 10 },
-+      { "group": "forage_winter", "prob": 10 }
++      { "group": "SUS_trash_forest_no_manmade", "prob": 100 },
++      { "group": "SUS_trash_forest_manmade", "prob": 1 },
++      { "group": "forage_spring", "prob": 100 },
++      { "group": "forage_summer", "prob": 100 },
++      { "group": "forage_autumn", "prob": 100 },
++      { "group": "forage_winter", "prob": 100 }
 +    ]
 +  },
 +  {
@@ -2558,7 +2558,7 @@ index df4ffa673168..f1993b053053 100644
 +      { "item": "fiddlehead_raw", "prob": 10, "count": [ 1, 4 ] },
 +      { "item": "autumn_olive", "prob": 10, "count": [ 4, 20 ] },
 +      { "item": "chokeberries", "prob": 10, "count": [ 6, 12 ] },
-+      { "item": "spicebush_berries", "prob": 10, "count": [ 1, 4 ] },
++      { "item": "spicebush_berries", "prob": 10, "count": [ 1, 4 ], "container-item": "null" },
 +      { "item": "hobbleberries", "prob": 10, "count": [ 1, 2 ] },
 +      { "item": "peanut", "prob": 10, "count": [ 5, 10 ] },
 +      { "item": "pecan", "prob": 10, "count": [ 5, 12 ] },
@@ -3291,7 +3291,16 @@ index df4ffa673168..f1993b053053 100644
 +    "subtype": "distribution",
 +    "id": "rc_drop_mineral",
 +    "items": [
-+      { "group": "mining_rock_roll", "count": [ 10, 40 ] }
++      { "group": "rc_drop_mineral_roll", "count": [ 10, 30 ] }
++    ]
++  },
++  {
++    "type": "item_group",
++    "subtype": "distribution",
++    "id": "rc_drop_mineral_roll",
++    "items": [
++      { "group": "mining_rock_roll", "count": 1 },
++      { "group": "mining_rock_roll_no_rock", "count": 4 }
      ]
    }
 -]
