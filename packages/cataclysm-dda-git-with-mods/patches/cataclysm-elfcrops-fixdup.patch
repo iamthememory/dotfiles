@@ -100,10 +100,15 @@ index baa1bb0d5c51..e58ba455a734 100644
 \ No newline at end of file
 +]
 diff --git a/Plant Crops/recipes.json b/Plant Crops/recipes.json
-index 61189c799240..fd707b5326ea 100644
+index 61189c799240..da885df8dc98 100644
 --- a/Plant Crops/recipes.json	
 +++ b/Plant Crops/recipes.json	
-@@ -40,26 +40,6 @@
+@@ -36,30 +36,10 @@
+     "tools": [ [ [ "surface_heat", 5, "LIST" ] ] ],
+     "components": [
+       [
+-        [ "rc_rice", 10]
++        [ "rc_rice", 2]
        ]
      ]
    },
