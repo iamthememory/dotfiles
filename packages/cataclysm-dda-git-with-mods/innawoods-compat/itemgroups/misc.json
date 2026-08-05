@@ -12,7 +12,7 @@
     "type": "item_group",
     "subtype": "distribution",
     "items": [
-      { "item": "coal_lump", "prob": 7500 },
+      { "item": "coal_lump", "prob": 7500, "charges": 1 },
       { "item": "rock", "prob": 4700 },
       { "item": "material_limestone", "prob": 2800 },
       { "item": "rock_large", "prob": 200 },
@@ -61,7 +61,7 @@
     "type": "item_group",
     "subtype": "distribution",
     "items": [
-      { "item": "coal_lump", "prob": 7500 },
+      { "item": "coal_lump", "prob": 7500, "charges": 1 },
       { "item": "material_limestone", "prob": 2800 },
       { "item": "sharp_rock", "prob": 100 },
       { "item": "chunk_feldspar", "prob": 80 },

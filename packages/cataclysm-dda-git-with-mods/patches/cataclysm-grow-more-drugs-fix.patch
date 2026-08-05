@@ -99,25 +99,31 @@ index 81c09b78ea0a..ff62bb065133 100644
    }
  ]
 diff --git a/mods/grow_more_drugs/items/cdf_items_food_raw.json b/mods/grow_more_drugs/items/cdf_items_food_raw.json
-index 482710abf4d9..a635f7c74354 100644
+index 482710abf4d9..2b883d496b80 100644
 --- a/mods/grow_more_drugs/items/cdf_items_food_raw.json
 +++ b/mods/grow_more_drugs/items/cdf_items_food_raw.json
-@@ -1,9 +1,12 @@
+@@ -1,9 +1,18 @@
  [
    {
++    "type": "ammunition_type",
      "id": "cdf_coca_raw",
 -    "type": "COMESTIBLE",
 -    "looks_like": "lettuce",
++    "name": "chopped coca leaf",
++    "default": "cdf_coca_raw"
++  },
++  {
++    "id": "cdf_coca_raw",
 +    "type": "ITEM",
 +    "subtypes": [ "COMESTIBLE", "AMMO" ],
-+    "ammo_type": "components",
++    "ammo_type": "cdf_coca_raw",
 +    "category": "drug",
      "comestible_type": "MED",
 +    "looks_like": "lettuce",
      "name": { "str": "chopped coca leaf", "str_pl": "chopped coca leaves" },
      "description": "Leaves from the coca plant, chopped for ease of use. Can be further refined into cocaine or chewed as is.",
      "weight": "1 g",
-@@ -24,13 +27,14 @@
+@@ -24,13 +33,14 @@
      "use_action": [ "CHEW" ]
    },
    {
@@ -134,7 +140,7 @@ index 482710abf4d9..a635f7c74354 100644
      "symbol": "^",
      "healthy": 1,
      "calories": 21,
-@@ -40,18 +44,19 @@
+@@ -40,18 +50,19 @@
      "material": [ "veggy" ],
      "volume": "100 ml",
      "fun": -12,
@@ -157,7 +163,7 @@ index 482710abf4d9..a635f7c74354 100644
      "symbol": "%",
      "calories": 35,
      "description": "A handful of freshly-picked bluebell flowers.  In their current raw state they are totally edible, but are a lot tastier when properly cooked.",
-@@ -60,7 +65,7 @@
+@@ -60,7 +71,7 @@
      "material": [ "veggy" ],
      "volume": "100 ml",
      "fun": -2,

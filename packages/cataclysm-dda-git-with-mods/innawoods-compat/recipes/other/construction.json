@@ -8,6 +8,7 @@
     "autolearn": true,
     "category": "CC_OTHER",
     "subcategory": "CSC_OTHER_MATERIALS",
+    "using": [ ],
     "qualities": [ { "id": "SAW_W", "level": 2 } ],
     "components": [ [ [ "wood_beam", 1 ] ] ]
   }

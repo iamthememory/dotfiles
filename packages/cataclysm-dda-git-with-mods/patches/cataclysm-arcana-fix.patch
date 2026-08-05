@@ -23,6 +23,47 @@ index be4e4e91ccfa..a8d99d8c035a 100644
 +    }
    }
  ]
+diff --git a/Arcana/items/ammo.json b/Arcana/items/ammo.json
+index 8b43dbafd1cf..b35647461acd 100644
+--- a/Arcana/items/ammo.json
++++ b/Arcana/items/ammo.json
+@@ -91,6 +91,19 @@
+     "effects": [ "NEVER_MISFIRES", "NON_FOULING" ],
+     "flags": [ "ZERO_WEIGHT" ]
+   },
++  {
++    "id": "essence_fake",
++    "type": "ITEM",
++    "subtypes": [ "AMMO" ],
++    "name": { "str_sp": "displacement surge power" },
++    "description": "Seeing this is a bug.",
++    "material": [ "essencemat" ],
++    "flags": [ "PSEUDO", "PERPETUAL" ],
++    "symbol": "?",
++    "color": "cyan",
++    "count": 1,
++    "ammo_type": "essence_fake_type"
++  },
+   {
+     "type": "ITEM",
+     "subtypes": [ "AMMO" ],
+diff --git a/Arcana/items/ammo_types.json b/Arcana/items/ammo_types.json
+index ee872a54ec8b..79f6ef7793a0 100644
+--- a/Arcana/items/ammo_types.json
++++ b/Arcana/items/ammo_types.json
+@@ -29,6 +29,12 @@
+     "default": "essence_pure",
+     "type": "ammunition_type"
+   },
++  {
++    "id": "essence_fake_type",
++    "name": "displace surge power",
++    "default": "essence_fake",
++    "type": "ammunition_type"
++  },
+   {
+     "id": "primitive_magic_item_ammo_type",
+     "name": "essentia",
 diff --git a/Arcana/mod_interactions/Cata++/professions.json b/Arcana/mod_interactions/Cata++/professions.json
 index e30d868aa4d4..63ee145ffc06 100644
 --- a/Arcana/mod_interactions/Cata++/professions.json

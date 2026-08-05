@@ -3399,10 +3399,10 @@ index 2000d28c817f..48ff3eabdef1 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/items.json b/Resource Crops/items/items.json
-index fccd89aa02a2..7665c0bbef75 100644
+index fccd89aa02a2..e6c6785f8394 100644
 --- a/Resource Crops/items/items.json	
 +++ b/Resource Crops/items/items.json	
-@@ -1,57 +1,405 @@
+@@ -1,57 +1,429 @@
  [
    {
      "id": "rc_textbook_infseeds",
@@ -3497,6 +3497,12 @@ index fccd89aa02a2..7665c0bbef75 100644
 +    "volume": "2500 ml"
 +  },
 +  {
++    "type": "ammunition_type",
++    "id": "material_sand_clump",
++    "name": "",
++    "default": "material_sand_clump"
++  },
++  {
 +    "type": "ITEM",
 +    "subtypes": [ "AMMO" ],
 +    "id": "material_sand_clump",
@@ -3510,8 +3516,14 @@ index fccd89aa02a2..7665c0bbef75 100644
 +    "price_postapoc": "0 cent",
 +    "material": [ "sand" ],
 +    "volume": "250 ml",
-+    "ammo_type": "components",
++    "ammo_type": "material_sand_clump",
 +    "count": 1
++  },
++  {
++    "type": "ammunition_type",
++    "id": "nail_bundle",
++    "name": "",
++    "default": "nail_bundle"
 +  },
 +  {
 +    "type": "ITEM",
@@ -3527,8 +3539,14 @@ index fccd89aa02a2..7665c0bbef75 100644
 +    "price_postapoc": "0 cent",
 +    "material": [ "lc_steel" ],
 +    "volume": "150 ml",
-+    "ammo_type": "components",
++    "ammo_type": "nail_bundle",
 +    "count": 1
++  },
++  {
++    "type": "ammunition_type",
++    "id": "duct_tape_bundle",
++    "name": "",
++    "default": "duct_tape_bundle"
 +  },
 +  {
 +    "type": "ITEM",
@@ -3544,7 +3562,7 @@ index fccd89aa02a2..7665c0bbef75 100644
 +    "price_postapoc": "0 cent",
 +    "material": [ "plastic" ],
 +    "volume": "400 ml",
-+    "ammo_type": "components",
++    "ammo_type": "duct_tape_bundle",
 +    "count": 1
 +  },
 +  {
@@ -3824,6 +3842,12 @@ index fccd89aa02a2..7665c0bbef75 100644
 +    "name": { "str": "crude lamp oil ball" }
 +  },
 +  {
++    "type": "ammunition_type",
++    "id": "material_cement_clump",
++    "name": "",
++    "default": "material_cement_clump"
++  },
++  {
 +    "type": "ITEM",
 +    "subtypes": [ "AMMO" ],
 +    "id": "material_cement_clump",
@@ -3837,7 +3861,7 @@ index fccd89aa02a2..7665c0bbef75 100644
 +    "price_postapoc": "0 cent",
 +    "material": [ "sand" ],
 +    "volume": "250 ml",
-+    "ammo_type": "components",
++    "ammo_type": "material_cement_clump",
 +    "count": 1
    }
 -]
@@ -6799,7 +6823,7 @@ index 000000000000..66b91100e66c
 +]
 diff --git a/Resource Crops/mod_interactions/skyisland/itemgroups.json b/Resource Crops/mod_interactions/skyisland/itemgroups.json
 new file mode 100644
-index 000000000000..154de4168079
+index 000000000000..0194d4f9ccd6
 --- /dev/null
 +++ b/Resource Crops/mod_interactions/skyisland/itemgroups.json	
 @@ -0,0 +1,23 @@
@@ -6822,7 +6846,7 @@ index 000000000000..154de4168079
 +    "items": [
 +      { "group": "random_artifact_pool", "prob": 1 },
 +      { "item": "warptoken", "prob": 10 },
-+      { "item": "warptoken_material", "prob": 50, "charges": [ 1, 10 ] }
++      { "item": "warptoken_material", "prob": 50, "count": [ 1, 10 ] }
 +    ]
 +  }
 +]

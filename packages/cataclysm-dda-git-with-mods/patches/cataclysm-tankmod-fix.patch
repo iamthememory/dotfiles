@@ -1,3 +1,24 @@
+diff --git a/Tankmod_Revived/ammo_types.json b/Tankmod_Revived/ammo_types.json
+index 405360352e04..3412ad73a9d4 100644
+--- a/Tankmod_Revived/ammo_types.json
++++ b/Tankmod_Revived/ammo_types.json
+@@ -1,4 +1,16 @@
+ [
++  {
++    "type": "ammunition_type",
++    "id": "electric_primer_120mm",
++    "name": "120mm electric primer",
++    "default": "electric_primer_120mm"
++  },
++  {
++    "type": "ammunition_type",
++    "id": "primer_155mm",
++    "name": "155mm primer",
++    "default": "primer_155mm"
++  },
+   {
+     "type": "ammunition_type",
+     "id": "105mm",
 diff --git a/Tankmod_Revived/item_groups.json b/Tankmod_Revived/item_groups.json
 index fdadbda441ad..ae059e73e3ba 100644
 --- a/Tankmod_Revived/item_groups.json
@@ -39,6 +60,28 @@ index fdadbda441ad..ae059e73e3ba 100644
 +        { "item": "105mm_ap", "prob": 1 }
        ]
      }
+   },
+diff --git a/Tankmod_Revived/items.json b/Tankmod_Revived/items.json
+index 5e1d0f398afa..3569a107c403 100644
+--- a/Tankmod_Revived/items.json
++++ b/Tankmod_Revived/items.json
+@@ -622,7 +622,7 @@
+     "material": [ "steel", "powder" ],
+     "volume": "250 ml",
+     "weight": "40 g",
+-    "ammo_type": "components",
++    "ammo_type": "electric_primer_120mm",
+     "count": 10,
+     "effects": [ "COOKOFF" ]
+   },
+@@ -640,7 +640,7 @@
+     "material": [ "steel", "powder" ],
+     "volume": "250 ml",
+     "weight": "80 g",
+-    "ammo_type": "components",
++    "ammo_type": "primer_155mm",
+     "count": 5,
+     "effects": [ "COOKOFF" ]
    },
 diff --git a/Tankmod_Revived/modinfo.json b/Tankmod_Revived/modinfo.json
 index 5a494a6573bd..544f5387131a 100644
