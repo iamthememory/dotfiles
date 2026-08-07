@@ -228,7 +228,7 @@ index e50a8e4141d3..b727fe3a57d8 100644
 +]
 diff --git a/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json b/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json
 new file mode 100644
-index 000000000000..c815bc5a4bb5
+index 000000000000..e305b8eb59b6
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/itemgroups/fungusdrops.json	
 @@ -0,0 +1,133 @@
@@ -359,9 +359,9 @@ index 000000000000..c815bc5a4bb5
 +    "subtype": "distribution",
 +    "id": "rc_drop_mana_crystal",
 +    "items": [
-+        { "item": "crystallized_mana_raw", "count": [ 4, 8 ], "prob": 10 },
-+        { "item": "small_mana_crystal", "count": [ 0, 2 ], "prob": 10 },
-+        { "item": "glass_shard", "count": [ 8, 12 ], "prob": 10 }
++        { "item": "crystallized_mana_raw", "count": 1, "prob": 10 },
++        { "item": "small_mana_crystal", "count": 1, "prob": 10 },
++        { "item": "glass_shard", "count": 1, "prob": 10 }
 +    ]
 +  }
 +]
@@ -770,7 +770,7 @@ index 000000000000..31ea245747ba
 +]
 diff --git a/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json
 new file mode 100644
-index 000000000000..321399b2de9f
+index 000000000000..3a7896908b74
 --- /dev/null
 +++ b/Resource Crops Magiclysm addon/mod_interactions/mindovermatter/fungusdrops.json	
 @@ -0,0 +1,76 @@
@@ -845,7 +845,7 @@ index 000000000000..321399b2de9f
 +    "copy-from": "rc_drop_mana_crystal",
 +    "extend": {
 +      "items": [
-+        { "group": "collection_matrix_dust", "prob": 4 }
++        { "group": "distribution_matrix_dust", "prob": 4 }
 +      ]
 +    }
 +  }
