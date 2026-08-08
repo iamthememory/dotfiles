@@ -19,6 +19,9 @@
     vorbis-tools
   ];
 
+  # A TUI PipeWire audio mixer.
+  programs.wiremix.enable = true;
+
   # Enable easyeffects for effects on pipewire sound.
   services.easyeffects.enable = true;
 }
