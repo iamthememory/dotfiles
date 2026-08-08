@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1785923999,
-        "narHash": "sha256-dyogOjNS3kferEX8f2oVfZq/+mfHAoiDERh334xp9VE=",
+        "lastModified": 1786190307,
+        "narHash": "sha256-MfYEjzF2qIuJkI/EHRh8blqA0jXkxa18JAMwTA/US5A=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "216762f2e8551feff16f86555943a91cd1c649c8",
+        "rev": "c92176491b0494a2520cacb62de4c9938fe63681",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1785901861,
-        "narHash": "sha256-/dha2X3fRvW8CZUxwF/LGBPwFhBy80yJliTdcDh3bEU=",
+        "lastModified": 1786141056,
+        "narHash": "sha256-LEfHpi0pGGE0thSTAhf4atczSYss3TxG/Wy3KYvm2vA=",
         "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "b8b46fb65ea5149c899927efb43f95097221f954",
+        "rev": "c85e0243b6931acb9fb0cb030879b13783de9c63",
         "type": "github"
       },
       "original": {
@@ -35,11 +35,11 @@
     "cataclysm-dda-cdda-arcana-technoclysm": {
       "flake": false,
       "locked": {
-        "lastModified": 1764886863,
-        "narHash": "sha256-jh2NxkUW0Y4ryF3KnmQ0QYex05IEuDguQTcACm5LV18=",
+        "lastModified": 1785963976,
+        "narHash": "sha256-j8imGzZhfJvY+7DisEC8iCQTuz2oc1PJHDQ94KNzZbg=",
         "owner": "linewriter1024",
         "repo": "cdda-arcana-technoclysm",
-        "rev": "e3bd2e5640aea7048a2d4f5d60a7ef915d20cca9",
+        "rev": "a6c0f42143311e8a01ec4ba54f28b55c0f17ac8c",
         "type": "github"
       },
       "original": {
@@ -562,11 +562,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785531816,
-        "narHash": "sha256-vkMnV0JIyw+g/NmcfoajlGaAO+9a0ezia+FZohQJrik=",
+        "lastModified": 1786031233,
+        "narHash": "sha256-TIDlLTLI1/pB7IqgjzcKQjpODQsZE2oII4XGG9B6KjI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bf9ce9fec78f95f374e8dd3b503863a3ec128ebe",
+        "rev": "7834e82588860aaf780cec1366524456a70898d7",
         "type": "github"
       },
       "original": {
@@ -766,11 +766,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1785926540,
-        "narHash": "sha256-zfBkRM8Srlzsgm1fKNLVR1saL+VbXJi/PfhVq334pxs=",
+        "lastModified": 1786194899,
+        "narHash": "sha256-iCyDhBeDc/vi25IC4Iro7m7sRhGgXtuw18sabChigjI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "99f11ad9c0555996f8f737dc7f438286cb4af8a2",
+        "rev": "1ad0e2b4ca24a70022c334167c591f9d1750e220",
         "type": "github"
       },
       "original": {
@@ -833,11 +833,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1785907205,
-        "narHash": "sha256-Ds1vTi53af4wDMAveSR/K0JnywDslLwmgwhVIiwnNmY=",
+        "lastModified": 1786160316,
+        "narHash": "sha256-oLoc3ZLg1LX/S5Jb3v6MrF415AzDyC4vgeWy9UcYTQk=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "c5cb13481d718fac906aa9cfd85f9b60e1a546cb",
+        "rev": "4e1c940c96560ceab7c547f89642231371a66646",
         "type": "github"
       },
       "original": {
