@@ -1,0 +1,68 @@
+[
+  {
+    "//": "Remove these once xedra adds them or fixes EOC_ALCHEMY5 to not assume they exist when they don't.",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "earth_imbuement",
+    "category": "CC_XEDRA",
+    "subcategory": "CSC_XEDRA_ALCHEMY",
+    "skill_used": "chemistry",
+    "skills_required": [ [ "deduction", 5 ] ],
+    "difficulty": 7,
+    "time": "2 h",
+    "flags": [ "SECRET" ],
+    "tools": [ [ [ "rock_large", -1 ] ], [ [ "mortar_pestle", -1 ] ] ],
+    "components": [
+      [ [ "blood", 1 ] ],
+      [ [ "fae_blood", 1 ] ],
+      [ [ "ierde_sample", 5 ] ],
+      [ [ "faewild", 5 ] ],
+      [ [ "scrap_dreamdross", 5 ] ],
+      [ [ "rock", 5 ] ]
+    ]
+  },
+  {
+    "//": "Remove these once xedra adds them or fixes EOC_ALCHEMY5 to not assume they exist when they don't.",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "water_imbuement",
+    "category": "CC_XEDRA",
+    "subcategory": "CSC_XEDRA_ALCHEMY",
+    "skill_used": "chemistry",
+    "skills_required": [ [ "deduction", 5 ] ],
+    "difficulty": 7,
+    "time": "2 h",
+    "flags": [ "SECRET" ],
+    "qualities": [ { "id": "CONTAIN", "level": 1 } ],
+    "tools": [ [ [ "mortar_pestle", -1 ] ] ],
+    "components": [
+      [ [ "blood", 1 ] ],
+      [ [ "fae_blood", 1 ] ],
+      [ [ "undine_sample", 5 ] ],
+      [ [ "faewild", 5 ] ],
+      [ [ "scrap_dreamdross", 5 ] ],
+      [ [ "water", 5 ] ]
+    ]
+  },
+  {
+    "//": "Remove these once xedra adds them or fixes EOC_ALCHEMY5 to not assume they exist when they don't.",
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "air_imbuement",
+    "category": "CC_XEDRA",
+    "subcategory": "CSC_XEDRA_ALCHEMY",
+    "skill_used": "chemistry",
+    "skills_required": [ [ "deduction", 5 ] ],
+    "difficulty": 7,
+    "time": "2 h",
+    "flags": [ "SECRET" ],
+    "tools": [ [ [ "feather", -1 ] ], [ [ "mortar_pestle", -1 ] ] ],
+    "components": [
+      [ [ "blood", 1 ] ],
+      [ [ "fae_blood", 1 ] ],
+      [ [ "sylph_sample", 5 ] ],
+      [ [ "faewild", 5 ] ],
+      [ [ "scrap_dreamdross", 5 ] ]
+    ]
+  }
+]
