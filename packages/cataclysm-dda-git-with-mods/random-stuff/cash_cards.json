@@ -1,0 +1,199 @@
+[
+  {
+    "id": "recycle_plastic",
+    "copy-from": "recycle_plastic",
+    "type": "item_group",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 5, "charges": [ 5, 5000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_full",
+    "copy-from": "wallet_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 5, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_leather_full",
+    "copy-from": "wallet_leather_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 5, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_large_full",
+    "copy-from": "wallet_large_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 5, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_duct_tape_full",
+    "copy-from": "wallet_duct_tape_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 500 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_stylish_full",
+    "copy-from": "wallet_stylish_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 10000, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_military_leather_full",
+    "copy-from": "wallet_military_leather_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_military_full",
+    "copy-from": "wallet_military_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_science_leather_full",
+    "copy-from": "wallet_science_leather_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_science_full",
+    "copy-from": "wallet_science_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_science_stylish_full",
+    "copy-from": "wallet_science_stylish_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 10000, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_industrial_leather_full",
+    "copy-from": "wallet_industrial_leather_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "wallet_industrial_full",
+    "copy-from": "wallet_industrial_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 50000 ] }
+      ]
+    }
+  },
+  {
+    "id": "starter_wallet_full",
+    "copy-from": "starter_wallet_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 0, 1000 ] }
+      ]
+    }
+  },
+  {
+    "id": "starter_rich_wallet_full",
+    "copy-from": "starter_rich_wallet_full",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "prob": 100, "charges": [ 8000, 12000 ] }
+      ]
+    }
+  },
+  {
+    "id": "SUS_junk_drawer_messy",
+    "copy-from": "SUS_junk_drawer_messy",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "count": [ 1, 3], "charges": [ 1, 1150 ] }
+      ]
+    }
+  },
+  {
+    "id": "mon_zombie_survivor_death_drops",
+    "copy-from": "mon_zombie_survivor_death_drops",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "charges": [ 25000, 100000 ] }
+      ]
+    }
+  },
+  {
+    "id": "mon_zombie_survivor_elite_death_drops",
+    "copy-from": "mon_zombie_survivor_elite_death_drops",
+    "type": "item_group",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "cash_card", "charges": [ 50000, 150000 ] }
+      ]
+    }
+  }
+]

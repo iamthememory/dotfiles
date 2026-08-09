@@ -151,7 +151,7 @@ index 61189c799240..da885df8dc98 100644
 \ No newline at end of file
 +]
 diff --git a/Plant Crops/seed.json b/Plant Crops/seed.json
-index e50a8e4141d3..b727fe3a57d8 100644
+index e50a8e4141d3..1405e96ef7c3 100644
 --- a/Plant Crops/seed.json	
 +++ b/Plant Crops/seed.json	
 @@ -2,43 +2,39 @@
@@ -216,10 +216,10 @@ index e50a8e4141d3..b727fe3a57d8 100644
 +    "fruit": "tinder",
 +    "byproducts": [ "withered" ],
 +    "growth_stages": [
-+      { "GROWTH_SEED": "5 days" },
-+      { "GROWTH_SEEDLING": "5 days" },
-+      { "GROWTH_MATURE": "5 days" },
-+      { "GROWTH_HARVEST": "5 days" },
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
    }
