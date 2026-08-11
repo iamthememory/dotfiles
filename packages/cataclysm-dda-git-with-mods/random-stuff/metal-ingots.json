@@ -1,5 +1,12 @@
 [
   {
+    "result": "10l_iron",
+    "type": "recipe",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 47100 ] ],
+    "components": [ [ [ "5l_iron", 2 ], [ "lump_cast_iron", 80 ], [ "chunk_cast_iron", 320 ] ] ]
+  },
+  {
     "result": "5l_iron",
     "type": "uncraft",
     "activity_level": "MODERATE_EXERCISE",
@@ -30,6 +37,13 @@
     "components": [ [ [ "lc_steel_lump", 40 ], [ "lc_steel_chunk", 160 ] ] ]
   },
   {
+    "result": "10l_lc_steel",
+    "type": "recipe",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 47100 ] ],
+    "components": [ [ [ "5l_lc_steel", 2 ], [ "lc_steel_lump", 80 ], [ "lc_steel_chunk", 320 ] ] ]
+  },
+  {
     "result": "5l_lc_steel",
     "type": "uncraft",
     "activity_level": "MODERATE_EXERCISE",
@@ -43,6 +57,13 @@
     "copy-from": "ingot_making_base",
     "using": [ [ "smelting_standard", 23550 ] ],
     "components": [ [ [ "lc_steel_lump", 40 ], [ "lc_steel_chunk", 160 ] ] ]
+  },
+  {
+    "result": "10l_mc_steel",
+    "type": "recipe",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 47100 ] ],
+    "components": [ [ [ "5l_mc_steel", 2 ], [ "mc_steel_lump", 80 ], [ "mc_steel_chunk", 320 ] ] ]
   },
   {
     "result": "5l_mc_steel",
@@ -60,6 +81,13 @@
     "components": [ [ [ "mc_steel_lump", 40 ], [ "mc_steel_chunk", 160 ] ] ]
   },
   {
+    "result": "10l_hc_steel",
+    "type": "recipe",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 47100 ] ],
+    "components": [ [ [ "5l_hc_steel", 2 ], [ "hc_steel_lump", 80 ], [ "hc_steel_chunk", 320 ] ] ]
+  },
+  {
     "result": "5l_hc_steel",
     "type": "uncraft",
     "activity_level": "MODERATE_EXERCISE",
@@ -73,6 +101,36 @@
     "copy-from": "ingot_making_base",
     "using": [ [ "smelting_standard", 23550 ] ],
     "components": [ [ [ "hc_steel_lump", 40 ], [ "hc_steel_chunk", 160 ] ] ]
+  },
+  {
+    "result": "10l_budget_steel",
+    "type": "uncraft",
+    "activity_level": "MODERATE_EXERCISE",
+    "time": "10 m",
+    "tools": [ [ [ "angle_grinder", 10 ] ] ],
+    "components": [ [ [ "5l_budget_steel", 2 ] ] ]
+  },
+  {
+    "result": "10l_budget_steel",
+    "type": "recipe",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 47100 ] ],
+    "components": [ [ [ "5l_budget_steel", 2 ], [ "budget_steel_lump", 80 ], [ "budget_steel_chunk", 320 ] ] ]
+  },
+  {
+    "result": "5l_budget_steel",
+    "type": "uncraft",
+    "activity_level": "MODERATE_EXERCISE",
+    "time": "1 h",
+    "tools": [ [ [ "angle_grinder", 50 ] ] ],
+    "components": [ [ [ "budget_steel_lump", 40 ] ] ]
+  },
+  {
+    "result": "5l_budget_steel",
+    "type": "recipe",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 23550 ] ],
+    "components": [ [ [ "budget_steel_lump", 40 ], [ "budget_steel_chunk", 160 ] ] ]
   },
   {
     "result": "10l_tin",
@@ -97,20 +155,11 @@
   },
   {
     "result": "scrap_tin",
-    "charges": 4,
-    "id_suffix": "from_powder",
     "type": "recipe",
-    "activity_level": "LIGHT_EXERCISE",
-    "category": "CC_OTHER",
-    "subcategory": "CSC_OTHER_MATERIALS",
-    "skill_used": "fabrication",
-    "difficulty": 3,
-    "autolearn": true,
-    "time": "3 m",
-    "batch_time_factors": [ 75, 3 ],
-    "qualities": [ { "id": "HAMMER", "level": 1 } ],
-    "tools": [ [ [ "surface_heat", 10, "LIST" ] ] ],
-    "components": [ [ [ "tin", 100 ] ] ]
+    "id_suffix": "from_powder",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 100 ] ],
+    "components": [ [ [ "tin", 50 ] ] ]
   },
   {
     "result": "1l_lead",
@@ -149,6 +198,14 @@
     "activity_level": "MODERATE_EXERCISE",
     "time": "2 m",
     "qualities": [ { "id": "HAMMER", "level": 1 } ],
+    "components": [ [ [ "copper", 50 ] ] ]
+  },
+  {
+    "result": "scrap_copper",
+    "type": "recipe",
+    "id_suffix": "smelting_ingot",
+    "copy-from": "ingot_making_base",
+    "using": [ [ "smelting_standard", 100 ] ],
     "components": [ [ [ "copper", 50 ] ] ]
   },
   {
