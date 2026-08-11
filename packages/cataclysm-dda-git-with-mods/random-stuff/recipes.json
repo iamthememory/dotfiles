@@ -71,5 +71,74 @@
       [ [ "chem_washing_soda", 5 ] ],
       [ [ "poppy_pain", 5 ] ]
     ]
+  },
+  {
+    "type": "recipe",
+    "result": "crystallizing_sugar_active",
+    "id_suffix": "from_sweets",
+    "copy-from": "crystallizing_sugar_active_from_sweets",
+    "batch_time_factors": [ 95, 1 ],
+    "qualities": [
+      { "id": "CONTAIN", "level": 1 },
+      { "id": "CUT", "level": 2 },
+      { "id": "BOIL", "level": 2 },
+      { "id": "STRAIN", "level": 2 }
+    ],
+    "tools": [ [ [ "water_boiling_heat", 8, "LIST" ] ], [ [ "screw_press", -1 ] ] ],
+    "components": [
+      [
+        [ "sweet_fruit_like_no_pulp", 2, "LIST" ],
+        [ "coconut_flesh", 2 ],
+        [ "corn_kernels", 3 ],
+        [ "rehydrated_corn_kernels", 3 ],
+        [ "honeydew", 3 ],
+        [ "honeycomb", 1 ],
+        [ "can_corn", 3 ],
+        [ "juice", 3 ]
+      ],
+      [ [ "water_clean", 2 ], [ "water", 2 ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "crystallizing_sugar_active",
+    "id_suffix": "from_sweets_no_pulp",
+    "copy-from": "crystallizing_sugar_active_from_sweets_no_pulp",
+    "batch_time_factors": [ 95, 1 ],
+    "qualities": [
+      { "id": "CONTAIN", "level": 1 },
+      { "id": "CUT", "level": 2 },
+      { "id": "BOIL", "level": 2 },
+      { "id": "STRAIN", "level": 2 }
+    ],
+    "tools": [ [ [ "water_boiling_heat", 8, "LIST" ] ], [ [ "screw_press", -1 ] ] ],
+    "components": [
+      [
+        [ "sweet_fruit_like_no_pulp", 2, "LIST" ],
+        [ "coconut_flesh", 2 ],
+        [ "corn_kernels", 3 ],
+        [ "rehydrated_corn_kernels", 3 ],
+        [ "honeydew", 3 ],
+        [ "honeycomb", 1 ],
+        [ "can_corn", 3 ],
+        [ "juice", 3 ]
+      ],
+      [ [ "water_clean", 2 ], [ "water", 2 ] ]
+    ]
+  },
+  {
+    "type": "recipe",
+    "result": "crystallizing_sugar_active",
+    "id_suffix": "from_beets",
+    "copy-from": "crystallizing_sugar_active_from_beets",
+    "batch_time_factors": [ 95, 1 ],
+    "qualities": [
+      { "id": "CONTAIN", "level": 1 },
+      { "id": "CUT", "level": 2 },
+      { "id": "BOIL", "level": 2 },
+      { "id": "STRAIN", "level": 2 }
+    ],
+    "tools": [ [ [ "water_boiling_heat", 8, "LIST" ] ], [ [ "screw_press", -1 ] ] ],
+    "components": [ [ [ "sugar_beet", 3 ] ], [ [ "water_clean", 1 ], [ "water", 1 ] ] ]
   }
 ]
