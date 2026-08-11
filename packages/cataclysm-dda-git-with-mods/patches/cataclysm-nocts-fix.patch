@@ -428,10 +428,22 @@ index 3fd8aa698dee..c8282c80bf99 100644
    {
      "type": "item_group",
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json b/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
-index 97c30a99854e..5d2311bef392 100644
+index 97c30a99854e..698745fa0965 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
 +++ b/nocts_cata_mod_DDA/Surv_help/c_item_groups_vanilla.json
-@@ -179,19 +179,19 @@
+@@ -1,8 +1,9 @@
+ [
+   {
+-    "id": "camping",
+-    "copy-from": "camping",
++    "id": "camping_tool",
++    "copy-from": "camping_tool",
+     "type": "item_group",
++    "subtype": "collection",
+     "extend": { "items": [ [ "hammer_multitool", 10 ], [ "parawatch", 10 ], [ "parabracelets", 10 ] ] }
+   },
+   {
+@@ -179,19 +180,19 @@
      "id": "homebooks",
      "copy-from": "homebooks",
      "type": "item_group",
@@ -454,7 +466,7 @@ index 97c30a99854e..5d2311bef392 100644
    },
    {
      "id": "shelter",
-@@ -203,7 +203,7 @@
+@@ -203,7 +204,7 @@
      "id": "textbooks",
      "copy-from": "textbooks",
      "type": "item_group",
