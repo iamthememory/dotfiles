@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1786628691,
-        "narHash": "sha256-Xhq+SWIrMf/I+SeJFG8CIbGKLKkPb7UvhV4VjD9YetE=",
+        "lastModified": 1786649158,
+        "narHash": "sha256-UyMtgh5Syz86DrufTNfuO+9PASt/WLNzz/+UCK3lCpQ=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "b725cbec1a8fc77842a578dd00d89c5bf8c74bb6",
+        "rev": "121ee8f6cb0e2cc410ca87ad4258678c757f0b41",
         "type": "github"
       },
       "original": {
@@ -698,11 +698,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1786636268,
-        "narHash": "sha256-Oo3vD1NYWha07JckxJ9YwSY35Ff9xAi7CeHdiaE/1L0=",
+        "lastModified": 1786652812,
+        "narHash": "sha256-Ro8TXq6MrQBc5WGsbFYG00dRqmGokGwCSIESMP7gXVU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3c5aea93b60008c7bcedcccbf288dc158f41897b",
+        "rev": "4248027091d2f342b66cdf6fd2398cd83577a957",
         "type": "github"
       },
       "original": {
@@ -766,11 +766,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1786636168,
-        "narHash": "sha256-/46yAPm0oWb9xmVJSuV+lGYZ4ZJllKYJEz4Dl0GfPKc=",
+        "lastModified": 1786652774,
+        "narHash": "sha256-3XhXac2UbklT3iAQ7gu1WwKvzXG4yjXoMllLFhkCqIw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "bc9c402112b4fcad34e44fa64f22dbb5ed17aab3",
+        "rev": "d41414d8a9a84c442d63411f561305936089b81d",
         "type": "github"
       },
       "original": {
@@ -833,11 +833,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1786594607,
-        "narHash": "sha256-5f9qi0HFGX07xuLG4X7MVsXb6imb1pEhEhlYB+ts4Xk=",
+        "lastModified": 1786638241,
+        "narHash": "sha256-KJhq0HYg2gIZjpsj47z1kWrjoUUAqSqdD2mMWAsOg4k=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "cb8f92ed710cb8402805a509d4083418b5435edb",
+        "rev": "892c035d7c2ff75acd5da10424a47ab454e1f3dc",
         "type": "github"
       },
       "original": {
