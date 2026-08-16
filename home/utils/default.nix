@@ -56,6 +56,9 @@
     # Utilities such as find, xargs, locate/updatedb, etc.
     findutils
 
+    # A tool for rendering perf output as a flamegraph.
+    flamegraph
+
     # Basic low-level utilities such as getconf, iconv, ldd, and locale.
     glibc.bin
 
@@ -109,6 +112,9 @@
     # shows what's loaded as a tree, without actually loading the binary and
     # potentially allowing arbitrary code execution like ldd.
     pax-utils
+
+    # A tool for sampling performance statistics.
+    perf
 
     # A modern ps-like tool written in Rust.
     procs
