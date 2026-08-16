@@ -43,59 +43,10 @@
 }:
 let
   # Build Cataclysm: DDA from the current source.
-  cataclysm-dda-git-latest-pkg = cataclysm-dda.overrideAttrs (oldAttrs: rec {
+  cataclysm-dda-git-latest-unpatched-pkg = cataclysm-dda.overrideAttrs (oldAttrs: rec {
     name = "${oldAttrs.pname}-${version}";
     version = "${cataclysm-dda-git-latest.lastModifiedDate}";
     src = cataclysm-dda-git-latest;
-
-    patches = [
-      ./patches/cataclysm-backrooms-extend-vending.patch
-      ./patches/cataclysm-big-tiles.patch
-      ./patches/cataclysm-bigger-texture-pool.patch
-      ./patches/cataclysm-bionics-lower-saving.patch
-      ./patches/cataclysm-check-furniture-no-spoil.patch
-      ./patches/cataclysm-craft-percent-fix.patch
-      ./patches/cataclysm-custom-options.patch
-      ./patches/cataclysm-deadly-bites.patch
-      ./patches/cataclysm-defense-real-world.patch
-      ./patches/cataclysm-dino-egg-vitamins.patch
-      ./patches/cataclysm-dino-fertilizer-fix.patch
-      ./patches/cataclysm-disable-trait-flag-cache.patch
-      ./patches/cataclysm-disable-warning.patch
-      ./patches/cataclysm-dont-vanish-notakeoff-when-incorporeal.patch
-      ./patches/cataclysm-dream-fix.patch
-      ./patches/cataclysm-exodii-bionics.patch
-      ./patches/cataclysm-fast-browse.patch
-      ./patches/cataclysm-homullus-fix.patch
-      ./patches/cataclysm-isolation-vending.patch
-      ./patches/cataclysm-large-smokers.patch
-      ./patches/cataclysm-larger-trade-range.patch
-      ./patches/cataclysm-limit-refuse.patch
-      ./patches/cataclysm-locale-path.patch
-      ./patches/cataclysm-magiclysm-okay-potions.patch
-      ./patches/cataclysm-magiclysm-renewal-height.patch
-      ./patches/cataclysm-mindovermatter-contemplation.patch
-      ./patches/cataclysm-mindovermatter-sidebar-fix.patch
-      ./patches/cataclysm-mom-defense.patch
-      ./patches/cataclysm-more-engines.patch
-      ./patches/cataclysm-multiple-thresholds.patch
-      ./patches/cataclysm-my-sweet-cataclysm-chance.patch
-      ./patches/cataclysm-no-banned-ports.patch
-      ./patches/cataclysm-no-hope-books.json
-      ./patches/cataclysm-no-hope-compat.patch
-      ./patches/cataclysm-perks-fix.patch
-      ./patches/cataclysm-seedbearer-fix.patch
-      ./patches/cataclysm-spell-ui-widen.patch
-      ./patches/cataclysm-start-with-no-money.patch
-      ./patches/cataclysm-xedra-chronomancer-heritage.patch
-      ./patches/cataclysm-xedra-dream.patch
-      ./patches/cataclysm-xedra-dreamdross.patch
-      ./patches/cataclysm-xedra-nail.patch
-      #./patches/cataclysm-xedra-rarer-artifacts.patch
-      ./patches/cataclysm-xedra-show-gramarye.patch
-      ./patches/cataclysm-xedra-wallet.patch
-      ./patches/cataclysm-xedrawood.patch
-    ];
 
     buildInputs = oldAttrs.buildInputs ++ [
       glslang
@@ -110,6 +61,10 @@ let
     # Weird way to do it, but it's how CDDA's workflow specifies the compiler.
     makeFlags = oldAttrs.makeFlags ++ [
       "COMPILER=clang++"
+      "DEBUG_SYMBOLS=1"
+      "DEBUGSYMS=-ggdb"
+      #"OTHERS=-mfentry"
+      #"PROFILE=-pg"
     ];
 
     # Make sure to include clang in our build environment.
@@ -119,11 +74,63 @@ let
 
     # Enable debugging info.
     dontStrip = true;
-    env.NIX_CFLAGS_COMPILE = toString (oldAttrs.env.NIX_CFLAGS_COMPILE or "") + " -ggdb";
 
     # Enable tiles.
     tiles = true;
   });
+
+  cataclysm-dda-git-latest-pkg =
+    cataclysm-dda-git-latest-unpatched-pkg.overrideAttrs (oldAttrs: rec {
+      name = "${oldAttrs.pname}-${oldAttrs.version}-patched";
+      patches = [
+        ./patches/cataclysm-backrooms-extend-vending.patch
+        ./patches/cataclysm-big-tiles.patch
+        ./patches/cataclysm-bigger-texture-pool.patch
+        ./patches/cataclysm-bionics-lower-saving.patch
+        ./patches/cataclysm-check-furniture-no-spoil.patch
+        ./patches/cataclysm-craft-percent-fix.patch
+        ./patches/cataclysm-custom-options.patch
+        ./patches/cataclysm-deadly-bites.patch
+        ./patches/cataclysm-defense-real-world.patch
+        ./patches/cataclysm-dino-egg-vitamins.patch
+        ./patches/cataclysm-dino-fertilizer-fix.patch
+        ./patches/cataclysm-disable-trait-flag-cache.patch
+        ./patches/cataclysm-disable-warning.patch
+        ./patches/cataclysm-dont-vanish-notakeoff-when-incorporeal.patch
+        ./patches/cataclysm-dream-fix.patch
+        ./patches/cataclysm-exodii-bionics.patch
+        ./patches/cataclysm-fast-browse.patch
+        ./patches/cataclysm-homullus-fix.patch
+        ./patches/cataclysm-isolation-vending.patch
+        ./patches/cataclysm-large-smokers.patch
+        ./patches/cataclysm-larger-trade-range.patch
+        ./patches/cataclysm-limit-refuse.patch
+        ./patches/cataclysm-locale-path.patch
+        ./patches/cataclysm-magiclysm-okay-potions.patch
+        ./patches/cataclysm-magiclysm-renewal-height.patch
+        ./patches/cataclysm-mindovermatter-contemplation.patch
+        ./patches/cataclysm-mindovermatter-sidebar-fix.patch
+        ./patches/cataclysm-mom-defense.patch
+        ./patches/cataclysm-more-engines.patch
+        ./patches/cataclysm-multiple-thresholds.patch
+        ./patches/cataclysm-my-sweet-cataclysm-chance.patch
+        ./patches/cataclysm-no-banned-ports.patch
+        ./patches/cataclysm-no-hope-books.json
+        ./patches/cataclysm-no-hope-compat.patch
+        ./patches/cataclysm-perks-fix.patch
+        ./patches/cataclysm-seedbearer-fix.patch
+        ./patches/cataclysm-spell-ui-widen.patch
+        ./patches/cataclysm-start-with-no-money.patch
+        ./patches/cataclysm-xedra-chronomancer-heritage.patch
+        ./patches/cataclysm-xedra-dream.patch
+        ./patches/cataclysm-xedra-dreamdross.patch
+        ./patches/cataclysm-xedra-nail.patch
+        #./patches/cataclysm-xedra-rarer-artifacts.patch
+        ./patches/cataclysm-xedra-show-gramarye.patch
+        ./patches/cataclysm-xedra-wallet.patch
+        ./patches/cataclysm-xedrawood.patch
+      ];
+    });
 
   # CDDA mods.
 
@@ -632,57 +639,70 @@ let
     src = ./xedra-seedbearer-always;
   };
 
+  cdda-custom-mods = [
+    arcana
+    backrooms-tweaks
+    cc-sounds
+    cdda-arcana-technoclysm
+    cdda-defense-additions
+    cdda-extra-lives
+    cdda-tilesets-built
+    dorf-life
+    e85-engines
+    extra-fruits
+    fast-craft-slow-skill
+    grow-more-drugs
+    innawoods-compat
+    lab-loot-extras
+    levelled-crystallize
+    levelled-runes
+    magical-vehicles
+    magic-loot-perks
+    magiclysm-linear-leveling
+    magiclysm-no-class-limit
+    magiclysm-no-condition-upgrade-spells
+    magiclysm-non-exclusive-attunements
+    mana-cores
+    medieval
+    mining-enchanced
+    mining-mod
+    mom-submods
+    mst-extra
+    new-world-on-death
+    no-overgrowth
+    nocts
+    pm-world
+    random-stuff
+    sleepscumming-keep
+    sleepscumming-lose
+    sleepscumming-souls
+    stats-through-kills
+    stats-through-skills
+    tankmod
+    trickle-exp
+    xedra-both-classes
+    xedra-disable-leveling
+    xedra-seedbearer-always
+  ]
+  ++ minimods
+  ++ mom-submods
+  ++ elfmods
+  ++ compack-mods;
+
   # CDDA with extra mods.
   cataclysm-dda-git-with-mods =
-    cataclysmDDA.wrapCDDA cataclysm-dda-git-latest-pkg (mods: [
-      arcana
-      backrooms-tweaks
-      cc-sounds
-      cdda-arcana-technoclysm
-      cdda-defense-additions
-      cdda-extra-lives
-      cdda-tilesets-built
-      dorf-life
-      e85-engines
-      extra-fruits
-      fast-craft-slow-skill
-      grow-more-drugs
-      innawoods-compat
-      lab-loot-extras
-      levelled-crystallize
-      levelled-runes
-      magical-vehicles
-      magic-loot-perks
-      magiclysm-linear-leveling
-      magiclysm-no-class-limit
-      magiclysm-no-condition-upgrade-spells
-      magiclysm-non-exclusive-attunements
-      mana-cores
-      medieval
-      mining-enchanced
-      mining-mod
-      mom-submods
-      mst-extra
-      new-world-on-death
-      no-overgrowth
-      nocts
-      pm-world
-      random-stuff
-      sleepscumming-keep
-      sleepscumming-lose
-      sleepscumming-souls
-      stats-through-kills
-      stats-through-skills
-      tankmod
-      trickle-exp
-      xedra-both-classes
-      xedra-disable-leveling
-      xedra-seedbearer-always
-    ]
-    ++ minimods
-    ++ mom-submods
-    ++ elfmods
-    ++ compack-mods
-    );
+    cataclysmDDA.wrapCDDA cataclysm-dda-git-latest-pkg (mods: cdda-custom-mods);
+
+  # Unpatched upstream CDDA.
+  cataclysm-dda-git-with-mods-unpatched =
+    cataclysmDDA.wrapCDDA cataclysm-dda-git-latest-unpatched-pkg
+      (mods: cdda-custom-mods);
+  cataclysm-dda-git-without-mods-unpatched =
+    cataclysmDDA.wrapCDDA cataclysm-dda-git-latest-unpatched-pkg (mods: [ ]);
 in
-cataclysm-dda-git-with-mods
+{
+  inherit
+    cataclysm-dda-git-with-mods
+    cataclysm-dda-git-with-mods-unpatched
+    cataclysm-dda-git-without-mods-unpatched;
+}

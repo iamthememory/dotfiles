@@ -3,8 +3,9 @@
 , pkgs
 , revision
 , ...
-}: {
-  cataclysm-dda-git-with-mods = pkgs.callPackage ./cataclysm-dda-git-with-mods {
+}:
+let
+  cdda-packages = pkgs.callPackage ./cataclysm-dda-git-with-mods {
     cataclysm-dda-git-latest = inputs.cataclysm-dda;
     flake-revision = revision;
     inherit (inputs)
@@ -36,4 +37,5 @@
       cdda-sounds
       cdda-tilesets;
   };
-}
+in
+{ } // cdda-packages
