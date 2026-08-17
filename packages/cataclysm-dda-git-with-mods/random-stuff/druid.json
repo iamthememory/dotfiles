@@ -1,0 +1,10 @@
+[
+  {
+    "id": "druid_growth",
+    "copy-from": "druid_growth",
+    "type": "SPELL",
+    "aoe_increment": 0.4,
+    "min_damage": { "math": [ "max(0, min(50, (u_spell_level('druid_growth') * 1.5) + 20))" ] },
+    "max_damage": { "math": [ "max(0, min(50, (u_spell_level('druid_growth') * 1.75) + 20))" ] }
+  }
+]
