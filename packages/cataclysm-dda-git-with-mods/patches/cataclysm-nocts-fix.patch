@@ -167,6 +167,37 @@ index 8c78ce5c1d9c..bdd5c8723bd9 100644
            "fur_rollmat",
            "press",
            "puller",
+diff --git a/nocts_cata_mod_DDA/Mutations/c_bio_mutation_super_soldier.json b/nocts_cata_mod_DDA/Mutations/c_bio_mutation_super_soldier.json
+index 059d2a7302e9..486118d1e8cb 100644
+--- a/nocts_cata_mod_DDA/Mutations/c_bio_mutation_super_soldier.json
++++ b/nocts_cata_mod_DDA/Mutations/c_bio_mutation_super_soldier.json
+@@ -26,7 +26,7 @@
+         ]
+       }
+     ],
+-    "vitamin_rates": [ [ "blood", -1 ], [ "redcells", -1 ] ]
++    "vitamin_rates": [ [ "blood", -40 ], [ "redcells", -80 ] ]
+   },
+   {
+     "type": "mutation",
+@@ -55,7 +55,7 @@
+         ]
+       }
+     ],
+-    "vitamin_rates": [ [ "blood", -2 ], [ "redcells", -2 ] ],
++    "vitamin_rates": [ [ "blood", -30 ], [ "redcells", -60 ] ],
+     "flags": [ "C_SENTINEL_MARKER_1" ]
+   },
+   {
+@@ -86,7 +86,7 @@
+         ]
+       }
+     ],
+-    "vitamin_rates": [ [ "blood", -4 ], [ "redcells", -4 ] ]
++    "vitamin_rates": [ [ "blood", -20 ], [ "redcells", -40 ] ]
+   },
+   {
+     "type": "mutation",
 diff --git a/nocts_cata_mod_DDA/Surv_help/c_books.json b/nocts_cata_mod_DDA/Surv_help/c_books.json
 index 53722df4140d..a3f37c74ed8a 100644
 --- a/nocts_cata_mod_DDA/Surv_help/c_books.json
