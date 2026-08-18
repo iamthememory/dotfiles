@@ -1,0 +1,12 @@
+[
+  {
+    "id": "vision_halo",
+    "copy-from": "vision_halo",
+    "type": "ITEM",
+    "subtypes": [ "TOOL", "ARMOR", "ARTIFACT" ],
+    "name": { "str": "electronic halo" },
+    "extend": {
+      "flags": [ "SOFT" ]
+    }
+  }
+]

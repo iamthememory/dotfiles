@@ -314,6 +314,6 @@
     "name": "MINIMUM_MAP_EXTRA_VISIBILITY",
     "//": "Force map extras to have at least this level of visibility.",
     "stype": "string_input",
-    "value": "details"
+    "value": "none"
   }
 ]
