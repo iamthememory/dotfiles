@@ -23,3 +23,15 @@ index f3559660e170..00803976aff0 100644
        "desertpack",
        "tropicata",
        "classic_zombies",
+diff --git a/data/mods/No_Hope/region_overlay.json b/data/mods/No_Hope/region_overlay.json
+index 9419fd4a9176..9cf290a7b38a 100644
+--- a/data/mods/No_Hope/region_overlay.json
++++ b/data/mods/No_Hope/region_overlay.json
+@@ -110,7 +110,6 @@
+     "type": "region_settings_map_extras",
+     "id": "default_nohope",
+     "copy-from": "default",
+-    "delete": { "extras": [ "forest", "forest_thick", "forest_water", "field", "road", "build", "subway" ] },
+     "extend": {
+       "extras": [
+         "forest_nohope",
