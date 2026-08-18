@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index 9e17b54f3ed3..1b071a354227 100644
+index d90ad04923e1..1e151656c876 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -520,5 +520,215 @@
+@@ -527,5 +527,222 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -216,13 +216,20 @@ index 9e17b54f3ed3..1b071a354227 100644
 +    "//": "If true, survival skill gains from foraging will not be capped by intelligence.",
 +    "stype": "bool",
 +    "value": false
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "MINIMUM_MAP_EXTRA_VISIBILITY",
++    "//": "Force map extras to have at least this level of visibility.",
++    "stype": "string_input",
++    "value": "none"
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
-index 8f1ad770496e..ddc74f687d1e 100644
+index 6fe4c594f84a..ac7d910af103 100644
 --- a/src/activity_actor.cpp
 +++ b/src/activity_actor.cpp
-@@ -2179,7 +2179,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
+@@ -2188,7 +2188,7 @@ void read_activity_actor::do_turn( player_activity &act, Character &who )
          return;
      }
  
@@ -232,7 +239,7 @@ index 8f1ad770496e..ddc74f687d1e 100644
                  integrated_ar       - implant                                         = potentially infinite
                  ar_glasses_advanced - max 300 charges from disposable light battery   = 25 hours of reading
 diff --git a/src/butchery.cpp b/src/butchery.cpp
-index 796fe183f260..5007068aa89d 100644
+index 93b5ed7e20c8..0eea261d5be1 100644
 --- a/src/butchery.cpp
 +++ b/src/butchery.cpp
 @@ -35,6 +35,7 @@
@@ -243,7 +250,7 @@ index 796fe183f260..5007068aa89d 100644
  #include "output.h"
  #include "player_activity.h"
  #include "pocket_type.h"
-@@ -490,6 +491,7 @@ int butcher_time_to_cut( Character &you, const item &corpse_item, const butcher_
+@@ -491,6 +492,7 @@ int butcher_time_to_cut( Character &you, const item &corpse_item, const butcher_
      }
  
      time_to_cut *= ( 1.0f - ( get_player_character().get_num_crafting_helpers( 3 ) / 10.0f ) );
@@ -252,10 +259,10 @@ index 796fe183f260..5007068aa89d 100644
  }
  
 diff --git a/src/character.cpp b/src/character.cpp
-index 4365bf2b5afd..2eb99964b5af 100644
+index 0e92dc1ff90e..81d3f2812758 100644
 --- a/src/character.cpp
 +++ b/src/character.cpp
-@@ -377,6 +377,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
+@@ -379,6 +379,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
  static const std::set<material_id> ferric = { material_iron, material_steel, material_budget_steel, material_ch_steel, material_hc_steel, material_lc_steel, material_mc_steel, material_qt_steel };
  
  static const std::string player_base_stamina_burn_rate( "PLAYER_BASE_STAMINA_BURN_RATE" );
@@ -263,7 +270,7 @@ index 4365bf2b5afd..2eb99964b5af 100644
  static const std::string type_hair_color( "hair_color" );
  static const std::string type_hair_style( "hair_style" );
  static const std::string type_skin_tone( "skin_tone" );
-@@ -1899,14 +1900,15 @@ bool Character::uncanny_dodge()
+@@ -1903,14 +1904,15 @@ bool Character::uncanny_dodge()
      bool seen = get_player_view().sees( here, *this );
  
      const units::energy trigger_cost = bio_uncanny_dodge->power_trigger;
@@ -281,7 +288,7 @@ index 4365bf2b5afd..2eb99964b5af 100644
  
      if( !( can_dodge_bio || can_dodge_stam || can_dodge_both ) ) {
          return false;
-@@ -1939,11 +1941,11 @@ bool Character::uncanny_dodge()
+@@ -1943,11 +1945,11 @@ bool Character::uncanny_dodge()
  
          if( can_dodge_both ) {
              mod_power_level( -trigger_cost / 2 );
@@ -295,7 +302,7 @@ index 4365bf2b5afd..2eb99964b5af 100644
          }
          return true;
      }
-@@ -2526,6 +2528,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
+@@ -2530,6 +2532,16 @@ bool Character::practice( const skill_id &id, int amount, int cap, bool suppress
          return false;
      }
  
@@ -313,10 +320,10 @@ index 4365bf2b5afd..2eb99964b5af 100644
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
 diff --git a/src/character_health.cpp b/src/character_health.cpp
-index 1e2e8e2eb4e2..2150be36baff 100644
+index c87f999751c9..a47c67c2e6db 100644
 --- a/src/character_health.cpp
 +++ b/src/character_health.cpp
-@@ -525,7 +525,7 @@ int Character::calc_focus_equilibrium( bool ignore_pain ) const
+@@ -529,7 +529,7 @@ int Character::calc_focus_equilibrium( bool ignore_pain ) const
              // apply a penalty when we're actually learning something
              const SkillLevel &skill_level = get_skill_level_object( bt->skill );
              if( skill_level.can_train() && skill_level < bt->level ) {
@@ -326,10 +333,10 @@ index 1e2e8e2eb4e2..2150be36baff 100644
          }
      }
 diff --git a/src/creature.cpp b/src/creature.cpp
-index 655c65c7b01d..1df43d66afe2 100644
+index 0ab8460d624b..e8e94e033a05 100644
 --- a/src/creature.cpp
 +++ b/src/creature.cpp
-@@ -234,6 +234,10 @@ void Creature::setpos( const tripoint_abs_ms &p, bool check_gravity/* = true*/ )
+@@ -240,6 +240,10 @@ void Creature::setpos( const tripoint_abs_ms &p, bool check_gravity/* = true*/ )
  
  bool Creature::will_be_cramped_in_vehicle_tile( map &here, const tripoint_abs_ms &loc ) const
  {
@@ -341,10 +348,10 @@ index 655c65c7b01d..1df43d66afe2 100644
      if( !vp_there ) {
          return false;
 diff --git a/src/iexamine.cpp b/src/iexamine.cpp
-index 2774cee842ac..c9bdf1206aba 100644
+index f6c23ba2eb34..e2400c6020dd 100644
 --- a/src/iexamine.cpp
 +++ b/src/iexamine.cpp
-@@ -2831,11 +2831,16 @@ void iexamine::harvest_plant( Character &you, const tripoint_bub_ms &examp, bool
+@@ -2833,11 +2833,16 @@ void iexamine::harvest_plant( Character &you, const tripoint_bub_ms &examp, bool
  
              int skillLevel = round( you.get_skill_level( skill_survival ) );
              ///\EFFECT_SURVIVAL increases number of plants harvested from a seed
@@ -364,7 +371,7 @@ index 2774cee842ac..c9bdf1206aba 100644
              for( item &i : get_harvest_items( type, plant_count, seedCount, true ) ) {
                  if( from_activity ) {
                      i.set_var( "activity_var", you.name );
-@@ -7598,7 +7603,10 @@ iexamine_functions iexamine_functions_from_string( const std::string &function_n
+@@ -7631,7 +7636,10 @@ iexamine_functions iexamine_functions_from_string( const std::string &function_n
  void iexamine::practice_survival_while_foraging( Character &who )
  {
      ///\EFFECT_INT Intelligence caps survival skill gains from foraging
@@ -377,10 +384,10 @@ index 2774cee842ac..c9bdf1206aba 100644
      const int max_exp = 2 * ( max_forage_skill - static_cast<int>( who.get_skill_level(
                                    skill_survival ) ) );
 diff --git a/src/item_factory.cpp b/src/item_factory.cpp
-index ddb868ff3f7b..d33630157ff5 100644
+index 499a436cf8d0..87524a031177 100644
 --- a/src/item_factory.cpp
 +++ b/src/item_factory.cpp
-@@ -544,6 +544,20 @@ void Item_factory::finalize_pre( itype &obj )
+@@ -541,6 +541,20 @@ void Item_factory::finalize_pre( itype &obj )
          }
      }
  
@@ -401,7 +408,7 @@ index ddb868ff3f7b..d33630157ff5 100644
      if( obj.bionic ) {
          obj.bionic->id = bionic_id( obj.id.str() );
      }
-@@ -823,6 +837,12 @@ void Item_factory::finalize_pre( itype &obj )
+@@ -820,6 +834,12 @@ void Item_factory::finalize_pre( itype &obj )
                  }
              }
          }
@@ -414,7 +421,7 @@ index ddb868ff3f7b..d33630157ff5 100644
      }
  
      // recurse into subtypes, adding self as substitution for all items in the subtypes chain
-@@ -3758,7 +3778,9 @@ void islot_seed::deserialize( const JsonObject &jo )
+@@ -3835,7 +3855,9 @@ void islot_seed::deserialize( const JsonObject &jo )
      mandatory( jo, was_loaded, "fruit", fruit_id );
      mandatory( jo, was_loaded, "growth_stages", growth_stages,
                 pair_reader<flag_id, time_duration> {} );
@@ -426,10 +433,10 @@ index ddb868ff3f7b..d33630157ff5 100644
      optional( jo, was_loaded, "byproducts", byproducts );
      optional( jo, was_loaded, "required_terrain_flag", required_terrain_flag,
 diff --git a/src/magic.cpp b/src/magic.cpp
-index 9dd39aab065a..9b5b73b230cf 100644
+index 50bb37d58b5f..7fe4505b3e21 100644
 --- a/src/magic.cpp
 +++ b/src/magic.cpp
-@@ -2560,7 +2560,8 @@ int known_magic::max_mana( const Character &guy ) const
+@@ -2568,7 +2568,8 @@ int known_magic::max_mana( const Character &guy ) const
  void known_magic::update_mana( const Character &guy, float turns )
  {
      // mana should replenish in 8 hours.
@@ -440,10 +447,10 @@ index 9dd39aab065a..9b5b73b230cf 100644
      mod_mana( guy, std::floor( ratio * std::max( 0.0,
                                 guy.calculate_by_enchantment( static_cast<double>( max_mana(
 diff --git a/src/map.cpp b/src/map.cpp
-index 42271c1616cb..8dc1d37a396a 100644
+index d20e59584646..68d80dd55f84 100644
 --- a/src/map.cpp
 +++ b/src/map.cpp
-@@ -9187,7 +9187,7 @@ void map::grow_plant( const tripoint_bub_ms &p )
+@@ -9338,7 +9338,7 @@ void map::grow_plant( const tripoint_bub_ms &p )
              target_stage = pair.first;
          } // Don't break the loop for the case where time has been rewound.
          // Advance to the time of the next stage for the next iteration.
@@ -452,11 +459,73 @@ index 42271c1616cb..8dc1d37a396a 100644
      }
  
      const auto check_flag = []( const std::string & to_check ) {
+diff --git a/src/map_extras.cpp b/src/map_extras.cpp
+index e46ee084396e..ac6060ceacaf 100644
+--- a/src/map_extras.cpp
++++ b/src/map_extras.cpp
+@@ -1374,11 +1374,43 @@ void map_extra::load( const JsonObject &jo, std::string_view )
+     }
+ }
+ 
+-void map_extra::finalize() const
++void map_extra::finalize()
+ {
+     if( generator_method != map_extra_method::null ) {
+         MapExtras::all_function_names.push_back( id );
+     }
++
++    map_extra_visibility minimum_visibility = io::string_to_enum<map_extra_visibility>(
++            ::get_option<std::string>( "MINIMUM_MAP_EXTRA_VISIBILITY" ) );
++
++    bool upgrade_visibility = false;
++
++    switch( minimum_visibility ) {
++        case map_extra_visibility::always:
++            upgrade_visibility = true;
++        case map_extra_visibility::vague:
++            upgrade_visibility = upgrade_visibility
++                || ( visibility == map_extra_visibility::outlines );
++        case map_extra_visibility::outlines:
++            upgrade_visibility = upgrade_visibility
++                || ( visibility == map_extra_visibility::details );
++        case map_extra_visibility::details:
++            upgrade_visibility = upgrade_visibility
++                || ( visibility == map_extra_visibility::full );
++        case map_extra_visibility::full:
++            upgrade_visibility = upgrade_visibility
++                || ( visibility == map_extra_visibility::same_tile );
++        case map_extra_visibility::same_tile:
++            upgrade_visibility = upgrade_visibility
++                || ( visibility == map_extra_visibility::none );
++        case map_extra_visibility::none:
++        case map_extra_visibility::LAST:
++            break;
++    }
++
++    if ( upgrade_visibility ) {
++        visibility = minimum_visibility;
++    }
+ }
+ 
+ void map_extra::check() const
+diff --git a/src/map_extras.h b/src/map_extras.h
+index 0104de3fbec2..f122692578f1 100644
+--- a/src/map_extras.h
++++ b/src/map_extras.h
+@@ -92,7 +92,7 @@ class map_extra
+         bool was_loaded = false;
+         void load( const JsonObject &jo, std::string_view src );
+         static void finalize_all();
+-        void finalize() const;
++        void finalize();
+         void check() const;
+     private:
+         translation name_;
 diff --git a/src/mapgen.cpp b/src/mapgen.cpp
-index 5fa7c58c9c35..1584081bd5e4 100644
+index f75aeb4e00d2..c207baa59972 100644
 --- a/src/mapgen.cpp
 +++ b/src/mapgen.cpp
-@@ -2233,6 +2233,12 @@ class jmapgen_vending_machine : public jmapgen_piece_with_has_vehicle_collision
+@@ -2241,6 +2241,12 @@ class jmapgen_vending_machine : public jmapgen_piece_with_has_vehicle_collision
              } else {
                  group_id = mapgen_value<item_group_id>( "default_vending_machine" );
              }
@@ -470,10 +539,10 @@ index 5fa7c58c9c35..1584081bd5e4 100644
          void apply( const mapgendata &dat, const jmapgen_int &x, const jmapgen_int &y, const jmapgen_int &z,
                      const std::string &/*context*/ ) const override {
 diff --git a/src/npc.cpp b/src/npc.cpp
-index 4081d9bbe584..71a8f6697711 100644
+index 08d0bbf32221..f0631a61bfbc 100644
 --- a/src/npc.cpp
 +++ b/src/npc.cpp
-@@ -2141,15 +2141,16 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2174,15 +2174,16 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
  
@@ -493,7 +562,7 @@ index 4081d9bbe584..71a8f6697711 100644
          const shopkeeper_whitelist &wl = myclass->get_shopkeeper_whitelist();
          icg_entry const *wl_icg = myclass->get_shopkeeper_whitelist().matches( it, *this );
          if( wl_icg != nullptr ) {
-@@ -2160,7 +2161,7 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
+@@ -2193,7 +2194,7 @@ ret_val<void> npc::wants_to_buy( const item &it, int at_price ) const
      }
  
      icg_entry const *bl = myclass->get_shopkeeper_blacklist().matches( it, *this );
@@ -502,17 +571,17 @@ index 4081d9bbe584..71a8f6697711 100644
          return ret_val<void>::make_failure( bl->message.translated() );
      }
  
-@@ -4269,5 +4270,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
+@@ -4307,5 +4308,3 @@ std::unique_ptr<talker> get_talker_for( npc *guy )
  {
      return std::make_unique<talker_npc>( guy );
  }
 -
 -
 diff --git a/src/recipe.cpp b/src/recipe.cpp
-index e3f6884bef16..d8eb0da4e074 100644
+index 27b0f325000a..71d864312f6e 100644
 --- a/src/recipe.cpp
 +++ b/src/recipe.cpp
-@@ -40,6 +40,7 @@
+@@ -42,6 +42,7 @@
  #include "mapgendata.h"
  #include "math_defines.h"
  #include "npc.h"
@@ -520,7 +589,7 @@ index e3f6884bef16..d8eb0da4e074 100644
  #include "output.h"
  #include "proficiency.h"
  #include "recipe_dictionary.h"
-@@ -811,6 +812,15 @@ void recipe::finalize()
+@@ -873,6 +874,15 @@ void recipe::finalize()
          check_blueprint_requirements();
      }
  
@@ -536,7 +605,7 @@ index e3f6884bef16..d8eb0da4e074 100644
      if( !blueprint.is_empty() ) {
          incorporate_build_reqs();
      } else if( has_steps() ) {
-@@ -922,6 +932,13 @@ void recipe::finalize()
+@@ -998,6 +1008,13 @@ void recipe::finalize()
          }
      }
  
@@ -568,10 +637,10 @@ index 61afded790c8..61691361401e 100644
      on_exercise_change( allow_multilevel );
      practice();
 diff --git a/src/suffer.cpp b/src/suffer.cpp
-index aece4f6ef2bb..8a6ea8749c9c 100644
+index dd8e46179978..3d87be7e5e5b 100644
 --- a/src/suffer.cpp
 +++ b/src/suffer.cpp
-@@ -1124,9 +1124,9 @@ void suffer::from_other_mutations( Character &you )
+@@ -1132,9 +1132,9 @@ void suffer::from_other_mutations( Character &you )
      }
  
      bool should_mutate = you.has_trait( trait_UNSTABLE ) && !you.has_trait( trait_CHAOTIC_BAD ) &&
@@ -584,7 +653,7 @@ index aece4f6ef2bb..8a6ea8749c9c 100644
          you.mutate();
      }
 diff --git a/src/veh_type.cpp b/src/veh_type.cpp
-index a1b35aed15e3..412ede186de3 100644
+index 38df502c0f85..524e1ee53fb6 100644
 --- a/src/veh_type.cpp
 +++ b/src/veh_type.cpp
 @@ -33,6 +33,7 @@
@@ -595,7 +664,7 @@ index a1b35aed15e3..412ede186de3 100644
  #include "output.h"
  #include "pocket_type.h"
  #include "requirements.h"
-@@ -742,6 +743,11 @@ void vpart_info::finalize()
+@@ -745,6 +746,11 @@ void vpart_info::finalize()
      requirement_data::save_requirement( ins, ins_id );
      install_reqs.emplace_back( ins_id, 1 );
  
@@ -608,10 +677,10 @@ index a1b35aed15e3..412ede186de3 100644
          removal_moves = install_moves / 2;
      }
 diff --git a/src/weather.cpp b/src/weather.cpp
-index 095722c8ab9b..d20f15e26896 100644
+index 95029c1a31e6..c2810b42029f 100644
 --- a/src/weather.cpp
 +++ b/src/weather.cpp
-@@ -964,7 +964,7 @@ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &
+@@ -960,7 +960,7 @@ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &
  {
      std::map<time_point, units::temperature> planting_times;
  
@@ -620,7 +689,7 @@ index 095722c8ab9b..d20f15e26896 100644
          return ret_val<void>::make_failure( _( "Plants need sunlight to grow!  You can't plant there." ) );
      }
  
-@@ -982,12 +982,14 @@ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &
+@@ -978,12 +978,14 @@ ret_val<void> warm_enough_to_plant( const tripoint_bub_ms &pos, const itype_id &
      // initialize the first...
      time_point check_date = calendar::turn;
      planting_times[check_date] = highest_temp_on_day( check_date, checked_omt, weather_gen );

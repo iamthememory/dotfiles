@@ -308,5 +308,12 @@
     "//": "If true, survival skill gains from foraging will not be capped by intelligence.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "MINIMUM_MAP_EXTRA_VISIBILITY",
+    "//": "Force map extras to have at least this level of visibility.",
+    "stype": "string_input",
+    "value": "details"
   }
 ]
