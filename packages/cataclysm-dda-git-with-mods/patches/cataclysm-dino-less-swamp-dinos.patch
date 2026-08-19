@@ -1,0 +1,43 @@
+diff --git a/data/mods/DinoMod/monstergroups/wilderness.json b/data/mods/DinoMod/monstergroups/wilderness.json
+index ec7ddef03df7..d52137a5a8ca 100644
+--- a/data/mods/DinoMod/monstergroups/wilderness.json
++++ b/data/mods/DinoMod/monstergroups/wilderness.json
+@@ -189,22 +189,22 @@
+     "type": "monstergroup",
+     "id": "GROUP_SWAMP",
+     "monsters": [
+-      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 20, "starts": "12 days" },
+-      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 20, "starts": "12 days", "ends": "28 days" },
+-      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 20, "starts": "12 days", "ends": "112 days" },
+-      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 20, "starts": "12 days", "ends": "360 days" },
+-      { "group": "GROUP_DINOSAUR_ZREDATOR_SWAMP", "weight": 25, "starts": "28 days" },
+-      { "group": "GROUP_DINOSAUR_ZREDATOR_SWAMP", "weight": 25, "starts": "112 days" },
+-      { "group": "GROUP_DINOSAUR_ZREDATOR_SWAMP", "weight": 25, "starts": "360 days" },
+-      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 25 },
+-      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 25, "ends": "12 days" },
+-      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 25, "ends": "28 days" },
+-      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 25, "ends": "112 days" },
+-      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 25, "ends": "360 days" },
+-      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 25, "starts": "12 days" },
+-      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 25, "starts": "28 days" },
+-      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 25, "starts": "112 days" },
+-      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 25, "starts": "360 days" }
++      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 2, "starts": "12 days" },
++      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 2, "starts": "12 days", "ends": "28 days" },
++      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 2, "starts": "12 days", "ends": "112 days" },
++      { "group": "GROUP_DINOSAUR_PREDATOR_SWAMP", "weight": 2, "starts": "12 days", "ends": "360 days" },
++      { "group": "GROUP_DINOSAUR_ZREDATOR_SWAMP", "weight": 2, "starts": "28 days" },
++      { "group": "GROUP_DINOSAUR_ZREDATOR_SWAMP", "weight": 2, "starts": "112 days" },
++      { "group": "GROUP_DINOSAUR_ZREDATOR_SWAMP", "weight": 2, "starts": "360 days" },
++      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 2 },
++      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 2, "ends": "12 days" },
++      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 2, "ends": "28 days" },
++      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 2, "ends": "112 days" },
++      { "group": "GROUP_DINOSAUR_HADROSAURS_WILDERNESS", "weight": 2, "ends": "360 days" },
++      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 2, "starts": "12 days" },
++      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 2, "starts": "28 days" },
++      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 2, "starts": "112 days" },
++      { "group": "GROUP_DINOSAUR_ZADROSAURS_WILDERNESS", "weight": 2, "starts": "360 days" }
+     ]
+   },
+   {
