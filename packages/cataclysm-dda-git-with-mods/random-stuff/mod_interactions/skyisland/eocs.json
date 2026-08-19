@@ -33,5 +33,11 @@
       { "math": [ "balthazar_daily_power_gain += 1" ] },
       { "math": [ "balthazar_solar_power = 1" ] }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_return_heal",
+    "//": "Don't do any healing on successful returns, only on deaths.",
+    "effect": [ ]
   }
 ]
