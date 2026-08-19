@@ -36,6 +36,7 @@
   boot.kernelModules = [
     "v4l2loopback"
     "snd-aloop"
+    "ntsync"
   ];
 
   # Module settings.
