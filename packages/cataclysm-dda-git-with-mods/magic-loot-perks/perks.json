@@ -57,7 +57,7 @@
     "activated_eocs": [ "EOC_magic_loot_cbm_hunter_on" ],
     "deactivated_eocs": [ "EOC_magic_loot_cbm_hunter_off" ],
     "processed_eocs": [ "EOC_magic_loot_cbm_hunter_find" ],
-    "time": 24000
+    "time": "1 hour"
   },
   {
     "type": "mutation",
@@ -93,5 +93,21 @@
     "cost": 500,
     "activation_msg": "",
     "activated_eocs": [ "EOC_PERK_ANIMAL_FINDER_ACTIVATED" ]
+  },
+  {
+    "type": "mutation",
+    "id": "perk_magic_loot_seeds",
+    "name": { "str": "Seed Finder" },
+    "points": 0,
+    "purifiable": false,
+    "valid": false,
+    "description": "You periodically find a variety of seeds.",
+    "active": true,
+    "starts_active": true,
+    "activated_is_setup": true,
+    "activated_eocs": [ "EOC_magic_loot_seeds_on" ],
+    "deactivated_eocs": [ "EOC_magic_loot_seeds_off" ],
+    "processed_eocs": [ "EOC_magic_loot_seeds_find" ],
+    "time": "1 hour"
   }
 ]

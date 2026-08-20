@@ -5,7 +5,7 @@
     "condition": "ALWAYS",
     "values": [
       { "value": "MAX_MANA", "add": { "math": [ "u_skill('deduction')*150" ] } },
-      { "value": "REGEN_MANA", "multiply": -0.25 }
+      { "value": "REGEN_MANA", "multiply": -0.4 }
     ]
   },
   {
@@ -15,7 +15,7 @@
     "type": "enchantment",
     "has": "HELD",
     "condition": { "and": [ { "math": [ "u_val('morale') >= -15" ] }, { "math": [ "u_val('morale') <= 15" ] } ] },
-    "values": [ { "value": "REGEN_MANA", "multiply": -0.25 } ]
+    "values": [ { "value": "REGEN_MANA", "multiply": -0.4 } ]
   },
   {
     "id": "dreamer_regen_yes",

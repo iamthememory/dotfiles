@@ -78,6 +78,107 @@ index e30d868aa4d4..63ee145ffc06 100644
      ],
      "skills": [
        { "level": 3, "name": "magic" },
+diff --git a/Arcana/mod_interactions/magiclysm/item_groups_modcompat.json b/Arcana/mod_interactions/magiclysm/item_groups_modcompat.json
+index 97cb2547633d..5ad165b6cccd 100644
+--- a/Arcana/mod_interactions/magiclysm/item_groups_modcompat.json
++++ b/Arcana/mod_interactions/magiclysm/item_groups_modcompat.json
+@@ -54,49 +54,59 @@
+     "extend": { "items": [ [ "book_summoning", 10 ], [ "book_syncretism", 5 ] ] }
+   },
+   {
+-    "id": "spell_scroll_tier_0",
++    "id": "classless_unrestricted_tier_0",
+     "type": "item_group",
+-    "copy-from": "spell_scroll_tier_0",
++    "subtype": "distribution",
++    "copy-from": "classless_unrestricted_tier_0",
+     "extend": {
+-      "items": [
+-        [ "scroll_spell_lightning", 10 ],
+-        [ "scroll_spell_confusion", 10 ],
+-        [ "scroll_spell_insight", 10 ],
+-        [ "scroll_spell_plants", 10 ]
++      "entries": [
++        { "item": "scroll_spell_lightning", "prob": 20 },
++        { "item": "scroll_spell_confusion", "prob": 20 },
++        { "item": "scroll_spell_insight", "prob": 20 },
++        { "item": "scroll_spell_plants", "prob": 20 }
+       ]
+     }
+   },
+   {
+-    "id": "spell_scroll_tier_1",
++    "id": "classless_unrestricted_tier_1",
+     "type": "item_group",
+-    "copy-from": "spell_scroll_tier_1",
++    "subtype": "distribution",
++    "copy-from": "classless_unrestricted_tier_1",
+     "extend": {
+-      "items": [
+-        [ "scroll_spell_agile", 10 ],
+-        [ "scroll_spell_ironskin", 10 ],
+-        [ "scroll_spell_clarity", 10 ],
+-        [ "scroll_spell_elecresist", 10 ]
++      "entries": [
++        { "item": "scroll_spell_agile", "prob": 30 },
++        { "item": "scroll_spell_ironskin", "prob": 30 },
++        { "item": "scroll_spell_clarity", "prob": 30 },
++        { "item": "scroll_spell_elecresist", "prob": 30 }
+       ]
+     }
+   },
+   {
+-    "id": "spell_scroll_tier_2",
++    "id": "classless_unrestricted_tier_2",
+     "type": "item_group",
+-    "copy-from": "spell_scroll_tier_2",
++    "subtype": "distribution",
++    "copy-from": "classless_unrestricted_tier_2",
+     "extend": {
+-      "items": [
+-        [ "scroll_spell_heal", 10 ],
+-        [ "scroll_spell_flame_armor", 10 ],
+-        [ "scroll_spell_might", 10 ],
+-        [ "scroll_spell_cleric", 10 ]
++      "entries": [
++        { "item": "scroll_spell_heal", "prob": 40 },
++        { "item": "scroll_spell_flame_armor", "prob": 40 },
++        { "item": "scroll_spell_might", "prob": 40 },
++        { "item": "scroll_spell_cleric", "prob": 40 }
+       ]
+     }
+   },
+   {
+-    "id": "spell_scroll_tier_3",
++    "id": "classless_unrestricted_tier_3",
+     "type": "item_group",
+-    "copy-from": "spell_scroll_tier_3",
+-    "extend": { "items": [ [ "scroll_spell_clairvoyance", 10 ], [ "scroll_spell_free_action", 10 ], [ "scroll_spell_invis", 10 ] ] }
++    "subtype": "distribution",
++    "copy-from": "classless_unrestricted_tier_3",
++    "extend": {
++      "entries": [
++        { "item": "scroll_spell_clairvoyance", "prob": 20 },
++        { "item": "scroll_spell_free_action", "prob": 20 },
++        { "item": "scroll_spell_invis", "prob": 20 }
++      ]
++    }
+   },
+   {
+     "id": "technomancer_items",
+diff --git a/Arcana/mod_interactions/magiclysm/itemgroups.json b/Arcana/mod_interactions/magiclysm/itemgroups.json
+index 65197a8eb192..39368ac4a6cd 100644
+--- a/Arcana/mod_interactions/magiclysm/itemgroups.json
++++ b/Arcana/mod_interactions/magiclysm/itemgroups.json
+@@ -68,7 +68,7 @@
+         [ "distortion_amp_motor_item", 20 ],
+         [ "essence_surge_generator_item", 35 ],
+         [ "coalescent_converter", 5 ],
+-        [ "thermic_essence_cutter", 35 ],
++        [ "thermic_essence_cutter", 10 ],
+         [ "spatial_displacer", 5 ]
+       ]
+     }
 diff --git a/Arcana/mod_interactions/magiclysm/professions.json b/Arcana/mod_interactions/magiclysm/professions.json
 index 55c9e0af7055..a1b56bb77e21 100644
 --- a/Arcana/mod_interactions/magiclysm/professions.json
@@ -100,6 +201,19 @@ index 55c9e0af7055..a1b56bb77e21 100644
      "flags": [ "SCEN_ONLY" ]
    }
  ]
+diff --git a/Arcana/mod_interactions/package_bionic_professions/itemgroups.json b/Arcana/mod_interactions/package_bionic_professions/itemgroups.json
+index 65197a8eb192..eb576a502cb0 100644
+--- a/Arcana/mod_interactions/package_bionic_professions/itemgroups.json
++++ b/Arcana/mod_interactions/package_bionic_professions/itemgroups.json
+@@ -68,7 +68,7 @@
+         [ "distortion_amp_motor_item", 20 ],
+         [ "essence_surge_generator_item", 35 ],
+         [ "coalescent_converter", 5 ],
+-        [ "thermic_essence_cutter", 35 ],
++        [ "thermic_essence_cutter", 20 ],
+         [ "spatial_displacer", 5 ]
+       ]
+     }
 diff --git a/Arcana/mod_interactions/package_bionic_professions/professions.json b/Arcana/mod_interactions/package_bionic_professions/professions.json
 index 55c9e0af7055..a1b56bb77e21 100644
 --- a/Arcana/mod_interactions/package_bionic_professions/professions.json

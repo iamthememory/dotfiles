@@ -133,7 +133,6 @@
           { "item": "rc_seed_longstout", "count": 1 },
           { "item": "rc_seed_many_books", "count": 1 },
           { "item": "rc_seed_mineral", "count": 1 },
-          { "item": "rc_seed_warp", "count": 1 },
           { "item": "rc_seed_water_berry", "count": 1 },
 
           { "item": "digging_stick" },

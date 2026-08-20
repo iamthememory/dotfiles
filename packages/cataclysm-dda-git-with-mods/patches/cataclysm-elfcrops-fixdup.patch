@@ -2224,7 +2224,7 @@ index d52300a7328b..4fce9b5504a2 100644
 +}
 +]
 diff --git a/Resource Crops/itemgroups/fungusdrops.json b/Resource Crops/itemgroups/fungusdrops.json
-index df4ffa673168..c0e0a38554b1 100644
+index df4ffa673168..d6c8306dd706 100644
 --- a/Resource Crops/itemgroups/fungusdrops.json	
 +++ b/Resource Crops/itemgroups/fungusdrops.json	
 @@ -3,7 +3,10 @@
@@ -2331,7 +2331,7 @@ index df4ffa673168..c0e0a38554b1 100644
        { "item": "bio_power_storage", "prob":5}
      ]
    },
-@@ -615,9 +571,974 @@
+@@ -615,9 +571,975 @@
      "subtype": "distribution",
      "id": "rc_drop_batterydispos",
      "items": [
@@ -3130,6 +3130,7 @@ index df4ffa673168..c0e0a38554b1 100644
 +      { "item": "rc_spawn_paintballfungus", "prob": 5 },
 +      { "item": "rc_spawn_rebarrailfungus", "prob": 5 },
 +      { "item": "rc_spawn_rpgfungus", "prob": 5 },
++      { "item": "rc_spawn_seed_fungus", "prob": 5 },
 +      { "item": "rc_spawn_shotgunfungus", "prob": 5 },
 +      { "item": "rc_spawn_solder", "prob": 5 },
 +      { "item": "rc_spawn_steel_chunk", "prob": 5 },
@@ -3868,10 +3869,10 @@ index fccd89aa02a2..e6c6785f8394 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/items/summoner.json b/Resource Crops/items/summoner.json
-index ce70e9badaf0..9b89d804b41a 100644
+index ce70e9badaf0..2e58a8e1fd07 100644
 --- a/Resource Crops/items/summoner.json	
 +++ b/Resource Crops/items/summoner.json	
-@@ -1,1046 +1,1717 @@
+@@ -1,1046 +1,1738 @@
  [
    {
 -    "id": "rc_spawn_moneyfungus",
@@ -6293,6 +6294,27 @@ index ce70e9badaf0..9b89d804b41a 100644
 +          ]
 +        }
 +      ]
++    }
++  },
++  {
++    "id": "rc_spawn_seed_fungus",
++    "copy-from": "rc_spawn_abstractfungus",
++    "type": "ITEM",
++    "subtypes": [ "TOOL" ],
++    "name": "summon seed fungus",
++    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with seeds in its body.",
++    "tick_action": {
++      "type": "effect_on_conditions",
++      "consume": true,
++      "effect_on_conditions": [
++        {
++          "id": "EOC_rc_spawn_seed_fungus",
++          "effect": [
++            { "npc_location_variable": { "context_val": "loc" } },
++            { "map_spawn_item": "farming_seeds", "loc": { "context_val": "loc" }, "use_item_group": true }
++          ]
++        }
++      ]
      }
    }
 -]
@@ -6957,113 +6979,6 @@ index 000000000000..1208209dcfcf
 +        { "item": "melon", "prob": 10 }
 +      ]
 +    }
-+  }
-+]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classes/fungusdrops.json b/Resource Crops/mod_interactions/xedra-both-classes/fungusdrops.json
-new file mode 100644
-index 000000000000..8e0143e5d069
---- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classes/fungusdrops.json	
-@@ -0,0 +1,13 @@
-+[
-+  {
-+    "type": "item_group",
-+    "subtype": "distribution",
-+    "id": "rc_drop_gamble",
-+    "copy-from": "rc_drop_gamble",
-+    "extend": {
-+      "items": [
-+        { "item": "rc_spawn_seed_fungus", "prob": 10 }
-+      ]
-+    }
-+  }
-+]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classes/items.json b/Resource Crops/mod_interactions/xedra-both-classes/items.json
-new file mode 100644
-index 000000000000..45e1797d4fdd
---- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classes/items.json	
-@@ -0,0 +1,23 @@
-+[
-+  {
-+    "id": "rc_spawn_seed_fungus",
-+    "copy-from": "rc_spawn_abstractfungus",
-+    "type": "ITEM",
-+    "subtypes": [ "TOOL" ],
-+    "name": "summon seed fungus",
-+    "description": "Some kind of puffball. Throw it on the ground to summon a fungus with seeds in its body.",
-+    "tick_action": {
-+      "type": "effect_on_conditions",
-+      "consume": true,
-+      "effect_on_conditions": [
-+        {
-+          "id": "EOC_rc_spawn_seed_fungus",
-+          "effect": [
-+            { "npc_location_variable": { "context_val": "loc" } },
-+            { "map_spawn_item": "arvore_seeds", "loc": { "context_val": "loc" }, "use_item_group": true }
-+          ]
-+        }
-+      ]
-+    }
-+  }
-+]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classes/recipes.json b/Resource Crops/mod_interactions/xedra-both-classes/recipes.json
-new file mode 100644
-index 000000000000..4dcaf798ddeb
---- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classes/recipes.json	
-@@ -0,0 +1,24 @@
-+[
-+  {
-+    "type": "recipe",
-+    "result": "rc_seed_seeds",
-+    "category": "CC_FOOD",
-+    "subcategory": "CSC_FOOD_SEEDS",
-+    "skill_used": "fabrication",
-+    "skills_required": [["cooking", 5], ["fabrication", 5]],
-+    "book_learn": {
-+      "rc_textbook_infseeds": {
-+        "skill_level": 5,
-+        "recipe_name": "seed seeds"
-+      }
-+    },
-+    "difficulty": 3,
-+    "time": "20 m",
-+    "activity_level": "NO_EXERCISE",
-+    "components": [
-+      [
-+        [ "rc_seed_mat", 1]
-+      ]
-+    ]
-+  }
-+]
-diff --git a/Resource Crops/mod_interactions/xedra-both-classes/seeds.json b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json
-new file mode 100644
-index 000000000000..da7e86e84164
---- /dev/null
-+++ b/Resource Crops/mod_interactions/xedra-both-classes/seeds.json	
-@@ -0,0 +1,23 @@
-+[
-+  {
-+    "id": "rc_seed_seeds",
-+    "copy-from": "seed",
-+    "type": "ITEM",
-+    "subtypes": [ "SEED", "COMESTIBLE" ],
-+    "name": { "str_sp": "seed seeds" },
-+    "description": "Infused seeds prepared in such a way that they grow into a bush with other seeds.",
-+    "price": "1000 cent",
-+    "price_postapoc": "250 cent",
-+    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
-+    "plant_name": "seed bush",
-+    "fruit": "rc_spawn_seed_fungus",
-+    "byproducts": [ "withered" ],
-+    "growth_stages": [
-+      { "GROWTH_SEED": "15 days" },
-+      { "GROWTH_SEEDLING": "15 days" },
-+      { "GROWTH_MATURE": "15 days" },
-+      { "GROWTH_HARVEST": "15 days" },
-+      { "GROWTH_OVERGROWN": "1 hour" }
-+    ]
 +  }
 +]
 diff --git a/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json b/Resource Crops/mod_interactions/xedra_evolved/fungusdrops.json
@@ -9957,7 +9872,7 @@ index 056d35917941..0ab999fc9a2d 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/recipes/lootbox recipes.json b/Resource Crops/recipes/lootbox recipes.json
-index fa98ccf57c19..ca82c1dfe0f6 100644
+index fa98ccf57c19..3cf887320e6c 100644
 --- a/Resource Crops/recipes/lootbox recipes.json	
 +++ b/Resource Crops/recipes/lootbox recipes.json	
 @@ -2,10 +2,11 @@
@@ -9988,7 +9903,7 @@ index fa98ccf57c19..ca82c1dfe0f6 100644
      "book_learn": {
        "rc_textbook_infseeds": {
          "skill_level": 5,
-@@ -48,5 +50,353 @@
+@@ -48,5 +50,375 @@
          [ "paper", 100 ]
        ]
      ]
@@ -10330,6 +10245,28 @@ index fa98ccf57c19..ca82c1dfe0f6 100644
 +      "rc_textbook_infseeds": {
 +        "skill_level": 5,
 +        "recipe_name": "gamble seeds"
++      }
++    },
++    "difficulty": 3,
++    "time": "20 m",
++    "activity_level": "NO_EXERCISE",
++    "components": [
++      [
++        [ "rc_seed_mat", 1]
++      ]
++    ]
++  },
++  {
++    "type": "recipe",
++    "result": "rc_seed_seeds",
++    "category": "CC_FOOD",
++    "subcategory": "CSC_FOOD_SEEDS",
++    "skill_used": "fabrication",
++    "skills_required": [["cooking", 5], ["fabrication", 5]],
++    "book_learn": {
++      "rc_textbook_infseeds": {
++        "skill_level": 5,
++        "recipe_name": "seed seeds"
 +      }
 +    },
 +    "difficulty": 3,
@@ -15514,10 +15451,10 @@ index 4b6a9ff1343e..ab0e189574d4 100644
 \ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/lootbox seeds.json b/Resource Crops/seeds/lootbox seeds.json
-index 83c7aca5e180..be06581c1b8b 100644
+index 83c7aca5e180..01768c3e8ffd 100644
 --- a/Resource Crops/seeds/lootbox seeds.json	
 +++ b/Resource Crops/seeds/lootbox seeds.json	
-@@ -2,33 +2,358 @@
+@@ -2,33 +2,379 @@
    {
      "id": "rc_seed_lab_library",
      "copy-from": "seed",
@@ -15569,9 +15506,6 @@ index 83c7aca5e180..be06581c1b8b 100644
 -      "byproducts": [ "withered" ],
 -      "grow": "15 days"
 -    }
--  }
--]
-\ No newline at end of file
 +    "price": "1000 cent",
 +    "price_postapoc": "250 cent",
 +    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
@@ -15900,7 +15834,30 @@ index 83c7aca5e180..be06581c1b8b 100644
 +      { "GROWTH_HARVEST": "15 days" },
 +      { "GROWTH_OVERGROWN": "1 hour" }
 +    ]
-+}
++},
++  {
++    "id": "rc_seed_seeds",
++    "copy-from": "seed",
++    "type": "ITEM",
++    "subtypes": [ "SEED", "COMESTIBLE" ],
++    "name": { "str_sp": "seed seeds" },
++    "description": "Infused seeds prepared in such a way that they grow into a bush with other seeds.",
++    "price": "1000 cent",
++    "price_postapoc": "250 cent",
++    "flags": [ "PLANTABLE_SEED", "NUTRIENT_OVERRIDE", "INEDIBLE" ],
++    "plant_name": "seed bush",
++    "fruit": "rc_spawn_seed_fungus",
++    "byproducts": [ "withered" ],
++    "growth_stages": [
++      { "GROWTH_SEED": "15 days" },
++      { "GROWTH_SEEDLING": "15 days" },
++      { "GROWTH_MATURE": "15 days" },
++      { "GROWTH_HARVEST": "15 days" },
++      { "GROWTH_OVERGROWN": "1 hour" }
++    ]
+   }
+-]
+\ No newline at end of file
 +]
 diff --git a/Resource Crops/seeds/metal seeds.json b/Resource Crops/seeds/metal seeds.json
 index f2819e545949..34fea07aa621 100644

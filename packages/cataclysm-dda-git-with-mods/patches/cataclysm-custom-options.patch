@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index d90ad04923e1..1e151656c876 100644
+index d90ad04923e1..03ffa95f80ff 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -527,5 +527,222 @@
+@@ -527,5 +527,229 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -223,6 +223,13 @@ index d90ad04923e1..1e151656c876 100644
 +    "//": "Force map extras to have at least this level of visibility.",
 +    "stype": "string_input",
 +    "value": "none"
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "KILOGRAMS_PER_STRENGTH",
++    "//": "The weight in kilograms a character can carry per point of strength.",
++    "stype": "int",
++    "value": 4
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
@@ -259,7 +266,7 @@ index 93b5ed7e20c8..0eea261d5be1 100644
  }
  
 diff --git a/src/character.cpp b/src/character.cpp
-index 0e92dc1ff90e..81d3f2812758 100644
+index 0e92dc1ff90e..b44cec741a98 100644
 --- a/src/character.cpp
 +++ b/src/character.cpp
 @@ -379,6 +379,7 @@ static const trait_id trait_VISCOUS( "VISCOUS" );
@@ -319,6 +326,26 @@ index 0e92dc1ff90e..81d3f2812758 100644
      // Your ability to "catch up" skill experience to knowledge is mostly a function of intelligence,
      // but perception also plays a role, representing both memory/attentiveness and catching on to how
      // the two apply to each other.
+@@ -2839,7 +2851,9 @@ units::mass Character::weight_capacity() const
+     // Not using get_str() so pain and other temporary effects won't decrease carrying capacity;
+     // transiently reducing carry weight is unlikely to have any play impact besides being very annoying.
+     /** @EFFECT_STR increases carrying capacity */
+-    ret += ( get_str_base() + get_str_bonus() ) * 4_kilogram;
++    const units::mass weight_per_str =
++        units::from_kilogram( ::get_option<int>( "KILOGRAMS_PER_STRENGTH" ) );
++    ret += ( get_str_base() + get_str_bonus() ) * weight_per_str;
+ 
+     ret = enchantment_cache->modify_value( enchant_vals::mod::CARRY_WEIGHT, ret );
+ 
+@@ -2851,7 +2865,7 @@ units::mass Character::weight_capacity() const
+         // the mech has an effective strength for other purposes, like hitting.
+         // but for lifting, its effective strength is even higher, due to its sturdy construction, leverage,
+         // and being built entirely for that purpose with hydraulics etc.
+-        ret = mons->mech_str_addition() == 0 ? ret : ( mons->mech_str_addition() + 10 ) * 4_kilogram;
++        ret = mons->mech_str_addition() == 0 ? ret : ( mons->mech_str_addition() + 10 ) * weight_per_str;
+     }
+     return ret;
+ }
 diff --git a/src/character_health.cpp b/src/character_health.cpp
 index c87f999751c9..a47c67c2e6db 100644
 --- a/src/character_health.cpp

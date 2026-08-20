@@ -4,7 +4,6 @@
     "id": "EOC_on_kill_award_chrono_exp",
     "eoc_type": "EVENT",
     "required_event": "character_kills_monster",
-    "condition": { "u_has_trait": "XEDRA_CHRONOMANCER" },
     "effect": [
       { "math": [ "u_vitamin('xedra_chronomancer_insight') += 1" ] },
       {

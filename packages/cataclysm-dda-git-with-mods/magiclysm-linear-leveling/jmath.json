@@ -3,13 +3,13 @@
     "type": "jmath_function",
     "id": "linear_spell_formula_get_level",
     "num_args": 1,
-    "return": "_0 / 1000"
+    "return": "_0 / 2000"
   },
   {
     "type": "jmath_function",
     "id": "linear_spell_formula_exp_for_level",
     "num_args": 1,
-    "return": "_0 * 1000"
+    "return": "_0 * 2000"
   },
   {
     "type": "jmath_function",
