@@ -4,19 +4,8 @@
     "subtype": "distribution",
     "id": "prepared_backpack",
     "entries": [
-      { "item": "backpack" },
       { "item": "backpack_hiking" },
       { "item": "backpack_hunting" },
-      { "item": "backpack_leather" },
-      { "item": "dry_duffelbag" },
-      { "item": "duffelbag" },
-      { "item": "duffelbag_gym_l" },
-      { "item": "duffelbag_gym_m" },
-      { "item": "duffelbag_gym_s" },
-      { "item": "duffelbag_gym_xl" },
-      { "item": "duffelbag_gym_xs" },
-      { "item": "duffelbag_l_poly" },
-      { "item": "duffelbag_xl_nylon" },
       { "item": "molle_large_rucksack" },
       { "item": "molle_medium_rucksack" },
       { "item": "molle_pack" },
@@ -118,7 +107,7 @@
     "subtype": "collection",
     "id": "prepared_spellbook",
     "items": [
-      { "group": "prepared_spellbook_roll", "count": 6 }
+      { "group": "prepared_spellbook_roll", "count": 8 }
     ]
   },
   {
@@ -158,9 +147,7 @@
     "type": "effect_on_condition",
     "id": "hobby_prepared_crystal",
     "effect": [
-      {
-        "u_spawn_item": "matrix_crystal_coruscating"
-      }
+      { "u_spawn_item": "matrix_crystal_coruscating", "count": 2 }
     ]
   },
   {
@@ -212,7 +199,7 @@
     "subtype": "collection",
     "id": "prepared_artifact",
     "items": [
-      { "group": "prepared_artifact_roll", "count": 6 }
+      { "group": "prepared_artifact_roll", "count": 8 }
     ]
   },
   {
@@ -246,6 +233,54 @@
     "id": "prepared_artifact",
     "name": "Prepared (Artifacts)",
     "description": "You were lucky enough to have some equipment.",
+    "points": 8
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "hobby_prepared_mutation",
+    "effect": [
+      {
+        "if": { "math": [ "u_hobby_prepared_mutation_remaining > 0" ] },
+        "then": [
+          {
+            "if": {
+              "x_in_y_chance": {
+                "x": { "math": [ "u_hobby_prepared_mutation_remaining" ] },
+                "y": 100
+              }
+            },
+            "then": [
+              { "u_mutate": 1, "use_vitamins": false },
+              { "math": [ "u_hobby_prepared_mutation_remaining--" ] }
+            ]
+          },
+          { "run_eocs": "hobby_prepared_mutation", "time_in_future": "1 hour" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "hobby_prepared_mutation_trigger",
+    "eoc_type": "EVENT",
+    "required_event": "game_start",
+    "effect": [
+      {
+        "if": { "math": [ "!has_var(u_hobby_prepared_mutation_init)" ] },
+        "then": [
+          { "run_eocs": "hobby_prepared_mutation", "time_in_future": "1 hour" },
+          { "math": [ "u_hobby_prepared_mutation_init = 1" ] },
+          { "math": [ "u_hobby_prepared_mutation_remaining = 6" ] }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "profession",
+    "subtype": "hobby",
+    "id": "prepared_mutation",
+    "name": "Prepared (Mutation)",
+    "description": "You are mutating randomly a few times.",
     "points": 8
   }
 ]

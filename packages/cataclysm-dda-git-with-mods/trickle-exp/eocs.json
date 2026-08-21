@@ -17,15 +17,15 @@
     "type": "effect_on_condition",
     "id": "EOC_TRICKLE_EXP_DAILY_EXP",
     "effect": [
-      { "math": [ "u_stk_exp_current += 50" ] },
-      { "math": [ "u_val('exp') += 50" ] }
+      { "math": [ "u_stk_exp_current += 10" ] },
+      { "math": [ "u_val('exp') += 10" ] }
     ]
   },
   {
     "type": "effect_on_condition",
     "id": "EOC_TRICKLE_EXP_DAILY_CHRONOMANCER",
     "condition": { "u_has_trait": "XEDRA_CHRONOMANCER" },
-    "effect": [ { "math": [ "u_vitamin('xedra_chronomancer_insight') += 10" ] } ]
+    "effect": [ { "math": [ "u_vitamin('xedra_chronomancer_insight') += 4" ] } ]
   },
   {
     "type": "effect_on_condition",
