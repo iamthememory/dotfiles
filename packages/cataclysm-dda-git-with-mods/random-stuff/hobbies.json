@@ -118,7 +118,7 @@
     "subtype": "collection",
     "id": "prepared_spellbook",
     "items": [
-      { "group": "prepared_spellbook_roll", "count": 4 }
+      { "group": "prepared_spellbook_roll", "count": 6 }
     ]
   },
   {
@@ -212,7 +212,7 @@
     "subtype": "collection",
     "id": "prepared_artifact",
     "items": [
-      { "group": "prepared_artifact_roll", "count": 4 }
+      { "group": "prepared_artifact_roll", "count": 6 }
     ]
   },
   {
