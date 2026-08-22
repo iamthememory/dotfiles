@@ -99,7 +99,7 @@ index 81c09b78ea0a..ff62bb065133 100644
    }
  ]
 diff --git a/mods/grow_more_drugs/items/cdf_items_food_raw.json b/mods/grow_more_drugs/items/cdf_items_food_raw.json
-index 482710abf4d9..2b883d496b80 100644
+index 482710abf4d9..f3ed21ee056f 100644
 --- a/mods/grow_more_drugs/items/cdf_items_food_raw.json
 +++ b/mods/grow_more_drugs/items/cdf_items_food_raw.json
 @@ -1,9 +1,18 @@
@@ -140,14 +140,15 @@ index 482710abf4d9..2b883d496b80 100644
      "symbol": "^",
      "healthy": 1,
      "calories": 21,
-@@ -40,18 +50,19 @@
+@@ -40,28 +50,29 @@
      "material": [ "veggy" ],
      "volume": "100 ml",
      "fun": -12,
 -    "flags": [ "FREEZERBURN", "SMOKABLE", "RAW" ],
 +    "flags": [ "FREEZERBURN", "RAW" ],
      "smoking_result": "dry_veggy",
-     "vitamins": [ [ "vitC", "16 mg" ], [ "iron", "2 mg" ], [ "calcium", "66 mg" ] ]
+-    "vitamins": [ [ "vitC", "16 mg" ], [ "iron", "2 mg" ], [ "calcium", "66 mg" ] ]
++    "vitamins": [ [ "vitC", "8 mg" ], [ "iron", "1 mg" ], [ "calcium", "33 mg" ] ]
    },
    {
 -    "type": "COMESTIBLE",
@@ -161,17 +162,21 @@ index 482710abf4d9..2b883d496b80 100644
      "spoils_in": "1 day 6 hours",
 -    "comestible_type": "FOOD",
      "symbol": "%",
-     "calories": 35,
+-    "calories": 35,
++    "calories": 8,
      "description": "A handful of freshly-picked bluebell flowers.  In their current raw state they are totally edible, but are a lot tastier when properly cooked.",
-@@ -60,7 +71,7 @@
+     "price": "15 cent",
+     "price_postapoc": "12 cent",
      "material": [ "veggy" ],
      "volume": "100 ml",
      "fun": -2,
 -    "flags": [ "FREEZERBURN", "SMOKABLE", "RAW" ],
 +    "flags": [ "FREEZERBURN", "RAW" ],
      "smoking_result": "dry_bluebell",
-     "vitamins": [ [ "vitC", 16 ], [ "calcium", 66 ], [ "iron", 2 ] ]
+-    "vitamins": [ [ "vitC", 16 ], [ "calcium", 66 ], [ "iron", 2 ] ]
++    "vitamins": [ [ "vitC", "2 mg" ], [ "iron", "250 ug" ], [ "calcium", "8 mg" ] ]
    }
+ ]
 diff --git a/mods/grow_more_drugs/items/cdf_items_seeds.json b/mods/grow_more_drugs/items/cdf_items_seeds.json
 index f28e81527c40..14ca83f34001 100644
 --- a/mods/grow_more_drugs/items/cdf_items_seeds.json
@@ -474,7 +479,7 @@ index 34fcae237491..45e7078fbcfc 100644
      "description": "Adds different drug crops that would not grow in New England, but work great with TropiCataclysm. Successor mod to Climate Defying Farming by Maddremor. Plants/seeds: Coca, coffee, tea, poppy, tobacco.",
      "category": "items",
 diff --git a/mods/grow_more_drugs/recipes/cdf_recipes_refining.json b/mods/grow_more_drugs/recipes/cdf_recipes_refining.json
-index 7aa7fc3f246c..6ee1bdce30d6 100644
+index 7aa7fc3f246c..962da8f6ba43 100644
 --- a/mods/grow_more_drugs/recipes/cdf_recipes_refining.json
 +++ b/mods/grow_more_drugs/recipes/cdf_recipes_refining.json
 @@ -6,7 +6,7 @@
@@ -516,6 +521,33 @@ index 7aa7fc3f246c..6ee1bdce30d6 100644
      "proficiencies": [
        { "proficiency": "prof_intro_chemistry" },
        { "proficiency": "prof_organic_chemistry" },
+@@ -82,12 +82,12 @@
+     "subcategory": "CSC_FOOD_VEGGI",
+     "skill_used": "survival",
+     "time": "5 m",
+-    "charges": 30,
++    "charges": 5,
+     "autolearn": true,
+     "components": [ [ [ "bluebell_bundle", 1 ] ] ],
+     "byproduct_group": [
+       { "item": "bluebell_greens", "count": [ 1, 2 ] },
+-      { "item": "bluebell_seed", "count": [ 1, 5 ] }
++      { "item": "bluebell_seed", "count": [ 1, 2 ] }
+     ]
+ },
+   {
+@@ -98,9 +98,9 @@
+     "subcategory": "CSC_CHEM_DRUGS",
+     "skill_used": "cooking",
+     "time": "10 m",
+-    "charges": 10,
++    "charges": 5,
+     "autolearn": true,
+     "qualities": [ { "id": "COOK", "level": 1 } ],
+-    "components": [ [ [ "bluebell_flowers", 10 ] ] ]
++    "components": [ [ [ "bluebell_flowers", 5 ] ] ]
+   }
+ ]
 diff --git a/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json b/mods/grow_more_drugs/recipes/cdf_recipes_seeds.json
 deleted file mode 100644
 index bfd6e6279ec6..000000000000
