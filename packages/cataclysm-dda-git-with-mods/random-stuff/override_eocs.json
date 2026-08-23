@@ -1,0 +1,36 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LAB_MUTANT_NO_MUTAGENS",
+    "//": "Deletes boxes containing mutagens and locutus.  Leaves barrels of slurry intact.",
+    "effect": [ ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LAB_MUTANT_FRIENDS",
+    "effect": [
+      {
+        "u_run_monster_eocs": [ "EOC_BANISH_LAB_MUTANT" ],
+        "monster_range": 50,
+        "mtype_ids": [
+          "mon_mutant_experimental",
+          "mon_mutant_evolved",
+          "mon_mutant_antler",
+          "mon_mutant_arthropod",
+          "mon_mutant_camouflaged",
+          "mon_mutant_alpha",
+          "mon_mutant_mollusk",
+          "mon_mutant_alpha_boss"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_BANISH_LAB_MUTANT",
+    "condition": { "not": "u_is_npc" },
+    "effect": [
+      { "u_die": { "remove_corpse": true, "supress_message": true } }
+    ]
+  }
+]

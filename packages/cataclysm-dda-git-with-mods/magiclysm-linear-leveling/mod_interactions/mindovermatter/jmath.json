@@ -1,0 +1,16 @@
+[
+  {
+    "type": "jmath_function",
+    "id": "psionic_power_experience_formula",
+    "num_args": 0,
+    "//return": "(u_val('focus_effective') / 100) * 80 * ( ( u_val('intelligence') + 10) / 20 ) * min( ( 0.5 + ( u_skill('metaphysics') / 20) ), 1) * u_nether_attunement_power_scaling * game_option('SKILL_TRAINING_SPEED')",
+    "return": "10"
+  },
+  {
+    "type": "jmath_function",
+    "id": "contemplation_factor",
+    "num_args": 0,
+    "//": "EXP per second.",
+    "return": "0.05 * ( ( u_vitamin('vitamin_maintained_powers') > 0 ) ? ( 1 / ( 1 + u_vitamin('vitamin_maintained_powers') ) ) : 1 )"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "xedrawood_forest_magic",
+    "copy-from": "xedrawood_forest_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  }
+]

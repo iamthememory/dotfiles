@@ -1,0 +1,68 @@
+[
+  {
+    "id": "arcana_magic_blessings",
+    "copy-from": "arcana_magic_blessings",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "arcana_sanguine_marks",
+    "copy-from": "arcana_sanguine_marks",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "arcana_blood_magic",
+    "copy-from": "arcana_blood_magic",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "arcana_pattern_sorcery",
+    "copy-from": "arcana_pattern_sorcery",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "arcana_summoning",
+    "copy-from": "arcana_summoning",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  },
+  {
+    "id": "arcana_briar_witchery",
+    "copy-from": "arcana_briar_witchery",
+    "type": "magic_type",
+    "get_level_formula_id": "linear_spell_formula_get_level",
+    "exp_for_level_formula_id": "linear_spell_formula_exp_for_level",
+    "casting_xp_formula_id": "linear_spell_formula_casting_xp",
+    "failure_cost_percent": 1,
+    "failure_exp_percent": 1,
+    "max_book_level": 0
+  }
+]

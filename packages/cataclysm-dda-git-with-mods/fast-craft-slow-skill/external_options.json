@@ -50,14 +50,14 @@
     "name": "UNSTABLE_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the unstable trait.",
     "stype": "int",
-    "value": 336
+    "value": 720
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CHAOTIC_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the chaotic trait.",
     "stype": "int",
-    "value": 240
+    "value": 600
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -167,7 +167,7 @@
     "type": "EXTERNAL_OPTION",
     "name": "EVOLUTION_INVERSE_MULTIPLIER",
     "stype": "float",
-    "value": 4.0
+    "value": 3.0
   },
   {
     "type": "EXTERNAL_OPTION",

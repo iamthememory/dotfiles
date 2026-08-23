@@ -1,15 +1,27 @@
 [
   {
     "type": "jmath_function",
-    "id": "linear_spell_formula_get_level",
-    "num_args": 1,
-    "return": "_0 / 2000"
+    "id": "linear_spell_formula_base_per_level",
+    "num_args": 0,
+    "return": "1000"
+  },
+  {
+    "type": "jmath_function",
+    "id": "linear_spell_formula_extra_per_level",
+    "num_args": 0,
+    "return": "100"
   },
   {
     "type": "jmath_function",
     "id": "linear_spell_formula_exp_for_level",
     "num_args": 1,
-    "return": "_0 * 2000"
+    "return": "linear_spell_formula_extra_per_level() * ( _0 * _0 ) + ( linear_spell_formula_base_per_level() - linear_spell_formula_extra_per_level() ) * _0"
+  },
+  {
+    "type": "jmath_function",
+    "id": "linear_spell_formula_get_level",
+    "num_args": 1,
+    "return": "( linear_spell_formula_extra_per_level() - linear_spell_formula_base_per_level() + sqrt( ( linear_spell_formula_base_per_level() - linear_spell_formula_extra_per_level() ) ^ 2 + 4 * linear_spell_formula_extra_per_level() * _0 ) ) / ( 2 * linear_spell_formula_extra_per_level() )"
   },
   {
     "type": "jmath_function",

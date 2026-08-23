@@ -7,8 +7,6 @@
       { "item": "backpack_hiking" },
       { "item": "backpack_hunting" },
       { "item": "molle_large_rucksack" },
-      { "item": "molle_medium_rucksack" },
-      { "item": "molle_pack" },
       { "item": "rucksack" }
     ]
   },
@@ -30,7 +28,12 @@
     "required_event": "game_start",
     "effect": [
       {
-        "if": { "math": [ "!has_var(u_hobby_prepared_backpack_init)" ] },
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_backpack" },
+            { "math": [ "!has_var(u_hobby_prepared_backpack_init)" ] }
+          ]
+        },
         "then": [
           { "run_eocs": "hobby_prepared_backpack", "time_in_future": 1 },
           { "math": [ "u_hobby_prepared_backpack_init = 1" ] }
@@ -51,7 +54,7 @@
     "subtype": "distribution",
     "id": "prepared_seed",
     "entries": [
-      { "group": "farming_seeds", "count": 8 }
+      { "group": "farming_seeds", "count": 12 }
     ]
   },
   {
@@ -71,7 +74,12 @@
     "required_event": "game_start",
     "effect": [
       {
-        "if": { "math": [ "!has_var(u_hobby_prepared_seed_init)" ] },
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_seed" },
+            { "math": [ "!has_var(u_hobby_prepared_seed_init)" ] }
+          ]
+        },
         "then": [
           { "run_eocs": "hobby_prepared_seed", "time_in_future": 2 },
           { "math": [ "u_hobby_prepared_seed_init = 1" ] }
@@ -127,7 +135,12 @@
     "required_event": "game_start",
     "effect": [
       {
-        "if": { "math": [ "!has_var(u_hobby_prepared_spellbook_init)" ] },
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_spellbook" },
+            { "math": [ "!has_var(u_hobby_prepared_spellbook_init)" ] }
+          ]
+        },
         "then": [
           { "run_eocs": "hobby_prepared_spellbook", "time_in_future": 2 },
           { "math": [ "u_hobby_prepared_spellbook_init = 1" ] }
@@ -157,7 +170,12 @@
     "required_event": "game_start",
     "effect": [
       {
-        "if": { "math": [ "!has_var(u_hobby_prepared_crystal_init)" ] },
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_crystal" },
+            { "math": [ "!has_var(u_hobby_prepared_crystal_init)" ] }
+          ]
+        },
         "then": [
           { "run_eocs": "hobby_prepared_crystal", "time_in_future": 2 },
           { "math": [ "u_hobby_prepared_crystal_init = 1" ] }
@@ -199,7 +217,7 @@
     "subtype": "collection",
     "id": "prepared_artifact",
     "items": [
-      { "group": "prepared_artifact_roll", "count": 8 }
+      { "group": "prepared_artifact_roll", "count": 6 }
     ]
   },
   {
@@ -219,7 +237,12 @@
     "required_event": "game_start",
     "effect": [
       {
-        "if": { "math": [ "!has_var(u_hobby_prepared_artifact_init)" ] },
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_artifact" },
+            { "math": [ "!has_var(u_hobby_prepared_artifact_init)" ] }
+          ]
+        },
         "then": [
           { "run_eocs": "hobby_prepared_artifact", "time_in_future": 2 },
           { "math": [ "u_hobby_prepared_artifact_init = 1" ] }
@@ -246,7 +269,7 @@
             "if": {
               "x_in_y_chance": {
                 "x": { "math": [ "u_hobby_prepared_mutation_remaining" ] },
-                "y": 100
+                "y": 200
               }
             },
             "then": [
@@ -266,7 +289,12 @@
     "required_event": "game_start",
     "effect": [
       {
-        "if": { "math": [ "!has_var(u_hobby_prepared_mutation_init)" ] },
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_mutation" },
+            { "math": [ "!has_var(u_hobby_prepared_mutation_init)" ] }
+          ]
+        },
         "then": [
           { "run_eocs": "hobby_prepared_mutation", "time_in_future": "1 hour" },
           { "math": [ "u_hobby_prepared_mutation_init = 1" ] },
@@ -281,6 +309,62 @@
     "id": "prepared_mutation",
     "name": "Prepared (Mutation)",
     "description": "You are mutating randomly a few times.",
+    "points": 8
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "prepared_magic_roll",
+    "items": [
+      { "group": "prepared_spellbook_roll", "prob": 5 },
+      { "group": "prepared_artifact_roll", "prob": 3 },
+      { "item": "matrix_crystal_coruscating", "prob": 2 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "prepared_magic",
+    "items": [
+      { "group": "prepared_magic_roll", "count": 10 }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "hobby_prepared_magic",
+    "effect": [
+      {
+        "u_spawn_item": "prepared_magic",
+        "use_item_group": true
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "hobby_prepared_magic_trigger",
+    "eoc_type": "EVENT",
+    "required_event": "game_start",
+    "effect": [
+      {
+        "if": {
+          "and": [
+            { "u_has_profession": "prepared_magic" },
+            { "math": [ "!has_var(u_hobby_prepared_magic_init)" ] }
+          ]
+        },
+        "then": [
+          { "run_eocs": "hobby_prepared_magic", "time_in_future": 2 },
+          { "math": [ "u_hobby_prepared_magic_init = 1" ] }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "profession",
+    "subtype": "hobby",
+    "id": "prepared_magic",
+    "name": "Prepared (Magic)",
+    "description": "You were lucky enough to have some equipment.",
     "points": 8
   }
 ]
