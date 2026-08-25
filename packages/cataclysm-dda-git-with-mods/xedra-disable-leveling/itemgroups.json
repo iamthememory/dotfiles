@@ -1,0 +1,26 @@
+[
+  {
+    "id": "SUS_junk_drawer",
+    "type": "item_group",
+    "//": "Adding spell learning items to standard itemgroups",
+    "copy-from": "SUS_junk_drawer",
+    "subtype": "collection",
+    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 5 } ] }
+  },
+  {
+    "id": "SUS_junk_drawer_messy",
+    "type": "item_group",
+    "//": "Adding spell learning items to standard itemgroups",
+    "copy-from": "SUS_junk_drawer_messy",
+    "subtype": "collection",
+    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 5 } ] }
+  },
+  {
+    "id": "SUS_office_filing_cabinet",
+    "type": "item_group",
+    "//": "Adding spell learning items to standard itemgroups",
+    "copy-from": "SUS_office_filing_cabinet",
+    "subtype": "collection",
+    "extend": { "entries": [ { "group": "xe_all_spells_mid", "prob": 5 } ] }
+  }
+]
