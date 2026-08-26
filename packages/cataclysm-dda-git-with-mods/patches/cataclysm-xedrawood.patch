@@ -1215,7 +1215,7 @@ index 80d8969f4e20..000000000000
 -  }
 -]
 diff --git a/data/mods/XedraWood/player/hobbies.json b/data/mods/XedraWood/player/hobbies.json
-index c2e5a1830763..7b0330ebae10 100644
+index abec87d2594d..ef3eab108f6b 100644
 --- a/data/mods/XedraWood/player/hobbies.json
 +++ b/data/mods/XedraWood/player/hobbies.json
 @@ -2,7 +2,7 @@
@@ -1468,7 +1468,7 @@ index c2e5a1830763..7b0330ebae10 100644
 -    "id": "unarmed_combat",
 +    "id": "xedrawood_unarmed_combat",
      "name": "Wrestler (Apprentice)",
-     "description": "You've spent time fighting with your bare hands.  Not to take down game or against other tribes, of course, but in friendly--or at least, non-lethal--contests around the campfires.  You've gotten pretty good at it..",
+     "description": "You've spent time fighting with your bare hands.  Not to take down game or against other tribes, of course, but in friendly--or at least, non-lethal--contests around the campfires.  You've gotten pretty good at it.",
      "points": 2,
 @@ -279,7 +279,7 @@
    {
@@ -1972,26 +1972,20 @@ index 2eb26f4a096a..000000000000
 -  }
 -]
 diff --git a/data/mods/XedraWood/player/scenario.json b/data/mods/XedraWood/player/scenario.json
-index 930875f95f27..372bac515969 100644
+index 930875f95f27..36bae685fe46 100644
 --- a/data/mods/XedraWood/player/scenario.json
 +++ b/data/mods/XedraWood/player/scenario.json
-@@ -3,7 +3,14 @@
-     "type": "scenario",
-     "id": "evacuee",
-     "copy-from": "evacuee",
+@@ -1,61 +1,15 @@
+ [
+-  {
+-    "type": "scenario",
+-    "id": "evacuee",
+-    "copy-from": "evacuee",
 -    "extend": { "professions": [ "tribal_warrior_expert", "lizardfolk_warrior", "lizardfolk_hunter", "wise_one_apprentice" ] }
-+    "extend": {
-+      "professions": [
-+        "xedrawood_tribal_warrior_expert",
-+        "xedrawood_lizardfolk_warrior",
-+        "xedrawood_lizardfolk_hunter",
-+        "xedrawood_wise_one_apprentice"
-+      ]
-+    }
-   },
+-  },
    {
      "type": "scenario",
-@@ -11,11 +18,11 @@
+     "id": "cave_lonesome",
      "copy-from": "cave_lonesome",
      "extend": {
        "professions": [
@@ -2000,62 +1994,41 @@ index 930875f95f27..372bac515969 100644
 -        "lizardfolk_hunter",
 -        "wise_one_apprentice",
 -        "pattern_tattoo_mountain_prof"
-+        "xedrawood_tribal_warrior_expert",
-+        "xedrawood_lizardfolk_warrior",
-+        "xedrawood_lizardfolk_hunter",
-+        "xedrawood_wise_one_apprentice",
-+        "xedrawood_pattern_tattoo_mountain_prof"
-       ]
-     }
-   },
-@@ -23,7 +30,9 @@
-     "type": "scenario",
-     "id": "infected",
-     "copy-from": "infected",
+-      ]
+-    }
+-  },
+-  {
+-    "type": "scenario",
+-    "id": "infected",
+-    "copy-from": "infected",
 -    "extend": { "professions": [ "tribal_warrior_expert", "wise_one_apprentice", "pattern_tattoo_mountain_prof" ] }
-+    "extend": {
-+      "professions": [ "xedrawood_tribal_warrior_expert", "xedrawood_wise_one_apprentice", "xedrawood_pattern_tattoo_mountain_prof" ]
-+    }
-   },
-   {
-     "type": "scenario",
-@@ -31,11 +40,11 @@
-     "copy-from": "hunted_start",
-     "extend": {
-       "professions": [
+-  },
+-  {
+-    "type": "scenario",
+-    "id": "hunted_start",
+-    "copy-from": "hunted_start",
+-    "extend": {
+-      "professions": [
 -        "tribal_warrior_expert",
 -        "lizardfolk_warrior",
 -        "lizardfolk_hunter",
 -        "wise_one_apprentice",
 -        "pattern_tattoo_mountain_prof"
-+        "xedrawood_tribal_warrior_expert",
-+        "xedrawood_lizardfolk_warrior",
-+        "xedrawood_lizardfolk_hunter",
-+        "xedrawood_wise_one_apprentice",
-+        "xedrawood_pattern_tattoo_mountain_prof"
-       ]
-     }
-   },
-@@ -43,7 +52,14 @@
-     "type": "scenario",
-     "id": "fungal_start",
-     "copy-from": "fungal_start",
+-      ]
+-    }
+-  },
+-  {
+-    "type": "scenario",
+-    "id": "fungal_start",
+-    "copy-from": "fungal_start",
 -    "extend": { "professions": [ "tribal_warrior_expert", "lizardfolk_warrior", "lizardfolk_hunter", "wise_one_apprentice" ] }
-+    "extend": {
-+      "professions": [
-+        "xedrawood_tribal_warrior_expert",
-+        "xedrawood_lizardfolk_warrior",
-+        "xedrawood_lizardfolk_hunter",
-+        "xedrawood_wise_one_apprentice"
-+      ]
-+    }
-   },
-   {
-     "type": "scenario",
-@@ -51,11 +67,11 @@
-     "copy-from": "bordered",
-     "extend": {
-       "professions": [
+-  },
+-  {
+-    "type": "scenario",
+-    "id": "bordered",
+-    "copy-from": "bordered",
+-    "extend": {
+-      "professions": [
 -        "tribal_warrior_expert",
 -        "lizardfolk_warrior",
 -        "lizardfolk_hunter",
@@ -2069,7 +2042,7 @@ index 930875f95f27..372bac515969 100644
        ]
      }
    },
-@@ -65,11 +81,11 @@
+@@ -65,11 +19,11 @@
      "copy-from": "ambushed",
      "extend": {
        "professions": [
@@ -2086,7 +2059,7 @@ index 930875f95f27..372bac515969 100644
        ]
      }
    },
-@@ -79,11 +95,11 @@
+@@ -79,25 +33,11 @@
      "copy-from": "summer_advanced_start",
      "extend": {
        "professions": [
@@ -2095,18 +2068,15 @@ index 930875f95f27..372bac515969 100644
 -        "lizardfolk_hunter",
 -        "wise_one_apprentice",
 -        "pattern_tattoo_mountain_prof"
-+        "xedrawood_tribal_warrior_expert",
-+        "xedrawood_lizardfolk_warrior",
-+        "xedrawood_lizardfolk_hunter",
-+        "xedrawood_wise_one_apprentice",
-+        "xedrawood_pattern_tattoo_mountain_prof"
-       ]
-     }
-   },
-@@ -93,11 +109,11 @@
-     "copy-from": "wilderness",
-     "extend": {
-       "professions": [
+-      ]
+-    }
+-  },
+-  {
+-    "type": "scenario",
+-    "id": "wilderness",
+-    "copy-from": "wilderness",
+-    "extend": {
+-      "professions": [
 -        "tribal_warrior_expert",
 -        "lizardfolk_warrior",
 -        "lizardfolk_hunter",
@@ -2120,7 +2090,7 @@ index 930875f95f27..372bac515969 100644
        ]
      }
    },
-@@ -109,7 +125,7 @@
+@@ -109,7 +49,7 @@
      "points": 8,
      "start_name": "Remote dwelling",
      "allowed_locs": [ "sloc_wise_one_hut" ],
