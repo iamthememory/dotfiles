@@ -1,0 +1,2470 @@
+commit 3be102263b053ce36d8f75db119702ac8cb408d3
+Date:   Wed Aug 26 08:37:18 2026 -0400
+
+    Revert "Merge pull request #88292 from dobbry-vechur/craft-reservation/01-requirement-actor-and-quality-metric"
+
+    This reverts commit 9ec13a77b68ac6fc75f367ee7acd026b3e706369, reversing
+    changes made to 13b768f967a994f64762f0358ba150f333ff3c84.
+
+diff --git a/data/mods/TEST_DATA/bionics.json b/data/mods/TEST_DATA/bionics.json
+index f7ac312c084b..eeb434c6d629 100644
+--- a/data/mods/TEST_DATA/bionics.json
++++ b/data/mods/TEST_DATA/bionics.json
+@@ -318,40 +318,5 @@
+     "occupied_bodyparts": [ [ "torso", 5 ], [ "mouth", 1 ] ],
+     "env_protec": [ [ "mouth", 15 ] ],
+     "flags": [ "BIONIC_NPC_USABLE" ]
+-  },
+-  {
+-    "//": "Craft reservation fixture: one source exposing two distinct pseudo items that both supply TEST_RESERVE_A, so one bionic satisfies a quality requirement asking for two.  bio_tools does the same in core data.",
+-    "id": "test_bio_reserve_two_pseudo",
+-    "type": "bionic",
+-    "name": { "str": "Reservation Test Dual Toolset" },
+-    "description": "Test bionic exposing two distinct pseudo tools of the same quality.",
+-    "occupied_bodyparts": [ [ "torso", 4 ] ],
+-    "passive_pseudo_items": [ "test_reserve_bionic_tool_1", "test_reserve_bionic_tool_2" ],
+-    "included": true,
+-    "//2": "not actually included, this is a trick to not have to add an item version."
+-  },
+-  {
+-    "//": "Craft reservation fixture: a pseudo tool the bionic exposes only while it is on, so availability follows the toggle rather than the install.",
+-    "id": "test_bio_reserve_toggled_pseudo",
+-    "type": "bionic",
+-    "name": { "str": "Reservation Test Toggled Toolset" },
+-    "description": "Test bionic exposing a pseudo tool only while powered.",
+-    "occupied_bodyparts": [ [ "torso", 4 ] ],
+-    "toggled_pseudo_items": [ "test_reserve_bionic_tool_1" ],
+-    "flags": [ "BIONIC_TOGGLED" ],
+-    "included": true,
+-    "//2": "not actually included, this is a trick to not have to add an item version."
+-  },
+-  {
+-    "//": "Craft reservation fixture: a weapon reachable directly and, once powered, as an exposed pseudo item.  One occurrence either way.",
+-    "id": "test_bio_reserve_weapon",
+-    "type": "bionic",
+-    "name": { "str": "Reservation Test Weapon Bionic" },
+-    "description": "Test bionic whose weapon supplies a quality.",
+-    "occupied_bodyparts": [ [ "arm_r", 4 ] ],
+-    "fake_weapon": "test_reserve_bionic_weapon",
+-    "flags": [ "BIONIC_TOGGLED", "BIONIC_WEAPON" ],
+-    "included": true,
+-    "//2": "not actually included, this is a trick to not have to add an item version."
+   }
+ ]
+diff --git a/data/mods/TEST_DATA/items.json b/data/mods/TEST_DATA/items.json
+index b367e320232d..3f70349d4cc0 100644
+--- a/data/mods/TEST_DATA/items.json
++++ b/data/mods/TEST_DATA/items.json
+@@ -6438,80 +6438,5 @@
+         "material": [ { "type": "test_protective_clothing_material", "covered_by_mat": 100, "thickness": 1 } ]
+       }
+     ]
+-  },
+-  {
+-    "//": "Craft reservation fixtures.  These use the isolated TEST_RESERVE_* qualities so a test's provider set is exactly what it placed, with no core item contributing.",
+-    "id": "test_reserve_tool_a",
+-    "type": "ITEM",
+-    "subtypes": [ "TOOL" ],
+-    "name": { "str": "test reservation tool A" },
+-    "description": "Supplies TEST_RESERVE_A and nothing else.  The interchangeable provider for equivalence class tests.",
+-    "weight": "500 g",
+-    "volume": "500 ml",
+-    "material": [ "steel" ],
+-    "symbol": ";",
+-    "color": "light_gray",
+-    "qualities": [ [ "TEST_RESERVE_A", 1 ] ]
+-  },
+-  {
+-    "//": "A charge-counted item that also supplies a quality.  One stack must count as one provider, not one provider per charge.",
+-    "id": "test_reserve_charge_stack",
+-    "type": "ITEM",
+-    "subtypes": [ "AMMO" ],
+-    "name": { "str": "test reservation charge stack" },
+-    "description": "A charge-counted item that supplies TEST_RESERVE_A.",
+-    "weight": "1 g",
+-    "volume": "10 ml",
+-    "material": [ "steel" ],
+-    "symbol": "=",
+-    "color": "light_gray",
+-    "count": 100,
+-    "stack_size": 100,
+-    "ammo_type": "battery",
+-    "qualities": [ [ "TEST_RESERVE_A", 1 ] ]
+-  },
+-  {
+-    "//": "Bionic pseudo items for test_bio_reserve_two_pseudo.  Two distinct items both supplying TEST_RESERVE_A, so one source is two occurrences.",
+-    "id": "test_reserve_bionic_tool_1",
+-    "type": "ITEM",
+-    "subtypes": [ "TOOL" ],
+-    "name": { "str": "test reservation bionic tool 1" },
+-    "description": "First pseudo tool of the two-item test bionic.",
+-    "weight": "1 g",
+-    "volume": "1 ml",
+-    "material": [ "steel" ],
+-    "symbol": ";",
+-    "color": "light_gray",
+-    "qualities": [ [ "TEST_RESERVE_A", 1 ] ],
+-    "flags": [ "PSEUDO" ]
+-  },
+-  {
+-    "//": "Weapon of test_bio_reserve_weapon.  It is reachable directly and as a pseudo item once powered, so the two routes are one occurrence.",
+-    "id": "test_reserve_bionic_weapon",
+-    "type": "ITEM",
+-    "subtypes": [ "TOOL" ],
+-    "name": { "str": "test reservation bionic weapon" },
+-    "description": "Weapon pseudo item of the weapon test bionic.",
+-    "weight": "1 g",
+-    "volume": "1 ml",
+-    "material": [ "steel" ],
+-    "symbol": ";",
+-    "color": "light_gray",
+-    "qualities": [ [ "TEST_RESERVE_B", 1 ] ],
+-    "flags": [ "PSEUDO" ]
+-  },
+-  {
+-    "id": "test_reserve_bionic_tool_2",
+-    "type": "ITEM",
+-    "subtypes": [ "TOOL" ],
+-    "name": { "str": "test reservation bionic tool 2" },
+-    "description": "Second pseudo tool of the two-item test bionic.",
+-    "weight": "1 g",
+-    "volume": "1 ml",
+-    "material": [ "steel" ],
+-    "symbol": ";",
+-    "color": "light_gray",
+-    "qualities": [ [ "TEST_RESERVE_A", 1 ] ],
+-    "flags": [ "PSEUDO" ]
+   }
+ ]
+diff --git a/data/mods/TEST_DATA/recipes.json b/data/mods/TEST_DATA/recipes.json
+index f676a5e74e2e..0a0a4007e126 100644
+--- a/data/mods/TEST_DATA/recipes.json
++++ b/data/mods/TEST_DATA/recipes.json
+@@ -740,27 +740,6 @@
+       }
+     ]
+   },
+-  {
+-    "//": "Two providers of one quality, so an abstract multiset holds two occurrence slots.",
+-    "type": "recipe",
+-    "result": "cudgel",
+-    "id_suffix": "test_unattended_two_of_a",
+-    "category": "CC_WEAPON",
+-    "subcategory": "CSC_WEAPON_BASHING",
+-    "skill_used": "fabrication",
+-    "difficulty": 1,
+-    "autolearn": true,
+-    "components": [ [ [ "2x4", 1 ] ] ],
+-    "steps": [
+-      {
+-        "name": "Cure",
+-        "time": "10 m",
+-        "activity_level": "NO_EXERCISE",
+-        "attention": "unattended",
+-        "qualities": [ { "id": "TEST_RESERVE_A", "level": 1, "amount": 2 } ]
+-      }
+-    ]
+-  },
+   {
+     "id": "test_nested_weapons",
+     "type": "nested_category",
+diff --git a/data/mods/TEST_DATA/tool_qualities.json b/data/mods/TEST_DATA/tool_qualities.json
+deleted file mode 100644
+index c7778520b7b7..000000000000
+--- a/data/mods/TEST_DATA/tool_qualities.json
++++ /dev/null
+@@ -1,14 +0,0 @@
+-[
+-  {
+-    "type": "tool_quality",
+-    "id": "TEST_RESERVE_A",
+-    "name": { "str": "test reservation A" },
+-    "//": "Isolated quality for craft reservation tests.  Deliberately not shared with any core item, so a fixture's provider set is exactly what the test placed."
+-  },
+-  {
+-    "type": "tool_quality",
+-    "id": "TEST_RESERVE_B",
+-    "name": { "str": "test reservation B" },
+-    "//": "Second isolated quality, for steps with two groups satisfiable by one provider."
+-  }
+-]
+diff --git a/doc/JSON/ITEM_CRAFT_AND_DISASSEMBLY.md b/doc/JSON/ITEM_CRAFT_AND_DISASSEMBLY.md
+index b328f50afd5d..4641363089f6 100644
+--- a/doc/JSON/ITEM_CRAFT_AND_DISASSEMBLY.md
++++ b/doc/JSON/ITEM_CRAFT_AND_DISASSEMBLY.md
+@@ -298,12 +298,6 @@ If the step's tools or qualities become unavailable, or a charged tool runs shor
+
+ NPCs do not see the planning modal and behave as if implicitly waiting; the unattended block in the craft activity actor still drives their craft forward.
+
+-### Counting quality providers
+-
+-A quality requirement's `"amount"` counts **distinct providers**.  This can change whether a recipe is offered.  A qualifying tool inside a container counts once, not twice.  A stack of a charge-counted qualifying item counts once, not once per charge.
+-
+-A quality is measured against the character the check is about.  A charged quality reads that character's power, not the avatar's.  A mutation or body part that grants a quality without an item counts for that character too.
+-
+ Schema:
+
+ - `"max_time"`, when set, must be strictly greater than `"time"`.
+diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
+index 6fe4c594f84a..323a640ecf70 100644
+--- a/src/activity_actor.cpp
++++ b/src/activity_actor.cpp
+@@ -10641,7 +10641,7 @@ void mend_item_activity_actor::finish( player_activity &act, Character &who )
+     const fault_fix &fix = *mending_method;
+     const requirement_data &reqs = fix.get_requirements();
+     const inventory &inv = who.crafting_inventory();
+-    if( !reqs.can_make_with_inventory( &who, inv, is_crafting_component ) ) {
++    if( !reqs.can_make_with_inventory( inv, is_crafting_component ) ) {
+         add_msg( m_info, _( "You are currently unable to mend the %s." ), target.tname() );
+         return;
+     }
+@@ -10743,7 +10743,7 @@ void fix_wound_activity_actor::finish( player_activity &act, Character &who )
+     const wound_fix &fix = *mending_method;
+     const requirement_data &reqs = fix.get_requirements();
+     const inventory &inv = who.crafting_inventory();
+-    if( !reqs.can_make_with_inventory( &who, inv, is_crafting_component ) ) {
++    if( !reqs.can_make_with_inventory( inv, is_crafting_component ) ) {
+         add_msg( m_info, _( "You are currently unable to heal the %s." ), healed_bp->name.translated() );
+         return;
+     }
+@@ -11398,8 +11398,7 @@ void vehicle_activity_actor::complete_vehicle( player_activity &act, Character &
+         case VEHICLE_INSTALL: {
+             const inventory &inv = you.crafting_inventory();
+             const requirement_data reqs = vpinfo.install_requirements();
+-            if( !reqs.can_make_with_inventory( &you, inv, is_crafting_component, 1, craft_flags::none,
+-                                               false ) ) {
++            if( !reqs.can_make_with_inventory( inv, is_crafting_component, 1, craft_flags::none, false ) ) {
+                 you.add_msg_player_or_npc( m_info,
+                                            _( "You don't meet the requirements to install the %s." ),
+                                            _( "<npcname> doesn't meet the requirements to install the %s." ),
+@@ -11554,7 +11553,7 @@ void vehicle_activity_actor::complete_vehicle( player_activity &act, Character &
+             const bool smash_remove = vpi.has_flag( "SMASH_REMOVE" );
+             const inventory &inv = you.crafting_inventory();
+             const requirement_data &reqs = vpi.removal_requirements();
+-            if( !reqs.can_make_with_inventory( &you, inv, is_crafting_component ) ) {
++            if( !reqs.can_make_with_inventory( inv, is_crafting_component ) ) {
+                 //~  1$s is the vehicle part name
+                 add_msg( m_info, _( "You don't meet the requirements to remove the %1$s." ), vpi.name() );
+                 break;
+@@ -13236,8 +13235,7 @@ void butchery_activity_actor::calculate_butchery_data( Character &you, butchery_
+     const mtype &corpse = *target.get_item()->get_mtype();
+
+     std::pair<float, requirement_id> butchery_reqs =
+-        corpse.harvest->get_butchery_requirements().get_fastest_requirements( &you,
+-                you.crafting_inventory(),
++        corpse.harvest->get_butchery_requirements().get_fastest_requirements( you.crafting_inventory(),
+                 corpse.size, this_bd.b_type );
+     this_bd.req_speed_bonus = butchery_reqs.first;
+     this_bd.req = butchery_reqs.second;
+diff --git a/src/activity_item_handling.cpp b/src/activity_item_handling.cpp
+index ce2bc2a9492a..88450c534105 100644
+--- a/src/activity_item_handling.cpp
++++ b/src/activity_item_handling.cpp
+@@ -1914,7 +1914,7 @@ bool are_requirements_nearby(
+             }
+         }
+     }
+-    return needed_things.obj().can_make_with_inventory( &you, temp_inv, is_crafting_component );
++    return needed_things.obj().can_make_with_inventory( temp_inv, is_crafting_component );
+ }
+
+ } //namespace multi_activity_actor
+@@ -2022,7 +2022,7 @@ activity_reason_info multi_vehicle_deconstruct_activity_actor::multi_activity_ca
+         const requirement_data &reqs = vpinfo.removal_requirements();
+         const inventory &inv = you.crafting_inventory( false );
+
+-        const bool can_make = reqs.can_make_with_inventory( &you, inv, is_crafting_component );
++        const bool can_make = reqs.can_make_with_inventory( inv, is_crafting_component );
+         you.set_value( "veh_index_type", vpinfo.name() );
+         // temporarily store the intended index, we do this so two NPCs don't try and work on the same part at same time.
+         you.activity_vehicle_part_index = vpindex;
+@@ -2081,7 +2081,7 @@ activity_reason_info multi_vehicle_repair_activity_actor::multi_activity_can_do(
+         const requirement_data &reqs = vpinfo.repair_requirements();
+         const inventory &inv =
+             you.crafting_inventory( src_loc, PICKUP_RANGE - 1, false );
+-        const bool can_make = reqs.can_make_with_inventory( &you, inv, is_crafting_component );
++        const bool can_make = reqs.can_make_with_inventory( inv, is_crafting_component );
+         you.set_value( "veh_index_type", vpinfo.name() );
+         // temporarily store the intended index, we do this so two NPCs don't try and work on the same part at same time.
+         you.activity_vehicle_part_index = vpindex;
+@@ -2450,7 +2450,7 @@ activity_reason_info multi_craft_activity_actor::multi_activity_can_do( Characte
+                 tool_comp_vector = r.simple_requirements().get_tools();
+             }
+             requirement_data req = requirement_data( tool_comp_vector, quality_comp_vector, item_comp_vector );
+-            if( req.can_make_with_inventory( &you, inv, is_crafting_component ) ) {
++            if( req.can_make_with_inventory( inv, is_crafting_component ) ) {
+                 return activity_reason_info::ok( do_activity_reason::NEEDS_CRAFT );
+             } else {
+                 return activity_reason_info( do_activity_reason::NEEDS_CRAFT, false, req );
+@@ -2481,18 +2481,18 @@ activity_reason_info multi_disassemble_activity_actor::multi_activity_can_do( Ch
+                               i.components.only_item().typeId() : i.typeId() );
+             req = r.disassembly_requirements();
+             if( !std::all_of( req.get_qualities().begin(),
+-            req.get_qualities().end(), [&inv, &you]( const std::vector<quality_requirement> &cur ) {
++            req.get_qualities().end(), [&inv]( const std::vector<quality_requirement> &cur ) {
+             return cur.empty() ||
+-                std::any_of( cur.begin(), cur.end(), [&inv, &you]( const quality_requirement & curr ) {
+-                    return curr.has( &you, inv, return_true<item> );
++                std::any_of( cur.begin(), cur.end(), [&inv]( const quality_requirement & curr ) {
++                    return curr.has( inv, return_true<item> );
+                 } );
+             } ) ) {
+                 continue;
+             }
+             if( !std::all_of( req.get_tools().begin(),
+-            req.get_tools().end(), [&inv, &you]( const std::vector<tool_comp> &cur ) {
+-            return cur.empty() || std::any_of( cur.begin(), cur.end(), [&inv, &you]( const tool_comp & curr ) {
+-                    return  curr.has( &you, inv, return_true<item> );
++            req.get_tools().end(), [&inv]( const std::vector<tool_comp> &cur ) {
++            return cur.empty() || std::any_of( cur.begin(), cur.end(), [&inv]( const tool_comp & curr ) {
++                    return  curr.has( inv, return_true<item> );
+                 } );
+             } ) ) {
+                 continue;
+diff --git a/src/basecamp.cpp b/src/basecamp.cpp
+index 069c949c3401..2f2089beb042 100644
+--- a/src/basecamp.cpp
++++ b/src/basecamp.cpp
+@@ -256,8 +256,8 @@ std::string basecamp::om_upgrade_description( const std::string &bldg, const map
+
+     std::vector<std::string> component_print_buffer;
+     const int pane = FULL_SCREEN_WIDTH;
+-    const auto tools = reqs->get_folded_tools_list( nullptr, pane, c_white, _inv, 1 );
+-    const auto comps = reqs->get_folded_components_list( nullptr, pane, c_white, _inv,
++    const auto tools = reqs->get_folded_tools_list( pane, c_white, _inv, 1 );
++    const auto comps = reqs->get_folded_components_list( pane, c_white, _inv,
+                        making.get_component_filter(), 1 );
+     component_print_buffer.insert( component_print_buffer.end(), tools.begin(), tools.end() );
+     component_print_buffer.insert( component_print_buffer.end(), comps.begin(), comps.end() );
+@@ -410,8 +410,7 @@ std::vector<basecamp_upgrade> basecamp::available_upgrades( const point_rel_omt
+                 const mapgen_arguments &args = args_and_reqs.first;
+                 const requirement_data &reqs = args_and_reqs.second.consolidated_reqs;
+                 bool can_make =
+-                    reqs.can_make_with_inventory( nullptr, _inv, recp.get_component_filter(), 1, craft_flags::none,
+-                                                  false );
++                    reqs.can_make_with_inventory( _inv, recp.get_component_filter(), 1, craft_flags::none, false );
+                 ret_data.push_back( { bldg, args, recp.blueprint_name(), can_make, in_progress } );
+             }
+         }
+diff --git a/src/bionics.cpp b/src/bionics.cpp
+index 11b672406867..ac4a0acd36f3 100644
+--- a/src/bionics.cpp
++++ b/src/bionics.cpp
+@@ -1966,7 +1966,7 @@ bool Character::has_enough_anesth( const itype &cbm, Character &patient ) const
+     const requirement_data req_anesth = *requirement_data_anesthetic *
+                                         cbm.bionic->difficulty * 2 * weight;
+
+-    return req_anesth.can_make_with_inventory( this, crafting_inventory(), is_crafting_component );
++    return req_anesth.can_make_with_inventory( crafting_inventory(), is_crafting_component );
+ }
+
+ bool Character::has_enough_anesth( const itype &cbm ) const
+@@ -1978,7 +1978,7 @@ bool Character::has_enough_anesth( const itype &cbm ) const
+     const int weight = units::to_kilogram( bodyweight() ) / 10;
+     const requirement_data req_anesth = *requirement_data_anesthetic *
+                                         cbm.bionic->difficulty * 2 * weight;
+-    if( !req_anesth.can_make_with_inventory( this, crafting_inventory(),
++    if( !req_anesth.can_make_with_inventory( crafting_inventory(),
+             is_crafting_component ) ) {
+         std::string buffer = _( "You don't have enough anesthetic to perform the installation." );
+         buffer += "\n";
+@@ -2009,7 +2009,7 @@ bool Character::has_installation_requirement( const bionic_id &bid ) const
+         return false;
+     }
+
+-    if( !bid->installation_requirement->can_make_with_inventory( this, crafting_inventory(),
++    if( !bid->installation_requirement->can_make_with_inventory( crafting_inventory(),
+             is_crafting_component ) ) {
+         std::string buffer = _( "You don't have the required components to perform the installation." );
+         buffer += "\n";
+diff --git a/src/butchery.cpp b/src/butchery.cpp
+index 93b5ed7e20c8..573547442a9e 100644
+--- a/src/butchery.cpp
++++ b/src/butchery.cpp
+@@ -278,16 +278,15 @@ bool set_up_butchery( player_activity &act, Character &you, butchery_data bd )
+     const requirement_id butchery_requirement = bd.req;
+
+     if( !butchery_requirement->can_make_with_inventory(
+-            &you, you.crafting_inventory( you.pos_bub(), PICKUP_RANGE ), is_crafting_component ) ) {
++            you.crafting_inventory( you.pos_bub(), PICKUP_RANGE ), is_crafting_component ) ) {
+         std::string popup_output = _( "You can't butcher this; you are missing some tools.\n" );
+
+         for( const std::string &str : butchery_requirement->get_folded_components_list(
+-                 &you, 45, c_light_gray, you.crafting_inventory( you.pos_bub(), PICKUP_RANGE ),
+-                 is_crafting_component ) ) {
++                 45, c_light_gray, you.crafting_inventory( you.pos_bub(), PICKUP_RANGE ), is_crafting_component ) ) {
+             popup_output += str + '\n';
+         }
+         for( const std::string &str : butchery_requirement->get_folded_tools_list(
+-                 &you, 45, c_light_gray, you.crafting_inventory( you.pos_bub(), PICKUP_RANGE ) ) ) {
++                 45, c_light_gray, you.crafting_inventory( you.pos_bub(), PICKUP_RANGE ) ) ) {
+             popup_output += str + '\n';
+         }
+
+@@ -1192,7 +1191,7 @@ std::optional<butcher_type> butcher_submenu( const std::vector<map_stack::iterat
+         if( index != -1 ) {
+             const mtype &corpse = *corpses[index]->get_mtype();
+             const float factor = corpse.harvest->get_butchery_requirements().get_fastest_requirements(
+-                                     &player_character, player_character.crafting_inventory(),
++                                     player_character.crafting_inventory(),
+                                      corpse.size, bt ).first;
+             time_to_cut = butcher_time_to_cut( player_character, *corpses[index], bt ) * factor;
+             has_started[bt_i] = butcher_get_progress( *corpses[index], bt ) > 0;
+@@ -1201,7 +1200,7 @@ std::optional<butcher_type> butcher_submenu( const std::vector<map_stack::iterat
+             for( const map_stack::iterator &it : corpses ) {
+                 const mtype &corpse = *it->get_mtype();
+                 const float factor = corpse.harvest->get_butchery_requirements().get_fastest_requirements(
+-                                         &player_character, player_character.crafting_inventory(),
++                                         player_character.crafting_inventory(),
+                                          corpse.size, bt ).first;
+                 time_to_cut += butcher_time_to_cut( player_character, *it, bt ) * factor;
+                 has_started[bt_i] |= butcher_get_progress( *it, bt ) > 0;
+diff --git a/src/butchery_requirements.cpp b/src/butchery_requirements.cpp
+index 3194d06e3dbe..ee7a813f7f23 100644
+--- a/src/butchery_requirements.cpp
++++ b/src/butchery_requirements.cpp
+@@ -108,12 +108,11 @@ void butchery_requirements::check_consistency()
+ }
+
+ std::pair<float, requirement_id> butchery_requirements::get_fastest_requirements(
+-    const Character *actor, const read_only_visitable &crafting_inv, creature_size size,
+-    butcher_type butcher ) const
++    const read_only_visitable &crafting_inv, creature_size size, butcher_type butcher ) const
+ {
+     for( const std::pair<const float, std::map<creature_size, std::map<butcher_type, requirement_id>>>
+          &riter : requirements ) {
+-        if( riter.second.at( size ).at( butcher )->can_make_with_inventory( actor, crafting_inv,
++        if( riter.second.at( size ).at( butcher )->can_make_with_inventory( crafting_inv,
+                 is_crafting_component ) ) {
+             return std::make_pair( riter.first, riter.second.at( size ).at( butcher ) );
+         }
+diff --git a/src/butchery_requirements.h b/src/butchery_requirements.h
+index 03c6c425eb33..dea5fa3eee02 100644
+--- a/src/butchery_requirements.h
++++ b/src/butchery_requirements.h
+@@ -11,7 +11,6 @@
+ #include "type_id.h"
+
+ class JsonObject;
+-class Character;
+ class read_only_visitable;
+
+ enum class butcher_type : int;
+@@ -31,8 +30,7 @@ class butchery_requirements
+
+         // tries to find the requirement with the highest speed bonus. if it fails it returns std::nullopt
+         std::pair<float, requirement_id> get_fastest_requirements(
+-            const Character *actor, const read_only_visitable &crafting_inv, creature_size size,
+-            butcher_type butcher ) const;
++            const read_only_visitable &crafting_inv, creature_size size, butcher_type butcher ) const;
+
+         static void load_butchery_req( const JsonObject &jo, const std::string &src );
+         static void finalize_all();
+diff --git a/src/character.cpp b/src/character.cpp
+index 0e92dc1ff90e..a1b99fb9e068 100644
+--- a/src/character.cpp
++++ b/src/character.cpp
+@@ -4194,7 +4194,7 @@ void Character::mend_item( item_location &&obj, bool interactive )
+                     break;
+                 }
+             }
+-            opt.doable &= fix.get_requirements().can_make_with_inventory( this, inv, is_crafting_component );
++            opt.doable &= fix.get_requirements().can_make_with_inventory( inv, is_crafting_component );
+             mending_options.emplace_back( opt );
+         }
+     }
+@@ -4234,9 +4234,8 @@ void Character::mend_item( item_location &&obj, bool interactive )
+             const nc_color col = opt.doable ? c_white : c_light_gray;
+
+             const requirement_data &reqs = fix.get_requirements();
+-            auto tools = reqs.get_folded_tools_list( this, fold_width, col, inv );
+-            auto comps = reqs.get_folded_components_list( this, fold_width, col, inv,
+-                         is_crafting_component );
++            auto tools = reqs.get_folded_tools_list( fold_width, col, inv );
++            auto comps = reqs.get_folded_components_list( fold_width, col, inv, is_crafting_component );
+
+             std::string descr = word_rewrap( obj.get_item()->get_fault_description( opt.fault ), 80 ) + "\n\n";
+             for( const fault_id &fid : fix.faults_removed ) {
+diff --git a/src/character.h b/src/character.h
+index bfd44cbec1f7..c3b984791081 100644
+--- a/src/character.h
++++ b/src/character.h
+@@ -501,25 +501,6 @@ struct run_cost_effect {
+
+ nutrients default_character_compute_effective_nutrients( const item &comest );
+
+-// One innate provider of one quality.  Slots are structural, so toggling a bionic
+-// changes how an occurrence is found and never which occurrence it is.
+-struct intrinsic_quality_source {
+-    enum class owner_kind : uint8_t { bionic, mutation, body_part, last };
+-    // `trait_item` is the hard-coded digging pair, the only trait-derived item there is:
+-    // the mutation type carries provided_qualities and no item field, so every other
+-    // mutation occurrence is itemless.
+-    enum class slot_kind : uint8_t { pseudo, bionic_weapon, trait_item, itemless, last };
+-
+-    owner_kind owner = owner_kind::last;
+-    bionic_uid bio_uid = 0;
+-    trait_id mut;
+-    bodypart_str_id bp;
+-
+-    slot_kind slot = slot_kind::last;
+-    int slot_index = -1;
+-    int level = 0;
+-};
+-
+ class Character : public Creature, public visitable
+ {
+     public:
+@@ -1762,9 +1743,6 @@ class Character : public Creature, public visitable
+         bool activate_bionic( bionic &bio, bool eff_only = false, bool *close_bionics_ui = nullptr );
+         std::vector<bionic_id> get_bionics() const;
+         std::vector<const item *> get_pseudo_items() const;
+-        // Innate items a craft can draw: exposed pseudo items plus the hard-coded
+-        // digging pair.
+-        std::vector<item> crafting_pseudo_items() const;
+         void invalidate_pseudo_items();
+         /** Finds the highest UID for installed bionics and caches the next valid UID **/
+         void update_last_bionic_uid() const;
+@@ -4053,12 +4031,6 @@ class Character : public Creature, public visitable
+
+         // inherited from visitable
+         bool has_quality( const quality_id &qual, int level = 1, int qty = 1 ) const override;
+-        // Discovery, capacity and revalidation all count through this one enumeration,
+-        // so they cannot disagree about how many innate providers exist.
+-        std::vector<intrinsic_quality_source> intrinsic_quality_sources(
+-            const quality_id &qual, int level ) const;
+-        // No item walk, unlike has_quality.
+-        bool has_intrinsic_quality( const quality_id &qual, int level = 1, int qty = 1 ) const;
+         int max_quality( const quality_id &qual ) const override;
+         int max_quality( const quality_id &qual, int radius ) const;
+         VisitResponse visit_items( const std::function<VisitResponse( item *, item * )> &func ) const
+diff --git a/src/character_inventory.cpp b/src/character_inventory.cpp
+index bbcf1cf394e0..778ac524abe4 100644
+--- a/src/character_inventory.cpp
++++ b/src/character_inventory.cpp
+@@ -58,13 +58,11 @@
+ #include "monster.h"
+ #include "morale.h"
+ #include "mtype.h"
+-#include "mutation.h"
+ #include "overmapbuffer.h"
+ #include "pickup.h"
+ #include "pimpl.h"
+ #include "pocket_type.h"
+ #include "profession.h"
+-#include "requirements.h"
+ #include "ret_val.h"
+ #include "string_formatter.h"
+ #include "subbodypart.h"
+@@ -93,8 +91,6 @@ static const itype_id itype_apparatus( "apparatus" );
+ static const itype_id itype_battery( "battery" );
+ static const itype_id itype_e_handcuffs( "e_handcuffs" );
+ static const itype_id itype_fire( "fire" );
+-static const itype_id itype_pickaxe( "pickaxe" );
+-static const itype_id itype_shovel( "shovel" );
+
+ static const json_character_flag json_flag_ALARMCLOCK( "ALARMCLOCK" );
+ static const json_character_flag json_flag_GRAB( "GRAB" );
+@@ -104,8 +100,6 @@ static const proficiency_id proficiency_prof_spotting( "prof_spotting" );
+ static const proficiency_id proficiency_prof_traps( "prof_traps" );
+ static const proficiency_id proficiency_prof_trapsetting( "prof_trapsetting" );
+
+-static const trait_id trait_BURROW( "BURROW" );
+-static const trait_id trait_BURROWLARGE( "BURROWLARGE" );
+ static const trait_id trait_DEBUG_HS( "DEBUG_HS" );
+
+ void Character::handle_contents_changed( const std::vector<item_location> &containers )
+@@ -1082,114 +1076,6 @@ std::vector<const item *> Character::get_pseudo_items() const
+     return pseudo_items;
+ }
+
+-std::vector<item> Character::crafting_pseudo_items() const
+-{
+-    const std::vector<const item *> pseudo_items = get_pseudo_items();
+-    std::vector<item> ret;
+-    ret.reserve( pseudo_items.size() + 2 );
+-    for( const item *pseudo : pseudo_items ) {
+-        ret.push_back( *pseudo );
+-    }
+-    if( has_trait( trait_BURROW ) || has_trait( trait_BURROWLARGE ) ) {
+-        ret.emplace_back( itype_pickaxe, calendar::turn );
+-        ret.emplace_back( itype_shovel, calendar::turn );
+-    }
+-    return ret;
+-}
+-
+-std::vector<intrinsic_quality_source> Character::intrinsic_quality_sources(
+-    const quality_id &qual, int level ) const
+-{
+-    std::vector<intrinsic_quality_source> ret;
+-
+-    for( const bionic &bio : *my_bionics ) {
+-        int index = 0;
+-        // What the bionic actually exposes, which is what a crafting inventory would hold.
+-        // The weapon has its own arm below, where the direct route reaches it whether or
+-        // not the bionic is on.
+-        for( const item *pseudo : bio.get_available_pseudo_items( false ) ) {
+-            // Crafter-aware, or a charged quality resolves through the avatar.
+-            const int supplied = provider_quality_level( *pseudo, qual, this,
+-                                 false );
+-            if( supplied >= level ) {
+-                intrinsic_quality_source src;
+-                src.owner = intrinsic_quality_source::owner_kind::bionic;
+-                src.bio_uid = bio.get_uid();
+-                src.slot = intrinsic_quality_source::slot_kind::pseudo;
+-                src.slot_index = index;
+-                src.level = supplied;
+-                ret.push_back( src );
+-            }
+-            ++index;
+-        }
+-        const item weapon = bio.get_weapon();
+-        if( !weapon.is_null() ) {
+-            const int supplied = provider_quality_level( weapon, qual, this,
+-                                 false );
+-            if( supplied >= level ) {
+-                intrinsic_quality_source src;
+-                src.owner = intrinsic_quality_source::owner_kind::bionic;
+-                src.bio_uid = bio.get_uid();
+-                src.slot = intrinsic_quality_source::slot_kind::bionic_weapon;
+-                src.level = supplied;
+-                ret.push_back( src );
+-            }
+-        }
+-    }
+-
+-    if( has_trait( trait_BURROW ) || has_trait( trait_BURROWLARGE ) ) {
+-        int index = 0;
+-        for( const itype_id &dig : {
+-                 itype_pickaxe, itype_shovel
+-             } ) {
+-            const int supplied = provider_quality_level(
+-                                     item( dig, calendar::turn ), qual, this, false );
+-            if( supplied >= level ) {
+-                intrinsic_quality_source src;
+-                src.owner = intrinsic_quality_source::owner_kind::mutation;
+-                // One logical pair however many digging traits are present, matching the
+-                // single pair crafting_pseudo_items exposes; with both traits the
+-                // attribution is deliberately the first one.
+-                src.mut = has_trait( trait_BURROW ) ? trait_BURROW : trait_BURROWLARGE;
+-                src.slot = intrinsic_quality_source::slot_kind::trait_item;
+-                src.slot_index = index;
+-                src.level = supplied;
+-                ret.push_back( src );
+-            }
+-            ++index;
+-        }
+-    }
+-
+-    for( const trait_id &mut : get_functioning_mutations() ) {
+-        const auto &q = mut->provided_qualities.find( qual );
+-        if( q != mut->provided_qualities.end() && q->second >= level ) {
+-            intrinsic_quality_source src;
+-            src.owner = intrinsic_quality_source::owner_kind::mutation;
+-            src.mut = mut;
+-            src.slot = intrinsic_quality_source::slot_kind::itemless;
+-            src.level = q->second;
+-            ret.push_back( src );
+-        }
+-    }
+-
+-    for( const bodypart_id &bp : get_all_body_parts() ) {
+-        for( const bp_qualities_provided &bp_q : bp->qualities ) {
+-            if( bp_q.quality == qual && bp_q.level >= level &&
+-                float( get_part_hp_cur( bp ) ) / float( get_part_hp_max( bp ) ) >=
+-                bp_q.disable_percent ) {
+-                intrinsic_quality_source src;
+-                src.owner = intrinsic_quality_source::owner_kind::body_part;
+-                src.bp = bp.id();
+-                src.slot = intrinsic_quality_source::slot_kind::itemless;
+-                src.level = bp_q.level;
+-                ret.push_back( src );
+-            }
+-        }
+-    }
+-
+-    return ret;
+-}
+-
+ std::list<item> Character::remove_worn_items_with( const std::function<bool( item & )> &filter )
+ {
+     invalidate_inventory_validity_cache();
+diff --git a/src/construction.cpp b/src/construction.cpp
+index ee833bbeca0d..cfde4041661e 100644
+--- a/src/construction.cpp
++++ b/src/construction.cpp
+@@ -642,8 +642,8 @@ construction_id construction_menu( const bool blueprint )
+                     }
+                 }
+                 // Update the cached availability of components and tools in the requirement object
+-                current_con->requirements->can_make_with_inventory( &get_player_character(), total_inv,
+-                        is_crafting_component, 1, craft_flags::none, false );
++                current_con->requirements->can_make_with_inventory( total_inv, is_crafting_component, 1,
++                        craft_flags::none, false );
+
+                 std::vector<std::string> current_buffer;
+
+@@ -766,11 +766,11 @@ construction_id construction_menu( const bool blueprint )
+                 // get time needed
+                 add_folded( current_con->get_folded_time_string( available_window_width ) );
+
+-                add_folded( current_con->requirements->get_folded_tools_list( &player_character,
+-                            available_window_width, color_stage, total_inv ) );
++                add_folded( current_con->requirements->get_folded_tools_list( available_window_width, color_stage,
++                            total_inv ) );
+
+-                add_folded( current_con->requirements->get_folded_components_list( &player_character,
+-                            available_window_width, color_stage, total_inv, is_crafting_component ) );
++                add_folded( current_con->requirements->get_folded_components_list( available_window_width,
++                            color_stage, total_inv, is_crafting_component ) );
+
+                 construct_buffers.push_back( current_buffer );
+             }
+@@ -1197,8 +1197,8 @@ bool player_can_build( Character &you, const read_only_visitable &inv, const con
+     }
+
+     // check for construction spot can be skipped by using can_construct_skip
+-    return con.requirements->can_make_with_inventory( &you, inv, is_crafting_component, 1,
+-            craft_flags::none, false ) &&
++    return con.requirements->can_make_with_inventory( inv, is_crafting_component, 1, craft_flags::none,
++            false ) &&
+            ( can_construct_skip || can_construct( con ) );
+ }
+
+diff --git a/src/crafting.cpp b/src/crafting.cpp
+index eea3d252f1e7..7141b8243693 100644
+--- a/src/crafting.cpp
++++ b/src/crafting.cpp
+@@ -107,7 +107,9 @@ static const furn_str_id furn_f_fake_bench_hands( "f_fake_bench_hands" );
+ static const furn_str_id furn_f_ground_crafting_spot( "f_ground_crafting_spot" );
+
+ static const itype_id itype_disassembly( "disassembly" );
++static const itype_id itype_pickaxe( "pickaxe" );
+ static const itype_id itype_plut_cell( "plut_cell" );
++static const itype_id itype_shovel( "shovel" );
+
+ static const json_character_flag json_flag_CRAFT_IN_DARKNESS( "CRAFT_IN_DARKNESS" );
+ static const json_character_flag json_flag_HYPEROPIC( "HYPEROPIC" );
+@@ -121,7 +123,8 @@ static const quality_id qual_BOIL( "BOIL" );
+ static const skill_id skill_electronics( "electronics" );
+ static const skill_id skill_tailor( "tailor" );
+
+-
++static const trait_id trait_BURROW( "BURROW" );
++static const trait_id trait_BURROWLARGE( "BURROWLARGE" );
+ static const trait_id trait_DEBUG_CNF( "DEBUG_CNF" );
+ static const trait_id trait_DEBUG_HS( "DEBUG_HS" );
+ static const trait_id trait_INT_ALPHA( "INT_ALPHA" );
+@@ -636,7 +639,7 @@ bool Character::can_make( const recipe *r, int batch_size ) const
+     }
+
+     return r->deduped_requirements().can_make_with_inventory(
+-               this, crafting_inv, r->get_component_filter(), batch_size );
++               crafting_inv, r->get_component_filter(), batch_size );
+ }
+
+ bool Character::can_start_craft( const recipe *rec, recipe_filter_flags flags,
+@@ -653,7 +656,7 @@ bool Character::can_start_craft( const recipe *rec, recipe_filter_flags flags,
+
+     const inventory &inv = crafting_inventory();
+     return rec->deduped_requirements().can_make_with_inventory(
+-               this, inv, rec->get_component_filter( flags ), batch_size, craft_flags::start_only );
++               inv, rec->get_component_filter( flags ), batch_size, craft_flags::start_only );
+ }
+
+ const inventory &Character::crafting_inventory( bool clear_path ) const
+@@ -709,8 +712,13 @@ const inventory &Character::crafting_inventory( map *here, const tripoint_bub_ms
+     }
+     crafting_cache.crafting_inventory->replace_liq_container_count( tmp_liq_list, true );
+
+-    for( const item &i : crafting_pseudo_items() ) {
+-        *crafting_cache.crafting_inventory += i;
++    for( const item *i : get_pseudo_items() ) {
++        *crafting_cache.crafting_inventory += *i;
++    }
++
++    if( has_trait( trait_BURROW ) || has_trait( trait_BURROWLARGE ) ) {
++        *crafting_cache.crafting_inventory += item( itype_pickaxe, calendar::turn );
++        *crafting_cache.crafting_inventory += item( itype_shovel, calendar::turn );
+     }
+
+     crafting_cache.valid = true;
+@@ -1276,7 +1284,7 @@ static bool env_qualities_satisfied_for_step( const recipe_step &step, const ite
+     for( const std::vector<quality_requirement> &group : quals ) {
+         bool group_ok = false;
+         for( const quality_requirement &q : group ) {
+-            if( q.has( src.present_char, inv, return_true<item> ) ) {
++            if( q.has( inv, return_true<item> ) ) {
+                 group_ok = true;
+                 break;
+             }
+@@ -2691,7 +2699,7 @@ bool Character::can_continue_craft( item &craft, const requirement_data &continu
+         // continue_reqs are for all batches at once
+         const int batch_size = 1;
+
+-        if( !continue_reqs.can_make_with_inventory( this, crafting_inventory(), std_filter, batch_size ) ) {
++        if( !continue_reqs.can_make_with_inventory( crafting_inventory(), std_filter, batch_size ) ) {
+             if( is_avatar() ) {
+                 std::string buffer = _( "You don't have the required components to continue crafting!" );
+                 buffer += "\n";
+@@ -2710,8 +2718,7 @@ bool Character::can_continue_craft( item &craft, const requirement_data &continu
+             return false;
+         }
+
+-        if( !continue_reqs.can_make_with_inventory( this, crafting_inventory(), no_rotten_filter,
+-                batch_size ) ) {
++        if( !continue_reqs.can_make_with_inventory( crafting_inventory(), no_rotten_filter, batch_size ) ) {
+             if( !query_yn( _( "Some components required to continue are rotten.\n"
+                               "Continue crafting anyway?" ) ) ) {
+                 return false;
+@@ -2719,7 +2726,7 @@ bool Character::can_continue_craft( item &craft, const requirement_data &continu
+             use_rotten_filter = false;
+         }
+
+-        if( !continue_reqs.can_make_with_inventory( this, crafting_inventory(), no_favorite_filter,
++        if( !continue_reqs.can_make_with_inventory( crafting_inventory(), no_favorite_filter,
+                 batch_size ) ) {
+             if( !query_yn( _( "Some components required to continue are favorite.\n"
+                               "Continue crafting anyway?" ) ) ) {
+@@ -2796,7 +2803,7 @@ bool Character::can_continue_craft( item &craft, const requirement_data &continu
+                 std::vector<std::vector<quality_requirement>>(),
+                 std::vector<std::vector<item_comp>>() );
+
+-        if( !tool_continue_reqs.can_make_with_inventory( this, crafting_inventory(), return_true<item> ) ) {
++        if( !tool_continue_reqs.can_make_with_inventory( crafting_inventory(), return_true<item> ) ) {
+             if( is_avatar() ) {
+                 std::string buffer = _( "You don't have the necessary tools to continue crafting!" );
+                 buffer += "\n";
+@@ -2915,7 +2922,7 @@ const requirement_data *Character::select_requirements(
+         // Write with a large width and then just re-join the lines, because
+         // uilist does its own wrapping and we want to rely on that.
+         std::vector<std::string> component_lines =
+-            req->get_folded_components_list( this, TERMX - 4, c_light_gray, inv, filter, batch, "",
++            req->get_folded_components_list( TERMX - 4, c_light_gray, inv, filter, batch, "",
+                                              requirement_display_flags::no_unavailable );
+         menu.addentry_desc( "", string_join( component_lines, "\n" ) );
+     }
+@@ -4118,7 +4125,7 @@ ret_val<void> Character::can_disassemble( const item &obj, const read_only_visit
+
+     for( const auto &opts : dis.get_qualities() ) {
+         for( const quality_requirement &qual : opts ) {
+-            if( !qual.has( this, inv, return_true<item> ) ) {
++            if( !qual.has( inv, return_true<item> ) ) {
+                 // Here should be no dot at the end of the string as 'to_string()' provides it.
+                 return ret_val<void>::make_failure( _( "You need %s" ), qual.to_string() );
+             }
+diff --git a/src/crafting_gui.cpp b/src/crafting_gui.cpp
+index 14f4e4b895fa..59107729855c 100644
+--- a/src/crafting_gui.cpp
++++ b/src/crafting_gui.cpp
+@@ -1918,7 +1918,7 @@ void crafting_ui_impl::draw_components( const requirement_data &req,
+     }
+
+     // Ensure availability cache is fresh
+-    req.can_make_with_inventory( &get_player_character(), crafting_inv, filter );
++    req.can_make_with_inventory( crafting_inv, filter );
+
+     // Compute how many of a given component the player has on hand
+     const auto avail_count = [&crafting_inv, &filter]( const item_comp & ic ) -> int {
+@@ -1955,12 +1955,12 @@ void crafting_ui_impl::draw_components( const requirement_data &req,
+         bool any_available = false;
+         for( const item_comp &ic : comp_alts ) {
+             sorted_alts.push_back( &ic );
+-            if( ic.has( &get_player_character(), crafting_inv, filter, batch_size ) ) {
++            if( ic.has( crafting_inv, filter, batch_size ) ) {
+                 any_available = true;
+             }
+         }
+         const auto comp_rank = [&]( const item_comp * ic ) -> int {
+-            if( ic->has( &get_player_character(), crafting_inv, filter, batch_size ) )
++            if( ic->has( crafting_inv, filter, batch_size ) )
+             {
+                 return 0;
+             }
+@@ -1986,8 +1986,7 @@ void crafting_ui_impl::draw_components( const requirement_data &req,
+                 if( i == 1 ) {
+                     ImGui::Indent( indent );
+                 }
+-                nc_color col = ic->get_color( &get_player_character(), any_available, crafting_inv, filter,
+-                                              batch_size );
++                nc_color col = ic->get_color( any_available, crafting_inv, filter, batch_size );
+                 ImGui::TextColored( cataimgui::imvec4_from_color( col ), "%s",
+                                     component_text( *ic, avail_count( *ic ) ).c_str() );
+             }
+@@ -2028,9 +2027,7 @@ void crafting_ui_impl::draw_components( const requirement_data &req,
+                                         _( " or " ) );
+                     ImGui::SameLine( 0, 0 );
+                 }
+-                nc_color col = sorted_alts[i]->get_color( &get_player_character(), any_available, crafting_inv,
+-                               filter,
+-                               batch_size );
++                nc_color col = sorted_alts[i]->get_color( any_available, crafting_inv, filter, batch_size );
+                 ImGui::TextColored( cataimgui::imvec4_from_color( col ), "%s",
+                                     component_text( *sorted_alts[i], avail_count( *sorted_alts[i] ) ).c_str() );
+             }
+@@ -2095,7 +2092,7 @@ void crafting_ui_impl::draw_requirement_tools( const requirement_data &req,
+     for( const auto &qual_alts : qual_groups ) {
+         bool any_has = false;
+         for( const quality_requirement &qr : qual_alts ) {
+-            if( qr.has( &get_player_character(), crafting_inv, return_true<item>, 1 ) ) {
++            if( qr.has( crafting_inv, return_true<item>, 1 ) ) {
+                 any_has = true;
+                 break;
+             }
+@@ -2104,7 +2101,7 @@ void crafting_ui_impl::draw_requirement_tools( const requirement_data &req,
+         ImGui::SameLine( 0, 0 );
+         std::vector<std::string> req;
+         for( const quality_requirement &qr : qual_alts ) {
+-            nc_color col = qr.has( &get_player_character(), crafting_inv, return_true<item>, 1 ) ? c_green :
++            nc_color col = qr.has( crafting_inv, return_true<item>, 1 ) ? c_green :
+                            ( any_has ? c_dark_gray : c_red );
+             req.emplace_back( colorize( qr.to_string( 1 ), col ) );
+         }
+@@ -2133,14 +2130,14 @@ void crafting_ui_impl::draw_requirement_tools( const requirement_data &req,
+         for( const tool_comp &tc : alts ) {
+             if( seen.insert( tc.type ).second ) {
+                 unique_alts.push_back( &tc );
+-                if( tc.has( &get_player_character(), crafting_inv, return_true<item>, batch_size ) ) {
++                if( tc.has( crafting_inv, return_true<item>, batch_size ) ) {
+                     any_available = true;
+                 }
+             }
+         }
+         std::stable_partition( unique_alts.begin(), unique_alts.end(),
+         [&]( const tool_comp * tc ) {
+-            return tc->has( &get_player_character(), crafting_inv, return_true<item>, batch_size );
++            return tc->has( crafting_inv, return_true<item>, batch_size );
+         } );
+
+         // Label
+@@ -2153,8 +2150,7 @@ void crafting_ui_impl::draw_requirement_tools( const requirement_data &req,
+             float indent = ImGui::CalcTextSize( "      " ).x;
+             ImGui::Indent( indent );
+             for( const tool_comp *tc : unique_alts ) {
+-                nc_color col = tc->has( &get_player_character(), crafting_inv, return_true<item>,
+-                                        batch_size ) ? c_green :
++                nc_color col = tc->has( crafting_inv, return_true<item>, batch_size ) ? c_green :
+                                ( any_available ? c_dark_gray : c_red );
+                 ImGui::TextColored( cataimgui::imvec4_from_color( col ), "%s",
+                                     tc->to_string( batch_size ).c_str() );
+@@ -2201,8 +2197,7 @@ void crafting_ui_impl::draw_requirement_tools( const requirement_data &req,
+                     ImGui::SameLine( 0, 0 );
+                 }
+                 const tool_comp *tc = unique_alts[i];
+-                nc_color col = tc->has( &get_player_character(), crafting_inv, return_true<item>,
+-                                        batch_size ) ? c_green :
++                nc_color col = tc->has( crafting_inv, return_true<item>, batch_size ) ? c_green :
+                                ( any_available ? c_dark_gray : c_red );
+                 ImGui::TextColored( cataimgui::imvec4_from_color( col ), "%s",
+                                     tc->to_string( batch_size ).c_str() );
+@@ -3017,7 +3012,7 @@ int choose_crafter( const std::vector<Character *> &crafting_group, int crafter_
+             std::vector<std::string> reasons;
+
+             bool has_stuff = rec->deduped_requirements().can_make_with_inventory(
+-                                 chara, chara->crafting_inventory(), rec->get_component_filter( recipe_filter_flags::none ), 1,
++                                 chara->crafting_inventory(), rec->get_component_filter( recipe_filter_flags::none ), 1,
+                                  craft_flags::start_only );
+             if( !has_stuff ) {
+                 reasons.emplace_back( _( "stuff" ) );
+@@ -3216,7 +3211,7 @@ static void prioritize_components( const recipe &recipe, Character &crafter )
+             std::string nname = item::nname( i_comp.type, 1 );
+             int filter_pos = uistate.list_item_priority.find( nname );
+             bool enough_materials = req.check_enough_materials(
+-                                        &crafter, i_comp, crafting_inv, recipe.get_component_filter(), 1
++                                        i_comp, crafting_inv, recipe.get_component_filter(), 1
+                                     );
+             if( filter_pos == -1 && !enough_materials ) {
+                 new_filters_count++;
+diff --git a/src/crafting_gui_helpers.cpp b/src/crafting_gui_helpers.cpp
+index 8df8f070b751..1b2c10068e62 100644
+--- a/src/crafting_gui_helpers.cpp
++++ b/src/crafting_gui_helpers.cpp
+@@ -126,19 +126,18 @@ availability::availability( Character &_crafter, const recipe *r, int batch_size
+     } else {
+         can_craft = ( !r->is_practice() || has_all_skills ) && has_proficiencies &&
+                     meets_character_requirements &&
+-                    req.can_make_with_inventory( &crafter, inv, all_items_filter, batch_size, flag );
++                    req.can_make_with_inventory( inv, all_items_filter, batch_size, flag );
+     }
+-    would_use_rotten = !req.can_make_with_inventory( &crafter, inv, no_rotten_filter, batch_size,
++    would_use_rotten = !req.can_make_with_inventory( inv, no_rotten_filter, batch_size,
+                        flag );
+-    would_use_favorite = !req.can_make_with_inventory( &crafter, inv, no_favorite_filter, batch_size,
++    would_use_favorite = !req.can_make_with_inventory( inv, no_favorite_filter, batch_size,
+                          flag );
+     useless_practice = r->is_practice() && cannot_gain_skill_or_prof( crafter, *r );
+     is_nested_category = r->is_nested();
+     const requirement_data &simple_req = r->simple_requirements();
+     apparently_craftable = ( !r->is_practice() || has_all_skills ) && has_proficiencies &&
+                            meets_character_requirements &&
+-                           simple_req.can_make_with_inventory( &crafter, inv, all_items_filter,
+-                                   batch_size, flag );
++                           simple_req.can_make_with_inventory( inv, all_items_filter, batch_size, flag );
+     for( const auto &[skill, skill_lvl] : r->required_skills ) {
+         if( crafter.get_skill_level( skill ) < skill_lvl ) {
+             has_all_skills = false;
+@@ -429,9 +428,9 @@ std::vector<std::string> recipe_info(
+     if( !recp.is_nested() ) {
+         const requirement_data &req = recp.simple_requirements();
+         const std::vector<std::string> tools = req.get_folded_tools_list(
+-                &guy, fold_width, color, crafting_inv, batch_size );
++                fold_width, color, crafting_inv, batch_size );
+         const std::vector<std::string> comps = req.get_folded_components_list(
+-                &guy, fold_width, color, crafting_inv, recp.get_component_filter(), batch_size, qry_comps );
++                fold_width, color, crafting_inv, recp.get_component_filter(), batch_size, qry_comps );
+         result.insert( result.end(), tools.begin(), tools.end() );
+         result.insert( result.end(), comps.begin(), comps.end() );
+     }
+diff --git a/src/debug_menu.cpp b/src/debug_menu.cpp
+index 16c3f3b07723..e862f3009ce0 100644
+--- a/src/debug_menu.cpp
++++ b/src/debug_menu.cpp
+@@ -1416,11 +1416,11 @@ static void spell_description(
+
+     if( spl.has_components() ) {
+         if( !spl.components().get_components().empty() ) {
+-            print_vec_string( spl.components().get_folded_components_list( &chrc, width - 2, gray,
++            print_vec_string( spl.components().get_folded_components_list( width - 2, gray,
+                               chrc.crafting_inventory(), return_true<item> ) );
+         }
+         if( !( spl.components().get_tools().empty() && spl.components().get_qualities().empty() ) ) {
+-            print_vec_string( spl.components().get_folded_tools_list( &chrc, width - 2, gray,
++            print_vec_string( spl.components().get_folded_tools_list( width - 2, gray,
+                               chrc.crafting_inventory() ) );
+         }
+     }
+diff --git a/src/faction_camp.cpp b/src/faction_camp.cpp
+index 052f79ab2748..8be4c4b4b710 100644
+--- a/src/faction_camp.cpp
++++ b/src/faction_camp.cpp
+@@ -1924,8 +1924,8 @@ void basecamp::start_upgrade( const mission_id &miss_id )
+     const requirement_data &reqs = bld_reqs.consolidated_reqs;
+
+     //Stop upgrade if you don't have materials
+-    if( reqs.can_make_with_inventory( nullptr, _inv, making.get_component_filter(), 1,
+-                                      craft_flags::none, false ) ) {
++    if( reqs.can_make_with_inventory( _inv, making.get_component_filter(), 1, craft_flags::none,
++                                      false ) ) {
+         bool must_feed = !making.has_flag( "NO_FOOD_REQ" );
+
+         basecamp_action_components components( making, miss_id.mapgen_args, 1, *this );
+@@ -2697,7 +2697,7 @@ void basecamp::start_fortifications( const mission_id &miss_id, float exertion_l
+     if( !query_yn( _( "Trip Estimate:\n%s" ), camp_trip_description( total_time, build_time,
+                    travel_time, dist, trips, need_food ) ) ) {
+         return;
+-    } else if( !making.deduped_requirements().can_make_with_inventory( nullptr, _inv,
++    } else if( !making.deduped_requirements().can_make_with_inventory( _inv,
+                making.get_component_filter(), ( fortify_om.size() * 2 ) - 2 ) ) {
+         popup( _( "You don't have the material to build the fortification." ) );
+         return;
+@@ -4639,7 +4639,7 @@ int basecamp::recipe_batch_max( const recipe &making ) const
+                                                  max_batch + batch_size ) );
+             int food_req = time_to_food( work_days );
+             bool can_make = making.deduped_requirements().can_make_with_inventory(
+-                                nullptr, _inv, making.get_component_filter(), max_batch + batch_size );
++                                _inv, making.get_component_filter(), max_batch + batch_size );
+             if( can_make && fac()->food_supply().kcal() > food_req ) {
+                 max_batch += batch_size;
+             } else {
+@@ -5279,8 +5279,8 @@ std::string basecamp::craft_description( const recipe_id &itm )
+     std::vector<std::string> component_print_buffer;
+     int pane = FULL_SCREEN_WIDTH;
+     const requirement_data &req = making.simple_requirements();
+-    auto tools = req.get_folded_tools_list( nullptr, pane, c_white, _inv, 1 );
+-    auto comps = req.get_folded_components_list( nullptr, pane, c_white, _inv,
++    auto tools = req.get_folded_tools_list( pane, c_white, _inv, 1 );
++    auto comps = req.get_folded_components_list( pane, c_white, _inv,
+                  making.get_component_filter(), 1 );
+
+     component_print_buffer.insert( component_print_buffer.end(), tools.begin(), tools.end() );
+diff --git a/src/iexamine.cpp b/src/iexamine.cpp
+index f6c23ba2eb34..7fcee93558e5 100644
+--- a/src/iexamine.cpp
++++ b/src/iexamine.cpp
+@@ -657,7 +657,7 @@ void iexamine::nanofab( Character &you, const tripoint_bub_ms &examp )
+         new_item.set_flag( flag_NANOFAB_REPAIR );
+     }
+
+-    if( !reqs.can_make_with_inventory( &you, you.crafting_inventory(), is_crafting_component ) ) {
++    if( !reqs.can_make_with_inventory( you.crafting_inventory(), is_crafting_component ) ) {
+         popup( "%s", reqs.list_missing() );
+         return;
+     }
+@@ -3436,7 +3436,7 @@ void iexamine::autoclave_empty( Character &you, const tripoint_bub_ms &examp )
+     }
+     requirement_data reqs = *requirement_data_autoclave;
+
+-    if( !reqs.can_make_with_inventory( &you, you.crafting_inventory(), is_crafting_component ) ) {
++    if( !reqs.can_make_with_inventory( you.crafting_inventory(), is_crafting_component ) ) {
+         popup( "%s", reqs.list_missing() );
+         return;
+     }
+diff --git a/src/item_info.cpp b/src/item_info.cpp
+index a01d8002091a..2ecf421001a9 100644
+--- a/src/item_info.cpp
++++ b/src/item_info.cpp
+@@ -3965,9 +3965,8 @@ static bool can_craft_recipe( const recipe *r, const inventory &crafting_inv )
+     if( can_craft_recipe_cache.count( r ) > 0 ) {
+         return can_craft_recipe_cache.at( r );
+     }
+-    can_craft_recipe_cache[r] = r->deduped_requirements().can_make_with_inventory(
+-                                    &get_player_character(), crafting_inv,
+-                                    r->get_component_filter() );
++    can_craft_recipe_cache[r] = r->deduped_requirements().can_make_with_inventory( crafting_inv,
++                                r->get_component_filter() );
+     return can_craft_recipe_cache.at( r );
+ }
+
+diff --git a/src/iuse.cpp b/src/iuse.cpp
+index bd4c35aecd59..c45341534c10 100644
+--- a/src/iuse.cpp
++++ b/src/iuse.cpp
+@@ -7729,7 +7729,7 @@ std::optional<int> iuse::multicooker( Character *p, item *it, const tripoint_bub
+                 for( const recipe * const &rec : recipes_to_add ) {
+                     dishes.push_back( rec );
+                     const bool can_make = rec->deduped_requirements().can_make_with_inventory(
+-                                              p, crafting_inv, rec->get_component_filter() );
++                                              crafting_inv, rec->get_component_filter() );
+                     dmenu.addentry( counter++, can_make, -1, rec->result_name( /*decorated=*/true ) );
+                 }
+             }
+diff --git a/src/magic.cpp b/src/magic.cpp
+index 50bb37d58b5f..e476339b618a 100644
+--- a/src/magic.cpp
++++ b/src/magic.cpp
+@@ -1110,8 +1110,8 @@ bool spell::can_cast( const Character &guy ) const
+     }
+
+     if( !type->spell_components.is_empty() &&
+-        !type->spell_components->can_make_with_inventory( &guy,
+-                guy.crafting_inventory( guy.pos_bub(), 0, false ), return_true<item> ) ) {
++        !type->spell_components->can_make_with_inventory( guy.crafting_inventory( guy.pos_bub(), 0, false ),
++                return_true<item> ) ) {
+         return false;
+     }
+
+@@ -1163,7 +1163,7 @@ bool spell::check_if_component_in_hand( Character &guy ) const
+     const requirement_data &spell_components = type->spell_components.obj();
+
+     if( guy.has_weapon() ) {
+-        if( spell_components.can_make_with_inventory( &guy, *guy.get_wielded_item(), return_true<item> ) ) {
++        if( spell_components.can_make_with_inventory( *guy.get_wielded_item(), return_true<item> ) ) {
+             return true;
+         }
+     }
+@@ -3175,14 +3175,14 @@ void spellcasting_callback::display_spell_info( size_t index )
+         ImGui::NewLine();
+         if( !sp.components().get_components().empty() ) {
+             for( const std::string &line : sp.components().get_folded_components_list(
+-                     &pc, 0, c_light_gray, pc.crafting_inventory( pc.pos_bub(), 0, false ), return_true<item> ) ) {
++                     0, c_light_gray, pc.crafting_inventory( pc.pos_bub(), 0, false ), return_true<item> ) ) {
+                 cataimgui::TextColoredParagraph( c_white, line );
+                 ImGui::NewLine();
+             }
+         }
+         if( !( sp.components().get_tools().empty() && sp.components().get_qualities().empty() ) ) {
+             for( const std::string &line : sp.components().get_folded_tools_list(
+-                     &pc, 0, c_light_gray, pc.crafting_inventory( pc.pos_bub(), 0, false ) ) ) {
++                     0, c_light_gray, pc.crafting_inventory( pc.pos_bub(), 0, false ) ) ) {
+                 cataimgui::TextColoredParagraph( c_white, line );
+                 ImGui::NewLine();
+             }
+diff --git a/src/medical_ui.cpp b/src/medical_ui.cpp
+index 4ba3823c19c4..fddfdf49c594 100644
+--- a/src/medical_ui.cpp
++++ b/src/medical_ui.cpp
+@@ -784,8 +784,7 @@ bool Character::pick_wound_fix( const bodypart_id &bp_id )
+                 }
+             }
+
+-            opt.doable &= fix_id->get_requirements().can_make_with_inventory( this, inv,
+-                          is_crafting_component );
++            opt.doable &= fix_id->get_requirements().can_make_with_inventory( inv, is_crafting_component );
+
+             healing_options.emplace_back( opt );
+         }
+@@ -824,8 +823,8 @@ bool Character::pick_wound_fix( const bodypart_id &bp_id )
+         const requirement_data &reqs = fix.get_requirements();
+         const nc_color col = opt.doable ? c_white : c_light_gray;
+
+-        const std::vector<std::string> tools = reqs.get_folded_tools_list( this, fold_width, col, inv );
+-        const std::vector<std::string> comps = reqs.get_folded_components_list( this, fold_width, col, inv,
++        const std::vector<std::string> tools = reqs.get_folded_tools_list( fold_width, col, inv );
++        const std::vector<std::string> comps = reqs.get_folded_components_list( fold_width, col, inv,
+                                                is_crafting_component );
+
+         std::string descr = word_rewrap( fix.get_description(), 80 ) + "\n\n";
+diff --git a/src/recipe.cpp b/src/recipe.cpp
+index 27b0f325000a..03e512dd6ec4 100644
+--- a/src/recipe.cpp
++++ b/src/recipe.cpp
+@@ -2,6 +2,7 @@
+
+ #include <algorithm>
+ #include <array>
++#include <climits>
+ #include <cmath>
+ #include <initializer_list>
+ #include <memory>
+@@ -45,7 +46,6 @@
+ #include "output.h"
+ #include "proficiency.h"
+ #include "recipe_dictionary.h"
+-#include "requirements.h"
+ #include "skill.h"
+ #include "string_formatter.h"
+ #include "string_id_utils.h"
+@@ -1553,6 +1553,26 @@ double recipe::step_budget_moves( const Character &guy, size_t step_idx, int bat
+     return s.batch_info.apply( t, batch );
+ }
+
++// Crafter-aware quality level check for a single item.
++// Mirrors item::get_quality_nonrecursive but uses the given crafter for
++// charged_qualities instead of get_player_character().
++static int get_quality_for_crafter( const item &it, const quality_id &qual,
++                                    const Character &crafter )
++{
++    int result = INT_MIN;
++    auto qit = it.type->qualities.find( qual );
++    if( qit != it.type->qualities.end() ) {
++        result = qit->second.level;
++    }
++    if( !it.type->charged_qualities.empty() && it.ammo_sufficient( &crafter ) ) {
++        auto cit = it.type->charged_qualities.find( qual );
++        if( cit != it.type->charged_qualities.end() ) {
++            result = std::max( result, cit->second.level );
++        }
++    }
++    return result;
++}
++
+ float best_quality_speed_modifier( const read_only_visitable &inv,
+                                    const Character &crafter,
+                                    const quality_id &qual, int level )
+@@ -1560,8 +1580,9 @@ float best_quality_speed_modifier( const read_only_visitable &inv,
+     bool found = false;
+     float best = 1.0f;
+     inv.visit_items( [&]( item * e, item * ) {
+-        // Crafter-aware: a charged quality otherwise resolves through the avatar.
+-        if( provider_quality_level( *e, qual, &crafter, false ) >= level ) {
++        // Use crafter-aware qualification, not get_quality() which
++        // uses get_player_character() for charged qualities.
++        if( get_quality_for_crafter( *e, qual, crafter ) >= level ) {
+             float s = e->get_quality_speed( qual, level, &crafter );
+             if( !found || s < best ) {
+                 best = s;
+@@ -1570,9 +1591,8 @@ float best_quality_speed_modifier( const read_only_visitable &inv,
+         }
+         return VisitResponse::NEXT;
+     } );
+-    // Character-provided qualities (bionics, mutations) have no speed modifier.  Items
+-    // reach this through the inventory alone.
+-    if( !found && crafter.has_intrinsic_quality( qual, level ) ) {
++    // Character-provided qualities (bionics, mutations) have no speed modifier.
++    if( !found && crafter.has_quality( qual, level ) ) {
+         return 1.0f;
+     }
+     return best;
+@@ -1592,10 +1612,9 @@ std::vector<float> compute_tool_speeds( const recipe &rec, const Character &craf
+             bool found = false;
+             float best_in_group = 1.0f;
+             for( const quality_requirement &alt : group ) {
+-                // The inventory is the whole item pool; the crafter contributes only
+-                // what no item can supply.
++                // Crafter-aware qualification check (no get_player_character leak)
+                 if( !inv.has_quality( alt.type, alt.level, alt.count ) &&
+-                    !crafter.has_intrinsic_quality( alt.type, alt.level, alt.count ) ) {
++                    !crafter.has_quality( alt.type, alt.level, alt.count ) ) {
+                     continue;
+                 }
+                 float s = best_quality_speed_modifier( inv, crafter, alt.type, alt.level );
+diff --git a/src/requirements.cpp b/src/requirements.cpp
+index a181cd1cf26c..4991177a6a6c 100644
+--- a/src/requirements.cpp
++++ b/src/requirements.cpp
+@@ -53,7 +53,6 @@ static const itype_id itype_press( "press" );
+ static const itype_id itype_welder( "welder" );
+ static const itype_id itype_welder_crude( "welder_crude" );
+
+-static const quality_id qual_BOIL( "BOIL" );
+ static const quality_id qual_CUT( "CUT" );
+ static const quality_id qual_GLARE( "GLARE" );
+ static const quality_id qual_KNIT( "KNIT" );
+@@ -69,48 +68,6 @@ static bool a_satisfies_b( const quality_requirement &a, const quality_requireme
+ static bool a_satisfies_b( const std::vector<quality_requirement> &a,
+                            const std::vector<quality_requirement> &b );
+
+-int quality_for_crafter( const item &it, const quality_id &qual, const Character *who,
+-                         const bool strict_boiling )
+-{
+-    // Matches item::get_quality_nonrecursive: BOIL counts only while empty.
+-    if( strict_boiling && qual == qual_BOIL && !it.empty_container() ) {
+-        return INT_MIN;
+-    }
+-
+-    int result = INT_MIN;
+-    const auto qit = it.type->qualities.find( qual );
+-    if( qit != it.type->qualities.end() ) {
+-        result = qit->second.level;
+-    }
+-    if( !it.type->charged_qualities.empty() && it.ammo_sufficient( who ) ) {
+-        const auto cit = it.type->charged_qualities.find( qual );
+-        if( cit != it.type->charged_qualities.end() ) {
+-            result = std::max( result, cit->second.level );
+-        }
+-    }
+-    return result;
+-}
+-
+-int provider_quality_level( const item &cand, const quality_id &id, const Character *who,
+-                            const bool strict_boiling )
+-{
+-    int best = quality_for_crafter( cand, id, who, strict_boiling );
+-
+-    // Non-CONTAINER pockets only: a fitted magazine is part of the tool, a stored
+-    // screwdriver is not part of the backpack.
+-    for( int pk = 0; pk < static_cast<int>( pocket_type::LAST ); ++pk ) {
+-        const pocket_type pk_type = static_cast<pocket_type>( pk );
+-        if( pk_type == pocket_type::CONTAINER ) {
+-            continue;
+-        }
+-        for( const item *nested : cand.all_items_ptr( pk_type ) ) {
+-            best = std::max( best, quality_for_crafter( *nested, id, who, strict_boiling ) );
+-        }
+-    }
+-
+-    return best;
+-}
+-
+ /** @relates string_id */
+ template<>
+ bool string_id<requirement_data>::is_valid() const
+@@ -393,9 +350,6 @@ requirement_data requirement_data::operator*( unsigned scalar ) const
+             e.count = std::max( e.count * static_cast<int>( scalar ), -1 );
+         }
+     }
+-    // A presence tool carries a negative count, which the clamp leaves at -1: a scaled
+-    // requirement demands one provider whatever the entry asked for.  A group that needs
+-    // two of something has to ask through a quality with an amount.
+     for( auto &group : res.tools ) {
+         for( tool_comp &e : group ) {
+             e.count = std::max( e.count * static_cast<int>( scalar ), -1 );
+@@ -830,8 +784,7 @@ void requirement_data::reset()
+     requirements_all.clear();
+ }
+
+-std::vector<std::string> requirement_data::get_folded_components_list( const Character *actor,
+-        int width, nc_color col,
++std::vector<std::string> requirement_data::get_folded_components_list( int width, nc_color col,
+         const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+         int batch,
+         std::string_view hilite, requirement_display_flags flags ) const
+@@ -843,20 +796,20 @@ std::vector<std::string> requirement_data::get_folded_components_list( const Cha
+     out_buffer.push_back( colorize( _( "Components required:" ), col ) );
+
+     std::vector<std::string> folded_buffer =
+-        get_folded_list( actor, width, crafting_inv, filter, components, batch, hilite, flags );
++        get_folded_list( width, crafting_inv, filter, components, batch, hilite, flags );
+     out_buffer.insert( out_buffer.end(), folded_buffer.begin(), folded_buffer.end() );
+
+     return out_buffer;
+ }
+
+ template<typename T>
+-std::vector<std::string> requirement_data::get_folded_list( const Character *actor, int width,
++std::vector<std::string> requirement_data::get_folded_list( int width,
+         const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+         const std::vector< std::vector<T> > &objs, int batch, std::string_view hilite,
+         requirement_display_flags flags ) const
+ {
+-    // Refresh the cached availability.
+-    can_make_with_inventory( actor, crafting_inv, filter );
++    // hack: ensure 'cached' availability is up to date
++    can_make_with_inventory( crafting_inv, filter );
+
+     const bool no_unavailable =
+         static_cast<bool>( flags & requirement_display_flags::no_unavailable );
+@@ -868,7 +821,7 @@ std::vector<std::string> requirement_data::get_folded_list( const Character *act
+         std::vector<std::string> list_as_string_unavailable;
+         std::vector<std::string> buffer_has;
+         for( const T &component : comp_list ) {
+-            nc_color color = component.get_color( actor, has_one, crafting_inv, filter, batch );
++            nc_color color = component.get_color( has_one, crafting_inv, filter, batch );
+             const std::string color_tag = get_tag_from_color( color );
+             int qty = 0;
+             if( component.get_component_type() == component_type::ITEM ) {
+@@ -889,7 +842,7 @@ std::vector<std::string> requirement_data::get_folded_list( const Character *act
+                 color = yellow_background( color );
+             }
+
+-            if( component.has( actor, crafting_inv, filter, batch ) ) {
++            if( component.has( crafting_inv, filter, batch ) ) {
+                 list_as_string.push_back( colorize( text, color ) );
+             } else if( !no_unavailable ) {
+                 list_as_string_unavailable.push_back( colorize( text, color ) );
+@@ -918,8 +871,7 @@ std::vector<std::string> requirement_data::get_folded_list( const Character *act
+     return out_buffer;
+ }
+
+-std::vector<std::string> requirement_data::get_folded_tools_list( const Character *actor, int width,
+-        nc_color col,
++std::vector<std::string> requirement_data::get_folded_tools_list( int width, nc_color col,
+         const read_only_visitable &crafting_inv, int batch ) const
+ {
+     std::vector<std::string> output_buffer;
+@@ -930,46 +882,45 @@ std::vector<std::string> requirement_data::get_folded_tools_list( const Characte
+         return output_buffer;
+     }
+
+-    std::vector<std::string> folded_qualities = get_folded_list( actor, width, crafting_inv,
+-            return_true<item>, qualities );
++    std::vector<std::string> folded_qualities = get_folded_list( width, crafting_inv, return_true<item>,
++            qualities );
+     output_buffer.insert( output_buffer.end(), folded_qualities.begin(), folded_qualities.end() );
+
+-    std::vector<std::string> folded_tools = get_folded_list( actor, width, crafting_inv,
+-                                            return_true<item>, tools, batch );
++    std::vector<std::string> folded_tools = get_folded_list( width, crafting_inv, return_true<item>,
++                                            tools,
++                                            batch );
+     output_buffer.insert( output_buffer.end(), folded_tools.begin(), folded_tools.end() );
+     return output_buffer;
+ }
+
+-bool requirement_data::can_make_with_inventory( const Character *actor,
+-        const read_only_visitable &crafting_inv,
++bool requirement_data::can_make_with_inventory( const read_only_visitable &crafting_inv,
+         const std::function<bool( const item & )> &filter, int batch, craft_flags flags,
+         bool restrict_volume ) const
+ {
+-    // Debug hammerspace belongs to a character, so a query with no actor has none.
+-    if( actor != nullptr && actor->has_trait( trait_DEBUG_HS ) ) {
++    // probably need a crafter instead of avatar?
++    if( get_player_character().has_trait( trait_DEBUG_HS ) ) {
+         return true;
+     }
+
+     bool retval = true;
+     // All functions must be called to update the available settings in the components.
+-    if( !has_comps( actor, crafting_inv, qualities, return_true<item> ) ) {
++    if( !has_comps( crafting_inv, qualities, return_true<item> ) ) {
+         retval = false;
+     }
+-    if( !has_comps( actor, crafting_inv, tools, return_true<item>, batch, flags ) ) {
++    if( !has_comps( crafting_inv, tools, return_true<item>, batch, flags ) ) {
+         retval = false;
+     }
+-    if( !has_comps( actor, crafting_inv, components, filter, batch ) ) {
++    if( !has_comps( crafting_inv, components, filter, batch ) ) {
+         retval = false;
+     }
+-    if( !check_enough_materials( actor, crafting_inv, filter, batch, restrict_volume ) ) {
++    if( !check_enough_materials( crafting_inv, filter, batch, restrict_volume ) ) {
+         retval = false;
+     }
+     return retval;
+ }
+
+ template<typename T>
+-bool requirement_data::has_comps( const Character *actor,
+-                                  const read_only_visitable &crafting_inv,
++bool requirement_data::has_comps( const read_only_visitable &crafting_inv,
+                                   const std::vector< std::vector<T> > &vec,
+                                   const std::function<bool( const item & )> &filter,
+                                   int batch, craft_flags flags )
+@@ -984,7 +935,7 @@ bool requirement_data::has_comps( const Character *actor,
+         };
+
+         for( const T &tool : set_of_tools ) {
+-            if( tool.has( actor, crafting_inv, filter, batch, flags, use_ups ) ) {
++            if( tool.has( crafting_inv, filter, batch, flags, use_ups ) ) {
+                 tool.available = available_status::a_true;
+             } else {
+                 // Trying to track down why the crafting tests are failing?
+@@ -1011,25 +962,21 @@ bool requirement_data::has_comps( const Character *actor,
+ }
+
+ bool quality_requirement::has(
+-    const Character *actor,
+     const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &, int,
+     craft_flags, const std::function<void( int )> & ) const
+ {
+-    if( actor != nullptr && actor->has_trait( trait_DEBUG_HS ) ) {
++    // probably need a crafter instead of avatar?
++    if( get_player_character().has_trait( trait_DEBUG_HS ) ) {
+         return true;
+     }
+-    // Intrinsic only: has_quality also walks the actor's items, which crafting_inv has
+-    // already filtered.  A disjunction rather than a sum of the two counts, since a pseudo
+-    // item is reachable from both sides and would be counted twice.
+-    return crafting_inv.has_provider_quality( type, level, count, actor ) ||
+-           ( actor != nullptr && actor->has_intrinsic_quality( type, level, count ) );
++    return crafting_inv.has_quality( type, level, count ) ||
++           get_player_character().has_quality( type, level, count );
+ }
+
+-nc_color quality_requirement::get_color( const Character *actor, bool has_one,
+-        const read_only_visitable &,
++nc_color quality_requirement::get_color( bool has_one, const read_only_visitable &,
+         const std::function<bool( const item & )> &, int ) const
+ {
+-    if( ( actor != nullptr && actor->has_trait( trait_DEBUG_HS ) ) ||
++    if( get_player_character().has_trait( trait_DEBUG_HS ) ||
+         available == available_status::a_true ) {
+         return c_green;
+     }
+@@ -1037,12 +984,11 @@ nc_color quality_requirement::get_color( const Character *actor, bool has_one,
+ }
+
+ bool tool_comp::has(
+-    const Character *actor, const read_only_visitable &crafting_inv,
+-    const std::function<bool( const item & )> &filter,
++    const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+     int batch,
+     craft_flags flags, const std::function<void( int )> &visitor ) const
+ {
+-    if( actor != nullptr && actor->has_trait( trait_DEBUG_HS ) ) {
++    if( get_player_character().has_trait( trait_DEBUG_HS ) ) {
+         return true;
+     }
+     if( !by_charges() ) {
+@@ -1067,25 +1013,23 @@ bool tool_comp::has(
+     }
+ }
+
+-nc_color tool_comp::get_color( const Character *actor, bool has_one,
+-                               const read_only_visitable &crafting_inv,
++nc_color tool_comp::get_color( bool has_one, const read_only_visitable &crafting_inv,
+                                const std::function<bool( const item & )> &filter, int batch ) const
+ {
+     if( available == available_status::a_insufficient ) {
+         return c_brown;
+-    } else if( has( actor, crafting_inv, filter, batch ) ) {
++    } else if( has( crafting_inv, filter, batch ) ) {
+         return c_green;
+     }
+     return has_one ? c_dark_gray : c_red;
+ }
+
+ bool item_comp::has(
+-    const Character *actor, const read_only_visitable &crafting_inv,
+-    const std::function<bool( const item & )> &filter,
++    const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+     int batch,
+     craft_flags, const std::function<void( int )> & ) const
+ {
+-    if( actor != nullptr && actor->has_trait( trait_DEBUG_HS ) ) {
++    if( get_player_character().has_trait( trait_DEBUG_HS ) ) {
+         return true;
+     }
+     const int cnt = std::abs( count ) * batch;
+@@ -1096,13 +1040,12 @@ bool item_comp::has(
+     }
+ }
+
+-nc_color item_comp::get_color( const Character *actor, bool has_one,
+-                               const read_only_visitable &crafting_inv,
++nc_color item_comp::get_color( bool has_one, const read_only_visitable &crafting_inv,
+                                const std::function<bool( const item & )> &filter, int batch ) const
+ {
+     if( available == available_status::a_insufficient ) {
+         return c_brown;
+-    } else if( has( actor, crafting_inv, filter, batch ) ) {
++    } else if( has( crafting_inv, filter, batch ) ) {
+         const inventory *inv = static_cast<const inventory *>( &crafting_inv );
+         // Will use non-empty liquid container
+         if( std::any_of( type->pockets.begin(), type->pockets.end(), []( const pocket_data & d ) {
+@@ -1114,7 +1057,7 @@ nc_color item_comp::get_color( const Character *actor, bool has_one,
+             return c_magenta;
+         }
+         // Will use favorited component
+-        if( !has( actor, crafting_inv, [&filter]( const item & it ) {
++        if( !has( crafting_inv, [&filter]( const item & it ) {
+         return filter( it ) && !it.is_favorite;
+         }, batch ) ) {
+             return c_pink;
+@@ -1139,8 +1082,7 @@ const T *requirement_data::find_by_type( const std::vector< std::vector<T> > &ve
+     return nullptr;
+ }
+
+-bool requirement_data::check_enough_materials( const Character *actor,
+-        const read_only_visitable &crafting_inv,
++bool requirement_data::check_enough_materials( const read_only_visitable &crafting_inv,
+         const std::function<bool( const item & )> &filter, int batch, bool restrict_volume ) const
+ {
+     bool retval = true;
+@@ -1149,7 +1091,7 @@ bool requirement_data::check_enough_materials( const Character *actor,
+         bool atleast_one_available = false;
+         units::volume max_volume_of_this_comp_choice = 0_ml;
+         for( const item_comp &comp : component_choices ) {
+-            if( check_enough_materials( actor, comp, crafting_inv, filter, batch ) ) {
++            if( check_enough_materials( comp, crafting_inv, filter, batch ) ) {
+                 // we need different calculations depending on whether or not the item uses charges...
+                 const double relative_amount = comp.type->count_by_charges() ?
+                                                static_cast<double>( comp.count ) / static_cast<double>( comp.type->stack_size ) : comp.count;
+@@ -1174,7 +1116,7 @@ bool requirement_data::check_enough_materials( const Character *actor,
+     return retval;
+ }
+
+-bool requirement_data::check_enough_materials( const Character *actor, const item_comp &comp,
++bool requirement_data::check_enough_materials( const item_comp &comp,
+         const read_only_visitable &crafting_inv,
+         const std::function<bool( const item & )> &filter, int batch ) const
+ {
+@@ -1203,8 +1145,7 @@ bool requirement_data::check_enough_materials( const Character *actor, const ite
+         const item_comp i_tmp( comp.type, cnt + tc );
+         const tool_comp t_tmp( comp.type, -( cnt + tc ) ); // not by charges!
+         // batch factor is explicitly 1, because it's already included in the count.
+-        if( !i_tmp.has( actor, crafting_inv, filter, 1 ) &&
+-            !t_tmp.has( actor, crafting_inv, filter, 1 ) ) {
++        if( !i_tmp.has( crafting_inv, filter, 1 ) && !t_tmp.has( crafting_inv, filter, 1 ) ) {
+             comp.available = available_status::a_insufficient;
+         }
+     }
+@@ -1216,8 +1157,7 @@ bool requirement_data::check_enough_materials( const Character *actor, const ite
+         }
+         // This item can be used for the quality requirement, same as above for specific
+         // tools applies.
+-        if( !crafting_inv.has_provider_quality( qr->type, qr->level,
+-                                                qr->count + std::abs( comp.count ), actor ) ) {
++        if( !crafting_inv.has_quality( qr->type, qr->level, qr->count + std::abs( comp.count ) ) ) {
+             comp.available = available_status::a_insufficient;
+         }
+     }
+@@ -1816,24 +1756,22 @@ deduped_requirement_data::deduped_requirement_data( const requirement_data &in,
+ }
+
+ bool deduped_requirement_data::can_make_with_inventory(
+-    const Character *actor,
+     const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+     int batch, craft_flags flags ) const
+ {
+     return std::any_of( alternatives().begin(), alternatives().end(),
+     [&]( const requirement_data & alt ) {
+-        return alt.can_make_with_inventory( actor, crafting_inv, filter, batch, flags );
++        return alt.can_make_with_inventory( crafting_inv, filter, batch, flags );
+     } );
+ }
+
+ std::vector<const requirement_data *> deduped_requirement_data::feasible_alternatives(
+-    const Character *actor, const read_only_visitable &crafting_inv,
+-    const std::function<bool( const item & )> &filter,
++    const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+     int batch, craft_flags flags ) const
+ {
+     std::vector<const requirement_data *> result;
+     for( const requirement_data &req : alternatives() ) {
+-        if( req.can_make_with_inventory( actor, crafting_inv, filter, batch, flags ) ) {
++        if( req.can_make_with_inventory( crafting_inv, filter, batch, flags ) ) {
+             result.push_back( &req );
+         }
+     }
+@@ -1853,6 +1791,6 @@ const requirement_data *deduped_requirement_data::select_alternative(
+     int batch, craft_flags flags ) const
+ {
+     const std::vector<const requirement_data *> all_reqs =
+-        feasible_alternatives( &crafter, inv, filter, batch, flags );
++        feasible_alternatives( inv, filter, batch, flags );
+     return crafter.select_requirements( all_reqs, 1, inv, filter );
+ }
+diff --git a/src/requirements.h b/src/requirements.h
+index 56c9d70a4db8..095eadaf07db 100644
+--- a/src/requirements.h
++++ b/src/requirements.h
+@@ -56,16 +56,6 @@ struct quality {
+     static void finalize_all();
+ };
+
+-// Charged qualities resolve against `who` rather than the avatar.
+-int quality_for_crafter( const item &it, const quality_id &qual, const Character *who,
+-                         bool strict_boiling );
+-
+-// What the candidate supplies in its own right: itself plus non-CONTAINER pockets, but
+-// nothing merely stored inside it.  A null `who` means no character-owned power, so a
+-// charged quality still draws on linked vehicle power but not on a UPS or bionic charge.
+-int provider_quality_level( const item &cand, const quality_id &id, const Character *who,
+-                            bool strict_boiling );
+-
+ struct component {
+     itype_id type = itype_id::NULL_ID();
+     int count = 0;
+@@ -105,12 +95,12 @@ struct tool_comp : public component {
+
+     void load( const JsonValue &value );
+     void dump( JsonOut &jsout ) const;
+-    bool has( const Character *actor, const read_only_visitable &crafting_inv,
++    bool has( const read_only_visitable &crafting_inv,
+               const std::function<bool( const item & )> &filter,
+               int batch = 1, craft_flags = craft_flags::none,
+               const std::function<void( int )> &visitor = std::function<void( int )>() ) const;
+     std::string to_string( int batch = 1, int avail = 0 ) const;
+-    nc_color get_color( const Character *actor, bool has_one, const read_only_visitable &crafting_inv,
++    nc_color get_color( bool has_one, const read_only_visitable &crafting_inv,
+                         const std::function<bool( const item & )> &filter, int batch = 1 ) const;
+     bool by_charges() const;
+     component_type get_component_type() const {
+@@ -124,12 +114,12 @@ struct item_comp : public component {
+
+     void load( const JsonValue &value );
+     void dump( JsonOut &jsout ) const;
+-    bool has( const Character *actor, const read_only_visitable &crafting_inv,
++    bool has( const read_only_visitable &crafting_inv,
+               const std::function<bool( const item & )> &filter,
+               int batch = 1, craft_flags = craft_flags::none,
+               const std::function<void( int )> &visitor = std::function<void( int )>() ) const;
+     std::string to_string( int batch = 1, int avail = 0 ) const;
+-    nc_color get_color( const Character *actor, bool has_one, const read_only_visitable &crafting_inv,
++    nc_color get_color( bool has_one, const read_only_visitable &crafting_inv,
+                         const std::function<bool( const item & )> &filter, int batch = 1 ) const;
+     component_type get_component_type() const {
+         return component_type::ITEM;
+@@ -164,14 +154,14 @@ struct quality_requirement {
+
+     void load( const JsonValue &value );
+     void dump( JsonOut &jsout ) const;
+-    bool has( const Character *actor, const read_only_visitable &crafting_inv,
++    bool has( const read_only_visitable &crafting_inv,
+               const std::function<bool( const item & )> &filter,
+               int = 0, craft_flags = craft_flags::none,
+               const std::function<void( int )> &visitor = std::function<void( int )>() ) const;
+     std::string to_string( int batch = 1, int avail = 0 ) const;
+     std::string to_colored_string() const;
+     void check_consistency( const std::string &display_name ) const;
+-    nc_color get_color( const Character *actor, bool has_one, const read_only_visitable &crafting_inv,
++    nc_color get_color( bool has_one, const read_only_visitable &crafting_inv,
+                         const std::function<bool( const item & )> &filter, int = 0 ) const;
+     component_type get_component_type() const {
+         return component_type::QUALITY;
+@@ -359,29 +349,23 @@ struct requirement_data {
+          * @param filter should be recipe::get_component_filter() if used with a recipe
+          * or is_crafting_component otherwise.
+          */
+-        // `actor` is the character whose capabilities the answer is about, or null when
+-        // there is none, as when a camp builds from its own stock.  A null actor
+-        // contributes no intrinsic qualities and no debug hammerspace.
+-        bool can_make_with_inventory( const Character *actor,
+-                                      const read_only_visitable &crafting_inv,
++        bool can_make_with_inventory( const read_only_visitable &crafting_inv,
+                                       const std::function<bool( const item & )> &filter, int batch = 1,
+                                       craft_flags = craft_flags::none, bool restrict_volume = true ) const;
+         /**
+          * Returns true if there are enough item_comp in the crafting_inv for this recipe.
+          * @param filter should be recipe::get_component_filter() if used with a recipe, as above.
+          */
+-        bool check_enough_materials( const Character *actor, const item_comp &comp,
+-                                     const read_only_visitable &crafting_inv,
++        bool check_enough_materials( const item_comp &comp, const read_only_visitable &crafting_inv,
+                                      const std::function<bool( const item & )> &filter, int batch = 1 ) const;
+
+         /** @param filter see @ref can_make_with_inventory */
+-        std::vector<std::string> get_folded_components_list( const Character *actor, int width,
+-                nc_color col,
++        std::vector<std::string> get_folded_components_list( int width, nc_color col,
+                 const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+                 int batch = 1, std::string_view hilite = {},
+                 requirement_display_flags = requirement_display_flags::none ) const;
+
+-        std::vector<std::string> get_folded_tools_list( const Character *actor, int width, nc_color col,
++        std::vector<std::string> get_folded_tools_list( int width, nc_color col,
+                 const read_only_visitable &crafting_inv, int batch = 1 ) const;
+
+         /**
+@@ -422,8 +406,7 @@ struct requirement_data {
+
+         bool blacklisted = false;
+
+-        bool check_enough_materials( const Character *actor,
+-                                     const read_only_visitable &crafting_inv,
++        bool check_enough_materials( const read_only_visitable &crafting_inv,
+                                      const std::function<bool( const item & )> &filter, int batch = 1,
+                                      bool restrict_volume = true ) const;
+
+@@ -439,14 +422,13 @@ struct requirement_data {
+         static std::string print_missing_objs( const std::string &header,
+                                                const std::vector< std::vector<T> > &objs );
+         template<typename T>
+-        static bool has_comps( const Character *actor,
+-                               const read_only_visitable &crafting_inv, const std::vector< std::vector<T> > &vec,
+-                               const std::function<bool( const item & )> &filter, int batch = 1,
+-                               craft_flags = craft_flags::none );
++        static bool has_comps(
++            const read_only_visitable &crafting_inv, const std::vector< std::vector<T> > &vec,
++            const std::function<bool( const item & )> &filter, int batch = 1,
++            craft_flags = craft_flags::none );
+
+         template<typename T>
+-        std::vector<std::string> get_folded_list( const Character *actor, int width,
+-                const read_only_visitable &crafting_inv,
++        std::vector<std::string> get_folded_list( int width, const read_only_visitable &crafting_inv,
+                 const std::function<bool( const item & )> &filter,
+                 const std::vector< std::vector<T> > &objs, int batch = 1,
+                 std::string_view hilite = {},
+@@ -496,8 +478,7 @@ class deduped_requirement_data
+         }
+
+         std::vector<const requirement_data *> feasible_alternatives(
+-            const Character *actor, const read_only_visitable &crafting_inv,
+-            const std::function<bool( const item & )> &filter,
++            const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+             int batch = 1, craft_flags = craft_flags::none ) const;
+
+         const requirement_data *select_alternative(
+@@ -509,7 +490,6 @@ class deduped_requirement_data
+             int batch = 1, craft_flags = craft_flags::none ) const;
+
+         bool can_make_with_inventory(
+-            const Character *actor,
+             const read_only_visitable &crafting_inv, const std::function<bool( const item & )> &filter,
+             int batch = 1, craft_flags = craft_flags::none ) const;
+
+diff --git a/src/veh_appliance.cpp b/src/veh_appliance.cpp
+index 6cc21a9c7877..cab8b24d1712 100644
+--- a/src/veh_appliance.cpp
++++ b/src/veh_appliance.cpp
+@@ -552,7 +552,7 @@ void veh_app_interact::remove( map &here )
+     Character &you = get_player_character();
+     const inventory &inv = you.crafting_inventory();
+     std::string msg;
+-    bool can_remove = reqs.can_make_with_inventory( &you, inv, is_crafting_component );
++    bool can_remove = reqs.can_make_with_inventory( inv, is_crafting_component );
+     if( !can_remove ) {
+         msg += _( "Insufficient components/tools!\n" );
+         msg += reqs.list_missing();
+diff --git a/src/veh_interact.cpp b/src/veh_interact.cpp
+index 9495be5e8f8a..7a30b4d63f97 100644
+--- a/src/veh_interact.cpp
++++ b/src/veh_interact.cpp
+@@ -378,8 +378,7 @@ bool veh_interact::format_reqs( std::string &msg, const requirement_data &reqs,
+ {
+     Character &player_character = get_player_character();
+     const inventory &inv = player_character.crafting_inventory();
+-    bool ok = reqs.can_make_with_inventory( &player_character, inv, is_crafting_component, 1,
+-                                            craft_flags::none, false );
++    bool ok = reqs.can_make_with_inventory( inv, is_crafting_component, 1, craft_flags::none, false );
+
+     msg += _( "<color_white>Time required:</color>\n" );
+     msg += "> " + to_string_approx( time ) + "\n";
+@@ -399,12 +398,12 @@ bool veh_interact::format_reqs( std::string &msg, const requirement_data &reqs,
+         msg += string_format( "> %1$s%2$s</color>", status_color( true ), _( "NONE" ) ) + "\n";
+     }
+
+-    auto comps = reqs.get_folded_components_list( &player_character, getmaxx( w_msg ) - 2, c_white, inv,
++    auto comps = reqs.get_folded_components_list( getmaxx( w_msg ) - 2, c_white, inv,
+                  is_crafting_component );
+     for( const std::string &line : comps ) {
+         msg += line + "\n";
+     }
+-    auto tools = reqs.get_folded_tools_list( &player_character, getmaxx( w_msg ) - 2, c_white, inv );
++    auto tools = reqs.get_folded_tools_list( getmaxx( w_msg ) - 2, c_white, inv );
+     for( const std::string &line : tools ) {
+         msg += line + "\n";
+     }
+@@ -2178,8 +2177,7 @@ int veh_interact::part_at( const point_rel_ms &d )
+ bool veh_interact::can_potentially_install( const vpart_info &vpart )
+ {
+     bool engine_reqs_met = true;
+-    bool can_make = vpart.install_requirements().can_make_with_inventory( &get_player_character(),
+-                    *crafting_inv,
++    bool can_make = vpart.install_requirements().can_make_with_inventory( *crafting_inv,
+                     is_crafting_component, 1, craft_flags::none, false );
+     bool hammerspace = get_player_character().has_trait( trait_DEBUG_HS );
+
+diff --git a/src/veh_utils.cpp b/src/veh_utils.cpp
+index 6153e02ee270..3ae7a820989e 100644
+--- a/src/veh_utils.cpp
++++ b/src/veh_utils.cpp
+@@ -78,7 +78,7 @@ vehicle_part *most_repairable_part( vehicle &veh, Character &who )
+
+         if( vp.is_broken() ) {
+             if( who.meets_skill_requirements( info.install_skills ) &&
+-                info.install_requirements().can_make_with_inventory( &who, inv, is_crafting_component ) ) {
++                info.install_requirements().can_make_with_inventory( inv, is_crafting_component ) ) {
+                 vp_broken = &vp;
+             }
+             continue;
+@@ -86,7 +86,7 @@ vehicle_part *most_repairable_part( vehicle &veh, Character &who )
+
+         if( who.meets_skill_requirements( info.repair_skills ) ) {
+             const requirement_data reqs = info.repair_requirements() * vp.get_base().repairable_levels();
+-            if( reqs.can_make_with_inventory( &who, inv, is_crafting_component ) ) {
++            if( reqs.can_make_with_inventory( inv, is_crafting_component ) ) {
+                 const int repairable_damage = vp.get_base().damage();
+                 if( repairable_damage > most_damage ) {
+                     most_damage = repairable_damage;
+@@ -112,7 +112,7 @@ bool repair_part( map &here, vehicle &veh, vehicle_part &pt, Character &who )
+     // as they have the handicap of not being able to use the veh interaction menu
+     // or able to drag a welding cart etc.
+     map_inv.form_from_map( who.pos_bub(), PICKUP_RANGE, &who, false, !who.is_npc() );
+-    if( !reqs.can_make_with_inventory( &who, inv, is_crafting_component ) ) {
++    if( !reqs.can_make_with_inventory( inv, is_crafting_component ) ) {
+         who.add_msg_if_player( m_info, _( "You don't meet the requirements to repair the %s." ),
+                                pt.name() );
+         return false;
+diff --git a/src/visitable.cpp b/src/visitable.cpp
+index c21bbe6e3a44..e8809a1ddaf0 100644
+--- a/src/visitable.cpp
++++ b/src/visitable.cpp
+@@ -30,7 +30,6 @@
+ #include "pimpl.h"
+ #include "pocket_type.h"
+ #include "point.h"
+-#include "requirements.h"
+ #include "stomach.h"
+ #include "submap.h"
+ #include "temp_crafting_inventory.h"
+@@ -113,19 +112,14 @@ static T sum_no_wrap( T a, T b )
+     return a + b;
+ }
+
+-// `measure` decides what quality an item supplies and `tally` how many providers it
+-// counts as.  Empty falls back to get_quality and item::count().
+ template <typename T>
+-static int has_quality_internal( const T &self, const quality_id &qual, int level, int limit,
+-                                 const std::function<int( const item & )> &measure = {},
+-                                 const std::function<int( const item & )> &tally = {} )
++static int has_quality_internal( const T &self, const quality_id &qual, int level, int limit )
+ {
+     int qty = 0;
+
+-    self.visit_items( [&qual, level, &limit, &qty, &measure, &tally]( item * e, item * ) {
+-        const int supplied = measure ? measure( *e ) : e->get_quality( qual );
+-        if( supplied >= level ) {
+-            qty = sum_no_wrap( qty, tally ? tally( *e ) : static_cast<int>( e->count() ) );
++    self.visit_items( [&qual, level, &limit, &qty]( item * e, item * ) {
++        if( e->get_quality( qual ) >= level ) {
++            qty = sum_no_wrap( qty, static_cast<int>( e->count() ) );
+             if( qty >= limit ) {
+                 // found sufficient items
+                 return VisitResponse::ABORT;
+@@ -163,18 +157,6 @@ bool read_only_visitable::has_quality( const quality_id &qual, int level, int qt
+     return has_quality_internal( *this, qual, level, qty ) == qty;
+ }
+
+-bool read_only_visitable::has_provider_quality( const quality_id &qual, int level, int qty,
+-        const Character *who ) const
+-{
+-    const std::function<int( const item & )> measure = [&qual, who]( const item & it ) {
+-        return provider_quality_level( it, qual, who, true );
+-    };
+-    const std::function<int( const item & )> tally = []( const item & ) {
+-        return 1;
+-    };
+-    return has_quality_internal( *this, qual, level, qty, measure, tally ) == qty;
+-}
+-
+ /** @relates visitable */
+ bool inventory::has_quality( const quality_id &qual, int level, int qty ) const
+ {
+@@ -250,11 +232,6 @@ bool Character::has_quality( const quality_id &qual, int level, int qty ) const
+     return qty <= 0 ? true : has_quality_internal( *this, qual, level, qty ) == qty;
+ }
+
+-bool Character::has_intrinsic_quality( const quality_id &qual, int level, int qty ) const
+-{
+-    return static_cast<int>( intrinsic_quality_sources( qual, level ).size() ) >= qty;
+-}
+-
+ bool read_only_visitable::has_tools( const itype_id &it, int quantity,
+                                      const std::function<bool( const item & )> &filter ) const
+ {
+diff --git a/src/visitable.h b/src/visitable.h
+index cb7be9321423..5b13914fd374 100644
+--- a/src/visitable.h
++++ b/src/visitable.h
+@@ -63,12 +63,6 @@ class read_only_visitable
+         /** Returns true if instance has amount (or more) items of at least quality level */
+         virtual bool has_quality( const quality_id &qual, int level = 1, int qty = 1 ) const;
+
+-        // Counts distinct providers: a container is not credited for a tool inside it and
+-        // a charge stack counts once.  `who` decides charged qualities and may be null,
+-        // which drops character-owned power.
+-        bool has_provider_quality( const quality_id &qual, int level, int qty,
+-                                   const Character *who ) const;
+-
+         /** Return maximum tool quality level provided by instance or INT_MIN if not found */
+         virtual int max_quality( const quality_id &qual ) const;
+
+diff --git a/tests/craft_attention_test.cpp b/tests/craft_attention_test.cpp
+index 74668614352f..4a16d101f3a8 100644
+--- a/tests/craft_attention_test.cpp
++++ b/tests/craft_attention_test.cpp
+@@ -1,7 +1,5 @@
+ #include <algorithm>
+ #include <cstdint>
+-#include <functional>
+-#include <list>
+ #include <optional>
+ #include <sstream>
+ #include <string>
+@@ -9,10 +7,8 @@
+
+ #include "activity_actor_definitions.h"
+ #include "avatar.h"
+-#include "bionics.h"
+ #include "calendar.h"
+ #include "cata_catch.h"
+-#include "cata_utility.h"
+ #include "character_id.h"
+ #include "coordinates.h"
+ #include "craft_command.h"
+@@ -20,7 +16,6 @@
+ #include "crafting_enums.h"
+ #include "flexbuffer_json.h"
+ #include "game_constants.h"
+-#include "inventory.h"
+ #include "item.h"
+ #include "item_components.h"
+ #include "item_location.h"
+@@ -33,33 +28,18 @@
+ #include "map_selector.h"
+ #include "player_activity.h"
+ #include "player_helpers.h"
+-#include "pocket_type.h"
+ #include "point.h"
+ #include "recipe.h"
+ #include "requirements.h"
+-#include "ret_val.h"
+ #include "type_id.h"
+
+-static const bionic_id test_bio_reserve_toggled_pseudo( "test_bio_reserve_toggled_pseudo" );
+-static const bionic_id test_bio_reserve_two_pseudo( "test_bio_reserve_two_pseudo" );
+-static const bionic_id test_bio_reserve_weapon( "test_bio_reserve_weapon" );
+-
+ static const itype_id itype_2x4( "2x4" );
+-static const itype_id itype_backpack( "backpack" );
+ static const itype_id itype_cudgel( "cudgel" );
+ static const itype_id itype_hammer( "hammer" );
+ static const itype_id itype_microwave( "microwave" );
+-static const itype_id itype_pot( "pot" );
+ static const itype_id itype_soldering_iron_portable( "soldering_iron_portable" );
+-static const itype_id itype_test_reserve_charge_stack( "test_reserve_charge_stack" );
+-static const itype_id itype_test_reserve_tool_a( "test_reserve_tool_a" );
+ static const itype_id itype_water( "water" );
+
+-static const quality_id qual_BOIL( "BOIL" );
+-static const quality_id qual_DIG( "DIG" );
+-static const quality_id qual_TEST_RESERVE_A( "TEST_RESERVE_A" );
+-static const quality_id qual_TEST_RESERVE_B( "TEST_RESERVE_B" );
+-
+ static const recipe_id recipe_cudgel_test_charged_fast_stepless(
+     "cudgel_test_charged_fast_stepless" );
+ static const recipe_id recipe_cudgel_test_consecutive_unattended(
+@@ -84,16 +64,11 @@ static const recipe_id recipe_cudgel_test_unattended_charged_big(
+     "cudgel_test_unattended_charged_big" );
+ static const recipe_id recipe_cudgel_test_unattended_simple(
+     "cudgel_test_unattended_simple" );
+-static const recipe_id recipe_cudgel_test_unattended_two_of_a(
+-    "cudgel_test_unattended_two_of_a" );
+ static const recipe_id recipe_cudgel_test_unattended_with_qual(
+     "cudgel_test_unattended_with_qual" );
+ static const recipe_id recipe_water_clean_test_unattended_liquid(
+     "water_clean_test_unattended_liquid" );
+
+-static const trait_id trait_BURROW( "BURROW" );
+-static const trait_id trait_BURROWLARGE( "BURROWLARGE" );
+-
+ TEST_CASE( "attention_recipe_loads_attention_field", "[craft][attention][schema]" )
+ {
+     const recipe &r = recipe_cudgel_test_unattended_simple.obj();
+@@ -2321,196 +2296,3 @@ TEST_CASE( "compute_inflight_alarm_choices_for_resume_timer_modal",
+         }
+     }
+ }
+-
+-TEST_CASE( "provider_quality_level_ignores_merely_contained_items",
+-           "[craft][attention][reservation][quality]" )
+-{
+-    clear_avatar();
+-    clear_map();
+-
+-    GIVEN( "a qualifying tool inside a backpack" ) {
+-        item backpack( itype_backpack );
+-        item tool( itype_test_reserve_tool_a );
+-        REQUIRE( tool.get_quality( qual_TEST_RESERVE_A ) >= 1 );
+-        REQUIRE( backpack.put_in( tool, pocket_type::CONTAINER ).success() );
+-
+-        THEN( "the backpack is credited with the tool's quality by the recursive accessor" ) {
+-            CHECK( backpack.get_quality( qual_TEST_RESERVE_A ) >= 1 );
+-        }
+-
+-        THEN( "but it supplies none of that quality in its own right" ) {
+-            CHECK( provider_quality_level( backpack, qual_TEST_RESERVE_A,
+-                                           nullptr, true ) < 1 );
+-        }
+-
+-        THEN( "the contained tool still supplies it" ) {
+-            const item &nested = *backpack.all_items_top( pocket_type::CONTAINER ).front();
+-            CHECK( provider_quality_level( nested, qual_TEST_RESERVE_A,
+-                                           nullptr, true ) >= 1 );
+-        }
+-    }
+-
+-    GIVEN( "a plain tool" ) {
+-        item tool( itype_test_reserve_tool_a );
+-
+-        THEN( "it supplies its own quality" ) {
+-            CHECK( provider_quality_level( tool, qual_TEST_RESERVE_A, nullptr,
+-                                           true ) >= 1 );
+-        }
+-    }
+-
+-    GIVEN( "a pot, which carries BOIL" ) {
+-        item pot( itype_pot );
+-
+-        THEN( "it supplies BOIL while empty, which is what a boil step binds" ) {
+-            CHECK( provider_quality_level( pot, qual_BOIL, nullptr, true ) >= 1 );
+-        }
+-
+-        WHEN( "it is filled" ) {
+-            item water( itype_water, calendar::turn, 1 );
+-            REQUIRE( pot.put_in( water, pocket_type::CONTAINER ).success() );
+-
+-            THEN( "it no longer supplies BOIL under strict boiling" ) {
+-                CHECK( provider_quality_level( pot, qual_BOIL, nullptr,
+-                                               true ) < 1 );
+-            }
+-        }
+-    }
+-}
+-
+-TEST_CASE( "requirement_gate_counts_distinct_quality_providers",
+-           "[craft][attention][reservation][enforcement][quality][counting]" )
+-{
+-    clear_avatar();
+-    clear_map();
+-    avatar &u = get_avatar();
+-    map &here = get_map();
+-    const tripoint_bub_ms origin( 60, 60, 0 );
+-    u.setpos( here, origin );
+-
+-    const requirement_data &req =
+-        recipe_cudgel_test_unattended_two_of_a.obj().steps()[0].requirements;
+-    REQUIRE( req.get_qualities().size() == 1 );
+-    REQUIRE( req.get_qualities()[0][0].count == 2 );
+-
+-    GIVEN( "one qualifying tool inside a container" ) {
+-        item bag( itype_backpack );
+-        REQUIRE( bag.put_in( item( itype_test_reserve_tool_a ), pocket_type::CONTAINER ).success() );
+-        here.add_item( origin, bag );
+-        u.invalidate_crafting_inventory();
+-        const inventory &crafting_inv = u.crafting_inventory();
+-
+-        THEN( "the container is not credited beside the tool it holds" ) {
+-            CHECK_FALSE( req.can_make_with_inventory( &u, crafting_inv, return_true<item> ) );
+-        }
+-
+-        THEN( "the default metric still counts them both" ) {
+-            CHECK( crafting_inv.has_quality( qual_TEST_RESERVE_A, 1, 2 ) );
+-        }
+-    }
+-
+-    GIVEN( "one stack of a charge-counted qualifying item" ) {
+-        item stack( itype_test_reserve_charge_stack );
+-        stack.charges = 100;
+-        here.add_item( origin, stack );
+-        u.invalidate_crafting_inventory();
+-        const inventory &crafting_inv = u.crafting_inventory();
+-
+-        THEN( "the stack is one provider rather than its charge count" ) {
+-            CHECK_FALSE( req.can_make_with_inventory( &u, crafting_inv, return_true<item> ) );
+-        }
+-
+-        THEN( "the default metric still counts its charges" ) {
+-            CHECK( crafting_inv.has_quality( qual_TEST_RESERVE_A, 1, 2 ) );
+-        }
+-    }
+-
+-    GIVEN( "two loose qualifying tools" ) {
+-        here.add_item( origin, item( itype_test_reserve_tool_a ) );
+-        here.add_item( origin, item( itype_test_reserve_tool_a ) );
+-        u.invalidate_crafting_inventory();
+-        const inventory &crafting_inv = u.crafting_inventory();
+-
+-        THEN( "two genuine providers satisfy the requirement" ) {
+-            CHECK( req.can_make_with_inventory( &u, crafting_inv, return_true<item> ) );
+-        }
+-    }
+-}
+-
+-TEST_CASE( "intrinsic_qualities_count_provider_occurrences",
+-           "[craft][attention][reservation][binding][intrinsic]" )
+-{
+-    clear_avatar();
+-    clear_map();
+-    avatar &u = get_avatar();
+-    map &here = get_map();
+-    const tripoint_bub_ms origin( 60, 60, 0 );
+-    u.setpos( here, origin );
+-
+-    GIVEN( "a bionic exposing two pseudo items of one quality" ) {
+-        u.add_bionic( test_bio_reserve_two_pseudo );
+-
+-        THEN( "each pseudo item is its own occurrence" ) {
+-            CHECK( u.has_intrinsic_quality( qual_TEST_RESERVE_A, 1, 2 ) );
+-        }
+-
+-        THEN( "a third occurrence is not invented" ) {
+-            CHECK_FALSE( u.has_intrinsic_quality( qual_TEST_RESERVE_A, 1, 3 ) );
+-        }
+-
+-    }
+-
+-    GIVEN( "a bionic whose weapon supplies a quality" ) {
+-        u.add_bionic( test_bio_reserve_weapon );
+-
+-        THEN( "it supplies one occurrence while unpowered" ) {
+-            CHECK( u.has_intrinsic_quality( qual_TEST_RESERVE_B, 1, 1 ) );
+-        }
+-
+-        THEN( "the direct and pseudo routes are not counted twice" ) {
+-            CHECK_FALSE( u.has_intrinsic_quality( qual_TEST_RESERVE_B, 1, 2 ) );
+-        }
+-
+-        WHEN( "the bionic is powered" ) {
+-            bionic &bio = u.bionic_at_index( u.get_bionics().size() - 1 );
+-            bio.powered = true;
+-
+-            THEN( "the exposed weapon is still the occurrence it already was" ) {
+-                CHECK( u.has_intrinsic_quality( qual_TEST_RESERVE_B, 1, 1 ) );
+-                CHECK_FALSE( u.has_intrinsic_quality( qual_TEST_RESERVE_B, 1, 2 ) );
+-            }
+-        }
+-    }
+-
+-    GIVEN( "a bionic that exposes its pseudo tool only while it is on" ) {
+-        u.add_bionic( test_bio_reserve_toggled_pseudo );
+-        bionic &bio = u.bionic_at_index( u.get_bionics().size() - 1 );
+-
+-        WHEN( "the bionic is off" ) {
+-            REQUIRE_FALSE( bio.powered );
+-
+-            THEN( "it supplies no occurrence" ) {
+-                CHECK_FALSE( u.has_intrinsic_quality( qual_TEST_RESERVE_A, 1, 1 ) );
+-            }
+-        }
+-
+-        WHEN( "the bionic is on" ) {
+-            bio.powered = true;
+-
+-            THEN( "the pseudo tool counts" ) {
+-                CHECK( u.has_intrinsic_quality( qual_TEST_RESERVE_A, 1, 1 ) );
+-            }
+-        }
+-    }
+-
+-    GIVEN( "both digging traits at once" ) {
+-        u.set_mutation( trait_BURROW );
+-        u.set_mutation( trait_BURROWLARGE );
+-        // Of the innate pair only the shovel carries a DIG quality; the pickaxe digs
+-        // through its use action.  One occurrence is therefore the whole supply.
+-        THEN( "the innate pair is granted once, not once per trait" ) {
+-            CHECK( u.has_intrinsic_quality( qual_DIG, 1, 1 ) );
+-            CHECK_FALSE( u.has_intrinsic_quality( qual_DIG, 1, 2 ) );
+-        }
+-    }
+-}
+diff --git a/tests/crafting_test.cpp b/tests/crafting_test.cpp
+index 40783d4e58f5..7b9c18738eb7 100644
+--- a/tests/crafting_test.cpp
++++ b/tests/crafting_test.cpp
+@@ -542,7 +542,7 @@ static void prep_craft( const recipe_id &rid, const std::vector<item> &tools,
+     const inventory &crafting_inv = player_character.crafting_inventory();
+
+     bool can_craft_with_crafting_inv = r.deduped_requirements()
+-                                       .can_make_with_inventory( &player_character, crafting_inv, r.get_component_filter() );
++                                       .can_make_with_inventory( crafting_inv, r.get_component_filter() );
+     const std::string missing_alt_reqs = enumerate_as_string( r.deduped_requirements().alternatives(),
+     []( const requirement_data & rd ) {
+         return string_format( "req id: '%s' missing: %s", rd.id().str(), rd.list_missing() );
+@@ -550,8 +550,7 @@ static void prep_craft( const recipe_id &rid, const std::vector<item> &tools,
+     CAPTURE( missing_alt_reqs );
+     REQUIRE( can_craft_with_crafting_inv == expect_craftable );
+     bool can_craft_with_temp_inv = r.deduped_requirements()
+-                                   .can_make_with_inventory( &player_character, temp_crafting_inventory( crafting_inv ),
+-                                           r.get_component_filter() );
++                                   .can_make_with_inventory( temp_crafting_inventory( crafting_inv ), r.get_component_filter() );
+     REQUIRE( can_craft_with_temp_inv == expect_craftable );
+ }
+
+diff --git a/tests/requirements_test.cpp b/tests/requirements_test.cpp
+index 88379bf0522b..a441d3286a56 100644
+--- a/tests/requirements_test.cpp
++++ b/tests/requirements_test.cpp
+@@ -1,31 +1,15 @@
+ #include <cstddef>
+-#include <functional>
+ #include <map>
+ #include <string>
+ #include <utility>
+ #include <vector>
+
+-#include "avatar.h"
+-#include "butchery.h"
+-#include "butchery_requirements.h"
+ #include "cata_catch.h"
+-#include "cata_utility.h"
+-#include "color.h"
+-#include "creature.h"
+-#include "harvest.h"
+-#include "inventory.h"
+-#include "item.h"
+-#include "npc.h"
+-#include "player_helpers.h"
+ #include "requirements.h"
+ #include "type_id.h"
+
+-static const butchery_requirements_id butchery_requirements_default( "default" );
+-
+ static const itype_id itype_ash( "ash" );
+ static const itype_id itype_chem_sulphuric_acid( "chem_sulphuric_acid" );
+-static const itype_id itype_debug_backpack( "debug_backpack" );
+-static const itype_id itype_hammer( "hammer" );
+ static const itype_id itype_lye( "lye" );
+ static const itype_id itype_metal_tank_test( "metal_tank_test" );
+ static const itype_id itype_rock( "rock" );
+@@ -36,16 +20,10 @@ static const itype_id itype_test_glass_pipe_mostly_steel( "test_glass_pipe_mostl
+ static const itype_id itype_test_pipe( "test_pipe" );
+ static const itype_id itype_yarn( "yarn" );
+
+-static const quality_id qual_BUTCHER( "BUTCHER" );
+-static const quality_id qual_HAMMER( "HAMMER" );
+-
+ static const requirement_id requirement_data_eggs_bird( "eggs_bird" );
+ static const requirement_id
+ requirement_data_explosives_casting_standard( "explosives_casting_standard" );
+
+-static const trait_id trait_DEBUG_HS( "DEBUG_HS" );
+-static const trait_id trait_MANDIBLES( "MANDIBLES" );
+-
+ static void test_requirement_deduplication(
+     const requirement_data::alter_item_comp_vector &before,
+     std::vector<requirement_data::alter_item_comp_vector> after
+@@ -210,98 +188,3 @@ TEST_CASE( "requirement_extension", "[requirement]" )
+         }
+     }
+ }
+-
+-TEST_CASE( "requirement_checks_follow_their_actor_mode", "[requirement]" )
+-{
+-    clear_avatar();
+-    avatar &u = get_avatar();
+-    const inventory empty_inv;
+-
+-    GIVEN( "a requirement demanding a quality, a tool and a component" ) {
+-        const requirement_data req( { { tool_comp( itype_hammer, -1 ) } },
+-        { { quality_requirement( qual_HAMMER, 1, 1 ) } },
+-        { { item_comp( itype_rock, 1 ) } } );
+-        const quality_requirement qual_req( qual_HAMMER, 1, 1 );
+-        const tool_comp tool_req( itype_hammer, -1 );
+-        const item_comp comp_req( itype_rock, 1 );
+-
+-        WHEN( "the avatar carries a qualifying tool and the component" ) {
+-            u.wear_item( item( itype_debug_backpack ) );
+-            u.i_add( item( itype_hammer ) );
+-            u.i_add( item( itype_rock ) );
+-
+-            THEN( "an inventory-only check is decided on the passed inventory alone" ) {
+-                CHECK_FALSE( req.can_make_with_inventory( nullptr, empty_inv,
+-                             return_true<item> ) );
+-                CHECK_FALSE( qual_req.has( nullptr, empty_inv, return_true<item> ) );
+-            }
+-        }
+-
+-        WHEN( "the avatar has debug hammerspace" ) {
+-            u.set_mutation( trait_DEBUG_HS );
+-
+-            THEN( "an inventory-only check grants none of it, at any level" ) {
+-                CHECK_FALSE( req.can_make_with_inventory( nullptr, empty_inv,
+-                             return_true<item> ) );
+-                CHECK_FALSE( qual_req.has( nullptr, empty_inv, return_true<item> ) );
+-                CHECK_FALSE( tool_req.has( nullptr, empty_inv, return_true<item> ) );
+-                CHECK_FALSE( comp_req.has( nullptr, empty_inv, return_true<item> ) );
+-            }
+-
+-            THEN( "the display path agrees with the refusal" ) {
+-                CHECK( qual_req.get_color( nullptr, false, empty_inv,
+-                                           return_true<item> ) != c_green );
+-            }
+-
+-            THEN( "the same check for the avatar as actor is granted" ) {
+-                CHECK( req.can_make_with_inventory( &u, empty_inv, return_true<item> ) );
+-            }
+-        }
+-
+-        WHEN( "an NPC without the trait stands beside a hammerspace avatar" ) {
+-            u.set_mutation( trait_DEBUG_HS );
+-            standard_npc guy( "ModeTester" );
+-
+-            THEN( "the NPC is not granted the avatar's hammerspace" ) {
+-                CHECK_FALSE( req.can_make_with_inventory( &guy, empty_inv,
+-                             return_true<item> ) );
+-            }
+-
+-            THEN( "the NPC's own trait is what grants it" ) {
+-                guy.set_mutation( trait_DEBUG_HS );
+-                CHECK( req.can_make_with_inventory( &guy, empty_inv, return_true<item> ) );
+-            }
+-        }
+-    }
+-
+-    GIVEN( "a crafter whose only butchering quality is a mutation grant" ) {
+-        u.set_mutation( trait_MANDIBLES );
+-        const quality_requirement butcher_req( qual_BUTCHER, 1, 1 );
+-
+-        THEN( "the actor-aware check reaches the intrinsic grant" ) {
+-            CHECK( butcher_req.has( &u, empty_inv, return_true<item> ) );
+-        }
+-
+-        THEN( "the inventory-only check has no actor to reach it through" ) {
+-            CHECK_FALSE( butcher_req.has( nullptr, empty_inv, return_true<item> ) );
+-        }
+-    }
+-
+-    GIVEN( "the default butchery ladder, whose tiers differ in speed" ) {
+-        u.set_mutation( trait_DEBUG_HS );
+-        standard_npc guy( "ModeTester" );
+-
+-        THEN( "the actor decides which tier is reachable" ) {
+-            // The hammerspace avatar satisfies the first tier; the bare NPC falls
+-            // through to the fastest-tier fallback, so the pairs differ.  Depends on
+-            // the "default" ladder carrying more than one speed tier.
+-            const std::pair<float, requirement_id> for_avatar =
+-                butchery_requirements_default.obj().get_fastest_requirements(
+-                    &u, empty_inv, creature_size::medium, butcher_type::FULL );
+-            const std::pair<float, requirement_id> for_npc =
+-                butchery_requirements_default.obj().get_fastest_requirements(
+-                    &guy, empty_inv, creature_size::medium, butcher_type::FULL );
+-            CHECK( for_avatar != for_npc );
+-        }
+-    }
+-}
+diff --git a/tests/vehicle_interact_test.cpp b/tests/vehicle_interact_test.cpp
+index 7ef2fbaf14cd..e6fec025ea29 100644
+--- a/tests/vehicle_interact_test.cpp
++++ b/tests/vehicle_interact_test.cpp
+@@ -95,9 +95,9 @@ static void test_repair( const std::vector<item> &tools, bool plug_in_tools, boo
+     // Bust cache on crafting_inventory()
+     player_character.mod_moves( 1 );
+     inventory crafting_inv = player_character.crafting_inventory();
+-    bool can_repair = vp.repair_requirements().can_make_with_inventory( &player_character,
+-                      player_character.crafting_inventory(),
+-                      is_crafting_component );
++    bool can_repair = vp.repair_requirements().can_make_with_inventory(
++                          player_character.crafting_inventory(),
++                          is_crafting_component );
+     CHECK( can_repair == expect_craftable );
+ }
+
+diff --git a/tests/vehicle_part_test.cpp b/tests/vehicle_part_test.cpp
+index 42b663adc1d8..cffef24ad6eb 100644
+--- a/tests/vehicle_part_test.cpp
++++ b/tests/vehicle_part_test.cpp
+@@ -194,7 +194,7 @@ static void test_craft_via_rig( const std::vector<item> &items, int give_battery
+     const inventory &crafting_inv = character.crafting_inventory();
+     bool can_craft = recipe
+                      .deduped_requirements()
+-                     .can_make_with_inventory( &character, crafting_inv, recipe.get_component_filter() );
++                     .can_make_with_inventory( crafting_inv, recipe.get_component_filter() );
+
+     if( expect_success ) {
+         REQUIRE( can_craft );

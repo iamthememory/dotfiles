@@ -83,6 +83,7 @@ let
     cataclysm-dda-git-latest-unpatched-pkg.overrideAttrs (oldAttrs: rec {
       name = "${oldAttrs.pname}-${oldAttrs.version}-patched";
       patches = [
+        ./patches/cataclysm-88292-performance-regression-revert.patch
         ./patches/cataclysm-backrooms-extend-vending.patch
         ./patches/cataclysm-big-tiles.patch
         ./patches/cataclysm-bigger-texture-pool.patch
