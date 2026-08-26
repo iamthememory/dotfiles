@@ -108,9 +108,6 @@
 
     nexusmods-app-unfree
 
-    # A tool for setting the background.
-    nitrogen
-
     # A tool for running binaries on NixOS.
     inputs.nix-alien.packages."${pkgs.stdenv.hostPlatform.system}".nix-alien
 
@@ -154,6 +151,10 @@
   # Use /data/music for mpd's music.
   services.mpd.musicDirectory = "/data/music";
 
+  # Enable random background.
+  services.random-background.enable = true;
+  services.random-background.imageDirectory = "%h/backgrounds";
+
   # The mountpoints to monitor.
   system.monitor-mounts = {
     # The hard disk ZFS pool.
@@ -186,7 +187,6 @@
   xsession.initExtra =
     let
       grep = "${config.home.profileDirectory}/bin/grep";
-      nitrogen = "${config.home.profileDirectory}/bin/nitrogen";
       sed = "${config.home.profileDirectory}/bin/sed";
       xinput = "${config.home.profileDirectory}/bin/xinput";
     in
@@ -198,9 +198,6 @@
       logitech_mouse_id="$("${xinput}" list | "${grep}" 'Logitech M325' | sed -En -e '4s/^.*[[:space:]]id=([0-9]+)[[:space:]].*$/\1/p')"
       "${xinput}" --set-prop "$${logitech_mouse_id}" 'libinput Accel Speed' -0.5
       unset logitech_mouse_id
-
-      # Set a background image.
-      nitrogen --restore &
     '';
 
   # Custom i3 workspaces for nightmare.
