@@ -90,7 +90,6 @@ in
     dsp
     dssi
     ensemble-chorus
-    eq10q
     faust-physicalmodeling
     fil-plugins
     filtr
@@ -195,7 +194,6 @@ in
     uhhyou-plugins-juce
     uhhyou-plugins
     vaporizer2
-    vocproc
     wolf-shaper
     x42-avldrums
     x42-gmsynth
