@@ -506,7 +506,7 @@
         "then": [
           { "run_eocs": "hobby_prepared_mutation", "time_in_future": "1 hour" },
           { "math": [ "u_hobby_prepared_mutation_init = 1" ] },
-          { "math": [ "u_hobby_prepared_mutation_remaining = 6" ] }
+          { "math": [ "u_hobby_prepared_mutation_remaining = 12" ] }
         ]
       }
     ]
