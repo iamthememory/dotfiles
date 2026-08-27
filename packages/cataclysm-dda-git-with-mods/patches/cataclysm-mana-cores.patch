@@ -795,3 +795,20 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"enchantments": [ "CRACKED_MANACORE8_BUFF" ]
  	}
  ]
+diff --git a/Mana-Cores/vitamin.json b/Mana-Cores/vitamin.json
+index 9a9ea9c51e89..1e3da0ef1a7f 100644
+--- a/Mana-Cores/vitamin.json
++++ b/Mana-Cores/vitamin.json
+@@ -4,9 +4,9 @@
+ 	"type": "vitamin",
+ 	"vit_type": "counter",
+ 	"name": "Impurities",
+-	"rate": "15 m",
++	"rate": "5 m",
+ 	"min": 0,
+ 	"max": 50000,
+ 	"flags": [ "NO_DISPLAY" ]
+ 	}
+-]
+\ No newline at end of file
++]
