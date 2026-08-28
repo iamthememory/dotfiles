@@ -630,11 +630,12 @@
       { "item": "dutch_oven" },
       { "item": "mess_kit" },
       { "item": "tent_kit" },
+      { "item": "sleeping_bag_roll" },
       { "item": "water_clean", "container-item": "bottle_folding", "charges": 2, "count": 20 },
       { "item": "attached_ear_plugs_off" },
       { "item": "laptop", "ammo-item": "battery", "charges": 1000 },
       { "item": "smart_phone", "ammo-item": "battery", "charges": 1000 },
-      { "item": "folding_solar_panel", "prob": 5 },
+      { "item": "folding_solar_panel" },
       { "item": "hobo_stove_clay" }
     ]
   },

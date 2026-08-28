@@ -321,6 +321,6 @@
     "name": "KILOGRAMS_PER_STRENGTH",
     "//": "The weight in kilograms a character can carry per point of strength.",
     "stype": "int",
-    "value": 10
+    "value": 25
   }
 ]
