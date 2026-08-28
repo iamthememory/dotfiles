@@ -1,0 +1,354 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_0",
+    "recurrence": [ "20 h", "30 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= -20" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "spell_oneiric_hammer"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_0",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "spring_heeled_leap"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 48" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "firmament_driver",
+          "spell_rage"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 72" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "dream_dagger",
+          "make_constructed_hammer",
+          "spell_stamina_wonder"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 96" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "cable_whip",
+          "point_blank",
+          "self_healing",
+          "spell_dodge",
+          "spell_spear",
+          "spell_unbreakable",
+          "summon_shifter",
+          "supercoffee"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 120" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "dream_blade",
+          "spell_endurance",
+          "spell_speed_wonder",
+          "spell_weak"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 144" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "blood_boil",
+          "spell_summon_twin",
+          "summon_ophanim",
+          "summon_sapient_light"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 168" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "banish_dark_monsters",
+          "dream_armor",
+          "dreamer_lucid_dreams",
+          "spell_invisibility",
+          "spell_melee_damage",
+          "spell_night_vision",
+          "spell_stalker_eyes",
+          "summon_winch"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 192" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "banish_nether_monsters",
+          "spell_devil_tail",
+          "spell_dreamer_clairvoyance",
+          "summon_duplicator",
+          "xedra_dreamer_generate_accelerated_time",
+          "xedra_eater_stabilize_reality"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 216" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "spell_clairvoyance",
+          "spell_dreamer_clairvoyance_eff",
+          "spell_ethereal_wings"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 240" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_XE_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_xe" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "spell_karma_arms",
+          "teleport_coin",
+          "xedra_dreamer_time_bubble",
+          "xedra_eater_erosion"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_XE_VITADJUST_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 264" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

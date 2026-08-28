@@ -1,0 +1,12 @@
+[
+  {
+    "type": "mutation",
+    "id": "learn_as_you_go_xe",
+    "name": { "str": "Dream Learner" },
+    "points": 8,
+    "purifiable": false,
+    "valid": false,
+    "starting_trait": true,
+    "description": "You're attuned with your dreams, and regularly figure out magic."
+  }
+]

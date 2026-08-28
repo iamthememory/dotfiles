@@ -1,0 +1,28 @@
+[
+  {
+    "id": "eat_dreamdross_ingot_mana",
+    "copy-from": "eat_dreamdross_ingot_mana",
+    "type": "SPELL",
+    "min_damage": 7500,
+    "max_damage": 11000,
+    "damage_increment": 600
+  },
+  {
+    "id": "create_dream_dross",
+    "copy-from": "create_dream_dross",
+    "type": "SPELL",
+    "//": "Each bit of dreamdross can be eaten for up to 110 mana each, so, for 1000 mana, we should spawn at most 9 = 990 mana.",
+    "min_damage": 1,
+    "max_damage": 9,
+    "damage_increment": 0.5
+  },
+  {
+    "id": "scrap_dreamdross",
+    "copy-from": "scrap_dreamdross",
+    "type": "ITEM",
+    "subtypes": [ "AMMO" ],
+    "category": "spare_parts",
+    "name": { "str": "scrap dreamdross", "str_pl": "scraps of dreamdross" },
+    "count": 1
+  }
+]

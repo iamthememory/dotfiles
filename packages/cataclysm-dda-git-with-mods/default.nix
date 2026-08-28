@@ -575,6 +575,12 @@ let
     src = ./lab-loot-extras;
   };
 
+  learn-spells-as-you-go = cataclysmDDA.buildMod {
+    modName = "learn-spells-as-you-go";
+    version = flake-revision;
+    src = ./learn-spells-as-you-go;
+  };
+
   magiclysm-linear-leveling = cataclysmDDA.buildMod {
     modName = "magiclysm-linear-leveling";
     version = flake-revision;
@@ -656,10 +662,11 @@ let
     grow-more-drugs
     innawoods-compat
     lab-loot-extras
+    learn-spells-as-you-go
     levelled-crystallize
     levelled-runes
-    magical-vehicles
     magic-loot-perks
+    magical-vehicles
     magiclysm-linear-leveling
     magiclysm-no-class-limit
     magiclysm-no-condition-upgrade-spells

@@ -32,10 +32,10 @@ index 77bdc978c815..58068b1c48f9 100644
      "description": "A magically manifested combustion engine.  Despite operating entirely off of mana rather than fuel, it otherwise functions exactly as a cenventional high-compression, 200 cc single-cylinder 4-stroke combustion engine.",
      "weight": "28 kg",
 diff --git a/spells/technomancer.json b/spells/technomancer.json
-index bc1eabf1dad3..da0e7f56d7b4 100644
+index bc1eabf1dad3..b843cbaf80c4 100644
 --- a/spells/technomancer.json
 +++ b/spells/technomancer.json
-@@ -8,179 +8,80 @@
+@@ -8,179 +8,66 @@
    },
    {
      "id": "summon_magic_beetle",
@@ -53,8 +53,8 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "shape": "blast",
      "difficulty": 7,
 -    "max_level": 20,
-     "base_casting_time": 2000,
-     "base_energy_cost": 1100,
+-    "base_casting_time": 2000,
+-    "base_energy_cost": 1100,
 -    "min_range": 1,
 -    "max_range": 10,
 -    "range_increment": 1,
@@ -78,9 +78,9 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "energy_source": "MANA",
      "effect_str": "magic_sedan",
 -    "shape": "blast",
-     "difficulty": 7,
+-    "difficulty": 7,
 -    "max_level": 20,
-     "base_casting_time": 2000,
+-    "base_casting_time": 2000,
 -    "base_energy_cost": 1300,
 -    "min_range": 1,
 -    "max_range": 10,
@@ -89,7 +89,7 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "min_duration": 240000,
 -    "max_duration": 1440000,
 -    "duration_increment": 60000
-+    "base_energy_cost": 1300
++    "difficulty": 7
    },
    {
      "id": "summon_magic_van",
@@ -105,9 +105,9 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "energy_source": "MANA",
      "effect_str": "magic_van",
 -    "shape": "blast",
-     "difficulty": 7,
+-    "difficulty": 7,
 -    "max_level": 20,
-     "base_casting_time": 2500,
+-    "base_casting_time": 2500,
 -    "base_energy_cost": 1500,
 -    "min_range": 1,
 -    "max_range": 10,
@@ -116,7 +116,7 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "min_duration": 240000,
 -    "max_duration": 1440000,
 -    "duration_increment": 60000
-+    "base_energy_cost": 1500
++    "difficulty": 7
    },
    {
      "id": "summon_magic_kayak",
@@ -134,8 +134,8 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "shape": "blast",
 -    "difficulty": 5,
 -    "max_level": 10,
-     "base_casting_time": 800,
-     "base_energy_cost": 800,
+-    "base_casting_time": 800,
+-    "base_energy_cost": 800,
 -    "min_range": 1,
 -    "max_range": 10,
 -    "range_increment": 1,
@@ -159,9 +159,9 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "energy_source": "MANA",
      "effect_str": "magic_rowboat",
 -    "shape": "blast",
-     "difficulty": 6,
+-    "difficulty": 6,
 -    "max_level": 10,
-     "base_casting_time": 1200,
+-    "base_casting_time": 1200,
 -    "base_energy_cost": 1200,
 -    "min_range": 1,
 -    "max_range": 10,
@@ -170,7 +170,7 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "min_duration": 240000,
 -    "max_duration": 1440000,
 -    "duration_increment": 120000
-+    "base_energy_cost": 1200
++    "difficulty": 6
    },
    {
      "id": "summon_magic_motorboat",
@@ -186,9 +186,9 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "energy_source": "MANA",
      "effect_str": "magic_motorboat",
 -    "shape": "blast",
-     "difficulty": 6,
+-    "difficulty": 6,
 -    "max_level": 10,
-     "base_casting_time": 1400,
+-    "base_casting_time": 1400,
 -    "base_energy_cost": 1400,
 -    "min_range": 1,
 -    "max_range": 10,
@@ -197,7 +197,7 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "min_duration": 240000,
 -    "max_duration": 1440000,
 -    "duration_increment": 120000
-+    "base_energy_cost": 1400
++    "difficulty": 6
    },
    {
      "id": "summon_magic_amphitruck",
@@ -213,9 +213,9 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "energy_source": "MANA",
      "effect_str": "magic_amphitruck",
 -    "shape": "blast",
-     "difficulty": 7,
+-    "difficulty": 7,
 -    "max_level": 20,
-     "base_casting_time": 3000,
+-    "base_casting_time": 3000,
 -    "base_energy_cost": 1900,
 -    "min_range": 1,
 -    "max_range": 10,
@@ -224,6 +224,6 @@ index bc1eabf1dad3..da0e7f56d7b4 100644
 -    "min_duration": 240000,
 -    "max_duration": 1440000,
 -    "duration_increment": 60000
-+    "base_energy_cost": 1900
++    "difficulty": 7
    }
  ]

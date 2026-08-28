@@ -1,0 +1,571 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_0",
+    "recurrence": [ "20 h", "30 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= -20" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "create_electric_lighter",
+          "create_lighter",
+          "recover_pain",
+          "shocking_dash"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_0",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_magic_fissile",
+          "chilling_touch",
+          "classless_easy_sleep_spell",
+          "classless_watch_spell",
+          "create_atomic_light",
+          "druid_woodshaft",
+          "electric_arts",
+          "eshaper_rockbolt",
+          "kelvinist_heat_food",
+          "magic_missile",
+          "overcharge_eyes",
+          "shadow_field",
+          "shocking_lash",
+          "summon_cats",
+          "taze",
+          "technomancer_gain_electronics_computer_spell",
+          "windrun",
+          "wrathful_spirits"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 48" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "bio_acidicspray",
+          "bleed",
+          "burning_hands",
+          "classless_clean_clothing_and_self",
+          "create_atomic_lamp",
+          "dark_sight",
+          "druid_anti_heat",
+          "druid_veggrasp",
+          "earthshaper_turning_of_earth",
+          "eshaper_piercing_bolt",
+          "eshaper_spawn_tools",
+          "frost_spray",
+          "glide_ice",
+          "jolt",
+          "kelvinist_firebolt",
+          "light_healing",
+          "magus_far_hand_pull",
+          "magus_light_target",
+          "magus_slowfall",
+          "magus_stop_attack_shield",
+          "phase_door",
+          "protection_aura",
+          "quantum_tunnel_lesser",
+          "seismic_stomp",
+          "stonefist",
+          "stormshaper_wall_of_fog",
+          "summon_wisps"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 72" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "air_bubble",
+          "animist_detect_wizards",
+          "animist_summon_watcher",
+          "biomancer_carrion_feast",
+          "biomancer_eat_tons_of_food",
+          "biomancer_paralytic_dart",
+          "blinding_flash",
+          "classless_restore_crystal_mana",
+          "crystallize_mana",
+          "disruption_bolt",
+          "druid_goodberry",
+          "druid_traverse_the_wilds",
+          "earthshaper_boulder",
+          "earthshaper_danger_sense",
+          "earthshaper_pillar",
+          "eshaper_shardspray",
+          "ethereal_grasp",
+          "holographic_transposition",
+          "ice_shield",
+          "kelvinist_persuasion_spell",
+          "knock",
+          "magus_force_jar",
+          "magus_spiderclimb",
+          "necrotic_gaze",
+          "recover_mana",
+          "rupture",
+          "sound_bomb",
+          "storm_hammer",
+          "stormshaper_loud_voice_spell",
+          "summon_undead",
+          "summon_undead_swarm",
+          "windstrike"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 96" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "acid_resistance",
+          "animist_add_evasion_spell",
+          "animist_cast_spells_when_silent",
+          "bio_fleshpouch",
+          "biomancer_caustic_aura",
+          "biomancer_coagulant_weave",
+          "biomancer_cure_disease_minor",
+          "biomancer_pull_items_from_distance",
+          "biomancer_slow_bleeding",
+          "biomancer_swim_frog",
+          "biomancer_visceral_projection",
+          "clairvoyance",
+          "cone_cold",
+          "convert",
+          "druid_bearmantle",
+          "druid_bramble_spear",
+          "druid_disinfectant",
+          "druid_feralform",
+          "druid_growth",
+          "druid_harvest_hunter",
+          "druid_natures_commune",
+          "druid_rootstrike",
+          "druid_tornskin",
+          "druid_water_walking",
+          "earthshaper_fortitude_of_stone",
+          "earthshaper_harden_earth",
+          "earthshaper_remove_corpses",
+          "earthshaper_repair_metal_stone",
+          "earthshaper_stoneskin",
+          "electric_eye",
+          "eshaper_shardstorm",
+          "explosive_decompression",
+          "fireball",
+          "hoary_blast",
+          "invisibility",
+          "kelvinist_anti_cold",
+          "kelvinist_anti_heat",
+          "kelvinist_summon_flamesword",
+          "magus_mana_beam",
+          "magus_summon_impact_sling",
+          "mirror_image",
+          "move_earth",
+          "pain_split",
+          "point_flare",
+          "recover_sleepiness",
+          "stormshaper_cloak_of_fog",
+          "stormshaper_cloak_of_frog",
+          "stormshaper_repelling_arc",
+          "technomancer_conjure_radio",
+          "technomancer_pain_ignore"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 120" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_do_psionic_damage_to_head",
+          "animist_luck_bone",
+          "animist_sense_outsiders",
+          "animist_slow_food_rotting_spell",
+          "biomancer_get_more_blood",
+          "biomancer_scalpel_fingers",
+          "bless",
+          "druid_bandage_heal",
+          "druid_breathing_underwater",
+          "druid_healing_herb",
+          "druid_naturebow1",
+          "druid_summon_brambles",
+          "druid_wood_living_tree_spell",
+          "druidic_healing",
+          "electric_waves",
+          "eshaper_impalement",
+          "frost_armor",
+          "kelvinist_extinguish_fire_spell",
+          "kelvinist_flamebreath",
+          "laze",
+          "life_detonation",
+          "magus_escape",
+          "magus_mana_blast",
+          "magus_mana_bolt",
+          "magus_push_nearby_enemies_back",
+          "magus_ranged_increase",
+          "magus_silence",
+          "magus_teleport_mark",
+          "obfuscated_body",
+          "reactive_armor",
+          "recover_stamina",
+          "spirit_walk",
+          "stormfist",
+          "summon_floating_disk",
+          "summon_magic_motorcycle",
+          "technomancer_dexterity_buff_spell",
+          "technomancer_intelligence_buff_spell",
+          "technomancer_knifeshot",
+          "technomancer_perception_buff_spell",
+          "technomancer_recharge_vehicle",
+          "technomancer_strength_buff_spell",
+          "technomancer_welder",
+          "toxtricity"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 144" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_see_invisibility",
+          "animist_summon_decaying_boneclub",
+          "bio_grotesque",
+          "biomancer_giant_growth",
+          "biomancer_lashing_tentacles",
+          "classless_dispel_magic",
+          "dominate",
+          "druid_summon_tanglevine",
+          "druid_whisper_leaves",
+          "druidic_regrowth",
+          "eshaper_crystal_wrap",
+          "eshaper_melee_damage",
+          "ice_spike",
+          "kelvinist_summon_freezer_spell",
+          "lightning_blast",
+          "lightning_bolt",
+          "magus_mage_conjured_armor",
+          "magus_slow",
+          "mana_upgrade_efficiency_01",
+          "mana_upgrade_regeneration_01",
+          "mana_upgrade_sensitivity_01",
+          "purify_seed",
+          "recover_bionic_power",
+          "storm_shipwrecker",
+          "storm_superconductor",
+          "summon_eshaper_golem",
+          "summon_teravolt",
+          "summon_wolf_druid",
+          "technomancer_create_ups_connection",
+          "technomancer_far_sight",
+          "technomancer_robot_shutdown",
+          "thought_shield",
+          "vicious_tentacle",
+          "x-ray"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 168" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_caustic_blood",
+          "freezing_touch",
+          "improved_knock",
+          "magus_mage_conjured_blade",
+          "pertifying_touch",
+          "shape_of_dust",
+          "stormshaper_heart_of_hurricane",
+          "synaptic_stimulation",
+          "technomancer_conjure_ups",
+          "vacuum_decompression"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 192" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animated_blade",
+          "animist_spirit_walking",
+          "bio_bonespear",
+          "cause_rot",
+          "druid_healing",
+          "druid_thorn_skin",
+          "earthshaper_diggable_teleport",
+          "earthshaper_reveal_world_map",
+          "earthshaper_sleep_in_earth",
+          "focused_bolt",
+          "kelvinist_no_emotion_spell",
+          "magus_diamond_imbuement",
+          "magus_haste",
+          "magus_permanent_light",
+          "magus_word_of_recall",
+          "nova_flare",
+          "smite",
+          "stormshaper_ionization"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 216" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_mass_hiding_aoe",
+          "banishment_lesser",
+          "biomancer_baleful_polymorph",
+          "druid_beguile_savage_beast",
+          "druid_create_temporary_spring",
+          "earthshaper_granite_aegis",
+          "lightning_storm",
+          "mana_upgrade_efficiency_02",
+          "mana_upgrade_regeneration_02",
+          "mana_upgrade_sensitivity_02"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 240" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_hyper_regeneration",
+          "biomancer_remove_instability",
+          "classless_disjunction",
+          "devour",
+          "druid_renew_forest_spell",
+          "gravity_well",
+          "magus_cannot_move_attack_or_damage_target",
+          "megablast",
+          "summon_bear",
+          "biomancer_control_mutations",
+          "druid_turn_tree_into_treant",
+          "technomancer_arete_buff_spell",
+          "kelvinist_set_everyone_on_fire",
+          "soulrend",
+          "translocate_self"
+        ],
+        "type": "spell",
+        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 264" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

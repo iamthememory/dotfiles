@@ -1,0 +1,12 @@
+[
+  {
+    "type": "mutation",
+    "id": "learn_as_you_go_magiclysm",
+    "name": { "str": "Magic Learner" },
+    "points": 8,
+    "purifiable": false,
+    "valid": false,
+    "starting_trait": true,
+    "description": "You're attuned with your spellcasting, and regularly figure out spells."
+  }
+]

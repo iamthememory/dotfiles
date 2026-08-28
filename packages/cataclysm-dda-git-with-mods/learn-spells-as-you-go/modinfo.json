@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "learn-spells-as-you-go",
+    "name": "Learn Spells As You Go",
+    "authors": [ "iamthememory" ],
+    "description": "Learn spells now and then based on your spellcraft level.",
+    "category": "rebalance",
+    "dependencies": [ "dda", "magiclysm" ]
+  }
+]
