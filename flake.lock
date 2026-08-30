@@ -3,11 +3,11 @@
     "cataclysm-dda": {
       "flake": false,
       "locked": {
-        "lastModified": 1787809927,
-        "narHash": "sha256-9DlWCvn36+wI21A/R1hgDp5XShW1Ojg3/wuHFYvLkWI=",
+        "lastModified": 1788065679,
+        "narHash": "sha256-APsBDOaP4hWB4DXiIZOth6IoO56xW9UZH/XDsxQkIQ4=",
         "owner": "CleverRaven",
         "repo": "Cataclysm-DDA",
-        "rev": "5b416ea81ef6f17b2c849f35654ec8d4918cfecf",
+        "rev": "d40ce258946d4d33339950683bb8e3b74111996a",
         "type": "github"
       },
       "original": {
@@ -19,11 +19,11 @@
     "cataclysm-dda-arcana": {
       "flake": false,
       "locked": {
-        "lastModified": 1787590861,
-        "narHash": "sha256-PWS2K7DnDqbmCpoXP48dN1Y/fBs+On6QtLYdLTG3LDY=",
+        "lastModified": 1787928947,
+        "narHash": "sha256-A6eSDuEt0mQEthDq82qoONeAXUrW51WaR7R2pSICbqk=",
         "owner": "Standing-Storm",
         "repo": "cdda-arcana-mod",
-        "rev": "0491a5f34a5e36c699252c1f7efbd939a37755c1",
+        "rev": "7cb5c6ad090717bde859096bc4457714174d9971",
         "type": "github"
       },
       "original": {
@@ -440,11 +440,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1787415847,
-        "narHash": "sha256-zlulllSiKS9araqcNOGCV79V4jlXE/WMMrU123fuzms=",
+        "lastModified": 1787922236,
+        "narHash": "sha256-THE0T1QbeMh5zcoxFUJ/sxRh4fKiYQ+h7PQB8lXgfx8=",
         "owner": "I-am-Erk",
         "repo": "CDDA-Tilesets",
-        "rev": "1f1988c5e144473f894fcb1e2914af51fd08b7af",
+        "rev": "0db5e587c5c551fb9581ca7cd9d97cc7ea2d8c8f",
         "type": "github"
       },
       "original": {
@@ -666,11 +666,11 @@
     },
     "nixos-unstable": {
       "locked": {
-        "lastModified": 1787736819,
-        "narHash": "sha256-cV5xEJJK3BvhU8rEd4mC9UsmDi5qscv/kzGPhBRC5WA=",
+        "lastModified": 1787900134,
+        "narHash": "sha256-VYXO0XZlgj06dxJZRhrD3WoSsvq/c7+/Akyoa22pefw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9fbb54b33e91ee4ca368e35a78e0613c720600b3",
+        "rev": "83199d0d373dd3ac2b9a1996b1d0263f76ab7a4c",
         "type": "github"
       },
       "original": {
@@ -698,11 +698,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1787862902,
-        "narHash": "sha256-69w3vKPridHLOfPQUXo/9qZhw7h+N/TlW5RyUIQF1Ps=",
+        "lastModified": 1788101085,
+        "narHash": "sha256-sE2prA2OfrXciYvLKMf3veg1HUiqEjpphTGyYFPZwzs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5b6a3bfd9b2ac2e6144b422189e884284de3d1f0",
+        "rev": "540974bc271b9ad935c6341421bfa890e08b2737",
         "type": "github"
       },
       "original": {
@@ -730,11 +730,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1787736819,
-        "narHash": "sha256-cV5xEJJK3BvhU8rEd4mC9UsmDi5qscv/kzGPhBRC5WA=",
+        "lastModified": 1787900134,
+        "narHash": "sha256-VYXO0XZlgj06dxJZRhrD3WoSsvq/c7+/Akyoa22pefw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9fbb54b33e91ee4ca368e35a78e0613c720600b3",
+        "rev": "83199d0d373dd3ac2b9a1996b1d0263f76ab7a4c",
         "type": "github"
       },
       "original": {
@@ -766,11 +766,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1787862751,
-        "narHash": "sha256-uJl3PzVU5KfQzTrzKOSFK09aFVI+FshzQa47Ed2B2vM=",
+        "lastModified": 1788101207,
+        "narHash": "sha256-sMfedp85N6/mBk8cKfwVAHVLJgIHim6iwCMukAi5k2s=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "53e5a56742d134bd7d9c8204235ae1d5c4773eda",
+        "rev": "b4e5a7e82699e58aabbb07eb02aee59554f4126f",
         "type": "github"
       },
       "original": {
@@ -833,11 +833,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1787834454,
-        "narHash": "sha256-jXSvqn04IOecJCvSvl8+g3PsbDVNP6qKs6dKUs/b16k=",
+        "lastModified": 1788077403,
+        "narHash": "sha256-c20YZQKzQ27qC6Wh729fWRTpI7oV4+7Ur4icKssD4Wc=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "dc2fd1acc537f3583744e1373597a5731ff7a6e3",
+        "rev": "89e26eeaafa88a2ede4778734acc794ff0299beb",
         "type": "github"
       },
       "original": {
