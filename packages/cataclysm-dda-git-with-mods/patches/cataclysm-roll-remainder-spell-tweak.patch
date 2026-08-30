@@ -1,0 +1,38 @@
+diff --git a/src/npctalk.cpp b/src/npctalk.cpp
+index e6184ea3d43e..d33f02c551d8 100644
+--- a/src/npctalk.cpp
++++ b/src/npctalk.cpp
+@@ -7318,7 +7318,11 @@ talk_effect_fun_t::func f_roll_remainder( const JsonObject &jo,
+                 }
+             } else if( type.evaluate( d ) == "spell" ) {
+                 if( d.actor( is_npc )->get_spell_level( spell_id( cur_string.evaluate( d ) ) ) == - 1 ) {
+-                    not_had.push_back( cur_string.evaluate( d ) );
++                    const Character *guy = d.actor( is_npc )->get_character();
++                    spell_id spell( cur_string.evaluate( d ) );
++                    if ( guy == nullptr || guy->magic->can_learn_spell( *guy, spell ) ) {
++                        not_had.push_back( cur_string.evaluate( d ) );
++                    }
+                 }
+             } else if( type.evaluate( d ) == "recipe" ) {
+                 if( !d.actor( is_npc )->has_recipe( recipe_id( cur_string.evaluate( d ) ) ) ) {
+@@ -7342,7 +7346,14 @@ talk_effect_fun_t::func f_roll_remainder( const JsonObject &jo,
+                 name = trait->name();
+             } else if( type.evaluate( d ) == "spell" ) {
+                 spell_id spell( cur_choice );
+-                d.actor( is_npc )->set_spell_level( spell, 1 );
++                Character *guy = d.actor( is_npc )->get_character();
++
++                if ( guy == nullptr ) {
++                    d.actor( is_npc )->set_spell_level( spell, 0 );
++                } else {
++                    guy->magic->learn_spell( spell, *guy );
++                }
++
+                 name = spell->name.translated();
+             } else if( type.evaluate( d ) == "recipe" ) {
+                 recipe_id recipe( cur_choice );
+@@ -9481,4 +9492,3 @@ std::vector<std::string> get_all_talk_topic_ids()
+     }
+     return dialogue_ids;
+ }
+-

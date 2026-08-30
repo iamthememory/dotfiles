@@ -120,6 +120,7 @@ let
         ./patches/cataclysm-no-hope-books.json
         ./patches/cataclysm-no-hope-compat.patch
         ./patches/cataclysm-perks-fix.patch
+        ./patches/cataclysm-roll-remainder-spell-tweak.patch
         ./patches/cataclysm-seedbearer-fix.patch
         ./patches/cataclysm-spell-ui-widen.patch
         ./patches/cataclysm-start-with-no-money.patch
@@ -127,7 +128,6 @@ let
         ./patches/cataclysm-xedra-dream.patch
         ./patches/cataclysm-xedra-dreamdross.patch
         ./patches/cataclysm-xedra-nail.patch
-        #./patches/cataclysm-xedra-rarer-artifacts.patch
         ./patches/cataclysm-xedra-show-gramarye.patch
         ./patches/cataclysm-xedra-wallet.patch
         ./patches/cataclysm-xedrawood.patch
