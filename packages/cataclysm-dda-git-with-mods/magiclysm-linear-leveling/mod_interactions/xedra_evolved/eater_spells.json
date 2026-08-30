@@ -1,0 +1,20 @@
+[
+  {
+    "id": "eat_dreamdross",
+    "copy-from": "eat_dreamdross",
+    "type": "SPELL",
+    "magic_type": "xedra_dream_magic"
+  },
+  {
+    "id": "eat_more_dreamdross",
+    "copy-from": "eat_more_dreamdross",
+    "type": "SPELL",
+    "magic_type": "xedra_dream_magic"
+  },
+  {
+    "id": "eat_dreamdross_ingot",
+    "copy-from": "eat_dreamdross_ingot",
+    "type": "SPELL",
+    "magic_type": "xedra_dream_magic"
+  }
+]

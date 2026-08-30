@@ -9,20 +9,50 @@
   },
   {
     "id": "create_dream_dross",
-    "copy-from": "create_dream_dross",
     "type": "SPELL",
-    "//": "Each bit of dreamdross can be eaten for up to 110 mana each, so, for 1000 mana, we should spawn at most 9 = 990 mana.",
-    "min_damage": 1,
-    "max_damage": 9,
-    "damage_increment": 0.5
+    "name": "Bring Forth Dreamdross",
+    "description": "This ritual pulls a small amount of dreamdross into our world and makes it permanent.  These scraps of dreaming can then be used to make permanent objects.",
+    "valid_targets": [ "self" ],
+    "effect_str": "EOC_DREAMER_DREAMDROSS_SPAWN",
+    "effect": "effect_on_condition",
+    "shape": "blast",
+    "base_casting_time": 5000,
+    "base_energy_cost": 1000,
+    "skill": "deduction",
+    "difficulty": 0,
+    "max_level": { "math": [ "dreamer_level(1)" ] },
+    "spell_class": "DREAMER",
+    "magic_type": "xedra_dream_magic",
+    "flags": [ "NO_LEGS" ]
   },
   {
-    "id": "scrap_dreamdross",
-    "copy-from": "scrap_dreamdross",
-    "type": "ITEM",
-    "subtypes": [ "AMMO" ],
-    "category": "spare_parts",
-    "name": { "str": "scrap dreamdross", "str_pl": "scraps of dreamdross" },
-    "count": 1
+    "type": "effect_on_condition",
+    "id": "EOC_DREAMER_DREAMDROSS_SPAWN",
+    "//": "Each bit of dreamdross can be eaten for up to 110 mana each, so, for 1000 mana, we should spawn at most 9 = 990 mana.",
+    "effect": [
+      {
+        "run_eocs": [ "EOC_DREAMER_DREAMDROSS_SPAWN_ONE" ],
+        "iterations": { "math": [ "clamp( u_spell_level('create_dream_dross'), 1, 9 )" ] }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_DREAMER_DREAMDROSS_SPAWN_ONE",
+    "//": "Please, just spawn them one by one instead of doubling them...",
+    "effect": [
+      {
+        "u_spawn_item": "dreamer_dreamdross_single",
+        "use_item_group": true,
+        "suppress_message": true,
+        "force_equip": false
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "dreamer_dreamdross_single",
+    "entries": [ { "item": "scrap_dreamdross", "count": 1, "charges": 1 } ]
   }
 ]

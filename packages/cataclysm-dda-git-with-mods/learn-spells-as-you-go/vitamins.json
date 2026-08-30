@@ -4,7 +4,7 @@
     "type": "vitamin",
     "vit_type": "counter",
     "name": { "str": "Magically Exhaustion" },
-    "min": -20,
+    "min": -200,
     "max": 1000,
     "rate": "4 h"
   }
