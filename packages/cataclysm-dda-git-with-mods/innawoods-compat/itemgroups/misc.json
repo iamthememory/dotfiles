@@ -1,6 +1,6 @@
 [
   {
-    "id": "mining_rock_test",
+    "id": "mining_rock",
     "type": "item_group",
     "subtype": "collection",
     "items": [

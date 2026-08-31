@@ -140,5 +140,13 @@
     ],
     "tools": [ [ [ "water_boiling_heat", 8, "LIST" ] ], [ [ "screw_press", -1 ] ] ],
     "components": [ [ [ "sugar_beet", 3 ] ], [ [ "water_clean", 1 ], [ "water", 1 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "adobe_pallet_full_active",
+    "copy-from": "adobe_pallet_full_active",
+    "activity_level": "MODERATE_EXERCISE",
+    "time": "5 m",
+    "components": [ [ [ "soft_adobe_brick_active", 20 ] ], [ [ "frame_wood_light", 1 ] ] ]
   }
 ]
