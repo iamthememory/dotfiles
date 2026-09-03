@@ -20,6 +20,26 @@ index 623b8e649ab1..c878ab5795d9 100644
      "bash": {
        "str_min": 8,
        "str_max": 30,
+diff --git a/MST_Extra/item_groups.json b/MST_Extra/item_groups.json
+index edaee627e59e..c5e410bc80af 100644
+--- a/MST_Extra/item_groups.json
++++ b/MST_Extra/item_groups.json
+@@ -9,7 +9,14 @@
+     "id": "tools_survival",
+     "copy-from": "tools_survival",
+     "type": "item_group",
+-    "extend": { "items": [ [ "hobo_stove", 3 ], [ "tinder", 3 ], [ "canteen_wood", 2 ] ] }
++    "subtype": "collection",
++    "extend": {
++      "entries": [
++        { "item": "hobo_stove", "prob": 3 },
++        { "item": "tinder", "prob": 3 },
++        { "item": "canteen_wood", "prob": 2 }
++      ]
++    }
+   },
+   {
+     "id": "museum_primitive",
 diff --git a/MST_Extra/items/ammo.json b/MST_Extra/items/ammo.json
 index fc84351b1d87..e1de44b75ef5 100644
 --- a/MST_Extra/items/ammo.json

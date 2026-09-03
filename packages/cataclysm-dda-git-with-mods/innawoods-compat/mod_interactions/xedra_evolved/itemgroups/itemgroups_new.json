@@ -73,8 +73,8 @@
     "subtype": "distribution",
     "id": "default_innawood_zombie_items",
     "entries": [
-      { "item": "wicker_backpack", "prob": 2 },
-      { "group": "tools_common_small", "prob": 25, "entry-wrapper": "makeshift_sling" },
+      { "item": "wicker_backpack", "prob": 5 },
+      { "group": "tools_common_small", "prob": 25, "entry-wrapper": "trapper_pack" },
       { "item": "bandages_birchbark", "prob": 5 },
       { "group": "trash_forest", "prob": 80 },
       { "group": "renfield_food", "prob": 30, "count": [ 1, 3 ] },
