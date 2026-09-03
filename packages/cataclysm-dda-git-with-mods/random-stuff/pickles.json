@@ -7,11 +7,26 @@
     "transform_into": { "target": "pickled_egg", "container": "jar_glass_sealed", "target_charges": 10, "sealed": true }
   },
   {
+    "type": "recipe",
+    "result": "pickles_ferment_active",
+    "copy-from": "pickles_ferment_active",
+    "autolearn": true,
+    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "COOK", "level": 3 } ],
+    "tools": [ [ [ "surface_heat", 2, "LIST" ] ] ],
+    "components": [
+      [ [ "water_clean", 1 ] ],
+      [ [ "vinegar", 1 ] ],
+      [ [ "saline", 1 ], [ "salt", 2 ] ],
+      [ [ "jar_glass_sealed", 1 ] ],
+      [ [ "any_gherkin_cucumber", 10, "LIST" ] ]
+    ]
+  },
+  {
     "id": "pickles_ferment_active",
     "copy-from": "pickles_ferment_active",
     "type": "ITEM",
     "name": { "str": "fermenting pickle jar" },
-    "transform_into": { "target": "pickle", "container": "jar_glass_sealed", "target_charges": 8, "sealed": true }
+    "transform_into": { "target": "pickle", "container": "jar_glass_sealed", "target_charges": 10, "sealed": true }
   },
   {
     "id": "sauerkraut_ferment_active",

@@ -63,6 +63,7 @@
     "result": "latex",
     "copy-from": "latex",
     "autolearn": true,
+    "charges": 10,
     "qualities": [ { "id": "CONTAIN", "level": 1 }, { "id": "FINE_GRIND", "level": 1 } ],
     "components": [ [ [ "spurge", 20 ] ] ]
   },
