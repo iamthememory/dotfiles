@@ -1,18 +1,8 @@
 diff --git a/Arcana/item_groups/item_groups_vanilla.json b/Arcana/item_groups/item_groups_vanilla.json
-index be4e4e91ccfa..aac1e2ee407f 100644
+index 3754e83fa69c..aac1e2ee407f 100644
 --- a/Arcana/item_groups/item_groups_vanilla.json
 +++ b/Arcana/item_groups/item_groups_vanilla.json
-@@ -266,7 +266,8 @@
-     "id": "tools_robotics",
-     "copy-from": "tools_robotics",
-     "type": "item_group",
--    "extend": { "items": [ [ "recipe_lab_arcana", 2 ] ] }
-+    "subtype": "collection",
-+    "extend": { "entries": [ { "item": "recipe_lab_arcana", "prob": 2 } ] }
-   },
-   {
-     "id": "guns_energy",
-@@ -325,5 +326,20 @@
+@@ -326,5 +326,20 @@
      "copy-from": "survivorzed_extra",
      "type": "item_group",
      "extend": { "items": [ [ "triffid_garland", 1 ], [ "amulet_exotic", 1 ], [ "brooch_iridescent", 1 ] ] }
