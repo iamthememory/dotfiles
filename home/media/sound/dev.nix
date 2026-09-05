@@ -82,7 +82,6 @@ in
     deepfilternet
     delayarchitect
     dexed
-    diopser
     distrho-ports
     dragonfly-reverb
     drumgizmo
@@ -134,6 +133,7 @@ in
     molot-lite
     moospace
     neural-amp-modeler-lv2
+    nih-plug
     ninjas2
     noise-repellent
     nova-filters
