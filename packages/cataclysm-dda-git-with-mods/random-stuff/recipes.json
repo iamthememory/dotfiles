@@ -148,5 +148,24 @@
     "activity_level": "MODERATE_EXERCISE",
     "time": "5 m",
     "components": [ [ [ "soft_adobe_brick_active", 20 ] ], [ [ "frame_wood_light", 1 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "mattress",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_OTHER",
+    "skill_used": "tailor",
+    "difficulty": 6,
+    "time": "240 m",
+    "reversible": true,
+    "autolearn": true,
+    "using": [ [ "sewing_standard", 12 ] ],
+    "components": [
+      [ [ "sheet_cotton_patchwork", 7 ], [ "sheet_cotton", 7 ] ],
+      [ [ "cotton_patchwork", 4 ] ],
+      [ [ "sheet", 4 ] ],
+      [ [ "qt_wire", 20 ] ]
+    ]
   }
 ]
