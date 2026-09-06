@@ -69,7 +69,7 @@
 
   home.packages = with pkgs; [
     # A utility for syncing files over adb.
-    adb-sync
+    better-adb-sync
 
     # The Android SDK.
     #android-studio-full

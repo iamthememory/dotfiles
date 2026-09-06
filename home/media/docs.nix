@@ -9,7 +9,7 @@
 
     # Libreoffice, for ODTs, Microsoft-y documents, presentations, spreadsheets,
     # etc.
-    libreoffice-fresh
+    libreoffice
   ];
 
   # The default programs for opening various file types.

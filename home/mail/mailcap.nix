@@ -102,7 +102,7 @@
 
     # Libreoffice, for reading documents.
     # NOTE: This is still useful without a GUI, since it can view docx as text.
-    libreoffice-fresh
+    libreoffice
 
     # This provides pdftotext, along with a couple other PDF utilities.
     poppler-utils
