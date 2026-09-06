@@ -121,11 +121,8 @@
   # Enable fwupd for updating firmware.
   services.fwupd.enable = true;
 
-  # Extra configuration for journald.
-  services.journald.extraConfig = ''
-    # Always try to store journal data between boots.
-    Storage=persistent
-  '';
+  # Always try to store journal data between boots.
+  services.journald.settings.Journal.Storage = "persistent";
 
   # Enable smartd for monitoring disk health.
   services.smartd.enable = true;
