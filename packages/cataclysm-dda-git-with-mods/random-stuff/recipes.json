@@ -167,5 +167,30 @@
       [ [ "sheet", 4 ] ],
       [ [ "qt_wire", 20 ] ]
     ]
+  },
+  {
+    "type": "recipe",
+    "result": "water_clean",
+    "id_suffix": "bulk_boiling",
+    "name": "bulk %s",
+    "charges": 10,
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_DRINKS",
+    "skill_used": "cooking",
+    "autolearn": true,
+    "steps": [
+      {
+        "name": "Boiling",
+        "time": "5 m",
+        "//": "1u of water_boiling_heat takes 5 m minimum, heat at full power",
+        "activity_level": "NO_EXERCISE",
+        "qualities": [ { "id": "BOIL", "level": 1 } ],
+        "tools": [ [ [ "water_boiling_heat", 10, "LIST" ] ] ],
+        "batch_time_factors": [ 20, 1 ],
+        "attention": "unattended",
+        "max_time": "30 m"
+      }
+    ],
+    "components": [ [ [ "water", 10 ] ] ]
   }
 ]

@@ -4,7 +4,7 @@
     "type": "item_group",
     "subtype": "collection",
     "items": [
-      { "group": "mining_rock_roll", "count": [80, 81] }
+      { "group": "mining_rock_roll", "count": [130, 131] }
     ]
   },
   {
@@ -12,9 +12,11 @@
     "type": "item_group",
     "subtype": "distribution",
     "items": [
+      { "item": "material_sand", "prob": 8000 },
       { "item": "coal_lump", "prob": 7500, "charges": 1 },
       { "item": "rock", "prob": 4700 },
       { "item": "material_limestone", "prob": 2800 },
+      { "item": "clay_lump", "prob": 2000 },
       { "item": "rock_large", "prob": 200 },
       { "item": "sharp_rock", "prob": 100 },
       { "item": "chunk_feldspar", "prob": 80 },
@@ -61,8 +63,10 @@
     "type": "item_group",
     "subtype": "distribution",
     "items": [
+      { "item": "material_sand", "prob": 8000 },
       { "item": "coal_lump", "prob": 7500, "charges": 1 },
       { "item": "material_limestone", "prob": 2800 },
+      { "item": "clay_lump", "prob": 2000 },
       { "item": "sharp_rock", "prob": 100 },
       { "item": "chunk_feldspar", "prob": 80 },
       { "item": "chunk_galena", "prob": 60 },

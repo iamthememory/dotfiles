@@ -1,8 +1,10 @@
 Average amount per rock wall mined:
 
+40.0  material_sand
 37.5   coal_lump
 23.5   rock
 14     material_limestone
+10     clay_lump
  1     rock_large
  0.5   sharp_rock
  0.4   chunk_feldspar
@@ -43,14 +45,16 @@ Average amount per rock wall mined:
  0.005 amethyst
  0.005 alexandrite
 
-Average items: 80.105
+Average items: 130.105
 
 
 Normalized (x200):
 
+8000 material_sand
 7500 coal_lump
 4700 rock
 2800 material_limestone
+2000 clay_lump
 200  rock_large
 100  sharp_rock
 80   chunk_feldspar
@@ -90,3 +94,33 @@ Normalized (x200):
 1    aquamarine
 1    amethyst
 1    alexandrite
+
+
+Materials to dig dirt out fully:
+12.375 sand
+5.625 clay
+
+Materials to dig sand out fully:
+6511 sand
+18 clay
+
+Materials to dig clay out fully:
+11 sand
+60 clay
+
+Mix ratio:
+6 dirt
+1 sand
+1 clay
+
+Total:
+6596.25 sand
+111.75 clay
+
+Average:
+824.53125 sand
+13.96875 clay
+
+End choice:
+250 sand
+10 clay
