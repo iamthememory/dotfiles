@@ -1,30 +1,27 @@
 [
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_0",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_0",
     "recurrence": [ "20 h", "30 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= -20" ] }
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "create_electric_lighter",
-          "create_lighter",
-          "recover_pain",
-          "shocking_dash"
+          "recover_pain"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_0",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_0",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 1" ] }
             ]
           }
         ]
@@ -33,44 +30,30 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_1",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_1",
     "recurrence": [ "40 h", "60 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 1" ] }
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 7" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
           "animist_magic_fissile",
-          "chilling_touch",
-          "classless_easy_sleep_spell",
-          "classless_watch_spell",
-          "create_atomic_light",
-          "druid_woodshaft",
-          "electric_arts",
-          "eshaper_rockbolt",
-          "kelvinist_heat_food",
-          "magic_missile",
-          "overcharge_eyes",
-          "shadow_field",
-          "shocking_lash",
-          "summon_cats",
-          "taze",
-          "technomancer_gain_electronics_computer_spell",
-          "windrun",
           "wrathful_spirits"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_1",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_1",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 48" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
             ]
           }
         ]
@@ -79,53 +62,327 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_2",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_2",
     "recurrence": [ "60 h", "90 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 2" ] }
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "bleed",
+          "summon_wisps"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_detect_wizards",
+          "animist_summon_watcher",
+          "disruption_bolt",
+          "necrotic_gaze",
+          "recover_mana",
+          "rupture",
+          "summon_undead",
+          "summon_undead_swarm"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_add_evasion_spell",
+          "animist_cast_spells_when_silent",
+          "convert"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_do_psionic_damage_to_head",
+          "animist_luck_bone",
+          "animist_sense_outsiders",
+          "animist_slow_food_rotting_spell",
+          "life_detonation",
+          "spirit_walk"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_see_invisibility",
+          "animist_summon_decaying_boneclub",
+          "dominate"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_spirit_walking",
+          "smite"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 23" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "animist_mass_hiding_aoe",
+          "banishment_lesser"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 10" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "devour"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 11" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_ANIMIST_15",
+    "recurrence": [ "320 h", "480 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('ANIMIST') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'ANIMIST') ) / max( 1, u_spell_count('school': 'ANIMIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "soulrend"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_ANIMIST_15",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 16" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
           "bio_acidicspray",
-          "bleed",
-          "burning_hands",
-          "classless_clean_clothing_and_self",
-          "create_atomic_lamp",
-          "dark_sight",
-          "druid_anti_heat",
-          "druid_veggrasp",
-          "earthshaper_turning_of_earth",
-          "eshaper_piercing_bolt",
-          "eshaper_spawn_tools",
-          "frost_spray",
-          "glide_ice",
-          "jolt",
-          "kelvinist_firebolt",
-          "light_healing",
-          "magus_far_hand_pull",
-          "magus_light_target",
-          "magus_slowfall",
-          "magus_stop_attack_shield",
-          "phase_door",
-          "protection_aura",
-          "quantum_tunnel_lesser",
-          "seismic_stomp",
-          "stonefist",
-          "stormshaper_wall_of_fog",
-          "summon_wisps"
+          "light_healing"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_2",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_2",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 72" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
             ]
           }
         ]
@@ -134,58 +391,31 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_3",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_3",
     "recurrence": [ "80 h", "120 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 3" ] }
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "air_bubble",
-          "animist_detect_wizards",
-          "animist_summon_watcher",
           "biomancer_carrion_feast",
           "biomancer_eat_tons_of_food",
-          "biomancer_paralytic_dart",
-          "blinding_flash",
-          "classless_restore_crystal_mana",
-          "crystallize_mana",
-          "disruption_bolt",
-          "druid_goodberry",
-          "druid_traverse_the_wilds",
-          "earthshaper_boulder",
-          "earthshaper_danger_sense",
-          "earthshaper_pillar",
-          "eshaper_shardspray",
-          "ethereal_grasp",
-          "holographic_transposition",
-          "ice_shield",
-          "kelvinist_persuasion_spell",
-          "knock",
-          "magus_force_jar",
-          "magus_spiderclimb",
-          "necrotic_gaze",
-          "recover_mana",
-          "rupture",
-          "sound_bomb",
-          "storm_hammer",
-          "stormshaper_loud_voice_spell",
-          "summon_undead",
-          "summon_undead_swarm",
-          "windstrike"
+          "biomancer_paralytic_dart"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_3",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_3",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 96" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
             ]
           }
         ]
@@ -194,21 +424,20 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_4",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_4",
     "recurrence": [ "100 h", "150 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 4" ] }
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "acid_resistance",
-          "animist_add_evasion_spell",
-          "animist_cast_spells_when_silent",
           "bio_fleshpouch",
           "biomancer_caustic_aura",
           "biomancer_coagulant_weave",
@@ -217,9 +446,354 @@
           "biomancer_slow_bleeding",
           "biomancer_swim_frog",
           "biomancer_visceral_projection",
-          "clairvoyance",
-          "cone_cold",
-          "convert",
+          "pain_split"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_get_more_blood",
+          "biomancer_scalpel_fingers"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "bio_grotesque",
+          "biomancer_giant_growth",
+          "biomancer_lashing_tentacles",
+          "vicious_tentacle"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 19" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_caustic_blood"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 8" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "bio_bonespear"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 23" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_baleful_polymorph"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 10" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_hyper_regeneration",
+          "biomancer_remove_instability"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 11" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_BIOMANCER_12",
+    "recurrence": [ "260 h", "390 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('BIOMANCER') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'BIOMANCER') ) / max( 1, u_spell_count('school': 'BIOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "biomancer_control_mutations"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_BIOMANCER_12",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 13" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_woodshaft",
+          "summon_cats"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('DRUID') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_anti_heat",
+          "druid_veggrasp"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('DRUID') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_goodberry",
+          "druid_traverse_the_wilds"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('DRUID') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
           "druid_bearmantle",
           "druid_bramble_spear",
           "druid_disinfectant",
@@ -230,40 +804,15 @@
           "druid_rootstrike",
           "druid_tornskin",
           "druid_water_walking",
-          "earthshaper_fortitude_of_stone",
-          "earthshaper_harden_earth",
-          "earthshaper_remove_corpses",
-          "earthshaper_repair_metal_stone",
-          "earthshaper_stoneskin",
-          "electric_eye",
-          "eshaper_shardstorm",
-          "explosive_decompression",
-          "fireball",
-          "hoary_blast",
-          "invisibility",
-          "kelvinist_anti_cold",
-          "kelvinist_anti_heat",
-          "kelvinist_summon_flamesword",
-          "magus_mana_beam",
-          "magus_summon_impact_sling",
-          "mirror_image",
-          "move_earth",
-          "pain_split",
-          "point_flare",
-          "recover_sleepiness",
-          "stormshaper_cloak_of_fog",
-          "stormshaper_cloak_of_frog",
-          "stormshaper_repelling_arc",
-          "technomancer_conjure_radio",
-          "technomancer_pain_ignore"
+          "recover_sleepiness"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_4",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_4",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 120" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
             ]
           }
         ]
@@ -272,51 +821,1957 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_5",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_5",
     "recurrence": [ "120 h", "180 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 5" ] }
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('DRUID') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "animist_do_psionic_damage_to_head",
-          "animist_luck_bone",
-          "animist_sense_outsiders",
-          "animist_slow_food_rotting_spell",
-          "biomancer_get_more_blood",
-          "biomancer_scalpel_fingers",
-          "bless",
           "druid_bandage_heal",
           "druid_breathing_underwater",
           "druid_healing_herb",
           "druid_naturebow1",
           "druid_summon_brambles",
           "druid_wood_living_tree_spell",
-          "druidic_healing",
-          "electric_waves",
+          "druidic_healing"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('DRUID') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_summon_tanglevine",
+          "druid_whisper_leaves",
+          "druidic_regrowth",
+          "purify_seed",
+          "summon_wolf_druid"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('DRUID') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "cause_rot",
+          "druid_healing",
+          "druid_thorn_skin"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] },
+        { "math": [ "u_school_level('DRUID') >= 23" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_beguile_savage_beast",
+          "druid_create_temporary_spring"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 10" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('DRUID') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_renew_forest_spell",
+          "summon_bear"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 11" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_DRUID_12",
+    "recurrence": [ "260 h", "390 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('DRUID') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'DRUID') ) / max( 1, u_spell_count('school': 'DRUID') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "druid_turn_tree_into_treant"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_DRUID_12",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 13" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "eshaper_rockbolt"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "earthshaper_turning_of_earth",
+          "eshaper_piercing_bolt",
+          "eshaper_spawn_tools",
+          "seismic_stomp",
+          "stonefist"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "earthshaper_boulder",
+          "earthshaper_danger_sense",
+          "earthshaper_pillar",
+          "eshaper_shardspray"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "clairvoyance",
+          "earthshaper_fortitude_of_stone",
+          "earthshaper_harden_earth",
+          "earthshaper_remove_corpses",
+          "earthshaper_repair_metal_stone",
+          "earthshaper_stoneskin",
+          "eshaper_shardstorm",
+          "move_earth"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
           "eshaper_impalement",
+          "reactive_armor",
+          "recover_stamina"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "eshaper_crystal_wrap",
+          "eshaper_melee_damage",
+          "summon_eshaper_golem"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 19" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "pertifying_touch",
+          "shape_of_dust"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 8" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "earthshaper_diggable_teleport",
+          "earthshaper_reveal_world_map",
+          "earthshaper_sleep_in_earth"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_EARTHSHAPER_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] },
+        { "math": [ "u_school_level('EARTHSHAPER') >= 23" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'EARTHSHAPER') ) / max( 1, u_spell_count('school': 'EARTHSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "earthshaper_granite_aegis"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_EARTHSHAPER_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 10" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_0",
+    "recurrence": [ "20 h", "30 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "create_lighter"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_0",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 1" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 7" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "chilling_touch",
+          "kelvinist_heat_food"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "burning_hands",
+          "frost_spray",
+          "glide_ice",
+          "kelvinist_firebolt"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "ice_shield",
+          "kelvinist_persuasion_spell"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "cone_cold",
+          "fireball",
+          "hoary_blast",
+          "kelvinist_anti_cold",
+          "kelvinist_anti_heat",
+          "kelvinist_summon_flamesword",
+          "point_flare"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
           "frost_armor",
           "kelvinist_extinguish_fire_spell",
-          "kelvinist_flamebreath",
-          "laze",
-          "life_detonation",
+          "kelvinist_flamebreath"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "ice_spike",
+          "kelvinist_summon_freezer_spell"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 19" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "freezing_touch"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 8" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "kelvinist_no_emotion_spell",
+          "nova_flare"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_KELVINIST_15",
+    "recurrence": [ "320 h", "480 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('KELVINIST') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'KELVINIST') ) / max( 1, u_spell_count('school': 'KELVINIST') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "kelvinist_set_everyone_on_fire"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_KELVINIST_15",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 16" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "magic_missile",
+          "shadow_field"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('MAGUS') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "magus_far_hand_pull",
+          "magus_light_target",
+          "magus_slowfall",
+          "magus_stop_attack_shield",
+          "phase_door"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('MAGUS') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "magus_force_jar",
+          "magus_spiderclimb"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('MAGUS') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "magus_mana_beam",
+          "magus_summon_impact_sling"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('MAGUS') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
           "magus_escape",
           "magus_mana_blast",
           "magus_mana_bolt",
           "magus_push_nearby_enemies_back",
           "magus_ranged_increase",
           "magus_silence",
-          "magus_teleport_mark",
-          "obfuscated_body",
-          "reactive_armor",
-          "recover_stamina",
-          "spirit_walk",
+          "magus_teleport_mark"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('MAGUS') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "magus_mage_conjured_armor",
+          "magus_slow"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] },
+        { "math": [ "u_school_level('MAGUS') >= 19" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "magus_mage_conjured_blade"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 8" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('MAGUS') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "focused_bolt",
+          "magus_diamond_imbuement",
+          "magus_haste",
+          "magus_permanent_light",
+          "magus_word_of_recall"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_MAGUS_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('MAGUS') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'MAGUS') ) / max( 1, u_spell_count('school': 'MAGUS') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "gravity_well",
+          "magus_cannot_move_attack_or_damage_target"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_MAGUS_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 11" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_0",
+    "recurrence": [ "20 h", "30 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "debug_bionic",
+          "debug_hp",
+          "debug_stamina"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_0",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 1" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "u_school_level('NONE') >= 7" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "classless_easy_sleep_spell",
+          "classless_watch_spell",
+          "create_atomic_light",
+          "test_area_pull_all",
+          "test_area_pull_field",
+          "test_area_push"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('NONE') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "classless_clean_clothing_and_self",
+          "dark_sight",
+          "protection_aura"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('NONE') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "blinding_flash",
+          "classless_restore_crystal_mana",
+          "crystallize_mana",
+          "ethereal_grasp",
+          "sound_bomb"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('NONE') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "acid_resistance",
+          "debug_teleport_to"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('NONE') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "obfuscated_body"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('NONE') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "classless_dispel_magic",
+          "mana_upgrade_efficiency_01",
+          "mana_upgrade_regeneration_01",
+          "mana_upgrade_sensitivity_01",
+          "thought_shield"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] },
+        { "math": [ "u_school_level('NONE') >= 23" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "mana_upgrade_efficiency_02",
+          "mana_upgrade_regeneration_02",
+          "mana_upgrade_sensitivity_02"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 10" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_10",
+    "recurrence": [ "220 h", "330 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('NONE') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "classless_disjunction",
+          "megablast"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_10",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 11" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_12",
+    "recurrence": [ "260 h", "390 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('NONE') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "example_template"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_12",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 13" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_NONE_15",
+    "recurrence": [ "320 h", "480 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('NONE') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'NONE') ) / max( 1, u_spell_count('school': 'NONE') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "translocate_self"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_NONE_15",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 16" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_0",
+    "recurrence": [ "20 h", "30 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "create_electric_lighter",
+          "shocking_dash"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_0",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 1" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 7" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "electric_arts",
+          "shocking_lash",
+          "windrun"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "jolt",
+          "stormshaper_wall_of_fog"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "air_bubble",
+          "storm_hammer",
+          "stormshaper_loud_voice_spell",
+          "windstrike"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "electric_eye",
+          "explosive_decompression",
+          "stormshaper_cloak_of_fog",
+          "stormshaper_cloak_of_frog",
+          "stormshaper_repelling_arc"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "electric_waves",
           "stormfist",
+          "toxtricity"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_5",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_6",
+    "recurrence": [ "140 h", "210 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "lightning_blast",
+          "lightning_bolt",
+          "storm_shipwrecker",
+          "storm_superconductor",
+          "summon_teravolt"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_6",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_7",
+    "recurrence": [ "160 h", "240 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 7" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 19" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "stormshaper_heart_of_hurricane",
+          "vacuum_decompression"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_7",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 8" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_8",
+    "recurrence": [ "180 h", "270 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "stormshaper_ionization"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_8",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_STORMSHAPER_9",
+    "recurrence": [ "200 h", "300 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 9" ] },
+        { "math": [ "u_school_level('STORMSHAPER') >= 23" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'STORMSHAPER') ) / max( 1, u_spell_count('school': 'STORMSHAPER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "lightning_storm"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_STORMSHAPER_9",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 10" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_1",
+    "recurrence": [ "40 h", "60 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 1" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "overcharge_eyes",
+          "taze",
+          "technomancer_gain_electronics_computer_spell"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_1",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 2" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_2",
+    "recurrence": [ "60 h", "90 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 2" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 9" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "create_atomic_lamp",
+          "quantum_tunnel_lesser"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_2",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 3" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_3",
+    "recurrence": [ "80 h", "120 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 3" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 11" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "holographic_transposition",
+          "knock"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_3",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 4" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_4",
+    "recurrence": [ "100 h", "150 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 4" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 13" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "invisibility",
+          "mirror_image",
+          "technomancer_conjure_radio",
+          "technomancer_pain_ignore"
+        ],
+        "type": "spell",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
+        "true_eocs": [
+          {
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_4",
+            "effect": [
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 5" ] }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_5",
+    "recurrence": [ "120 h", "180 h" ],
+    "condition": {
+      "and": [
+        { "u_has_trait": "learn_as_you_go_magiclysm" },
+        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
+        { "math": [ "u_skill('spellcraft') >= 5" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 15" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
+      ]
+    },
+    "effect": [
+      {
+        "u_roll_remainder": [
+          "bless",
+          "laze",
           "summon_floating_disk",
           "summon_magic_motorcycle",
           "technomancer_dexterity_buff_spell",
@@ -325,16 +2780,15 @@
           "technomancer_perception_buff_spell",
           "technomancer_recharge_vehicle",
           "technomancer_strength_buff_spell",
-          "technomancer_welder",
-          "toxtricity"
+          "technomancer_welder"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_5",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_5",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 144" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 6" ] }
             ]
           }
         ]
@@ -343,60 +2797,33 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_6",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_6",
     "recurrence": [ "140 h", "210 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 6" ] }
+        { "math": [ "u_skill('spellcraft') >= 6" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 17" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "animist_see_invisibility",
-          "animist_summon_decaying_boneclub",
-          "bio_grotesque",
-          "biomancer_giant_growth",
-          "biomancer_lashing_tentacles",
-          "classless_dispel_magic",
-          "dominate",
-          "druid_summon_tanglevine",
-          "druid_whisper_leaves",
-          "druidic_regrowth",
-          "eshaper_crystal_wrap",
-          "eshaper_melee_damage",
-          "ice_spike",
-          "kelvinist_summon_freezer_spell",
-          "lightning_blast",
-          "lightning_bolt",
-          "magus_mage_conjured_armor",
-          "magus_slow",
-          "mana_upgrade_efficiency_01",
-          "mana_upgrade_regeneration_01",
-          "mana_upgrade_sensitivity_01",
-          "purify_seed",
           "recover_bionic_power",
-          "storm_shipwrecker",
-          "storm_superconductor",
-          "summon_eshaper_golem",
-          "summon_teravolt",
-          "summon_wolf_druid",
           "technomancer_create_ups_connection",
           "technomancer_far_sight",
           "technomancer_robot_shutdown",
-          "thought_shield",
-          "vicious_tentacle",
           "x-ray"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_6",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_6",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 168" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 7" ] }
             ]
           }
         ]
@@ -405,36 +2832,32 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_7",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_7",
     "recurrence": [ "160 h", "240 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 7" ] }
+        { "math": [ "u_skill('spellcraft') >= 7" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 19" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "biomancer_caustic_blood",
-          "freezing_touch",
+          "holy_blade",
           "improved_knock",
-          "magus_mage_conjured_blade",
-          "pertifying_touch",
-          "shape_of_dust",
-          "stormshaper_heart_of_hurricane",
           "synaptic_stimulation",
-          "technomancer_conjure_ups",
-          "vacuum_decompression"
+          "technomancer_conjure_ups"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_7",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_7",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 192" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 8" ] }
             ]
           }
         ]
@@ -443,44 +2866,29 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_8",
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_8",
     "recurrence": [ "180 h", "270 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 8" ] }
+        { "math": [ "u_skill('spellcraft') >= 8" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 21" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "animated_blade",
-          "animist_spirit_walking",
-          "bio_bonespear",
-          "cause_rot",
-          "druid_healing",
-          "druid_thorn_skin",
-          "earthshaper_diggable_teleport",
-          "earthshaper_reveal_world_map",
-          "earthshaper_sleep_in_earth",
-          "focused_bolt",
-          "kelvinist_no_emotion_spell",
-          "magus_diamond_imbuement",
-          "magus_haste",
-          "magus_permanent_light",
-          "magus_word_of_recall",
-          "nova_flare",
-          "smite",
-          "stormshaper_ionization"
+          "animated_blade"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_8",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_8",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 216" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 9" ] }
             ]
           }
         ]
@@ -489,79 +2897,29 @@
   },
   {
     "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_9",
-    "recurrence": [ "200 h", "300 h" ],
+    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_TECHNOMANCER_12",
+    "recurrence": [ "260 h", "390 h" ],
     "condition": {
       "and": [
         { "u_has_trait": "learn_as_you_go_magiclysm" },
         { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 9" ] }
+        { "math": [ "u_skill('spellcraft') >= 10" ] },
+        { "math": [ "u_school_level('TECHNOMANCER') >= 25" ] },
+        { "math": [ "( 20 + u_spell_level_sum('school': 'TECHNOMANCER') ) / max( 1, u_spell_count('school': 'TECHNOMANCER') ) >= 10" ] }
       ]
     },
     "effect": [
       {
         "u_roll_remainder": [
-          "animist_mass_hiding_aoe",
-          "banishment_lesser",
-          "biomancer_baleful_polymorph",
-          "druid_beguile_savage_beast",
-          "druid_create_temporary_spring",
-          "earthshaper_granite_aegis",
-          "lightning_storm",
-          "mana_upgrade_efficiency_02",
-          "mana_upgrade_regeneration_02",
-          "mana_upgrade_sensitivity_02"
+          "technomancer_arete_buff_spell"
         ],
         "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
+        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",
         "true_eocs": [
           {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_9",
+            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_TECHNOMANCER_12",
             "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 240" ] }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "type": "effect_on_condition",
-    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_10",
-    "recurrence": [ "220 h", "330 h" ],
-    "condition": {
-      "and": [
-        { "u_has_trait": "learn_as_you_go_magiclysm" },
-        { "math": [ "u_vitamin('learn_as_you_go_exhaustion') <= 0" ] },
-        { "math": [ "u_skill('spellcraft') >= 10" ] }
-      ]
-    },
-    "effect": [
-      {
-        "u_roll_remainder": [
-          "biomancer_hyper_regeneration",
-          "biomancer_remove_instability",
-          "classless_disjunction",
-          "devour",
-          "druid_renew_forest_spell",
-          "gravity_well",
-          "magus_cannot_move_attack_or_damage_target",
-          "megablast",
-          "summon_bear",
-          "biomancer_control_mutations",
-          "druid_turn_tree_into_treant",
-          "technomancer_arete_buff_spell",
-          "kelvinist_set_everyone_on_fire",
-          "soulrend",
-          "translocate_self"
-        ],
-        "type": "spell",
-        "message": "A moment of realization strikes you, as you realize how you might cast %s.",
-        "true_eocs": [
-          {
-            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_10",
-            "effect": [
-              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 264" ] }
+              { "math": [ "u_vitamin('learn_as_you_go_exhaustion') += 24 * 13" ] }
             ]
           }
         ]

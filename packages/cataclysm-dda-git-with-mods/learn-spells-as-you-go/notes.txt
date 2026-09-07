@@ -1,0 +1,84 @@
+# Shell
+
+
+cd data/mods/Magiclysm
+jq -s 'add | map(select(.type == "SPELL"))' **/*.json > /tmp/spelldata.json
+jq -s 'add | map(select(has("use_action"))) | map(.use_action.spells) | flatten | sort' items/spell*.json | uniq > /tmp/spellnames.json
+
+
+# Python
+
+
+import collections
+import json
+
+f = open('/tmp/spelldata.json', 'r')
+spelldata = json.load(f)
+f.close()
+
+f = open('/tmp/spellnames.json', 'r')
+spellnames = json.load(f)
+f.close()
+
+spells = {}
+
+for spell in spelldata:
+    if 'id' in spell:
+        spells[spell['id']] = spell
+    else:
+        spells[spell['abstract']] = spell
+
+for id,spell in spells.items():
+    if 'copy-from' in spell:
+        spells[id] = spells[spell['copy-from']] | spell
+
+filteredspells = {}
+
+for id,spell in spells.items():
+    if id in spellnames:
+        filteredspells[id] = spell
+
+spellclasses = collections.defaultdict(lambda: collections.defaultdict(set))
+
+for id,spell in filteredspells.items():
+    spellclasses[spell['spell_class'] if 'spell_class' in spell else 'NONE'][spell['difficulty'] if 'difficulty' in spell else 0].add(id)
+
+with open('/tmp/output.json', 'w') as f:
+    print('[', file=f)
+    for spellclass in sorted(spellclasses.keys()):
+        for spelllevel in sorted(spellclasses[spellclass].keys()):
+            print('  {', file=f)
+            print('    "type": "effect_on_condition",', file=f)
+            print('    "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_', spellclass, '_', spelllevel, '",', sep='', file=f)
+            print('    "recurrence": [ "', (spelllevel + 1) * 20, ' h", "', (spelllevel + 1) * 30, ' h" ],', sep='', file=f)
+            print('    "condition": {', file=f)
+            print('      "and": [', file=f)
+            print('        { "u_has_trait": "learn_as_you_go_magiclysm" },', file=f)
+            print('        { "math": [ "u_vitamin(\'learn_as_you_go_exhaustion\') <= 0" ] },', file=f)
+            if spelllevel > 0:
+                print('        { "math": [ "u_skill(\'spellcraft\') >= ', min(10, spelllevel), '" ] },', sep='', file=f)
+            if spelllevel > 2 or (spelllevel - 1) in spellclasses[spellclass]:
+                print('        { "math": [ "u_school_level(\'', spellclass, '\') >= ', 5 + 2*min(10, spelllevel), '" ] },', sep='', file=f)
+            print('        { "math": [ "( 20 + u_spell_level_sum(\'school\': \'', spellclass, '\') ) / max( 1, u_spell_count(\'school\': \'', spellclass, '\') ) >= 10" ] }', sep='', file=f)
+            print('      ]', file=f)
+            print('    },', file=f)
+            print('    "effect": [', file=f)
+            print('      {', file=f)
+            print('        "u_roll_remainder": [', file=f)
+            s = ',\n'.join('          "' + name + '"' for name in sorted(spellclasses[spellclass][spelllevel]))
+            print(s, file=f)
+            print('        ],', file=f)
+            print('        "type": "spell",', file=f)
+            print('        "message": "A moment of inspiration strikes you, and you realize how you might cast %s.",', file=f)
+            print('        "true_eocs": [', file=f)
+            print('          {', file=f)
+            print('            "id": "EOC_LEARN_AS_YOU_GO_MAGICLYSM_VITADJUST_', spellclass, '_', spelllevel, '",', sep='', file=f)
+            print('            "effect": [', file=f)
+            print('              { "math": [ "u_vitamin(\'learn_as_you_go_exhaustion\') += 24 * ', spelllevel + 1, '" ] }', sep='', file=f)
+            print('            ]', file=f)
+            print('          }', file=f)
+            print('        ]', file=f)
+            print('      }', file=f)
+            print('    ]', file=f)
+            print('  },', file=f)
+    print(']', file=f)

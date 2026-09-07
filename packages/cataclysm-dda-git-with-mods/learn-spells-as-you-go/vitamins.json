@@ -6,6 +6,6 @@
     "name": { "str": "Magically Exhaustion" },
     "min": -200,
     "max": 1000,
-    "rate": "4 h"
+    "rate": "12 h"
   }
 ]

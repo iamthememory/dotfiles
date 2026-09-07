@@ -1,9 +1,14 @@
 diff --git a/Mana-Cores/enchantments.json b/Mana-Cores/enchantments.json
-index e3e11ae90912..e4f53b773273 100644
+index e3e11ae90912..8b27703a8251 100644
 --- a/Mana-Cores/enchantments.json
 +++ b/Mana-Cores/enchantments.json
-@@ -6,7 +6,7 @@
- 			{ "value": "LEARNING_FOCUS", "multiply": 0.02 }
+@@ -3,134 +3,143 @@
+ 		"type": "enchantment",
+ 		"id": "MANACORE1_BUFF",
+ 		"values": [
+-			{ "value": "LEARNING_FOCUS", "multiply": 0.02 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.02 },
++			{ "value": "MAX_MANA", "multiply": 0.25 }
  		]
  	},
 -	
@@ -11,8 +16,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE1_BUFF",
-@@ -14,16 +14,16 @@
- 			{ "value": "MAX_MANA", "multiply": -0.5 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": -0.5 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.01 },
++			{ "value": "MAX_MANA", "multiply": 0.125 }
  		]
  	},
 -	
@@ -22,8 +29,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE2_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 0.1 },
+-			{ "value": "MAX_MANA", "multiply": 0.1 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.05 },
- 			{ "value": "MAX_MANA", "multiply": 0.1 }
++			{ "value": "MAX_MANA", "multiply": 0.5 }
  		]
  	},
 -	
@@ -31,8 +39,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE2_BUFF",
-@@ -31,16 +31,16 @@
- 			{ "value": "MAX_MANA", "multiply": -0.45 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": -0.45 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.025 },
++			{ "value": "MAX_MANA", "multiply": 0.25 }
  		]
  	},
 -	
@@ -42,8 +52,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE3_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 0.25 },
+-			{ "value": "MAX_MANA", "multiply": 0.25 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.1 },
- 			{ "value": "MAX_MANA", "multiply": 0.25 }
++			{ "value": "MAX_MANA", "multiply": 0.75 }
  		]
  	},
 -	
@@ -51,8 +62,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE3_BUFF",
-@@ -48,16 +48,16 @@
- 			{ "value": "MAX_MANA", "multiply": -0.375 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": -0.375 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.05 },
++			{ "value": "MAX_MANA", "multiply": 0.375 }
  		]
  	},
 -	
@@ -62,8 +75,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE4_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 0.5 },
+-			{ "value": "MAX_MANA", "multiply": 0.4 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.15 },
- 			{ "value": "MAX_MANA", "multiply": 0.4 }
++			{ "value": "MAX_MANA", "multiply": 1 }
  		]
  	},
 -	
@@ -71,8 +85,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE4_BUFF",
-@@ -65,16 +65,16 @@
- 			{ "value": "MAX_MANA", "multiply": -0.3 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": -0.3 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.075 },
++			{ "value": "MAX_MANA", "multiply": 0.5 }
  		]
  	},
 -	
@@ -82,8 +98,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE5_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 0.8 },
+-			{ "value": "MAX_MANA", "multiply": 0.65 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.25 },
- 			{ "value": "MAX_MANA", "multiply": 0.65 }
++			{ "value": "MAX_MANA", "multiply": 1.25 }
  		]
  	},
 -	
@@ -91,8 +108,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE5_BUFF",
-@@ -82,16 +82,16 @@
- 			{ "value": "MAX_MANA", "multiply": -0.175 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": -0.175 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.125 },
++			{ "value": "MAX_MANA", "multiply": 0.625 }
  		]
  	},
 -	
@@ -102,8 +121,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE6_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 1.1 },
+-			{ "value": "MAX_MANA", "multiply": 1 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.3 },
- 			{ "value": "MAX_MANA", "multiply": 1 }
++			{ "value": "MAX_MANA", "multiply": 1.5 }
  		]
  	},
 -	
@@ -111,8 +131,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE6_BUFF",
-@@ -99,16 +99,16 @@
- 			{ "value": "MAX_MANA", "multiply": 0 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": 0 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.15 },
++			{ "value": "MAX_MANA", "multiply": 0.75 }
  		]
  	},
 -	
@@ -122,8 +144,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE7_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 2 },
+-			{ "value": "MAX_MANA", "multiply": 3 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.35 },
- 			{ "value": "MAX_MANA", "multiply": 3 }
++			{ "value": "MAX_MANA", "multiply": 1.75 }
  		]
  	},
 -	
@@ -131,8 +154,10 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE7_BUFF",
-@@ -116,16 +116,16 @@
- 			{ "value": "MAX_MANA", "multiply": 1 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": 1 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.175 },
++			{ "value": "MAX_MANA", "multiply": 0.875 }
  		]
  	},
 -	
@@ -142,8 +167,9 @@ index e3e11ae90912..e4f53b773273 100644
  		"id": "MANACORE8_BUFF",
  		"values": [
 -			{ "value": "LEARNING_FOCUS", "multiply": 4 },
+-			{ "value": "MAX_MANA", "multiply": 7 }
 +			{ "value": "LEARNING_FOCUS", "multiply": 0.4 },
- 			{ "value": "MAX_MANA", "multiply": 7 }
++			{ "value": "MAX_MANA", "multiply": 2 }
  		]
  	},
 -	
@@ -151,18 +177,20 @@ index e3e11ae90912..e4f53b773273 100644
  	{
  		"type": "enchantment",
  		"id": "CRACKED_MANACORE8_BUFF",
-@@ -133,4 +133,4 @@
- 			{ "value": "MAX_MANA", "multiply": 3 }
+ 		"values": [
+-			{ "value": "MAX_MANA", "multiply": 3 }
++			{ "value": "LEARNING_FOCUS", "multiply": 0.2 },
++			{ "value": "MAX_MANA", "multiply": 1 }
  		]
  	}
 -]
 \ No newline at end of file
 +]
 diff --git a/Mana-Cores/eoc.json b/Mana-Cores/eoc.json
-index b618315b7997..63535ecf80b8 100644
+index b618315b7997..a9565113dc90 100644
 --- a/Mana-Cores/eoc.json
 +++ b/Mana-Cores/eoc.json
-@@ -15,24 +15,20 @@
+@@ -15,24 +15,21 @@
  			{ "run_eocs": [ "CORE1_DEGRADE_CHECK" ] }
  		]
  	},
@@ -177,6 +205,7 @@ index b618315b7997..63535ecf80b8 100644
 +		"effect":
  		[
  			{ "u_message": "You breakthrough!", "type": "good" },
++			{ "math": [ "u_pain() += rand(20) + 5" ] },
  			{ "switch": { "math": [ "u_manacoretier" ] },
 -			"cases": 
 +			"cases":
@@ -190,7 +219,7 @@ index b618315b7997..63535ecf80b8 100644
  					{ "run_eocs": [ "CORE2_DEGRADE_CHECK" ] },
  					{ "math": [ "u_impurities_soft_cap", "=", "750" ] },
  					{ "math": [ "u_vitamin('impurities')", "=", "675" ] }
-@@ -43,7 +39,6 @@
+@@ -43,7 +40,6 @@
  				"effect": [
  					{ "math": [ "u_manacoretier", "=", "3" ] },
  					{ "u_add_trait": "MANACORE3" },
@@ -198,7 +227,7 @@ index b618315b7997..63535ecf80b8 100644
  					{ "run_eocs": [ "CORE3_DEGRADE_CHECK" ] },
  					{ "math": [ "u_impurities_soft_cap", "=", "1000" ] },
  					{ "math": [ "u_vitamin('impurities')", "=", "900" ] }
-@@ -54,7 +49,6 @@
+@@ -54,7 +50,6 @@
  				"effect": [
  					{ "math": [ "u_manacoretier", "=", "4" ] },
  					{ "u_add_trait": "MANACORE4" },
@@ -206,7 +235,7 @@ index b618315b7997..63535ecf80b8 100644
  					{ "run_eocs": [ "CORE4_DEGRADE_CHECK" ] },
  					{ "math": [ "u_impurities_soft_cap", "=", "1500" ] },
  					{ "math": [ "u_vitamin('impurities')", "=", "1350" ] }
-@@ -65,7 +59,6 @@
+@@ -65,7 +60,6 @@
  				"effect": [
  					{ "math": [ "u_manacoretier", "=", "5" ] },
  					{ "u_add_trait": "MANACORE5" },
@@ -214,7 +243,7 @@ index b618315b7997..63535ecf80b8 100644
  					{ "run_eocs": [ "CORE5_DEGRADE_CHECK" ] },
  					{ "math": [ "u_impurities_soft_cap", "=", "2000" ] },
  					{ "math": [ "u_vitamin('impurities')", "=", "1800" ] }
-@@ -76,7 +69,6 @@
+@@ -76,7 +70,6 @@
  				"effect": [
  					{ "math": [ "u_manacoretier", "=", "6" ] },
  					{ "u_add_trait": "MANACORE6" },
@@ -222,7 +251,7 @@ index b618315b7997..63535ecf80b8 100644
  					{ "run_eocs": [ "CORE6_DEGRADE_CHECK" ] },
  					{ "math": [ "u_impurities_soft_cap", "=", "3500" ] },
  					{ "math": [ "u_vitamin('impurities')", "=", "3150" ] }
-@@ -87,7 +79,6 @@
+@@ -87,7 +80,6 @@
  				"effect": [
  					{ "math": [ "u_manacoretier", "=", "7" ] },
  					{ "u_add_trait": "MANACORE7" },
@@ -230,7 +259,7 @@ index b618315b7997..63535ecf80b8 100644
  					{ "run_eocs": [ "CORE7_DEGRADE_CHECK" ] },
  					{ "math": [ "u_impurities_soft_cap", "=", "5000" ] },
  					{ "math": [ "u_vitamin('impurities')", "=", "4500" ] }
-@@ -95,6 +86,16 @@
+@@ -95,14 +87,26 @@
  				}
  			]
  			}
@@ -247,8 +276,10 @@ index b618315b7997..63535ecf80b8 100644
  		],
  		"false_effect":
  		[
-@@ -102,7 +103,7 @@
+ 			{ "u_message": "You fail your breakthrough!", "type": "bad"	},
  			{ "u_message": "You feel your mana core vibrate!", "type": "bad" },
++			{ "math": [ "u_pain() += rand(50) + 10" ] },
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(8)" ] } },
  			{ "switch": { "math": [ "u_manacoretier" ] },
  			"cases":
 -			[		
@@ -256,7 +287,7 @@ index b618315b7997..63535ecf80b8 100644
  				{
  				"case": 1,
  				"effect": [
-@@ -142,21 +143,30 @@
+@@ -142,207 +146,194 @@
  			] }
  		]
  	},
@@ -272,6 +303,7 @@ index b618315b7997..63535ecf80b8 100644
 +		"effect":
  		[
  			{ "u_message": "You feel as though the world itself is connected to you. You have broken through what many consider the end.", "type": "good" },
++			{ "math": [ "u_pain() += rand(50) + 20" ] },
  			{ "math": [ "u_manacoretier", "=", "8" ] },
  			{ "u_add_trait": "MANACORE8" },
 -			{ "u_lose_trait": "MANACORE7" },
@@ -292,7 +324,9 @@ index b618315b7997..63535ecf80b8 100644
  		],
  		"false_effect":
  		[
-@@ -164,167 +174,158 @@
+ 		{ "u_message": "You fail your breakthrough!", "type": "bad"	},
++		{ "math": [ "u_pain() += rand(100) + 40" ] },
++		{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(8)" ] } },
  		{ "math": [ "u_vitamin('impurities')", "+=", "2250" ] }
  		]
  	},
@@ -305,14 +339,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 1" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 1250" ] }, { "math": [ "u_manacoretier == 1" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 1" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 1" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE1CRACKED" },
 -			{ "u_lose_trait": "MANACORE1" }
-+			{ "u_add_trait": "MANACORE1CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(20) + 10" ] }
  		]
  	},
 -	
@@ -324,14 +360,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 2" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 1875" ] }, { "math": [ "u_manacoretier == 2" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 2" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 2" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE2CRACKED" },
 -			{ "u_lose_trait": "MANACORE2" }
-+			{ "u_add_trait": "MANACORE2CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(25) + 10" ] }
  		]
  	},
 -	
@@ -343,14 +381,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 3" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 2500" ] }, { "math": [ "u_manacoretier == 3" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 3" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*2" ] }, { "math": [ "u_manacoretier == 3" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE3CRACKED" },
 -			{ "u_lose_trait": "MANACORE3" }
-+			{ "u_add_trait": "MANACORE3CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(30) + 10" ] }
  		]
  	},
 -	
@@ -362,14 +402,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 4" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 3750" ] }, { "math": [ "u_manacoretier == 4" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 4" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*2" ] }, { "math": [ "u_manacoretier == 4" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE4CRACKED" },
 -			{ "u_lose_trait": "MANACORE4" }
-+			{ "u_add_trait": "MANACORE4CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(35) + 10" ] }
  		]
  	},
 -	
@@ -381,14 +423,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 5" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 5000" ] }, { "math": [ "u_manacoretier == 5" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 5" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*2" ] }, { "math": [ "u_manacoretier == 5" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE5CRACKED" },
 -			{ "u_lose_trait": "MANACORE5" }
-+			{ "u_add_trait": "MANACORE5CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(40) + 10" ] }
  		]
  	},
 -	
@@ -400,14 +444,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 6" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 8750" ] }, { "math": [ "u_manacoretier == 6" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 6" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*2" ] }, { "math": [ "u_manacoretier == 6" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE6CRACKED" },
 -			{ "u_lose_trait": "MANACORE6" }
-+			{ "u_add_trait": "MANACORE6CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(45) + 10" ] }
  		]
  	},
 -	
@@ -419,14 +465,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 7" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 12500" ] }, { "math": [ "u_manacoretier == 7" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 7" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*2" ] }, { "math": [ "u_manacoretier == 7" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE7CRACKED" },
 -			{ "u_lose_trait": "MANACORE7" }
-+			{ "u_add_trait": "MANACORE7CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(50) + 10" ] }
  		]
  	},
 -	
@@ -438,14 +486,16 @@ index b618315b7997..63535ecf80b8 100644
  		"recurrence": "5 minutes",
  		"deactivate_condition": { "math": [ "u_manacoretier > 8" ] },
 -		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= 25000" ] }, { "math": [ "u_manacoretier == 8" ] } ] },
-+		"condition": { "and": [ { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*3" ] }, { "math": [ "u_manacoretier == 8" ] } ] },
++		"condition": { "and": [ { "x_in_y_chance": { "x": 1, "y": 4 } }, { "math": [ "u_vitamin('impurities') >= u_impurities_soft_cap*2" ] }, { "math": [ "u_manacoretier == 8" ] } ] },
  		"effect": [
  			{ "u_message": "Your Mana Core cracks!", "type": "bad" },
- 			{ "math": [ "u_manacoretier", "=", "100" ] },
- 			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
+-			{ "math": [ "u_manacoretier", "=", "100" ] },
+-			{ "math": [ "u_vitamin('impurities')", "=", "0" ] },
 -			{ "u_add_trait": "MANACORE8CRACKED" },
 -			{ "u_lose_trait": "MANACORE8" }
-+			{ "u_add_trait": "MANACORE8CRACKED" }
++			{ "u_add_effect": "stunned", "duration": { "math": [ "2 + rand(4)" ] } },
++			{ "math": [ "u_vitamin('impurities') -= u_impurities_soft_cap / 4" ] },
++			{ "math": [ "u_pain() += rand(55) + 10" ] }
  		]
  	},
 -	
@@ -453,50 +503,58 @@ index b618315b7997..63535ecf80b8 100644
  	{
  		"type": "effect_on_condition",
  		"id": "MANA_CORE_SENSATION_GOOD",
- 		"//": "A random chance every 6 hours to signify that a breakthrough would succeed",
- 		"recurrence": "6 hours",
+-		"//": "A random chance every 6 hours to signify that a breakthrough would succeed",
+-		"recurrence": "6 hours",
 -		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "(u_vitamin('impurities')<=u_manacoretier*50)" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
-+		"condition": { "and": [ { "not": { "u_has_effect": "sleep" } }, { "math": [ "(u_vitamin('impurities')<=u_manacoretier*50)" ]  } ] },
- 		"effect":
- 		[
- 			{ "u_message": "You feel your mana core resonate within you.", "type": "good" }
- 		]
- 	},
--	
-+
- 	{
- 		"type": "effect_on_condition",
- 		"id": "MANA_CORE_SENSATION_BAD",
- 		"//": "A random chance every 12 hours to signify that you are over the impurity soft cap",
- 		"recurrence": "12 hours",
--		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
-+		"condition": { "and": [ { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap" ]  } ] },
- 		"effect":
- 		[
- 			{ "u_message": "You feel your mana core is under stress.", "type": "bad" }
- 		]
- 	},
--	
-+
- 	{
- 		"type": "effect_on_condition",
- 		"id": "MANA_CORE_SENSATION_VERY_BAD",
- 		"//": "Once you are very close to the limit of cracking your mana core every 6 hours a chance to clear out a lot of impurities",
- 		"recurrence": "6 hours",
--		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap*2" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
 -		"effect":
 -		[
-+		"condition": { "and": [ { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap*2" ] } ] },
-+		"effect": [
- 			{ "u_message": "Your mana core suddenly destabilizes and expels impurities!", "type": "bad" },
- 			{ "math": [ "u_vitamin('impurities')", "-=", "(u_impurities_soft_cap/4)" ] },
- 			{ "math": [ "u_pain()", "+=", "100" ] },
-@@ -332,17 +333,17 @@
- 			{ "math": [ "u_val('mana')", "=", "0" ] }
+-			{ "u_message": "You feel your mana core resonate within you.", "type": "good" }
+-		]
+-	},
+-	
+-	{
+-		"type": "effect_on_condition",
+-		"id": "MANA_CORE_SENSATION_BAD",
+-		"//": "A random chance every 12 hours to signify that you are over the impurity soft cap",
+-		"recurrence": "12 hours",
+-		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
+-		"effect":
+-		[
+-			{ "u_message": "You feel your mana core is under stress.", "type": "bad" }
+-		]
+-	},
+-	
+-	{
+-		"type": "effect_on_condition",
+-		"id": "MANA_CORE_SENSATION_VERY_BAD",
+-		"//": "Once you are very close to the limit of cracking your mana core every 6 hours a chance to clear out a lot of impurities",
+-		"recurrence": "6 hours",
+-		"condition": { "and": [ { "not": {"u_has_bionics": "ANY" } }, { "not": { "u_has_effect": "sleep" } }, { "math": [ "u_vitamin('impurities')>=u_impurities_soft_cap*2" ]  }, { "x_in_y_chance": { "x": 1, "y": 3 } } ] },
++		"//": "A random chance every few hours to forcibly try a breakthrough.",
++		"recurrence": [ "4 hours", "12 hours" ],
++		"condition": {
++			"and": [
++				{ "math": [ "u_manacoretier < 8" ] },
++				{ "not": { "u_has_effect": "sleep" } },
++				{ "math": [ "u_vitamin('impurities') <= u_manacoretier * 50" ] },
++				{ "x_in_y_chance": { "x": 1, "y": 4 } }
++			]
++		},
+ 		"effect":
+ 		[
+-			{ "u_message": "Your mana core suddenly destabilizes and expels impurities!", "type": "bad" },
+-			{ "math": [ "u_vitamin('impurities')", "-=", "(u_impurities_soft_cap/4)" ] },
+-			{ "math": [ "u_pain()", "+=", "100" ] },
+-			{ "math": [ "u_val('focus')", "-=", "70" ] },
+-			{ "math": [ "u_val('mana')", "=", "0" ] }
++			{
++				"if": { "math": [ "u_manacoretier == 7" ] },
++				"then": { "run_eocs": "ATTEMPT_FINAL_BREAKTHROUGH" },
++				"else": { "run_eocs": "BEGIN_BREAKTHROUGH" }
++			}
  		]
  	},
 -	
-+
  	{
  		"type": "effect_on_condition",
  		"id": "GENERATE_MANA_EOC",
@@ -508,12 +566,13 @@ index b618315b7997..63535ecf80b8 100644
  			{ "u_message": "Your Mana Core expels mana!", "type": "good" },
 -			{ "math": [ "u_val('mana')", "+=", "u_val('mana_max')*u_manacoretier/10" ] },
 -			{ "math": [ "u_vitamin('impurities')", "+=", "u_impurities_soft_cap/5" ] },
-+			{ "math": [ "u_val('mana')", "+=", "u_val('mana_max')*(u_manacoretier+2)/10" ] },
-+			{ "math": [ "u_vitamin('impurities')", "+=", "u_impurities_soft_cap/10" ] },
++			{ "math": [ "u_val('mana') += u_val('mana_max') * ( 0.5 + u_manacoretier / 8.0 )" ] },
++			{ "math": [ "u_vitamin('impurities')", "+=", "u_impurities_soft_cap/2" ] },
++			{ "math": [ "u_pain() += rand(10) + 5" ] },
  			{ "u_message": "Your Mana Core trembles slightly!", "type": "bad" }
  		],
  		"false_effect":
-@@ -350,7 +351,7 @@
+@@ -350,7 +341,7 @@
  			{ "u_message": "Your Mana Core refuses to expel mana!", "type": "bad" }
  		]
  	},
@@ -522,18 +581,46 @@ index b618315b7997..63535ecf80b8 100644
  	{
  		"type": "effect_on_condition",
  		"id": "PURGE_IMPURITIES",
-@@ -362,4 +363,4 @@
+@@ -362,4 +353,4 @@
  			{ "math": [ "u_vitamin('impurities')", "=", "0" ] }
  		]
  	}
 -]
 \ No newline at end of file
 +]
+diff --git a/Mana-Cores/spells.json b/Mana-Cores/spells.json
+index 29e8a1a1c223..0fb3bd7d1403 100644
+--- a/Mana-Cores/spells.json
++++ b/Mana-Cores/spells.json
+@@ -7,10 +7,10 @@
+ 		"valid_targets": "self",
+ 		"effect": "effect_on_condition",
+ 		"shape": "blast",
+-		"flags": [ "NO_PROJECTILE", "NO_HANDS", "NO_LEGS", "SILENT" ],
++		"flags": [ "NO_FAIL", "NO_PROJECTILE", "NO_HANDS", "NO_LEGS", "SILENT" ],
+ 		"effect_str": "GENERATE_MANA_EOC"
+ 	},
+-	
++
+ 	{
+ 		"id": "purge_impurities",
+ 		"type": "SPELL",
+@@ -19,7 +19,7 @@
+ 		"valid_targets": "self",
+ 		"effect": "effect_on_condition",
+ 		"shape": "blast",
+-		"flags": [ "NO_PROJECTILE", "NO_HANDS", "NO_LEGS", "SILENT" ],
++		"flags": [ "NO_FAIL", "NO_PROJECTILE", "NO_HANDS", "NO_LEGS", "SILENT" ],
+ 		"effect_str": "PURGE_IMPURITIES"
+ 	}
+-]
+\ No newline at end of file
++]
 diff --git a/Mana-Cores/traits.json b/Mana-Cores/traits.json
-index fc9f6bd6eca1..b0edc44c8514 100644
+index fc9f6bd6eca1..f4ce0cd4334d 100644
 --- a/Mana-Cores/traits.json
 +++ b/Mana-Cores/traits.json
-@@ -1,10 +1,15 @@
+@@ -1,212 +1,233 @@
  [
 +	{
 +		"type": "mutation_type",
@@ -549,9 +636,11 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
-@@ -13,200 +18,230 @@
- 		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
+-		"active": true,
+ 		"enchantments": [ "MANACORE1_BUFF" ],
+-		"spells_learned": [ [ "generate_mana", 1 ] ],
+-		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -580,10 +669,10 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
- 		"active": true,
+-		"active": true,
  		"enchantments": [ "MANACORE2_BUFF" ],
-+		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
+-		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -612,10 +701,10 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
- 		"active": true,
+-		"active": true,
  		"enchantments": [ "MANACORE3_BUFF" ],
-+		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
+-		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -644,10 +733,10 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
- 		"active": true,
+-		"active": true,
  		"enchantments": [ "MANACORE4_BUFF" ],
-+		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
+-		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -676,11 +765,11 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
- 		"active": true,
+-		"active": true,
  		"flags": [ "SILENT_SPELL" ],
  		"enchantments": [ "MANACORE5_BUFF" ],
-+		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
+-		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -709,11 +798,11 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
- 		"active": true,
+-		"active": true,
  		"flags": [ "SILENT_SPELL" ],
  		"enchantments": [ "MANACORE6_BUFF" ],
-+		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
+-		"activated_eocs": [ "BEGIN_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -742,11 +831,11 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  		"valid": false,
  		"purifiable": false,
  		"player_display": true,
- 		"active": true,
+-		"active": true,
  		"flags": [ "SILENT_SPELL", "SUBTLE_SPELL" ],
  		"enchantments": [ "MANACORE7_BUFF" ],
-+		"spells_learned": [ [ "generate_mana", 1 ] ],
- 		"activated_eocs": [ "ATTEMPT_FINAL_BREAKTHROUGH" ]
+-		"activated_eocs": [ "ATTEMPT_FINAL_BREAKTHROUGH" ]
++		"spells_learned": [ [ "generate_mana", 1 ] ]
  	},
 -	
 +
@@ -796,16 +885,10 @@ index fc9f6bd6eca1..b0edc44c8514 100644
  	}
  ]
 diff --git a/Mana-Cores/vitamin.json b/Mana-Cores/vitamin.json
-index 9a9ea9c51e89..1e3da0ef1a7f 100644
+index 9a9ea9c51e89..a77fa614c8b5 100644
 --- a/Mana-Cores/vitamin.json
 +++ b/Mana-Cores/vitamin.json
-@@ -4,9 +4,9 @@
- 	"type": "vitamin",
- 	"vit_type": "counter",
- 	"name": "Impurities",
--	"rate": "15 m",
-+	"rate": "5 m",
- 	"min": 0,
+@@ -9,4 +9,4 @@
  	"max": 50000,
  	"flags": [ "NO_DISPLAY" ]
  	}
