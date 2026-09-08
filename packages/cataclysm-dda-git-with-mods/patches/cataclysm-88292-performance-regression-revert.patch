@@ -1,10 +1,474 @@
-commit 3be102263b053ce36d8f75db119702ac8cb408d3
-Date:   Wed Aug 26 08:37:18 2026 -0400
+From c8c2dfb00b37c9819ed6f41f8e3e2d54ee464b50 Mon Sep 17 00:00:00 2001
+Date: Tue, 8 Sep 2026 10:01:37 -0400
+Subject: [PATCH 1/2] Revert "This is an in between commit with the goal to
+ improve the performance of the crafting gui."
 
-    Revert "Merge pull request #88292 from dobbry-vechur/craft-reservation/01-requirement-actor-and-quality-metric"
+This reverts commit def6fa4df40ebc8b035e92b37d2d0991cc96bdb5.
+---
+ src/crafting_gui.cpp         |  12 +--
+ src/crafting_gui_helpers.cpp | 141 +++++++++++------------------------
+ src/crafting_gui_helpers.h   |   4 +-
+ tests/crafting_gui_test.cpp  |  30 ++++----
+ 4 files changed, 67 insertions(+), 120 deletions(-)
 
-    This reverts commit 9ec13a77b68ac6fc75f367ee7acd026b3e706369, reversing
-    changes made to 13b768f967a994f64762f0358ba150f333ff3c84.
+diff --git a/src/crafting_gui.cpp b/src/crafting_gui.cpp
+index 230f36e95020..14f4e4b895fa 100644
+--- a/src/crafting_gui.cpp
++++ b/src/crafting_gui.cpp
+@@ -1197,13 +1197,13 @@ void crafting_ui_impl::draw_recipe_info_panel()
+         ImGui::Separator();
+
+         // Warnings (right after stats)
+-        if( avail.can_craft_recipe && avail.would_use_rotten ) {
++        if( avail.can_craft && avail.would_use_rotten ) {
+             cataimgui::TextColoredParagraphNewline( c_red, _( "Will use rotten ingredients" ) );
+         }
+-        if( avail.can_craft_recipe && avail.would_use_favorite ) {
++        if( avail.can_craft && avail.would_use_favorite ) {
+             cataimgui::TextColoredParagraphNewline( c_red, _( "Will use favorited ingredients" ) );
+         }
+-        if( !avail.can_craft_recipe && !avail.has_proficiencies ) {
++        if( !avail.can_craft && !avail.has_proficiencies ) {
+             cataimgui::TextColoredParagraph( c_red,
+                                              _( "Missing required proficiencies: " ) );
+             auto profs = recp.required_proficiencies();
+@@ -1225,7 +1225,7 @@ void crafting_ui_impl::draw_recipe_info_panel()
+         // Complex/overlapping requirement warnings
+         if( !recp.is_nested() ) {
+             const bool too_complex = recp.deduped_requirements().is_too_complex();
+-            if( avail.can_craft_recipe && too_complex ) {
++            if( avail.can_craft && too_complex ) {
+                 cataimgui::TextColoredParagraphNewline( c_yellow,
+                                                         _( "Due to the complex overlapping requirements, this recipe "
+                                                                 "may appear to be craftable when it is not." ) );
+@@ -1234,13 +1234,13 @@ void crafting_ui_impl::draw_recipe_info_panel()
+             const bool npc_cant = avail.crafter.is_npc()
+                                   && !recp.npc_can_craft( npc_reason )
+                                   && !avail.inv_override;
+-            if( !avail.can_craft_recipe && avail.apparently_craftable
++            if( !avail.can_craft && avail.apparently_craftable
+                 && !npc_cant ) {
+                 cataimgui::TextColoredParagraphNewline( c_red,
+                                                         _( "Cannot be crafted because the same item is needed "
+                                                                 "for multiple components." ) );
+             }
+-            if( !avail.can_craft_recipe && npc_cant ) {
++            if( !avail.can_craft && npc_cant ) {
+                 cataimgui::TextColoredParagraphNewline( c_red, npc_reason );
+             }
+         }
+diff --git a/src/crafting_gui_helpers.cpp b/src/crafting_gui_helpers.cpp
+index b6a2ba6b7746..8df8f070b751 100644
+--- a/src/crafting_gui_helpers.cpp
++++ b/src/crafting_gui_helpers.cpp
+@@ -98,101 +98,48 @@ float availability::get_max_proficiency_skill_maluses() const
+     return max_proficiency_skill_maluses;
+ }
+
+-availability::availability( Character &_crafter, const recipe *recp, int batch_size,
++availability::availability( Character &_crafter, const recipe *r, int batch_size,
+                             bool camp_crafting, inventory *inventory_override ) :
+     crafter( _crafter )
+ {
+-    rec = recp;
++    rec = r;
+     inv_override = inventory_override;
+-
+     const inventory &inv = camp_crafting ? *inv_override : crafter.crafting_inventory();
++    auto all_items_filter = r->get_component_filter( recipe_filter_flags::none );
++    auto no_rotten_filter = r->get_component_filter( recipe_filter_flags::no_rotten );
++    auto no_favorite_filter = r->get_component_filter( recipe_filter_flags::no_favorite );
++    const deduped_requirement_data &req = r->deduped_requirements();
++    has_all_skills = r->skill_used.is_null() ||
++                     crafter.get_skill_level( r->skill_used ) >= r->get_difficulty( crafter );
++    crafter_has_primary_skill = r->skill_used.is_null()
++                                || crafter.get_knowledge_level( rec->skill_used )
++                                >= static_cast<int>( rec->get_difficulty( crafter ) * 0.8f );
++    has_proficiencies = r->character_has_required_proficiencies( crafter );
++    const bool meets_character_requirements = r->character_meets_requirements( crafter );
++    std::string reason;
++    craft_flags flag = camp_crafting ? craft_flags::none : craft_flags::start_only;
+
+-    const craft_flags flag = camp_crafting ? craft_flags::none : craft_flags::start_only;
+-
+-    const bool is_nested = recp->is_nested();
+-    const bool is_practice = recp->is_practice();
+-
+-    // Crafter can craft and has the needed skills for it
+-    if( recp->skill_used.is_null() ) {
+-        has_all_skills = true;
+-        crafter_has_primary_skill = true;
+-    } else {
+-        const float difficulty = recp->get_difficulty( crafter );
+-
+-        has_all_skills = crafter.get_skill_level( recp->skill_used ) >= difficulty;
+-        crafter_has_primary_skill = crafter.get_knowledge_level( recp->skill_used ) >= static_cast<int>
+-                                    ( difficulty * 0.8f );
+-    }
+-
+-    has_proficiencies = recp->character_has_required_proficiencies( crafter );
+-
+-    const bool character_base_requirements =
+-        ( !is_practice || has_all_skills ) &&
+-        has_proficiencies &&
+-        recp->character_meets_requirements( crafter );
+-
+-    std::string npc_reason;
+-    const bool npc_cannot_craft =
+-        !camp_crafting &&
+-        crafter.is_npc() &&
+-        !recp->npc_can_craft( npc_reason );
+-
+-    if( npc_cannot_craft || !character_base_requirements ) {
+-        can_craft_recipe = false;
+-    } else if( is_nested ) {
+-        can_craft_recipe = check_can_craft_nested( _crafter, *recp );
++    if( crafter.is_npc() && !r->npc_can_craft( reason ) && !camp_crafting ) {
++        can_craft = false;
++    } else if( r->is_nested() ) {
++        can_craft = check_can_craft_nested( _crafter, *r );
+     } else {
+-        const auto all_items_filter = recp->get_component_filter( recipe_filter_flags::none );
+-        // I dont like it since we call functions on functions which is bad practice...
+-        // But not worth a rework right now...
+-        can_craft_recipe = recp->deduped_requirements().can_make_with_inventory(
+-                               &crafter, inv, all_items_filter, batch_size, flag
+-                           );
+-    }
+-
+-    would_use_rotten = false;
+-    would_use_favorite = false;
+-
+-    if( can_craft_recipe && !is_nested ) {
+-        const deduped_requirement_data &req_data = recp->deduped_requirements();
+-
+-        const auto no_rotten_filter = recp->get_component_filter( recipe_filter_flags::no_rotten );
+-        const auto no_favorite_filter = recp->get_component_filter( recipe_filter_flags::no_favorite );
+-
+-        would_use_rotten =
+-            !req_data.can_make_with_inventory(
+-                &crafter, inv, no_rotten_filter,
+-                batch_size, flag
+-            );
+-
+-        would_use_favorite =
+-            !req_data.can_make_with_inventory(
+-                &crafter, inv, no_favorite_filter,
+-                batch_size, flag
+-            );
+-    }
+-
+-    apparently_craftable = false;
+-
+-    if( !can_craft_recipe &&
+-        !is_nested &&
+-        !npc_cannot_craft &&
+-        character_base_requirements ) {
+-
+-        const auto all_items_filter = recp->get_component_filter( recipe_filter_flags::none );
+-
+-        apparently_craftable =
+-            recp->simple_requirements().can_make_with_inventory(
+-                &crafter, inv, all_items_filter,
+-                batch_size, flag
+-            );
+-    }
+-
+-    useless_practice = is_practice && cannot_gain_skill_or_prof( crafter, *recp );
+-    is_nested_category = is_nested;
+-
+-    // Idk whats going on here so i will leave it for now
+-    for( const auto &[skill, skill_lvl] : recp->required_skills ) {
++        can_craft = ( !r->is_practice() || has_all_skills ) && has_proficiencies &&
++                    meets_character_requirements &&
++                    req.can_make_with_inventory( &crafter, inv, all_items_filter, batch_size, flag );
++    }
++    would_use_rotten = !req.can_make_with_inventory( &crafter, inv, no_rotten_filter, batch_size,
++                       flag );
++    would_use_favorite = !req.can_make_with_inventory( &crafter, inv, no_favorite_filter, batch_size,
++                         flag );
++    useless_practice = r->is_practice() && cannot_gain_skill_or_prof( crafter, *r );
++    is_nested_category = r->is_nested();
++    const requirement_data &simple_req = r->simple_requirements();
++    apparently_craftable = ( !r->is_practice() || has_all_skills ) && has_proficiencies &&
++                           meets_character_requirements &&
++                           simple_req.can_make_with_inventory( &crafter, inv, all_items_filter,
++                                   batch_size, flag );
++    for( const auto &[skill, skill_lvl] : r->required_skills ) {
+         if( crafter.get_skill_level( skill ) < skill_lvl ) {
+             has_all_skills = false;
+             break;
+@@ -202,9 +149,9 @@ availability::availability( Character &_crafter, const recipe *recp, int batch_s
+
+ nc_color availability::selected_color() const
+ {
+-    if( !can_craft_recipe && is_nested_category ) {
++    if( !can_craft && is_nested_category ) {
+         return h_blue;
+-    } else if( !can_craft_recipe ) {
++    } else if( !can_craft ) {
+         return h_dark_gray;
+     } else if( !crafter_has_primary_skill && is_nested_category ) {
+         return h_magenta;
+@@ -223,9 +170,9 @@ nc_color availability::selected_color() const
+
+ nc_color availability::color( bool ignore_missing_skills ) const
+ {
+-    if( !can_craft_recipe && is_nested_category ) {
++    if( !can_craft && is_nested_category ) {
+         return c_blue;
+-    } else if( !can_craft_recipe ) {
++    } else if( !can_craft ) {
+         return c_dark_gray;
+     } else if( !crafter_has_primary_skill && is_nested_category ) {
+         return c_magenta;
+@@ -245,7 +192,7 @@ nc_color availability::color( bool ignore_missing_skills ) const
+ bool availability::check_can_craft_nested( Character &_crafter, const recipe &r )
+ {
+     for( const recipe_id &nested_r : r.nested_category_data ) {
+-        if( availability( _crafter, &nested_r.obj() ).can_craft_recipe ) {
++        if( availability( _crafter, &nested_r.obj() ).can_craft ) {
+             return true;
+         }
+     }
+@@ -258,7 +205,7 @@ craft_confirm_result can_start_craft(
+     const Character &crafter,
+     int batch_size )
+ {
+-    if( !avail.can_craft_recipe || !avail.crafter_has_primary_skill ) {
++    if( !avail.can_craft || !avail.crafter_has_primary_skill ) {
+         return craft_confirm_result::cannot_craft;
+     }
+     if( rec.makes_amount() * batch_size > MAX_ITEM_IN_SQUARE ) {
+@@ -282,8 +229,8 @@ bool recipe_sort_compare(
+             return !a_read;
+         }
+     }
+-    if( avail_a.can_craft_recipe != avail_b.can_craft_recipe ) {
+-        return avail_a.can_craft_recipe;
++    if( avail_a.can_craft != avail_b.can_craft ) {
++        return avail_a.can_craft;
+     }
+     if( b->difficulty != a->difficulty ) {
+         return b->difficulty < a->difficulty;
+@@ -416,7 +363,7 @@ std::vector<std::string> recipe_info(
+         oss << string_format( _( "Nearby: %s\n" ), nearby_string );
+     }
+
+-    const bool can_craft_this = avail.can_craft_recipe;
++    const bool can_craft_this = avail.can_craft;
+     if( can_craft_this && avail.would_use_rotten ) {
+         oss << _( "<color_red>Will use rotten ingredients</color>\n" );
+     }
+diff --git a/src/crafting_gui_helpers.h b/src/crafting_gui_helpers.h
+index 1dac5d4c3f8d..4d7b0481a06e 100644
+--- a/src/crafting_gui_helpers.h
++++ b/src/crafting_gui_helpers.h
+@@ -30,10 +30,10 @@ bool cannot_gain_skill_or_prof( const Character &crafter, const recipe &recp );
+ // Computes whether a Character can craft a given recipe.
+ // Stores craftability flags, color-coding, and lazy-cached proficiency maluses.
+ struct availability {
+-        explicit availability( Character &_crafter, const recipe *recp, int batch_size = 1,
++        explicit availability( Character &_crafter, const recipe *r, int batch_size = 1,
+                                bool camp_crafting = false, inventory *inventory_override = nullptr );
+         Character &crafter;
+-        bool can_craft_recipe;
++        bool can_craft;
+         // group can introduce recipe this crafter cannot craft because of low primary skill
+         bool crafter_has_primary_skill;
+         bool would_use_rotten;
+diff --git a/tests/crafting_gui_test.cpp b/tests/crafting_gui_test.cpp
+index 94aa0483e36f..a8d702c00baa 100644
+--- a/tests/crafting_gui_test.cpp
++++ b/tests/crafting_gui_test.cpp
+@@ -84,7 +84,7 @@ TEST_CASE( "recipe_availability_has_components_and_skills", "[crafting][gui]" )
+     const recipe &rec = recipe_test_tallow.obj();
+     availability avail( guy, &rec );
+
+-    CHECK( avail.can_craft_recipe );
++    CHECK( avail.can_craft );
+     CHECK( avail.has_all_skills );
+     CHECK( avail.color() == c_white );
+ }
+@@ -99,7 +99,7 @@ TEST_CASE( "recipe_availability_missing_component", "[crafting][gui]" )
+     const recipe &rec = recipe_test_tallow.obj();
+     availability avail( guy, &rec );
+
+-    CHECK_FALSE( avail.can_craft_recipe );
++    CHECK_FALSE( avail.can_craft );
+     CHECK( avail.color() == c_dark_gray );
+ }
+
+@@ -116,7 +116,7 @@ TEST_CASE( "recipe_availability_insufficient_skill", "[crafting][gui]" )
+     availability avail( guy, &rec );
+
+     // can_craft gates on components, not skill level (test_tallow is not practice)
+-    CHECK( avail.can_craft_recipe );
++    CHECK( avail.can_craft );
+     CHECK_FALSE( avail.has_all_skills );
+     // cooking 0 vs difficulty 3: knowledge_level < difficulty*0.8, so no primary skill
+     CHECK_FALSE( avail.crafter_has_primary_skill );
+@@ -157,7 +157,7 @@ TEST_CASE( "recipe_availability_would_use_favorite", "[crafting][gui]" )
+     const recipe &rec = recipe_cudgel_test_no_tools.obj();
+     availability avail( guy, &rec );
+
+-    CHECK( avail.can_craft_recipe );
++    CHECK( avail.can_craft );
+     CHECK( avail.would_use_favorite );
+     CHECK( avail.color() == c_pink );
+ }
+@@ -196,7 +196,7 @@ TEST_CASE( "recipe_availability_nested_craftable", "[crafting][gui]" )
+     availability avail( guy, &rec );
+
+     CHECK( avail.is_nested_category );
+-    CHECK( avail.can_craft_recipe ); // at least one child is craftable
++    CHECK( avail.can_craft ); // at least one child is craftable
+     CHECK( avail.color() == c_light_blue );
+ }
+
+@@ -212,7 +212,7 @@ TEST_CASE( "recipe_availability_nested_none_craftable", "[crafting][gui]" )
+     availability avail( guy, &rec );
+
+     CHECK( avail.is_nested_category );
+-    CHECK_FALSE( avail.can_craft_recipe );
++    CHECK_FALSE( avail.can_craft );
+     CHECK( avail.color() == c_blue );
+ }
+
+@@ -268,7 +268,7 @@ TEST_CASE( "can_start_craft_cannot_craft_no_components", "[crafting][gui]" )
+     const recipe &rec = recipe_cudgel_test_no_tools.obj();
+     availability avail( guy, &rec );
+
+-    CHECK_FALSE( avail.can_craft_recipe );
++    CHECK_FALSE( avail.can_craft );
+     CHECK( can_start_craft( rec, avail, guy ) == craft_confirm_result::cannot_craft );
+ }
+
+@@ -289,7 +289,7 @@ TEST_CASE( "can_start_craft_cannot_craft_no_primary_skill", "[crafting][gui]" )
+
+     // Has components so can_craft is true, but primary skill is too low
+     // knowledge_level(0) < difficulty(2) * 0.8 = 1.6
+-    CHECK( avail.can_craft_recipe );
++    CHECK( avail.can_craft );
+     CHECK_FALSE( avail.crafter_has_primary_skill );
+     CHECK( can_start_craft( rec, avail, guy ) == craft_confirm_result::cannot_craft );
+ }
+@@ -310,7 +310,7 @@ TEST_CASE( "can_start_craft_too_dark", "[crafting][gui]" )
+     const recipe &rec = recipe_cudgel_test_no_tools.obj();
+     availability avail( guy, &rec );
+
+-    CHECK( avail.can_craft_recipe );
++    CHECK( avail.can_craft );
+     CHECK( avail.crafter_has_primary_skill );
+     CHECK( can_start_craft( rec, avail, guy ) == craft_confirm_result::too_dark );
+ }
+@@ -345,7 +345,7 @@ TEST_CASE( "recipe_sort_craftable_before_uncraftable", "[crafting][gui]" )
+
+     const recipe &rec = recipe_cudgel_test_no_tools.obj();
+     availability avail_yes( guy, &rec );
+-    CHECK( avail_yes.can_craft_recipe );
++    CHECK( avail_yes.can_craft );
+
+     // Remove the component so a second availability is not craftable
+     guy.remove_items_with( []( const item & it ) {
+@@ -353,7 +353,7 @@ TEST_CASE( "recipe_sort_craftable_before_uncraftable", "[crafting][gui]" )
+     } );
+     guy.invalidate_crafting_inventory();
+     availability avail_no( guy, &rec );
+-    CHECK_FALSE( avail_no.can_craft_recipe );
++    CHECK_FALSE( avail_no.can_craft );
+
+     CHECK( recipe_sort_compare( &rec, &rec, avail_yes, avail_no, guy, {},
+                                 true, true, false ) );
+@@ -485,7 +485,7 @@ TEST_CASE( "recipe_info_basic_content", "[crafting][gui]" )
+
+     const recipe &rec = recipe_test_tallow.obj();
+     availability avail( guy, &rec );
+-    REQUIRE( avail.can_craft_recipe );
++    REQUIRE( avail.can_craft );
+     REQUIRE( avail.has_all_skills );
+
+     std::vector<Character *> group = { &guy };
+@@ -576,7 +576,7 @@ TEST_CASE( "recipe_info_would_use_rotten", "[crafting][gui]" )
+
+     const recipe &rec = recipe_test_tallow.obj();
+     availability avail( guy, &rec );
+-    REQUIRE( avail.can_craft_recipe );
++    REQUIRE( avail.can_craft );
+     REQUIRE( avail.would_use_rotten );
+
+     std::vector<Character *> group = { &guy };
+@@ -598,7 +598,7 @@ TEST_CASE( "recipe_info_would_use_favorite", "[crafting][gui]" )
+
+     const recipe &rec = recipe_cudgel_test_no_tools.obj();
+     availability avail( guy, &rec );
+-    REQUIRE( avail.can_craft_recipe );
++    REQUIRE( avail.can_craft );
+     REQUIRE( avail.would_use_favorite );
+
+     std::vector<Character *> group = { &guy };
+@@ -1135,7 +1135,7 @@ TEST_CASE( "build_recipe_list_sort_craftable_first", "[crafting][gui][recipe_lis
+     // Craftable recipes come first in sorted order
+     bool seen_uncraftable = false;
+     for( const availability &entry : result.available ) {
+-        if( !entry.can_craft_recipe ) {
++        if( !entry.can_craft ) {
+             seen_uncraftable = true;
+         } else {
+             CHECK_FALSE( seen_uncraftable );
+--
+2.55.0
+
+
+From feee9d0b6baf7a6709f0b8b1e130bec08b6e5c79 Mon Sep 17 00:00:00 2001
+Date: Tue, 8 Sep 2026 10:02:35 -0400
+Subject: [PATCH 2/2] Revert "Merge pull request #88292 from
+ dobbry-vechur/craft-reservation/01-requirement-actor-and-quality-metric"
+
+This reverts commit 9ec13a77b68ac6fc75f367ee7acd026b3e706369, reversing
+changes made to 13b768f967a994f64762f0358ba150f333ff3c84.
+---
+ data/mods/TEST_DATA/bionics.json        |  35 ----
+ data/mods/TEST_DATA/items.json          |  75 --------
+ data/mods/TEST_DATA/recipes.json        |  21 ---
+ data/mods/TEST_DATA/tool_qualities.json |  14 --
+ doc/JSON/ITEM_CRAFT_AND_DISASSEMBLY.md  |   6 -
+ src/activity_actor.cpp                  |  12 +-
+ src/activity_item_handling.cpp          |  20 +--
+ src/basecamp.cpp                        |   7 +-
+ src/bionics.cpp                         |   6 +-
+ src/butchery.cpp                        |  11 +-
+ src/butchery_requirements.cpp           |   5 +-
+ src/butchery_requirements.h             |   4 +-
+ src/character.cpp                       |   7 +-
+ src/character.h                         |  28 ---
+ src/character_inventory.cpp             | 114 -------------
+ src/construction.cpp                    |  16 +-
+ src/crafting.cpp                        |  33 ++--
+ src/crafting_gui.cpp                    |  31 ++--
+ src/crafting_gui_helpers.cpp            |  13 +-
+ src/debug_menu.cpp                      |   4 +-
+ src/faction_camp.cpp                    |  12 +-
+ src/iexamine.cpp                        |   4 +-
+ src/item_info.cpp                       |   5 +-
+ src/iuse.cpp                            |   2 +-
+ src/magic.cpp                           |  10 +-
+ src/medical_ui.cpp                      |   7 +-
+ src/recipe.cpp                          |  37 +++-
+ src/requirements.cpp                    | 154 +++++------------
+ src/requirements.h                      |  54 ++----
+ src/veh_appliance.cpp                   |   2 +-
+ src/veh_interact.cpp                    |  10 +-
+ src/veh_utils.cpp                       |   6 +-
+ src/visitable.cpp                       |  31 +---
+ src/visitable.h                         |   6 -
+ tests/craft_attention_test.cpp          | 218 ------------------------
+ tests/crafting_test.cpp                 |   5 +-
+ tests/requirements_test.cpp             | 117 -------------
+ tests/vehicle_interact_test.cpp         |   6 +-
+ tests/vehicle_part_test.cpp             |   2 +-
+ 39 files changed, 209 insertions(+), 941 deletions(-)
+ delete mode 100644 data/mods/TEST_DATA/tool_qualities.json
 
 diff --git a/data/mods/TEST_DATA/bionics.json b/data/mods/TEST_DATA/bionics.json
 index f7ac312c084b..eeb434c6d629 100644
@@ -732,7 +1196,7 @@ index ee833bbeca0d..cfde4041661e 100644
  }
 
 diff --git a/src/crafting.cpp b/src/crafting.cpp
-index eea3d252f1e7..7141b8243693 100644
+index f2ad04bbc188..08c64f99ab62 100644
 --- a/src/crafting.cpp
 +++ b/src/crafting.cpp
 @@ -107,7 +107,9 @@ static const furn_str_id furn_f_fake_bench_hands( "f_fake_bench_hands" );
@@ -1034,7 +1498,7 @@ index 16c3f3b07723..e862f3009ce0 100644
          }
      }
 diff --git a/src/faction_camp.cpp b/src/faction_camp.cpp
-index 052f79ab2748..8be4c4b4b710 100644
+index 638c671d0898..4b827d080fbe 100644
 --- a/src/faction_camp.cpp
 +++ b/src/faction_camp.cpp
 @@ -1924,8 +1924,8 @@ void basecamp::start_upgrade( const mission_id &miss_id )
@@ -1066,7 +1530,7 @@ index 052f79ab2748..8be4c4b4b710 100644
              if( can_make && fac()->food_supply().kcal() > food_req ) {
                  max_batch += batch_size;
              } else {
-@@ -5279,8 +5279,8 @@ std::string basecamp::craft_description( const recipe_id &itm )
+@@ -5284,8 +5284,8 @@ std::string basecamp::craft_description( const recipe_id &itm )
      std::vector<std::string> component_print_buffer;
      int pane = FULL_SCREEN_WIDTH;
      const requirement_data &req = making.simple_requirements();
@@ -1129,10 +1593,10 @@ index bd4c35aecd59..c45341534c10 100644
                  }
              }
 diff --git a/src/magic.cpp b/src/magic.cpp
-index 50bb37d58b5f..e476339b618a 100644
+index d0e3763a1760..88d1d6fc2225 100644
 --- a/src/magic.cpp
 +++ b/src/magic.cpp
-@@ -1110,8 +1110,8 @@ bool spell::can_cast( const Character &guy ) const
+@@ -1165,8 +1165,8 @@ bool spell::can_cast( const Character &guy ) const
      }
 
      if( !type->spell_components.is_empty() &&
@@ -1143,7 +1607,7 @@ index 50bb37d58b5f..e476339b618a 100644
          return false;
      }
 
-@@ -1163,7 +1163,7 @@ bool spell::check_if_component_in_hand( Character &guy ) const
+@@ -1218,7 +1218,7 @@ bool spell::check_if_component_in_hand( Character &guy ) const
      const requirement_data &spell_components = type->spell_components.obj();
 
      if( guy.has_weapon() ) {
@@ -1152,7 +1616,7 @@ index 50bb37d58b5f..e476339b618a 100644
              return true;
          }
      }
-@@ -3175,14 +3175,14 @@ void spellcasting_callback::display_spell_info( size_t index )
+@@ -3230,14 +3230,14 @@ void spellcasting_callback::display_spell_info( size_t index )
          ImGui::NewLine();
          if( !sp.components().get_components().empty() ) {
              for( const std::string &line : sp.components().get_folded_components_list(
@@ -1818,10 +2282,10 @@ index 56c9d70a4db8..095eadaf07db 100644
              int batch = 1, craft_flags = craft_flags::none ) const;
 
 diff --git a/src/veh_appliance.cpp b/src/veh_appliance.cpp
-index 6cc21a9c7877..cab8b24d1712 100644
+index 42598c0b6955..162a6ebddc71 100644
 --- a/src/veh_appliance.cpp
 +++ b/src/veh_appliance.cpp
-@@ -552,7 +552,7 @@ void veh_app_interact::remove( map &here )
+@@ -550,7 +550,7 @@ void veh_app_interact::remove( map &here )
      Character &you = get_player_character();
      const inventory &inv = you.crafting_inventory();
      std::string msg;
@@ -2468,3 +2932,5 @@ index 42b663adc1d8..cffef24ad6eb 100644
 
      if( expect_success ) {
          REQUIRE( can_craft );
+--
+2.55.0
