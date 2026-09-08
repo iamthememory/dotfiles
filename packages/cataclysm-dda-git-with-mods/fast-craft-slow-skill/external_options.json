@@ -329,5 +329,12 @@
     "//": "The weight in kilograms a character can carry per point of strength.",
     "stype": "int",
     "value": 25
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "PREVENT_ANIMAL_BROWSING",
+    "//": "Whether to disable animals eating nearby bushes and trees.",
+    "stype": "bool",
+    "value": true
   }
 ]

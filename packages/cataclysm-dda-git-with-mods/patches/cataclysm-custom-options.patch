@@ -1,8 +1,8 @@
 diff --git a/data/core/external_options.json b/data/core/external_options.json
-index d90ad04923e1..69c3caef37ad 100644
+index d90ad04923e1..8fc707372b19 100644
 --- a/data/core/external_options.json
 +++ b/data/core/external_options.json
-@@ -527,5 +527,236 @@
+@@ -527,5 +527,243 @@
      "//": "The maximum number of overmaps that an intersection can deviate from its gridded position. Cannot be greater than or equal to row / 2 or column / 2, may cause bugs for > row / 4, column / 4.",
      "stype": "int",
      "value": 2
@@ -237,6 +237,13 @@ index d90ad04923e1..69c3caef37ad 100644
 +    "//": "The weight in kilograms a character can carry per point of strength.",
 +    "stype": "int",
 +    "value": 4
++  },
++  {
++    "type": "EXTERNAL_OPTION",
++    "name": "PREVENT_ANIMAL_BROWSING",
++    "//": "Whether to disable animals eating nearby bushes and trees.",
++    "stype": "bool",
++    "value": false
    }
  ]
 diff --git a/src/activity_actor.cpp b/src/activity_actor.cpp
@@ -572,6 +579,28 @@ index f75aeb4e00d2..c207baa59972 100644
          }
          void apply( const mapgendata &dat, const jmapgen_int &x, const jmapgen_int &y, const jmapgen_int &z,
                      const std::string &/*context*/ ) const override {
+diff --git a/src/monattack.cpp b/src/monattack.cpp
+index efcb5f4904d4..eae185a580fe 100644
+--- a/src/monattack.cpp
++++ b/src/monattack.cpp
+@@ -63,6 +63,7 @@
+ #include "monfaction.h"
+ #include "monster.h"
+ #include "mtype.h"
++#include "options.h"
+ #include "output.h"
+ #include "pathfinding.h"
+ #include "pimpl.h"
+@@ -561,6 +562,9 @@ bool mattack::graze( monster *z )
+ 
+ bool mattack::browse( monster *z )
+ {
++    if( ::get_option<bool>( "PREVENT_ANIMAL_BROWSING" ) ) {
++        return true;
++    }
+     map &here = get_map();
+     //Browsers eat fruit/nuts/etc off of seasonally harvestable plants and trees.
+     for( const tripoint_bub_ms &p : here.points_in_radius( z->pos_bub(), 1 ) ) {
 diff --git a/src/npc.cpp b/src/npc.cpp
 index 08d0bbf32221..f0631a61bfbc 100644
 --- a/src/npc.cpp
