@@ -1,0 +1,9 @@
+[
+  {
+
+    "type": "start_location",
+    "id": "sloc_lake",
+    "name": "Lake shore",
+    "terrain": [ "lake_shore" ]
+  }
+]

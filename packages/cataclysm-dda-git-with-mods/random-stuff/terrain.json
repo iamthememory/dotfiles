@@ -118,5 +118,19 @@
     "id": "t_concrete_ramp_up_low",
     "copy-from": "t_concrete_ramp_up_low",
     "extend": { "flags": [ "SUPPORTS_ROOF" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_soil",
+    "copy-from": "t_soil",
+    "bash": {
+      "str_min": 100,
+      "str_max": 400,
+      "sound": "wham!",
+      "sound_fail": "whump!",
+      "ter_set": "t_dirt_underground",
+      "ter_set_bashed_from_above": "t_dirt",
+      "items": [ { "group": "digging_soil_loam_50L", "count": 20 } ]
+    }
   }
 ]

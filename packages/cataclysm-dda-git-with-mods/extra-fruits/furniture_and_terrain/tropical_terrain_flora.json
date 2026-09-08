@@ -37,7 +37,7 @@
     "color": [ "green", "green", "green", "brown" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "transforms_into": "t_tree_pachira",
     "looks_like": "t_tree_hickory_harvested",
     "bash": {
@@ -93,7 +93,7 @@
     "color": [ "green", "brown", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "transforms_into": "t_tree_gevuina",
     "looks_like": "t_tree_hickory_harvested",
     "bash": {
@@ -350,7 +350,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_mango",
     "bash": {
@@ -398,7 +398,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_papaya",
     "bash": {
@@ -446,7 +446,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_pomegranate",
     "bash": {
@@ -494,7 +494,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_coconut",
     "bash": {
@@ -542,7 +542,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_orange",
     "bash": {
@@ -590,7 +590,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_lemon",
     "bash": {
@@ -638,7 +638,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 0,
     "coverage": 80,
-    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT" ],
+    "flags": [ "FLAMMABLE_ASH", "NOITEM", "SUPPORTS_ROOF", "TREE", "REDUCE_SCENT", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_tree_grapefruit",
     "bash": {
@@ -683,7 +683,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 8,
     "coverage": 40,
-    "flags": [ "TRANSPARENT", "CONTAINER", "FLAMMABLE_ASH", "THIN_OBSTACLE", "PLACE_ITEM", "SHARP" ],
+    "flags": [ "TRANSPARENT", "CONTAINER", "FLAMMABLE_ASH", "THIN_OBSTACLE", "PLACE_ITEM", "SHARP", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_cholla_cactus",
     "bash": {
@@ -726,7 +726,7 @@
     "color": [ "green", "green", "green", "green" ],
     "move_cost": 8,
     "coverage": 40,
-    "flags": [ "TRANSPARENT", "CONTAINER", "FLAMMABLE_ASH", "THIN_OBSTACLE", "PLACE_ITEM", "SHARP" ],
+    "flags": [ "TRANSPARENT", "CONTAINER", "FLAMMABLE_ASH", "THIN_OBSTACLE", "PLACE_ITEM", "SHARP", "HARVESTED" ],
     "examine_action": "harvested_plant",
     "transforms_into": "t_nopal_cactus",
     "bash": {

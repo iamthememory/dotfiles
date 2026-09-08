@@ -1,0 +1,9 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_tree_witchwood_harvested",
+    "copy-from": "t_tree_witchwood_harvested",
+    "looks_like": "t_tree_apple_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  }
+]

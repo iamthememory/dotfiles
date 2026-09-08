@@ -1,0 +1,108 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_tree_harvested",
+    "copy-from": "t_tree_harvested",
+    "looks_like": "t_tree_dead",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_walnut_harvested",
+    "copy-from": "t_tree_walnut_harvested",
+    "looks_like": "t_tree_hickory_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_butternut_harvested",
+    "copy-from": "t_tree_butternut_harvested",
+    "looks_like": "t_tree_blackjack_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_blackjack_harvested",
+    "copy-from": "t_tree_blackjack_harvested",
+    "looks_like": "t_tree_dead",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_alder_harvested",
+    "copy-from": "t_tree_alder_harvested",
+    "looks_like": "t_tree_hickory_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_chestnut_harvested",
+    "copy-from": "t_tree_chestnut_harvested",
+    "looks_like": "t_tree_hickory",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_beech_harvested",
+    "copy-from": "t_tree_beech_harvested",
+    "looks_like": "t_tree_hickory_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_hazelnut_harvested",
+    "copy-from": "t_tree_hazelnut_harvested",
+    "looks_like": "t_tree_hickory_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_basswood_harvested",
+    "copy-from": "t_tree_basswood_harvested",
+    "looks_like": "t_tree",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+    {
+    "type": "terrain",
+    "id": "t_tree_cottonwood_harvested",
+    "copy-from": "t_tree_cottonwood_harvested",
+    "looks_like": "t_tree",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_pine_harvested",
+    "copy-from": "t_tree_pine_harvested",
+    "looks_like": "t_tree_deadpine",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_birch_harvested",
+    "copy-from": "t_tree_birch_harvested",
+    "looks_like": "t_tree_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_tree_willow_harvested",
+    "copy-from": "t_tree_willow_harvested",
+    "looks_like": "t_tree_harvested",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_bamboo_harvested",
+    "copy-from": "t_bamboo_harvested",
+    "looks_like": "t_grass",
+    "transforms_into": "t_bamboo",
+    "extend": { "flags": [ "HARVESTED" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_fern_harvested",
+    "copy-from": "t_fern_harvested",
+    "looks_like": "t_grass_long",
+    "extend": { "flags": [ "HARVESTED" ] }
+  }
+]

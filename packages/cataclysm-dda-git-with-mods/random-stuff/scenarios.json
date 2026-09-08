@@ -1,0 +1,53 @@
+[
+  {
+    "type": "scenario",
+    "id": "mutant",
+    "copy-from": "mutant",
+    "extend": {
+      "allowed_locs": [
+        "sloc_desert_island_field_big",
+        "sloc_desert_island_sand",
+        "sloc_lake",
+        "sloc_river"
+      ]
+    }
+  },
+  {
+    "type": "scenario",
+    "id": "wilderness",
+    "copy-from": "wilderness",
+    "extend": {
+      "allowed_locs": [
+        "sloc_desert_island_field_big",
+        "sloc_desert_island_sand",
+        "sloc_lake"
+      ]
+    }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "heli_crash",
+    "id": "heli_crash",
+    "extend": {
+      "allowed_locs": [
+        "sloc_desert_island_field_big",
+        "sloc_desert_island_sand",
+        "sloc_lake",
+        "sloc_river"
+      ]
+    }
+  },
+  {
+    "type": "scenario",
+    "copy-from": "portal_dependent",
+    "id": "portal_dependent",
+    "extend": {
+      "allowed_locs": [
+        "sloc_desert_island_field_big",
+        "sloc_desert_island_sand",
+        "sloc_lake",
+        "sloc_river"
+      ]
+    }
+  }
+]
