@@ -22,6 +22,7 @@ Average amount per rock wall mined:
  0.125 iron_ore
  0.125 chunk_sulfur
  0.1   material_niter
+ 0.1   material_shrd_limestone
  0.1   chunk_borax
  0.05  chunk_silver
  0.045 chunk_aluminum
@@ -45,7 +46,7 @@ Average amount per rock wall mined:
  0.005 amethyst
  0.005 alexandrite
 
-Average items: 130.105
+Average items: 130.205
 
 
 Normalized (x200):
@@ -72,6 +73,7 @@ Normalized (x200):
 25   iron_ore
 25   chunk_sulfur
 20   material_niter
+20   material_shrd_limestone
 20   chunk_borax
 10   chunk_silver
 9    chunk_aluminum

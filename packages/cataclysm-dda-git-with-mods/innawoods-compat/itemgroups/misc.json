@@ -13,7 +13,7 @@
     "subtype": "distribution",
     "items": [
       { "item": "material_sand", "prob": 8000 },
-      { "item": "coal_lump", "prob": 7500, "charges": 1 },
+      { "item": "coal_lump", "prob": 7500, "charges": 100 },
       { "item": "rock", "prob": 4700 },
       { "item": "material_limestone", "prob": 2800 },
       { "item": "clay_lump", "prob": 2000 },
@@ -34,6 +34,7 @@
       { "item": "iron_ore", "prob": 25 },
       { "item": "chunk_sulfur", "prob": 25 },
       { "item": "material_niter", "prob": 20 },
+      { "item": "material_shrd_limestone", "prob": 20 },
       { "item": "chunk_borax", "prob": 20 },
       { "item": "chunk_silver", "prob": 10 },
       { "item": "chunk_aluminum", "prob": 9 },
@@ -64,7 +65,7 @@
     "subtype": "distribution",
     "items": [
       { "item": "material_sand", "prob": 8000 },
-      { "item": "coal_lump", "prob": 7500, "charges": 1 },
+      { "item": "coal_lump", "prob": 7500, "charges": 100 },
       { "item": "material_limestone", "prob": 2800 },
       { "item": "clay_lump", "prob": 2000 },
       { "item": "sharp_rock", "prob": 100 },
@@ -83,6 +84,7 @@
       { "item": "iron_ore", "prob": 25 },
       { "item": "chunk_sulfur", "prob": 25 },
       { "item": "material_niter", "prob": 20 },
+      { "item": "material_shrd_limestone", "prob": 20 },
       { "item": "chunk_borax", "prob": 20 },
       { "item": "chunk_silver", "prob": 10 },
       { "item": "chunk_aluminum", "prob": 9 },
