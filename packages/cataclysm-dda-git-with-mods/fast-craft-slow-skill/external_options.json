@@ -36,28 +36,28 @@
     "name": "SKILL_TRAINING_SPEED",
     "//": "Scales experience gained from practicing skills and reading books.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables skill training except for NPC training.",
     "stype": "float",
-    "value": 0.25
+    "value": 1.0
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "PROFICIENCY_TRAINING_SPEED",
     "//": "Scales experience gained from practicing proficiencies.  0.5 is half as fast as default, 2.0 is twice as fast, 0.0 disables proficiency training except for NPC training.",
     "stype": "float",
-    "value": 0.25
+    "value": 1.0
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "UNSTABLE_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the unstable trait.",
     "stype": "int",
-    "value": 720
+    "value": 360
   },
   {
     "type": "EXTERNAL_OPTION",
     "name": "CHAOTIC_TRAIT_MUTATION_TIME",
     "//": "The average hours between mutations with the chaotic trait.",
     "stype": "int",
-    "value": 600
+    "value": 300
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -91,6 +91,13 @@
     "type": "EXTERNAL_OPTION",
     "name": "TRADER_RESPECT_BLACKLIST",
     "//": "Whether traders will respect their blacklists.",
+    "stype": "bool",
+    "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "AUTOLEARN_ALL_DISCOVERABLE_RECIPES",
+    "//": "Whether to force all recipes that can be learned via disassembly or books to be autolearned.",
     "stype": "bool",
     "value": true
   },
@@ -167,7 +174,7 @@
     "type": "EXTERNAL_OPTION",
     "name": "EVOLUTION_INVERSE_MULTIPLIER",
     "stype": "float",
-    "value": 3.0
+    "value": 4.0
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -237,7 +244,7 @@
     "name": "CONSTRUCTION_SCALING",
     "//": "Sets the time of construction in percents.  '50' is two times faster than default, '200' is two times longer.  '0' automatically scales construction time to match the world's season length.",
     "stype": "int",
-    "value": 100
+    "value": 25
   },
   {
     "type": "EXTERNAL_OPTION",
@@ -272,7 +279,7 @@
     "name": "DEFAULT_SEED_GROWTH_TEMP",
     "//": "The default temperature required to grow for plants, in Celsius.",
     "stype": "int",
-    "value": 10
+    "value": 4
   },
   {
     "type": "EXTERNAL_OPTION",
