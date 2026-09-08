@@ -1,0 +1,139 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_autodoc",
+    "name": "Autodoc Mk. XI",
+    "symbol": "&",
+    "description": "A surgical apparatus used for the installation and removal of bionics.  The term name 'Autodoc' is something of a misnomer, as it can only operate if programmed beforehand, something that a plethora of labels warn against doing without expertise.",
+    "color": "light_cyan",
+    "looks_like": "f_robotic_arm",
+    "move_cost_mod": -1,
+    "coverage": 35,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "AUTODOC", "CONTAINER", "NO_PICKUP_ON_EXAMINE", "EASY_DECONSTRUCT" ],
+    "item": "disconnected_autodoc",
+    "examine_action": "autodoc",
+    "surgery_skill_multiplier": 1.0,
+    "bash": {
+      "str_min": 8,
+      "str_max": 150,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "destroyed_field": [ "fd_mechanical_fluid", 1 ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_autodoc_couch",
+    "name": "Autodoc operation couch",
+    "symbol": "H",
+    "looks_like": "f_sofa",
+    "description": "A plush red sofa made less comfortable by the medical machinery directly above it.  It has a single leather strap on the right armrest.",
+    "bgcolor": "red",
+    "move_cost_mod": 2,
+    "coverage": 40,
+    "comfort": 4,
+    "floor_bedding_warmth": 500,
+    "required_str": 10,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "ORGANIC", "BLOCKSDOOR", "MOUNTABLE", "AUTODOC_COUCH", "EASY_DECONSTRUCT" ],
+    "item": "disconnected_autodoc_couch",
+    "bash": {
+      "str_min": 10,
+      "str_max": 40,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "destroyed_field": [ "fd_mechanical_fluid", 1 ]
+    }
+  },
+  {
+    "id": "disconnected_autodoc",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "disconnected autodoc" },
+    "description": "An autodoc, disconnected for transport.",
+    "weight": "200 kg",
+    "volume": "400 L",
+    "price": "5 kUSD",
+    "price_postapoc": "500 USD",
+    "to_hit": { "grip": "bad", "length": "long", "surface": "any", "balance": "clumsy" },
+    "material": [ "steel" ],
+    "symbol": "A",
+    "color": "yellow",
+    "melee_damage": { "bash": 10 }
+  },
+  {
+    "id": "disconnected_autodoc_couch",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "disconnected autodoc couch" },
+    "description": "An autodoc couch, disconnected for transport.",
+    "weight": "200 kg",
+    "volume": "400 L",
+    "price": "1 kUSD",
+    "price_postapoc": "100 USD",
+    "to_hit": { "grip": "bad", "length": "long", "surface": "any", "balance": "clumsy" },
+    "material": [ "steel" ],
+    "symbol": "A",
+    "color": "yellow",
+    "melee_damage": { "bash": 10 }
+  },
+  {
+    "type": "construction",
+    "id": "constr_disconnected_autodoc",
+    "group": "build_disconnected_autodoc",
+    "category": "FURN",
+    "required_skills": [ [ "fabrication", 0 ] ],
+    "activity_level": "LIGHT_EXERCISE",
+    "time": "15 s",
+    "components": [ [ [ "disconnected_autodoc", 1 ] ] ],
+    "pre_special": "check_empty",
+    "post_terrain": "f_autodoc"
+  },
+  {
+    "type": "construction",
+    "id": "constr_disconnected_autodoc_couch",
+    "group": "build_disconnected_autodoc_couch",
+    "category": "FURN",
+    "required_skills": [ [ "fabrication", 0 ] ],
+    "activity_level": "LIGHT_EXERCISE",
+    "time": "15 s",
+    "components": [ [ [ "disconnected_autodoc_couch", 1 ] ] ],
+    "pre_special": "check_empty",
+    "post_terrain": "f_autodoc_couch"
+  },
+  {
+    "type": "construction_group",
+    "id": "build_disconnected_autodoc",
+    "name": "Place a disconnected autodoc"
+  },
+  {
+    "type": "construction_group",
+    "id": "build_disconnected_autodoc_couch",
+    "name": "Place a disconnected autodoc couch"
+  },
+  {
+    "type": "item_group",
+    "id": "EXODII_Store_Salvage_Tech",
+    "copy-from": "EXODII_Store_Salvage_Tech",
+    "subtype": "collection",
+    "extend": {
+      "items": [
+        { "item": "autoclave", "prob": 100 },
+        { "item": "disconnected_autodoc", "prob": 100 },
+        { "item": "disconnected_autodoc_couch", "prob": 100 }
+      ]
+    }
+  },
+  {
+    "type": "item_group",
+    "id": "bionics",
+    "copy-from": "bionics",
+    "extend": {
+      "items": [
+        [ "autoclave", 10 ],
+        [ "disconnected_autodoc", 10 ],
+        [ "disconnected_autodoc_couch", 10 ]
+      ]
+    }
+  }
+]

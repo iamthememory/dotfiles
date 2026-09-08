@@ -1,0 +1,23 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XE_ALLOW_GIVING_CLASS",
+    "eoc_type": "EVENT",
+    "required_event": "character_wakes_up",
+    "effect": [ ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XE_MAGIC_SEQUENCE_EATER_DREAMER_COUNTER",
+    "eoc_type": "EVENT",
+    "required_event": "character_wakes_up",
+    "effect": [ ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_XE_MAGIC_SEQUENCE_INVENTOR_DREAMSMITH_COUNTER",
+    "eoc_type": "EVENT",
+    "required_event": "character_wakes_up",
+    "effect": [ ]
+  }
+]

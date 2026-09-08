@@ -4,6 +4,7 @@
     "id": "t_tree_harvested",
     "copy-from": "t_tree_harvested",
     "looks_like": "t_tree_dead",
+    "transforms_into": "t_tree",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -11,6 +12,7 @@
     "id": "t_tree_walnut_harvested",
     "copy-from": "t_tree_walnut_harvested",
     "looks_like": "t_tree_hickory_harvested",
+    "transforms_into": "t_tree_walnut",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -18,6 +20,7 @@
     "id": "t_tree_butternut_harvested",
     "copy-from": "t_tree_butternut_harvested",
     "looks_like": "t_tree_blackjack_harvested",
+    "transforms_into": "t_tree_butternut",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -25,6 +28,7 @@
     "id": "t_tree_blackjack_harvested",
     "copy-from": "t_tree_blackjack_harvested",
     "looks_like": "t_tree_dead",
+    "transforms_into": "t_tree_blackjack",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -32,6 +36,7 @@
     "id": "t_tree_alder_harvested",
     "copy-from": "t_tree_alder_harvested",
     "looks_like": "t_tree_hickory_harvested",
+    "transforms_into": "t_tree_alder",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -39,6 +44,7 @@
     "id": "t_tree_chestnut_harvested",
     "copy-from": "t_tree_chestnut_harvested",
     "looks_like": "t_tree_hickory",
+    "transforms_into": "t_tree_chestnut",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -46,6 +52,7 @@
     "id": "t_tree_beech_harvested",
     "copy-from": "t_tree_beech_harvested",
     "looks_like": "t_tree_hickory_harvested",
+    "transforms_into": "t_tree_beech",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -53,6 +60,7 @@
     "id": "t_tree_hazelnut_harvested",
     "copy-from": "t_tree_hazelnut_harvested",
     "looks_like": "t_tree_hickory_harvested",
+    "transforms_into": "t_tree_hazelnut",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -60,6 +68,7 @@
     "id": "t_tree_basswood_harvested",
     "copy-from": "t_tree_basswood_harvested",
     "looks_like": "t_tree",
+    "transforms_into": "t_tree_basswood",
     "extend": { "flags": [ "HARVESTED" ] }
   },
     {
@@ -67,6 +76,7 @@
     "id": "t_tree_cottonwood_harvested",
     "copy-from": "t_tree_cottonwood_harvested",
     "looks_like": "t_tree",
+    "transforms_into": "t_tree_cottonwood",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -74,6 +84,7 @@
     "id": "t_tree_pine_harvested",
     "copy-from": "t_tree_pine_harvested",
     "looks_like": "t_tree_deadpine",
+    "transforms_into": "t_tree_pine",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -81,6 +92,7 @@
     "id": "t_tree_birch_harvested",
     "copy-from": "t_tree_birch_harvested",
     "looks_like": "t_tree_harvested",
+    "transforms_into": "t_tree_birch",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -88,6 +100,7 @@
     "id": "t_tree_willow_harvested",
     "copy-from": "t_tree_willow_harvested",
     "looks_like": "t_tree_harvested",
+    "transforms_into": "t_tree_willow",
     "extend": { "flags": [ "HARVESTED" ] }
   },
   {
@@ -103,6 +116,7 @@
     "id": "t_fern_harvested",
     "copy-from": "t_fern_harvested",
     "looks_like": "t_grass_long",
+    "transforms_into": "t_fern",
     "extend": { "flags": [ "HARVESTED" ] }
   }
 ]
