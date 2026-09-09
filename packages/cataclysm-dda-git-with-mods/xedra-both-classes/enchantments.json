@@ -24,6 +24,6 @@
     "type": "enchantment",
     "has": "HELD",
     "condition": { "or": [ { "math": [ "u_val('morale') < -15" ] }, { "math": [ "u_val('morale') > 15" ] } ] },
-    "values": [ { "value": "REGEN_MANA", "multiply": { "math": [ "abs(u_val('morale') ) /41" ] } } ]
+    "values": [ { "value": "REGEN_MANA", "multiply": { "math": [ "abs( u_val('morale') ) /41" ] } } ]
   }
 ]
