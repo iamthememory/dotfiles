@@ -19,6 +19,9 @@
     vorbis-tools
   ];
 
+  # A MIDI synthesizer.
+  programs.timidity.enable = true;
+
   # A TUI PipeWire audio mixer.
   programs.wiremix.enable = true;
 
