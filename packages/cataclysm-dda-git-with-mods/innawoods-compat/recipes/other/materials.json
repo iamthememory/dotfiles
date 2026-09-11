@@ -79,6 +79,17 @@
   },
   {
     "type": "recipe",
+    "result": "sheet_denim",
+    "copy-from": "sheet_cotton",
+    "difficulty": 4,
+    "autolearn": true,
+    "time": "3 h",
+    "tools": [ [ [ "loom_frame", -1 ] ], [ [ "shed_stick", -1 ] ] ],
+    "qualities": [ { "id": "CUT", "level": 2 } ],
+    "components": [ [ [ "thread", 200 ] ] ]
+  },
+  {
+    "type": "recipe",
     "result": "lc_steel_lump",
     "copy-from": "lc_steel_lump",
     "batch_time_factors": [ 90, 2 ],
