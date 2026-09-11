@@ -11,7 +11,7 @@
     "coverage": 40,
     "required_str": -1,
     "crafting_pseudo_item": "bloomery",
-    "flags": [ "SEALED", "CONTAINER", "NOITEM", "EASY_DECONSTRUCT", "MINEABLE" ],
+    "flags": [ "SEALED", "CONTAINER", "NOITEM", "EASY_DECONSTRUCT", "MINEABLE", "AMMOTYPE_RELOAD" ],
     "deconstruct": { "items": [ { "item": "rock", "count": 30 } ] },
     "examine_action": "reload_furniture",
     "bash": {
