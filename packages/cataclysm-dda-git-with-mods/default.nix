@@ -86,7 +86,6 @@ let
         ./patches/cataclysm-88292-performance-regression-revert.patch
         ./patches/cataclysm-backrooms-extend-vending.patch
         ./patches/cataclysm-big-tiles.patch
-        ./patches/cataclysm-bigger-texture-pool.patch
         ./patches/cataclysm-bionics-lower-saving.patch
         ./patches/cataclysm-check-furniture-no-spoil.patch
         ./patches/cataclysm-craft-percent-fix.patch
