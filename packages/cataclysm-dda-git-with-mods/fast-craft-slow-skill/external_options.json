@@ -213,6 +213,20 @@
   },
   {
     "type": "EXTERNAL_OPTION",
+    "name": "FIELD_DRESS_ROT_MULTIPLIER",
+    "//": "How fast field dressed corpses will rot.",
+    "stype": "float",
+    "value": 0.25
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "CORPSE_ROT_TIME",
+    "//": "How many hours corpses take to rot.",
+    "stype": "int",
+    "value": 48
+  },
+  {
+    "type": "EXTERNAL_OPTION",
     "name": "BREW_TIME_MULTIPLIER",
     "//": "How much longer than normal brewing will take. 0.5 will cause brewing to take half as long..",
     "stype": "float",
