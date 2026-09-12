@@ -3,7 +3,7 @@
 
 cd data/mods/Magiclysm
 jq -s 'add | map(select(.type == "SPELL"))' **/*.json > /tmp/spelldata.json
-jq -s 'add | map(select(has("use_action"))) | map(.use_action.spells) | flatten | sort' items/spell*.json | uniq > /tmp/spellnames.json
+jq -s 'add | map(select(has("use_action"))) | map(select(.id != "DEBUG_spellbook")) | map(.use_action.spells) | flatten | sort' items/spell*.json | uniq > /tmp/spellnames.json
 
 
 # Python
