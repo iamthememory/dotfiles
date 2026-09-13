@@ -1,0 +1,178 @@
+[
+  {
+    "id": "forage_egg_dino",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "egg_sarahsaurus", "prob": 1 },
+      { "item": "egg_anchisaurus", "prob": 1 },
+      { "item": "egg_issi", "prob": 1 },
+      { "item": "egg_stegosaurus", "prob": 1 },
+      { "item": "egg_hesperosaurus", "prob": 1 },
+      { "item": "egg_gastonia", "prob": 1 },
+      { "item": "egg_gargoyleosaurus", "prob": 1 },
+      { "item": "egg_sauropelta", "prob": 1 },
+      { "item": "egg_nodosaurus", "prob": 1 },
+      { "item": "egg_panoplosaurus", "prob": 1 },
+      { "item": "egg_edmontonia", "prob": 1 },
+      { "item": "egg_zuul", "prob": 1 },
+      { "item": "egg_dyoplosaurus", "prob": 1 },
+      { "item": "egg_ankylosaurus", "prob": 1 },
+      { "item": "egg_euoplocephalus", "prob": 1 },
+      { "item": "egg_scolosaurus", "prob": 1 },
+      { "item": "egg_tenontosaurus", "prob": 1 },
+      { "item": "egg_camptosaurus", "prob": 1 },
+      { "item": "egg_iguanodon", "prob": 1 },
+      { "item": "egg_eolambia", "prob": 1 },
+      { "item": "egg_hadrosaurus", "prob": 1 },
+      { "item": "egg_maiasaura", "prob": 1 },
+      { "item": "egg_gryposaurus", "prob": 1 },
+      { "item": "egg_prosaurolophus", "prob": 1 },
+      { "item": "egg_saurolophus", "prob": 1 },
+      { "item": "egg_edmontosaurus", "prob": 1 },
+      { "item": "egg_parasaurolophus", "prob": 1 },
+      { "item": "egg_lambeosaurus", "prob": 1 },
+      { "item": "egg_corythosaurus", "prob": 1 },
+      { "item": "egg_hypacrosaurus", "prob": 1 },
+      { "item": "egg_pachycephalosaurus", "prob": 1 },
+      { "item": "egg_leptoceratops", "prob": 1 },
+      { "item": "egg_zuniceratops", "prob": 1 },
+      { "item": "egg_lokiceratops", "prob": 1 },
+      { "item": "egg_styracosaurus", "prob": 1 },
+      { "item": "egg_centrosaurus", "prob": 1 },
+      { "item": "egg_einiosaurus", "prob": 1 },
+      { "item": "egg_achelousaurus", "prob": 1 },
+      { "item": "egg_pachyrhinosaurus", "prob": 1 },
+      { "item": "egg_chasmosaurus", "prob": 1 },
+      { "item": "egg_pentaceratops", "prob": 1 },
+      { "item": "egg_kosmoceratops", "prob": 1 },
+      { "item": "egg_torosaurus", "prob": 1 },
+      { "item": "egg_triceratops", "prob": 1 },
+      { "item": "egg_thescelosaurus", "prob": 1 }
+    ]
+  },
+  {
+    "id": "forage_egg_dino_small",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "egg_eoraptor", "prob": 1 },
+      { "item": "egg_scutellosaurus", "prob": 1 },
+      { "item": "egg_dryosaurus", "prob": 1 },
+      { "item": "egg_stegoceras", "prob": 1 },
+      { "item": "egg_aquilops", "prob": 1 },
+      { "item": "egg_nanosaurus", "prob": 1 },
+      { "item": "egg_fona", "prob": 1 },
+      { "item": "egg_oryctodromeus", "prob": 1 },
+      { "item": "egg_dimorphodon", "prob": 1 },
+      { "item": "egg_pteranodon", "prob": 1 },
+      { "item": "egg_quetzalcoatlus", "prob": 1 }
+    ]
+  },
+  {
+    "id": "forage_egg_dino_large",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "egg_moabosaurus", "prob": 1 },
+      { "item": "egg_haplocanthosaurus", "prob": 1 },
+      { "item": "egg_amargasaurus", "prob": 1 },
+      { "item": "egg_apatosaurus", "prob": 1 },
+      { "item": "egg_brontosaurus", "prob": 1 },
+      { "item": "egg_diplodocus", "prob": 1 },
+      { "item": "egg_barosaurus", "prob": 1 },
+      { "item": "egg_camarasaurus", "prob": 1 },
+      { "item": "egg_brachiosaurus", "prob": 1 },
+      { "item": "egg_astrodon", "prob": 1 },
+      { "item": "egg_alamosaurus", "prob": 1 }
+    ]
+  },
+  {
+    "id": "forage_egg_dino_theropod",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "egg_dilophosaurus", "prob": 1 },
+      { "item": "egg_ceratosaurus", "prob": 1 },
+      { "item": "egg_torvosaurus", "prob": 1 },
+      { "item": "egg_allosaurus", "prob": 1 },
+      { "item": "egg_acrocanthosaurus", "prob": 1 },
+      { "item": "egg_giganotosaurus", "prob": 1 },
+      { "item": "egg_siats", "prob": 1 },
+      { "item": "egg_dryptosaurus", "prob": 1 },
+      { "item": "egg_nanotyrannus", "prob": 1 },
+      { "item": "egg_appalachiosaurus", "prob": 1 },
+      { "item": "egg_gorgosaurus", "prob": 1 },
+      { "item": "egg_albertosaurus", "prob": 1 },
+      { "item": "egg_qianzhousaurus", "prob": 1 },
+      { "item": "egg_nanuqsaurus", "prob": 1 },
+      { "item": "egg_daspletosaurus", "prob": 1 },
+      { "item": "egg_nedcolbertia", "prob": 1 },
+      { "item": "egg_gallimimus", "prob": 1 },
+      { "item": "egg_struthiomimus", "prob": 1 },
+      { "item": "egg_ornithomimus", "prob": 1 },
+      { "item": "egg_falcarius", "prob": 1 },
+      { "item": "egg_therizinosaurus", "prob": 1 },
+      { "item": "egg_nothronychus", "prob": 1 },
+      { "item": "egg_anzu", "prob": 1 },
+      { "item": "egg_deinonychus", "prob": 1 },
+      { "item": "egg_utahraptor", "prob": 1 }
+    ]
+  },
+  {
+    "id": "forage_egg_dino_theropod_small",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "egg_tawa", "prob": 1 },
+      { "item": "egg_coelophysis", "prob": 1 },
+      { "item": "egg_compsognathus", "prob": 1 },
+      { "item": "egg_albertonykus", "prob": 1 },
+      { "item": "egg_saurornitholestes", "prob": 1 },
+      { "item": "egg_velociraptor", "prob": 1 },
+      { "item": "egg_dromaeosaurus", "prob": 1 },
+      { "item": "egg_stenonychosaurus", "prob": 1 }
+    ]
+  },
+  {
+    "id": "forage_egg_dino_theropod_large",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "egg_spinosaurus", "prob": 1 },
+      { "item": "egg_tyrannosaurus", "prob": 1 }
+    ]
+  },
+  {
+    "id": "forage_spring",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "forage_spring",
+    "extend": {
+      "entries": [
+        { "group": "forage_egg_dino", "prob": 2, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_small", "prob": 1, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_large", "prob": 1, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_theropod", "prob": 2, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_theropod_small", "prob": 1, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_theropod_large", "prob": 1, "count": [ 2, 5 ] }
+      ]
+    }
+  },
+  {
+    "id": "forage_summer",
+    "type": "item_group",
+    "subtype": "distribution",
+    "copy-from": "forage_summer",
+    "extend": {
+      "entries": [
+        { "group": "forage_egg_dino", "prob": 2, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_small", "prob": 1, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_large", "prob": 1, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_theropod", "prob": 2, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_theropod_small", "prob": 1, "count": [ 2, 5 ] },
+        { "group": "forage_egg_dino_theropod_large", "prob": 1, "count": [ 2, 5 ] }
+      ]
+    }
+  }
+]
